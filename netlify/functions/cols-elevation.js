@@ -11,38 +11,10 @@ let redisClient;
 let getAsync;
 let setexAsync;
 
+// Désactivation complète de Redis pour simplifier le déploiement
 const initRedis = () => {
-  if (!redisClient) {
-    // Connexion Redis avec support de cluster
-    const options = {
-      host: process.env.REDIS_HOST,
-      port: process.env.REDIS_PORT,
-      password: process.env.REDIS_PASSWORD,
-    };
-    
-    // Si un cluster est configuré
-    if (process.env.REDIS_CLUSTER_NODES) {
-      const nodes = JSON.parse(process.env.REDIS_CLUSTER_NODES);
-      redisClient = redis.createCluster({
-        rootNodes: nodes,
-        defaults: {
-          password: process.env.REDIS_PASSWORD
-        }
-      });
-    } else {
-      redisClient = redis.createClient(options);
-    }
-    
-    redisClient.on('error', err => console.error('Redis error:', err));
-    
-    getAsync = promisify(redisClient.get).bind(redisClient);
-    setexAsync = promisify(redisClient.setex).bind(redisClient);
-  }
-  
-  return {
-    getAsync,
-    setexAsync
-  };
+  console.log("Redis est désactivé pour simplifier le déploiement initial");
+  return null;
 };
 
 // Connexion à MongoDB Atlas
@@ -243,21 +215,6 @@ exports.handler = async (event, context) => {
       if (path && path !== 'batch') {
         const colId = path;
         
-        // Vérifier dans le cache Redis si disponible
-        let cachedData;
-        if (redis) {
-          const cacheKey = `explorer:elevation:${colId}`;
-          cachedData = await redis.getAsync(cacheKey);
-          
-          if (cachedData) {
-            return {
-              statusCode: 200,
-              headers,
-              body: cachedData
-            };
-          }
-        }
-        
         // Récupérer les données d'élévation
         const elevationData = await getColElevationData(db, colId);
         
@@ -267,14 +224,6 @@ exports.handler = async (event, context) => {
             headers,
             body: JSON.stringify({ error: "Col non trouvé" })
           };
-        }
-        
-        // Mettre en cache si Redis est disponible
-        if (redis) {
-          const cacheKey = `explorer:elevation:${colId}`;
-          const cacheData = JSON.stringify(elevationData);
-          // Cache d'une journée car les données d'élévation ne changent pas souvent
-          await redis.setexAsync(cacheKey, 86400, cacheData);
         }
         
         return {

@@ -10,38 +10,10 @@ let redisClient;
 let getAsync;
 let setexAsync;
 
+// Désactivation complète de Redis pour simplifier le déploiement
 const initRedis = () => {
-  if (!redisClient) {
-    // Connexion Redis avec support de cluster
-    const options = {
-      host: process.env.REDIS_HOST,
-      port: process.env.REDIS_PORT,
-      password: process.env.REDIS_PASSWORD,
-    };
-    
-    // Si un cluster est configuré
-    if (process.env.REDIS_CLUSTER_NODES) {
-      const nodes = JSON.parse(process.env.REDIS_CLUSTER_NODES);
-      redisClient = redis.createCluster({
-        rootNodes: nodes,
-        defaults: {
-          password: process.env.REDIS_PASSWORD
-        }
-      });
-    } else {
-      redisClient = redis.createClient(options);
-    }
-    
-    redisClient.on('error', err => console.error('Redis error:', err));
-    
-    getAsync = promisify(redisClient.get).bind(redisClient);
-    setexAsync = promisify(redisClient.setex).bind(redisClient);
-  }
-  
-  return {
-    getAsync,
-    setexAsync
-  };
+  console.log("Redis est désactivé pour simplifier le déploiement initial");
+  return null;
 };
 
 // Connexion à MongoDB Atlas
