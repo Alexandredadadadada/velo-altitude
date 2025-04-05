@@ -2,6 +2,18 @@
 
 Ce document détaille les problèmes rencontrés lors du déploiement de la plateforme Velo-Altitude sur Netlify et les solutions mises en œuvre. Il servira de référence pour l'équipe de développement et pour les futurs déploiements.
 
+**Date de dernière mise à jour : 06/04/2025**
+
+## Table des matières
+
+1. [Architecture du Projet](#architecture-du-projet)
+2. [Problèmes de Déploiement et Solutions](#problèmes-de-déploiement-et-solutions)
+3. [Variables d'Environnement](#variables-denvironnement)
+4. [Optimisations pour les Futurs Déploiements](#optimisations-pour-les-futurs-déploiements)
+5. [Checklist de Déploiement](#checklist-de-déploiement)
+6. [Architecture de la Plateforme](#architecture-de-la-plateforme)
+7. [Ressources Utiles](#ressources-utiles)
+
 ## Architecture du Projet
 
 Velo-Altitude est une plateforme complète dédiée au cyclisme de montagne en Europe, développée avec :
@@ -42,7 +54,7 @@ Velo-Altitude est une plateforme complète dédiée au cyclisme de montagne en E
 // package.json
 "scripts": {
 -  "build": "cmd.exe /c npx webpack --config webpack.fix.js --mode production",
-+  "build": "npx webpack --config webpack.fix.js --mode production",
++  "build": "webpack --config webpack.fix.js --mode production --stats-error-details",
 }
 ```
 
@@ -90,15 +102,27 @@ Velo-Altitude est une plateforme complète dédiée au cyclisme de montagne en E
 
 ### 4. Problème d'Installation de Go
 
-**Symptôme** : Le build échouait avec des erreurs lors de l'installation de Go 1.19.
+**Symptôme** : Le build échouait avec des erreurs lors de l'installation de Go, notamment une erreur 404 pour `goskip.linux-amd64.tar.gz`.
 
-**Cause** : Netlify tente d'installer Go par défaut, même si le projet n'en a pas besoin. C'est dû à un "épinglage" de la version Go lors d'un build précédent.
+**Cause** : 
+- Netlify tente d'installer Go par défaut, même si le projet n'en a pas besoin.
+- La valeur `GO_VERSION=skip` causait une tentative de téléchargement d'un fichier inexistant.
 
 **Solution** :
-- Configuration des variables d'environnement dans Netlify pour désactiver l'installation de Go
+- Configuration de la variable d'environnement `GO_IMPORT_DURING_BUILD=false` dans Netlify
+- Suppression complète de la variable `GO_VERSION=skip`
 
-**Variables d'environnement ajoutées dans Netlify** :
-- `GO_IMPORT_DURING_BUILD` = `false`
+**Fichiers modifiés** :
+```diff
+// netlify.toml
+[build.environment]
+  NODE_VERSION = "18.17.0"
+  NPM_VERSION = "9.6.7"
+  # Désactiver complètement l'installation de Go
+  GO_IMPORT_DURING_BUILD = "false"
+-  GO_VERSION = "skip"
+  CI = "false"
+```
 
 ### 5. Problème de Dépendances Babel
 
@@ -138,38 +162,74 @@ Velo-Altitude est une plateforme complète dédiée au cyclisme de montagne en E
 - Création d'un script de vérification des chemins qui s'exécute avant le build
 - Ce script vérifie et crée les structures de fichiers manquantes
 
+**Fichiers créés** :
+- `scripts/check-build-paths.js` : Script automatisé qui vérifie et crée les structures nécessaires
+
+### 7. Problème de Compatibilité Node.js
+
+**Symptôme** : Avertissement de compatibilité Node.js dans les logs de build :
+```
+npm WARN EBADENGINE current: { node: 'v18.17.0', npm: '9.6.7' }
+```
+
+**Cause** : Le champ `engines` dans package.json spécifiait une plage de versions (`"node": ">=18.0.0"`) au lieu d'une version exacte.
+
+**Solution** :
+- Spécification des versions exactes de Node.js et npm dans le champ `engines`
+- Création d'un fichier `.node-version` pour une meilleure compatibilité avec Netlify
+
 **Fichiers modifiés/créés** :
-1. Modification de package.json :
 ```diff
 // package.json
-"scripts": {
--  "netlify-build": "npm install && npm run build"
-+  "netlify-build": "node scripts/check-build-paths.js && npm install && npm run build"
+"engines": {
+-  "node": ">=18.0.0"
++  "node": "18.17.0",
++  "npm": "9.6.7"
 }
 ```
 
-2. Création du script `scripts/check-build-paths.js` :
-```javascript
-// Scripts automatiques pour préparer l'environnement de build
-// Vérifie les chemins requis et crée les structures manquantes
+Nouveau fichier `.node-version` :
+```
+18.17.0
 ```
 
-## Variables d'Environnement dans Netlify
+### 8. Problème de Script netlify-build
+
+**Symptôme** : Le script `netlify-build` échouait avec un code de sortie non nul.
+
+**Cause** : 
+- Le script utilisait `CI=false` qui n'est pas compatible avec Windows PowerShell
+- Le script faisait référence à un script de diagnostic qui pouvait causer des erreurs
+
+**Solution** :
+- Simplification maximale du script pour assurer la compatibilité cross-platform
+
+**Fichiers modifiés** :
+```diff
+// package.json
+"scripts": {
+-  "netlify-build": "node scripts/check-build-paths.js && npm install && npm run build"
++  "netlify-build": "npm install && npm run build"
+}
+```
+
+## Variables d'Environnement
 
 Pour un déploiement réussi de Velo-Altitude, les variables d'environnement suivantes doivent être configurées dans Netlify :
 
-| Variable | Description | Obligatoire |
-|----------|-------------|-------------|
-| `MAPBOX_TOKEN` | Token pour l'API Mapbox | Oui |
-| `OPENWEATHER_API_KEY` | Clé API OpenWeatherMap | Oui |
-| `OPENROUTE_API_KEY` | Clé API OpenRouteService | Oui |
-| `OPENAI_API_KEY` | Clé API OpenAI (chatbot) | Oui |
-| `CLAUDE_API_KEY` | Clé API Anthropic Claude (chatbot) | Oui |
-| `STRAVA_CLIENT_ID` | ID client Strava | Optionnel |
-| `STRAVA_CLIENT_SECRET` | Secret client Strava | Optionnel |
-| `GO_IMPORT_DURING_BUILD` | Désactive l'installation de Go | Oui (valeur: false) |
-| `NODE_VERSION` | Version de Node.js | Oui (valeur: 18.17.0) |
-| `NPM_VERSION` | Version de NPM | Oui (valeur: 9.6.7) |
+| Variable | Description | Valeur | Obligatoire |
+|----------|-------------|--------|-------------|
+| `NODE_VERSION` | Version de Node.js | 18.17.0 | Oui |
+| `NPM_VERSION` | Version de NPM | 9.6.7 | Oui |
+| `GO_IMPORT_DURING_BUILD` | Désactive l'installation de Go | false | Oui |
+| `CI` | Supprime les avertissements de build | false | Recommandé |
+| `MAPBOX_TOKEN` | Token pour l'API Mapbox | [votre token] | Oui |
+| `OPENWEATHER_API_KEY` | Clé API OpenWeatherMap | [votre clé] | Oui |
+| `OPENROUTE_API_KEY` | Clé API OpenRouteService | [votre clé] | Oui |
+| `OPENAI_API_KEY` | Clé API OpenAI (chatbot) | [votre clé] | Oui |
+| `CLAUDE_API_KEY` | Clé API Anthropic Claude (chatbot) | [votre clé] | Oui |
+| `STRAVA_CLIENT_ID` | ID client Strava | [votre ID] | Optionnel |
+| `STRAVA_CLIENT_SECRET` | Secret client Strava | [votre secret] | Optionnel |
 
 ## Optimisations pour les Futurs Déploiements
 
@@ -205,9 +265,9 @@ Pour une meilleure compatibilité avec différents environnements :
 
 ```json
 "scripts": {
-  "build": "cross-env NODE_ENV=production webpack --config webpack.fix.js",
+  "build": "webpack --config webpack.fix.js --mode production",
   "build:dev": "webpack --config webpack.fix.js --mode development",
-  "netlify-build": "node scripts/check-build-paths.js && npm install && npm run build"
+  "netlify-build": "npm install && npm run build"
 }
 ```
 
@@ -223,10 +283,11 @@ En mode développement, garder les dépendances clairement séparées entre `dep
 Avant chaque déploiement, vérifier :
 
 - [ ] Toutes les dépendances requises sont dans la section `dependencies`
+- [ ] Le point d'entrée du projet (`src/index.js`) existe et est correct
 - [ ] Les variables d'environnement sont configurées dans Netlify
+- [ ] Le fichier `.node-version` est présent avec la version exacte (`18.17.0`)
 - [ ] La commande de build est compatible avec Unix
 - [ ] La variable `GO_IMPORT_DURING_BUILD=false` est configurée
-- [ ] Le script `check-build-paths.js` est à jour avec la structure du projet
 
 ## Architecture de la Plateforme Velo-Altitude
 
@@ -252,7 +313,8 @@ Avant chaque déploiement, vérifier :
 - [Guide de débogage pour les builds Netlify](https://www.netlify.com/support-articles/build-troubleshooting-tips/)
 - [Documentation webpack](https://webpack.js.org/concepts/)
 - [Guide Babel pour React](https://babeljs.io/docs/en/babel-preset-react)
+- [Documentation sur les versions Node.js dans Netlify](https://docs.netlify.com/configure-builds/manage-dependencies/#node-js-and-javascript)
 
 ---
 
-Document rédigé le 05/04/2025 suite à la résolution des problèmes de déploiement de Velo-Altitude sur Netlify.
+Document rédigé le 06/04/2025 suite à la résolution complète des problèmes de déploiement de Velo-Altitude sur Netlify.
