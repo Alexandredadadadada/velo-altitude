@@ -510,7 +510,205 @@ La solution finale pour le problème "Cannot find module 'webpack'" comprend:
 1. Déplacement de webpack et webpack-cli dans les dependencies principales
 2. Création d'un script netlify-build optimisé avec CI='' 
 3. Configuration explicite des versions Node.js et npm dans netlify.toml
-```
+
+## Mise à jour du 05/04/2025
+
+### Statut du déploiement sur Netlify
+
+🟠 **En cours** - Un nouveau build a été déclenché après la correction des problèmes suivants :
+
+1. ✅ **Problème de sous-module Git** - Suppression des références au sous-module inexistant
+2. ✅ **Problème de script Windows** - Adaptation pour l'environnement Unix de Netlify
+3. ✅ **Problème de dépendances webpack** - Déplacement vers `dependencies`
+4. ✅ **Problème d'installation de Go** - Désactivation via `GO_IMPORT_DURING_BUILD=false`
+5. ✅ **Problème de dépendances Babel** - Déplacement vers `dependencies`
+6. ✅ **Problème de structure de fichiers** - Création d'un script de vérification automatique
+
+### Améliorations implémentées
+
+1. **Script de vérification des chemins** - Un nouveau script `scripts/check-build-paths.js` a été créé pour vérifier et préparer l'environnement de build Netlify. Ce script :
+   - Vérifie les chemins requis comme `src/index.js` et `public/index.html`
+   - Crée automatiquement les chemins manquants référencés dans webpack.fix.js
+   - Génère des versions minimales des fichiers manquants
+   - Effectue une migration intelligente depuis la structure alternative si nécessaire
+
+2. **Documentation complète** - Un guide détaillé de déploiement `GUIDE_DEPLOIEMENT_NETLIFY.md` a été créé pour documenter tous les problèmes rencontrés et leurs solutions.
+
+### Prochaines étapes
+
+1. Surveiller le statut du build en cours sur Netlify
+2. Vérifier toutes les fonctionnalités clés après le déploiement réussi
+3. Envisager l'implémentation des optimisations suggérées dans le guide de déploiement
+
+### Guide complet
+
+Un guide complet de déploiement est désormais disponible dans le fichier `GUIDE_DEPLOIEMENT_NETLIFY.md`. Il contient :
+- La description détaillée de chaque problème et sa solution
+- Les variables d'environnement nécessaires
+- Des suggestions d'optimisation pour les déploiements futurs
+- Une checklist de déploiement
+- Une présentation de l'architecture de la plateforme
+
+## 7. Ressources visuelles et identité graphique
+
+### 7.1. Logo et icônes
+
+Le projet dispose d'une identité visuelle moderne et cohérente disponible dans `/client/public/images/`:
+
+- **Logo principal**: `logo.svg` - Version vectorielle complète pour usage principal
+- **Logo alternatif**: `logo_large.png` - Version haute résolution (2000x500px)
+- **Favicon**: `favicon.ico` - Favicon optimisé multi-résolution
+- **Icônes d'application**:
+  - `icon16.png` - 16x16px pour la barre d'adresse
+  - `icon48.png` - 48x48px pour les onglets
+  - `icon128.png` - 128x128px pour les tiles d'application
+
+Les couleurs de l'identité visuelle suivent un dégradé bleu-vert moderne avec ces codes hexadécimaux principaux:
+- Primaire: `#1976d2` (bleu)
+- Secondaire: `#21CBF3` (cyan)
+- Accent: `#2E7D32` (vert)
+
+### 7.2. Composants visuels premium
+
+Pour garantir une expérience utilisateur moderne et impressionnante, les composants visuels suivants ont été implémentés:
+
+#### Hero Section avec Parallaxe
+Le composant `HeroParallax.js` offre:
+- Effet de parallaxe au défilement 
+- Animation de fondu à l'entrée
+- Call-to-action flottant avec animations
+- Indicateur de défilement animé
+- Support des arrière-plans haute résolution
+
+#### Animations cyclistes
+Le composant `BikeAnimationCanvas.js` génère:
+- Animation vectorielle fluide d'un cycliste
+- Rotation des roues synchronisée
+- Mouvement des pédales réaliste
+- Personnalisation des couleurs et de la vitesse
+- Rendu optimisé via Canvas
+
+#### Visualisation 3D des cols
+Le composant `ColVisualization3D.js` offre:
+- Rendu 3D haute fidélité des profils d'altitude
+- Textures réalistes selon types de surface
+- Éclairage dynamique et ombres
+- Mode économie de batterie adaptatif
+- 5 niveaux de détail pour différentes performances matérielles
+
+### 7.3. Ressources photographiques
+
+Les images haute résolution optimisées sont organisées par catégories:
+- `/images/summits/` - Photos de cols à 1920x1080px
+- `/images/profiles/` - Avatars et photos de profil
+- `/images/social/` - Éléments graphiques pour les fonctionnalités sociales
+- `/images/nutrition/` - Illustrations pour les recettes et conseils nutritionnels
+
+L'ensemble du système graphique est conçu pour s'adapter aux écrans haute résolution (jusqu'à 4K) et respecte les principes de design responsif.
+
+### 7.4. Recommandations pour la page d'accueil
+
+Pour maximiser l'impact visuel de la page d'accueil:
+
+1. **Hero Section**:
+   - Utiliser une photo panoramique de haute qualité d'un col alpin emblématique
+   - Activer l'effet de parallaxe avancé avec HeroParallax
+   - Intégrer un appel à l'action contrasté avec animation au survol
+
+2. **Carte des régions interactive**:
+   - Afficher la carte régionale avec effets de survol
+   - Utiliser RegionMap avec activation des animations
+
+3. **Visualisation 3D**:
+   - Intégrer un aperçu 3D du Col du Galibier comme démonstration
+   - Activer les effets météo pour une immersion maximale
+
+4. **Statistiques animées**:
+   - Utiliser AnimatedStats avec compteurs progressifs
+   - Afficher des statistiques impressionnantes de la communauté
+
+5. **Section communautaire**:
+   - Arrière-plan sombre avec image en overlay à contraste élevé
+   - Boutons d'inscription avec dégradés de couleur et animations
+
+Ces recommandations garantiront une page d'accueil visuellement impressionnante et mémorable pour les utilisateurs.
+
+## 8. Processus de déploiement détaillé
+
+### 8.1. Prérequis
+
+- Node.js v18.17.0 ou supérieur
+- npm v9.6.7 ou supérieur
+- Compte Netlify
+- Compte MongoDB Atlas
+- Comptes pour les services tiers (Auth0, Mapbox, OpenWeather, Strava)
+
+### 8.2. Étapes de déploiement
+
+1. **Préparation de l'environnement**
+   ```bash
+   # Cloner le dépôt
+   git clone https://github.com/votre-organisation/velo-altitude.git
+   cd velo-altitude
+   
+   # Installer les dépendances
+   npm install
+   ```
+
+2. **Configuration des variables d'environnement**
+   - Créer les fichiers `.env` dans les répertoires racine et client/ selon les modèles de la section 7
+   - Veiller à remplir toutes les valeurs avec les clés API et identifiants appropriés
+
+3. **Build du projet**
+   ```bash
+   # Construction du projet pour la production
+   CI='' npm run build
+   ```
+
+4. **Déploiement sur Netlify**
+   - Configurer le dépôt sur Netlify en utilisant l'interface graphique ou Netlify CLI
+   - Utiliser la configuration suivante:
+   
+   ```toml
+   # netlify.toml
+   [build]
+     command = "npm run netlify-build"
+     publish = "build"
+     functions = "netlify/functions"
+     
+   [build.environment]
+     NODE_VERSION = "18.17.0"
+     NPM_VERSION = "9.6.7"
+     CI = "false"
+   ```
+   
+   - S'assurer que webpack et webpack-cli sont dans les dépendances principales (pas devDependencies)
+   - Utiliser le script netlify-build dans package.json:
+   
+   ```json
+   "scripts": {
+     "build": "CI='' webpack --mode production",
+     "netlify-build": "CI='' npm install && CI='' npm run build"
+   }
+   ```
+
+5. **Vérification post-déploiement**
+   - Tester toutes les routes et fonctionnalités
+   - Vérifier les performances sur différents appareils
+   - Valider le chargement correct des modules 3D et des visualisations
+
+### 8.3. Solution aux problèmes courants
+
+Pour résoudre les problèmes communs de déploiement avec Netlify et Webpack, voir les documents:
+- `DEPLOYMENT_UPDATE.md` - Historique des problèmes et solutions
+- `NETLIFY_WEBPACK_SOLUTIONS.md` - Solutions concrètes aux problèmes webpack
+- `NETLIFY_WEBPACK_TROUBLESHOOTING.md` - Guide de dépannage détaillé
+
+La solution finale pour le problème "Cannot find module 'webpack'" comprend:
+1. Déplacement de webpack et webpack-cli dans les dependencies principales
+2. Création d'un script netlify-build optimisé avec CI='' 
+3. Configuration explicite des versions Node.js et npm dans netlify.toml
+
 ## Statut du Déploiement Final - 5 Avril 2025
 
 ### Modules Finalisés
@@ -622,168 +820,13 @@ La plateforme Velo-Altitude est désormais en cours de déploiement avec toutes 
 - Analyser les performances et identifier les optimisations futures
 - Planifier la réintégration de Redis si nécessaire pour améliorer les performances
 
-```
+### Guide complet
+
+Un guide complet de déploiement est désormais disponible dans le fichier `GUIDE_DEPLOIEMENT_NETLIFY.md`. Il contient :
+- La description détaillée de chaque problème et sa solution
+- Les variables d'environnement nécessaires
+- Des suggestions d'optimisation pour les déploiements futurs
+- Une checklist de déploiement
+- Une présentation de l'architecture de la plateforme
 
 ```
-## 7. Ressources visuelles et identité graphique
-
-### 7.1. Logo et icônes
-
-Le projet dispose d'une identité visuelle moderne et cohérente disponible dans `/client/public/images/`:
-
-- **Logo principal**: `logo.svg` - Version vectorielle complète pour usage principal
-- **Logo alternatif**: `logo_large.png` - Version haute résolution (2000x500px)
-- **Favicon**: `favicon.ico` - Favicon optimisé multi-résolution
-- **Icônes d'application**:
-  - `icon16.png` - 16x16px pour la barre d'adresse
-  - `icon48.png` - 48x48px pour les onglets
-  - `icon128.png` - 128x128px pour les tiles d'application
-
-Les couleurs de l'identité visuelle suivent un dégradé bleu-vert moderne avec ces codes hexadécimaux principaux:
-- Primaire: `#1976d2` (bleu)
-- Secondaire: `#21CBF3` (cyan)
-- Accent: `#2E7D32` (vert)
-
-### 7.2. Composants visuels premium
-
-Pour garantir une expérience utilisateur moderne et impressionnante, les composants visuels suivants ont été implémentés:
-
-#### Hero Section avec Parallaxe
-Le composant `HeroParallax.js` offre:
-- Effet de parallaxe au défilement 
-- Animation de fondu à l'entrée
-- Call-to-action flottant avec animations
-- Indicateur de défilement animé
-- Support des arrière-plans haute résolution
-
-#### Animations cyclistes
-Le composant `BikeAnimationCanvas.js` génère:
-- Animation vectorielle fluide d'un cycliste
-- Rotation des roues synchronisée
-- Mouvement des pédales réaliste
-- Personnalisation des couleurs et de la vitesse
-- Rendu optimisé via Canvas
-
-#### Visualisation 3D des cols
-Le composant `ColVisualization3D.js` offre:
-- Rendu 3D haute fidélité des profils d'altitude
-- Textures réalistes selon types de surface
-- Éclairage dynamique et ombres
-- Mode économie de batterie adaptatif
-- 5 niveaux de détail pour différentes performances matérielles
-
-### 7.3. Ressources photographiques
-
-Les images haute résolution optimisées sont organisées par catégories:
-- `/images/summits/` - Photos de cols à 1920x1080px
-- `/images/profiles/` - Avatars et photos de profil
-- `/images/social/` - Éléments graphiques pour les fonctionnalités sociales
-- `/images/nutrition/` - Illustrations pour les recettes et conseils nutritionnels
-
-L'ensemble du système graphique est conçu pour s'adapter aux écrans haute résolution (jusqu'à 4K) et respecte les principes de design responsif.
-
-### 7.4. Recommandations pour la page d'accueil
-
-Pour maximiser l'impact visuel de la page d'accueil:
-
-1. **Hero Section**:
-   - Utiliser une photo panoramique de haute qualité d'un col alpin emblématique
-   - Activer l'effet de parallaxe avancé avec HeroParallax
-   - Intégrer un appel à l'action contrasté avec animation au survol
-
-2. **Carte des régions interactive**:
-   - Afficher la carte régionale avec effets de survol
-   - Utiliser RegionMap avec activation des animations
-
-3. **Visualisation 3D**:
-   - Intégrer un aperçu 3D du Col du Galibier comme démonstration
-   - Activer les effets météo pour une immersion maximale
-
-4. **Statistiques animées**:
-   - Utiliser AnimatedStats avec compteurs progressifs
-   - Afficher des statistiques impressionnantes de la communauté
-
-5. **Section communautaire**:
-   - Arrière-plan sombre avec image en overlay à contraste élevé
-   - Boutons d'inscription avec dégradés de couleur et animations
-
-Ces recommandations garantiront une page d'accueil visuellement impressionnante et mémorable pour les utilisateurs.
-
-```
-
-```
-## 8. Processus de déploiement détaillé
-
-### 8.1. Prérequis
-
-- Node.js v18.17.0 ou supérieur
-- npm v9.6.7 ou supérieur
-- Compte Netlify
-- Compte MongoDB Atlas
-- Comptes pour les services tiers (Auth0, Mapbox, OpenWeather, Strava)
-
-### 8.2. Étapes de déploiement
-
-1. **Préparation de l'environnement**
-   ```bash
-   # Cloner le dépôt
-   git clone https://github.com/votre-organisation/velo-altitude.git
-   cd velo-altitude
-   
-   # Installer les dépendances
-   npm install
-   ```
-
-2. **Configuration des variables d'environnement**
-   - Créer les fichiers `.env` dans les répertoires racine et client/ selon les modèles de la section 7
-   - Veiller à remplir toutes les valeurs avec les clés API et identifiants appropriés
-
-3. **Build du projet**
-   ```bash
-   # Construction du projet pour la production
-   CI='' npm run build
-   ```
-
-4. **Déploiement sur Netlify**
-   - Configurer le dépôt sur Netlify en utilisant l'interface graphique ou Netlify CLI
-   - Utiliser la configuration suivante:
-   
-   ```toml
-   # netlify.toml
-   [build]
-     command = "npm run netlify-build"
-     publish = "build"
-     functions = "netlify/functions"
-     
-   [build.environment]
-     NODE_VERSION = "18.17.0"
-     NPM_VERSION = "9.6.7"
-     CI = "false"
-   ```
-   
-   - S'assurer que webpack et webpack-cli sont dans les dépendances principales (pas devDependencies)
-   - Utiliser le script netlify-build dans package.json:
-   
-   ```json
-   "scripts": {
-     "build": "CI='' webpack --mode production",
-     "netlify-build": "CI='' npm install && CI='' npm run build"
-   }
-   ```
-
-5. **Vérification post-déploiement**
-   - Tester toutes les routes et fonctionnalités
-   - Vérifier les performances sur différents appareils
-   - Valider le chargement correct des modules 3D et des visualisations
-
-### 8.3. Solution aux problèmes courants
-
-Pour résoudre les problèmes communs de déploiement avec Netlify et Webpack, voir les documents:
-- `DEPLOYMENT_UPDATE.md` - Historique des problèmes et solutions
-- `NETLIFY_WEBPACK_SOLUTIONS.md` - Solutions concrètes aux problèmes webpack
-- `NETLIFY_WEBPACK_TROUBLESHOOTING.md` - Guide de dépannage détaillé
-
-La solution finale pour le problème "Cannot find module 'webpack'" comprend:
-1. Déplacement de webpack et webpack-cli dans les dependencies principales
-2. Création d'un script netlify-build optimisé avec CI='' 
-3. Configuration explicite des versions Node.js et npm dans netlify.toml
