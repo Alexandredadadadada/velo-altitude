@@ -8,7 +8,7 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   
   return {
-    entry: './src/index.js',
+    entry: './client/src/index.js',
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: isProduction ? 'static/js/[name].[contenthash:8].js' : 'static/js/bundle.js',
@@ -51,7 +51,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './public/index.html',
+        template: './client/public/index.html',
       }),
       isProduction && new MiniCssExtractPlugin({
         filename: 'static/css/[name].[contenthash:8].css',
@@ -62,7 +62,7 @@ module.exports = (env, argv) => {
       isProduction && new CopyPlugin({
         patterns: [
           { 
-            from: 'public', 
+            from: 'client/public', 
             to: '', 
             globOptions: { 
               ignore: ['**/index.html'] 
@@ -74,7 +74,7 @@ module.exports = (env, argv) => {
     resolve: {
       extensions: ['.js', '.jsx', '.json'],
       alias: {
-        '@': path.resolve(__dirname, 'src'),
+        '@': path.resolve(__dirname, 'client/src'),
       },
     },
   };

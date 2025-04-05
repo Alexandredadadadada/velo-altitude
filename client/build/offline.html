@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Velo - Hors ligne</title>
+  <style>
+    body {
+      font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #333;
+    }
+    
+    .offline-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      background-color: #1976d2;
+      color: white;
+      padding: 1rem;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1976d2;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .cycling-animation {
+      margin: 2rem 0;
+      position: relative;
+    }
+    
+    .bike {
+      font-size: 3rem;
+      animation: ride 4s infinite linear;
+      position: relative;
+    }
+    
+    @keyframes ride {
+      0% { transform: translateX(-150px); }
+      100% { transform: translateX(150px); }
+    }
+    
+    .road {
+      height: 5px;
+      background-color: #333;
+      width: 300px;
+      margin: 10px auto;
+      border-radius: 5px;
+    }
+    
+    .cached-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    
+    .feature-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1976d2;
+    }
+    
+    .retry-button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 2rem;
+    }
+    
+    .retry-button:hover {
+      background-color: #1565c0;
+    }
+    
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      width: 100%;
+    }
+    
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      .cached-features {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .feature-card {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Dashboard Velo</div>
+  </div>
+  
+  <div class="offline-container">
+    <h1>Vous êtes actuellement hors ligne</h1>
+    <p>La connexion internet semble indisponible. Certaines fonctionnalités de Dashboard Velo sont disponibles hors ligne, mais d'autres nécessitent une connexion internet active.</p>
+    
+    <div class="cycling-animation">
+      <div class="bike">🚴</div>
+      <div class="road"></div>
+    </div>
+    
+    <p>Voici ce que vous pouvez toujours consulter :</p>
+    
+    <div class="cached-features">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Statistiques</h3>
+        <p>Consultez vos dernières statistiques d'entraînement sauvegardées.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>Cols favoris</h3>
+        <p>Accédez à vos cols favoris enregistrés en cache.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Programme</h3>
+        <p>Consultez votre dernier programme d'entraînement.</p>
+      </div>
+    </div>
+    
+    <p>Pour accéder à toutes les fonctionnalités, veuillez vous reconnecter à internet.</p>
+    
+    <button class="retry-button" onclick="window.location.reload()">Réessayer la connexion</button>
+  </div>
+  
+  <div class="footer">
+    © 2025 Dashboard Velo - Grand Est Cyclisme
+  </div>
+  
+  <script>
+    // Vérifier périodiquement la connexion internet
+    setInterval(() => {
+      if (navigator.onLine) {
+        window.location.reload();
+      }
+    }, 5000);
+  </script>
+</body>
+</html>

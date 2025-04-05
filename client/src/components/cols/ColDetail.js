@@ -10,7 +10,7 @@ import {
   NavigationRounded as NavigationIcon,
   LocationOn as LocationIcon,
   Hotel as HotelIcon,
-  LineChart as LineChartIcon,
+  ShowChart as LineChartIcon,
   ThreeDRotation as ThreeDIcon,
   AccessTime as AccessTimeIcon,
   Flight as FlightIcon,

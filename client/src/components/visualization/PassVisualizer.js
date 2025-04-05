@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Map, Source, Layer } from 'react-map-gl';
+import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -179,7 +179,7 @@ const PassVisualizer = ({ passId }) => {
           <div className="pass-visualizer-content">
             {activeView === VIEW_TYPES.MAP_2D && (
               <div className="pass-visualizer-map">
-                <Map
+                <ReactMapGL
                   {...viewState}
                   onMove={evt => setViewState(evt.viewState)}
                   style={{ width: '100%', height: '100%' }}
@@ -205,7 +205,7 @@ const PassVisualizer = ({ passId }) => {
                       <div className="map-marker-label">{point.name}</div>
                     </div>
                   ))}
-                </Map>
+                </ReactMapGL>
                 
                 {/* Légende */}
                 <div className="map-legend">

@@ -8,11 +8,11 @@
  */
 
 // Import des différents ensembles de programmes
-import { classicPrograms } from './classicPrograms';
-import { endurancePrograms } from './endurancePrograms';
+import classicPrograms from './classicPrograms';
+import endurancePrograms from './endurancePrograms';
 import { remainingTrainingPrograms } from './remainingTrainingPrograms';
 import { remainingTrainingPrograms2 } from './remainingTrainingPrograms2';
-import { remainingTrainingPrograms3 } from './remainingTrainingPrograms3';
+import remainingTrainingPrograms3 from './remainingTrainingPrograms3';
 import { specialTrainingPrograms } from './specialTrainingPrograms';
 import { specialTrainingPrograms2 } from './specialTrainingPrograms2';
 import { specialTrainingPrograms3 } from './specialTrainingPrograms3';

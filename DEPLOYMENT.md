@@ -1,6 +1,6 @@
-# Guide de Déploiement - Dashboard-Velo
+# Guide de Déploiement - Velo-Altitude
 
-Ce document détaille les étapes nécessaires pour déployer l'application Dashboard-Velo en environnement de production, configurer les variables d'environnement requises, effectuer des sauvegardes et réaliser les vérifications post-déploiement.
+Ce document détaille les étapes nécessaires pour déployer l'application Velo-Altitude en environnement de production, configurer les variables d'environnement requises, effectuer des sauvegardes et réaliser les vérifications post-déploiement.
 
 ## Table des matières
 
@@ -48,7 +48,7 @@ Avant de commencer le déploiement, assurez-vous de disposer des éléments suiv
 
 1. **Cloner le dépôt**
    ```bash
-   git clone https://github.com/dashboard-velo/website-final.git
+   git clone https://github.com/velo-altitude/website-final.git
    cd website-final
    ```
 
@@ -128,7 +128,7 @@ Avant de commencer le déploiement, assurez-vous de disposer des éléments suiv
 
 4. **Activer la configuration Nginx**
    ```bash
-   sudo ln -s /etc/nginx/sites-available/dashboard-velo.conf /etc/nginx/sites-enabled/
+   sudo ln -s /etc/nginx/sites-available/velo-altitude.conf /etc/nginx/sites-enabled/
    sudo nginx -t
    sudo systemctl reload nginx
    ```
@@ -230,7 +230,7 @@ Les récentes mises à jour de l'interface utilisateur nécessitent une attentio
            warningDiv.style.color = '#000';
            warningDiv.style.textAlign = 'center';
            warningDiv.style.zIndex = '9999';
-           warningDiv.innerHTML = 'Votre navigateur ne prend pas en charge certaines fonctionnalités 3D de Dashboard-Velo. Veuillez utiliser un navigateur plus récent.';
+           warningDiv.innerHTML = 'Votre navigateur ne prend pas en charge certaines fonctionnalités 3D de Velo-Altitude. Veuillez utiliser un navigateur plus récent.';
            document.body.appendChild(warningDiv);
          });
        }
@@ -323,7 +323,7 @@ Les récentes mises à jour de l'interface utilisateur nécessitent une attentio
    ```javascript
    module.exports = {
      apps: [{
-       name: "dashboard-velo-api",
+       name: "velo-altitude-api",
        script: "./server.js",
        instances: "max",
        exec_mode: "cluster",
@@ -360,7 +360,7 @@ Les variables d'environnement suivantes doivent être configurées dans le fichi
 |----------|-------------|---------|
 | `NODE_ENV` | Environnement d'exécution | `production` |
 | `PORT` | Port du serveur backend | `5000` |
-| `MONGODB_URI` | URI de connexion MongoDB | `mongodb://user:password@localhost:27017/dashboard-velo` |
+| `MONGODB_URI` | URI de connexion MongoDB | `mongodb://user:password@localhost:27017/velo-altitude` |
 | `SESSION_SECRET` | Secret pour les sessions | `votre_secret_très_complexe` |
 | `CORS_ORIGIN` | Origine autorisée pour CORS | `https://votre-domaine.com` |
 
@@ -391,7 +391,7 @@ Les variables d'environnement suivantes doivent être configurées dans le fichi
 
 1. **Sauvegarde manuelle avec MongoDB**
    ```bash
-   mongodump --uri="mongodb://user:password@localhost:27017/dashboard-velo" --out=/chemin/vers/backup/$(date +"%Y-%m-%d")
+   mongodump --uri="mongodb://user:password@localhost:27017/velo-altitude" --out=/chemin/vers/backup/$(date +"%Y-%m-%d")
    ```
 
 2. **Script de sauvegarde automatique**
@@ -405,7 +405,7 @@ Les variables d'environnement suivantes doivent être configurées dans le fichi
    mkdir -p $BACKUP_DIR
    
    # Effectuer la sauvegarde
-   mongodump --uri="mongodb://user:password@localhost:27017/dashboard-velo" --out=$BACKUP_DIR/$DATE
+   mongodump --uri="mongodb://user:password@localhost:27017/velo-altitude" --out=$BACKUP_DIR/$DATE
    
    # Compresser la sauvegarde
    tar -zcvf $BACKUP_DIR/$DATE.tar.gz $BACKUP_DIR/$DATE
@@ -435,13 +435,13 @@ Les variables d'environnement suivantes doivent être configurées dans le fichi
    tar -zxvf backup_2023-04-15.tar.gz
    
    # Restaurer la base de données
-   mongorestore --uri="mongodb://user:password@localhost:27017/dashboard-velo" --drop /chemin/vers/backup/2023-04-15/dashboard-velo
+   mongorestore --uri="mongodb://user:password@localhost:27017/velo-altitude" --drop /chemin/vers/backup/2023-04-15/velo-altitude
    ```
 
 2. **Vérification de la restauration**
    ```bash
    # Vérifier que les collections sont bien restaurées
-   mongo mongodb://user:password@localhost:27017/dashboard-velo --eval "db.getCollectionNames()"
+   mongo mongodb://user:password@localhost:27017/velo-altitude --eval "db.getCollectionNames()"
    ```
 
 ### Sauvegarde des fichiers d'application
@@ -452,7 +452,7 @@ Les variables d'environnement suivantes doivent être configurées dans le fichi
    tar -zcvf /chemin/vers/backups/app_$(date +"%Y-%m-%d").tar.gz /chemin/vers/website-final --exclude="node_modules" --exclude=".git"
    
    # Sauvegarde des fichiers de configuration nginx
-   cp /etc/nginx/sites-available/dashboard-velo.conf /chemin/vers/backups/nginx/
+   cp /etc/nginx/sites-available/velo-altitude.conf /chemin/vers/backups/nginx/
    ```
 
 ## Vérifications post-déploiement
@@ -519,7 +519,7 @@ Après le déploiement, effectuez les vérifications suivantes pour vous assurer
 5. **Vérification des logs**
    ```bash
    # Vérifier les logs de l'application
-   pm2 logs dashboard-velo-api
+   pm2 logs velo-altitude-api
    
    # Vérifier les logs Nginx
    tail -f /var/log/nginx/error.log
@@ -559,7 +559,7 @@ Après le déploiement, effectuez les vérifications suivantes pour vous assurer
 - **PM2 ne fonctionne pas** : Vérifiez l'état de PM2
   ```bash
   pm2 status
-  pm2 restart dashboard-velo-api
+  pm2 restart velo-altitude-api
   ```
 - **Configuration Nginx incorrecte** : Vérifiez les logs Nginx
   ```bash
@@ -595,7 +595,7 @@ Après le déploiement, effectuez les vérifications suivantes pour vous assurer
    - **RAM ou GPU insuffisants** : Activez le mode performance
      ```javascript
      // Ajouter au localStorage via la console navigateur
-     localStorage.setItem('dashboard-velo-performance-mode', 'low');
+     localStorage.setItem('velo-altitude-performance-mode', 'low');
      ```
    - **Animations saccadées** : Limitez le framerate
      ```bash
@@ -629,7 +629,7 @@ Après le déploiement, effectuez les vérifications suivantes pour vous assurer
      ```
    - **Interactions utilisateur non enregistrées** : Vérifiez les logs d'erreurs API
      ```bash
-     grep -i "community\|activity\|interaction" /var/log/dashboard-velo-api.log
+     grep -i "community\|activity\|interaction" /var/log/velo-altitude-api.log
      ```
 
 5. **Problèmes généraux de performance pour les nouvelles fonctionnalités**
@@ -646,5 +646,61 @@ Après le déploiement, effectuez les vérifications suivantes pour vous assurer
    - **Activer le mode de débogage**
      ```javascript
      // Ajouter au localStorage via la console navigateur
-     localStorage.setItem('dashboard-velo-debug-mode', 'true');
+     localStorage.setItem('velo-altitude-debug-mode', 'true');
      ```
+
+## Déploiement de Velo-Altitude
+
+### État actuel du déploiement
+- **Date de dernière tentative** : 05 avril 2025
+- **Statut** : En cours
+- **Plateforme** : Netlify
+
+### Problèmes identifiés et solutions
+
+#### Structure du projet et déploiement
+La structure de notre projet présente une particularité : les fichiers React se trouvent dans le dossier `client/`, mais le dépôt GitHub actuel ne reflète pas cette structure. Cela cause des erreurs lors du déploiement automatique via GitHub.
+
+**Erreur principale rencontrée** :
+```
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/opt/build/repo/package.json'
+```
+
+#### Solutions possibles
+
+1. **Configuration de Netlify** :
+   - Définir "Base directory" sur `client` dans les paramètres de build
+   - Utiliser `npm run build` comme commande de build
+   - Définir "Publish directory" sur `build`
+
+2. **Restructuration du dépôt GitHub** :
+   - Mettre à jour le dépôt pour qu'il reflète la structure locale avec le dossier `client`
+   - Pousser les changements vers GitHub
+
+3. **Déploiement direct par ZIP** (méthode recommandée) :
+   - Générer le build localement : `npm run build` dans le dossier `client`
+   - Compresser le dossier `build` généré
+   - Déployer manuellement via l'interface de Netlify en déposant le ZIP
+
+### Variables d'environnement requises
+
+Les variables suivantes doivent être configurées dans Netlify :
+- `REACT_APP_BASE_URL=https://velo-altitude.com`
+- `REACT_APP_BRAND_NAME=Velo-Altitude`
+- `REACT_APP_API_URL=https://api.velo-altitude.com`
+- `AUTH0_BASE_URL=https://velo-altitude.com`
+- `AUTH0_AUDIENCE=https://api.velo-altitude.com`
+- `AUTH0_ISSUER_BASE_URL=https://velo-altitude.eu.auth0.com`
+- `MAPBOX_TOKEN=your_token_here`
+- `OPENWEATHER_API_KEY=your_key_here`
+
+### Prochaines étapes
+
+1. Finaliser le déploiement via la méthode ZIP
+2. Vérifier les modules après déploiement :
+   - Explorateur de Cols avec données météo
+   - Les 7 Majeurs avec visualisation 3D
+   - Module d'entraînement (Calculateur FTP et HIIT)
+   - Module Nutrition avec les 40 recettes
+3. Configurer le domaine personnalisé sur Netlify
+4. Résoudre la divergence entre le dépôt GitHub et la structure locale

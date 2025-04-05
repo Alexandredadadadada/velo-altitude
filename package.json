@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node ./server/server.js",
     "dev": "nodemon ./server/server.js",
-    "build": "webpack --mode production",
+    "build": "CI=false webpack --mode production",
     "lint": "eslint .",
     "test": "jest",
     "check-deps": "node ./scripts/check-dependencies.js",
-    "netlify-build": "npm install && npm run build"
+    "netlify-build": "CI=false npm install && CI=false npm run build"
   },
   "keywords": [
     "cyclisme",
@@ -79,6 +79,8 @@
     "recharts": "^2.12.1",
     "three": "^0.161.0",
     "web-vitals": "^4.2.4",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^5.0.0",
     "whatwg-fetch": "^3.6.20",
     "winston": "^3.17.0"
   },
@@ -108,8 +110,6 @@
     "postcss-loader": "^8.1.1",
     "style-loader": "^4.0.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.98.0",
-    "webpack-cli": "^5.0.0",
     "webpack-manifest-plugin": "^5.0.1",
     "workbox-webpack-plugin": "^7.3.0"
   },

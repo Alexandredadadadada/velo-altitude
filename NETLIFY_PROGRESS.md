@@ -1,7 +1,16 @@
-# Progression du Déploiement Netlify - Dashboard-Velo.com
+# Progression du Déploiement Netlify - Velo-Altitude.com
 
 **Date de mise à jour:** 05/04/2025  
 **Progression globale:** 100%
+
+## Dernières Actions de Déploiement
+
+| Action | Date | Statut | Détails |
+|--------|------|--------|---------|
+| Création du fichier index.html dans client/build | 05/04/2025 | ✅ Complété | Résolution de l'erreur 404 sur Netlify |
+| Déploiement via CLI Netlify | 05/04/2025 | ✅ Complété | Utilisation de `npx netlify deploy --prod --dir=client/build` |
+| Configuration des redirections SPA | 05/04/2025 | ✅ Complété | Configuration dans netlify.toml pour gérer les routes React |
+| Intégration continue GitHub | 05/04/2025 | ✅ Configuré | Déploiement automatique lors des push sur la branche main |
 
 ## Fonctions Netlify Implémentées (10/10)
 

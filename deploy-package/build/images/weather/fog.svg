@@ -1,0 +1,6 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#f8fafc"/>
+    <circle cx="80" cy="80" r="40" fill="#fde68a"/>
+    <path d="M 120 100 Q 160 70 170 110 Q 190 110 190 130 Q 190 150 170 150 L 100 150 Q 80 150 80 130 Q 80 110 100 110 L 120 100" fill="#cbd5e1"/>
+    <text x="50%" y="90%" font-family="Arial" font-size="16" fill="#475569" text-anchor="middle">Météo</text>
+  </svg>

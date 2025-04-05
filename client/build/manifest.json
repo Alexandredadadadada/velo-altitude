@@ -1,0 +1,46 @@
+{
+  "short_name": "Velo-Altitude",
+  "name": "Velo-Altitude - Le dashboard vélo ultime",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff",
+  "description": "Visualisez, planifiez et partagez vos défis cyclistes avec des visualisations 3D exclusives",
+  "orientation": "portrait-primary",
+  "categories": ["sports", "fitness", "maps", "navigation", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "images/screenshots/home.jpg",
+      "type": "image/jpeg",
+      "sizes": "1280x720"
+    },
+    {
+      "src": "images/screenshots/cols.jpg",
+      "type": "image/jpeg",
+      "sizes": "1280x720"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://velo-altitude.com"
+    }
+  ]
+}

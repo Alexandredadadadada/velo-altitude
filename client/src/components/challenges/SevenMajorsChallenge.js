@@ -50,7 +50,7 @@ const SevenMajorsChallenge = () => {
     // Actions
     setActiveTab, setPage, setFilters, selectCol, removeCol, setChallengeName,
     setIsPublic, viewColDetails, closeColDetails, saveChallenge, markColAsCompleted,
-    scheduleAscent, showScheduleDialog as openScheduleDialog, closeScheduleDialog,
+    scheduleAscent, openScheduleDialog, closeScheduleDialog,
     deleteChallenge, likeChallenge, loadChallenge, clearNotification, exportTrack,
     setExportFormat
   } = useChallenge();

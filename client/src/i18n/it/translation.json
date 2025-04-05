@@ -1,0 +1,49 @@
+{
+  "common": {
+    "welcome": "Benvenuto su Velo-Altitude",
+    "loading": "Caricamento in corso...",
+    "error": "Si è verificato un errore",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "create": "Crea",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "sort": "Ordina",
+    "back": "Indietro",
+    "next": "Avanti",
+    "logout": "Esci",
+    "login": "Accedi",
+    "register": "Registrati",
+    "profile": "Profilo",
+    "settings": "Impostazioni"
+  },
+  "navigation": {
+    "home": "Home",
+    "cols": "Catalogo Colli",
+    "training": "Allenamento",
+    "nutrition": "Nutrizione",
+    "routes": "Pianificatore",
+    "social": "Hub Sociale",
+    "community": "Comunità",
+    "mountain": "I 7 Maggiori"
+  },
+  "home": {
+    "heroTitle": "Affronta le sfide ciclistiche più impegnative d'Europa",
+    "heroSubtitle": "Scopri, pianifica e conquista i passi più mitici con Velo-Altitude",
+    "exploreButton": "Esplora i Colli",
+    "featuresTitle": "Una piattaforma completa per ciclisti appassionati",
+    "joinCommunity": "Unisciti alla comunità"
+  },
+  "training": {
+    "dashboardTitle": "Dashboard Allenamento",
+    "ftpCalculator": "Calcolatore FTP",
+    "workouts": "Allenamenti",
+    "hiitBuilder": "Generatore HIIT",
+    "trainingPlans": "Piani di Allenamento",
+    "metrics": "Metriche di Performance",
+    "calculate": "Calcola",
+    "trainingZones": "Zone di Allenamento"
+  }
+}

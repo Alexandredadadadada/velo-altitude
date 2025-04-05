@@ -1,0 +1,232 @@
+.col-filter-bar {
+  margin-bottom: 2rem;
+}
+
+.filter-paper {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-chip {
+  background-color: #e3f2fd;
+}
+
+.filter-chip:hover {
+  background-color: #bbdefb;
+}
+
+@media (max-width: 768px) {
+  .filter-paper {
+    padding: 1rem;
+  }
+}
+
+.col-weather-map-container {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.col-weather-popup {
+  min-width: 200px;
+  padding: 5px;
+}
+
+.col-weather-popup h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #1e3a8a;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 5px;
+}
+
+.weather-info {
+  margin-top: 10px;
+  background-color: #f8fafc;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.weather-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.update-time {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 8px !important;
+}
+
+.col-actions {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.view-col-link {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.view-col-link:hover {
+  background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .col-weather-map-container {
+    margin-bottom: 1rem;
+  }
+  
+  .col-weather-popup {
+    min-width: 180px;
+  }
+}
+
+.col-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.col-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.col-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.altitude-chip {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.difficulty-box {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.weather-summary {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.weather-box {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.route-box {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 3px solid #2196f3;
+}
+
+@media (max-width: 768px) {
+  .col-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .altitude-chip {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
+/* Styles pour la page ColsExplorer */
+.cols-explorer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.cols-header {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  border-radius: 8px;
+}
+
+.cols-header h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+}
+
+.help-paper {
+  padding: 2rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+}
+
+.help-list {
+  padding-left: 1.5rem;
+}
+
+.help-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.help-list strong {
+  color: #1e3a8a;
+}
+
+/* Styles pour les onglets */
+.MuiTab-root {
+  min-height: 64px;
+  font-weight: 600;
+}
+
+.MuiTab-root .MuiSvgIcon-root {
+  margin-bottom: 4px;
+}
+
+/* Styles pour les écrans mobiles */
+@media (max-width: 768px) {
+  .cols-explorer-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .cols-header {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .help-paper {
+    padding: 1.5rem 1rem;
+  }
+  
+  .MuiTab-root {
+    min-height: 56px;
+    font-size: 0.75rem;
+  }
+}
+
+
+/*# sourceMappingURL=948.aa777c9f.chunk.css.map*/

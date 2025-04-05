@@ -1,0 +1,65 @@
+{
+  "common": {
+    "welcome": "Welcome to Velo-Altitude",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "back": "Back",
+    "next": "Next",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "navigation": {
+    "home": "Home",
+    "cols": "Cols Catalog",
+    "training": "Training",
+    "nutrition": "Nutrition",
+    "routes": "Route Planner",
+    "social": "Social Hub",
+    "community": "Community",
+    "mountain": "The 7 Majors"
+  },
+  "home": {
+    "heroTitle": "Take on Europe's most demanding cycling challenges",
+    "heroSubtitle": "Discover, plan and conquer the most mythical mountain passes with Velo-Altitude",
+    "exploreButton": "Explore Cols",
+    "featuresTitle": "A complete platform for passionate cyclists",
+    "joinCommunity": "Join the community"
+  },
+  "training": {
+    "dashboardTitle": "Training Dashboard",
+    "ftpCalculator": "FTP Calculator",
+    "workouts": "Workouts",
+    "hiitBuilder": "HIIT Generator",
+    "trainingPlans": "Training Plans",
+    "metrics": "Performance Metrics",
+    "calculate": "Calculate",
+    "trainingZones": "Training Zones"
+  },
+  "ftpCalculator": {
+    "title": "FTP Calculator",
+    "description": "Calculate your Functional Threshold Power using different methods",
+    "test20min": "20-minute Test",
+    "test60min": "60-minute Test",
+    "testRamp": "Ramp Test",
+    "test8min": "8-minute Test",
+    "test5min": "5-minute Test",
+    "lactateThreshold": "Lactate Threshold",
+    "averagePower": "Average Power",
+    "weight": "Weight",
+    "calculateButton": "Calculate my FTP",
+    "result": "Your FTP is",
+    "wattsPerKg": "watts/kg",
+    "enterPower": "Enter your average power"
+  }
+}

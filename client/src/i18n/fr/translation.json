@@ -1,0 +1,132 @@
+{
+  "common": {
+    "welcome": "Bienvenue sur Velo-Altitude",
+    "loading": "Chargement en cours...",
+    "error": "Une erreur est survenue",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "create": "Créer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "back": "Retour",
+    "next": "Suivant",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "profile": "Profil",
+    "settings": "Paramètres"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "cols": "Catalogue de cols",
+    "training": "Entraînement",
+    "nutrition": "Nutrition",
+    "routes": "Planificateur",
+    "social": "Hub Social",
+    "community": "Communauté",
+    "mountain": "Les 7 Majeurs"
+  },
+  "home": {
+    "heroTitle": "Relevez les défis cyclistes les plus exigeants d'Europe",
+    "heroSubtitle": "Découvrez, planifiez et conquérez les cols les plus mythiques avec Velo-Altitude",
+    "exploreButton": "Explorer les cols",
+    "featuresTitle": "Une plateforme complète pour les cyclistes passionnés",
+    "joinCommunity": "Rejoindre la communauté"
+  },
+  "cols": {
+    "catalogTitle": "Catalogue de cols",
+    "searchPlaceholder": "Rechercher par nom, région ou altitude",
+    "filterByRegion": "Filtrer par région",
+    "filterByDifficulty": "Filtrer par difficulté",
+    "sortByAltitude": "Trier par altitude",
+    "sortByDifficulty": "Trier par difficulté",
+    "detailsButton": "Voir les détails",
+    "length": "Longueur",
+    "altitude": "Altitude",
+    "gradient": "Pente moyenne",
+    "difficulty": "Difficulté"
+  },
+  "training": {
+    "dashboardTitle": "Tableau de bord d'entraînement",
+    "ftpCalculator": "Calculateur FTP",
+    "workouts": "Séances d'entraînement",
+    "hiitBuilder": "Générateur HIIT",
+    "trainingPlans": "Plans d'entraînement",
+    "metrics": "Métriques de performance",
+    "calculate": "Calculer",
+    "trainingZones": "Zones d'entraînement"
+  },
+  "nutrition": {
+    "dashboardTitle": "Dashboard Nutrition",
+    "recipes": "Recettes",
+    "mealPlanner": "Planificateur de repas",
+    "nutritionCalculator": "Calculateur nutritionnel",
+    "beforeRide": "Avant l'effort",
+    "duringRide": "Pendant l'effort",
+    "afterRide": "Récupération",
+    "hydration": "Hydratation"
+  },
+  "routes": {
+    "plannerTitle": "Planificateur d'itinéraires",
+    "startPoint": "Point de départ",
+    "endPoint": "Point d'arrivée",
+    "addWaypoint": "Ajouter un point de passage",
+    "includeCols": "Inclure des cols",
+    "saveRoute": "Enregistrer l'itinéraire",
+    "shareRoute": "Partager",
+    "exportGpx": "Exporter en GPX",
+    "routeDetails": "Détails de l'itinéraire"
+  },
+  "social": {
+    "hubTitle": "Hub Social Velo-Altitude",
+    "upcomingEvents": "Événements à venir",
+    "popularGroups": "Groupes populaires",
+    "followCyclists": "Cyclistes à suivre",
+    "challenges": "Défis communautaires",
+    "joinChallenge": "Rejoindre un défi"
+  },
+  "profile": {
+    "title": "Profil",
+    "personalInfo": "Informations personnelles",
+    "achievements": "Accomplissements",
+    "stats": "Statistiques",
+    "favoriteRoutes": "Parcours favoris",
+    "editProfile": "Modifier le profil",
+    "height": "Taille",
+    "weight": "Poids",
+    "ftp": "FTP",
+    "level": "Niveau"
+  },
+  "ftpCalculator": {
+    "title": "Calculateur de FTP",
+    "description": "Calculez votre Functional Threshold Power avec différentes méthodes",
+    "test20min": "Test 20 minutes",
+    "test60min": "Test 60 minutes",
+    "testRamp": "Test Ramp",
+    "test8min": "Test 8 minutes",
+    "test5min": "Test 5 minutes",
+    "lactateThreshold": "Seuil Lactate",
+    "averagePower": "Puissance moyenne",
+    "weight": "Poids",
+    "calculateButton": "Calculer mon FTP",
+    "result": "Votre FTP est de",
+    "wattsPerKg": "watts/kg",
+    "enterPower": "Entrez votre puissance moyenne"
+  },
+  "hiit": {
+    "title": "Générateur de séances HIIT",
+    "description": "Créez des séances d'entraînement par intervalles à haute intensité",
+    "intervals": "Intervalles",
+    "work": "Travail",
+    "rest": "Récupération",
+    "duration": "Durée",
+    "intensity": "Intensité",
+    "createWorkout": "Créer une séance",
+    "saveWorkout": "Enregistrer cette séance",
+    "ladderIntervals": "Intervalles en échelle",
+    "overUnderIntervals": "Intervalles over-under"
+  }
+}

@@ -16,7 +16,7 @@ import AnimatedNavbar from './components/navigation/AnimatedNavbar';
 const Home = lazy(() => import('./pages/Home'));
 const ColsRoutes = lazy(() => import('./pages/cols/ColsRoutes'));
 const TrainingDashboard = lazy(() => import('./pages/TrainingDashboard'));
-const NutritionDashboard = lazy(() => import('./pages/NutritionDashboard'));
+const NutritionPage = lazy(() => import('./pages/NutritionPage'));
 const RoutePlanner = lazy(() => import('./pages/RoutePlanner'));
 const SocialHub = lazy(() => import('./pages/SocialHub'));
 const Profile = lazy(() => import('./pages/Profile'));
@@ -106,7 +106,7 @@ function App() {
                           <Route path="/" element={<Home />} />
                           <Route path="/cols/*" element={<ColsRoutes />} />
                           <Route path="/training/*" element={<TrainingDashboard />} />
-                          <Route path="/nutrition/*" element={<NutritionDashboard />} />
+                          <Route path="/nutrition/*" element={<NutritionPage />} />
                           <Route path="/routes/*" element={<RoutePlanner />} />
                           <Route path="/social/*" element={<SocialHub />} />
                           <Route path="/community/*" element={<CommunityRoutes />} />

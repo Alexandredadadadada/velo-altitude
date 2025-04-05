@@ -3,18 +3,21 @@
  * Détecte automatiquement les capacités de l'appareil et ajuste la qualité du rendu
  */
 
+// Exporter les niveaux de performance pour pouvoir les utiliser dans d'autres fichiers
+export const PERF_LEVELS = {
+  ULTRA_LOW: 0,   // Appareils très anciens ou très contraints
+  LOW: 1,         // Appareils d'entrée de gamme ou anciens
+  MEDIUM_LOW: 2,  // Appareils intermédiaires faibles
+  MEDIUM: 3,      // Appareils moyens
+  MEDIUM_HIGH: 4, // Appareils intermédiaires puissants
+  HIGH: 5,        // Appareils haut de gamme
+  ULTRA_HIGH: 6   // Appareils haut de gamme
+};
+
 class PerformanceDetector {
   constructor() {
     // Niveaux de performance
-    this.PERF_LEVELS = {
-      ULTRA_LOW: 0,   // Appareils très anciens ou très contraints
-      LOW: 1,         // Appareils d'entrée de gamme ou anciens
-      MEDIUM_LOW: 2,  // Appareils intermédiaires faibles
-      MEDIUM: 3,      // Appareils moyens
-      MEDIUM_HIGH: 4, // Appareils intermédiaires puissants
-      HIGH: 5,        // Appareils puissants
-      ULTRA_HIGH: 6   // Appareils haut de gamme
-    };
+    this.PERF_LEVELS = PERF_LEVELS;
     
     // Niveaux de qualité correspondants
     this.QUALITY_PRESETS = {
@@ -127,7 +130,7 @@ class PerformanceDetector {
     this.storageKey = 'gec_performance_settings';
     
     // Niveau par défaut en attendant la détection
-    this.defaultLevel = this.PERF_LEVELS.MEDIUM;
+    this.defaultLevel = PERF_LEVELS.MEDIUM;
   }
   
   /**
@@ -195,7 +198,7 @@ class PerformanceDetector {
       } catch (error) {
         console.error('Erreur lors de la détection de performance:', error);
         // En cas d'erreur, utiliser un niveau par défaut sécurisé
-        this.perfLevel = this.PERF_LEVELS.MEDIUM_LOW;
+        this.perfLevel = PERF_LEVELS.MEDIUM_LOW;
         this.isDetecting = false;
         
         if (this.onDetectionComplete) this.onDetectionComplete(this.perfLevel);
@@ -258,7 +261,7 @@ class PerformanceDetector {
    * @returns {Object} Nouveaux réglages
    */
   setQualityLevel(level, save = true) {
-    if (!Object.values(this.PERF_LEVELS).includes(level)) {
+    if (!Object.values(PERF_LEVELS).includes(level)) {
       console.error('Niveau de qualité invalide');
       return this.getQualitySettings();
     }
@@ -322,7 +325,7 @@ class PerformanceDetector {
     }
     
     // Démarrer avec les paramètres de qualité basse, quelle que soit la détection
-    const lowQualitySettings = this._getLevelPreset(this.PERF_LEVELS.LOW);
+    const lowQualitySettings = this._getLevelPreset(PERF_LEVELS.LOW);
     
     // Précharger avec la qualité basse
     try {
@@ -332,13 +335,13 @@ class PerformanceDetector {
       const targetSettings = this.getQualitySettings();
       
       // Si le niveau cible est supérieur au niveau bas
-      if (this.perfLevel > this.PERF_LEVELS.LOW) {
+      if (this.perfLevel > PERF_LEVELS.LOW) {
         // Calculer les paliers intermédiaires pour une transition fluide
-        const steps = this.perfLevel - this.PERF_LEVELS.LOW;
+        const steps = this.perfLevel - PERF_LEVELS.LOW;
         
         for (let i = 1; i <= steps; i++) {
           // Niveau intermédiaire
-          const intermediateLevel = this.PERF_LEVELS.LOW + i;
+          const intermediateLevel = PERF_LEVELS.LOW + i;
           const intermediateSettings = this._getLevelPreset(intermediateLevel);
           
           // Pause pour permettre au rendu de se stabiliser
@@ -485,23 +488,23 @@ class PerformanceDetector {
   _determineLevelFromFPS(fpsResult, initialLevel) {
     if (!fpsResult.supported) {
       // WebGL non supporté, utiliser le niveau minimum
-      return this.PERF_LEVELS.ULTRA_LOW;
+      return PERF_LEVELS.ULTRA_LOW;
     }
     
     const { avgFps } = fpsResult;
     
     // Échelle progressive des FPS pour les différents niveaux
-    if (avgFps < 20) return this.PERF_LEVELS.ULTRA_LOW;
-    if (avgFps < 30) return this.PERF_LEVELS.LOW;
-    if (avgFps < 40) return this.PERF_LEVELS.MEDIUM_LOW;
-    if (avgFps < 50) return this.PERF_LEVELS.MEDIUM;
-    if (avgFps < 55) return this.PERF_LEVELS.MEDIUM_HIGH;
-    if (avgFps < 59) return this.PERF_LEVELS.HIGH;
+    if (avgFps < 20) return PERF_LEVELS.ULTRA_LOW;
+    if (avgFps < 30) return PERF_LEVELS.LOW;
+    if (avgFps < 40) return PERF_LEVELS.MEDIUM_LOW;
+    if (avgFps < 50) return PERF_LEVELS.MEDIUM;
+    if (avgFps < 55) return PERF_LEVELS.MEDIUM_HIGH;
+    if (avgFps < 59) return PERF_LEVELS.HIGH;
     
     // Si les FPS sont excellents, considérer le niveau initial pour décider ULTRA_HIGH
-    return avgFps >= 59 && initialLevel >= this.PERF_LEVELS.HIGH 
-      ? this.PERF_LEVELS.ULTRA_HIGH 
-      : this.PERF_LEVELS.HIGH;
+    return avgFps >= 59 && initialLevel >= PERF_LEVELS.HIGH 
+      ? PERF_LEVELS.ULTRA_HIGH 
+      : PERF_LEVELS.HIGH;
   }
   
   /**
@@ -513,24 +516,24 @@ class PerformanceDetector {
   _adjustForMemoryAndResolution(level) {
     // Ajustements supplémentaires basés sur la mémoire
     if (navigator.deviceMemory) {
-      if (navigator.deviceMemory <= 2 && level > this.PERF_LEVELS.MEDIUM) {
-        level = this.PERF_LEVELS.MEDIUM;
+      if (navigator.deviceMemory <= 2 && level > PERF_LEVELS.MEDIUM) {
+        level = PERF_LEVELS.MEDIUM;
       }
-      if (navigator.deviceMemory <= 1 && level > this.PERF_LEVELS.LOW) {
-        level = this.PERF_LEVELS.LOW;
+      if (navigator.deviceMemory <= 1 && level > PERF_LEVELS.LOW) {
+        level = PERF_LEVELS.LOW;
       }
     }
     
     // Ajustements basés sur la résolution d'écran
     const pixelCount = window.screen.width * window.screen.height;
-    if (pixelCount > 2560 * 1440 && level < this.PERF_LEVELS.MEDIUM_HIGH) {
+    if (pixelCount > 2560 * 1440 && level < PERF_LEVELS.MEDIUM_HIGH) {
       // Écrans haute résolution ont besoin d'au moins MEDIUM_HIGH pour un bon rendu
-      level = this.PERF_LEVELS.MEDIUM_HIGH;
+      level = PERF_LEVELS.MEDIUM_HIGH;
     }
     
     // Protection contre les appareils à très haute résolution mais faibles performances
     if (pixelCount > 3840 * 2160 && navigator.deviceMemory && navigator.deviceMemory <= 4) {
-      level = Math.min(level, this.PERF_LEVELS.MEDIUM_HIGH);
+      level = Math.min(level, PERF_LEVELS.MEDIUM_HIGH);
     }
     
     return level;
@@ -544,19 +547,19 @@ class PerformanceDetector {
    */
   _getLevelPreset(level) {
     switch (level) {
-      case this.PERF_LEVELS.ULTRA_LOW:
+      case PERF_LEVELS.ULTRA_LOW:
         return this.QUALITY_PRESETS.ULTRA_LOW;
-      case this.PERF_LEVELS.LOW:
+      case PERF_LEVELS.LOW:
         return this.QUALITY_PRESETS.LOW;
-      case this.PERF_LEVELS.MEDIUM_LOW:
+      case PERF_LEVELS.MEDIUM_LOW:
         return this.QUALITY_PRESETS.MEDIUM_LOW;
-      case this.PERF_LEVELS.MEDIUM:
+      case PERF_LEVELS.MEDIUM:
         return this.QUALITY_PRESETS.MEDIUM;
-      case this.PERF_LEVELS.MEDIUM_HIGH:
+      case PERF_LEVELS.MEDIUM_HIGH:
         return this.QUALITY_PRESETS.MEDIUM_HIGH;
-      case this.PERF_LEVELS.HIGH:
+      case PERF_LEVELS.HIGH:
         return this.QUALITY_PRESETS.HIGH;
-      case this.PERF_LEVELS.ULTRA_HIGH:
+      case PERF_LEVELS.ULTRA_HIGH:
         return this.QUALITY_PRESETS.ULTRA_HIGH;
       default:
         return this.QUALITY_PRESETS.MEDIUM;

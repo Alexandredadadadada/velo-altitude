@@ -1,20 +1,21 @@
-# Documentation du Module d'Entraînement
+# Documentation du Module d'Entraînement - Velo-Altitude
 
-Ce document détaille les algorithmes, formules et méthodes utilisés dans le module d'entraînement de Dashboard-Velo.com, ainsi que leur implémentation dans le code.
+Ce document détaille les algorithmes, formules et méthodes utilisés dans le module d'entraînement de Velo-Altitude (anciennement Dashboard-Velo.com), ainsi que leur implémentation dans le code.
 
 ## Table des matières
 
 1. [Calcul et estimation de la FTP (Functional Threshold Power)](#calcul-et-estimation-de-la-ftp)
 2. [Zones d'entraînement](#zones-dentraînement)
 3. [Plans d'entraînement](#plans-dentraînement)
-4. [Intégration avec le calendrier](#intégration-avec-le-calendrier)
-5. [Tests et validation](#tests-et-validation)
-6. [Formules de calcul pour l'estimation de la FTP](#formules-de-calcul-pour-lestimation-de-la-ftp)
-7. [Méthodes de périodisation dans TrainingPlanBuilder](#méthodes-de-périodisation-dans-trainingplanbuilder)
-8. [Algorithme d'adaptation dynamique](#algorithme-dadaptation-dynamique)
-9. [Optimisations techniques du composant TrainingPlanBuilder](#optimisations-techniques-du-composant-trainingplanbuilder)
-10. [Programmes d'entraînement européens](#programmes-dentraînement-européens)
-11. [Adaptation aux cols européens](#adaptation-aux-cols-européens)
+4. [Module HIIT (High-Intensity Interval Training)](#module-hiit)
+5. [Intégration avec le calendrier](#intégration-avec-le-calendrier)
+6. [Tests et validation](#tests-et-validation)
+7. [Formules de calcul pour l'estimation de la FTP](#formules-de-calcul-pour-lestimation-de-la-ftp)
+8. [Méthodes de périodisation dans TrainingPlanBuilder](#méthodes-de-périodisation-dans-trainingplanbuilder)
+9. [Algorithme d'adaptation dynamique](#algorithme-dadaptation-dynamique)
+10. [Optimisations techniques du composant TrainingPlanBuilder](#optimisations-techniques-du-composant-trainingplanbuilder)
+11. [Programmes d'entraînement européens](#programmes-dentraînement-européens)
+12. [Adaptation aux cols européens](#adaptation-aux-cols-européens)
 
 ## Calcul et estimation de la FTP
 
@@ -22,7 +23,9 @@ La FTP (Functional Threshold Power) représente la puissance maximale qu'un cycl
 
 ### Méthodes d'estimation de la FTP
 
-#### Test de 20 minutes
+Notre module FTPCalculator propose 6 méthodes différentes pour estimer la FTP, chacune adaptée à des contextes spécifiques :
+
+#### 1. Test de 20 minutes
 
 ```
 FTP = Puissance moyenne sur 20 minutes × 0.95
@@ -30,102 +33,77 @@ FTP = Puissance moyenne sur 20 minutes × 0.95
 
 Cette méthode est considérée comme l'une des plus fiables pour estimer la FTP. Le facteur de 0.95 est appliqué car la puissance soutenable pendant 20 minutes est environ 5% supérieure à celle soutenable pendant 60 minutes.
 
-**Référence** : Allen, H., & Coggan, A. (2019). Training and Racing with a Power Meter. VeloPress.
-
-#### Test de 8 minutes
+#### 2. Test de 60 minutes
 
 ```
-FTP = Puissance moyenne sur 8 minutes × 0.9
+FTP = Puissance moyenne sur 60 minutes
 ```
 
-Ce test plus court est moins exigeant et convient mieux aux cyclistes débutants ou intermédiaires. Le facteur de 0.9 est appliqué pour compenser la durée plus courte du test.
+Cette méthode représente la définition même de la FTP, mais est rarement utilisée en raison de sa difficulté d'exécution.
 
-#### Modèle Critical Power (CP)
-
-Le modèle Critical Power est basé sur l'équation:
+#### 3. Test Ramp
 
 ```
-P = AWC/t + CP
+FTP = Puissance maximale atteinte × 0.75
 ```
 
-Où:
-- P est la puissance maintenue pendant un temps t
-- AWC est la capacité de travail anaérobie (en joules)
-- CP est la puissance critique (très proche de la FTP)
-- t est le temps en secondes
+Le test ramp consiste à augmenter progressivement la puissance jusqu'à épuisement. Ce test est plus court mais très intense.
 
-Pour calculer CP à partir de deux tests (généralement 5 minutes et 1 minute):
+#### 4. Test de 8 minutes
 
 ```
-CP = (P5 × t5 - P1 × t1) / (t5 - t1)
-AWC = (P1 - CP) × t1
+FTP = Puissance moyenne sur 8 minutes × 0.90
 ```
 
-Où:
-- P5 est la puissance moyenne sur 5 minutes
-- P1 est la puissance moyenne sur 1 minute
-- t5 est la durée du test de 5 minutes en secondes (300s)
-- t1 est la durée du test de 1 minute en secondes (60s)
+Une alternative plus courte au test de 20 minutes, mais moins précise.
 
-La FTP est ensuite estimée à partir de CP:
+#### 5. Test de 5 minutes
 
 ```
-FTP = CP × 0.97
+FTP = Puissance moyenne sur 5 minutes × 0.85
 ```
 
-**Référence** : Monod, H., & Scherrer, J. (1965). The work capacity of a synergic muscular group. Ergonomics.
+Méthode rapide mais moins précise, utile pour les débutants ou les suivis fréquents.
 
-#### Test Ramp
+#### 6. Seuil Lactate (avec analyse sanguine)
 
-Le test Ramp consiste à augmenter progressivement la puissance (généralement de 25W par minute) jusqu'à épuisement. La FTP est estimée à partir de la puissance maximale atteinte:
+La méthode du seuil lactate est basée sur des mesures physiologiques directes et est considérée comme la référence absolue. Le module prend en compte les données d'analyse lactate si disponibles.
 
+## Module HIIT
+
+Le module High-Intensity Interval Training (HIIT) propose des séances d'entraînement par intervalles optimisés pour l'amélioration des performances en montagne.
+
+### Générateurs d'intervalles
+
+#### Générateur Ladder (Échelle)
+
+La fonction `generateLadderIntervals` crée une séance d'entraînement où l'intensité augmente progressivement puis diminue, formant une structure en "échelle". 
+
+Exemple de pattern pour un utilisateur avec FTP 250W et niveau intermédiaire:
 ```
-FTP = Puissance maximale × 0.75
-```
-
-**Référence** : Protocole utilisé par Zwift et TrainerRoad.
-
-#### Estimation basée sur le poids et le niveau
-
-Pour les cyclistes n'ayant pas accès à un capteur de puissance, une estimation peut être faite basée sur le poids et le niveau d'expérience:
-
-| Niveau      | FTP/kg (moyenne) |
-|-------------|------------------|
-| Débutant    | 2.0 W/kg         |
-| Intermédiaire| 3.0 W/kg         |
-| Avancé      | 4.0 W/kg         |
-| Élite       | 5.2 W/kg         |
-
-```
-FTP = Poids (kg) × Ratio W/kg
+5min @150W (échauffement) → 2min @288W → 3min @170W → 3min @300W → 4min @170W → 4min @313W → 
+5min @170W → 4min @313W → 4min @170W → 3min @300W → 3min @170W → 2min @288W → 5min @150W (récupération)
 ```
 
-#### Estimation basée sur la fréquence cardiaque
+#### Générateur Over/Under
 
-Cette méthode utilise la relation entre la fréquence cardiaque au seuil lactique (LTHR) et la FTP:
+La fonction `generateOverUnderIntervals` crée une séance alternant des intervalles légèrement au-dessus puis légèrement en dessous du seuil (FTP).
 
-1. Si LTHR est connue, le ratio W/kg est estimé en fonction du % de FC max:
-   - LTHR > 92% FCmax: ~4.5 W/kg
-   - LTHR 89-92% FCmax: ~4.0 W/kg
-   - LTHR 85-89% FCmax: ~3.5 W/kg
-   - LTHR 82-85% FCmax: ~3.0 W/kg
-   - LTHR < 82% FCmax: ~2.5 W/kg
+Exemple pour un cycliste avec FTP 280W:
+```
+5min @170W (échauffement) → 2min @308W → 2min @252W → 2min @308W → 2min @252W → 
+2min @308W → 2min @252W → 2min @308W → 2min @252W → 5min @170W (récupération)
+```
 
-2. Si LTHR n'est pas connue, elle est estimée à 87% de la réserve cardiaque:
-   ```
-   LTHR estimée = FC repos + 0.87 × (FC max - FC repos)
-   ```
+### Validation robuste
 
-3. Si VO2max est connu, la FTP est estimée à:
-   ```
-   FTP = VO2max × 0.75 × Poids × 0.0123
-   ```
-
-**Référence** : Lamberts, R. P., et al. (2011). Measurement error associated with performance testing in well-trained cyclists. International Journal of Sports Medicine.
+Le module HIIT implémente une validation complète des données utilisateur, avec:
+- Vérification de la présence d'une valeur FTP valide
+- Adaptation des intensités aux niveaux débutant/intermédiaire/avancé
+- Gestion des cas limites (FTP très basses ou très élevées)
+- Protection contre les erreurs de type dans les objets workout
 
 ## Zones d'entraînement
-
-### Zones de puissance
 
 Les zones de puissance sont calculées en pourcentage de la FTP:
 
@@ -138,20 +116,6 @@ Les zones de puissance sont calculées en pourcentage de la FTP:
 | 5    | VO2max               | 106-120%      | Effort très intense, 3-8min par intervalle    |
 | 6    | Capacité Anaérobie   | 121-150%      | Effort anaérobie maximal, 30s-3min            |
 | 7    | Sprint/Neuromuscular | >150%         | Puissance maximale, <30s                      |
-
-**Référence** : Allen, H., & Coggan, A. (2019). Training and Racing with a Power Meter. VeloPress.
-
-### Zones cardiaques
-
-Les zones cardiaques sont basées sur la méthode de Karvonen qui utilise la réserve cardiaque (FCmax-FCrepos):
-
-| Zone | Nom               | % de la réserve cardiaque |
-|------|-------------------|-----------------------------|
-| 1    | Récupération      | 50-60%                     |
-| 2    | Endurance de base | 60-70%                     |
-| 3    | Endurance avancée | 70-80%                     |
-| 4    | Seuil             | 80-90%                     |
-| 5    | VO2max            | 90-100%                    |
 
 ## Plans d'entraînement
 

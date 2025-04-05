@@ -1,6 +1,20 @@
-# Checklist de déploiement - Dashboard-Velo.com
+# Checklist de déploiement - Velo-Altitude (anciennement Dashboard-Velo.com)
 
-Ce document fournit une liste de vérification complète pour préparer le déploiement final du site Dashboard-Velo.com sur Netlify.
+Ce document fournit une liste de vérification complète pour finaliser le déploiement du site Velo-Altitude sur Netlify.
+
+## État actuel du déploiement - 5 avril 2025
+
+- [x] Rebranding de "Grand Est Cyclisme"/"Dashboard-Velo" vers "Velo-Altitude" 
+- [x] Configuration initiale du compte Netlify
+- [x] Connexion au repository GitHub
+- [ ] Déploiement réussi en production
+
+### Problème actuel identifié
+Le déploiement via GitHub échoue avec l'erreur:
+```
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory
+```
+Cause: Le dépôt GitHub ne reflète pas la structure locale avec le dossier `client/`.
 
 ## 1. Vérification des clés API
 
@@ -14,6 +28,9 @@ Toutes les clés API suivantes doivent être correctement configurées dans les 
 - [x] `STRAVA_CLIENT_SECRET` - Pour l'authentification Strava
 - [x] `OPENAI_API_KEY` - Pour le coach virtuel (OpenAI)
 - [x] `CLAUDE_API_KEY` - Pour le coach virtuel (Claude)
+- [x] `REACT_APP_BRAND_NAME=Velo-Altitude` - Nom de la marque
+- [x] `REACT_APP_BASE_URL=https://velo-altitude.com` - URL de base
+- [x] `REACT_APP_API_URL=https://api.velo-altitude.com` - URL de l'API
 
 ## 2. Configuration du cache
 
@@ -30,44 +47,65 @@ Le système de cache est configuré pour optimiser les performances API avec les
 - Itinéraires associés aux cols : 1 heure
 - Cols similaires : 2 heures
 
-## 3. Scripts de vérification et de déploiement
+## 3. Solutions de déploiement recommandées
 
-Les scripts suivants ont été créés pour faciliter le déploiement :
-
-- `scripts/prepare-netlify-deployment.js` - Script principal de préparation au déploiement
-- `scripts/verify-all-api-keys.js` - Vérifie toutes les clés API
-- `scripts/verify-api-integrations.js` - Teste la connectivité avec les API externes
-- `scripts/verify-client-api-keys.js` - Vérifie les clés API côté client
-- `scripts/generate-client-env.js` - Génère le fichier `.env.local` pour le client React
-- `scripts/run-api-keys-manager.js` - Exécute le gestionnaire de clés API
-- `scripts/test-application-features.js` - Teste les fonctionnalités de l'application
-
-## 4. Procédure de déploiement Netlify
-
-1. Exécuter le script de préparation au déploiement :
+### Option 1: Déploiement direct via ZIP (RECOMMANDÉ)
+1. Générer un build local dans le dossier `client`:
    ```
-   node scripts/prepare-netlify-deployment.js
+   cd client
+   npm install
+   npm run build
    ```
+2. Compresser le dossier `build` généré en fichier ZIP
+3. Dans l'interface Netlify:
+   - Aller à l'onglet "Deploys"
+   - Utiliser la zone de glisser-déposer pour uploader le ZIP
 
-2. Vérifier le rapport de préparation au déploiement généré dans `deployment-report/deployment-preparation-report.html`
+### Option 2: Modification des paramètres Netlify
+1. Dans "Site settings" > "Build & deploy" > "Build settings":
+   - Définir "Base directory" sur `client`
+   - Commander de build: `npm run build`
+   - Publish directory: `build`
+2. Déclencher un nouveau déploiement
 
-3. Résoudre tous les problèmes identifiés dans le rapport
+### Option 3: Mise à jour du dépôt GitHub
+1. Restructurer le dépôt pour qu'il corresponde à la structure locale
+2. Pousser les modifications vers GitHub pour déclencher un build automatique
 
-4. Tester les fonctionnalités de l'application :
-   ```
-   node scripts/test-application-features.js
-   ```
+## 4. Vérification post-déploiement des modules clés
 
-5. Vérifier le rapport de test des fonctionnalités généré dans `application-features-test-report.html`
+### Module d'entraînement
+- [ ] Calculateur FTP fonctionnel avec les 6 méthodes:
+  - [ ] Test 20 minutes
+  - [ ] Test 60 minutes
+  - [ ] Test Ramp
+  - [ ] Test 8 minutes
+  - [ ] Test 5 minutes
+  - [ ] Seuil Lactate
+- [ ] Visualisation des zones d'entraînement (TrainingZoneChart)
+- [ ] Sauvegarde des données FTP dans le profil utilisateur
 
-6. Création du déploiement sur Netlify :
-   - Connecter le dépôt GitHub à Netlify
-   - Configurer les paramètres de build dans `netlify.toml`
-   - Ajouter les variables d'environnement dans le tableau de bord Netlify
+### Module HIIT
+- [ ] Affichage des templates d'entraînement
+- [ ] Fonctionnement des générateurs d'intervalles:
+  - [ ] Fonction `generateLadderIntervals`
+  - [ ] Fonction `generateOverUnderIntervals`
+- [ ] Gestion des erreurs et validation robuste
+- [ ] Affichage correct dans HIITWorkoutCard
 
-7. Vérifier le déploiement de prévisualisation (preview)
+### Les 7 Majeurs
+- [ ] Affichage des dénivelés et des cols
+- [ ] Visualisation 3D des parcours
+- [ ] Enregistrement des défis complétés
 
-8. Promouvoir le déploiement en production
+### Explorateur de Cols
+- [ ] Affichage des données météo pour chaque col
+- [ ] Système de cache météo opérationnel
+- [ ] Mode hors ligne fonctionnel
+
+### Module Nutrition
+- [ ] Affichage des 40 recettes optimisées
+- [ ] Outil de calcul nutritionnel
 
 ## 5. Fonctionnalités à vérifier après déploiement
 

@@ -523,5 +523,114 @@ class PerformanceOptimizer {
     // Vérifier les délais d'interaction
     const recentDelays = this.metrics.interactionDelays.slice(-5);
     const avgRecentDelay = recentDelays.length > 0 
-      ? recentDelays.reduce((sum, entry) => sum + entry.durat
-(Content truncated due to size limit. Use line ranges to read in chunks)
+      ? recentDelays.reduce((sum, entry) => sum + entry.duration, 0) / recentDelays.length 
+      : 0;
+    
+    if (avgRecentDelay > PERFORMANCE_THRESHOLDS.INTERACTION_DELAY) {
+      recommendations.push({
+        type: 'warning',
+        area: 'interactivity',
+        message: 'Délais d\'interaction élevés, optimiser les gestionnaires d\'événements'
+      });
+    }
+    
+    return recommendations;
+  }
+}
+
+// Exporter une instance de l'optimiseur
+const performanceOptimizer = new PerformanceOptimizer();
+export default performanceOptimizer;
+
+/**
+ * Hook React pour utiliser l'optimiseur de performances
+ * @param {Object} options - Options de configuration
+ * @returns {Object} Informations sur l'appareil et méthodes d'optimisation
+ */
+export function usePerformanceOptimizer(options = {}) {
+  const [isInitialized, setIsInitialized] = useState(false);
+  
+  useEffect(() => {
+    if (!isInitialized) {
+      performanceOptimizer.initialize(options);
+      setIsInitialized(true);
+    }
+  }, [options, isInitialized]);
+  
+  return {
+    deviceInfo: performanceOptimizer.deviceInfo,
+    getPerformanceReport: performanceOptimizer.getPerformanceReport.bind(performanceOptimizer),
+    pauseNonEssentialOperations: performanceOptimizer._pauseNonEssentialOperations.bind(performanceOptimizer),
+    resumeOperations: performanceOptimizer._resumeOperations.bind(performanceOptimizer)
+  };
+}
+
+/**
+ * Hook pour le chargement paresseux des images
+ * @param {string} src - URL de l'image
+ * @param {Object} options - Options de configuration
+ * @returns {Object} État de chargement et URL optimisée
+ */
+export function useLazyLoad(src, options = {}) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [optimizedSrc, setOptimizedSrc] = useState('');
+  const ref = useRef(null);
+  
+  useEffect(() => {
+    // Observer pour détecter quand l'élément entre dans la vue
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: `${options.offset || PERFORMANCE_THRESHOLDS.IMAGE_LAZY_LOAD_OFFSET}px`,
+        threshold: options.threshold || 0.1
+      }
+    );
+    
+    // Observer l'élément
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, [options.offset, options.threshold]);
+  
+  useEffect(() => {
+    if (isVisible && src) {
+      // Choisir la source optimisée en fonction des capacités du navigateur
+      let finalSrc = src;
+      
+      // Si l'optimisation d'image est activée et que nous avons un format moderne supporté
+      if (performanceOptimizer.optimizations.imageOptimization) {
+        if (performanceOptimizer.deviceInfo.supportsWebP) {
+          // Convertir l'URL pour utiliser WebP si disponible
+          finalSrc = src.replace(/\.(jpe?g|png)$/i, '.webp');
+        }
+        
+        // Appliquer des tailles d'image appropriées pour les appareils mobiles
+        if (performanceOptimizer.deviceInfo.isMobile) {
+          // Ajouter des paramètres pour ajuster la taille
+          const isSrcWithParams = finalSrc.includes('?');
+          const connector = isSrcWithParams ? '&' : '?';
+          finalSrc = `${finalSrc}${connector}width=${Math.min(window.innerWidth, 800)}`;
+        }
+      }
+      
+      setOptimizedSrc(finalSrc);
+      
+      // Précharger l'image
+      const img = new Image();
+      img.onload = () => setIsLoaded(true);
+      img.src = finalSrc;
+    }
+  }, [isVisible, src]);
+  
+  return { ref, isVisible, isLoaded, src: optimizedSrc || src };
+}

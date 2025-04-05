@@ -30,7 +30,7 @@ const CyclingCoach = ({ userProfile, activityData }) => {
       sender: 'coach',
       text: userProfile?.firstName 
         ? `Bonjour ${userProfile.firstName} ! Je suis votre coach cyclisme personnel. Comment puis-je vous aider aujourd'hui ?` 
-        : 'Bonjour ! Je suis votre coach cyclisme personnel. Comment puis-je vous aider aujourd'hui ?',
+        : "Bonjour ! Je suis votre coach cyclisme personnel. Comment puis-je vous aider aujourd'hui ?",
       timestamp: new Date(),
       category: 'general'
     };
@@ -338,7 +338,10 @@ const CyclingCoach = ({ userProfile, activityData }) => {
                   onClick={() => setActiveCategory(cat)}
                   className="me-1"
                 >
-                  <FontAwesomeIcon icon={categoryIcons[cat] || faRobot} className="me-1" />
+                  <FontAwesomeIcon 
+                    icon={categoryIcons[cat] || faRobot} 
+                    className="me-1" 
+                  />
                   {t(`categories.${cat}`)}
                 </Button>
               ))}

@@ -137,7 +137,7 @@ const getColById = (id) => {
           popularity: 9.3,
           scenicBeauty: 9.9,
           trafficDensity: 'Modérée',
-          climateInfo: 'Souvent fermé jusqu'en juin à cause de la neige',
+          climateInfo: "Souvent fermé jusqu'en juin à cause de la neige",
           localServices: 'Peu de services au sommet',
           tourAppearances: 60,
           recordTime: '1:02:15 (Marco Pantani, 1998)'
@@ -185,7 +185,7 @@ const getColById = (id) => {
           popularity: 8.5,
           scenicBeauty: 9.1,
           trafficDensity: 'Faible',
-          climateInfo: 'Accessible presque toute l'année',
+          climateInfo: "Accessible presque toute l'année",
           localServices: 'Peu de services',
           tourAppearances: 5,
           recordTime: '41:20 (Primož Roglič, 2020)'

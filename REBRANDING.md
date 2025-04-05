@@ -3,7 +3,7 @@
 ## Historique des changements de marque
 
 ### Migration 2025-04
-**Date de migration :** 15 avril 2025  
+**Date de migration :** 5 avril 2025  
 **Ancien nom :** Dashboard-Velo  
 **Nouveau nom :** Velo-Altitude  
 **Nouveau domaine :** velo-altitude.com
@@ -30,67 +30,55 @@ Le nouveau nom met en valeur nos fonctionnalités les plus populaires (visualisa
 
 ## Identité visuelle mise à jour
 
-### Nouveau logo et palette
-- **Nouveau logo :** Design moderne intégrant un profil de montagne stylisé et un cycliste
-- **Palette de couleurs :** 
-  - Primaire : #1976d2 (bleu)
-  - Secondaire : #ff9800 (orange)
-  - Altitude : #3f51b5 (indigo)
-  - Mountain : #4caf50 (vert)
-  - Arrière-plan clair : #F8F9FA
+Les couleurs, polices et éléments graphiques ont été modernisés pour refléter le positionnement axé sur l'altitude et la montagne:
 
-### Règles d'utilisation du logo
-- Le logo doit toujours apparaître sur un fond qui maintient un bon contraste
-- Un espace de protection minimal équivalent à la hauteur de la lettre "V" doit être maintenu autour du logo
-- Le logo ne doit pas être utilisé à une taille inférieure à 32px de hauteur pour les applications web
-- Les proportions du logo doivent être maintenues lors du redimensionnement
+- **Palette principale:** dégradés de bleu alpin et gris montagne
+- **Logo:** réinterprétation graphique d'un vélo gravissant une montagne stylisée
+- **Typographie:** Plus moderne et aérée, avec des titres en Montserrat et du contenu en Open Sans
+- **Iconographie:** Ensemble cohérent d'icônes représentant les différents modules (cols, entraînement, nutrition, etc.)
 
-## Plan de migration technique
+## État actuel du rebranding (5 avril 2025)
 
-### Modifications fonctionnelles
-- Mise à jour de tous les composants d'interface utilisateur avec la nouvelle marque
-- Configuration centralisée du branding via un fichier `branding.js`
-- Remplacement systématique des références à l'ancien nom
-- Mise à jour des métadonnées SEO et sociales
-- Adaptation des assets graphiques et des références
+### Éléments déjà migrés
+- [x] Titre et métadonnées dans `index.html`
+- [x] Variables d'environnement (`REACT_APP_BRAND_NAME`, etc.)
+- [x] Configuration Netlify pour le nouveau domaine
+- [x] Mise à jour du fichier netlify.toml avec les redirections appropriées
+- [x] Documentation mise à jour (README, DEPLOYMENT, DOCUMENTATION_TRAINING)
 
-### Mise à jour des documents
-- Mise à jour de toute la documentation technique et utilisateur
-- Actualisation des tutoriels et des guides d'utilisation
-- Mise à jour des fichiers README et des documents de spécification
+### Déploiement en cours
+- [x] Création du repository GitHub
+- [x] Configuration initiale Netlify
+- [ ] Finalisation du déploiement (en attente de résolution des problèmes de structure)
 
-## Redirections et SEO
+### Modules optimisés pour Velo-Altitude
+- [x] **Calculateur FTP** avec ses 6 méthodes de calcul:
+  - Test 20 minutes
+  - Test 60 minutes
+  - Test Ramp
+  - Test 8 minutes
+  - Test 5 minutes
+  - Seuil Lactate
+- [x] **Visualisation des zones d'entraînement** avec TrainingZoneChart
+- [x] **Module HIIT** avec validation robuste:
+  - Fonction generateLadderIntervals optimisée
+  - Fonction generateOverUnderIntervals améliorée
+  - Validation des types avec PropTypes
+  - Gestion des cas limites pour les profils utilisateur incomplets
+- [x] **Explorateur de Cols** avec son système de cache météo
+- [x] **Les 7 Majeurs** avec visualisation 3D des parcours
 
-Des redirections permanentes (301) seront mises en place depuis dashboard-velo.com vers velo-altitude.com pour :
-- Assurer une transition fluide pour les utilisateurs existants
-- Préserver le référencement et la valeur SEO acquise
-- Maintenir la validité des liens externes pointant vers la plateforme
+## Prochaines étapes
 
-## Plan de communication
+1. **Finalisation du déploiement** (priorité immédiate):
+   - Résoudre les problèmes de structure entre dépôt GitHub et structure locale
+   - Compléter le déploiement sur netlify via méthode ZIP ou ajustement des paramètres
 
-Une campagne de communication sera déployée pour informer les utilisateurs existants du changement :
-- Notification dans l'application deux semaines avant le changement
-- Emails personnalisés aux utilisateurs inscrits
-- Annonces sur les réseaux sociaux (Twitter, Facebook, Instagram, Strava Club)
-- Article de blog détaillant les raisons du changement et les avantages
-- Session de questions-réponses en ligne pour adresser les préoccupations des utilisateurs
+2. **Tests post-déploiement**:
+   - Vérifier le fonctionnement de tous les modules
+   - S'assurer que l'ensemble des pages reflète la nouvelle identité visuelle
 
-## Calendrier de déploiement
-
-**Phase 1 (1-5 avril)** : Préparation technique et mise à jour du code
-**Phase 2 (6-10 avril)** : Tests en environnement de staging
-**Phase 3 (11-14 avril)** : Communication aux utilisateurs
-**Phase 4 (15 avril)** : Lancement officiel de Velo-Altitude.com
-**Phase 5 (16-30 avril)** : Surveillance et ajustements post-lancement
-
-## Mesures de succès
-
-- Taux de rétention des utilisateurs existants > 95%
-- Taux d'acquisition de nouveaux utilisateurs +20% vs mois précédent
-- Augmentation de l'engagement utilisateur sur les fonctionnalités liées à l'altitude
-- Sentiment positif dans les retours utilisateurs (NPS > 40)
-- Maintien du classement SEO pour les mots-clés principaux
-
-## Resources et assets
-
-Tous les nouveaux assets de marque sont disponibles dans le dossier `/client/public/images/branding/` et les guidelines détaillées dans `/docs/BRAND_GUIDELINES.md`.
+3. **Migration complète des ressources**:
+   - Configurer les redirections depuis l'ancien domaine
+   - Mettre à jour la documentation destinée aux utilisateurs
+   - Informer la communauté existante

@@ -62,17 +62,85 @@ Do you want to install 'webpack-cli' (yes/no):
   functions = "netlify/functions"
 ```
 
-#### 6. Solution finale: Installation locale de webpack et utilisation directe de webpack-cli
+#### 6. Solution avec installation locale de webpack et utilisation directe de webpack-cli
 **Problème**: L'installation globale ne résolvait toujours pas le problème d'interactivité.
 
 **Solution**:
-- Modification finale de la commande de build dans `netlify.toml` pour installer explicitement webpack et webpack-cli comme dépendances de développement et utiliser directement webpack-cli:
+- Modification de la commande de build dans `netlify.toml`:
 ```toml
 [build]
   command = "npm install -D webpack webpack-cli && npx webpack-cli --mode production"
   publish = "build"
   functions = "netlify/functions"
 ```
+
+#### 7. Solution avec CI=false dans l'environnement
+**Problème**: Les approches précédentes ne résolvaient pas complètement les problèmes d'interactivité.
+
+**Solution**:
+- Simplification de la commande de build et définition de CI=false dans l'environnement:
+```toml
+[build]
+  command = "npm install && npm run build"
+  publish = "build"
+  functions = "netlify/functions"
+  
+[build.environment]
+  NODE_VERSION = "18.17.0"
+  NPM_VERSION = "9.6.7"
+  CI = "false"
+```
+
+#### 8. Solution finale avec optimisation complète (05/04/2025)
+**Problème**: Malgré les solutions précédentes, des problèmes subsistaient avec l'installation de webpack.
+
+**Solution complète**:
+1. Déplacement de webpack et webpack-cli des devDependencies vers les dependencies principales:
+```json
+"dependencies": {
+  // autres dépendances...
+  "webpack": "^5.98.0",
+  "webpack-cli": "^5.0.0"
+}
+```
+
+2. Création d'un script de build optimisé dans package.json:
+```json
+"scripts": {
+  "build": "CI='' webpack --mode production",
+  "netlify-build": "CI='' npm install && CI='' npm run build"
+}
+```
+
+3. Mise à jour de la configuration netlify.toml:
+```toml
+[build]
+  command = "npm run netlify-build"
+  publish = "build"
+  functions = "netlify/functions"
+  
+[build.environment]
+  NODE_VERSION = "18.17.0"
+  NPM_VERSION = "9.6.7"
+  CI = "false"
+```
+
+Cette configuration finale résout les trois problèmes majeurs:
+- Installation de webpack: webpack et webpack-cli sont installés comme dépendances principales
+- Interactivité: utilisation de CI='' dans les commandes et CI="false" dans l'environnement
+- Processus de build: création d'un script dédié netlify-build pour simplifier et robustifier le déploiement
+
+Le déploiement avec cette configuration est en cours et devrait être réussi.
+
+#### 9. Solution finale: Simplification de la configuration webpack
+**Problème**: La configuration webpack était trop complexe et faisait référence à des fichiers et chemins potentiellement manquants.
+
+**Solution**:
+- Création d'une configuration webpack simplifiée qui:
+  - Se concentre sur les loaders et plugins essentiels
+  - Évite les références à des chemins spécifiques potentiellement manquants
+  - Réduit la complexité des configurations d'optimisation
+  - Maintient uniquement les fonctionnalités de base nécessaires au build
 
 ### Modifications apportées au projet
 
@@ -82,14 +150,14 @@ Do you want to install 'webpack-cli' (yes/no):
 
 2. **Configuration du build**:
    - Installation explicite des dépendances manquantes
-   - Utilisation directe de webpack-cli pour éviter l'interactivité
-   - Configuration complète dans netlify.toml
+   - Simplification de la configuration webpack
+   - Définition de variables d'environnement pour contrôler l'interactivité
 
 3. **Documentation**:
    - Documentation complète du processus de déploiement
    - Identification des problèmes et solutions
 
-### Statut actuel (05/04/2025 à 21:36)
+### Statut actuel (05/04/2025 à 21:55)
 
  Toutes les modifications nécessaires ont été implémentées
  Le déploiement final est en cours sur Netlify
@@ -105,6 +173,7 @@ Do you want to install 'webpack-cli' (yes/no):
    - Module Entraînement avec programmes HIIT
 
 2. **Optimisations futures**:
+   - Réintroduction progressive des optimisations webpack
    - Réintégration de Redis pour améliorer les performances si nécessaire
    - Analyse des performances et optimisations
    - Ajustements de l'UI/UX basés sur les retours utilisateurs

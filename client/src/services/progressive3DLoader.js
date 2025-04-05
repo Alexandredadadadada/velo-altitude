@@ -4,6 +4,7 @@
  * et en utilisant un chargement progressif des détails
  */
 import * as THREE from 'three';
+import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import featureFlagsService from './featureFlags';
 import apiCacheService, { CACHE_STRATEGIES } from './apiCache';
 
@@ -699,8 +700,8 @@ class Progressive3DLoader {
     // Réduire la complexité pour les appareils mobiles
     if (this.currentDetailLevel === DETAIL_LEVELS.ULTRA_LOW || this.currentDetailLevel === DETAIL_LEVELS.LOW) {
       // Utiliser Three.js BufferGeometryUtils pour simplifier la géométrie
-      if (THREE.BufferGeometryUtils && THREE.BufferGeometryUtils.mergeVertices) {
-        return THREE.BufferGeometryUtils.mergeVertices(optimized, 0.01);
+      if (mergeVertices) {
+        return mergeVertices(optimized, 0.01);
       }
     }
     

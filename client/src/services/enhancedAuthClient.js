@@ -3,7 +3,7 @@
  * Gère la rotation des tokens JWT, les périodes de grâce et la révocation sélective des tokens
  */
 
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import clientFingerprintService from './clientFingerprintService';
 
 export class AuthError extends Error {

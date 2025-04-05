@@ -29,7 +29,7 @@ import {
   Cloud as CloudIcon,
   Timeline as TimelineIcon
 } from '@mui/icons-material';
-import { ColVisualization3D } from '../../cols/ColVisualization3D';
+import ColVisualization3D from '../../cols/ColVisualization3D';
 
 /**
  * Composant pour afficher les détails d'un col dans une boîte de dialogue

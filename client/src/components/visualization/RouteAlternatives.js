@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Map, Source, Layer } from 'react-map-gl';
+import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './RouteAlternatives.css';
 
@@ -358,7 +358,7 @@ const RouteAlternatives = ({ routeId }) => {
           {selectedRoute ? (
             <>
               <div className="route-map">
-                <Map
+                <ReactMapGL
                   {...viewState}
                   onMove={evt => setViewState(evt.viewState)}
                   style={{ width: '100%', height: '100%' }}
@@ -367,7 +367,7 @@ const RouteAlternatives = ({ routeId }) => {
                 >
                   {/* Dans une implémentation réelle, nous ajouterions des couches
                       pour visualiser les itinéraires sur la carte */}
-                </Map>
+                </ReactMapGL>
               </div>
 
               <div className="route-info-panel">

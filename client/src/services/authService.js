@@ -3,7 +3,7 @@
  * Gère les tokens JWT, leur stockage, et leur rafraîchissement automatique
  */
 import axios from 'axios';
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import clientFingerprintService from './clientFingerprintService';
 
 class AuthService {

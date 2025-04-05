@@ -1,0 +1,7 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#e0f2fe"/>
+    <circle cx="70" cy="80" r="30" fill="#7dd3fc"/>
+    <circle cx="140" cy="80" r="30" fill="#7dd3fc"/>
+    <path d="M 50 130 Q 100 170 150 130" stroke="#7dd3fc" stroke-width="8" fill="transparent"/>
+    <text x="50%" y="90%" font-family="Arial" font-size="16" fill="#0369a1" text-anchor="middle">Social</text>
+  </svg>

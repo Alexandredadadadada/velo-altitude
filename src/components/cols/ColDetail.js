@@ -10,14 +10,16 @@ import {
   NavigationRounded as NavigationIcon,
   LocationOn as LocationIcon,
   Hotel as HotelIcon,
-  LineChart as LineChartIcon,
+  ShowChart as ShowChartIcon,
   ThreeDRotation as ThreeDIcon,
   WbSunny as SunnyIcon,
   AcUnit as SnowIcon,
   Cloud as CloudIcon,
   Cached as CachedIcon
 } from '@mui/icons-material';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { 
+  Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
+} from 'recharts';
 import ColVisualization3D from './ColVisualization3D';
 import ColService from '../../services/colService';
 import WeatherCache from '../../utils/WeatherCache';
@@ -331,7 +333,7 @@ const ColDetail = ({ colId }) => {
             onChange={handleChangeTab} 
             sx={{ borderBottom: 1, borderColor: 'divider', mb: 2 }}
           >
-            <Tab icon={<LineChartIcon />} label="Profil d'élévation" />
+            <Tab icon={<ShowChartIcon />} label="Profil d'élévation" />
             <Tab icon={<ThreeDIcon />} label="Visualisation 3D" />
           </Tabs>
           
