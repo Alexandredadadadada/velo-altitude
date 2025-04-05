@@ -1,3 +1,7 @@
 # Ce fichier .gitmodules est intentionnellement maintenu pour éviter les erreurs lors du déploiement
 # Il n'y a pas de sous-modules Git dans ce projet
 # Dernier nettoyage effectué le : 5 avril 2025
+
+[submodule "VELO-ALTITUDE"]
+	path = VELO-ALTITUDE
+	url = https://github.com/Alexandredadadadada/velo-altitude.git
