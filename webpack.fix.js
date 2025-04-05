@@ -114,6 +114,10 @@ module.exports = {
         {
           from: 'client/public/js/image-fallback.js',
           to: 'js/image-fallback.js',
+        },
+        {
+          from: 'client/node_modules/leaflet/dist/images',
+          to: 'images'
         }
       ]
     })
