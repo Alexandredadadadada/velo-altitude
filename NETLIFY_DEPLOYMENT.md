@@ -33,10 +33,13 @@ Le fichier netlify.toml a été mis à jour avec les configurations optimisées 
 - `MAPBOX_API_KEY` - Clé API Mapbox pour les cartes
 - `REACT_APP_OPENROUTE_API_KEY` - Clé API OpenRoute pour les itinéraires
 - `REACT_APP_OPENWEATHER_API_KEY` - Clé API OpenWeather pour les données météo
+- `OPENAI_API_KEY` - Clé API OpenAI pour les chatbots
+- `CLAUDE_API_KEY` - Clé API Claude pour les chatbots alternatifs
 - `REDIS_HOST` - Hôte Redis pour le cache
 - `REDIS_PORT` - Port Redis
 - `REDIS_PASSWORD` - Mot de passe Redis
 - `REDIS_CLUSTER_NODES` - Liste des nœuds du cluster Redis (optionnel)
+- `GO_VERSION` - Réglé sur "skip" pour éviter l'installation inutile de Go 
 
 ## Structure des Netlify Functions
 
@@ -99,161 +102,34 @@ Nous devons implémenter les Functions suivantes pour remplacer notre API backen
   - `explorer:` - Données d'exploration de cols
   - `auth:` - Données d'authentification
 
-### Stratégies de Cache par Domaine
-- **Nutrition**: TTL long, priorité à la cohérence
-- **Météo**: TTL court, priorité à la disponibilité
-- **Explorateur**: Cache géospatial, stratégies par région
-- **Auth**: TTL court, haute sécurité
+## Problèmes de Déploiement Résolus (05/04/2025)
 
-## Processus de Déploiement
+### 1. Problème de Sous-module Git
+**Symptôme** : Build échouant avec des erreurs liées au sous-module VELO-ALTITUDE  
+**Solution** : Suppression de la référence au sous-module qui n'existait pas.
 
-### 1. Préparation (✅ COMPLÉTÉ - 100%)
-- ✅ Finaliser tous les modules à 100%
-  - ✅ Module Nutrition complété (40 recettes fonctionnelles)
-  - ✅ Module Entraînement avec calculateur FTP (6 méthodes)
-  - ✅ Module HIIT avec validation robuste
-  - ✅ Système de cache météo pour l'Explorateur de Cols
-  - ✅ Gestion du mode hors ligne pour l'Explorateur de Cols
-  - ✅ Mise en œuvre complète du Redis Cluster avec sharding
-  - ✅ Optimisation des intégrations externes (Strava, OpenWeatherMap)
-  - ✅ Rotation des JWT pour la sécurité
-- ✅ Valider la configuration webpack
-- ✅ Préparer les données initiales pour MongoDB (100% complété)
+### 2. Problème de Script de Build pour Windows
+**Symptôme** : Commande build échouant avec des erreurs car référençant `cmd.exe`  
+**Solution** : Modification du script dans `package.json` pour utiliser une commande compatible avec l'environnement Unix de Netlify.
+```json
+"build": "npx webpack --config webpack.fix.js --mode production"
+```
 
-### 2. Déploiement Initial sur Netlify
-- Connecter le projet GitHub à Netlify
-- Configurer les variables d'environnement
-- Déclencher le build initial
+### 3. Problème de Dépendances webpack
+**Symptôme** : Erreur `Cannot find module 'html-webpack-plugin'`  
+**Solution** : Déplacement des dépendances webpack de `devDependencies` vers `dependencies` dans `package.json` pour qu'elles soient installées en environnement de production.
 
-### 3. Vérification sur Preview
-- Tester toutes les fonctionnalités dans l'environnement de preview
-- Vérifier les intégrations API
-- Valider l'authentification
-- Tester sur différents appareils
-- Vérifier le fonctionnement du cache et du mode hors ligne
+### 4. Problème d'Installation de Go
+**Symptôme** : Build échouant avec des erreurs lors de l'installation de Go 1.19  
+**Solution** : Ajout de la variable d'environnement `GO_VERSION=skip` pour éviter l'installation de Go qui n'est pas nécessaire pour le projet.
 
-### 4. Déploiement en Production
-- Promouvoir le déploiement de preview à la production
-- Connecter le domaine personnalisé
-- Activer HTTPS
-
-### 5. Validation Post-Déploiement
-- Exécuter les tests automatisés sur la production
-- Vérifier les analytics et la performance
-- Surveiller les logs d'erreurs
-- Tester le système de cache et le mode hors ligne en production
-
-## Checklist Pré-Déploiement
-
-### Frontend
-- [x] Bundle webpack optimisé
-- [x] Assets compressés et optimisés
-- [x] Polyfills pour navigateurs plus anciens
-- [x] Lighthouse score > 90
-- [x] Module Nutrition testé en environnement de production
-- [x] Images des recettes optimisées avec ResponsiveImage
-- [x] Système de cache météo implémenté et testé
-- [x] Gestion du mode hors ligne implémentée et testée
-
-### Backend (Netlify Functions)
-- [x] Toutes les Functions implémentées et testées
-- [x] Gestion des erreurs robuste
-- [x] Validation des entrées
-- [x] Tests des limites de timeout (10 secondes max)
-- [x] Fonction col-weather.js implémentée pour les données météo
-- [x] Service explorerCacheService.js implémenté
-- [x] Service externalIntegration.js optimisé avec stratégies de fallback
-- [x] Redis Cluster configuré avec sharding
-
-### Données
-- [x] MongoDB Atlas configuré et peuplé
-- [x] Sauvegardes configurées
-- [x] Indexes créés pour les requêtes fréquentes
-- [x] Recettes nutritionnelles complètes importées (40 recettes)
-- [x] Données des profils utilisateurs avec préférences alimentaires
-
-### Sécurité
-- [x] Auth0 correctement configuré
-- [x] Headers de sécurité configurés
-- [x] Validation des tokens JWT
-- [x] Rate limiting configuré
-- [x] Rotation des JWT implémentée
-- [x] Stratégie de blacklisting des tokens
-
-## Critères "Prêt pour Déploiement"
-
-Pour qu'un module soit considéré comme prêt pour le déploiement, il doit satisfaire les critères suivants :
-
-### Critères Généraux
-1. **Fonctionnalité complète à 100%**
-   - Toutes les user stories implémentées
-   - Absence de fonctions "stub" ou temporaires
-   - Documentation utilisateur complète
-
-2. **Tests exhaustifs**
-   - Tests unitaires pour les composants critiques
-   - Tests d'intégration pour les flux principaux
-   - Tests de performance pour les opérations coûteuses
-
-3. **Optimisation**
-   - Code minifié et optimisé
-   - Chargement à la demande (lazy loading) implémenté
-   - Temps de chargement < 2 secondes sur connexion 4G
-   - Gestion du mode hors ligne pour les fonctionnalités critiques
-
-### Critères Spécifiques par Module
-
-#### Module Nutrition (✅ COMPLÉTÉ)
-- ✅ 40 recettes fonctionnelles (10 par catégorie)
-- ✅ Système de filtrage et recherche opérationnel
-- ✅ Calcul nutritionnel précis
-- ✅ Adaptation aux préférences alimentaires
-- ✅ Interface utilisateur responsive
-- ✅ Templates de recettes pour les différentes phases d'effort
-- ✅ Optimisation des images avec ResponsiveImage
-- ✅ Cache Redis avec stratégie stale-while-revalidate
-
-#### Module Entraînement (✅ COMPLÉTÉ)
-- ✅ Calculateur FTP avec 6 méthodes fonctionnelles
-- ✅ Visualisation des zones d'entraînement
-- ✅ Intégration avec le profil utilisateur
-- ✅ Module HIIT avec validation des paramètres
-- ✅ Plans d'entraînement personnalisés
-- ✅ Optimisation des requêtes d'agrégation
-
-#### Explorateur de Cols (✅ COMPLÉTÉ)
-- ✅ API météo finalisée avec système de cache
-- ✅ Gestion du mode hors ligne implémentée
-- ✅ Données des 50 cols européens complètes
-- ✅ Système de recherche et filtrage
-- ✅ Visualisation cartographique
-- ✅ Profils d'élévation interactifs
-- ✅ Visualisation 3D optimisée pour mobile
-- ✅ Cache géospatial pour les recherches par région
-- ✅ Optimisation des appels d'API externes avec fallbacks
-
-## Plan de Déploiement Progressif
-
-Notre stratégie de déploiement suivra ces étapes :
-
-1. **Phase 1: Déploiement en Preview (J+0)**
-   - Déploiement de tous les composants
-   - Tests fonctionnels approfondis
-   - Ajustements de dernière minute
-
-2. **Phase 2: Pré-production avec données réelles (J+1)**
-   - Déploiement dans un environnement identique à la production
-   - Importation des données réelles
-   - Tests de charge et de performance
-   - Validation de la sécurité et de l'authentification
-
-3. **Phase 3: Déploiement en Production (J+2)**
-   - Déploiement progressif par région
-   - Surveillance étroite des métriques
-   - Équipe support en alerte
-
-4. **Phase 4: Optimisation Post-Déploiement (J+3 à J+7)**
-   - Analyse des performances réelles
-   - Ajustement des paramètres de cache
-   - Optimisation basée sur les patterns d'utilisation
-   - Résolution des problèmes identifiés
+## Checklist de Vérification Post-Déploiement
+- [ ] Fonctionnalité de visualisation 3D des cols
+- [ ] Module "Les 7 Majeurs" 
+- [ ] Chatbots OpenAI et Claude
+- [ ] Intégration Mapbox
+- [ ] Intégration OpenWeather
+- [ ] Intégration OpenRouteService
+- [ ] Intégration Strava (si configurée)
+- [ ] Module Nutrition
+- [ ] Module Entraînement
