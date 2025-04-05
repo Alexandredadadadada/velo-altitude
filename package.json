@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "test": "jest",
     "check-deps": "node ./scripts/check-dependencies.js",
-    "netlify-build": "npm install && npm run build"
+    "netlify-build": "node scripts/check-build-paths.js && npm install && npm run build"
   },
   "keywords": [
     "cyclisme",
