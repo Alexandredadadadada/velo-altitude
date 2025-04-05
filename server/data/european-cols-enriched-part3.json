@@ -1,0 +1,492 @@
+[
+  {
+    "id": "col-de-la-madeleine",
+    "name": "Col de la Madeleine",
+    "altitude": 2000,
+    "location": {
+      "latitude": 45.4308,
+      "longitude": 6.3986,
+      "region": "Alpes françaises",
+      "country": "France",
+      "nearbyTowns": ["La Chambre", "Notre-Dame-du-Cruet", "La Léchère"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "La Chambre",
+        "length": 19.5,
+        "elevation": 1520,
+        "averageGradient": 7.8,
+        "maxGradient": 10.0,
+        "difficulty": 9
+      },
+      "southSide": {
+        "startLocation": "La Léchère",
+        "length": 19.2,
+        "elevation": 1515,
+        "averageGradient": 7.9,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1969,
+      "tourDeFranceAppearances": 25,
+      "famousStories": [
+        "En 1973, Luis Ocaña attaque au début de l'ascension et distance Eddy Merckx pour remporter l'étape.",
+        "En 2020, le jeune Slovenian Tadej Pogačar y a attaqué son compatriote Primož Roglič, préfigurant son renversement spectaculaire dans le chrono de La Planche des Belles Filles.",
+        "Le col peut être combiné avec le Glandon ou la Croix de Fer pour former une boucle légendaire."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "1:07:15",
+          "year": 1998,
+          "side": "north"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Chapelle de la Madeleine",
+        "description": "Petite chapelle historique située près du sommet.",
+        "coordinates": [45.4308, 6.3986],
+        "type": "cultural"
+      },
+      {
+        "name": "Panorama sur Mont Blanc",
+        "description": "Vue exceptionnelle sur le Mont Blanc et la chaîne des Alpes par temps clair.",
+        "coordinates": [45.4308, 6.3986],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Alpage de la Madeleine",
+        "description": "Zone pastorale traditionnelle avec fabrication de fromage Beaufort en été.",
+        "coordinates": [45.4236, 6.3899],
+        "type": "cultural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne",
+      "trafficLevel": "Modéré",
+      "winterClosure": "Fermé de novembre à mai",
+      "facilities": ["Refuge au sommet", "Restaurant", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Refuge au sommet", "Sources naturelles sur le parcours"]
+    },
+    "images": {
+      "main": "/images/cols/madeleine/main.jpg",
+      "gallery": [
+        "/images/cols/madeleine/north-side.jpg",
+        "/images/cols/madeleine/south-side.jpg",
+        "/images/cols/madeleine/summit.jpg",
+        "/images/cols/madeleine/view.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Les deux versants sont similaires en difficulté mais le versant nord est légèrement plus régulier.",
+      "Le col est long, prévoyez suffisamment d'eau et de nourriture.",
+      "Les 5 derniers kilomètres sont les plus difficiles, gardez des forces."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "alpe-d-huez",
+    "name": "Alpe d'Huez",
+    "altitude": 1860,
+    "location": {
+      "latitude": 45.0909,
+      "longitude": 6.0705,
+      "region": "Alpes françaises",
+      "country": "France",
+      "nearbyTowns": ["Bourg d'Oisans", "Le Freney-d'Oisans"]
+    },
+    "climbData": {
+      "bourgDOisansSide": {
+        "startLocation": "Bourg d'Oisans",
+        "length": 13.8,
+        "elevation": 1120,
+        "averageGradient": 8.1,
+        "maxGradient": 13.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1952,
+      "tourDeFranceAppearances": 31,
+      "famousStories": [
+        "Les 21 virages de l'Alpe d'Huez sont numérotés et chacun porte le nom d'un vainqueur d'étape.",
+        "Fausto Coppi fut le premier vainqueur au sommet de l'Alpe d'Huez en 1952.",
+        "En 1997, Marco Pantani y établit un record d'ascension en 37:35, qui reste controversé.",
+        "L'Alpe est surnommée 'la montagne néerlandaise' en raison des nombreuses victoires néerlandaises dans les années 1970-80."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "37:35",
+          "year": 1997,
+          "side": "bourg"
+        },
+        "modern": {
+          "holder": "Carlos Sastre",
+          "time": "39:30",
+          "year": 2008,
+          "side": "bourg"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Virage 21",
+        "description": "Premier virage en bas de l'ascension, souvent décoré aux couleurs néerlandaises.",
+        "coordinates": [45.0732, 6.0452],
+        "type": "landmark"
+      },
+      {
+        "name": "Virage 7 - Pantani",
+        "description": "Virage dédié à Marco Pantani, souvent décoré aux couleurs italiennes.",
+        "coordinates": [45.0886, 6.0643],
+        "type": "landmark"
+      },
+      {
+        "name": "Place de l'Église",
+        "description": "Centre du village d'Huez en altitude, avec une église typique.",
+        "coordinates": [45.0885, 6.0667],
+        "type": "cultural"
+      },
+      {
+        "name": "Station de l'Alpe d'Huez",
+        "description": "Célèbre station de ski et lieu d'arrivée du Tour de France.",
+        "coordinates": [45.0909, 6.0705],
+        "type": "tourism"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré à élevé en été",
+      "winterClosure": "Accessible toute l'année, mais conditions potentiellement difficiles en hiver",
+      "facilities": ["Restaurants", "Cafés", "Hôtels", "Boutiques", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Nombreuses fontaines et cafés tout au long de l'ascension"]
+    },
+    "images": {
+      "main": "/images/cols/alpe-d-huez/main.jpg",
+      "gallery": [
+        "/images/cols/alpe-d-huez/hairpins.jpg",
+        "/images/cols/alpe-d-huez/turn21.jpg",
+        "/images/cols/alpe-d-huez/village.jpg",
+        "/images/cols/alpe-d-huez/tour.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le premier kilomètre est le plus difficile avec des pentes supérieures à 10%.",
+      "L'ascension est relativement courte mais intense, dosez votre effort.",
+      "En été, partez tôt pour éviter la chaleur et le trafic."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "pico-de-veleta",
+    "name": "Pico de Veleta",
+    "altitude": 3398,
+    "location": {
+      "latitude": 37.0553,
+      "longitude": -3.3657,
+      "region": "Sierra Nevada",
+      "country": "Espagne",
+      "nearbyTowns": ["Granada", "Monachil", "Pradollano"]
+    },
+    "climbData": {
+      "granadaSide": {
+        "startLocation": "Granada",
+        "length": 45.0,
+        "elevation": 2750,
+        "averageGradient": 6.1,
+        "maxGradient": 15.0,
+        "difficulty": 10
+      },
+      "monachilSide": {
+        "startLocation": "Monachil",
+        "length": 31.0,
+        "elevation": 2500,
+        "averageGradient": 8.0,
+        "maxGradient": 15.0,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "notableRaces": ["Vuelta a Andalucía", "Subida al Veleta"],
+      "famousStories": [
+        "C'est la route cyclable la plus haute d'Europe, culminant à 3398m.",
+        "La route au-delà de la station de ski est interdite aux véhicules motorisés, offrant un paradis pour les cyclistes.",
+        "En 1925, l'Espagnol Julián Español a établi le premier record officiel d'ascension.",
+        "Historiquement, les mules et chevaux étaient utilisés pour livrer des provisions à l'observatoire astronomique près du sommet."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Manuel Beltrán",
+          "time": "1:41:03",
+          "year": 2004,
+          "side": "granada"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Station de ski de Sierra Nevada",
+        "description": "Station de ski la plus méridionale d'Europe, située à environ 2100m d'altitude.",
+        "coordinates": [37.0944, -3.3987],
+        "type": "attraction"
+      },
+      {
+        "name": "Observatoire de Sierra Nevada",
+        "description": "Centre d'observation astronomique situé à haute altitude, bénéficiant de conditions exceptionnelles.",
+        "coordinates": [37.0639, -3.3847],
+        "type": "scientific"
+      },
+      {
+        "name": "Mirador du Veleta",
+        "description": "Point de vue spectaculaire, d'où l'on peut apercevoir la côte méditerranéenne et l'Afrique par temps clair.",
+        "coordinates": [37.0553, -3.3657],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Barranco de San Juan",
+        "description": "Gorge impressionnante traversée pendant l'ascension depuis Monachil.",
+        "coordinates": [37.1208, -3.4211],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre (la partie haute peut être inaccessible jusqu'à mi-juin en raison de la neige)",
+      "roadCondition": "Bonne jusqu'à la station, moyenne au-delà (surface irrégulière)",
+      "trafficLevel": "Modéré jusqu'à la station, quasi nul au-delà",
+      "winterClosure": "Fermé au-delà de la station d'octobre à juin",
+      "facilities": ["Restaurants et cafés à la station", "Aucune installation au-delà"],
+      "parkingAvailable": true,
+      "waterPoints": ["Dernière source à la station de ski"]
+    },
+    "images": {
+      "main": "/images/cols/veleta/main.jpg",
+      "gallery": [
+        "/images/cols/veleta/upper-section.jpg",
+        "/images/cols/veleta/ski-resort.jpg",
+        "/images/cols/veleta/summit.jpg",
+        "/images/cols/veleta/view.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte jusqu'à la station, piste au-delà",
+    "trainingTips": [
+      "L'altitude est le principal défi, prévoyez une acclimatation de quelques jours.",
+      "Emportez des vêtements chauds même en été, la température peut descendre sous 0°C au sommet.",
+      "Partez tôt pour éviter les orages fréquents en après-midi."
+    ],
+    "recommendedBikeTypes": ["Vélo de route jusqu'à la station", "Gravel ou VTT pour la partie supérieure"]
+  },
+  {
+    "id": "cime-de-la-bonette",
+    "name": "Cime de la Bonette",
+    "altitude": 2802,
+    "location": {
+      "latitude": 44.3235,
+      "longitude": 6.8057,
+      "region": "Alpes-Maritimes",
+      "country": "France",
+      "nearbyTowns": ["Jausiers", "Saint-Étienne-de-Tinée"]
+    },
+    "climbData": {
+      "jausiersSide": {
+        "startLocation": "Jausiers",
+        "length": 24.1,
+        "elevation": 1652,
+        "averageGradient": 6.9,
+        "maxGradient": 10.0,
+        "difficulty": 9
+      },
+      "saintEtienneSide": {
+        "startLocation": "Saint-Étienne-de-Tinée",
+        "length": 26.0,
+        "elevation": 1652,
+        "averageGradient": 6.4,
+        "maxGradient": 11.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1962,
+      "tourDeFranceAppearances": 4,
+      "famousStories": [
+        "Souvent présentée comme la plus haute route d'Europe, elle est en réalité dépassée par quelques autres cols comme le Pico Veleta.",
+        "La boucle au sommet a été construite spécifiquement pour pouvoir revendiquer le titre de 'plus haute route d'Europe' en dépassant le col de l'Iseran.",
+        "En 1993, le Colombien Alvaro Mejia a été le premier au sommet lors du Tour de France, avant que l'étape ne soit remportée par Tony Rominger."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Nairo Quintana",
+          "time": "1:05:55",
+          "year": 2016,
+          "side": "jausiers"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Boucle sommitale",
+        "description": "Route circulaire autour du sommet qui permet d'atteindre le point culminant à 2802m.",
+        "coordinates": [44.3235, 6.8057],
+        "type": "landmark"
+      },
+      {
+        "name": "Monument commémoratif",
+        "description": "Mémorial dédié aux soldats des Chasseurs Alpins.",
+        "coordinates": [44.3228, 6.8069],
+        "type": "monument"
+      },
+      {
+        "name": "Panorama du Mercantour",
+        "description": "Vue spectaculaire sur le Parc National du Mercantour et les Alpes italiennes.",
+        "coordinates": [44.3235, 6.8057],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mi-juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré, plus élevé les weekends",
+      "winterClosure": "Fermé d'octobre à juin",
+      "facilities": ["Aucune au sommet, derniers services à Jausiers ou Saint-Étienne"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaines le long du parcours côté Jausiers", "Aucun point d'eau fiable côté Saint-Étienne"]
+    },
+    "images": {
+      "main": "/images/cols/bonette/main.jpg",
+      "gallery": [
+        "/images/cols/bonette/jausiers-side.jpg",
+        "/images/cols/bonette/saint-etienne-side.jpg",
+        "/images/cols/bonette/loop.jpg",
+        "/images/cols/bonette/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "L'altitude est le principal défi, les derniers kilomètres sont nettement plus difficiles à cause du manque d'oxygène.",
+      "Le versant de Jausiers est légèrement plus régulier que celui de Saint-Étienne.",
+      "Attention aux changements météorologiques rapides, même en été."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "col-d-aubisque",
+    "name": "Col d'Aubisque",
+    "altitude": 1709,
+    "location": {
+      "latitude": 42.9767,
+      "longitude": -0.3384,
+      "region": "Pyrénées",
+      "country": "France",
+      "nearbyTowns": ["Laruns", "Argelès-Gazost", "Gourette"]
+    },
+    "climbData": {
+      "larunsSide": {
+        "startLocation": "Laruns",
+        "length": 16.6,
+        "elevation": 1190,
+        "averageGradient": 7.2,
+        "maxGradient": 13.0,
+        "difficulty": 9,
+        "note": "Passe par le Col du Soulor"
+      },
+      "argelesGazostSide": {
+        "startLocation": "Argelès-Gazost",
+        "length": 30.0,
+        "elevation": 1240,
+        "averageGradient": 4.1,
+        "maxGradient": 13.0,
+        "difficulty": 7,
+        "note": "Passe par le Col du Soulor"
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1910,
+      "tourDeFranceAppearances": 74,
+      "famousStories": [
+        "En 1910, Octave Lapize franchit le col à pied et lance aux organisateurs son célèbre 'Vous êtes des assassins!'.",
+        "En 1951, Wim van Est chute dans un ravin après avoir franchi le col et survit miraculeusement après une chute de 70 mètres.",
+        "La route entre le Col du Soulor et l'Aubisque, la Corniche du Cirque du Litor, est taillée dans la falaise et offre des vues spectaculaires."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Lance Armstrong",
+          "time": "42:46",
+          "year": 2003,
+          "side": "laruns"
+        },
+        "modern": {
+          "holder": "Thibaut Pinot",
+          "time": "43:49",
+          "year": 2019,
+          "side": "laruns"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Corniche du Cirque du Litor",
+        "description": "Route spectaculaire taillée dans la falaise reliant le Col du Soulor à l'Aubisque.",
+        "coordinates": [42.9692, -0.2651],
+        "type": "landmark"
+      },
+      {
+        "name": "Vélos géants",
+        "description": "Sculptures colorées de vélos géants installées au sommet, devenues emblématiques du col.",
+        "coordinates": [42.9767, -0.3384],
+        "type": "attraction"
+      },
+      {
+        "name": "Station de ski de Gourette",
+        "description": "Station familiale située sur le versant ouest du col.",
+        "coordinates": [42.9589, -0.3267],
+        "type": "tourism"
+      },
+      {
+        "name": "Vue sur le Pic du Midi d'Ossau",
+        "description": "Panorama exceptionnel sur ce sommet pyramidal emblématique des Pyrénées.",
+        "coordinates": [42.9767, -0.3384],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne, mais la Corniche peut être étroite",
+      "trafficLevel": "Modéré, plus élevé en juillet-août",
+      "winterClosure": "Généralement fermé de novembre à mai",
+      "facilities": ["Auberge et restaurant au sommet", "Café au Col du Soulor", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Source au sommet", "Fontaine au Col du Soulor"]
+    },
+    "images": {
+      "main": "/images/cols/aubisque/main.jpg",
+      "gallery": [
+        "/images/cols/aubisque/laruns-side.jpg",
+        "/images/cols/aubisque/corniche.jpg",
+        "/images/cols/aubisque/giant-bikes.jpg",
+        "/images/cols/aubisque/ossau-view.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Depuis Laruns, la montée est plus régulière mais soutenue.",
+      "La Corniche du Litor exige de l'attention en descente, surtout par temps humide.",
+      "Le col est souvent venté, prévoyez un coupe-vent même par beau temps."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  }
+]

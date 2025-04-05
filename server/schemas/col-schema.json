@@ -1,0 +1,240 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Schéma unifié pour les cols cyclistes",
+  "description": "Schéma standardisé pour les données de cols pour le projet Grand Est Cyclisme",
+  "type": "object",
+  "required": ["cols"],
+  "properties": {
+    "cols": {
+      "type": "array",
+      "description": "Liste des cols cyclistes",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "location", "statistics", "difficulty"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifiant unique du col (format: nom-du-col-en-kebab-case)"
+          },
+          "name": {
+            "type": "string",
+            "description": "Nom officiel du col"
+          },
+          "location": {
+            "type": "object",
+            "description": "Informations sur la localisation du col",
+            "required": ["country", "region"],
+            "properties": {
+              "country": {
+                "type": "string",
+                "description": "Pays où se trouve le col"
+              },
+              "region": {
+                "type": "string",
+                "description": "Région administrative où se trouve le col"
+              },
+              "department": {
+                "type": "string",
+                "description": "Département où se trouve le col (si applicable)"
+              },
+              "coordinates": {
+                "type": "object",
+                "description": "Coordonnées géographiques du col",
+                "required": ["lat", "lng"],
+                "properties": {
+                  "lat": {
+                    "type": "number",
+                    "description": "Latitude"
+                  },
+                  "lng": {
+                    "type": "number",
+                    "description": "Longitude"
+                  }
+                }
+              }
+            }
+          },
+          "statistics": {
+            "type": "object",
+            "description": "Données statistiques du col",
+            "required": ["length", "elevation_gain", "avg_gradient", "max_gradient", "summit_elevation"],
+            "properties": {
+              "length": {
+                "type": "number",
+                "description": "Longueur de l'ascension en kilomètres"
+              },
+              "elevation_gain": {
+                "type": "number",
+                "description": "Dénivelé positif en mètres"
+              },
+              "avg_gradient": {
+                "type": "number",
+                "description": "Pente moyenne en pourcentage"
+              },
+              "max_gradient": {
+                "type": "number",
+                "description": "Pente maximale en pourcentage"
+              },
+              "start_elevation": {
+                "type": "number",
+                "description": "Altitude du point de départ en mètres"
+              },
+              "summit_elevation": {
+                "type": "number",
+                "description": "Altitude du sommet en mètres"
+              }
+            }
+          },
+          "elevation_profile": {
+            "type": "array",
+            "description": "Profil d'élévation du col par points de distance",
+            "items": {
+              "type": "object",
+              "required": ["distance", "elevation"],
+              "properties": {
+                "distance": {
+                  "type": "number",
+                  "description": "Distance depuis le départ en kilomètres"
+                },
+                "elevation": {
+                  "type": "number",
+                  "description": "Altitude à ce point en mètres"
+                },
+                "gradient": {
+                  "type": "number",
+                  "description": "Pente à ce segment en pourcentage"
+                }
+              }
+            }
+          },
+          "segments": {
+            "type": "array",
+            "description": "Segments spécifiques du col",
+            "items": {
+              "type": "object",
+              "required": ["name", "length", "gradient"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Nom du segment"
+                },
+                "length": {
+                  "type": "number",
+                  "description": "Longueur du segment en kilomètres"
+                },
+                "gradient": {
+                  "type": "number",
+                  "description": "Pente moyenne du segment en pourcentage"
+                },
+                "difficulty": {
+                  "type": "string",
+                  "description": "Niveau de difficulté du segment"
+                }
+              }
+            }
+          },
+          "difficulty": {
+            "oneOf": [
+              {
+                "type": "string",
+                "description": "Catégorie UCI (HC, 1, 2, 3, 4)"
+              },
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5,
+                "description": "Niveau de difficulté de 1 (facile) à 5 (extrême)"
+              }
+            ]
+          },
+          "history": {
+            "type": "object",
+            "description": "Historique du col",
+            "properties": {
+              "tour_appearances": {
+                "type": "integer",
+                "description": "Nombre d'apparitions dans le Tour de France"
+              },
+              "first_appearance": {
+                "type": "integer",
+                "description": "Année de première apparition dans une grande course"
+              },
+              "notable_events": {
+                "type": "array",
+                "description": "Événements notables liés au col",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "records": {
+                "type": "object",
+                "description": "Records d'ascension",
+                "properties": {
+                  "official": {
+                    "type": "string",
+                    "description": "Record officiel (temps et cycliste)"
+                  },
+                  "strava": {
+                    "type": "string",
+                    "description": "Record Strava (temps et cycliste)"
+                  }
+                }
+              }
+            }
+          },
+          "recommended_season": {
+            "type": "array",
+            "description": "Saisons recommandées pour l'ascension",
+            "items": {
+              "type": "string",
+              "enum": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+            }
+          },
+          "images": {
+            "type": "array",
+            "description": "Images du col",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "practical_info": {
+            "type": "object",
+            "description": "Informations pratiques",
+            "properties": {
+              "parking": {
+                "type": "string",
+                "description": "Informations sur le stationnement"
+              },
+              "water_points": {
+                "type": "array",
+                "description": "Points d'eau le long de l'ascension",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "hazards": {
+                "type": "array",
+                "description": "Dangers potentiels",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "Description détaillée du col"
+          },
+          "tags": {
+            "type": "array",
+            "description": "Tags associés au col",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

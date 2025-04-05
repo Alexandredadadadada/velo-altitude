@@ -1,0 +1,91 @@
+.parallax-header {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  perspective: 1px;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax-layer-back {
+  transform: translateZ(-1px) scale(2);
+  z-index: 1;
+}
+
+.parallax-layer-base {
+  transform: translateZ(0);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mountains {
+  background-image: url('/images/mountain-range.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.header-content {
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.logo {
+  margin-bottom: 1rem;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .parallax-header {
+    height: 200px;
+  }
+  
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header-content p {
+    font-size: 1rem;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+}
+
+/* Désactivation du parallaxe pour les préférences de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-layer-back {
+    transform: none;
+  }
+}

@@ -1,0 +1,57 @@
+/* Styles globaux pour l'application */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.app-footer {
+  margin-top: auto;
+  padding: 1.5rem 0;
+  background-color: var(--dark-bg);
+  color: white;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .app-container {
+    padding-bottom: 60px; /* Espace pour la navigation mobile */
+  }
+}
+
+/* Animations */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}

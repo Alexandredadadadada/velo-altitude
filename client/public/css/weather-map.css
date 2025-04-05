@@ -1,0 +1,274 @@
+/**
+ * Styles pour l'intégration Météo-Carte
+ * Permet d'afficher les données météo directement sur la carte
+ */
+
+/* Conteneur principal pour la couche météo */
+.weather-map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Contrôle d'affichage de la couche météo */
+.weather-layer-control {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  pointer-events: auto;
+}
+
+.weather-layer-control .control-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.weather-layer-toggle {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.weather-layer-toggle input {
+  margin-right: 5px;
+}
+
+/* Marqueurs météo */
+.weather-marker {
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.weather-marker:hover {
+  transform: scale(1.2);
+}
+
+/* Couleurs pour les conditions météo différentes */
+.weather-condition-sun {
+  filter: drop-shadow(0 0 3px rgba(255, 150, 0, 0.7));
+}
+
+.weather-condition-cloud {
+  filter: drop-shadow(0 0 3px rgba(125, 125, 125, 0.7));
+}
+
+.weather-condition-rain {
+  filter: drop-shadow(0 0 3px rgba(0, 125, 255, 0.7));
+}
+
+.weather-condition-snow {
+  filter: drop-shadow(0 0 3px rgba(200, 200, 255, 0.7));
+}
+
+.weather-condition-storm {
+  filter: drop-shadow(0 0 3px rgba(100, 100, 255, 0.7));
+}
+
+/* Popup météo */
+.weather-popup {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+}
+
+.weather-popup-header {
+  background: #1F497D;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-popup-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.weather-popup-close {
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.weather-popup-close:hover {
+  opacity: 1;
+}
+
+.weather-popup-content {
+  padding: 12px;
+}
+
+.weather-current {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.weather-icon {
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 15px;
+}
+
+.weather-temp {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.weather-desc {
+  color: #555;
+  font-size: 14px;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8px;
+  margin-top: 10px;
+}
+
+.weather-detail-item {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.weather-detail-item i {
+  margin-right: 5px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Visualisation de la couche météo */
+.weather-tile {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Contrôle de la transparence de la couche météo */
+.weather-layer-opacity {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.weather-layer-opacity label {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
+}
+
+.weather-layer-opacity input {
+  width: 100%;
+}
+
+/* Légende pour la couche météo */
+.weather-legend {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  max-width: 250px;
+  pointer-events: auto;
+  display: none; /* Caché par défaut */
+}
+
+.weather-legend.visible {
+  display: block;
+}
+
+.legend-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  grid-gap: 5px;
+  align-items: center;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.legend-item-sun .legend-color {
+  background: rgba(255, 150, 0, 0.7);
+}
+
+.legend-item-cloud .legend-color {
+  background: rgba(125, 125, 125, 0.7);
+}
+
+.legend-item-rain .legend-color {
+  background: rgba(0, 125, 255, 0.7);
+}
+
+.legend-item-snow .legend-color {
+  background: rgba(200, 200, 255, 0.7);
+}
+
+.legend-item-storm .legend-color {
+  background: rgba(100, 100, 255, 0.7);
+}
+
+/* Style responsive pour mobile */
+@media (max-width: 767px) {
+  .weather-layer-control {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .weather-legend {
+    bottom: 80px;
+    right: 10px;
+    max-width: 200px;
+  }
+  
+  .weather-popup {
+    width: 200px;
+  }
+}

@@ -1,0 +1,254 @@
+.nutrition-planner {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.nutrition-results {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-summary {
+  flex: 1;
+  min-width: 300px;
+}
+
+.nutrition-charts {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nutrition-total {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.nutrition-total h5 {
+  margin-bottom: 5px;
+  color: #343a40;
+}
+
+.nutrition-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.nutrition-macros {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.nutrition-macro {
+  text-align: center;
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0 5px;
+}
+
+.nutrition-macro:nth-child(1) {
+  background-color: rgba(255, 99, 132, 0.1);
+}
+
+.nutrition-macro:nth-child(2) {
+  background-color: rgba(54, 162, 235, 0.1);
+}
+
+.nutrition-macro:nth-child(3) {
+  background-color: rgba(255, 206, 86, 0.1);
+}
+
+.nutrition-macro h6 {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.nutrition-percentage {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.nutrition-additional {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.chart-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.meal-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meal-macros {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.meal-macro {
+  background-color: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.meal-suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.meal-suggestion-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meal-suggestion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.meal-foods {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.meal-food {
+  background-color: #e9ecef;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.cycling-nutrition {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.food-journal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.daily-totals {
+  background-color: #f8f9fa;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.daily-total {
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+.food-search {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.search-results {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.saved-plans {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan-profile, .plan-summary {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-right: 15px;
+  min-width: 250px;
+}
+
+.profile-details, .nutrition-details {
+  margin-top: 10px;
+}
+
+.profile-item, .nutrition-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.nav-tabs .nav-link {
+  font-weight: 600;
+  color: #495057;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: #007bff;
+  background-color: transparent;
+  border-bottom: 3px solid #007bff;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+  border-bottom: 3px solid #dee2e6;
+}
+
+.btn-group .btn {
+  margin-right: 2px;
+}
+
+.table th {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .nutrition-macros {
+    flex-direction: column;
+  }
+  
+  .nutrition-macro {
+    margin-bottom: 10px;
+  }
+  
+  .meal-suggestions {
+    grid-template-columns: 1fr;
+  }
+}

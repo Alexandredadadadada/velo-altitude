@@ -1,0 +1,777 @@
+.enhanced-col-detail {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.col-title h1 {
+  margin-bottom: 10px;
+  color: #343a40;
+  font-weight: 700;
+}
+
+.col-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.col-altitude, .col-region, .col-country, .col-difficulty {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.col-altitude {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.col-region {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.col-country {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.col-difficulty {
+  color: white;
+}
+
+.difficulty-easy {
+  background-color: #28a745;
+}
+
+.difficulty-moderate {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.difficulty-hard {
+  background-color: #fd7e14;
+}
+
+.difficulty-extreme {
+  background-color: #dc3545;
+}
+
+.col-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.compare-controls {
+  background-color: #f1f8ff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #b3d7ff;
+}
+
+.col-tabs .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: #495057;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+}
+
+.col-tabs .nav-link.active {
+  color: #007bff;
+  background-color: transparent;
+  border-bottom: 3px solid #007bff;
+}
+
+.col-tabs .nav-link:hover:not(.active) {
+  border-bottom: 3px solid #dee2e6;
+}
+
+.col-info {
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.info-value {
+  color: #212529;
+}
+
+.col-description h4, .points-of-interest h4 {
+  margin-bottom: 15px;
+  color: #343a40;
+  font-weight: 600;
+}
+
+.poi-list {
+  list-style: none;
+  padding: 0;
+}
+
+.poi-item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.poi-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #343a40;
+}
+
+.poi-distance {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.weather-info {
+  padding: 10px;
+}
+
+.current-weather {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.weather-icon img {
+  width: 64px;
+  height: 64px;
+}
+
+.weather-temp {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #343a40;
+}
+
+.weather-desc {
+  color: #6c757d;
+}
+
+.weather-conditions {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.condition-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.condition-label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.forecast-items {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.forecast-day {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.forecast-icon img {
+  width: 40px;
+  height: 40px;
+  margin: 5px 0;
+}
+
+.forecast-temp {
+  display: flex;
+  gap: 5px;
+}
+
+.max-temp {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.min-temp {
+  color: #007bff;
+}
+
+.user-notes {
+  min-height: 100px;
+  white-space: pre-line;
+}
+
+.col-map {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.side-selector {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.climb-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+  min-width: 100px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 0 5px 10px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.chart-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 30px;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #dee2e6;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -34px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #007bff;
+  border: 4px solid #fff;
+}
+
+.timeline-year {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.timeline-title {
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.timeline-image {
+  margin-top: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timeline-image img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.image-caption {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.tour-appearances {
+  margin-top: 20px;
+}
+
+.famous-riders {
+  margin-top: 20px;
+}
+
+.rider-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rider-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.rider-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.rider-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rider-info {
+  padding: 15px;
+}
+
+.rider-name {
+  margin-bottom: 5px;
+  color: #343a40;
+}
+
+.rider-achievement {
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.practical-info {
+  margin-top: 20px;
+}
+
+.info-section {
+  margin-bottom: 20px;
+}
+
+.info-section h4 {
+  margin-bottom: 10px;
+  color: #343a40;
+  font-weight: 600;
+}
+
+.facilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.facility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.facility-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.facility-info h5 {
+  margin-bottom: 5px;
+  color: #343a40;
+}
+
+.accommodation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.accommodation-item {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.accommodation-details {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.accommodation-type {
+  color: #6c757d;
+}
+
+.accommodation-distance {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.accommodation-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.accommodation-link:hover {
+  text-decoration: underline;
+}
+
+.similar-col-card {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.similar-col-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.col-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.col-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.col-image-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-weight: 600;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.map-wrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+  height: 400px;
+  width: 100%;
+  background-color: #f8f9fa;
+}
+
+.map-attribution {
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.leaflet-mountain-icon {
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.leaflet-control-zoom-toggle {
+  background-color: white;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.chart-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  position: relative;
+}
+
+.chart-controls {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.col-actions button:focus,
+.col-tabs .nav-link:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: #6c757d;
+}
+
+img.fallback-image {
+  opacity: 0.7;
+  background-color: #f8f9fa;
+  border: 1px dashed #ced4da;
+}
+
+/* Simplification des animations pour le build */
+.col-tabs .tab-content {
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.poi-item, .forecast-item, .stat-item {
+  transition: transform 0.2s ease;
+}
+
+.poi-item:hover, .forecast-item:hover, .stat-item:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .col-header {
+    flex-direction: column;
+  }
+  
+  .col-actions {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .col-tabs .nav-link {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .forecast-items {
+    padding-bottom: 10px;
+  }
+
+  .current-weather {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .chart-container {
+    height: 300px;
+  }
+  
+  .map-container {
+    height: 300px;
+  }
+  
+  .timeline {
+    padding-left: 25px;
+  }
+  
+  .timeline-marker {
+    left: -29px;
+  }
+}
+
+@media (max-width: 768px) {
+  .enhanced-col-detail {
+    padding: 15px 10px;
+  }
+  
+  .col-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  .col-badges {
+    gap: 5px;
+  }
+  
+  .col-altitude, .col-region, .col-country, .col-difficulty {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  
+  .col-tabs .nav-link {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .col-tabs .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .side-selector .form-group {
+    flex-direction: column;
+  }
+  
+  .col-tabs .nav-link svg {
+    display: none; /* Masquer les icônes sur petit écran */
+  }
+  
+  .climb-stats {
+    flex-direction: column;
+  }
+  
+  .stat-item {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .chart-container {
+    height: 250px;
+    padding: 10px;
+  }
+  
+  .map-container {
+    height: 250px;
+  }
+  
+  .rider-image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-title h1 {
+    font-size: 1.5rem;
+  }
+  
+  .col-badges {
+    margin-bottom: 10px;
+  }
+  
+  .compare-controls {
+    padding: 10px;
+  }
+  
+  .col-tabs .nav-link {
+    padding: 5px;
+    font-size: 0.7rem;
+  }
+  
+  .weather-icon img {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .weather-temp {
+    font-size: 1.5rem;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+  
+  .map-container {
+    height: 200px;
+  }
+}
+
+@media print {
+  .col-actions, .col-tabs .nav {
+    display: none;
+  }
+  
+  .enhanced-col-detail {
+    padding: 0;
+    background-color: white;
+  }
+  
+  .col-title h1 {
+    color: black;
+  }
+  
+  .chart-container, .map-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

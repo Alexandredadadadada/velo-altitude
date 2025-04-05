@@ -1,0 +1,364 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Col Schema",
+  "description": "Schéma unifié pour les cols cyclistes du Grand Est et d'Europe",
+  "type": "object",
+  "required": ["id", "name", "location", "statistics", "difficulty"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identifiant unique du col (slug)",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nom officiel du col"
+    },
+    "location": {
+      "type": "object",
+      "required": ["country", "region", "coordinates"],
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Pays où se situe le col"
+        },
+        "region": {
+          "type": "string",
+          "description": "Région/département où se situe le col"
+        },
+        "coordinates": {
+          "type": "object",
+          "required": ["lat", "lng"],
+          "properties": {
+            "lat": {
+              "type": "number",
+              "description": "Latitude de la position du sommet",
+              "minimum": -90,
+              "maximum": 90
+            },
+            "lng": {
+              "type": "number",
+              "description": "Longitude de la position du sommet",
+              "minimum": -180,
+              "maximum": 180
+            }
+          }
+        },
+        "address": {
+          "type": "string",
+          "description": "Adresse/localité la plus proche du col"
+        }
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "required": ["length", "elevationGain", "avgGradient", "maxGradient", "startElevation", "summitElevation"],
+      "properties": {
+        "length": {
+          "type": "number",
+          "description": "Longueur de l'ascension en kilomètres",
+          "minimum": 0
+        },
+        "elevationGain": {
+          "type": "number",
+          "description": "Dénivelé positif en mètres",
+          "minimum": 0
+        },
+        "avgGradient": {
+          "type": "number",
+          "description": "Pourcentage moyen de la pente",
+          "minimum": 0
+        },
+        "maxGradient": {
+          "type": "number",
+          "description": "Pourcentage maximum de la pente",
+          "minimum": 0
+        },
+        "startElevation": {
+          "type": "number",
+          "description": "Altitude du point de départ en mètres",
+          "minimum": 0
+        },
+        "summitElevation": {
+          "type": "number",
+          "description": "Altitude du sommet en mètres",
+          "minimum": 0
+        }
+      }
+    },
+    "elevationProfile": {
+      "type": "array",
+      "description": "Points pour tracer le profil d'élévation",
+      "items": {
+        "type": "object",
+        "required": ["distance", "elevation"],
+        "properties": {
+          "distance": {
+            "type": "number",
+            "description": "Distance depuis le départ en kilomètres"
+          },
+          "elevation": {
+            "type": "number",
+            "description": "Altitude à ce point en mètres"
+          },
+          "gradient": {
+            "type": "number",
+            "description": "Pourcentage de pente à ce point"
+          }
+        }
+      }
+    },
+    "elevationSvg": {
+      "type": "string",
+      "description": "Chemin vers le fichier SVG du profil d'élévation ou données SVG inline"
+    },
+    "difficulty": {
+      "type": "string",
+      "description": "Catégorie UCI du col",
+      "enum": ["HC", "1", "2", "3", "4"]
+    },
+    "segments": {
+      "type": "array",
+      "description": "Segments notables du col",
+      "items": {
+        "type": "object",
+        "required": ["name", "gradient", "length"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nom du segment"
+          },
+          "gradient": {
+            "type": "number",
+            "description": "Pourcentage moyen de la pente"
+          },
+          "length": {
+            "type": "number",
+            "description": "Longueur du segment en kilomètres"
+          },
+          "difficulty": {
+            "type": "string",
+            "description": "Évaluation subjective de la difficulté"
+          },
+          "startKm": {
+            "type": "number",
+            "description": "Kilomètre de début du segment"
+          },
+          "endKm": {
+            "type": "number",
+            "description": "Kilomètre de fin du segment"
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "object",
+      "properties": {
+        "tourAppearances": {
+          "type": "number",
+          "description": "Nombre d'apparitions au Tour de France"
+        },
+        "giroAppearances": {
+          "type": "number",
+          "description": "Nombre d'apparitions au Giro d'Italia"
+        },
+        "vueltaAppearances": {
+          "type": "number",
+          "description": "Nombre d'apparitions à la Vuelta a España"
+        },
+        "firstAppearance": {
+          "type": "number",
+          "description": "Année de la première apparition dans une course majeure"
+        },
+        "notableEvents": {
+          "type": "array",
+          "description": "Événements historiques notables",
+          "items": {
+            "type": "string"
+          }
+        },
+        "records": {
+          "type": "object",
+          "properties": {
+            "ascent": {
+              "type": "string",
+              "description": "Record officiel d'ascension"
+            },
+            "strava": {
+              "type": "string",
+              "description": "Record Strava"
+            }
+          }
+        }
+      }
+    },
+    "recommendedSeason": {
+      "type": "array",
+      "description": "Mois recommandés pour gravir le col",
+      "items": {
+        "type": "string",
+        "enum": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+      }
+    },
+    "images": {
+      "type": "array",
+      "description": "Images du col (min. 3 recommandées)",
+      "items": {
+        "type": "object",
+        "required": ["url", "alt"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL de l'image"
+          },
+          "alt": {
+            "type": "string",
+            "description": "Description alternative de l'image"
+          },
+          "caption": {
+            "type": "string",
+            "description": "Légende de l'image"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type de vue",
+            "enum": ["sommet", "profil", "panorama", "virage", "route"]
+          }
+        }
+      }
+    },
+    "pointsOfInterest": {
+      "type": "array",
+      "description": "Points d'intérêt à proximité du col",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "location"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nom du point d'intérêt"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type de point d'intérêt",
+            "enum": ["ravitaillement", "monument", "panorama", "restaurant", "fontaine", "parking", "touristique"]
+          },
+          "location": {
+            "type": "string",
+            "description": "Localisation du point d'intérêt"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description détaillée"
+          },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "lat": {"type": "number"},
+              "lng": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "practicalInfo": {
+      "type": "object",
+      "properties": {
+        "parking": {
+          "type": "string",
+          "description": "Informations sur les possibilités de stationnement"
+        },
+        "waterPoints": {
+          "type": "array",
+          "description": "Points d'eau disponibles",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hazards": {
+          "type": "array",
+          "description": "Dangers ou avertissements",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accessibility": {
+          "type": "string",
+          "description": "Informations sur l'accessibilité"
+        }
+      }
+    },
+    "alternativeRoutes": {
+      "type": "array",
+      "description": "Routes alternatives pour gravir le col",
+      "items": {
+        "type": "object",
+        "required": ["name", "length", "elevationGain", "difficulty"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nom de la route alternative"
+          },
+          "length": {
+            "type": "number",
+            "description": "Longueur en kilomètres"
+          },
+          "elevationGain": {
+            "type": "number",
+            "description": "Dénivelé positif en mètres"
+          },
+          "difficulty": {
+            "type": "string",
+            "description": "Difficulté selon classification UCI"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description du parcours"
+          }
+        }
+      }
+    },
+    "weather": {
+      "type": "object",
+      "description": "Informations météorologiques typiques",
+      "properties": {
+        "averageTemperature": {
+          "type": "object",
+          "properties": {
+            "summer": {"type": "number"},
+            "winter": {"type": "number"}
+          }
+        },
+        "rainDays": {
+          "type": "object",
+          "properties": {
+            "annual": {"type": "number"},
+            "summer": {"type": "number"}
+          }
+        },
+        "windSpeed": {
+          "type": "object",
+          "properties": {
+            "average": {"type": "number"},
+            "maximum": {"type": "number"}
+          }
+        },
+        "snowClosure": {
+          "type": "array",
+          "description": "Mois typiques de fermeture pour neige",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date de création de l'entrée"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date de dernière mise à jour"
+    }
+  }
+}

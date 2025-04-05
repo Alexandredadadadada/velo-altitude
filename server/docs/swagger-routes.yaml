@@ -1,0 +1,592 @@
+openapi: 3.0.0
+info:
+  title: Dashboard-Velo API - Itinéraires et Planification
+  description: Documentation des endpoints pour les itinéraires cyclistes et la planification
+  version: 2.0.0
+
+paths:
+  /routes/plan:
+    post:
+      summary: Planifier un itinéraire
+      description: |
+        Calcule un itinéraire cycliste optimisé entre deux points.
+        Prend en compte les préférences du cycliste et les conditions météorologiques.
+      tags:
+        - Itinéraires
+      parameters:
+        - $ref: 'swagger-core.yaml#/components/parameters/RegionParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - start
+                - end
+              properties:
+                start:
+                  type: object
+                  required:
+                    - lat
+                    - lng
+                  properties:
+                    lat:
+                      type: number
+                      description: Latitude du point de départ
+                    lng:
+                      type: number
+                      description: Longitude du point de départ
+                    name:
+                      type: string
+                      description: Nom du point de départ (optionnel)
+                end:
+                  type: object
+                  required:
+                    - lat
+                    - lng
+                  properties:
+                    lat:
+                      type: number
+                      description: Latitude du point d'arrivée
+                    lng:
+                      type: number
+                      description: Longitude du point d'arrivée
+                    name:
+                      type: string
+                      description: Nom du point d'arrivée (optionnel)
+                waypoints:
+                  type: array
+                  description: Points de passage intermédiaires
+                  items:
+                    type: object
+                    required:
+                      - lat
+                      - lng
+                    properties:
+                      lat:
+                        type: number
+                      lng:
+                        type: number
+                      name:
+                        type: string
+                preferences:
+                  type: object
+                  properties:
+                    avoidTraffic:
+                      type: boolean
+                      description: Éviter les routes à fort trafic
+                      default: true
+                    preferScenic:
+                      type: boolean
+                      description: Préférer les routes panoramiques
+                      default: false
+                    avoidHills:
+                      type: boolean
+                      description: Éviter les côtes importantes
+                      default: false
+                    maximumGradient:
+                      type: number
+                      description: Pente maximale acceptable (%)
+                    routeType:
+                      type: string
+                      enum: [fastest, balanced, scenic]
+                      default: balanced
+                    difficulty:
+                      type: string
+                      enum: [easy, medium, hard]
+                      default: medium
+                    surfaceType:
+                      type: string
+                      enum: [any, paved, unpaved]
+                      default: any
+                includeElevation:
+                  type: boolean
+                  description: Inclure les données d'élévation
+                  default: true
+                includeWeather:
+                  type: boolean
+                  description: Inclure les données météo
+                  default: false
+                includePOIs:
+                  type: boolean
+                  description: Inclure les points d'intérêt
+                  default: false
+                includeTrafficInfo:
+                  type: boolean
+                  description: Inclure les informations de trafic
+                  default: false
+                region:
+                  type: string
+                  description: Région européenne pour optimisation
+                  enum: [western, eastern, northern, southern, central]
+      responses:
+        '200':
+          description: Itinéraire calculé
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-core.yaml#/components/schemas/Route'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+        '500':
+          $ref: 'swagger-core.yaml#/components/responses/ServerError'
+
+  /routes/{routeId}:
+    get:
+      summary: Récupérer un itinéraire
+      description: Récupère les détails d'un itinéraire enregistré
+      tags:
+        - Itinéraires
+      parameters:
+        - name: routeId
+          in: path
+          description: Identifiant de l'itinéraire
+          required: true
+          schema:
+            type: string
+        - name: includeWeather
+          in: query
+          description: Inclure les données météo actualisées
+          required: false
+          schema:
+            type: boolean
+            default: false
+      responses:
+        '200':
+          description: Détails de l'itinéraire
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-core.yaml#/components/schemas/Route'
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /routes/save:
+    post:
+      summary: Enregistrer un itinéraire
+      description: Enregistre un itinéraire dans le compte utilisateur
+      tags:
+        - Itinéraires
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - route
+                - name
+              properties:
+                route:
+                  $ref: 'swagger-core.yaml#/components/schemas/Route'
+                name:
+                  type: string
+                  description: Nom personnalisé de l'itinéraire
+                description:
+                  type: string
+                  description: Description de l'itinéraire
+                isPublic:
+                  type: boolean
+                  description: Rendre l'itinéraire public
+                  default: false
+                tags:
+                  type: array
+                  items:
+                    type: string
+                  description: Tags associés à l'itinéraire
+      responses:
+        '201':
+          description: Itinéraire enregistré
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  routeId:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          $ref: 'swagger-core.yaml#/components/responses/Unauthorized'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /routes/user/{userId}:
+    get:
+      summary: Itinéraires d'un utilisateur
+      description: Récupère les itinéraires enregistrés par un utilisateur
+      tags:
+        - Itinéraires
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: userId
+          in: path
+          description: Identifiant de l'utilisateur
+          required: true
+          schema:
+            type: string
+        - $ref: 'swagger-core.yaml#/components/parameters/LimitParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/OffsetParam'
+        - name: sortBy
+          in: query
+          description: Champ de tri
+          required: false
+          schema:
+            type: string
+            enum: [name, distance, date]
+            default: date
+        - name: sortOrder
+          in: query
+          description: Ordre de tri
+          required: false
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+      responses:
+        '200':
+          description: Liste des itinéraires
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  offset:
+                    type: integer
+                  limit:
+                    type: integer
+                  routes:
+                    type: array
+                    items:
+                      $ref: 'swagger-core.yaml#/components/schemas/Route'
+        '401':
+          $ref: 'swagger-core.yaml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'swagger-core.yaml#/components/responses/Forbidden'
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+
+  /routes/popular:
+    get:
+      summary: Itinéraires populaires
+      description: Récupère les itinéraires populaires par région
+      tags:
+        - Itinéraires
+      parameters:
+        - $ref: 'swagger-core.yaml#/components/parameters/RegionParam'
+        - name: limit
+          in: query
+          description: Nombre d'itinéraires à retourner
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 1
+            maximum: 50
+      responses:
+        '200':
+          description: Itinéraires populaires
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: 'swagger-core.yaml#/components/schemas/Route'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /routes/export/{routeId}:
+    get:
+      summary: Exporter un itinéraire
+      description: Exporte un itinéraire dans différents formats
+      tags:
+        - Itinéraires
+      parameters:
+        - name: routeId
+          in: path
+          description: Identifiant de l'itinéraire
+          required: true
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Format d'export
+          required: true
+          schema:
+            type: string
+            enum: [gpx, tcx, kml, json]
+      responses:
+        '200':
+          description: Itinéraire exporté
+          content:
+            application/gpx+xml:
+              schema:
+                type: string
+            application/vnd.garmin.tcx+xml:
+              schema:
+                type: string
+            application/vnd.google-earth.kml+xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: object
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+
+  /routes/elevation:
+    post:
+      summary: Données d'élévation
+      description: Récupère les données d'élévation pour un ensemble de points
+      tags:
+        - Itinéraires
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - points
+              properties:
+                points:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      lat:
+                        type: number
+                      lng:
+                        type: number
+                resolution:
+                  type: string
+                  enum: [high, medium, low]
+                  default: medium
+      responses:
+        '200':
+          description: Données d'élévation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  points:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        lat:
+                          type: number
+                        lng:
+                          type: number
+                        elevation:
+                          type: number
+                  stats:
+                    type: object
+                    properties:
+                      minElevation:
+                        type: number
+                      maxElevation:
+                        type: number
+                      totalAscent:
+                        type: number
+                      totalDescent:
+                        type: number
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /routes/segments:
+    post:
+      summary: Segments d'itinéraire
+      description: Identifie les segments notables d'un itinéraire (cols, descentes, etc.)
+      tags:
+        - Itinéraires
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - points
+              properties:
+                points:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      lat:
+                        type: number
+                      lng:
+                        type: number
+                      elevation:
+                        type: number
+                segmentTypes:
+                  type: array
+                  items:
+                    type: string
+                    enum: [climb, descent, flat, col]
+                  default: ["climb", "col"]
+                minClimbLength:
+                  type: number
+                  description: Longueur minimale d'une montée (km)
+                  default: 1.0
+                minDescentLength:
+                  type: number
+                  description: Longueur minimale d'une descente (km)
+                  default: 1.0
+                minGradient:
+                  type: number
+                  description: Pente minimale pour considérer une montée (%)
+                  default: 3.0
+      responses:
+        '200':
+          description: Segments identifiés
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  segments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          enum: [climb, descent, flat, col]
+                        startIndex:
+                          type: integer
+                        endIndex:
+                          type: integer
+                        startPoint:
+                          type: object
+                          properties:
+                            lat:
+                              type: number
+                            lng:
+                              type: number
+                            elevation:
+                              type: number
+                        endPoint:
+                          type: object
+                          properties:
+                            lat:
+                              type: number
+                            lng:
+                              type: number
+                            elevation:
+                              type: number
+                        length:
+                          type: number
+                          description: Longueur en kilomètres
+                        elevationDiff:
+                          type: number
+                          description: Différence d'élévation en mètres
+                        avgGradient:
+                          type: number
+                          description: Pente moyenne en pourcentage
+                        maxGradient:
+                          type: number
+                          description: Pente maximale en pourcentage
+                        difficulty:
+                          type: string
+                          enum: [easy, medium, hard, extreme]
+                        matchedCol:
+                          type: object
+                          description: Col correspondant si identifié
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /routes/weather:
+    post:
+      summary: Météo le long d'un itinéraire
+      description: Récupère les prévisions météo le long d'un itinéraire
+      tags:
+        - Itinéraires
+        - Météo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - points
+              properties:
+                points:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      lat:
+                        type: number
+                      lng:
+                        type: number
+                startTime:
+                  type: string
+                  format: date-time
+                  description: Heure de départ prévue
+                estimatedDuration:
+                  type: number
+                  description: Durée estimée en minutes
+                resolution:
+                  type: string
+                  enum: [high, medium, low]
+                  description: Résolution des prévisions
+                  default: medium
+      responses:
+        '200':
+          description: Prévisions météo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  points:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        lat:
+                          type: number
+                        lng:
+                          type: number
+                        weather:
+                          $ref: 'swagger-core.yaml#/components/schemas/Weather'
+                  summary:
+                    type: object
+                    properties:
+                      overallCondition:
+                        type: string
+                      temperatureRange:
+                        type: object
+                        properties:
+                          min:
+                            type: number
+                          max:
+                            type: number
+                      precipitationRisk:
+                        type: number
+                      windInfo:
+                        type: object
+                      recommendation:
+                        type: string
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'

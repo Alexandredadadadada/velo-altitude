@@ -1,0 +1,472 @@
+[
+  {
+    "id": "col-d-izoard",
+    "name": "Col d'Izoard",
+    "altitude": 2360,
+    "location": {
+      "latitude": 44.8203,
+      "longitude": 6.7347,
+      "region": "Alpes françaises",
+      "country": "France",
+      "nearbyTowns": ["Briançon", "Arvieux", "Château-Queyras"]
+    },
+    "climbData": {
+      "brianconSide": {
+        "startLocation": "Briançon",
+        "length": 19.0,
+        "elevation": 1150,
+        "averageGradient": 6.0,
+        "maxGradient": 10.0,
+        "difficulty": 8
+      },
+      "arvieuxSide": {
+        "startLocation": "Arvieux",
+        "length": 15.9,
+        "elevation": 1095,
+        "averageGradient": 6.9,
+        "maxGradient": 10.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1922,
+      "tourDeFranceAppearances": 34,
+      "famousStories": [
+        "L'ascension inclut la célèbre 'Casse Déserte', un paysage lunaire de roches érodées.",
+        "Fausto Coppi et Louison Bobet y ont réalisé des performances légendaires dans les années 1950.",
+        "En 2017, Warren Barguil remportait l'étape le jour de la fête nationale française."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Claudio Chiappucci",
+          "time": "39:28",
+          "year": 1992,
+          "side": "briancon"
+        },
+        "modern": {
+          "holder": "Warren Barguil",
+          "time": "41:35",
+          "year": 2017,
+          "side": "briancon"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "La Casse Déserte",
+        "description": "Paysage unique de roches érodées par le vent et l'eau, formant un décor presque lunaire.",
+        "coordinates": [44.8333, 6.7405],
+        "type": "natural"
+      },
+      {
+        "name": "Monuments Coppi-Bobet",
+        "description": "Monuments dédiés aux deux champions qui ont marqué l'histoire du col.",
+        "coordinates": [44.8236, 6.7358],
+        "type": "monument"
+      },
+      {
+        "name": "Refuge Napoléon",
+        "description": "Refuge historique au sommet, nommé d'après l'empereur qui fit construire la route.",
+        "coordinates": [44.8203, 6.7347],
+        "type": "accommodation"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré",
+      "winterClosure": "Fermé d'octobre à mai",
+      "facilities": ["Refuge avec restaurant au sommet", "Toilettes", "Boutique souvenirs"],
+      "parkingAvailable": true,
+      "waterPoints": ["Refuge au sommet", "Plusieurs sources en montant"]
+    },
+    "images": {
+      "main": "/images/cols/izoard/main.jpg",
+      "gallery": [
+        "/images/cols/izoard/briancon-side.jpg",
+        "/images/cols/izoard/arvieux-side.jpg",
+        "/images/cols/izoard/casse-deserte.jpg",
+        "/images/cols/izoard/monuments.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "L'ascension depuis Briançon est plus régulière et progressive.",
+      "Depuis Arvieux, les passages les plus difficiles se trouvent dans les premiers kilomètres.",
+      "Prévoyez des vêtements coupe-vent pour la descente, même en été."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "angliru",
+    "name": "Alto de l'Angliru",
+    "altitude": 1573,
+    "location": {
+      "latitude": 43.2249,
+      "longitude": -5.9289,
+      "region": "Asturies",
+      "country": "Espagne",
+      "nearbyTowns": ["Oviedo", "La Vega", "Riosa"]
+    },
+    "climbData": {
+      "riosaSide": {
+        "startLocation": "Riosa",
+        "length": 12.5,
+        "elevation": 1266,
+        "averageGradient": 10.1,
+        "maxGradient": 23.5,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstVueltaYear": 1999,
+      "vueltaAppearances": 8,
+      "famousStories": [
+        "Introduit dans la Vuelta en 1999 pour concurrencer les cols mythiques du Tour et du Giro.",
+        "En 2002, les coureurs de l'équipe Kelme ont protesté contre l'inclusion de cette montée en descendant de vélo avant la fin.",
+        "En 2013, le Français Kenny Elissonde remporte l'étape tandis que Chris Horner consolide son maillot rouge pour devenir le plus vieux vainqueur d'un grand tour."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Roberto Heras",
+          "time": "41:55",
+          "year": 2000,
+          "side": "riosa"
+        },
+        "modern": {
+          "holder": "Hugh Carthy",
+          "time": "43:34",
+          "year": 2020,
+          "side": "riosa"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Virage de la Cueña les Cabres",
+        "description": "L'un des virages les plus raides au monde avec une pente de 23.5%, véritable cauchemar des cyclistes.",
+        "coordinates": [43.2223, -5.9252],
+        "type": "landmark"
+      },
+      {
+        "name": "Panneau des 21.5%",
+        "description": "Signal indiquant le passage à 21.5% de pente, souvent photographié par les cyclistes.",
+        "coordinates": [43.2234, -5.9277],
+        "type": "landmark"
+      },
+      {
+        "name": "Mirador de l'Angliru",
+        "description": "Point de vue panoramique sur les montagnes asturiennes.",
+        "coordinates": [43.2249, -5.9289],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Bonne mais très étroite par endroits",
+      "trafficLevel": "Faible, route fermée certains weekends pour les cyclistes",
+      "winterClosure": "Accessibilité réduite en hiver, risque de neige et verglas",
+      "facilities": ["Aucune installation permanente au sommet"],
+      "parkingAvailable": true,
+      "waterPoints": ["Apportez vos réserves d'eau, aucun point d'eau fiable sur le parcours"]
+    },
+    "images": {
+      "main": "/images/cols/angliru/main.jpg",
+      "gallery": [
+        "/images/cols/angliru/steep-section.jpg",
+        "/images/cols/angliru/sign.jpg",
+        "/images/cols/angliru/view.jpg",
+        "/images/cols/angliru/profile.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Équipez-vous d'un rapport minimal de 34x32, idéalement 34x36 ou même un triple plateau.",
+      "Le premier tiers est relativement facile, ne vous laissez pas berner.",
+      "Sur les pentes à plus de 20%, restez assis pour maintenir l'adhérence de la roue arrière."
+    ],
+    "recommendedBikeTypes": ["Vélo de route avec triple plateau ou compact avec grande cassette"]
+  },
+  {
+    "id": "grossglockner",
+    "name": "Grossglockner Hochalpenstrasse",
+    "altitude": 2504,
+    "location": {
+      "latitude": 47.0742,
+      "longitude": 12.8307,
+      "region": "Alpes autrichiennes",
+      "country": "Autriche",
+      "nearbyTowns": ["Bruck", "Heiligenblut", "Fusch"]
+    },
+    "climbData": {
+      "bruckSide": {
+        "startLocation": "Bruck",
+        "length": 25.3,
+        "elevation": 1694,
+        "averageGradient": 6.7,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      },
+      "heiligenblutSide": {
+        "startLocation": "Heiligenblut",
+        "length": 20.4,
+        "elevation": 1324,
+        "averageGradient": 6.5,
+        "maxGradient": 12.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstRaceYear": 1935,
+      "tourOfAustriaAppearances": 22,
+      "famousStories": [
+        "La route a été construite entre 1930 et 1935 comme projet économique pendant la Grande Dépression.",
+        "Le sommet offre une vue spectaculaire sur le plus haut sommet d'Autriche, le Grossglockner (3798m).",
+        "Cette route est considérée comme l'une des plus belles routes alpines d'Europe."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Riccardo Riccò",
+          "time": "1:05:02",
+          "year": 2006,
+          "side": "bruck"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Edelweissspitze",
+        "description": "Sommet secondaire offrant une vue à 360° sur plus de 30 sommets alpins à plus de 3000m.",
+        "coordinates": [47.0789, 12.8325],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Fuscher Törl",
+        "description": "Col à 2428m d'altitude, intersection principale de la Hochalpenstrasse.",
+        "coordinates": [47.0742, 12.8307],
+        "type": "landmark"
+      },
+      {
+        "name": "Franz-Josefs-Höhe",
+        "description": "Point de vue panoramique à 2369m d'altitude offrant une vue imprenable sur le glacier Pasterze.",
+        "coordinates": [47.0742, 12.7511],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Musée de la Hochalpenstrasse",
+        "description": "Musée relatant l'histoire de la construction de cette route extraordinaire.",
+        "coordinates": [47.0760, 12.8300],
+        "type": "cultural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à début octobre",
+      "roadCondition": "Excellente, route à péage (excepté pour les cyclistes)",
+      "trafficLevel": "Élevé en été, plus calme tôt le matin",
+      "winterClosure": "Fermé de novembre à mai",
+      "facilities": ["Restaurants et cafés", "Boutiques souvenirs", "Musée", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Nombreux points de ravitaillement le long du parcours"]
+    },
+    "images": {
+      "main": "/images/cols/grossglockner/main.jpg",
+      "gallery": [
+        "/images/cols/grossglockner/bruck-side.jpg",
+        "/images/cols/grossglockner/heiligenblut-side.jpg",
+        "/images/cols/grossglockner/edelweissspitze.jpg",
+        "/images/cols/grossglockner/glacier-view.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte de grande qualité",
+    "trainingTips": [
+      "Commencez tôt pour éviter le trafic touristique qui s'intensifie vers 10h.",
+      "Prévoyez différentes couches de vêtements, la température peut chuter rapidement en altitude.",
+      "L'ascension est longue mais régulière, gérez votre effort sur la durée."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "sa-calobra",
+    "name": "Sa Calobra",
+    "altitude": 682,
+    "location": {
+      "latitude": 39.8497,
+      "longitude": 2.8075,
+      "region": "Îles Baléares",
+      "country": "Espagne",
+      "nearbyTowns": ["Port de sa Calobra", "Escorca"]
+    },
+    "climbData": {
+      "portSide": {
+        "startLocation": "Port de sa Calobra",
+        "length": 9.9,
+        "elevation": 668,
+        "averageGradient": 6.7,
+        "maxGradient": 12.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "notableRaces": ["Challenge Mallorca", "Tours d'entraînement professionnels"],
+      "famousStories": [
+        "Contrairement à la plupart des cols, Sa Calobra est généralement grimpé depuis le port, pour redescendre après.",
+        "La route a été conçue par l'ingénieur Antonio Parietti en 1932 et est considérée comme un chef-d'œuvre d'ingénierie.",
+        "Le célèbre 'nœud de cravate' (Nus de sa Corbata) est un virage à 270° qui passe sous lui-même."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Bradley Wiggins",
+          "time": "26:28",
+          "year": 2013,
+          "side": "port"
+        },
+        "known": {
+          "holder": "Thibaut Pinot",
+          "time": "27:06",
+          "year": 2019,
+          "side": "port"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Nus de sa Corbata",
+        "description": "Célèbre virage en 'nœud de cravate' où la route passe sous elle-même.",
+        "coordinates": [39.8387, 2.8029],
+        "type": "landmark"
+      },
+      {
+        "name": "Mirador des Barques",
+        "description": "Point de vue spectaculaire sur la mer Méditerranée.",
+        "coordinates": [39.8464, 2.8063],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Torrent de Pareis",
+        "description": "Gorge impressionnante à proximité du port de Sa Calobra.",
+        "coordinates": [39.8513, 2.8090],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Février à juin, septembre à novembre (éviter l'été en raison de la chaleur et du trafic)",
+      "roadCondition": "Excellent",
+      "trafficLevel": "Faible hors saison, très élevé en été",
+      "winterClosure": "Ouvert toute l'année sauf conditions exceptionnelles",
+      "facilities": ["Restaurants au port", "Toilettes", "Boutiques"],
+      "parkingAvailable": true,
+      "waterPoints": ["Port de sa Calobra", "Coll dels Reis (sommet)"]
+    },
+    "images": {
+      "main": "/images/cols/sa-calobra/main.jpg",
+      "gallery": [
+        "/images/cols/sa-calobra/hairpins.jpg",
+        "/images/cols/sa-calobra/tie-knot.jpg",
+        "/images/cols/sa-calobra/coastal-view.jpg",
+        "/images/cols/sa-calobra/port.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "La montée commence au niveau de la mer, il fait souvent chaud en bas.",
+      "Il n'y a pas d'échappatoire une fois engagé sur la route, prévoyez bien vos réserves d'eau.",
+      "Pour éviter les bus touristiques, partez tôt le matin ou en fin d'après-midi."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "hautacam",
+    "name": "Hautacam",
+    "altitude": 1560,
+    "location": {
+      "latitude": 42.9758,
+      "longitude": -0.0145,
+      "region": "Pyrénées",
+      "country": "France",
+      "nearbyTowns": ["Argelès-Gazost", "Lourdes"]
+    },
+    "climbData": {
+      "argelesGazostSide": {
+        "startLocation": "Argelès-Gazost",
+        "length": 14.5,
+        "elevation": 1170,
+        "averageGradient": 8.0,
+        "maxGradient": 13.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1994,
+      "tourDeFranceAppearances": 6,
+      "famousStories": [
+        "L'ascension est apparue tardivement dans le Tour, mais est rapidement devenue une référence.",
+        "En 2000, Lance Armstrong y remporte une victoire spectaculaire sous une pluie battante (depuis retirée de son palmarès).",
+        "En 2014, Vincenzo Nibali y assure sa victoire finale dans le Tour avec une démonstration de force."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Bjarne Riis",
+          "time": "35:30",
+          "year": 1996,
+          "side": "argeles"
+        },
+        "modern": {
+          "holder": "Jonas Vingegaard",
+          "time": "36:20",
+          "year": 2022,
+          "side": "argeles"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Station de ski Hautacam",
+        "description": "Petite station de ski familiale au sommet, transformée en base de loisirs l'été.",
+        "coordinates": [42.9758, -0.0145],
+        "type": "attraction"
+      },
+      {
+        "name": "Virage de la Ferme",
+        "description": "Virage serré à mi-parcours où se rassemblent souvent les spectateurs lors du Tour.",
+        "coordinates": [42.9653, -0.0078],
+        "type": "landmark"
+      },
+      {
+        "name": "Panorama sur la vallée d'Argelès",
+        "description": "Vue spectaculaire sur la vallée et les sommets environnants.",
+        "coordinates": [42.9758, -0.0145],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Bonne",
+      "trafficLevel": "Faible à modéré",
+      "winterClosure": "Accessible toute l'année sauf neige importante",
+      "facilities": ["Restaurant et installations de la station au sommet", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Station au sommet", "Fontaine à mi-parcours"]
+    },
+    "images": {
+      "main": "/images/cols/hautacam/main.jpg",
+      "gallery": [
+        "/images/cols/hautacam/climb.jpg",
+        "/images/cols/hautacam/hairpins.jpg",
+        "/images/cols/hautacam/view.jpg",
+        "/images/cols/hautacam/tour.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "La pente est irrégulière avec des passages de répit suivis de rampes très raides.",
+      "L'ombre est rare sur le parcours, prévoyez une bonne protection solaire.",
+      "À combiner avec le Col de Spandelles voisin pour un circuit exigeant."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  }
+]

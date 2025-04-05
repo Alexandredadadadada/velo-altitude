@@ -1,0 +1,8 @@
+Cette image doit montrer l'interface utilisateur avec le bouton "Mode Fly-through" en évidence, situé en bas de la visualisation 3D d'un col.
+
+Éléments à inclure :
+- La visualisation 3D d'un col (par exemple, le Col de la Schlucht)
+- Le bouton "Mode Fly-through" clairement visible et accessible
+- L'interface utilisateur complète pour montrer le contexte
+
+Cette capture devrait être prise sur un écran desktop avec une résolution de 1920x1080.

@@ -1,0 +1,779 @@
+/**
+ * Base de données des recettes de récupération pour cyclistes
+ * Optimisées pour favoriser la régénération musculaire et le rechargement des réserves énergétiques
+ */
+
+const postRideRecipes = [
+  {
+    id: 'post-1',
+    name: 'Smoothie protéiné récupération complète',
+    description: 'Un smoothie riche en protéines et glucides pour optimiser la récupération musculaire et reconstituer les réserves de glycogène.',
+    image: '/images/recipes/smoothie-recuperation.jpg',
+    mealType: 'post-ride',
+    difficulty: 'easy',
+    prepTimeMinutes: 5,
+    cookTimeMinutes: 0,
+    servings: 1,
+    ingredients: [
+      '1 banane',
+      '200ml de lait (vache ou végétal)',
+      '30g de protéine en poudre (whey ou végétale)',
+      '100g de yaourt grec',
+      '15g de miel',
+      '1 c. à soupe de beurre d\'amande',
+      '5 glaçons'
+    ],
+    instructions: [
+      'Placer tous les ingrédients dans un mixeur.',
+      'Mixer jusqu\'à obtenir une consistance lisse et crémeuse.',
+      'Servir immédiatement dans un grand verre.'
+    ],
+    nutritionalInfo: {
+      calories: 420,
+      protein: 35,
+      carbs: 50,
+      fat: 10,
+      fiber: 3,
+      sugar: 35
+    },
+    dietaryPreferences: ['vegetarian', 'high-protein'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['build', 'peak'],
+      effortTypes: ['high-intensity', 'long-ride', 'race-day'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Consommez idéalement dans les 30 minutes suivant l\'effort pour maximiser la fenêtre anabolique. Les proportions protéines/glucides optimales sont de 1:3 après un effort long et 1:2 après un effort intense.',
+    variations: [
+      'Ajoutez une poignée de baies pour plus d\'antioxydants et ralentir l\'absorption des glucides',
+      'Remplacez le miel par des dattes pour une version avec des sucres moins raffinés'
+    ]
+  },
+  {
+    id: 'post-2',
+    name: 'Bowl de quinoa, poulet et légumes',
+    description: 'Un repas complet et équilibré pour une récupération optimale après un effort intense ou prolongé.',
+    image: '/images/recipes/bowl-quinoa-poulet.jpg',
+    mealType: 'post-ride',
+    difficulty: 'medium',
+    prepTimeMinutes: 15,
+    cookTimeMinutes: 20,
+    servings: 2,
+    ingredients: [
+      '150g de quinoa cru',
+      '200g de blanc de poulet',
+      '1 patate douce (environ 200g)',
+      '1 courgette',
+      '1 poivron rouge',
+      '1 avocat mûr',
+      '2 c. à soupe d\'huile d\'olive',
+      'Jus d\'un demi-citron',
+      'Sel, poivre, herbes de Provence'
+    ],
+    instructions: [
+      'Cuire le quinoa selon les instructions du paquet (généralement 15 minutes dans 2 fois son volume d\'eau).',
+      'Couper la patate douce en cubes et la faire rôtir au four à 200°C pendant 20 minutes.',
+      'Assaisonner le poulet avec sel, poivre et herbes, puis le cuire à la poêle jusqu\'à ce qu\'il soit bien cuit.',
+      'Couper les légumes (courgette, poivron) et les faire sauter 5-7 minutes.',
+      'Couper l\'avocat en tranches.',
+      'Assembler le bowl: quinoa en base, puis légumes, poulet et avocat.',
+      'Arroser d\'huile d\'olive et de jus de citron, assaisonner selon le goût.'
+    ],
+    nutritionalInfo: {
+      calories: 550,
+      protein: 40,
+      carbs: 55,
+      fat: 20,
+      fiber: 10,
+      sugar: 8
+    },
+    dietaryPreferences: ['high-protein', 'gluten-free'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['base', 'build', 'peak'],
+      effortTypes: ['long-ride', 'high-intensity'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Ce repas est idéal dans les 1-2 heures suivant l\'effort. Le quinoa fournit des glucides complexes et des protéines végétales, tandis que le poulet apporte des protéines complètes pour la réparation musculaire.',
+    variations: [
+      'Remplacez le poulet par du saumon pour un apport en oméga-3 bénéfiques contre l\'inflammation',
+      'Version végétarienne: remplacez le poulet par des œufs ou du tofu ferme mariné'
+    ]
+  },
+  {
+    id: 'post-3',
+    name: 'Tartines de pain complet aux œufs brouillés et avocat',
+    description: 'Une combinaison rapide et efficace de protéines, glucides complexes et graisses saines pour la récupération.',
+    image: '/images/recipes/tartines-oeufs-avocat.jpg',
+    mealType: 'post-ride',
+    difficulty: 'easy',
+    prepTimeMinutes: 10,
+    cookTimeMinutes: 5,
+    servings: 1,
+    ingredients: [
+      '2 tranches de pain complet',
+      '3 œufs',
+      '1/2 avocat',
+      '30g de fromage frais allégé',
+      '1 c. à café d\'huile d\'olive',
+      'Sel, poivre',
+      'Quelques brins de ciboulette (optionnel)'
+    ],
+    instructions: [
+      'Faire griller les tranches de pain.',
+      'Battre les œufs dans un bol avec une pincée de sel et de poivre.',
+      'Chauffer l\'huile dans une poêle à feu moyen.',
+      'Verser les œufs et les brouiller délicatement jusqu\'à la consistance désirée.',
+      'Pendant ce temps, écraser l\'avocat à la fourchette et l\'assaisonner.',
+      'Étaler le fromage frais sur les tartines, puis l\'avocat écrasé et enfin les œufs brouillés.',
+      'Garnir de ciboulette ciselée si désiré.'
+    ],
+    nutritionalInfo: {
+      calories: 490,
+      protein: 28,
+      carbs: 30,
+      fat: 30,
+      fiber: 8,
+      sugar: 4
+    },
+    dietaryPreferences: ['vegetarian', 'high-protein'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['base', 'build'],
+      effortTypes: ['moderate-intensity', 'strength-session'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Prêt en moins de 15 minutes, ce repas est parfait quand vous avez peu de temps après l\'entraînement. Les œufs sont une excellente source de protéines complètes et l\'avocat fournit des graisses saines anti-inflammatoires.',
+    variations: [
+      'Ajoutez des tranches de saumon fumé pour augmenter l\'apport en protéines et oméga-3',
+      'Version piquante: ajoutez du piment d\'Espelette ou de la sauce sriracha pour stimuler la circulation sanguine'
+    ]
+  },
+  {
+    id: 'post-4',
+    name: 'Omelette au fromage et patates douces rôties',
+    description: 'Un repas riche en protéines, idéal après une séance de développement de la force ou un entraînement intensif.',
+    image: '/images/recipes/omelette-patates-douces.jpg',
+    mealType: 'post-ride',
+    difficulty: 'medium',
+    prepTimeMinutes: 10,
+    cookTimeMinutes: 25,
+    servings: 1,
+    ingredients: [
+      '3 œufs',
+      '150g de patates douces',
+      '40g de fromage râpé (comté ou emmental)',
+      '1 poignée d\'épinards frais',
+      '1 échalote',
+      '1 c. à soupe d\'huile d\'olive',
+      'Sel, poivre, paprika'
+    ],
+    instructions: [
+      'Préchauffer le four à 200°C.',
+      'Couper les patates douces en cubes, les enrober d\'huile d\'olive, sel, poivre et paprika.',
+      'Rôtir les patates douces au four pendant 20-25 minutes.',
+      'Pendant ce temps, émincer l\'échalote et la faire revenir dans une poêle avec un peu d\'huile.',
+      'Battre les œufs dans un bol, ajouter le fromage râpé, sel et poivre.',
+      'Ajouter les épinards à l\'échalote et laisser flétrir 1 minute.',
+      'Verser les œufs battus et cuire l\'omelette à feu moyen jusqu\'à ce qu\'elle soit dorée en dessous mais encore baveuse sur le dessus.',
+      'Servir l\'omelette avec les patates douces rôties.'
+    ],
+    nutritionalInfo: {
+      calories: 520,
+      protein: 32,
+      carbs: 35,
+      fat: 28,
+      fiber: 5,
+      sugar: 8
+    },
+    dietaryPreferences: ['vegetarian', 'gluten-free', 'high-protein'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['build', 'peak'],
+      effortTypes: ['high-intensity', 'strength-session'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Les patates douces sont riches en glucides complexes et en antioxydants, parfaites pour reconstituer le glycogène musculaire. Le fromage ajoute des protéines supplémentaires et du calcium pour la santé osseuse.',
+    variations: [
+      'Ajoutez des champignons et des tomates séchées pour plus de saveurs et de nutriments',
+      'Version méditerranéenne: utilisez de la feta et ajoutez des olives et des herbes fraîches'
+    ]
+  },
+  {
+    id: 'post-5',
+    name: 'Wrap de récupération au poulet et houmous',
+    description: 'Un wrap complet combinant protéines, glucides et légumes pour une récupération optimale, facile à préparer après une sortie.',
+    image: '/images/recipes/wrap-poulet-houmous.jpg',
+    mealType: 'post-ride',
+    difficulty: 'easy',
+    prepTimeMinutes: 15,
+    cookTimeMinutes: 10,
+    servings: 1,
+    ingredients: [
+      '1 grande tortilla complète',
+      '100g de blanc de poulet cuit',
+      '3 c. à soupe de houmous',
+      '1/4 d\'avocat tranché',
+      'Quelques feuilles d\'épinards ou de roquette',
+      '1/2 tomate en tranches',
+      '1/2 poivron rouge grillé',
+      'Jus d\'un quart de citron',
+      'Poivre noir'
+    ],
+    instructions: [
+      'Si le poulet n\'est pas déjà cuit, le faire griller ou pocher, puis le couper en lamelles.',
+      'Chauffer légèrement la tortilla dans une poêle sèche ou au micro-ondes pour la rendre plus souple.',
+      'Étaler le houmous sur la tortilla.',
+      'Disposer les feuilles d\'épinards ou de roquette, puis les tranches d\'avocat, de tomate et de poivron.',
+      'Ajouter les lamelles de poulet, arroser de jus de citron et poivrer.',
+      'Rouler fermement la tortilla en repliant les côtés, puis la couper en deux en diagonale.'
+    ],
+    nutritionalInfo: {
+      calories: 450,
+      protein: 35,
+      carbs: 40,
+      fat: 18,
+      fiber: 8,
+      sugar: 5
+    },
+    dietaryPreferences: ['high-protein'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['base', 'build', 'peak'],
+      effortTypes: ['moderate-intensity', 'long-ride'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Idéal à emporter si vous êtes en déplacement après l\'entraînement. Le ratio protéines/glucides est parfait pour la récupération, tandis que l\'avocat apporte des graisses saines anti-inflammatoires.',
+    variations: [
+      'Remplacez le poulet par du thon en conserve pour une option encore plus rapide',
+      'Version végétarienne: utilisez des falafels ou des œufs durs à la place du poulet'
+    ]
+  },
+  {
+    id: 'post-6',
+    name: 'Risotto aux champignons et parmesan',
+    description: 'Un plat réconfortant, riche en glucides complexes et protéines, idéal pour reconstituer les réserves d\'énergie après un effort long.',
+    image: '/images/recipes/risotto-champignons.jpg',
+    mealType: 'post-ride',
+    difficulty: 'medium',
+    prepTimeMinutes: 15,
+    cookTimeMinutes: 30,
+    servings: 2,
+    ingredients: [
+      '180g de riz arborio (ou autre riz à risotto)',
+      '400ml de bouillon de légumes chaud',
+      '100ml de vin blanc sec (optionnel)',
+      '200g de champignons de Paris',
+      '1 oignon',
+      '2 gousses d\'ail',
+      '50g de parmesan râpé',
+      '1 c. à soupe d\'huile d\'olive',
+      '20g de beurre',
+      'Sel, poivre, thym frais'
+    ],
+    instructions: [
+      'Nettoyer et couper les champignons en tranches. Émincer l\'oignon et l\'ail.',
+      'Dans une casserole, faire chauffer l\'huile d\'olive et y faire revenir l\'oignon jusqu\'à ce qu\'il soit translucide.',
+      'Ajouter les champignons et l\'ail, cuire 5 minutes jusqu\'à ce que les champignons réduisent.',
+      'Ajouter le riz et le faire "nacrer" pendant 2 minutes en remuant constamment.',
+      'Verser le vin blanc (si utilisé) et laisser évaporer.',
+      'Ajouter le bouillon chaud petit à petit, en attendant qu\'il soit absorbé entre chaque ajout (environ 18-20 minutes).',
+      'Quand le riz est cuit mais encore légèrement ferme, retirer du feu.',
+      'Incorporer le beurre et le parmesan, assaisonner avec sel, poivre et thym.'
+    ],
+    nutritionalInfo: {
+      calories: 480,
+      protein: 15,
+      carbs: 65,
+      fat: 18,
+      fiber: 3,
+      sugar: 4
+    },
+    dietaryPreferences: ['vegetarian', 'high-carb'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['base', 'build'],
+      effortTypes: ['long-ride', 'endurance-session'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Le risotto est parfait pour reconstituer les réserves de glycogène après un effort long. Les champignons apportent des nutriments immunostimulants et le parmesan des protéines de haute qualité.',
+    variations: [
+      'Ajoutez des petits pois ou des asperges pour plus de fibres et vitamines',
+      'Pour augmenter l\'apport en protéines, incorporez 100g de poulet grillé émincé'
+    ]
+  },
+  {
+    id: 'post-7',
+    name: 'Bowl de récupération au saumon et riz',
+    description: 'Un repas équilibré riche en protéines, oméga-3 et glucides complexes pour optimiser la récupération après une sortie intense.',
+    image: '/images/recipes/bowl-saumon-riz.jpg',
+    mealType: 'post-ride',
+    difficulty: 'medium',
+    prepTimeMinutes: 15,
+    cookTimeMinutes: 20,
+    servings: 1,
+    ingredients: [
+      '120g de filet de saumon',
+      '80g de riz basmati ou jasmin',
+      '1 poignée d\'édamames décortiqués',
+      '1/2 avocat',
+      '1/4 de concombre',
+      '1 carotte',
+      'Quelques feuilles d\'épinard',
+      '1 c. à soupe de graines de sésame',
+      'Pour la sauce: 1 c. à soupe de sauce soja, 1 c. à café de miel, 1 c. à café d\'huile de sésame, jus de citron vert'
+    ],
+    instructions: [
+      'Cuire le riz selon les instructions du paquet.',
+      'Assaisonner le saumon avec sel et poivre, puis le cuire à la poêle peau vers le bas pendant 3-4 minutes. Retourner et cuire 2 minutes de plus.',
+      'Faire cuire les édamames à l\'eau bouillante pendant 5 minutes, puis les refroidir sous l\'eau froide.',
+      'Couper l\'avocat en tranches, râper la carotte et couper le concombre en dés.',
+      'Préparer la sauce en mélangeant tous les ingrédients.',
+      'Assembler le bowl: riz au fond, puis les légumes, le saumon émiètté et les édamames.',
+      'Arroser de sauce et saupoudrer de graines de sésame.'
+    ],
+    nutritionalInfo: {
+      calories: 550,
+      protein: 35,
+      carbs: 50,
+      fat: 25,
+      fiber: 9,
+      sugar: 6
+    },
+    dietaryPreferences: ['high-protein', 'gluten-free'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['build', 'peak'],
+      effortTypes: ['high-intensity', 'race-day'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Le saumon est riche en protéines de haute qualité et en acides gras oméga-3 qui aident à réduire l\'inflammation post-effort. Consommez ce repas dans les 2 heures suivant l\'entraînement.',
+    variations: [
+      'Remplacez le saumon par du thon ou du maquereau pour d\'autres sources d\'oméga-3',
+      'Utilisez du quinoa à la place du riz pour augmenter l\'apport en protéines'
+    ]
+  },
+  {
+    id: 'post-8',
+    name: 'Crêpes protéinées à la banane et au beurre d\'amande',
+    description: 'Des crêpes riches en protéines et glucides pour une récupération gourmande, idéales après un entraînement matinal.',
+    image: '/images/recipes/crepes-proteinees.jpg',
+    mealType: 'post-ride',
+    difficulty: 'easy',
+    prepTimeMinutes: 10,
+    cookTimeMinutes: 15,
+    servings: 2,
+    ingredients: [
+      '80g de flocons d\'avoine mixés en farine',
+      '30g de protéine en poudre (vanille)',
+      '1 banane mûre',
+      '2 œufs',
+      '100ml de lait (vache ou végétal)',
+      '1/2 c. à café de levure chimique',
+      '1 pincée de sel',
+      'Pour la garniture: 2 c. à soupe de beurre d\'amande, 1 banane, baies fraîches, sirop d\'érable (optionnel)'
+    ],
+    instructions: [
+      'Mixer les flocons d\'avoine pour obtenir une farine fine.',
+      'Dans un blender, mixer la banane, les œufs et le lait.',
+      'Ajouter la farine d\'avoine, la protéine en poudre, la levure et le sel. Mixer jusqu\'à obtenir une pâte lisse.',
+      'Chauffer une poêle antiadhésive légèrement huilée à feu moyen.',
+      'Verser de petites louches de pâte et cuire 2-3 minutes de chaque côté.',
+      'Servir les crêpes garnies de beurre d\'amande, tranches de banane et baies fraîches.'
+    ],
+    nutritionalInfo: {
+      calories: 420,
+      protein: 25,
+      carbs: 50,
+      fat: 15,
+      fiber: 7,
+      sugar: 20
+    },
+    dietaryPreferences: ['vegetarian', 'high-protein'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['build', 'peak'],
+      effortTypes: ['morning-ride', 'moderate-intensity'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Ces crêpes offrent un excellent rapport protéines/glucides pour la récupération. La banane apporte du potassium qui aide à prévenir les crampes musculaires.',
+    variations: [
+      'Version chocolatée: utilisez de la protéine chocolat et ajoutez 1 c. à soupe de cacao',
+      'Pour plus de protéines, servez avec du skyr ou du fromage blanc'
+    ]
+  },
+  {
+    id: 'post-9',
+    name: 'Salade de patates douces, œufs et avocat',
+    description: 'Une salade complète et équilibrée pour la récupération, riche en glucides complexes, protéines et graisses saines.',
+    image: '/images/recipes/salade-patate-douce-oeuf.jpg',
+    mealType: 'post-ride',
+    difficulty: 'medium',
+    prepTimeMinutes: 15,
+    cookTimeMinutes: 25,
+    servings: 2,
+    ingredients: [
+      '300g de patates douces',
+      '4 œufs',
+      '1 avocat',
+      '100g de haricots noirs cuits',
+      '1 poignée de roquette ou épinards',
+      '1/2 oignon rouge émincé',
+      'Pour la vinaigrette: 2 c. à soupe d\'huile d\'olive, 1 c. à soupe de vinaigre balsamique, 1 c. à café de moutarde, sel, poivre'
+    ],
+    instructions: [
+      'Préchauffer le four à 200°C.',
+      'Éplucher et couper les patates douces en cubes, les mélanger avec un peu d\'huile, sel et poivre.',
+      'Faire rôtir au four pendant 20-25 minutes jusqu\'à ce qu\'elles soient tendres.',
+      'Pendant ce temps, faire cuire les œufs durs (10 minutes dans l\'eau bouillante), puis les refroidir et les écaler.',
+      'Préparer la vinaigrette en mélangeant tous les ingrédients.',
+      'Dans un saladier, mélanger les patates douces refroidies, les haricots noirs, l\'oignon rouge et les feuilles vertes.',
+      'Ajouter l\'avocat en tranches et les œufs coupés en quartiers.',
+      'Arroser de vinaigrette juste avant de servir.'
+    ],
+    nutritionalInfo: {
+      calories: 480,
+      protein: 18,
+      carbs: 45,
+      fat: 25,
+      fiber: 12,
+      sugar: 8
+    },
+    dietaryPreferences: ['vegetarian', 'gluten-free'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['base', 'build'],
+      effortTypes: ['long-ride', 'moderate-intensity'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Cette salade peut se préparer à l\'avance et être consommée froide, ce qui est pratique après une sortie. Les patates douces sont riches en glucides complexes et antioxydants qui facilitent la récupération.',
+    variations: [
+      'Ajoutez 100g de poulet grillé ou de thon pour augmenter l\'apport en protéines',
+      'Version végane: remplacez les œufs par du tofu ferme mariné'
+    ]
+  },
+  {
+    id: 'post-10',
+    name: 'Porridge protéiné au chocolat et fruits rouges',
+    description: 'Un porridge riche en protéines et glucides complexes, idéal pour la récupération après un entraînement matinal.',
+    image: '/images/recipes/porridge-proteine-chocolat.jpg',
+    mealType: 'post-ride',
+    difficulty: 'easy',
+    prepTimeMinutes: 5,
+    cookTimeMinutes: 10,
+    servings: 1,
+    ingredients: [
+      '50g de flocons d\'avoine',
+      '250ml de lait (vache ou végétal)',
+      '1 scoop de protéine en poudre saveur chocolat (30g)',
+      '1 c. à soupe de cacao non sucré',
+      '1 c. à soupe de sirop d\'érable ou miel',
+      '100g de fruits rouges (fraises, framboises, myrtilles)',
+      '1 c. à soupe de graines de chia (optionnel)',
+      '10g de chocolat noir râpé pour la garniture'
+    ],
+    instructions: [
+      'Dans une casserole, mélanger les flocons d\'avoine et le lait.',
+      'Porter à ébullition puis réduire le feu et laisser mijoter 5-7 minutes en remuant régulièrement.',
+      'Retirer du feu et ajouter la protéine en poudre, le cacao et le sirop d\'érable. Bien mélanger.',
+      'Verser dans un bol et garnir de fruits rouges, graines de chia et chocolat râpé.'
+    ],
+    nutritionalInfo: {
+      calories: 430,
+      protein: 30,
+      carbs: 55,
+      fat: 10,
+      fiber: 9,
+      sugar: 20
+    },
+    dietaryPreferences: ['vegetarian', 'high-protein'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['base', 'build', 'peak'],
+      effortTypes: ['morning-ride', 'strength-session'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Le cacao est riche en antioxydants et les fruits rouges aident à réduire l\'inflammation post-effort. La combinaison avoine-protéine offre un apport énergétique soutenu pour la récupération.',
+    variations: [
+      'Version chaude en hiver, version overnight oats froide en été',
+      'Remplacez la protéine chocolat par de la vanille et ajoutez 1/2 banane écrasée'
+    ]
+  },
+  {
+    id: 'post-11',
+    name: 'Bowl de récupération quinoa-poulet et légumes rôtis',
+    description: 'Un repas complet équilibré avec le ratio idéal de protéines et glucides pour optimiser la récupération après un effort intense.',
+    image: '/images/recipes/bowl-recuperation-quinoa.jpg',
+    mealType: 'post-ride',
+    difficulty: 'medium',
+    prepTimeMinutes: 20,
+    cookTimeMinutes: 30,
+    servings: 2,
+    ingredients: [
+      '150g de quinoa',
+      '300ml de bouillon de légumes',
+      '200g de blanc de poulet',
+      '1 patate douce moyenne (environ 200g), coupée en cubes',
+      '1 courgette, coupée en demi-lunes',
+      '1 poivron rouge, coupé en lanières',
+      '1 oignon rouge, émincé',
+      '2 c. à soupe d\'huile d\'olive',
+      '1 avocat mûr',
+      '2 c. à soupe de graines (tournesol, courge, lin)',
+      '1 citron (jus et zeste)',
+      'Herbes fraîches (persil, coriandre)',
+      'Sel, poivre, paprika'
+    ],
+    instructions: [
+      'Préchauffer le four à 200°C.',
+      'Rincer le quinoa et le cuire dans le bouillon pendant 15 minutes à feu doux, jusqu\'à absorption complète.',
+      'Sur une plaque de cuisson, disposer la patate douce, la courgette, le poivron et l\'oignon. Arroser d\'1 c. à soupe d\'huile d\'olive, saler, poivrer et saupoudrer de paprika.',
+      'Cuire les légumes au four pendant 25 minutes, en remuant à mi-cuisson.',
+      'Assaisonner le poulet de sel et poivre, puis le cuire dans une poêle avec le reste d\'huile d\'olive pendant 6-7 minutes de chaque côté, jusqu\'à ce qu\'il soit bien cuit. Laisser reposer 5 minutes puis trancher.',
+      'Dans chaque bol, disposer le quinoa, les légumes rôtis et le poulet tranché.',
+      'Garnir avec des tranches d\'avocat, les graines, le jus et le zeste de citron, et les herbes fraîches hachées.'
+    ],
+    nutritionalInfo: {
+      calories: 550,
+      protein: 40,
+      carbs: 55,
+      fat: 18,
+      fiber: 12,
+      sugar: 8
+    },
+    dietaryPreferences: ['high-protein', 'gluten-free'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['build', 'peak'],
+      effortTypes: ['high-intensity', 'long-ride', 'race-day'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Ce bowl fournit un excellent ratio protéines/glucides (1:1.4) idéal pour la récupération. Consommez-le dans les 30-60 minutes après l\'effort pour maximiser la réparation musculaire et le réapprovisionnement en glycogène.',
+    variations: [
+      'Version végétarienne: remplacez le poulet par 100g de tofu ferme ou 150g de tempeh',
+      'En hiver, remplacez les légumes d\'été par des légumes-racines (carottes, panais, betterave)'
+    ]
+  },
+  {
+    id: 'post-12',
+    name: 'Smoothie protéiné myrtille-cerise et gingembre',
+    description: 'Un smoothie riche en antioxydants et protéines pour accélérer la récupération et réduire l\'inflammation post-effort.',
+    image: '/images/recipes/smoothie-myrtille-cerise.jpg',
+    mealType: 'post-ride',
+    difficulty: 'easy',
+    prepTimeMinutes: 10,
+    cookTimeMinutes: 0,
+    servings: 2,
+    ingredients: [
+      '200ml de lait d\'amande ou de vache',
+      '150g de yaourt grec',
+      '150g de myrtilles fraîches ou surgelées',
+      '100g de cerises dénoyautées (fraîches ou surgelées)',
+      '1 banane mûre',
+      '30g de protéine en poudre (whey ou végétale)',
+      '1 c. à café de gingembre frais râpé',
+      '1 c. à soupe de miel',
+      '1 c. à soupe de beurre d\'amande',
+      '1 c. à soupe de graines de chia',
+      'Quelques glaçons (optionnel)'
+    ],
+    instructions: [
+      'Placer tous les ingrédients dans un blender puissant.',
+      'Mixer à haute vitesse jusqu\'à obtention d\'une texture homogène et lisse.',
+      'Si le mélange est trop épais, ajouter un peu d\'eau ou de lait.',
+      'Servir immédiatement pour profiter de tous les nutriments.'
+    ],
+    nutritionalInfo: {
+      calories: 370,
+      protein: 25,
+      carbs: 45,
+      fat: 10,
+      fiber: 8,
+      sugar: 30
+    },
+    dietaryPreferences: ['vegetarian', 'gluten-free'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['base', 'build', 'peak'],
+      effortTypes: ['high-intensity', 'race-day'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Les myrtilles et les cerises sont riches en antioxydants et composés anti-inflammatoires qui aident à réduire les douleurs musculaires post-effort. Le gingembre renforce ces propriétés anti-inflammatoires.',
+    variations: [
+      'Version vegan: utilisez du yaourt végétal et de la protéine végétale',
+      'Pour plus d\'énergie, ajoutez 1/2 avocat qui apportera des graisses saines'
+    ]
+  },
+  {
+    id: 'post-13',
+    name: 'Omelette méditerranéenne aux légumes et feta',
+    description: 'Une source rapide et complète de protéines et nutriments, parfaite pour la récupération après un entraînement matinal.',
+    image: '/images/recipes/omelette-mediterraneenne.jpg',
+    mealType: 'post-ride',
+    difficulty: 'easy',
+    prepTimeMinutes: 10,
+    cookTimeMinutes: 10,
+    servings: 2,
+    ingredients: [
+      '6 œufs',
+      '50g de feta émiettée',
+      '1 tomate moyenne, coupée en dés',
+      '1/2 poivron rouge, émincé',
+      '1 petit oignon, émincé',
+      '50g d\'épinards frais',
+      '1 c. à soupe d\'huile d\'olive',
+      '1 c. à soupe d\'herbes fraîches (persil, basilic, origan)',
+      '1 pincée de piment d\'Espelette (optionnel)',
+      'Sel, poivre',
+      'Pour servir: 2 tranches de pain complet grillé'
+    ],
+    instructions: [
+      'Dans une poêle antiadhésive, faire chauffer l\'huile d\'olive.',
+      'Faire revenir l\'oignon et le poivron à feu moyen pendant 4-5 minutes jusqu\'à ce qu\'ils soient tendres.',
+      'Ajouter les épinards et la tomate, cuire 1-2 minutes jusqu\'à ce que les épinards soient légèrement flétris.',
+      'Dans un bol, battre les œufs, ajouter les herbes, sel et poivre.',
+      'Verser les œufs battus dans la poêle, sur les légumes.',
+      'Cuire à feu moyen-doux jusqu\'à ce que les œufs commencent à prendre, puis saupoudrer la feta émiettée.',
+      'Couvrir la poêle et poursuivre la cuisson jusqu\'à ce que les œufs soient cuits mais encore moelleux.',
+      'Saupoudrer de piment d\'Espelette si utilisé, et servir avec le pain grillé.'
+    ],
+    nutritionalInfo: {
+      calories: 390,
+      protein: 28,
+      carbs: 20,
+      fat: 22,
+      fiber: 4,
+      sugar: 5
+    },
+    dietaryPreferences: ['vegetarian', 'high-protein'],
+    nutrientFocus: 'protein',
+    recommendedFor: {
+      trainingPhases: ['base', 'build', 'peak'],
+      effortTypes: ['moderate-intensity', 'morning-ride'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Les œufs sont une source complète de protéines contenant tous les acides aminés essentiels nécessaires à la réparation musculaire. L\'ajout de légumes et fromage fournit des micronutriments importants.',
+    variations: [
+      'Version plus riche en glucides: ajoutez 100g de pommes de terre précuites coupées en dés',
+      'Option sans lactose: remplacez la feta par de l\'avocat en dés'
+    ]
+  },
+  {
+    id: 'post-14',
+    name: 'Curry de lentilles et patate douce au lait de coco',
+    description: 'Un plat réconfortant riche en protéines végétales et glucides complexes, parfait pour la récupération et la réparation musculaire.',
+    image: '/images/recipes/curry-lentilles-patate.jpg',
+    mealType: 'post-ride',
+    difficulty: 'medium',
+    prepTimeMinutes: 15,
+    cookTimeMinutes: 30,
+    servings: 4,
+    ingredients: [
+      '200g de lentilles corail',
+      '2 patates douces moyennes (environ 400g), coupées en cubes',
+      '1 oignon, haché',
+      '2 gousses d\'ail, émincées',
+      '2 c. à café de gingembre frais râpé',
+      '1 c. à café de curcuma moulu',
+      '2 c. à café de curry en poudre',
+      '1 c. à café de cumin moulu',
+      '400ml de lait de coco',
+      '400ml de bouillon de légumes',
+      '200g d\'épinards frais',
+      '1 c. à soupe d\'huile d\'olive',
+      'Jus d\'un demi-citron',
+      'Sel, poivre',
+      'Coriandre fraîche pour servir',
+      'Yaourt grec (optionnel)'
+    ],
+    instructions: [
+      'Rincer les lentilles corail à l\'eau froide.',
+      'Dans une grande casserole, faire chauffer l\'huile d\'olive et faire revenir l\'oignon, l\'ail et le gingembre pendant 3-4 minutes.',
+      'Ajouter les épices (curcuma, curry, cumin) et cuire 1 minute en remuant.',
+      'Ajouter les cubes de patate douce et les lentilles, bien mélanger avec les épices.',
+      'Verser le bouillon de légumes et le lait de coco, porter à ébullition puis réduire à feu doux.',
+      'Couvrir et laisser mijoter 20-25 minutes, jusqu\'à ce que les lentilles et les patates douces soient tendres.',
+      'Ajouter les épinards et laisser cuire encore 2-3 minutes jusqu\'à ce qu\'ils soient flétris.',
+      'Incorporer le jus de citron, ajuster l\'assaisonnement.',
+      'Servir chaud, garni de coriandre fraîche et d\'une cuillère de yaourt grec si désiré.'
+    ],
+    nutritionalInfo: {
+      calories: 450,
+      protein: 18,
+      carbs: 60,
+      fat: 16,
+      fiber: 14,
+      sugar: 10
+    },
+    dietaryPreferences: ['vegetarian', 'vegan', 'gluten-free'],
+    nutrientFocus: 'balanced',
+    recommendedFor: {
+      trainingPhases: ['base', 'build'],
+      effortTypes: ['long-ride', 'endurance-session'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Ce plat peut être préparé à l\'avance et réchauffé après l\'entraînement. Le curcuma et le gingembre ont des propriétés anti-inflammatoires qui favorisent la récupération.',
+    variations: [
+      'Pour plus de protéines, ajoutez 150g de tofu ferme coupé en dés',
+      'En été, remplacez les épinards par des courgettes ou des aubergines'
+    ]
+  },
+  {
+    id: 'post-15',
+    name: 'Crêpes protéinées aux fruits rouges et yaourt grec',
+    description: 'Une option sucrée riche en protéines et glucides, idéale pour satisfaire l\'envie de sucré post-entraînement tout en favorisant la récupération.',
+    image: '/images/recipes/crepes-proteinees.jpg',
+    mealType: 'post-ride',
+    difficulty: 'medium',
+    prepTimeMinutes: 10,
+    cookTimeMinutes: 15,
+    servings: 2,
+    ingredients: [
+      '100g de farine complète',
+      '30g de protéine en poudre (whey ou végétale, saveur vanille)',
+      '250ml de lait d\'amande ou de vache',
+      '2 œufs',
+      '1 c. à soupe d\'huile de coco fondue',
+      '1 c. à café d\'extrait de vanille',
+      '1 pincée de sel',
+      'Pour la garniture:',
+      '200g de yaourt grec',
+      '200g de fruits rouges mélangés (fraises, myrtilles, framboises)',
+      '2 c. à soupe de miel ou sirop d\'érable',
+      '1 c. à soupe de graines de chia',
+      '1 c. à soupe d\'amandes effilées grillées'
+    ],
+    instructions: [
+      'Dans un blender, mélanger la farine, la protéine en poudre, le lait, les œufs, l\'huile de coco, l\'extrait de vanille et le sel jusqu\'à obtenir une pâte lisse.',
+      'Laisser reposer la pâte 5 minutes.',
+      'Chauffer une poêle antiadhésive à feu moyen, légèrement huilée si nécessaire.',
+      'Verser une petite louche de pâte et faire tourner la poêle pour obtenir une crêpe fine.',
+      'Cuire environ 2 minutes jusqu\'à ce que des bulles apparaissent à la surface, puis retourner et cuire l\'autre côté 1-2 minutes.',
+      'Répéter avec le reste de la pâte pour obtenir 6-8 crêpes.',
+      'Garnir chaque crêpe de yaourt grec, fruits rouges, puis rouler ou plier.',
+      'Arroser de miel ou sirop d\'érable, saupoudrer de graines de chia et d\'amandes effilées.'
+    ],
+    nutritionalInfo: {
+      calories: 480,
+      protein: 30,
+      carbs: 55,
+      fat: 18,
+      fiber: 8,
+      sugar: 25
+    },
+    dietaryPreferences: ['vegetarian'],
+    nutrientFocus: 'recovery',
+    recommendedFor: {
+      trainingPhases: ['base', 'build', 'peak'],
+      effortTypes: ['high-intensity', 'moderate-intensity'],
+      timeOfDay: 'post-workout'
+    },
+    tips: 'Les fruits rouges sont riches en antioxydants qui aident à réduire l\'inflammation post-effort. La combinaison de protéines et de glucides aide à reconstituer les réserves de glycogène et favorise la récupération musculaire.',
+    variations: [
+      'Version sans gluten: utilisez de la farine de sarrasin ou un mélange sans gluten',
+      'Version plus légère: utilisez du skyr à la place du yaourt grec pour augmenter l\'apport en protéines'
+    ]
+  }
+];
+
+export default postRideRecipes;

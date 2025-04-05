@@ -1,0 +1,184 @@
+[
+  {
+    "id": "transfagarasan",
+    "name": "Transfăgărășan",
+    "region": "Carpates méridionales",
+    "country": "Roumanie",
+    "elevation": 2042,
+    "length": 27.4,
+    "averageGradient": 6.2,
+    "maxGradient": 8.6,
+    "difficulty": "1",
+    "segments": [
+      {"name": "Căpățânenii Ungureni à Vidraru", "gradient": 5.4, "length": 12.5, "difficulty": "Modéré"},
+      {"name": "Barrage Vidraru au Bâlea Lac", "gradient": 6.8, "length": 14.9, "difficulty": "Difficile"}
+    ],
+    "history": [
+      {"event": "Tour de Roumanie", "year": 2008, "description": "Première apparition en compétition internationale"},
+      {"event": "Transfăgărășan Challenge", "year": 2022, "description": "Course amateur annuelle créée pour promouvoir ce col spectaculaire"}
+    ],
+    "records": {
+      "official": "1:15:45 (Ede Molnar, 2019)",
+      "strava": "1:17:32 (Tadej Pogačar, 2023)"
+    },
+    "pointsOfInterest": [
+      {"name": "Barrage Vidraru", "type": "monument", "location": "Mi-parcours"},
+      {"name": "Lac Bâlea", "type": "panorama", "location": "Sommet"},
+      {"name": "Cabana Bâlea", "type": "ravitaillement", "location": "Sommet"}
+    ],
+    "weatherInfo": {
+      "bestSeason": "Juin à Septembre",
+      "closedPeriod": "Octobre à Mai (neige)",
+      "windExposure": "Forte exposition au vent sur la partie supérieure",
+      "temperatureDelta": "Différence de 10-15°C entre la base et le sommet"
+    },
+    "services": {
+      "water": ["Barrage Vidraru", "Cabana Bâlea"],
+      "food": ["Restaurant Vidraru", "Cabana Bâlea Lac"],
+      "shelter": ["Tunnel sommital", "Cabana Bâlea"],
+      "mechanics": ["Căpățânenii Ungureni (village de départ)"]
+    },
+    "testimonials": [
+      {
+        "name": "Sophie Martin",
+        "date": "2023-07-15",
+        "text": "Une route incroyable! Les paysages sont à couper le souffle et l'ascension est un vrai défi. Attention au vent et aux changements de température en altitude."
+      },
+      {
+        "name": "Adrian Popescu",
+        "date": "2022-08-20",
+        "text": "En tant que cycliste roumain, je conseille de partir tôt le matin pour éviter le trafic touristique en saison. Les derniers kilomètres sont magiques."
+      }
+    ],
+    "images": [
+      "/assets/images/cols/transfagarasan/main.jpg",
+      "/assets/images/cols/transfagarasan/view1.jpg",
+      "/assets/images/cols/transfagarasan/view2.jpg"
+    ],
+    "mapUrl": "/assets/maps/transfagarasan.geojson",
+    "description": "Surnommée 'la plus belle route du monde' par l'émission Top Gear, la Transfăgărășan est l'une des routes les plus spectaculaires d'Europe. Construite entre 1970 et 1974 comme route militaire, elle traverse la partie la plus haute des Carpates roumaines. Son tracé sinueux, ses tunnels et ses vues panoramiques en font un paradis pour les cyclistes en quête d'aventure dans l'Est européen.",
+    "createdAt": "2025-04-05T03:20:00Z",
+    "updatedAt": "2025-04-05T03:20:00Z"
+  },
+  {
+    "id": "passo-giau",
+    "name": "Passo Giau",
+    "region": "Dolomites",
+    "country": "Italie",
+    "elevation": 2236,
+    "length": 9.9,
+    "averageGradient": 9.3,
+    "maxGradient": 14,
+    "difficulty": "HC",
+    "segments": [
+      {"name": "Selva di Cadore à mi-parcours", "gradient": 8.7, "length": 5, "difficulty": "Difficile"},
+      {"name": "Mi-parcours au sommet", "gradient": 9.9, "length": 4.9, "difficulty": "Très difficile"}
+    ],
+    "history": [
+      {"event": "Giro d'Italia", "year": 1973, "description": "Première apparition au Giro"},
+      {"event": "Giro d'Italia", "year": 2021, "description": "Étape reine raccourcie en raison de conditions météorologiques extrêmes"}
+    ],
+    "records": {
+      "official": "37:03 (Egan Bernal, 2021)",
+      "strava": "38:12 (Damiano Caruso, 2021)"
+    },
+    "pointsOfInterest": [
+      {"name": "Rifugio Passo Giau", "type": "ravitaillement", "location": "Sommet"},
+      {"name": "Vue sur le Mont Civetta", "type": "panorama", "location": "Km 7"}
+    ],
+    "weatherInfo": {
+      "bestSeason": "Juin à Septembre",
+      "closedPeriod": "Novembre à Mai (neige)",
+      "windExposure": "Exposition moyenne, plus forte au sommet",
+      "temperatureDelta": "Différence de 8-10°C entre la base et le sommet"
+    },
+    "services": {
+      "water": ["Selva di Cadore", "Rifugio Passo Giau"],
+      "food": ["Rifugio Passo Giau"],
+      "shelter": ["Rifugio Passo Giau"],
+      "mechanics": ["Cortina d'Ampezzo (15km)"]
+    },
+    "testimonials": [
+      {
+        "name": "Marc Dubois",
+        "date": "2024-07-10",
+        "text": "Ce col est un monstre! 10% de moyenne pendant 10km, c'est brutal. Mais les paysages des Dolomites valent chaque goutte de sueur."
+      },
+      {
+        "name": "Elena Rossi",
+        "date": "2023-08-25",
+        "text": "J'ai grimpé le Giau après une journée de pluie. La route était parfaite et les nuages bas créaient une ambiance mystique. Un conseil: gardez des forces pour les 3 derniers kilomètres!"
+      }
+    ],
+    "images": [
+      "/assets/images/cols/passo-giau/main.jpg",
+      "/assets/images/cols/passo-giau/view1.jpg",
+      "/assets/images/cols/passo-giau/view2.jpg"
+    ],
+    "mapUrl": "/assets/maps/passo-giau.geojson",
+    "description": "Le Passo Giau est considéré comme l'une des ascensions les plus difficiles des Dolomites. Avec sa pente constamment raide et ses paysages spectaculaires sur les sommets environnants, il est devenu un passage emblématique du Giro d'Italia. C'est un col qui ne laisse aucun répit aux cyclistes mais qui récompense l'effort par des vues inoubliables.",
+    "createdAt": "2025-04-05T03:21:00Z",
+    "updatedAt": "2025-04-05T03:21:00Z"
+  },
+  {
+    "id": "sveti-jure",
+    "name": "Sveti Jure",
+    "region": "Montagnes Biokovo",
+    "country": "Croatie",
+    "elevation": 1762,
+    "length": 23,
+    "averageGradient": 5.9,
+    "maxGradient": 13,
+    "difficulty": "1",
+    "segments": [
+      {"name": "Makarska à la forêt", "gradient": 4.8, "length": 10, "difficulty": "Modéré"},
+      {"name": "Zone de forêt", "gradient": 7.1, "length": 5, "difficulty": "Difficile"},
+      {"name": "Dernière section", "gradient": 6.3, "length": 8, "difficulty": "Difficile"}
+    ],
+    "history": [
+      {"event": "Tour de Croatie", "year": 2017, "description": "Première inclusion dans une course professionnelle"},
+      {"event": "Biokovo Cycling Challenge", "year": 2023, "description": "Course annuelle qui attire des cyclistes du monde entier"}
+    ],
+    "records": {
+      "official": "1:05:21 (Jaime Rosón, 2017)",
+      "strava": "1:07:45 (Kristijan Đurasek, 2022)"
+    },
+    "pointsOfInterest": [
+      {"name": "Skywalk Biokovo", "type": "panorama", "location": "Km 18"},
+      {"name": "Centre des visiteurs Biokovo", "type": "ravitaillement", "location": "Km 15"}
+    ],
+    "weatherInfo": {
+      "bestSeason": "Mai à Octobre",
+      "closedPeriod": "Décembre à Mars (conditions hivernales)",
+      "windExposure": "Très forte exposition aux vents, particulièrement la bora",
+      "temperatureDelta": "Différence de 12-15°C entre la côte et le sommet"
+    },
+    "services": {
+      "water": ["Makarska", "Centre des visiteurs Biokovo"],
+      "food": ["Centre des visiteurs Biokovo"],
+      "shelter": ["Centre des visiteurs", "Station météo au sommet"],
+      "mechanics": ["Makarska"]
+    },
+    "testimonials": [
+      {
+        "name": "Pierre Lambert",
+        "date": "2024-06-05",
+        "text": "Une ascension extraordinaire! En partant de la mer Adriatique, on grimpe jusqu'à presque 1800m avec des vues incroyables tout le long. Le contraste entre le bleu de la mer et les montagnes rocheuses est saisissant."
+      },
+      {
+        "name": "Ana Kovačić",
+        "date": "2023-09-12",
+        "text": "Attention au vent qui peut être très fort. J'ai dû abandonner ma première tentative à cause des rafales. La deuxième fois, par temps calme, c'était une expérience magique avec la vue sur les îles croates."
+      }
+    ],
+    "images": [
+      "/assets/images/cols/sveti-jure/main.jpg",
+      "/assets/images/cols/sveti-jure/view1.jpg",
+      "/assets/images/cols/sveti-jure/view2.jpg"
+    ],
+    "mapUrl": "/assets/maps/sveti-jure.geojson",
+    "description": "Le mont Sveti Jure est le point culminant des montagnes Biokovo en Croatie et l'une des ascensions les plus spectaculaires des Balkans. Partant de la ville côtière de Makarska, cette montée offre un contraste saisissant: on passe de la Méditerranée à un paysage alpin en quelques heures de vélo. Le sommet offre une vue panoramique sur la côte dalmate et ses îles, ainsi que sur la Bosnie-Herzégovine à l'intérieur des terres.",
+    "createdAt": "2025-04-05T03:22:00Z",
+    "updatedAt": "2025-04-05T03:22:00Z"
+  }
+]

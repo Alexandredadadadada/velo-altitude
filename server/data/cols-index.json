@@ -1,0 +1,199 @@
+[
+  {
+    "id": "stelvio-pass",
+    "name": "Passo dello Stelvio",
+    "location": {
+      "latitude": 46.5253,
+      "longitude": 10.4541,
+      "region": "Alpes italiennes",
+      "country": "Italie",
+      "nearbyTowns": [
+        "Bormio",
+        "Prato allo Stelvio",
+        "Santa Maria Val Müstair"
+      ]
+    },
+    "altitude": 2758
+  },
+  {
+    "id": "mont-ventoux",
+    "name": "Mont Ventoux",
+    "location": {
+      "latitude": 44.1741,
+      "longitude": 5.2783,
+      "region": "Provence",
+      "country": "France",
+      "nearbyTowns": [
+        "Bédoin",
+        "Malaucène",
+        "Sault"
+      ]
+    },
+    "altitude": 1909
+  },
+  {
+    "id": "passo-di-gavia",
+    "name": "Passo di Gavia",
+    "location": {
+      "latitude": 46.3461,
+      "longitude": 10.4927,
+      "region": "Alpes lombardes",
+      "country": "Italie",
+      "nearbyTowns": [
+        "Bormio",
+        "Ponte di Legno"
+      ]
+    },
+    "altitude": 2621
+  },
+  {
+    "id": "col-du-galibier",
+    "name": "Col du Galibier",
+    "location": {
+      "latitude": 45.0633,
+      "longitude": 6.4083,
+      "region": "Alpes françaises",
+      "country": "France",
+      "nearbyTowns": [
+        "Saint-Michel-de-Maurienne",
+        "Briançon",
+        "Valloire"
+      ]
+    },
+    "altitude": 2642
+  },
+  {
+    "id": "passo-dello-mortirolo",
+    "name": "Passo del Mortirolo",
+    "location": {
+      "latitude": 46.2207,
+      "longitude": 10.3018,
+      "region": "Alpes lombardes",
+      "country": "Italie",
+      "nearbyTowns": [
+        "Mazzo di Valtellina",
+        "Monno",
+        "Grosio"
+      ]
+    },
+    "altitude": 1852
+  },
+  {
+    "id": "transfagarasan",
+    "name": "Transfăgărășan"
+  },
+  {
+    "id": "passo-giau",
+    "name": "Passo Giau"
+  },
+  {
+    "id": "sveti-jure",
+    "name": {
+      "fr": "Sveti Jure",
+      "en": "Saint George",
+      "de": "Sankt Georg",
+      "it": "San Giorgio",
+      "es": "San Jorge"
+    },
+    "location": {
+      "latitude": 43.3196,
+      "longitude": 17.0558,
+      "region": "Montagnes Biokovo",
+      "country": "Croatie",
+      "nearbyTowns": [
+        "Makarska",
+        "Podgora",
+        "Tučepi"
+      ]
+    },
+    "altitude": 1762
+  },
+  {
+    "id": "angliru",
+    "name": {
+      "fr": "Alto de l'Angliru",
+      "en": "Alto de l'Angliru",
+      "de": "Alto de l'Angliru",
+      "it": "Alto de l'Angliru",
+      "es": "Alto de l'Angliru"
+    },
+    "location": {
+      "latitude": 43.2218,
+      "longitude": -5.9275,
+      "region": "Asturies",
+      "country": "Espagne",
+      "nearbyTowns": [
+        "La Vega",
+        "Riosa",
+        "Oviedo"
+      ]
+    },
+    "altitude": 1573
+  },
+  {
+    "id": "pico-veleta",
+    "name": {
+      "fr": "Pico Veleta",
+      "en": "Pico Veleta",
+      "de": "Pico Veleta",
+      "it": "Pico Veleta",
+      "es": "Pico Veleta"
+    },
+    "location": {
+      "latitude": 37.0539,
+      "longitude": -3.3647,
+      "region": "Sierra Nevada",
+      "country": "Espagne",
+      "nearbyTowns": [
+        "Granada",
+        "Monachil",
+        "Pradollano"
+      ]
+    },
+    "altitude": 3398
+  },
+  {
+    "id": "zoncolan",
+    "name": {
+      "fr": "Monte Zoncolan",
+      "en": "Monte Zoncolan",
+      "de": "Monte Zoncolan",
+      "it": "Monte Zoncolan",
+      "es": "Monte Zoncolan"
+    },
+    "location": {
+      "latitude": 46.5,
+      "longitude": 12.9167,
+      "region": "Alpes Carniques",
+      "country": "Italie",
+      "nearbyTowns": [
+        "Ovaro",
+        "Sutrio",
+        "Tolmezzo"
+      ]
+    },
+    "altitude": 1735
+  },
+  {
+    "id": "gornergrat",
+    "name": {
+      "fr": "Gornergrat",
+      "en": "Gornergrat",
+      "de": "Gornergrat",
+      "it": "Gornergrat",
+      "es": "Gornergrat"
+    },
+    "location": {
+      "latitude": 45.9839,
+      "longitude": 7.7838,
+      "region": "Alpes Pennines",
+      "country": "Suisse",
+      "nearbyTowns": [
+        "Zermatt",
+        "Täsch",
+        "Randa"
+      ]
+    },
+    "altitude": 3135
+  }
+]

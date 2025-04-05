@@ -1,0 +1,478 @@
+openapi: 3.0.0
+info:
+  title: Dashboard-Velo API - Cols et Visualisation 3D
+  description: Documentation des endpoints pour les cols et visualisations 3D
+  version: 2.0.0
+
+paths:
+  /cols:
+    get:
+      summary: Liste des cols
+      description: Récupère la liste des cols avec filtrage par région et critères
+      tags:
+        - Cols
+      parameters:
+        - $ref: 'swagger-core.yaml#/components/parameters/RegionParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/LanguageParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/LimitParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/OffsetParam'
+        - name: country
+          in: query
+          description: Filtrer par pays (code ISO)
+          required: false
+          schema:
+            type: string
+        - name: minElevation
+          in: query
+          description: Altitude minimale en mètres
+          required: false
+          schema:
+            type: number
+        - name: maxElevation
+          in: query
+          description: Altitude maximale en mètres
+          required: false
+          schema:
+            type: number
+        - name: minGradient
+          in: query
+          description: Pente minimale en pourcentage
+          required: false
+          schema:
+            type: number
+        - name: maxGradient
+          in: query
+          description: Pente maximale en pourcentage
+          required: false
+          schema:
+            type: number
+        - name: difficulty
+          in: query
+          description: Niveau de difficulté
+          required: false
+          schema:
+            type: string
+            enum: [easy, medium, hard, extreme]
+        - name: has3D
+          in: query
+          description: Filtrer par disponibilité de visualisation 3D
+          required: false
+          schema:
+            type: boolean
+        - name: sortBy
+          in: query
+          description: Champ de tri
+          required: false
+          schema:
+            type: string
+            enum: [name, elevation, length, gradient, popularity]
+            default: popularity
+        - name: sortOrder
+          in: query
+          description: Ordre de tri
+          required: false
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+      responses:
+        '200':
+          description: Liste des cols
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                    description: Nombre total de cols correspondant aux critères
+                  offset:
+                    type: integer
+                    description: Index de départ
+                  limit:
+                    type: integer
+                    description: Nombre maximum d'éléments retournés
+                  cols:
+                    type: array
+                    items:
+                      $ref: 'swagger-core.yaml#/components/schemas/Col'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /cols/{colId}:
+    get:
+      summary: Détails d'un col
+      description: Récupère les informations détaillées d'un col spécifique
+      tags:
+        - Cols
+      parameters:
+        - name: colId
+          in: path
+          description: Identifiant du col
+          required: true
+          schema:
+            type: string
+        - $ref: 'swagger-core.yaml#/components/parameters/LanguageParam'
+      responses:
+        '200':
+          description: Détails du col
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-core.yaml#/components/schemas/Col'
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /cols/search:
+    get:
+      summary: Recherche de cols
+      description: Recherche de cols par nom, région ou caractéristiques
+      tags:
+        - Cols
+      parameters:
+        - name: query
+          in: query
+          description: Terme de recherche
+          required: true
+          schema:
+            type: string
+        - $ref: 'swagger-core.yaml#/components/parameters/RegionParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/LanguageParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: Résultats de recherche
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  results:
+                    type: array
+                    items:
+                      $ref: 'swagger-core.yaml#/components/schemas/Col'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /cols/nearby:
+    get:
+      summary: Cols à proximité
+      description: Trouve les cols à proximité d'une position géographique
+      tags:
+        - Cols
+      parameters:
+        - name: lat
+          in: query
+          description: Latitude
+          required: true
+          schema:
+            type: number
+        - name: lng
+          in: query
+          description: Longitude
+          required: true
+          schema:
+            type: number
+        - name: radius
+          in: query
+          description: Rayon de recherche en kilomètres
+          required: false
+          schema:
+            type: number
+            default: 50
+        - $ref: 'swagger-core.yaml#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: Cols à proximité
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  center:
+                    type: object
+                    properties:
+                      lat:
+                        type: number
+                      lng:
+                        type: number
+                  radius:
+                    type: number
+                  cols:
+                    type: array
+                    items:
+                      allOf:
+                        - $ref: 'swagger-core.yaml#/components/schemas/Col'
+                        - type: object
+                          properties:
+                            distance:
+                              type: number
+                              description: Distance en kilomètres
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /cols/popular:
+    get:
+      summary: Cols populaires
+      description: Récupère les cols les plus populaires par région
+      tags:
+        - Cols
+      parameters:
+        - $ref: 'swagger-core.yaml#/components/parameters/RegionParam'
+        - name: limit
+          in: query
+          description: Nombre de cols à retourner
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 1
+            maximum: 50
+      responses:
+        '200':
+          description: Cols populaires
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: 'swagger-core.yaml#/components/schemas/Col'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /cols/3d/{colId}:
+    get:
+      summary: Données de visualisation 3D d'un col
+      description: |
+        Récupère les données optimisées pour la visualisation 3D d'un col.
+        Les données retournées sont adaptées au type d'appareil et à la région.
+      tags:
+        - Visualisation 3D
+        - Cols
+      parameters:
+        - name: colId
+          in: path
+          description: Identifiant du col
+          required: true
+          schema:
+            type: string
+        - name: resolution
+          in: query
+          description: Résolution du maillage 3D
+          required: false
+          schema:
+            type: string
+            enum: [high, medium, low, minimal]
+        - name: withTextures
+          in: query
+          description: Inclure les textures
+          required: false
+          schema:
+            type: boolean
+            default: true
+        - name: withAnimation
+          in: query
+          description: Inclure les données d'animation
+          required: false
+          schema:
+            type: boolean
+            default: true
+        - $ref: 'swagger-core.yaml#/components/parameters/RegionParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/DeviceParam'
+      responses:
+        '200':
+          description: Données de visualisation 3D
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-core.yaml#/components/schemas/Col3DData'
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /cols/3d/preload:
+    post:
+      summary: Précharger des données 3D
+      description: |
+        Précharge les données 3D pour une liste de cols.
+        Nécessite des droits d'administration.
+      tags:
+        - Visualisation 3D
+        - Cols
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - colIds
+              properties:
+                colIds:
+                  type: array
+                  items:
+                    type: string
+                  description: Liste d'identifiants de cols
+                resolution:
+                  type: string
+                  enum: [high, medium, low, minimal]
+                  default: medium
+                withTextures:
+                  type: boolean
+                  default: true
+                withAnimation:
+                  type: boolean
+                  default: true
+                region:
+                  type: string
+                  enum: [western, eastern, northern, southern, central]
+                device:
+                  type: string
+                  enum: [desktop, tablet, mobile]
+                  default: desktop
+                batchSize:
+                  type: integer
+                  description: Taille des lots pour le préchargement
+                  default: 5
+      responses:
+        '200':
+          description: Résultat du préchargement
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  success:
+                    type: integer
+                  failed:
+                    type: integer
+                  skipped:
+                    type: integer
+                  details:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        colId:
+                          type: string
+                        status:
+                          type: string
+                          enum: [success, failed, skipped]
+                        reason:
+                          type: string
+        '401':
+          $ref: 'swagger-core.yaml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'swagger-core.yaml#/components/responses/Forbidden'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /cols/3d/cache/invalidate/{colId}:
+    post:
+      summary: Invalider le cache 3D d'un col
+      description: |
+        Invalide le cache des données 3D pour un col spécifique.
+        Nécessite des droits d'administration.
+      tags:
+        - Visualisation 3D
+        - Cols
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: colId
+          in: path
+          description: Identifiant du col
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Cache invalidé avec succès
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+        '401':
+          $ref: 'swagger-core.yaml#/components/responses/Unauthorized'
+        '403':
+          $ref: 'swagger-core.yaml#/components/responses/Forbidden'
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+
+  /cols/compare:
+    post:
+      summary: Comparer des cols
+      description: Compare les caractéristiques de plusieurs cols
+      tags:
+        - Cols
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - colIds
+              properties:
+                colIds:
+                  type: array
+                  items:
+                    type: string
+                  description: Liste d'identifiants de cols à comparer
+                metrics:
+                  type: array
+                  items:
+                    type: string
+                    enum: [elevation, length, gradient, difficulty, popularity]
+                  description: Métriques à comparer
+      responses:
+        '200':
+          description: Comparaison des cols
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cols:
+                    type: array
+                    items:
+                      $ref: 'swagger-core.yaml#/components/schemas/Col'
+                  comparison:
+                    type: object
+                    additionalProperties:
+                      type: object
+                      properties:
+                        values:
+                          type: array
+                          items:
+                            type: number
+                        min:
+                          type: number
+                        max:
+                          type: number
+                        average:
+                          type: number
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'

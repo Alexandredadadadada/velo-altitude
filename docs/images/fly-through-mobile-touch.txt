@@ -1,0 +1,10 @@
+Cette image doit montrer l'interface tactile optimisée pour les appareils mobiles.
+
+Éléments à inclure :
+- Les contrôles Fly-through adaptés aux interactions tactiles
+- Les cibles de toucher plus grandes sur les boutons
+- Un exemple de geste de pincement pour zoomer
+- La visualisation 3D adaptée à un écran mobile
+- L'interface utilisateur réactive et épurée
+
+Capture à prendre sur un appareil mobile (iPhone ou haut de gamme Android) en orientation paysage.

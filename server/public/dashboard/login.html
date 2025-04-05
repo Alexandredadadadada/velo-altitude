@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Dashboard-Velo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary-color: #1A73E8;
+      --secondary-color: #34A853;
+      --accent-color: #FA7B17;
+      --light-color: #F8F9FA;
+      --dark-color: #202124;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: var(--dark-color);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .login-container {
+      max-width: 400px;
+      width: 100%;
+      padding: 2rem;
+    }
+    
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      border-radius: 10px 10px 0 0 !important;
+      padding: 1.5rem;
+    }
+    
+    .logo {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-control {
+      border-radius: 5px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+    }
+    
+    .form-control:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 0.25rem rgba(52, 168, 83, 0.25);
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: 5px;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+    }
+    
+    .btn-primary:hover {
+      background-color: #1967D2;
+      border-color: #1967D2;
+    }
+    
+    .alert {
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    
+    .form-check-input:checked {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="card">
+      <div class="card-header">
+        <div class="logo">
+          <i class="bi bi-speedometer2"></i>
+        </div>
+        <h4 class="mb-0">Dashboard-Velo</h4>
+        <p class="small mb-0">Plateforme européenne de cyclisme</p>
+      </div>
+      <div class="card-body p-4">
+        <div class="alert alert-info" role="alert">
+          <i class="bi bi-info-circle-fill me-2"></i>
+          Veuillez vous connecter pour accéder au tableau de bord.
+        </div>
+        
+        <div id="login-error" class="alert alert-danger d-none" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          <span id="error-message">Identifiants incorrects. Veuillez réessayer.</span>
+        </div>
+        
+        <form id="login-form">
+          <div class="mb-3">
+            <label for="username" class="form-label">Nom d'utilisateur</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-person"></i>
+              </span>
+              <input type="text" class="form-control" id="username" placeholder="Entrez votre nom d'utilisateur" required>
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe</label>
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-lock"></i>
+              </span>
+              <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required>
+              <button class="btn btn-outline-secondary" type="button" id="toggle-password">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="remember-me">
+            <label class="form-check-label" for="remember-me">Se souvenir de moi</label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-box-arrow-in-right me-2"></i>
+            Se connecter
+          </button>
+        </form>
+      </div>
+      <div class="card-footer text-center py-3">
+        <a href="#" class="text-decoration-none">Mot de passe oublié?</a>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Gestionnaire pour afficher/masquer le mot de passe
+      const togglePassword = document.getElementById('toggle-password');
+      const passwordInput = document.getElementById('password');
+      
+      togglePassword.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        togglePassword.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>';
+      });
+      
+      // Gestionnaire pour le formulaire de connexion
+      const loginForm = document.getElementById('login-form');
+      const loginError = document.getElementById('login-error');
+      const errorMessage = document.getElementById('error-message');
+      
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const rememberMe = document.getElementById('remember-me').checked;
+        
+        try {
+          const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+          });
+          
+          if (!response.ok) {
+            throw new Error('Identifiants incorrects');
+          }
+          
+          const data = await response.json();
+          
+          // Stocker le token d'authentification
+          if (rememberMe) {
+            localStorage.setItem('auth_token', data.token);
+          } else {
+            sessionStorage.setItem('auth_token', data.token);
+          }
+          
+          // Rediriger vers le tableau de bord
+          window.location.href = '/dashboard/';
+          
+        } catch (error) {
+          loginError.classList.remove('d-none');
+          errorMessage.textContent = error.message;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

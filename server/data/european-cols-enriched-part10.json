@@ -1,0 +1,524 @@
+[
+  {
+    "id": "mont-ventoux",
+    "name": "Mont Ventoux",
+    "altitude": 1910,
+    "location": {
+      "latitude": 44.1741,
+      "longitude": 5.2786,
+      "region": "Provence",
+      "country": "France",
+      "nearbyTowns": ["Bédoin", "Malaucène", "Sault"]
+    },
+    "climbData": {
+      "bedoinSide": {
+        "startLocation": "Bédoin",
+        "length": 21.4,
+        "elevation": 1610,
+        "averageGradient": 7.5,
+        "maxGradient": 12.0,
+        "difficulty": 10
+      },
+      "malauceneSide": {
+        "startLocation": "Malaucène",
+        "length": 21.2,
+        "elevation": 1570,
+        "averageGradient": 7.4,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      },
+      "saultSide": {
+        "startLocation": "Sault",
+        "length": 26.0,
+        "elevation": 1210,
+        "averageGradient": 4.7,
+        "maxGradient": 11.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1951,
+      "tourDeFranceAppearances": 16,
+      "famousStories": [
+        "En 1967, Tom Simpson, cycliste britannique, y est décédé à 1.5 km du sommet, victime de la chaleur, de l'épuisement et de substances dopantes.",
+        "En 1970, Eddy Merckx s'évanouit après son arrivée au sommet, ayant fourni un effort surhumain pour remporter l'étape.",
+        "En 2000, Lance Armstrong laisse gagner Marco Pantani après un duel épique, geste qu'il regrettera plus tard.",
+        "En 2013, Chris Froome y réalise une performance exceptionnelle, distançant tous ses rivaux de manière spectaculaire.",
+        "Surnommé le 'Géant de Provence', le sommet dénudé lui donne une apparence lunaire."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Iban Mayo",
+          "time": "55:51",
+          "year": 2004,
+          "side": "bedoin"
+        },
+        "modern": {
+          "holder": "Miguel Angel Lopez",
+          "time": "58:40",
+          "year": 2021,
+          "side": "bedoin"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Mémorial Tom Simpson",
+        "description": "Monument commémoratif à 1.5 km du sommet, où les cyclistes déposent traditionnellement bidons ou casquettes en hommage.",
+        "coordinates": [44.1723, 5.2777],
+        "type": "monument"
+      },
+      {
+        "name": "Observatoire météorologique",
+        "description": "Station météorologique caractéristique au sommet, avec son architecture unique et sa tour blanche.",
+        "coordinates": [44.1741, 5.2786],
+        "type": "landmark"
+      },
+      {
+        "name": "Forêt de cèdres",
+        "description": "Magnifique forêt sur le versant de Sault, offrant une ombre bienvenue avant la partie dénudée.",
+        "coordinates": [44.1500, 5.3000],
+        "type": "natural"
+      },
+      {
+        "name": "Chalet Reynard",
+        "description": "Restaurant-refuge à la sortie de la forêt, dernier point de ravitaillement avant le sommet.",
+        "coordinates": [44.1589, 5.2921],
+        "type": "accommodation"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à septembre, en évitant les heures les plus chaudes en été",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Élevé en été (restriction certains jours)",
+      "winterClosure": "Généralement fermé de novembre à avril",
+      "facilities": ["Boutique souvenirs", "Snack", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Chalet Reynard", "Sommet (en été)"]
+    },
+    "images": {
+      "main": "/images/cols/ventoux/main.jpg",
+      "gallery": [
+        "/images/cols/ventoux/bedoin-side.jpg",
+        "/images/cols/ventoux/malaucene-side.jpg",
+        "/images/cols/ventoux/summit.jpg",
+        "/images/cols/ventoux/simpson-memorial.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant de Bédoin est considéré comme le plus difficile, avec 16 km sans répit après la sortie de la forêt.",
+      "Évitez de gravir le col entre 12h et 16h en été, les températures peuvent dépasser 35°C sur les pentes exposées.",
+      "Le mistral peut être violent au sommet, prévoyez toujours un coupe-vent même par beau temps."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "grossglockner",
+    "name": "Grossglockner Hochalpenstrasse",
+    "altitude": 2504,
+    "location": {
+      "latitude": 47.0553,
+      "longitude": 12.8407,
+      "region": "Alpes autrichiennes",
+      "country": "Autriche",
+      "nearbyTowns": ["Heiligenblut", "Bruck", "Fusch"]
+    },
+    "climbData": {
+      "heiligenblutSide": {
+        "startLocation": "Heiligenblut",
+        "length": 15.3,
+        "elevation": 1122,
+        "averageGradient": 7.3,
+        "maxGradient": 12.0,
+        "difficulty": 8
+      },
+      "fuschSide": {
+        "startLocation": "Fusch",
+        "length": 25.1,
+        "elevation": 1738,
+        "averageGradient": 6.9,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourOfAustriaYear": 1950,
+      "tourOfAustriaAppearances": 25,
+      "famousStories": [
+        "La route a été construite entre 1930 et 1935, et est considérée comme l'une des plus belles routes alpines d'Europe.",
+        "Le Grossglockner est la plus haute montagne d'Autriche (3798m), et la route est la deuxième plus haute route asphaltée du pays.",
+        "En 1971, Eddy Merckx a dominé l'étape du Tour d'Autriche passant par le Grossglockner.",
+        "La route est à péage pour les véhicules motorisés, mais gratuite pour les cyclistes."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Felix Großschartner",
+          "time": "1:11:32",
+          "year": 2019,
+          "side": "fusch"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Franz-Josefs-Höhe",
+        "description": "Point de vue panoramique à 2369m offrant une vue spectaculaire sur le glacier Pasterze et le sommet du Grossglockner.",
+        "coordinates": [47.0748, 12.7507],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Edelweißspitze",
+        "description": "Sommet accessible par une courte route annexe, culminant à 2571m, point le plus élevé de la route.",
+        "coordinates": [47.1145, 12.8134],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Glacier Pasterze",
+        "description": "Le plus long glacier d'Autriche, visible depuis la Franz-Josefs-Höhe.",
+        "coordinates": [47.0748, 12.7507],
+        "type": "natural"
+      },
+      {
+        "name": "Musée alpin",
+        "description": "Musée au col de Fuscher Törl présentant l'histoire de la construction de la route et de l'alpinisme dans la région.",
+        "coordinates": [47.0553, 12.8407],
+        "type": "cultural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mi-mai à fin octobre (dates d'ouverture officielle de la route)",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Élevé en été",
+      "winterClosure": "Fermé de novembre à mi-mai",
+      "facilities": ["Restaurants", "Musées", "Boutiques", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Nombreux points d'eau et restaurants le long du parcours"]
+    },
+    "images": {
+      "main": "/images/cols/grossglockner/main.jpg",
+      "gallery": [
+        "/images/cols/grossglockner/heiligenblut-side.jpg",
+        "/images/cols/grossglockner/fusch-side.jpg",
+        "/images/cols/grossglockner/glacier.jpg",
+        "/images/cols/grossglockner/hairpins.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Partez tôt pour éviter le trafic touristique, qui s'intensifie à partir de 10h.",
+      "L'altitude se fait sentir au-dessus de 2000m, adaptez votre effort en conséquence.",
+      "Malgré la période estivale, prévoyez des vêtements chauds pour la descente."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "passo-pordoi",
+    "name": "Passo Pordoi",
+    "altitude": 2239,
+    "location": {
+      "latitude": 46.4882,
+      "longitude": 11.8182,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Arabba", "Canazei"]
+    },
+    "climbData": {
+      "arabbaSide": {
+        "startLocation": "Arabba",
+        "length": 9.4,
+        "elevation": 637,
+        "averageGradient": 6.8,
+        "maxGradient": 9.0,
+        "difficulty": 7
+      },
+      "canazeiSide": {
+        "startLocation": "Canazei",
+        "length": 11.8,
+        "elevation": 642,
+        "averageGradient": 5.4,
+        "maxGradient": 8.0,
+        "difficulty": 6
+      }
+    },
+    "history": {
+      "firstGiroYear": 1940,
+      "giroAppearances": 41,
+      "cimaKoppiAppearances": 14,
+      "famousStories": [
+        "La 'Cima Coppi' (sommet le plus élevé du Giro) lui a été attribuée 14 fois, un record.",
+        "Fausto Coppi y a construit plusieurs de ses victoires légendaires dans les années 1940 et 1950.",
+        "Le col fait partie du circuit Sella Ronda, une boucle emblématique des Dolomites incluant quatre cols.",
+        "Un monument en l'honneur de Fausto Coppi est érigé au sommet."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "24:10",
+          "year": 1994,
+          "side": "arabba"
+        },
+        "modern": {
+          "holder": "Nairo Quintana",
+          "time": "25:27",
+          "year": 2014,
+          "side": "arabba"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Monument Fausto Coppi",
+        "description": "Statue commémorative au sommet, lieu de pèlerinage pour les amateurs de cyclisme.",
+        "coordinates": [46.4882, 11.8182],
+        "type": "monument"
+      },
+      {
+        "name": "Vue sur la Marmolada",
+        "description": "Panorama sur le plus haut sommet des Dolomites (3343m).",
+        "coordinates": [46.4882, 11.8182],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Téléphérique du Sass Pordoi",
+        "description": "Remontée mécanique menant au plateau du Sass Pordoi à 2950m en quelques minutes.",
+        "coordinates": [46.4882, 11.8182],
+        "type": "tourism"
+      },
+      {
+        "name": "Virages numérotés",
+        "description": "Les 33 virages en épingle du versant de Canazei sont numérotés, comme l'Alpe d'Huez.",
+        "coordinates": [46.4760, 11.8200],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre, journées dédiées aux cyclistes certains jours d'été",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Élevé en haute saison touristique",
+      "winterClosure": "Généralement ouvert toute l'année (accès aux stations de ski)",
+      "facilities": ["Restaurants", "Hôtels", "Boutiques souvenirs", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Plusieurs restaurants et buvettes au sommet"]
+    },
+    "images": {
+      "main": "/images/cols/pordoi/main.jpg",
+      "gallery": [
+        "/images/cols/pordoi/arabba-side.jpg",
+        "/images/cols/pordoi/canazei-side.jpg",
+        "/images/cols/pordoi/coppi-monument.jpg",
+        "/images/cols/pordoi/dolomites-view.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Les deux versants sont relativement accessibles, avec des pentes régulières sans passages extrêmes.",
+      "Idéal dans le cadre du circuit Sella Ronda, qui peut être parcouru dans les deux sens.",
+      "Le Sella Ronda Day (journée sans circulation motorisée) est parfait pour gravir ce col."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "col-du-lautaret",
+    "name": "Col du Lautaret",
+    "altitude": 2058,
+    "location": {
+      "latitude": 45.0375,
+      "longitude": 6.4109,
+      "region": "Hautes-Alpes",
+      "country": "France",
+      "nearbyTowns": ["Le Monêtier-les-Bains", "La Grave", "Briançon"]
+    },
+    "climbData": {
+      "brianconSide": {
+        "startLocation": "Briançon",
+        "length": 27.5,
+        "elevation": 840,
+        "averageGradient": 3.1,
+        "maxGradient": 7.0,
+        "difficulty": 5
+      },
+      "bourgetsSide": {
+        "startLocation": "Le Bourg-d'Oisans",
+        "length": 38.0,
+        "elevation": 1140,
+        "averageGradient": 3.0,
+        "maxGradient": 8.0,
+        "difficulty": 6
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1911,
+      "tourDeFranceAppearances": 39,
+      "famousStories": [
+        "Souvent passage obligé avant le Col du Galibier, le Lautaret est un col stratégique dans les Alpes.",
+        "En 2017, lors d'une étape du Tour avec arrivée à Serre Chevalier, Primož Roglič s'est échappé dans la descente.",
+        "Le col est situé dans le Parc National des Écrins et offre des vues exceptionnelles sur la Meije.",
+        "Il est généralement ouvert toute l'année, constituant un axe majeur entre le nord et le sud des Alpes."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "1:12:00",
+          "year": 1998,
+          "side": "bourg-d-oisans"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Jardin alpin du Lautaret",
+        "description": "Jardin botanique à 2100m d'altitude, présentant plus de 2000 espèces de plantes alpines du monde entier.",
+        "coordinates": [45.0375, 6.4109],
+        "type": "natural"
+      },
+      {
+        "name": "Vue sur La Meije",
+        "description": "Panorama exceptionnel sur le massif de La Meije (3983m) et ses glaciers.",
+        "coordinates": [45.0375, 6.4109],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Route du Galibier",
+        "description": "Bifurcation vers le Col du Galibier qui monte à 2642m, pour les cyclistes souhaitant poursuivre l'ascension.",
+        "coordinates": [45.0375, 6.4109],
+        "type": "landmark"
+      },
+      {
+        "name": "Station de ski de La Grave",
+        "description": "Aperçu sur cette station de ski freeride légendaire sans pistes balisées.",
+        "coordinates": [45.0500, 6.3065],
+        "type": "tourism"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre pour le cyclisme",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Élevé (axe routier majeur)",
+      "winterClosure": "Généralement ouvert toute l'année sauf conditions exceptionnelles",
+      "facilities": ["Restaurants", "Boutiques", "Toilettes", "Stations-service"],
+      "parkingAvailable": true,
+      "waterPoints": ["Plusieurs restaurants et fontaines au sommet"]
+    },
+    "images": {
+      "main": "/images/cols/lautaret/main.jpg",
+      "gallery": [
+        "/images/cols/lautaret/briancon-side.jpg",
+        "/images/cols/lautaret/bourg-oisans-side.jpg",
+        "/images/cols/lautaret/meije-view.jpg",
+        "/images/cols/lautaret/garden.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Col relativement facile grâce à son faible pourcentage, mais attention à sa longueur.",
+      "Souvent combiné avec le Galibier ou d'autres cols comme le Col d'Izoard ou le Col du Granon.",
+      "La circulation peut être dense, restez vigilant et maintenez-vous sur le côté droit."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "puerto-de-ancares",
+    "name": "Puerto de Ancares",
+    "altitude": 1670,
+    "location": {
+      "latitude": 42.8250,
+      "longitude": -6.8336,
+      "region": "Galice/Castille-et-León",
+      "country": "Espagne",
+      "nearbyTowns": ["Vega de Espinareda", "Candín", "Pereda de Ancares"]
+    },
+    "climbData": {
+      "vegaSide": {
+        "startLocation": "Vega de Espinareda",
+        "length": 18.6,
+        "elevation": 1240,
+        "averageGradient": 6.7,
+        "maxGradient": 15.0,
+        "difficulty": 8
+      },
+      "peredaSide": {
+        "startLocation": "Pereda de Ancares",
+        "length": 8.2,
+        "elevation": 710,
+        "averageGradient": 8.7,
+        "maxGradient": 14.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstVueltaYear": 2011,
+      "vueltaAppearances": 3,
+      "famousStories": [
+        "Le col a été révélé au monde du cyclisme lors de la Vuelta 2011 avec une victoire de Juan José Cobo.",
+        "En 2014, Alberto Contador y a consolidé son maillot rouge de leader face à Chris Froome.",
+        "Situé dans la réserve de biosphère des Ancares, il traverse l'une des zones les plus sauvages et préservées d'Espagne.",
+        "En 2020, l'équipe Movistar y a organisé un stage d'entraînement, attirant l'attention sur ce col peu connu."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Alberto Contador",
+          "time": "46:25",
+          "year": 2014,
+          "side": "vega"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Réserve de biosphère des Ancares",
+        "description": "Zone protégée abritant une biodiversité exceptionnelle, incluant des ours bruns et des loups ibériques.",
+        "coordinates": [42.8100, -6.8200],
+        "type": "natural"
+      },
+      {
+        "name": "Pallozas traditionnelles",
+        "description": "Maisons traditionnelles avec toits de chaume visibles dans les villages traversés.",
+        "coordinates": [42.8302, -6.8275],
+        "type": "cultural"
+      },
+      {
+        "name": "Vue panoramique au sommet",
+        "description": "Paysage à 360° sur les montagnes galiciennes et castillanes.",
+        "coordinates": [42.8250, -6.8336],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Forêts de châtaigniers centenaires",
+        "description": "Bosquets ancestraux bordant certaines portions de la route.",
+        "coordinates": [42.8200, -6.8400],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Moyenne à bonne",
+      "trafficLevel": "Très faible",
+      "winterClosure": "Parfois fermé en hiver selon les chutes de neige",
+      "facilities": ["Aucune installation permanente au sommet"],
+      "parkingAvailable": true,
+      "waterPoints": ["Villages traversés, aucun au sommet"]
+    },
+    "images": {
+      "main": "/images/cols/ancares/main.jpg",
+      "gallery": [
+        "/images/cols/ancares/vega-side.jpg",
+        "/images/cols/ancares/pereda-side.jpg",
+        "/images/cols/ancares/pallozas.jpg",
+        "/images/cols/ancares/forest.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant de Pereda est plus court mais nettement plus difficile avec des passages très raides.",
+      "Zone très isolée, prévoyez suffisamment d'eau et de nourriture car il n'y a aucun commerce.",
+      "Col idéal pour découvrir l'Espagne rurale et authentique, loin des circuits touristiques."
+    ],
+    "recommendedBikeTypes": ["Vélo de route", "Gravel"]
+  }
+]

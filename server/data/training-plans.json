@@ -1,0 +1,644 @@
+{
+  "training_plans": [
+    {
+      "id": "plan-1",
+      "name": "Préparation Cyclosportive",
+      "objective": "endurance",
+      "level": "intermédiaire",
+      "duration_weeks": 8,
+      "weekly_structure": [
+        {
+          "week": 1,
+          "theme": "Construction de base",
+          "total_hours": 8,
+          "days": [
+            {
+              "day": "Lundi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou étirements légers",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Mardi",
+              "type": "endurance",
+              "title": "Endurance fondamentale",
+              "description": "Sortie à intensité modérée (zone 2), terrain plat à vallonné. Concentrez-vous sur un pédalage fluide et une cadence élevée (90-100 rpm).",
+              "duration": "1h30",
+              "intensity": 3,
+              "metrics": ["Fréquence cardiaque: zone 2 (65-75% FCmax)", "Cadence: 90-100 rpm"]
+            },
+            {
+              "day": "Mercredi",
+              "type": "force",
+              "title": "Force spécifique",
+              "description": "Échauffement 20 min, puis 6x3 min en force (cadence basse 50-60 rpm) sur une côte modérée, récupération 3 min entre les répétitions, retour au calme 15 min.",
+              "duration": "1h15",
+              "intensity": 6,
+              "metrics": ["Cadence: 50-60 rpm en côte", "Puissance: zone 3-4"]
+            },
+            {
+              "day": "Jeudi",
+              "type": "repos",
+              "title": "Récupération active",
+              "description": "Sortie très légère sur terrain plat, cadence élevée et résistance minimale. Alternative: natation ou marche.",
+              "duration": "45min",
+              "intensity": 1,
+              "metrics": ["Fréquence cardiaque: zone 1 (<65% FCmax)"]
+            },
+            {
+              "day": "Vendredi",
+              "type": "intervalle",
+              "title": "Développement du seuil",
+              "description": "Échauffement 20 min, 2 séries de 3x5 min à 88-92% FTP, récupération 3 min entre intervalles et 5 min entre séries, retour au calme 15 min.",
+              "duration": "1h30",
+              "intensity": 7,
+              "metrics": ["Puissance: 88-92% FTP", "Fréquence cardiaque: zone 4"]
+            },
+            {
+              "day": "Samedi",
+              "type": "endurance",
+              "title": "Sortie longue progressive",
+              "description": "Sortie longue avec 2h en endurance fondamentale (zone 2) puis 30 min en sweet spot (zone 3-4). Travaillez la nutrition pendant l'effort.",
+              "duration": "2h30",
+              "intensity": 4,
+              "metrics": ["Fréquence cardiaque: zone 2 puis zone 3-4", "Nutrition: 60g glucides/heure"]
+            },
+            {
+              "day": "Dimanche",
+              "type": "technique",
+              "title": "Technique de pilotage",
+              "description": "Sortie facile avec focus sur la technique: sprints courts, relances, changements de rythme, position sur le vélo.",
+              "duration": "1h30",
+              "intensity": 2,
+              "metrics": ["Cadence: variations 70-110 rpm"]
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "theme": "Renforcement progressif",
+          "total_hours": 9,
+          "days": [
+            {
+              "day": "Lundi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou étirements légers",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Mardi",
+              "type": "endurance",
+              "title": "Endurance avec accélérations",
+              "description": "Sortie en endurance avec 5 accélérations de 2 min en fin de sortie. Terrain vallonné.",
+              "duration": "1h45",
+              "intensity": 4,
+              "metrics": ["Fréquence cardiaque: zone 2 (65-75% FCmax)", "Accélérations: zone 4"]
+            },
+            {
+              "day": "Mercredi",
+              "type": "force",
+              "title": "Force spécifique progressive",
+              "description": "Échauffement 20 min, puis 8x3 min en force (cadence basse 50-60 rpm) sur une côte modérée, récupération 2 min entre les répétitions, retour au calme 15 min.",
+              "duration": "1h30",
+              "intensity": 6,
+              "metrics": ["Cadence: 50-60 rpm en côte", "Puissance: zone 3-4"]
+            },
+            {
+              "day": "Jeudi",
+              "type": "repos",
+              "title": "Récupération active",
+              "description": "Sortie très légère sur terrain plat, cadence élevée et résistance minimale. Alternative: natation ou marche.",
+              "duration": "45min",
+              "intensity": 1,
+              "metrics": ["Fréquence cardiaque: zone 1 (<65% FCmax)"]
+            },
+            {
+              "day": "Vendredi",
+              "type": "intervalle",
+              "title": "Développement du seuil",
+              "description": "Échauffement 20 min, 3 séries de 2x6 min à 88-92% FTP, récupération 3 min entre intervalles et 5 min entre séries, retour au calme 15 min.",
+              "duration": "1h45",
+              "intensity": 7,
+              "metrics": ["Puissance: 88-92% FTP", "Fréquence cardiaque: zone 4"]
+            },
+            {
+              "day": "Samedi",
+              "type": "endurance",
+              "title": "Sortie longue progressive",
+              "description": "Sortie longue avec 2h30 en endurance fondamentale (zone 2) puis 30 min en sweet spot (zone 3-4). Travaillez la nutrition pendant l'effort.",
+              "duration": "3h",
+              "intensity": 4,
+              "metrics": ["Fréquence cardiaque: zone 2 puis zone 3-4", "Nutrition: 60g glucides/heure"]
+            },
+            {
+              "day": "Dimanche",
+              "type": "technique",
+              "title": "Sortie group ride",
+              "description": "Sortie en groupe à intensité variable. Travaillez le placement dans le peloton et les relais.",
+              "duration": "1h45",
+              "intensity": 3,
+              "metrics": ["Intensité variable selon dynamique de groupe"]
+            }
+          ]
+        }
+      ],
+      "progression": {
+        "volume": [8, 9, 10, 8, 11, 12, 13, 8],
+        "intensity": [3, 3, 4, 3, 4, 5, 5, 3]
+      },
+      "expert_tips": [
+        "Privilégiez la régularité plutôt que les séances trop intenses",
+        "Hydratez-vous correctement pendant les sorties longues (500-750ml/heure)",
+        "Incluez des étirements après chaque séance pour favoriser la récupération",
+        "Augmentez progressivement le volume avant d'augmenter l'intensité",
+        "Suivez un ratio 80/20 entre entraînement à basse et haute intensité"
+      ]
+    },
+    {
+      "id": "plan-2",
+      "name": "Préparation Cols de Montagne",
+      "objective": "grimper",
+      "level": "avancé",
+      "duration_weeks": 10,
+      "weekly_structure": [
+        {
+          "week": 1,
+          "theme": "Évaluation et fondation",
+          "total_hours": 9,
+          "days": [
+            {
+              "day": "Lundi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou yoga pour cyclistes",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Mardi",
+              "type": "test",
+              "title": "Test FTP",
+              "description": "Échauffement 20 min, 5 min à fond, 10 min récup légère, 20 min all-out, 10 min retour au calme. Calculez votre FTP (95% de la puissance moyenne sur 20 min).",
+              "duration": "1h15",
+              "intensity": 9,
+              "metrics": ["Puissance moyenne 20 min", "Fréquence cardiaque maximale"]
+            },
+            {
+              "day": "Mercredi",
+              "type": "endurance",
+              "title": "Récupération active",
+              "description": "Sortie facile pour récupérer du test, terrain plat, cadence élevée.",
+              "duration": "1h30",
+              "intensity": 2,
+              "metrics": ["Fréquence cardiaque: zone 1-2", "Cadence: >90 rpm"]
+            },
+            {
+              "day": "Jeudi",
+              "type": "force",
+              "title": "Force spécifique montagne",
+              "description": "Échauffement 20 min, puis recherchez une côte longue et faites 4x5 min en position assise, cadence 50-60 rpm, récupération en descente.",
+              "duration": "1h45",
+              "intensity": 6,
+              "metrics": ["Cadence: 50-60 rpm", "Puissance: zone 3-4"]
+            },
+            {
+              "day": "Vendredi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou étirements légers",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Samedi",
+              "type": "spécifique",
+              "title": "Première sortie montagne",
+              "description": "Sortie avec reconnaissance d'un col local. Montée régulière à 75-80% FTP, descente technique contrôlée.",
+              "duration": "3h",
+              "intensity": 5,
+              "metrics": ["Puissance normalisée: 75-80% FTP", "VAM (m/h): référence de base"]
+            },
+            {
+              "day": "Dimanche",
+              "type": "endurance",
+              "title": "Endurance longue vallonnée",
+              "description": "Sortie longue sur terrain vallonné, toujours en zone 2 dans les montées.",
+              "duration": "2h30",
+              "intensity": 3,
+              "metrics": ["Fréquence cardiaque: zone 2", "Cadence montées: >70 rpm"]
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "theme": "Développement force-endurance",
+          "total_hours": 10,
+          "days": [
+            {
+              "day": "Lundi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou yoga pour cyclistes",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Mardi",
+              "type": "force",
+              "title": "Force-endurance montagne",
+              "description": "Échauffement 20 min, puis 6x5 min alternance 30s en danseuse / 30s assis en basse cadence sur une côte. Récupération 3 min entre séries.",
+              "duration": "1h30",
+              "intensity": 7,
+              "metrics": ["Puissance: zone 4", "Cadence assis: 50-60 rpm", "Cadence danseuse: 65-75 rpm"]
+            },
+            {
+              "day": "Mercredi",
+              "type": "endurance",
+              "title": "Récupération active",
+              "description": "Sortie facile, terrain plat, cadence élevée.",
+              "duration": "1h30",
+              "intensity": 2,
+              "metrics": ["Fréquence cardiaque: zone 1-2", "Cadence: >90 rpm"]
+            },
+            {
+              "day": "Jeudi",
+              "type": "intervalle",
+              "title": "Intervalles seuil",
+              "description": "Échauffement 20 min, 3x10 min à 90-95% FTP avec 5 min récup, si possible en montée. Retour au calme 15 min.",
+              "duration": "1h45",
+              "intensity": 8,
+              "metrics": ["Puissance: 90-95% FTP", "Cadence: 80-90 rpm"]
+            },
+            {
+              "day": "Vendredi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou étirements légers",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Samedi",
+              "type": "spécifique",
+              "title": "Double ascension",
+              "description": "Trouver un col de 30-45 min et le monter deux fois. Première montée régulière (75-80% FTP), deuxième plus intensive (85-90% FTP).",
+              "duration": "3h30",
+              "intensity": 6,
+              "metrics": ["Puissance montée 1: 75-80% FTP", "Puissance montée 2: 85-90% FTP", "VAM (m/h): amélioration visée"]
+            },
+            {
+              "day": "Dimanche",
+              "type": "endurance",
+              "title": "Endurance longue simulation cyclosportive",
+              "description": "Sortie longue avec 3-4 montées à intensité modérée. Nutrition comme en cyclosportive.",
+              "duration": "3h45",
+              "intensity": 4,
+              "metrics": ["Fréquence cardiaque: zone 2-3", "Nutrition: 60-90g glucides/heure"]
+            }
+          ]
+        }
+      ],
+      "progression": {
+        "volume": [9, 10, 11, 12, 13, 14, 15, 14, 12, 8],
+        "intensity": [4, 5, 5, 6, 6, 7, 7, 6, 5, 3]
+      },
+      "expert_tips": [
+        "Travaillez spécifiquement la position assise prolongée pour les longues montées",
+        "Pratiquez régulièrement la technique de descente sur des routes connues",
+        "En montée, maintenez une cadence d'au moins 70 rpm pour économiser votre glycogène",
+        "Adaptez votre nutrition à l'effort prolongé en montagne (75-90g glucides/heure)",
+        "Pensez à l'acclimatation à l'altitude si votre événement cible est en haute montagne"
+      ]
+    },
+    {
+      "id": "plan-3",
+      "name": "Initiation Cyclisme",
+      "objective": "fondamentaux",
+      "level": "débutant",
+      "duration_weeks": 6,
+      "weekly_structure": [
+        {
+          "week": 1,
+          "theme": "Adaptation et technique",
+          "total_hours": 4,
+          "days": [
+            {
+              "day": "Lundi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Mardi",
+              "type": "technique",
+              "title": "Familiarisation avec le vélo",
+              "description": "Sortie facile pour s'habituer au vélo, travail sur la position, le freinage et les changements de vitesse. Terrain plat.",
+              "duration": "45min",
+              "intensity": 2,
+              "metrics": ["Confort sur le vélo", "Maîtrise des changements de vitesse"]
+            },
+            {
+              "day": "Mercredi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Jeudi",
+              "type": "endurance",
+              "title": "Développement endurance base",
+              "description": "Sortie légèrement plus longue, terrain plat, focus sur le pédalage régulier et la respiration.",
+              "duration": "1h",
+              "intensity": 2,
+              "metrics": ["Fréquence cardiaque: zone 1-2", "Régularité du pédalage"]
+            },
+            {
+              "day": "Vendredi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Samedi",
+              "type": "technique",
+              "title": "Maniabilité et équilibre",
+              "description": "Exercices de maniabilité dans un espace sécurisé: slalom entre plots, freinage précis, prise de courbes.",
+              "duration": "45min",
+              "intensity": 2,
+              "metrics": ["Précision dans les manœuvres"]
+            },
+            {
+              "day": "Dimanche",
+              "type": "endurance",
+              "title": "Première sortie longue",
+              "description": "Sortie plus longue à intensité très modérée. Intégrer une pause café à mi-parcours.",
+              "duration": "1h30",
+              "intensity": 2,
+              "metrics": ["Confort sur la distance", "Hydratation régulière"]
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "theme": "Renforcement des bases",
+          "total_hours": 5,
+          "days": [
+            {
+              "day": "Lundi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Mardi",
+              "type": "technique",
+              "title": "Cadence et fluidité",
+              "description": "Travail sur la cadence: alterner segments à cadence élevée (90-100 rpm) et normale (70-80 rpm). Terrain plat.",
+              "duration": "1h",
+              "intensity": 3,
+              "metrics": ["Cadence moyenne", "Fluidité de pédalage"]
+            },
+            {
+              "day": "Mercredi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Jeudi",
+              "type": "endurance",
+              "title": "Première sortie vallonnée",
+              "description": "Introduction aux montées légères. Utiliser les vitesses appropriées, rester assis, maintenir une cadence confortable.",
+              "duration": "1h15",
+              "intensity": 3,
+              "metrics": ["Fréquence cardiaque en montée", "Gestion des changements de vitesse"]
+            },
+            {
+              "day": "Vendredi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Samedi",
+              "type": "technique",
+              "title": "Sorties en groupe - bases",
+              "description": "Sortie en petit groupe pour apprendre les bases du cyclisme en peloton: distances de sécurité, signaux manuels, placement.",
+              "duration": "1h",
+              "intensity": 2,
+              "metrics": ["Confort en groupe", "Communication"]
+            },
+            {
+              "day": "Dimanche",
+              "type": "endurance",
+              "title": "Sortie longue progressive",
+              "description": "Augmentation de la distance, toujours à intensité modérée, sur parcours varié mais sans difficultés majeures.",
+              "duration": "1h45",
+              "intensity": 3,
+              "metrics": ["Endurance générale", "Alimentation pendant l'effort"]
+            }
+          ]
+        }
+      ],
+      "progression": {
+        "volume": [4, 5, 6, 6, 7, 8],
+        "intensity": [2, 2, 3, 3, 3, 4]
+      },
+      "expert_tips": [
+        "Concentrez-vous d'abord sur le confort et la technique avant la performance",
+        "Apprenez à utiliser correctement vos vitesses, surtout dans les montées",
+        "Augmentez très progressivement la distance et l'intensité pour éviter les blessures",
+        "Investissez dans un cuissard de qualité pour le confort sur la selle",
+        "N'hésitez pas à faire des pauses pendant vos sorties les premières semaines"
+      ]
+    },
+    {
+      "id": "plan-4",
+      "name": "Programme HIIT Performance",
+      "objective": "puissance",
+      "level": "avancé",
+      "duration_weeks": 6,
+      "weekly_structure": [
+        {
+          "week": 1,
+          "theme": "Introduction au HIIT",
+          "total_hours": 6,
+          "days": [
+            {
+              "day": "Lundi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou mobilité légère",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Mardi",
+              "type": "hiit",
+              "title": "Intervalles courts - introduction",
+              "description": "Échauffement 15 min, 3 séries de 6x30s efforts / 30s récupération, 3 min récup entre séries, retour au calme 10 min.",
+              "duration": "1h",
+              "intensity": 8,
+              "metrics": ["Puissance: >120% FTP pendant efforts", "Fréquence cardiaque: récup incomplète"]
+            },
+            {
+              "day": "Mercredi",
+              "type": "endurance",
+              "title": "Récupération active",
+              "description": "Sortie très légère, pédalage souple, aucune intensité.",
+              "duration": "1h",
+              "intensity": 1,
+              "metrics": ["Fréquence cardiaque: strictement zone 1"]
+            },
+            {
+              "day": "Jeudi",
+              "type": "force",
+              "title": "Sweet spot",
+              "description": "Échauffement 15 min, 3x10 min à 88-92% FTP, récupération 5 min, retour au calme 10 min.",
+              "duration": "1h15",
+              "intensity": 7,
+              "metrics": ["Puissance: 88-92% FTP", "Cadence: 85-95 rpm"]
+            },
+            {
+              "day": "Vendredi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou mobilité légère",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Samedi",
+              "type": "hiit",
+              "title": "Pyramide HIIT",
+              "description": "Échauffement 15 min, pyramide 30s/1m/2m/3m/2m/1m/30s à >110% FTP, avec récup égale à l'effort, retour au calme 15 min.",
+              "duration": "1h15",
+              "intensity": 9,
+              "metrics": ["Puissance: >110% FTP pendant efforts", "Cadence: >90 rpm"]
+            },
+            {
+              "day": "Dimanche",
+              "type": "endurance",
+              "title": "Endurance fondamentale",
+              "description": "Sortie longue à intensité strictement contrôlée (zone 2), idéalement sur terrain plat.",
+              "duration": "1h30",
+              "intensity": 3,
+              "metrics": ["Fréquence cardiaque: zone 2", "Puissance normalisée: <75% FTP"]
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "theme": "Spécificité HIIT",
+          "total_hours": 7,
+          "days": [
+            {
+              "day": "Lundi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou mobilité légère",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Mardi",
+              "type": "hiit",
+              "title": "Intervalles Tabata",
+              "description": "Échauffement 15 min, 4 blocs de 8x20s effort maximum / 10s récup, 4 min récup entre blocs, retour au calme 10 min.",
+              "duration": "1h",
+              "intensity": 9,
+              "metrics": ["Puissance: maximum possible", "Fréquence cardiaque: pic en fin de série"]
+            },
+            {
+              "day": "Mercredi",
+              "type": "endurance",
+              "title": "Récupération active",
+              "description": "Sortie très légère, pédalage souple, aucune intensité.",
+              "duration": "1h15",
+              "intensity": 1,
+              "metrics": ["Fréquence cardiaque: strictement zone 1"]
+            },
+            {
+              "day": "Jeudi",
+              "type": "vo2",
+              "title": "Développement VO2max",
+              "description": "Échauffement 15 min, 5x3 min à >110% FTP, récupération 3 min, retour au calme 10 min.",
+              "duration": "1h15",
+              "intensity": 9,
+              "metrics": ["Puissance: >110% FTP", "FC: proche max en fin d'intervalle"]
+            },
+            {
+              "day": "Vendredi",
+              "type": "repos",
+              "title": "Récupération",
+              "description": "Repos complet ou mobilité légère",
+              "duration": "0h",
+              "intensity": 0,
+              "metrics": []
+            },
+            {
+              "day": "Samedi",
+              "type": "hiit",
+              "title": "30/30 progressifs",
+              "description": "Échauffement 15 min, 3 séries de 10x30s efforts / 30s récupération avec intensité progressive (120%, 130%, 140% FTP), 5 min récup entre séries, retour au calme 15 min.",
+              "duration": "1h30",
+              "intensity": 10,
+              "metrics": ["Puissance: 120-140% FTP", "Cadence: >90 rpm"]
+            },
+            {
+              "day": "Dimanche",
+              "type": "endurance",
+              "title": "Endurance avec finishers",
+              "description": "Sortie longue à intensité contrôlée (zone 2), avec 4x30s sprints dans la dernière demi-heure.",
+              "duration": "2h",
+              "intensity": 4,
+              "metrics": ["Puissance sprints: maximum", "Récupération entre sprints: 5 min minimum"]
+            }
+          ]
+        }
+      ],
+      "progression": {
+        "volume": [6, 7, 7, 8, 7, 5],
+        "intensity": [7, 8, 8, 9, 8, 6]
+      },
+      "expert_tips": [
+        "La qualité des intervalles prime sur la quantité: arrêtez la séance si l'intensité chute",
+        "La récupération est cruciale dans un programme HIIT: respectez strictement les jours faciles",
+        "Mangez des glucides facilement digestibles 1-2h avant les séances HIIT intenses",
+        "Utilisez un ventilateur puissant pour les séances sur home trainer",
+        "Supervisez votre fatigue: réduisez l'intensité si votre fréquence cardiaque matinale augmente"
+      ]
+    }
+  ]
+}

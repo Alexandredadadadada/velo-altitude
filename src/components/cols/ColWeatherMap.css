@@ -1,0 +1,68 @@
+.col-weather-map-container {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.col-weather-popup {
+  min-width: 200px;
+  padding: 5px;
+}
+
+.col-weather-popup h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #1e3a8a;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 5px;
+}
+
+.weather-info {
+  margin-top: 10px;
+  background-color: #f8fafc;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.weather-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.update-time {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 8px !important;
+}
+
+.col-actions {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.view-col-link {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.view-col-link:hover {
+  background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .col-weather-map-container {
+    margin-bottom: 1rem;
+  }
+  
+  .col-weather-popup {
+    min-width: 180px;
+  }
+}

@@ -1,0 +1,32 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f3e5f5"/>
+  
+  <!-- Bannière d'événement -->
+  <rect x="50" y="50" width="700" height="150" rx="20" ry="20" fill="#7b1fa2" />
+  <text x="400" y="120" font-family="Arial" font-size="40" text-anchor="middle" fill="#ffffff" font-weight="bold">Grand Tour des Vosges</text>
+  <text x="400" y="170" font-family="Arial" font-size="24" text-anchor="middle" fill="#ffffff">15 Juin 2025 - Strasbourg</text>
+  
+  <!-- Détails de l'événement -->
+  <rect x="50" y="230" width="320" height="320" rx="10" ry="10" fill="#ffffff" stroke="#7b1fa2" stroke-width="3"/>
+  <text x="210" y="280" font-family="Arial" font-size="24" text-anchor="middle" fill="#7b1fa2" font-weight="bold">Informations</text>
+  <line x1="100" y1="300" x2="320" y2="300" stroke="#e1bee7" stroke-width="2"/>
+  
+  <text x="120" y="340" font-family="Arial" font-size="18" fill="#424242">• Distance: 120km</text>
+  <text x="120" y="380" font-family="Arial" font-size="18" fill="#424242">• Dénivelé: 2500m</text>
+  <text x="120" y="420" font-family="Arial" font-size="18" fill="#424242">• Difficulté: Avancée</text>
+  <text x="120" y="460" font-family="Arial" font-size="18" fill="#424242">• Participants: 245/300</text>
+  <text x="120" y="500" font-family="Arial" font-size="18" fill="#424242">• Type: Course chronométrée</text>
+  
+  <!-- Carte du parcours -->
+  <rect x="400" y="230" width="350" height="230" rx="10" ry="10" fill="#ffffff" stroke="#7b1fa2" stroke-width="3"/>
+  <path d="M425,350 Q475,300 525,400 T625,350" stroke="#7b1fa2" stroke-width="4" fill="none"/>
+  <circle cx="425" cy="350" r="8" fill="#4caf50"/>
+  <circle cx="525" cy="400" r="5" fill="#ff5722"/>
+  <circle cx="575" cy="330" r="5" fill="#ff5722"/>
+  <circle cx="625" cy="350" r="8" fill="#f44336"/>
+  <text x="575" y="280" font-family="Arial" font-size="18" text-anchor="middle" fill="#7b1fa2" font-weight="bold">Parcours</text>
+  
+  <!-- Bouton de participation -->
+  <rect x="400" y="480" width="350" height="70" rx="35" ry="35" fill="#4caf50"/>
+  <text x="575" y="525" font-family="Arial" font-size="28" text-anchor="middle" fill="#ffffff" font-weight="bold">PARTICIPER</text>
+</svg>

@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-velo-tests",
+  "version": "1.0.0",
+  "description": "Tests pour Dashboard-Velo",
+  "type": "module",
+  "scripts": {
+    "test-cols": "node colsDataTests.js"
+  }
+}

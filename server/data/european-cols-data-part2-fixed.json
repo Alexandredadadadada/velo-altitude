@@ -1,0 +1,505 @@
+[
+  {
+    "id": "passo-gavia",
+    "name": "Passo di Gavia",
+    "altitude": 2621,
+    "location": {
+      "latitude": 46.3458,
+      "longitude": 10.4942,
+      "region": "Alpes italiennes",
+      "country": "Italie",
+      "nearbyTowns": ["Bormio", "Ponte di Legno", "Santa Caterina Valfurva"]
+    },
+    "climbData": {
+      "bormioSide": {
+        "startLocation": "Bormio",
+        "length": 25.6,
+        "elevation": 1363,
+        "averageGradient": 5.5,
+        "maxGradient": 16.0,
+        "difficulty": 9
+      },
+      "ponteSide": {
+        "startLocation": "Ponte di Legno",
+        "length": 17.3,
+        "elevation": 1363,
+        "averageGradient": 7.9,
+        "maxGradient": 16.0,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstGiroYear": 1960,
+      "giroAppearances": 10,
+      "famousStories": [
+        "En 1988, lors du Giro d'Italia, Andy Hampsten a franchi le col sous une tempête de neige, prenant le maillot rose qu'il gardera jusqu'à la fin.",
+        "La route a été construite pendant la Première Guerre mondiale pour des raisons militaires.",
+        "Considéré comme l'un des cols les plus difficiles et imprévisibles des Alpes en raison de son altitude et de ses conditions météorologiques changeantes."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Ivan Gotti",
+          "time": "45:30",
+          "year": 1999,
+          "side": "Bormio"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Lago Bianco",
+        "description": "Petit lac alpin près du sommet, souvent gelé jusqu'en juin.",
+        "coordinates": [46.3458, 10.4942],
+        "type": "natural_feature"
+      },
+      {
+        "name": "Monument Andy Hampsten",
+        "description": "Plaque commémorative de l'exploit d'Andy Hampsten lors du Giro 1988.",
+        "coordinates": [46.3458, 10.4942],
+        "type": "monument"
+      },
+      {
+        "name": "Rifugio Bonetta",
+        "description": "Refuge de montagne au sommet offrant restauration et hébergement.",
+        "coordinates": [46.3458, 10.4942],
+        "type": "facility"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juillet à Septembre",
+      "roadCondition": "Étroite et sinueuse, parfois en mauvais état",
+      "trafficLevel": "Faible à modéré",
+      "winterClosure": "Fermé d'octobre à juin",
+      "facilities": ["Refuge", "Restaurant", "Parking"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/gavia/main.jpg",
+      "gallery": [
+        "/images/cols/gavia/bormio-side.jpg",
+        "/images/cols/gavia/ponte-side.jpg",
+        "/images/cols/gavia/summit.jpg",
+        "/images/cols/gavia/lago-bianco.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "bormioSide": "/data/elevation/gavia-bormio.json",
+      "ponteSide": "/data/elevation/gavia-ponte.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 8,
+        "winter": -12
+      },
+      "windExposure": "Élevée",
+      "precipitationRisk": "Élevée, risque de neige même en été"
+    },
+    "relatedCols": ["stelvio-pass", "mortirolo-pass", "passo-tonale", "col-aprica"],
+    "difficulty": 10,
+    "popularity": 8,
+    "coordinates3D": [
+      [10.4942, 46.3458, 2621]
+    ]
+  },
+  {
+    "id": "col-aspin",
+    "name": "Col d'Aspin",
+    "altitude": 1490,
+    "location": {
+      "latitude": 42.9372,
+      "longitude": 0.3264,
+      "region": "Pyrénées centrales",
+      "country": "France",
+      "nearbyTowns": ["Arreau", "Sainte-Marie-de-Campan", "La Mongie"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Arreau",
+        "length": 12.0,
+        "elevation": 779,
+        "averageGradient": 6.5,
+        "maxGradient": 9.5,
+        "difficulty": 7
+      },
+      "southSide": {
+        "startLocation": "Sainte-Marie-de-Campan",
+        "length": 12.8,
+        "elevation": 641,
+        "averageGradient": 5.0,
+        "maxGradient": 8.0,
+        "difficulty": 6
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1910,
+      "tourDeFranceAppearances": 73,
+      "famousStories": [
+        "Souvent franchi lors du Tour de France, généralement en combinaison avec le Col du Tourmalet.",
+        "En 1910, lors du premier passage du Tour, Octave Lapize franchit le col avant d'affronter le Tourmalet.",
+        "En 2016, le col a été le théâtre d'une attaque décisive de Chris Froome dans la descente."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Thibaut Pinot",
+          "time": "33:45",
+          "year": 2019,
+          "side": "nord"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Lac de Payolle",
+        "description": "Lac pittoresque situé au pied du versant sud du col, idéal pour une pause.",
+        "coordinates": [42.9300, 0.3200],
+        "type": "natural_feature"
+      },
+      {
+        "name": "Vue sur le Pic du Midi",
+        "description": "Panorama exceptionnel sur le Pic du Midi de Bigorre depuis le sommet.",
+        "coordinates": [42.9372, 0.3264],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Réserve naturelle du Pibeste",
+        "description": "Réserve naturelle proche offrant une biodiversité exceptionnelle.",
+        "coordinates": [42.9500, 0.3300],
+        "type": "natural_feature"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à Octobre",
+      "roadCondition": "Bonne, bien entretenue",
+      "trafficLevel": "Modéré, plus élevé en été",
+      "winterClosure": "Parfois fermé en hiver selon les conditions",
+      "facilities": ["Buvette saisonnière", "Tables de pique-nique"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/aspin/main.jpg",
+      "gallery": [
+        "/images/cols/aspin/north-approach.jpg",
+        "/images/cols/aspin/south-approach.jpg",
+        "/images/cols/aspin/summit.jpg",
+        "/images/cols/aspin/lac-payolle.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "northSide": "/data/elevation/aspin-north.json",
+      "southSide": "/data/elevation/aspin-south.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 18,
+        "winter": 0
+      },
+      "windExposure": "Modérée",
+      "precipitationRisk": "Modérée"
+    },
+    "relatedCols": ["col-tourmalet", "col-peyresourde", "hourquette-ancizan", "col-azet"],
+    "difficulty": 7,
+    "popularity": 8,
+    "coordinates3D": [
+      [0.3264, 42.9372, 1490]
+    ]
+  },
+  {
+    "id": "alpe-dhuez",
+    "name": "Alpe d'Huez",
+    "altitude": 1860,
+    "location": {
+      "latitude": 45.0909,
+      "longitude": 6.0706,
+      "region": "Alpes du Nord",
+      "country": "France",
+      "nearbyTowns": ["Bourg-d'Oisans", "Grenoble", "Le Bourg-d'Oisans"]
+    },
+    "climbData": {
+      "mainSide": {
+        "startLocation": "Bourg-d'Oisans",
+        "length": 13.8,
+        "elevation": 1120,
+        "averageGradient": 8.1,
+        "maxGradient": 13.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1952,
+      "tourDeFranceAppearances": 31,
+      "famousStories": [
+        "Célèbre pour ses 21 virages en épingle, chacun portant le nom d'un vainqueur d'étape.",
+        "En 1952, Fausto Coppi fut le premier vainqueur au sommet lors du Tour de France.",
+        "En 1997, Marco Pantani établit le record d'ascension en 37 minutes et 35 secondes.",
+        "En 2013, Christophe Riblon remporte l'étape lors du 100e Tour de France, dernière victoire française à l'Alpe d'Huez."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "37:35",
+          "year": 1997,
+          "side": "principale"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "21 virages numérotés",
+        "description": "Les 21 virages en épingle emblématiques, chacun portant le nom d'un vainqueur d'étape.",
+        "coordinates": [45.0800, 6.0600],
+        "type": "road_feature"
+      },
+      {
+        "name": "Virage 7 - Pantani",
+        "description": "Virage dédié à Marco Pantani, souvent décoré par les fans italiens.",
+        "coordinates": [45.0850, 6.0650],
+        "type": "landmark"
+      },
+      {
+        "name": "Station de ski",
+        "description": "Station de ski renommée, accueillant des compétitions internationales.",
+        "coordinates": [45.0909, 6.0706],
+        "type": "facility"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à Octobre",
+      "roadCondition": "Excellente, bien entretenue",
+      "trafficLevel": "Élevé en été, très élevé les jours de Tour de France",
+      "winterClosure": "Ouverte toute l'année, sauf conditions exceptionnelles",
+      "facilities": ["Restaurants", "Hôtels", "Boutiques", "Office de tourisme"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/alpe-dhuez/main.jpg",
+      "gallery": [
+        "/images/cols/alpe-dhuez/hairpins.jpg",
+        "/images/cols/alpe-dhuez/approach.jpg",
+        "/images/cols/alpe-dhuez/summit.jpg",
+        "/images/cols/alpe-dhuez/tour-de-france.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "mainSide": "/data/elevation/alpe-dhuez-main.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 16,
+        "winter": -2
+      },
+      "windExposure": "Modérée",
+      "precipitationRisk": "Modérée"
+    },
+    "relatedCols": ["col-galibier", "col-croix-de-fer", "col-glandon", "col-lautaret"],
+    "difficulty": 9,
+    "popularity": 10,
+    "coordinates3D": [
+      [6.0706, 45.0909, 1860]
+    ]
+  },
+  {
+    "id": "passo-mortirolo",
+    "name": "Passo del Mortirolo",
+    "altitude": 1852,
+    "location": {
+      "latitude": 46.2233,
+      "longitude": 10.2983,
+      "region": "Alpes italiennes",
+      "country": "Italie",
+      "nearbyTowns": ["Mazzo di Valtellina", "Monno", "Grosio"]
+    },
+    "climbData": {
+      "mazzoSide": {
+        "startLocation": "Mazzo di Valtellina",
+        "length": 12.4,
+        "elevation": 1300,
+        "averageGradient": 10.5,
+        "maxGradient": 18.0,
+        "difficulty": 10
+      },
+      "monnoSide": {
+        "startLocation": "Monno",
+        "length": 8.9,
+        "elevation": 441,
+        "averageGradient": 5.0,
+        "maxGradient": 15.0,
+        "difficulty": 7
+      },
+      "grosioSide": {
+        "startLocation": "Grosio",
+        "length": 14.8,
+        "elevation": 1190,
+        "averageGradient": 8.0,
+        "maxGradient": 16.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstGiroYear": 1990,
+      "giroAppearances": 13,
+      "famousStories": [
+        "Considéré comme l'une des ascensions les plus difficiles d'Europe, surnommé 'La Montagne de la Damnation'.",
+        "En 1994, Marco Pantani a réalisé une ascension légendaire, distançant tous ses rivaux.",
+        "Un monument dédié à Marco Pantani a été érigé au virage 11 de l'ascension depuis Mazzo."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Ivan Gotti",
+          "time": "42:40",
+          "year": 1997,
+          "side": "Mazzo"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Monument Marco Pantani",
+        "description": "Statue commémorative dédiée à Marco Pantani au virage 11 depuis Mazzo.",
+        "coordinates": [46.2150, 10.2900],
+        "type": "monument"
+      },
+      {
+        "name": "Chapelle San Giacomo",
+        "description": "Petite chapelle historique près du sommet.",
+        "coordinates": [46.2233, 10.2983],
+        "type": "landmark"
+      },
+      {
+        "name": "Vue sur les Alpes",
+        "description": "Panorama spectaculaire sur les Alpes italiennes et suisses.",
+        "coordinates": [46.2233, 10.2983],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Étroite et sinueuse, parfois en mauvais état",
+      "trafficLevel": "Faible",
+      "winterClosure": "Fermé d'octobre/novembre à mai",
+      "facilities": ["Fontaine d'eau au sommet"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/mortirolo/main.jpg",
+      "gallery": [
+        "/images/cols/mortirolo/mazzo-side.jpg",
+        "/images/cols/mortirolo/monno-side.jpg",
+        "/images/cols/mortirolo/pantani-monument.jpg",
+        "/images/cols/mortirolo/summit.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "mazzoSide": "/data/elevation/mortirolo-mazzo.json",
+      "monnoSide": "/data/elevation/mortirolo-monno.json",
+      "grosioSide": "/data/elevation/mortirolo-grosio.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 15,
+        "winter": -5
+      },
+      "windExposure": "Modérée",
+      "precipitationRisk": "Modérée à élevée"
+    },
+    "relatedCols": ["stelvio-pass", "passo-gavia", "passo-tonale", "col-aprica"],
+    "difficulty": 10,
+    "popularity": 9,
+    "coordinates3D": [
+      [10.2983, 46.2233, 1852]
+    ]
+  },
+  {
+    "id": "col-madeleine",
+    "name": "Col de la Madeleine",
+    "altitude": 2000,
+    "location": {
+      "latitude": 45.4167,
+      "longitude": 6.4000,
+      "region": "Alpes du Nord",
+      "country": "France",
+      "nearbyTowns": ["La Chambre", "Aigueblanche", "Saint-François-Longchamp"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Aigueblanche",
+        "length": 19.2,
+        "elevation": 1520,
+        "averageGradient": 7.9,
+        "maxGradient": 10.0,
+        "difficulty": 9
+      },
+      "southSide": {
+        "startLocation": "La Chambre",
+        "length": 19.5,
+        "elevation": 1520,
+        "averageGradient": 7.8,
+        "maxGradient": 10.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1969,
+      "tourDeFranceAppearances": 25,
+      "famousStories": [
+        "En 1969, lors de sa première apparition au Tour de France, Eddy Merckx franchit le col en tête.",
+        "En 2020, le col a été franchi lors de la 17e étape du Tour de France, remportée par Miguel Ángel López.",
+        "Souvent combiné avec d'autres cols alpins comme le Glandon ou la Croix de Fer pour former des étapes de montagne épiques."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Nairo Quintana",
+          "time": "56:30",
+          "year": 2013,
+          "side": "nord"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Statue Notre-Dame de la Madeleine",
+        "description": "Statue religieuse au sommet du col, lieu de pèlerinage.",
+        "coordinates": [45.4167, 6.4000],
+        "type": "monument"
+      },
+      {
+        "name": "Vue sur le Mont Blanc",
+        "description": "Par temps clair, vue exceptionnelle sur le massif du Mont Blanc.",
+        "coordinates": [45.4167, 6.4000],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Station de Saint-François-Longchamp",
+        "description": "Station de ski située sur le versant nord du col.",
+        "coordinates": [45.4200, 6.3800],
+        "type": "facility"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Bonne, quelques virages serrés",
+      "trafficLevel": "Modéré, plus élevé en été",
+      "winterClosure": "Fermé de novembre à mai",
+      "facilities": ["Restaurant", "Boutique souvenirs", "Toilettes"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/madeleine/main.jpg",
+      "gallery": [
+        "/images/cols/madeleine/north-approach.jpg",
+        "/images/cols/madeleine/south-approach.jpg",
+        "/images/cols/madeleine/summit.jpg",
+        "/images/cols/madeleine/mont-blanc-view.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "northSide": "/data/elevation/madeleine-north.json",
+      "southSide": "/data/elevation/madeleine-south.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 14,
+        "winter": -6
+      },
+      "windExposure": "Modérée à élevée",
+      
+(Content truncated due to size limit. Use line ranges to read in chunks)

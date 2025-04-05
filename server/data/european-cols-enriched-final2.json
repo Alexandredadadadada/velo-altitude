@@ -1,0 +1,316 @@
+[
+  {
+    "id": "zoncolan",
+    "name": {
+      "fr": "Monte Zoncolan",
+      "en": "Monte Zoncolan",
+      "de": "Monte Zoncolan",
+      "it": "Monte Zoncolan",
+      "es": "Monte Zoncolan"
+    },
+    "altitude": 1735,
+    "location": {
+      "latitude": 46.5000,
+      "longitude": 12.9167,
+      "region": "Alpes Carniques",
+      "country": "Italie",
+      "nearbyTowns": ["Ovaro", "Sutrio", "Tolmezzo"]
+    },
+    "climbData": {
+      "ovaroSide": {
+        "startLocation": "Ovaro",
+        "length": 10.5,
+        "elevation": 1210,
+        "averageGradient": 11.5,
+        "maxGradient": 22.0,
+        "difficulty": 10
+      },
+      "sutrioSide": {
+        "startLocation": "Sutrio",
+        "length": 13.5,
+        "elevation": 1140,
+        "averageGradient": 8.9,
+        "maxGradient": 15.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 2003,
+      "giroAppearances": 6,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Le Monte Zoncolan est surnommé 'le monstre des Alpes Carniques' en raison de ses pentes extrêmes.",
+        "La première ascension dans le Giro en 2003 fut par le côté Sutrio, mais c'est le versant d'Ovaro, introduit en 2007, qui a forgé sa réputation.",
+        "En 2018, Chris Froome y a lancé son attaque décisive pour remporter le Giro d'Italia malgré un début de course difficile.",
+        "Gilberto Simoni, double vainqueur du Giro, a remporté deux fois l'étape du Zoncolan (2003 et 2007)."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Gilberto Simoni",
+          "time": "39:05",
+          "year": 2007,
+          "side": "ovaroSide"
+        },
+        "modern": {
+          "holder": "Chris Froome",
+          "time": "39:34",
+          "year": 2018,
+          "side": "ovaroSide"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Chapelle San Pietro",
+        "description": "Petite chapelle située à mi-parcours de l'ascension depuis Ovaro.",
+        "coordinates": [46.4883, 12.9083],
+        "type": "monument"
+      },
+      {
+        "name": "Virage Pantani",
+        "description": "Virage dédié au célèbre grimpeur italien, situé dans la section la plus difficile.",
+        "coordinates": [46.4933, 12.9111],
+        "type": "landmark"
+      },
+      {
+        "name": "Rifugio Zoncolan",
+        "description": "Refuge de montagne au sommet offrant restauration et hébergement.",
+        "coordinates": [46.5000, 12.9167],
+        "type": "accommodation"
+      },
+      {
+        "name": "Station de ski du Zoncolan",
+        "description": "Importante station de ski du Frioul, active en hiver au sommet du col.",
+        "coordinates": [46.5000, 12.9167],
+        "type": "infrastructure"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Excellente, entièrement asphaltée",
+      "trafficLevel": "Faible à modéré selon saison",
+      "winterClosure": "Généralement accessible jusqu'à la station de ski",
+      "facilities": ["Restaurants au sommet", "Téléphérique", "Toilettes", "Point d'information"],
+      "parkingAvailable": true,
+      "waterPoints": ["Ovaro/Sutrio", "Rifugio à mi-parcours", "Sommet"]
+    },
+    "images": {
+      "main": "/images/cols/zoncolan/main.jpg",
+      "gallery": [
+        "/images/cols/zoncolan/ovaro-side.jpg",
+        "/images/cols/zoncolan/sutrio-side.jpg",
+        "/images/cols/zoncolan/steep-gradient.jpg",
+        "/images/cols/zoncolan/summit-view.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Utilisez un développement extrêmement facile (34x32 minimum, idéalement 34x36 ou plus) pour le versant d'Ovaro.",
+      "Le côté Sutrio est plus régulier et constitue une meilleure option pour une première ascension.",
+      "Entraînez-vous spécifiquement sur des pentes supérieures à 15% avant de tenter le Zoncolan."
+    ],
+    "recommendedBikeTypes": ["Vélo de route avec triple plateau ou compact+grande cassette"],
+    "weatherInfo": {
+      "bestSeason": "Juin à septembre",
+      "closedPeriod": "Versant Ovaro parfois fermé en hiver",
+      "windExposure": "Modérée, principalement dans la section supérieure",
+      "temperatureDelta": "Différence de 7-10°C entre la base et le sommet",
+      "thunderstormRisk": "Modéré en été"
+    },
+    "services": {
+      "water": [
+        {"km": 0, "description": "Fontaines à Ovaro"},
+        {"km": 5, "description": "Source à San Pietro"},
+        {"km": 10, "description": "Rifugio Zoncolan au sommet"}
+      ],
+      "food": [
+        {"name": "Rifugio Zoncolan", "km": 10, "type": "refuge", "openingHours": "9h-18h"},
+        {"name": "Bar Funivia", "km": 10, "type": "café", "openingHours": "9h-17h"}
+      ],
+      "shelter": [
+        {"name": "Chapelle San Pietro", "km": 5, "type": "abri"},
+        {"name": "Rifugio Zoncolan", "km": 10, "type": "refuge"}
+      ],
+      "mechanics": [
+        {"name": "Bike Shop Tolmezzo", "location": "Tolmezzo", "distance": 15}
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Marco Rossi",
+        "date": "2023-07-22",
+        "rating": 5,
+        "text": "Le Zoncolan depuis Ovaro est probablement la montée la plus difficile d'Europe. J'ai utilisé un 34x36 et j'ai dû m'arrêter deux fois dans la section à 20%. Une expérience incroyable mais épuisante!"
+      },
+      {
+        "author": "Emma Laurent",
+        "date": "2024-06-15",
+        "rating": 4.5,
+        "text": "J'ai grimpé par Sutrio, c'est plus long mais plus régulier et plus agréable. Les vues sont magnifiques sur les Alpes Carniques. Le rifugio au sommet propose d'excellentes pâtes pour récupérer."
+      },
+      {
+        "author": "Thomas Wagner",
+        "date": "2022-09-08",
+        "rating": 5,
+        "text": "Une ascension emblématique! Le côté Ovaro est brutal, avec des sections où l'on doit zigzaguer pour ne pas s'arrêter. Conseil: enlevez tout poids inutile du vélo et de vos poches avant de commencer."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:34:00Z"
+  },
+  {
+    "id": "gornergrat",
+    "name": {
+      "fr": "Gornergrat",
+      "en": "Gornergrat",
+      "de": "Gornergrat",
+      "it": "Gornergrat",
+      "es": "Gornergrat"
+    },
+    "altitude": 3135,
+    "location": {
+      "latitude": 45.9839,
+      "longitude": 7.7838,
+      "region": "Alpes Pennines",
+      "country": "Suisse",
+      "nearbyTowns": ["Zermatt", "Täsch", "Randa"]
+    },
+    "climbData": {
+      "zermattRoute": {
+        "startLocation": "Zermatt",
+        "length": 21.6,
+        "elevation": 1985,
+        "averageGradient": 9.2,
+        "maxGradient": 18.0,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 1993,
+      "tourDeSuisseAppearances": 0,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Le Gornergrat est l'une des ascensions cyclables les plus hautes des Alpes, culminant à 3135m.",
+        "La route suit partiellement le tracé du célèbre train à crémaillère du Gornergrat, inauguré en 1898.",
+        "Bien que jamais inclus dans les grands tours, il accueille chaque année le 'Gornergrat Challenge', une épreuve d'endurance extrême.",
+        "C'est l'un des rares endroits en Europe où l'on peut rouler à vélo avec vue sur des glaciers actifs et le célèbre Cervin."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Urs Huber",
+          "time": "1:29:45",
+          "year": 2019,
+          "side": "zermattRoute"
+        },
+        "modern": {
+          "holder": "Urs Huber",
+          "time": "1:29:45",
+          "year": 2019,
+          "side": "zermattRoute"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Observatoire du Gornergrat",
+        "description": "Observatoire astronomique construit en 1967, toujours actif pour la recherche scientifique.",
+        "coordinates": [45.9839, 7.7838],
+        "type": "science"
+      },
+      {
+        "name": "Vue sur le Cervin",
+        "description": "Point de vue privilégié sur le Cervin (Matterhorn), l'une des montagnes les plus célèbres du monde.",
+        "coordinates": [45.9839, 7.7838],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Glacier du Gorner",
+        "description": "Deuxième plus grand glacier des Alpes, visible depuis plusieurs points de l'ascension.",
+        "coordinates": [45.9706, 7.7897],
+        "type": "nature"
+      },
+      {
+        "name": "Chapelle de Riffelalp",
+        "description": "Petite chapelle alpine historique située à mi-parcours de l'ascension.",
+        "coordinates": [46.0017, 7.7536],
+        "type": "monument"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juillet à septembre",
+      "roadCondition": "Revêtement varié, asphalte et portions en gravier stabilisé",
+      "trafficLevel": "Faible, route majoritairement réservée aux vélos et aux autorisés",
+      "winterClosure": "Fermé d'octobre à juin (neige)",
+      "facilities": ["Hôtel et restaurant au sommet", "Boutique souvenirs", "Toilettes", "Téléscopes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Zermatt", "Riffelalp", "Riffelberg", "Sommet"]
+    },
+    "images": {
+      "main": "/images/cols/gornergrat/main.jpg",
+      "gallery": [
+        "/images/cols/gornergrat/matterhorn-view.jpg",
+        "/images/cols/gornergrat/glacier-view.jpg",
+        "/images/cols/gornergrat/steep-section.jpg",
+        "/images/cols/gornergrat/summit-hotel.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte/Gravier stabilisé",
+    "trainingTips": [
+      "L'altitude est le principal défi, prévoyez une acclimatation préalable de quelques jours à Zermatt (1600m).",
+      "Utilisez un développement très souple car la pente combinée à l'altitude rend l'effort beaucoup plus difficile.",
+      "Partez tôt le matin pour bénéficier des meilleures conditions météo et éviter les orages d'après-midi."
+    ],
+    "recommendedBikeTypes": ["VTT", "Gravel", "Vélo électrique"],
+    "weatherInfo": {
+      "bestSeason": "Mi-juillet à mi-septembre",
+      "closedPeriod": "Octobre à juin (neige)",
+      "windExposure": "Forte au-dessus de 2500m",
+      "temperatureDelta": "Différence de 15-20°C entre Zermatt et le sommet",
+      "snowRisk": "Possible même en été"
+    },
+    "services": {
+      "water": [
+        {"km": 0, "description": "Fontaines à Zermatt"},
+        {"km": 8, "description": "Riffelalp Resort"},
+        {"km": 15, "description": "Riffelberg Hotel"},
+        {"km": 21, "description": "Gornergrat Hotel"}
+      ],
+      "food": [
+        {"name": "Riffelalp Resort", "km": 8, "type": "restaurant", "openingHours": "7h-22h"},
+        {"name": "Riffelberg Hotel", "km": 15, "type": "restaurant", "openingHours": "8h-20h"},
+        {"name": "Gornergrat Hotel", "km": 21, "type": "restaurant", "openingHours": "7h-19h"}
+      ],
+      "shelter": [
+        {"name": "Riffelalp Resort", "km": 8, "type": "hotel"},
+        {"name": "Riffelberg Hotel", "km": 15, "type": "hotel"},
+        {"name": "Gornergrat Hotel", "km": 21, "type": "hotel"}
+      ],
+      "mechanics": [
+        {"name": "Bike Service Zermatt", "location": "Zermatt", "distance": 0},
+        {"name": "Slalom Sport", "location": "Zermatt", "distance": 0}
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Peter Müller",
+        "date": "2024-08-10",
+        "rating": 5,
+        "text": "Une ascension exceptionnelle avec des paysages à couper le souffle! La vue sur le Cervin et les glaciers tout au long de la montée est incroyable. J'ai utilisé un VTT avec des pneus de 2.1, parfait pour le revêtement mixte."
+      },
+      {
+        "author": "Claire Dubois",
+        "date": "2023-07-25",
+        "rating": 4.5,
+        "text": "J'ai réalisé cette ascension avec un vélo électrique et c'était une bonne décision. L'altitude se fait sentir après 2500m et le vent peut être très fort. La vue au sommet vaut tous les efforts, on se sent vraiment sur le toit de l'Europe!"
+      },
+      {
+        "author": "Andrea Bernasconi",
+        "date": "2022-09-05",
+        "rating": 5,
+        "text": "J'ai eu la chance de grimper le Gornergrat par une journée parfaitement claire. L'effort est considérable mais les points de ravitaillement sont nombreux. Conseil: réservez à l'avance si vous voulez dormir en altitude pour vous acclimater."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:35:00Z"
+  }
+]

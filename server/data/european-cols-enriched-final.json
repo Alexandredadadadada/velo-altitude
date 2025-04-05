@@ -1,0 +1,464 @@
+[
+  {
+    "id": "angliru",
+    "name": {
+      "fr": "Alto de l'Angliru",
+      "en": "Alto de l'Angliru",
+      "de": "Alto de l'Angliru",
+      "it": "Alto de l'Angliru",
+      "es": "Alto de l'Angliru"
+    },
+    "altitude": 1573,
+    "location": {
+      "latitude": 43.2218,
+      "longitude": -5.9275,
+      "region": "Asturies",
+      "country": "Espagne",
+      "nearbyTowns": ["La Vega", "Riosa", "Oviedo"]
+    },
+    "climbData": {
+      "mainSide": {
+        "startLocation": "La Vega",
+        "length": 12.5,
+        "elevation": 1248,
+        "averageGradient": 10.0,
+        "maxGradient": 23.5,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 1999,
+      "vuealtaAppearances": 9,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "L'Angliru est considéré comme l'une des montées les plus difficiles du cyclisme professionnel, avec des pentes qui atteignent 23,5%.",
+        "En 2002, David Millar a déchiré son dossard juste avant la ligne d'arrivée en protestation contre les conditions extrêmes de l'ascension.",
+        "En 2017, Alberto Contador y a remporté sa dernière victoire professionnelle avant sa retraite, un moment emblématique pour le cyclisme espagnol.",
+        "La montée fut controversée lors de son introduction en 1999, certains coureurs la considérant comme trop extrême pour la compétition."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Roberto Heras",
+          "time": "41:55",
+          "year": 2000,
+          "side": "mainSide"
+        },
+        "modern": {
+          "holder": "Hugh Carthy",
+          "time": "43:16",
+          "year": 2020,
+          "side": "mainSide"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Virage de la Cueña les Cabres",
+        "description": "Section la plus raide avec 23,5% de pente, aussi appelée 'le virage de la casse'.",
+        "coordinates": [43.2122, -5.9328],
+        "type": "landmark"
+      },
+      {
+        "name": "Monument à José María Jiménez",
+        "description": "Hommage au grimpeur espagnol, premier vainqueur sur l'Angliru en 1999.",
+        "coordinates": [43.2218, -5.9275],
+        "type": "monument"
+      },
+      {
+        "name": "Mirador de l'Angliru",
+        "description": "Point de vue panoramique sur les montagnes des Asturies.",
+        "coordinates": [43.2218, -5.9275],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Bon état général, surface parfois irrégulière",
+      "trafficLevel": "Faible, route à faible trafic",
+      "winterClosure": "Possible de novembre à avril selon conditions",
+      "facilities": ["Petit bar au sommet (saisonnier)", "Parking au sommet"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaine à La Vega", "Bar au sommet (saisonnier)"]
+    },
+    "images": {
+      "main": "/images/cols/angliru/main.jpg",
+      "gallery": [
+        "/images/cols/angliru/steep-section.jpg",
+        "/images/cols/angliru/summit.jpg",
+        "/images/cols/angliru/view.jpg",
+        "/images/cols/angliru/gradient-sign.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Préparez-vous avec un développement très souple (34x32 minimum, idéalement 34x34 ou 36x34).",
+      "Entraînez-vous spécifiquement sur des pentes très raides avant de tenter l'Angliru.",
+      "Effectuez un échauffement complet avant d'attaquer la montée."
+    ],
+    "recommendedBikeTypes": ["Vélo de route avec triple plateau ou compact+grande cassette"],
+    "weatherInfo": {
+      "bestSeason": "Juin à septembre",
+      "closedPeriod": "Conditions difficiles de novembre à avril",
+      "windExposure": "Modérée, partiellement protégé par la forêt",
+      "temperatureDelta": "Différence de 5-8°C entre la base et le sommet",
+      "mistRisk": "Élevé, brouillard fréquent même en été"
+    },
+    "services": {
+      "water": [
+        {"km": 0, "description": "Fontaine à La Vega"},
+        {"km": 12, "description": "Bar au sommet (saisonnier)"}
+      ],
+      "food": [
+        {"name": "Restaurant La Vega", "km": 0, "type": "restaurant", "openingHours": "12h-22h"},
+        {"name": "Bar Angliru", "km": 12, "type": "café", "openingHours": "11h-18h (mai-octobre)"}
+      ],
+      "shelter": [
+        {"name": "Abri au sommet", "km": 12, "type": "abri"}
+      ],
+      "mechanics": [
+        {"name": "Ciclos Fran", "location": "Riosa", "distance": 5}
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Carlos Rodríguez",
+        "date": "2023-09-20",
+        "rating": 5,
+        "text": "Une ascension mythique et brutale! J'ai utilisé un 34x34 et j'étais à la limite dans les sections à 23%. Prévoyez de pouvoir vous arrêter et repartir dans les pentes raides, c'est un véritable défi."
+      },
+      {
+        "author": "Marie Lefort",
+        "date": "2024-07-15",
+        "rating": 4.5,
+        "text": "J'appréhendais énormément cette montée légendaire, mais finalement j'ai réussi à la grimper en prenant mon temps. Le secret: un bon braquet et surtout une bonne gestion de l'effort dès le début."
+      },
+      {
+        "author": "John Smith",
+        "date": "2022-06-10",
+        "rating": 5,
+        "text": "Une expérience inoubliable, probablement la montée la plus difficile que j'ai jamais faite. La section 'Cueña les Cabres' est surréaliste. Apportez suffisamment d'eau, il n'y a pas grand-chose en chemin."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:31:00Z"
+  },
+  {
+    "id": "sveti-jure",
+    "name": {
+      "fr": "Sveti Jure",
+      "en": "Saint George",
+      "de": "Sankt Georg",
+      "it": "San Giorgio",
+      "es": "San Jorge"
+    },
+    "altitude": 1762,
+    "location": {
+      "latitude": 43.3196,
+      "longitude": 17.0558,
+      "region": "Montagnes Biokovo",
+      "country": "Croatie",
+      "nearbyTowns": ["Makarska", "Podgora", "Tučepi"]
+    },
+    "climbData": {
+      "makarskaRoute": {
+        "startLocation": "Makarska",
+        "length": 23.0,
+        "elevation": 1762,
+        "averageGradient": 7.7,
+        "maxGradient": 13.0,
+        "difficulty": 9
+      },
+      "podgoraRoute": {
+        "startLocation": "Podgora",
+        "length": 19.5,
+        "elevation": 1732,
+        "averageGradient": 8.9,
+        "maxGradient": 15.0,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 2017,
+      "tourOfCroatiaAppearances": 4,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Sveti Jure est le point culminant des montagnes Biokovo, offrant un contraste saisissant entre la mer Adriatique et la haute montagne.",
+        "La route fut construite pour accéder à la station météorologique et au relais de télécommunication au sommet.",
+        "En 2017, lors du Tour de Croatie, Jaime Rosón a établi le record officiel d'ascension lors d'une étape mémorable.",
+        "Le nom 'Sveti Jure' vient d'une petite chapelle dédiée à Saint Georges (Sveti Jure en croate) située près du sommet."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Jaime Rosón",
+          "time": "1:05:21",
+          "year": 2017,
+          "side": "makarskaRoute"
+        },
+        "modern": {
+          "holder": "Kristijan Đurasek",
+          "time": "1:07:45",
+          "year": 2022,
+          "side": "makarskaRoute"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Skywalk Biokovo",
+        "description": "Plateforme d'observation en verre suspendue à 1228m d'altitude offrant une vue vertigineuse sur la côte.",
+        "coordinates": [43.3171, 17.0586],
+        "type": "attraction"
+      },
+      {
+        "name": "Chapelle Saint Georges",
+        "description": "Petit édifice religieux datant du Moyen Âge, situé près du sommet.",
+        "coordinates": [43.3196, 17.0550],
+        "type": "monument"
+      },
+      {
+        "name": "Parc naturel de Biokovo",
+        "description": "Parc protégé couvrant 196 km² avec une flore et une faune uniques.",
+        "coordinates": [43.3100, 17.0500],
+        "type": "nature"
+      },
+      {
+        "name": "Station météorologique du sommet",
+        "description": "En service depuis 1964, c'est l'une des stations les plus exposées de Croatie.",
+        "coordinates": [43.3196, 17.0558],
+        "type": "infrastructure"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Bonne, entièrement asphaltée mais étroite",
+      "trafficLevel": "Modéré en saison touristique, surtout jusqu'au Skywalk",
+      "winterClosure": "Possible de décembre à mars selon conditions",
+      "facilities": ["Centre d'information du parc", "Toilettes au Skywalk", "Petit refuge au sommet"],
+      "parkingAvailable": true,
+      "waterPoints": ["Entrée du parc", "Skywalk", "Sommet (saisonnier)"]
+    },
+    "images": {
+      "main": "/images/cols/sveti-jure/main.jpg",
+      "gallery": [
+        "/images/cols/sveti-jure/coast-view.jpg",
+        "/images/cols/sveti-jure/skywalk.jpg",
+        "/images/cols/sveti-jure/hairpins.jpg",
+        "/images/cols/sveti-jure/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Partez tôt le matin pour éviter les fortes chaleurs estivales et le trafic touristique.",
+      "Le vent peut être extrêmement fort, entraînez-vous à rouler par vent latéral violent.",
+      "Prévoyez plus d'eau que d'habitude, la chaleur réfléchie par les roches blanches augmente la déshydratation."
+    ],
+    "recommendedBikeTypes": ["Vélo de route", "Gravel"],
+    "weatherInfo": {
+      "bestSeason": "Mai à octobre",
+      "closedPeriod": "Décembre à mars possible (neige/vent)",
+      "windExposure": "Extrêmement élevée, la 'bora' (vent du nord) peut dépasser 200 km/h",
+      "temperatureDelta": "Différence de 12-15°C entre la côte et le sommet",
+      "weatherChange": "Très rapide, le beau temps peut se transformer en orage en moins d'une heure"
+    },
+    "services": {
+      "water": [
+        {"km": 0, "description": "Fontaines à Makarska"},
+        {"km": 15, "description": "Centre d'information du parc"},
+        {"km": 23, "description": "Refuge du sommet (saisonnier)"}
+      ],
+      "food": [
+        {"name": "Restaurant à l'entrée du parc", "km": 5, "type": "restaurant", "openingHours": "9h-19h"},
+        {"name": "Café Skywalk", "km": 15, "type": "café", "openingHours": "10h-18h (avril-octobre)"}
+      ],
+      "shelter": [
+        {"name": "Centre d'information", "km": 15, "type": "bâtiment"},
+        {"name": "Refuge du sommet", "km": 23, "type": "refuge"}
+      ],
+      "mechanics": [
+        {"name": "Bike Shop Makarska", "location": "Makarska", "distance": 0}
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Pierre Lambert",
+        "date": "2024-06-05",
+        "rating": 5,
+        "text": "Une ascension extraordinaire! En partant de la mer Adriatique, on grimpe jusqu'à presque 1800m avec des vues incroyables tout le long. Le contraste entre le bleu de la mer et les montagnes rocheuses est saisissant."
+      },
+      {
+        "author": "Ana Kovačić",
+        "date": "2023-09-12",
+        "rating": 4,
+        "text": "Attention au vent qui peut être très fort. J'ai dû abandonner ma première tentative à cause des rafales. La deuxième fois, par temps calme, c'était une expérience magique avec la vue sur les îles croates."
+      },
+      {
+        "author": "Marco Bianchi",
+        "date": "2024-05-20",
+        "rating": 5,
+        "text": "J'ai grimpé depuis Podgora, c'est plus court mais nettement plus raide. Le trafic est modéré jusqu'au Skywalk puis presque inexistant jusqu'au sommet. Prévoyez de vous arrêter au Skywalk, la vue est spectaculaire!"
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:32:00Z"
+  },
+  {
+    "id": "pico-veleta",
+    "name": {
+      "fr": "Pico Veleta",
+      "en": "Pico Veleta",
+      "de": "Pico Veleta",
+      "it": "Pico Veleta",
+      "es": "Pico Veleta"
+    },
+    "altitude": 3398,
+    "location": {
+      "latitude": 37.0539,
+      "longitude": -3.3647,
+      "region": "Sierra Nevada",
+      "country": "Espagne",
+      "nearbyTowns": ["Granada", "Monachil", "Pradollano"]
+    },
+    "climbData": {
+      "granadaRoute": {
+        "startLocation": "Granada",
+        "length": 45.5,
+        "elevation": 2735,
+        "averageGradient": 6.0,
+        "maxGradient": 12.0,
+        "difficulty": 10
+      },
+      "pradollanoRoute": {
+        "startLocation": "Pradollano (station de ski)",
+        "length": 18.0,
+        "elevation": 1140,
+        "averageGradient": 6.3,
+        "maxGradient": 10.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 1979,
+      "vuealtaAppearances": 3,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Le Pico Veleta est la destination de la route asphaltée la plus élevée d'Europe, atteignant 3398m d'altitude, bien que les derniers kilomètres soient fermés aux véhicules motorisés.",
+        "La route a été construite dans les années 1920 pour accéder à l'observatoire astronomique, puis prolongée pour des raisons militaires.",
+        "Une course cycliste, la 'Subida al Veleta', y est organisée depuis 1979, défiant les cyclistes à affronter l'altitude et la longueur.",
+        "La partie finale de la route est souvent enneigée même en été, ce qui peut interrompre l'ascension complète."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Miguel Ángel López",
+          "time": "2:23:45",
+          "year": 2017,
+          "side": "granadaRoute"
+        },
+        "modern": {
+          "holder": "Miguel Ángel López",
+          "time": "2:23:45",
+          "year": 2017,
+          "side": "granadaRoute"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Station de ski de Sierra Nevada",
+        "description": "Station de ski la plus méridionale d'Europe, située à mi-parcours de l'ascension.",
+        "coordinates": [37.0956, -3.3899],
+        "type": "infrastructure"
+      },
+      {
+        "name": "Mirador du Mulhacén",
+        "description": "Point de vue offrant une perspective sur le Mulhacén, plus haut sommet de la péninsule ibérique.",
+        "coordinates": [37.0553, -3.3699],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Observatoire de Sierra Nevada",
+        "description": "Complexe astronomique construit à 2850m d'altitude pour profiter du ciel exceptionnellement clair.",
+        "coordinates": [37.0642, -3.3847],
+        "type": "science"
+      },
+      {
+        "name": "Albergue Universitario",
+        "description": "Refuge de montagne historique géré par l'université de Grenade.",
+        "coordinates": [37.0799, -3.3872],
+        "type": "accommodation"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne jusqu'à la station de ski, plus irrégulière ensuite",
+      "trafficLevel": "Modéré jusqu'à la station, faible au-delà",
+      "winterClosure": "Fermé au-delà de la station d'octobre à mai",
+      "facilities": ["Restaurants et hôtels à la station", "Petit café saisonnier au col de Veleta"],
+      "parkingAvailable": true,
+      "waterPoints": ["Granada", "Station de ski", "Albergue Universitario"]
+    },
+    "images": {
+      "main": "/images/cols/pico-veleta/main.jpg",
+      "gallery": [
+        "/images/cols/pico-veleta/summit-road.jpg",
+        "/images/cols/pico-veleta/ski-resort.jpg",
+        "/images/cols/pico-veleta/high-altitude.jpg",
+        "/images/cols/pico-veleta/granada-view.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte/Terre battue (derniers km)",
+    "trainingTips": [
+      "L'altitude est le principal défi, acclimatez-vous plusieurs jours si possible avant de tenter l'ascension complète.",
+      "Prenez un rythme très modéré au début, la longueur et l'altitude rendront les derniers kilomètres extrêmement difficiles.",
+      "Prévoyez des vêtements chauds même en été, la température peut descendre près de 0°C au sommet."
+    ],
+    "recommendedBikeTypes": ["Vélo de route", "Gravel"],
+    "weatherInfo": {
+      "bestSeason": "Juillet à août pour atteindre le sommet",
+      "closedPeriod": "Octobre à juin au-delà de la station de ski",
+      "windExposure": "Très élevée au-dessus de 2500m",
+      "temperatureDelta": "Différence de 15-20°C entre Granada et le sommet",
+      "snowRisk": "Possible même en été au sommet"
+    },
+    "services": {
+      "water": [
+        {"km": 0, "description": "Fontaines à Granada"},
+        {"km": 30, "description": "Station de ski"},
+        {"km": 40, "description": "Albergue Universitario (saisonnier)"}
+      ],
+      "food": [
+        {"name": "Restaurants à la station", "km": 30, "type": "restaurant", "openingHours": "9h-22h"},
+        {"name": "Café Albergue", "km": 40, "type": "café", "openingHours": "10h-18h (juin-septembre)"}
+      ],
+      "shelter": [
+        {"name": "Hôtels à la station", "km": 30, "type": "hotel"},
+        {"name": "Albergue Universitario", "km": 40, "type": "refuge"}
+      ],
+      "mechanics": [
+        {"name": "Bike Shop Granada", "location": "Granada", "distance": 0},
+        {"name": "Service vélo à la station", "location": "Pradollano", "distance": 30}
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Alejandro Valverde",
+        "date": "2023-07-08",
+        "rating": 5,
+        "text": "L'ascension la plus haute d'Europe! J'ai senti les effets de l'altitude à partir de 2800m. L'effort devient vraiment difficile dans les derniers kilomètres. La vue depuis le sommet est incroyable, on peut voir jusqu'à l'Afrique par temps clair."
+      },
+      {
+        "author": "Sophie Durand",
+        "date": "2024-08-15",
+        "rating": 4.5,
+        "text": "Une expérience unique! J'ai dû m'arrêter plusieurs fois dans les derniers kilomètres à cause du manque d'oxygène. Conseil: restez quelques jours à Granada avant pour vous acclimater et partez très tôt pour éviter la chaleur."
+      },
+      {
+        "author": "Hans Weber",
+        "date": "2022-09-01",
+        "rating": 5,
+        "text": "J'ai grimpé le Veleta après une semaine d'acclimatation dans la Sierra Nevada. La route est excellente jusqu'à la station, puis correcte jusqu'au sommet. Les paysages lunaires au-dessus de 3000m sont à couper le souffle."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:33:00Z"
+  }
+]

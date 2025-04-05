@@ -1,0 +1,530 @@
+{
+  "cols": [
+    {
+      "id": "col-1",
+      "name": "Col du Tourmalet",
+      "location": {
+        "country": "France",
+        "region": "Hautes-Pyrénées",
+        "coordinates": {
+          "lat": 42.8722,
+          "lng": 0.1775
+        }
+      },
+      "statistics": {
+        "length": 19.0,
+        "elevation_gain": 1404,
+        "avg_gradient": 7.4,
+        "max_gradient": 10.2,
+        "start_elevation": 850,
+        "summit_elevation": 2115
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 850},
+        {"distance": 2, "elevation": 950},
+        {"distance": 5, "elevation": 1150},
+        {"distance": 10, "elevation": 1500},
+        {"distance": 15, "elevation": 1850},
+        {"distance": 19, "elevation": 2115}
+      ],
+      "history": {
+        "tour_appearances": 87,
+        "first_appearance": 1910,
+        "notable_events": [
+          "Première apparition dans le Tour de France en 1910",
+          "Théâtre de la bataille entre Contador et Schleck en 2010",
+          "Victoire mémorable de Thibaut Pinot en 2019"
+        ],
+        "records": {
+          "ascent": "48:35 par Thibaut Pinot en 2019",
+          "strava": "49:31 par Tadej Pogačar en 2023"
+        }
+      },
+      "difficulty": 5,
+      "recommended_season": ["juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/tourmalet1.jpg",
+        "https://example.com/tourmalet2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking disponible à La Mongie et Barèges",
+        "water_points": ["Fontaine à Sainte-Marie-de-Campan", "Fontaine au sommet"],
+        "hazards": ["Circulation intense pendant le Tour de France", "Risque de neige hors saison"]
+      }
+    },
+    {
+      "id": "col-2",
+      "name": "Alpe d'Huez",
+      "location": {
+        "country": "France",
+        "region": "Isère",
+        "coordinates": {
+          "lat": 45.0952,
+          "lng": 6.0706
+        }
+      },
+      "statistics": {
+        "length": 13.8,
+        "elevation_gain": 1120,
+        "avg_gradient": 8.1,
+        "max_gradient": 13.0,
+        "start_elevation": 740,
+        "summit_elevation": 1860
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 740},
+        {"distance": 2, "elevation": 900},
+        {"distance": 4, "elevation": 1050},
+        {"distance": 6, "elevation": 1200},
+        {"distance": 8, "elevation": 1350},
+        {"distance": 10, "elevation": 1500},
+        {"distance": 12, "elevation": 1700},
+        {"distance": 13.8, "elevation": 1860}
+      ],
+      "history": {
+        "tour_appearances": 31,
+        "first_appearance": 1952,
+        "notable_events": [
+          "Première arrivée d'étape en 1952 remportée par Fausto Coppi",
+          "Duel historique entre Hinault et Lemond en 1986",
+          "Victoire de Tom Pidcock en 2022"
+        ],
+        "records": {
+          "ascent": "37:35 par Marco Pantani en 1997",
+          "strava": "39:02 par Nairo Quintana en 2015"
+        }
+      },
+      "difficulty": 5,
+      "recommended_season": ["mai", "juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/alpedhuez1.jpg",
+        "https://example.com/alpedhuez2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au Bourg d'Oisans et à l'Alpe d'Huez",
+        "water_points": ["Fontaine au virage 7", "Sources au village"],
+        "hazards": ["Affluence touristique en été", "Virages serrés dans la descente"]
+      }
+    },
+    {
+      "id": "col-3",
+      "name": "Stelvio Pass",
+      "location": {
+        "country": "Italie",
+        "region": "Alpes orientales",
+        "coordinates": {
+          "lat": 46.5301,
+          "lng": 10.4547
+        }
+      },
+      "statistics": {
+        "length": 24.3,
+        "elevation_gain": 1808,
+        "avg_gradient": 7.4,
+        "max_gradient": 14.0,
+        "start_elevation": 950,
+        "summit_elevation": 2758
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 950},
+        {"distance": 5, "elevation": 1300},
+        {"distance": 10, "elevation": 1650},
+        {"distance": 15, "elevation": 2000},
+        {"distance": 20, "elevation": 2400},
+        {"distance": 24.3, "elevation": 2758}
+      ],
+      "history": {
+        "tour_appearances": 0,
+        "giro_appearances": 15,
+        "first_appearance": 1953,
+        "notable_events": [
+          "Introduction au Giro d'Italia en 1953",
+          "Duel Coppi-Koblet en 1953",
+          "Étape mythique du Giro 2020 remportée par Jai Hindley"
+        ],
+        "records": {
+          "ascent": "1:12:05 par Marco Pantani en 1994",
+          "strava": "1:15:42 par Rohan Dennis en 2020"
+        }
+      },
+      "difficulty": 5,
+      "recommended_season": ["juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/stelvio1.jpg",
+        "https://example.com/stelvio2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking à Prato allo Stelvio et au sommet",
+        "water_points": ["Sources à mi-parcours", "Restaurant au sommet"],
+        "hazards": ["Route fermée en hiver", "Conditions météo changeantes", "Nombreux virages en épingle"]
+      }
+    },
+    {
+      "id": "col-4",
+      "name": "Mont Ventoux",
+      "location": {
+        "country": "France",
+        "region": "Provence",
+        "coordinates": {
+          "lat": 44.1741,
+          "lng": 5.2785
+        }
+      },
+      "statistics": {
+        "length": 21.5,
+        "elevation_gain": 1617,
+        "avg_gradient": 7.5,
+        "max_gradient": 12.0,
+        "start_elevation": 292,
+        "summit_elevation": 1909
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 292},
+        {"distance": 5, "elevation": 650},
+        {"distance": 10, "elevation": 1000},
+        {"distance": 15, "elevation": 1400},
+        {"distance": 20, "elevation": 1800},
+        {"distance": 21.5, "elevation": 1909}
+      ],
+      "history": {
+        "tour_appearances": 16,
+        "first_appearance": 1951,
+        "notable_events": [
+          "Décès dramatique de Tom Simpson en 1967",
+          "Triomphe de Pantani en 2000",
+          "Double ascension dans la même étape en 2021"
+        ],
+        "records": {
+          "ascent": "55:51 par Iban Mayo en 2004",
+          "strava": "57:30 par Miguel Ángel López en 2021"
+        }
+      },
+      "difficulty": 5,
+      "recommended_season": ["mai", "juin", "juillet", "août", "septembre", "octobre"],
+      "images": [
+        "https://example.com/ventoux1.jpg",
+        "https://example.com/ventoux2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking à Bédoin, Malaucène et Sault",
+        "water_points": ["Fontaine à Saint-Estève", "Chalet Reynard"],
+        "hazards": ["Vent très violent possible au sommet", "Forte chaleur en été", "Descente rapide et technique"]
+      }
+    },
+    {
+      "id": "col-5",
+      "name": "Col du Galibier",
+      "location": {
+        "country": "France",
+        "region": "Savoie",
+        "coordinates": {
+          "lat": 45.0641,
+          "lng": 6.4037
+        }
+      },
+      "statistics": {
+        "length": 17.7,
+        "elevation_gain": 1245,
+        "avg_gradient": 6.9,
+        "max_gradient": 10.1,
+        "start_elevation": 1397,
+        "summit_elevation": 2642
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 1397},
+        {"distance": 3, "elevation": 1600},
+        {"distance": 7, "elevation": 1850},
+        {"distance": 10, "elevation": 2050},
+        {"distance": 14, "elevation": 2350},
+        {"distance": 17.7, "elevation": 2642}
+      ],
+      "history": {
+        "tour_appearances": 61,
+        "first_appearance": 1911,
+        "notable_events": [
+          "Première apparition dans le Tour de France en 1911",
+          "Passage du Tour pour la 61ème fois en 2022",
+          "Monument Henri Desgrange érigé en 1949"
+        ],
+        "records": {
+          "ascent": "1:03:12 par Nairo Quintana en 2019",
+          "strava": "1:04:58 par Jonas Vingegaard en 2022"
+        }
+      },
+      "difficulty": 5,
+      "recommended_season": ["juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/galibier1.jpg",
+        "https://example.com/galibier2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au Col du Lautaret et à Valloire",
+        "water_points": ["Source au Plan Lachat", "Fontaine au Col du Lautaret"],
+        "hazards": ["Col souvent fermé jusqu'en juin", "Tunnel non éclairé au sommet", "Températures très basses possible"]
+      }
+    },
+    {
+      "id": "col-6",
+      "name": "Grossglockner Hochalpenstrasse",
+      "location": {
+        "country": "Autriche",
+        "region": "Alpes autrichiennes",
+        "coordinates": {
+          "lat": 47.1415,
+          "lng": 12.8383
+        }
+      },
+      "statistics": {
+        "length": 22.9,
+        "elevation_gain": 1694,
+        "avg_gradient": 5.9,
+        "max_gradient": 12.0,
+        "start_elevation": 810,
+        "summit_elevation": 2504
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 810},
+        {"distance": 5, "elevation": 1100},
+        {"distance": 10, "elevation": 1450},
+        {"distance": 15, "elevation": 1800},
+        {"distance": 20, "elevation": 2250},
+        {"distance": 22.9, "elevation": 2504}
+      ],
+      "history": {
+        "tour_appearances": 0,
+        "tour_austria_appearances": 25,
+        "first_appearance": 1971,
+        "notable_events": [
+          "Route construite entre 1930 et 1935",
+          "Étape reine du Tour d'Autriche",
+          "Course historique Grossglockner Bergsprint"
+        ],
+        "records": {
+          "ascent": "1:05:34 par Riccardo Ricco en 2006",
+          "strava": "1:07:22 par Felix Großschartner en 2020"
+        }
+      },
+      "difficulty": 4,
+      "recommended_season": ["juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/grossglockner1.jpg",
+        "https://example.com/grossglockner2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Plusieurs aires de stationnement le long de la route",
+        "water_points": ["Restaurant Fuschertörl", "Belvédère Edelweissspitze"],
+        "hazards": ["Route à péage", "Fermée de novembre à mai", "Visibilité réduite en cas de brouillard"]
+      }
+    },
+    {
+      "id": "col-7",
+      "name": "Passo di Gavia",
+      "location": {
+        "country": "Italie",
+        "region": "Lombardie",
+        "coordinates": {
+          "lat": 46.3394,
+          "lng": 10.4943
+        }
+      },
+      "statistics": {
+        "length": 17.3,
+        "elevation_gain": 1363,
+        "avg_gradient": 7.9,
+        "max_gradient": 16.0,
+        "start_elevation": 1400,
+        "summit_elevation": 2763
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 1400},
+        {"distance": 3, "elevation": 1650},
+        {"distance": 6, "elevation": 1900},
+        {"distance": 10, "elevation": 2200},
+        {"distance": 14, "elevation": 2500},
+        {"distance": 17.3, "elevation": 2763}
+      ],
+      "history": {
+        "tour_appearances": 0,
+        "giro_appearances": 17,
+        "first_appearance": 1960,
+        "notable_events": [
+          "Étape légendaire du Giro 1988 sous la neige remportée par Erik Breukink",
+          "Andy Hampsten prend le maillot rose dans des conditions extrêmes",
+          "Victoire de Ivan Basso en 2006 dans le brouillard"
+        ],
+        "records": {
+          "ascent": "1:03:55 par Ivan Basso en 2006",
+          "strava": "1:05:30 par Nairo Quintana en 2014"
+        }
+      },
+      "difficulty": 5,
+      "recommended_season": ["juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/gavia1.jpg",
+        "https://example.com/gavia2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking limité au sommet et à Bormio",
+        "water_points": ["Refuge à mi-parcours", "Fontaine au sommet"],
+        "hazards": ["Route étroite sans barrières", "Fermé d'octobre à mai", "Risque de neige même en été"]
+      }
+    },
+    {
+      "id": "col-8",
+      "name": "Col d'Izoard",
+      "location": {
+        "country": "France",
+        "region": "Hautes-Alpes",
+        "coordinates": {
+          "lat": 44.8215,
+          "lng": 6.7347
+        }
+      },
+      "statistics": {
+        "length": 14.1,
+        "elevation_gain": 1022,
+        "avg_gradient": 7.3,
+        "max_gradient": 10.0,
+        "start_elevation": 1358,
+        "summit_elevation": 2380
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 1358},
+        {"distance": 3, "elevation": 1600},
+        {"distance": 6, "elevation": 1850},
+        {"distance": 9, "elevation": 2100},
+        {"distance": 12, "elevation": 2250},
+        {"distance": 14.1, "elevation": 2380}
+      ],
+      "history": {
+        "tour_appearances": 37,
+        "first_appearance": 1922,
+        "notable_events": [
+          "Duel Coppi-Bobet en 1953",
+          "Passage de Fausto Coppi dans la Casse Déserte, immortalisé par la stèle",
+          "Premier passage du Tour de France Femmes en 2022"
+        ],
+        "records": {
+          "ascent": "56:07 par Nairo Quintana en 2017",
+          "strava": "57:32 par Tadej Pogačar en 2022"
+        }
+      },
+      "difficulty": 4,
+      "recommended_season": ["juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/izoard1.jpg",
+        "https://example.com/izoard2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au Refuge Napoléon et au sommet",
+        "water_points": ["Refuge Napoléon", "Source à la Casse Déserte"],
+        "hazards": ["Descente technique côté Briançon", "Fermé en hiver", "Fort ensoleillement dans la Casse Déserte"]
+      }
+    },
+    {
+      "id": "col-9",
+      "name": "Passo dello Stelvio",
+      "location": {
+        "country": "Italie",
+        "region": "Tyrol du Sud",
+        "coordinates": {
+          "lat": 46.5297,
+          "lng": 10.4541
+        }
+      },
+      "statistics": {
+        "length": 25.0,
+        "elevation_gain": 1808,
+        "avg_gradient": 7.2,
+        "max_gradient": 14.0,
+        "start_elevation": 950,
+        "summit_elevation": 2758
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 950},
+        {"distance": 5, "elevation": 1300},
+        {"distance": 10, "elevation": 1650},
+        {"distance": 15, "elevation": 2000},
+        {"distance": 20, "elevation": 2400},
+        {"distance": 25, "elevation": 2758}
+      ],
+      "history": {
+        "tour_appearances": 0,
+        "giro_appearances": 13,
+        "first_appearance": 1953,
+        "notable_events": [
+          "Première apparition au Giro d'Italia en 1953",
+          "Charly Gaul s'impose dans la tempête en 1956",
+          "Victoire de Thomas De Gendt en 2012 dans une étape mythique"
+        ],
+        "records": {
+          "ascent": "1:12:05 par Marco Pantani en 1994",
+          "strava": "1:15:42 par Rohan Dennis en 2020"
+        }
+      },
+      "difficulty": 5,
+      "recommended_season": ["juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/stelvio1.jpg",
+        "https://example.com/stelvio2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking à Prato allo Stelvio et Bormio",
+        "water_points": ["Nombreuses sources le long de la montée", "Refuges à mi-parcours"],
+        "hazards": ["48 virages en épingle côté Prato", "Fermé d'octobre à mai", "Risque de neige même en été"]
+      }
+    },
+    {
+      "id": "col-10",
+      "name": "Grand Ballon",
+      "location": {
+        "country": "France",
+        "region": "Vosges",
+        "coordinates": {
+          "lat": 47.9003,
+          "lng": 7.0961
+        }
+      },
+      "statistics": {
+        "length": 20.3,
+        "elevation_gain": 1079,
+        "avg_gradient": 6.4,
+        "max_gradient": 9.1,
+        "start_elevation": 345,
+        "summit_elevation": 1424
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 345},
+        {"distance": 4, "elevation": 600},
+        {"distance": 8, "elevation": 800},
+        {"distance": 12, "elevation": 1000},
+        {"distance": 16, "elevation": 1200},
+        {"distance": 20.3, "elevation": 1424}
+      ],
+      "history": {
+        "tour_appearances": 6,
+        "first_appearance": 1969,
+        "notable_events": [
+          "Première ascension dans le Tour de France en 1969",
+          "Point culminant des Vosges",
+          "Étape reine annuelle du Tour d'Alsace"
+        ],
+        "records": {
+          "ascent": "51:22 par Julian Alaphilippe en 2019",
+          "strava": "52:37 par Thibaut Pinot en 2022"
+        }
+      },
+      "difficulty": 3,
+      "recommended_season": ["avril", "mai", "juin", "juillet", "août", "septembre", "octobre"],
+      "images": [
+        "https://example.com/grandballon1.jpg",
+        "https://example.com/grandballon2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au sommet et à Goldbach-Altenbach",
+        "water_points": ["Auberge du Grand Ballon", "Source à mi-parcours"],
+        "hazards": ["Circulation touristique en été", "Brouillard fréquent au sommet", "Route verglacée en hiver"]
+      }
+    }
+  ]
+}

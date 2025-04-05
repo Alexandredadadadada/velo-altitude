@@ -1,0 +1,54 @@
+# Fichiers d'environnement contenant des secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dépendances
+/node_modules
+/.pnp
+.pnp.js
+
+# Build et production
+/build
+/dist
+/coverage
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Caches
+.npm
+.eslintcache
+.cache
+.parcel-cache
+
+# Fichiers du système d'exploitation
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs et IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers temporaires
+*.sw?
+*.bak
+*.tmp
+*~
+
+# Uploads et données générées
+/uploads
+/temp
+/tmp
+
+# API Keys
+.keys

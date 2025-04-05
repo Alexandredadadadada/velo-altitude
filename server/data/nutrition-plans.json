@@ -1,0 +1,688 @@
+{
+  "nutrition_plans": [
+    {
+      "id": "nutrition-plan-endurance",
+      "name": "Plan Nutrition Endurance",
+      "type": "endurance",
+      "description": "Plan nutritionnel adapté aux cyclistes d'endurance visant à optimiser les performances sur les longues distances",
+      "daily_calories": 2800,
+      "macronutrients": {
+        "carbs": "55-60%",
+        "protein": "15-20%",
+        "fat": "25-30%"
+      },
+      "daily_plans": [
+        {
+          "day": "Entraînement léger",
+          "meals": [
+            {
+              "type": "petit-déjeuner",
+              "description": "Porridge d'avoine avec fruits et miel",
+              "ingredients": [
+                "50g de flocons d'avoine",
+                "250ml de lait ou alternative végétale",
+                "1 banane",
+                "1 cuillère à soupe de miel",
+                "1 poignée de baies mixtes"
+              ],
+              "macros": {
+                "calories": 450,
+                "carbs": 75,
+                "protein": 15,
+                "fat": 10
+              },
+              "notes": "Riche en glucides lents pour fournir de l'énergie tout au long de la matinée"
+            },
+            {
+              "type": "collation",
+              "description": "Yaourt grec avec fruits secs",
+              "ingredients": [
+                "150g de yaourt grec",
+                "1 poignée d'amandes (15g)",
+                "1 cuillère à café de miel"
+              ],
+              "macros": {
+                "calories": 250,
+                "carbs": 15,
+                "protein": 20,
+                "fat": 12
+              },
+              "notes": "Collation équilibrée qui fournit des protéines et des graisses saines"
+            },
+            {
+              "type": "déjeuner",
+              "description": "Salade de quinoa aux légumes et poulet",
+              "ingredients": [
+                "100g de quinoa cuit",
+                "120g de blanc de poulet",
+                "Légumes variés (poivron, concombre, tomates)",
+                "1 cuillère à soupe d'huile d'olive",
+                "Jus de citron, herbes et épices"
+              ],
+              "macros": {
+                "calories": 450,
+                "carbs": 45,
+                "protein": 35,
+                "fat": 15
+              },
+              "notes": "Repas complet avec des protéines maigres et des glucides complexes"
+            },
+            {
+              "type": "collation",
+              "description": "Smoothie aux fruits",
+              "ingredients": [
+                "1 banane",
+                "100g de baies mixtes",
+                "250ml de lait ou alternative végétale",
+                "1 cuillère à soupe de graines de chia"
+              ],
+              "macros": {
+                "calories": 300,
+                "carbs": 45,
+                "protein": 10,
+                "fat": 8
+              },
+              "notes": "Hydratant et énergisant, idéal pour la récupération"
+            },
+            {
+              "type": "dîner",
+              "description": "Saumon grillé avec patates douces et légumes verts",
+              "ingredients": [
+                "150g de saumon",
+                "150g de patate douce",
+                "Légumes verts (brocoli, épinards)",
+                "1 cuillère à soupe d'huile d'olive",
+                "Herbes et épices"
+              ],
+              "macros": {
+                "calories": 500,
+                "carbs": 40,
+                "protein": 35,
+                "fat": 20
+              },
+              "notes": "Riche en oméga-3 et en antioxydants pour favoriser la récupération musculaire"
+            }
+          ],
+          "hydration": {
+            "water": "2-3 litres tout au long de la journée",
+            "during_exercise": "500-750ml par heure d'exercice"
+          },
+          "total_macros": {
+            "calories": 1950,
+            "carbs": 220,
+            "protein": 115,
+            "fat": 65
+          }
+        },
+        {
+          "day": "Entraînement intense",
+          "meals": [
+            {
+              "type": "petit-déjeuner",
+              "description": "Pancakes à la banane et aux flocons d'avoine",
+              "ingredients": [
+                "80g de flocons d'avoine",
+                "1 banane mûre",
+                "2 œufs",
+                "150ml de lait",
+                "1 cuillère à soupe de miel",
+                "Fruits rouges"
+              ],
+              "macros": {
+                "calories": 550,
+                "carbs": 85,
+                "protein": 22,
+                "fat": 15
+              },
+              "notes": "Repas riche en glucides pour faire le plein d'énergie avant l'effort"
+            },
+            {
+              "type": "collation pré-entraînement",
+              "description": "Barre de céréales maison et banane",
+              "ingredients": [
+                "1 barre de céréales aux fruits secs",
+                "1 banane"
+              ],
+              "macros": {
+                "calories": 300,
+                "carbs": 60,
+                "protein": 5,
+                "fat": 5
+              },
+              "notes": "À consommer 1h avant l'entraînement pour un apport rapide en énergie"
+            },
+            {
+              "type": "pendant l'entraînement",
+              "description": "Boisson énergétique et gel",
+              "ingredients": [
+                "500ml de boisson énergétique",
+                "1 gel énergétique (à consommer après 1h d'effort)"
+              ],
+              "macros": {
+                "calories": 250,
+                "carbs": 60,
+                "protein": 0,
+                "fat": 0
+              },
+              "notes": "30-60g de glucides par heure d'exercice intense"
+            },
+            {
+              "type": "repas post-entraînement",
+              "description": "Smoothie protéiné et sandwich complet",
+              "ingredients": [
+                "30g de whey protéine",
+                "1 banane",
+                "200ml de lait",
+                "Pain complet, poulet, avocat, légumes"
+              ],
+              "macros": {
+                "calories": 650,
+                "carbs": 80,
+                "protein": 45,
+                "fat": 20
+              },
+              "notes": "À consommer dans les 30 minutes après l'effort pour optimiser la récupération"
+            },
+            {
+              "type": "dîner",
+              "description": "Pâtes complètes à la sauce tomate et boulettes de viande",
+              "ingredients": [
+                "120g de pâtes complètes (poids sec)",
+                "150g de bœuf haché maigre",
+                "Sauce tomate maison",
+                "Légumes grillés",
+                "Parmesan"
+              ],
+              "macros": {
+                "calories": 700,
+                "carbs": 90,
+                "protein": 40,
+                "fat": 20
+              },
+              "notes": "Repas riche en glucides pour reconstituer les réserves de glycogène"
+            }
+          ],
+          "hydration": {
+            "water": "3-4 litres tout au long de la journée",
+            "during_exercise": "750-1000ml par heure d'exercice intense",
+            "post_exercise": "500ml de boisson de récupération avec électrolytes"
+          },
+          "total_macros": {
+            "calories": 2450,
+            "carbs": 375,
+            "protein": 112,
+            "fat": 60
+          }
+        },
+        {
+          "day": "Jour de compétition",
+          "meals": [
+            {
+              "type": "petit-déjeuner (3-4h avant)",
+              "description": "Porridge d'avoine avec miel et fruits",
+              "ingredients": [
+                "80g de flocons d'avoine",
+                "300ml de lait",
+                "1 banane",
+                "2 cuillères à soupe de miel",
+                "1 cuillère à soupe de beurre d'amande"
+              ],
+              "macros": {
+                "calories": 650,
+                "carbs": 110,
+                "protein": 20,
+                "fat": 15
+              },
+              "notes": "Repas principal avant la compétition, facile à digérer mais riche en énergie"
+            },
+            {
+              "type": "pré-course (1h avant)",
+              "description": "Barre énergétique et banane",
+              "ingredients": [
+                "1 barre énergétique",
+                "1 banane mûre"
+              ],
+              "macros": {
+                "calories": 300,
+                "carbs": 60,
+                "protein": 5,
+                "fat": 5
+              },
+              "notes": "Dernier apport en glucides avant le départ"
+            },
+            {
+              "type": "pendant la course",
+              "description": "Stratégie de nutrition pour la compétition",
+              "ingredients": [
+                "Boisson énergétique (60g de glucides par litre)",
+                "Gels énergétiques (1 gel toutes les 45-60 min)",
+                "Barres énergétiques (pour les courses >3h)"
+              ],
+              "macros": {
+                "calories": "200-300 par heure",
+                "carbs": "60-90g par heure",
+                "protein": "minimal",
+                "fat": "minimal"
+              },
+              "notes": "Maintenir un apport constant de 60-90g de glucides par heure selon l'intensité"
+            },
+            {
+              "type": "récupération immédiate",
+              "description": "Boisson de récupération",
+              "ingredients": [
+                "40g de poudre de récupération",
+                "350ml d'eau ou de lait"
+              ],
+              "macros": {
+                "calories": 300,
+                "carbs": 45,
+                "protein": 25,
+                "fat": 2
+              },
+              "notes": "À consommer dans les 15-30 minutes après l'arrivée"
+            },
+            {
+              "type": "repas post-compétition",
+              "description": "Repas complet de récupération",
+              "ingredients": [
+                "200g de patates douces",
+                "150g de poulet ou poisson",
+                "Légumes variés",
+                "1 avocat",
+                "Riz basmati ou quinoa (100g cuit)"
+              ],
+              "macros": {
+                "calories": 750,
+                "carbs": 90,
+                "protein": 45,
+                "fat": 25
+              },
+              "notes": "Repas complet à consommer dans les 2h suivant la compétition"
+            }
+          ],
+          "hydration": {
+            "before": "5-7ml/kg 2-3 heures avant, puis 3-5ml/kg 10-20 minutes avant",
+            "during": "500-1000ml par heure selon la température et l'intensité",
+            "after": "1.5x le poids perdu en eau"
+          },
+          "total_macros": {
+            "calories": "Variable selon la durée",
+            "carbs": "8-12g/kg de poids corporel sur 24h",
+            "protein": "1.6-1.8g/kg de poids corporel",
+            "fat": "Modéré"
+          }
+        }
+      ],
+      "supplements": [
+        {
+          "name": "Électrolytes",
+          "timing": "pendant l'effort par temps chaud",
+          "dosage": "1 comprimé pour 500ml d'eau",
+          "benefits": "Prévention des crampes et maintien de l'équilibre hydrique"
+        },
+        {
+          "name": "Protéines de récupération",
+          "timing": "dans les 30 minutes après l'effort",
+          "dosage": "20-25g",
+          "benefits": "Favorise la réparation et la croissance musculaire"
+        },
+        {
+          "name": "Créatine",
+          "timing": "5g par jour",
+          "dosage": "5g",
+          "benefits": "Améliore la puissance lors des efforts courts et intenses"
+        },
+        {
+          "name": "Beta-alanine",
+          "timing": "2-5g par jour",
+          "dosage": "2-5g",
+          "benefits": "Améliore la capacité à maintenir des efforts intenses"
+        },
+        {
+          "name": "Caféine",
+          "timing": "30-60 minutes avant l'effort",
+          "dosage": "3-6mg/kg de poids corporel",
+          "benefits": "Améliore la vigilance et la performance d'endurance"
+        }
+      ],
+      "event_strategies": {
+        "before": {
+          "loading": "Augmenter les glucides 2-3 jours avant (7-10g/kg de poids corporel)",
+          "hydration": "Hyperhydratation progressive les 24h précédentes",
+          "meal_timing": "Dernier repas important 3-4h avant, collation légère 1-2h avant"
+        },
+        "during": {
+          "fueling": "30-90g de glucides par heure selon l'intensité et la durée",
+          "hydration": "500-1000ml/heure selon les conditions climatiques",
+          "timing": "Commencer à s'alimenter dès les 20-30 premières minutes"
+        },
+        "after": {
+          "immediate": "Glucides + protéines (ratio 3:1 ou 4:1) dans les 30 minutes",
+          "meal": "Repas complet dans les 2 heures",
+          "hydration": "Rehydratation proactive basée sur la perte de poids"
+        }
+      }
+    },
+    {
+      "id": "nutrition-plan-gran-fondo",
+      "name": "Plan Nutrition Gran Fondo",
+      "type": "compétition",
+      "description": "Plan nutritionnel spécifiquement conçu pour les cyclistes participant à des Gran Fondo ou des cyclosportives",
+      "daily_calories": 3200,
+      "macronutrients": {
+        "carbs": "60-65%",
+        "protein": "15-20%",
+        "fat": "20-25%"
+      },
+      "daily_plans": [
+        {
+          "day": "Semaine avant l'événement (J-7 à J-4)",
+          "meals": [
+            {
+              "type": "petit-déjeuner",
+              "description": "Omelette aux légumes avec toast complet",
+              "ingredients": [
+                "3 œufs",
+                "Légumes variés (épinards, champignons, poivrons)",
+                "2 tranches de pain complet",
+                "1 cuillère à café d'huile d'olive",
+                "Fruits frais"
+              ],
+              "macros": {
+                "calories": 550,
+                "carbs": 45,
+                "protein": 35,
+                "fat": 25
+              },
+              "notes": "Équilibré avec des protéines de qualité et des glucides complexes"
+            },
+            {
+              "type": "déjeuner",
+              "description": "Bowl de riz avec poulet et légumes",
+              "ingredients": [
+                "100g de riz brun (poids sec)",
+                "150g de poulet",
+                "Légumes variés",
+                "1 cuillère à soupe d'huile d'olive",
+                "Avocat et graines"
+              ],
+              "macros": {
+                "calories": 650,
+                "carbs": 70,
+                "protein": 40,
+                "fat": 20
+              },
+              "notes": "Repas équilibré pour soutenir l'entraînement"
+            },
+            {
+              "type": "dîner",
+              "description": "Pâtes au saumon et aux légumes",
+              "ingredients": [
+                "100g de pâtes complètes (poids sec)",
+                "150g de saumon",
+                "Légumes variés",
+                "Sauce à base d'huile d'olive et de citron"
+              ],
+              "macros": {
+                "calories": 600,
+                "carbs": 65,
+                "protein": 35,
+                "fat": 20
+              },
+              "notes": "Riche en oméga-3 et en glucides complexes"
+            }
+          ],
+          "hydration": {
+            "water": "Minimum 2-3 litres par jour",
+            "electrolytes": "Considérer un complément si entraînement intense ou temps chaud"
+          },
+          "total_macros": {
+            "calories": 2800,
+            "carbs": 350,
+            "protein": 140,
+            "fat": 80
+          }
+        },
+        {
+          "day": "Chargement en glucides (J-3 à J-1)",
+          "meals": [
+            {
+              "type": "petit-déjeuner",
+              "description": "Porridge d'avoine avec miel, banane et fruits secs",
+              "ingredients": [
+                "100g de flocons d'avoine",
+                "300ml de lait",
+                "1 banane",
+                "2 cuillères à soupe de miel",
+                "30g de fruits secs"
+              ],
+              "macros": {
+                "calories": 700,
+                "carbs": 120,
+                "protein": 20,
+                "fat": 15
+              },
+              "notes": "Riche en glucides complexes et simples pour maximiser le stockage de glycogène"
+            },
+            {
+              "type": "déjeuner",
+              "description": "Risotto aux champignons",
+              "ingredients": [
+                "120g de riz arborio (poids sec)",
+                "Champignons variés",
+                "50g de parmesan",
+                "Bouillon de légumes",
+                "Pain et salade verte"
+              ],
+              "macros": {
+                "calories": 750,
+                "carbs": 130,
+                "protein": 25,
+                "fat": 15
+              },
+              "notes": "Plat riche en glucides facilement digestibles"
+            },
+            {
+              "type": "collation",
+              "description": "Smoothie aux fruits et céréales",
+              "ingredients": [
+                "1 banane",
+                "200g de fruits rouges",
+                "30g de flocons d'avoine",
+                "250ml de lait ou alternative végétale",
+                "1 cuillère à soupe de miel"
+              ],
+              "macros": {
+                "calories": 400,
+                "carbs": 80,
+                "protein": 10,
+                "fat": 5
+              },
+              "notes": "Collation riche en glucides pour maintenir l'apport tout au long de la journée"
+            },
+            {
+              "type": "dîner",
+              "description": "Pâtes à la sauce tomate et au poulet",
+              "ingredients": [
+                "150g de pâtes (poids sec)",
+                "120g de poulet",
+                "Sauce tomate maison",
+                "50g de parmesan",
+                "Pain à l'ail"
+              ],
+              "macros": {
+                "calories": 800,
+                "carbs": 120,
+                "protein": 45,
+                "fat": 20
+              },
+              "notes": "Repas riche en glucides la veille de l'événement, limiter les fibres et les graisses"
+            }
+          ],
+          "hydration": {
+            "water": "3-4 litres par jour",
+            "electrolytes": "Supplémentation légère pour optimiser l'hydratation",
+            "notes": "Éviter l'alcool et limiter la caféine"
+          },
+          "total_macros": {
+            "calories": 3200,
+            "carbs": 500,
+            "protein": 120,
+            "fat": 65
+          }
+        },
+        {
+          "day": "Jour de l'événement",
+          "meals": [
+            {
+              "type": "petit-déjeuner (3-4h avant)",
+              "description": "Chargement final en glucides",
+              "ingredients": [
+                "100g de flocons d'avoine ou de riz blanc",
+                "300ml de lait",
+                "1-2 bananes",
+                "2 cuillères à soupe de miel ou de sirop d'érable",
+                "1 cuillère à soupe de beurre d'amande"
+              ],
+              "macros": {
+                "calories": 700,
+                "carbs": 130,
+                "protein": 20,
+                "fat": 15
+              },
+              "notes": "Repas principal facile à digérer, pauvre en fibres, riche en glucides"
+            },
+            {
+              "type": "pré-départ (30-60min avant)",
+              "description": "Dernier apport en glucides",
+              "ingredients": [
+                "1 barre énergétique ou gel",
+                "1 banane",
+                "250ml de boisson énergétique"
+              ],
+              "macros": {
+                "calories": 350,
+                "carbs": 70,
+                "protein": 5,
+                "fat": 3
+              },
+              "notes": "Glucides facilement assimilables pour un boost d'énergie immédiat"
+            },
+            {
+              "type": "pendant l'événement",
+              "description": "Stratégie de nutrition en course",
+              "ingredients": [
+                "Boissons énergétiques (60-80g de glucides/litre)",
+                "Gels énergétiques (1 toutes les 30-45min après la première heure)",
+                "Barres énergétiques (1 toutes les 90min pour courses >3h)",
+                "Aliments solides pour courses >5h (sandwich, riz, etc.)"
+              ],
+              "macros": {
+                "calories": "Variable selon la durée",
+                "carbs": "60-90g par heure",
+                "protein": "5-10g par heure pour courses longues",
+                "fat": "Minimal"
+              },
+              "notes": "Commencer la nutrition dès les 15-20 premières minutes, maintenir un apport constant"
+            },
+            {
+              "type": "récupération immédiate",
+              "description": "Fenêtre anabolique",
+              "ingredients": [
+                "500ml de boisson de récupération avec glucides et protéines",
+                "1 banane",
+                "Barres de récupération"
+              ],
+              "macros": {
+                "calories": 400,
+                "carbs": 60,
+                "protein": 25,
+                "fat": 5
+              },
+              "notes": "À consommer dans les 30 minutes suivant la ligne d'arrivée"
+            },
+            {
+              "type": "repas post-événement",
+              "description": "Repas complet de récupération",
+              "ingredients": [
+                "200g de pâtes ou de riz",
+                "150g de protéines (viande, poisson ou alternative végétale)",
+                "Légumes variés",
+                "Sauce au choix",
+                "Dessert (fruits, yaourt, etc.)"
+              ],
+              "macros": {
+                "calories": 800,
+                "carbs": 120,
+                "protein": 40,
+                "fat": 20
+              },
+              "notes": "Repas complet dans les 2h suivant l'effort pour optimiser la récupération"
+            }
+          ],
+          "hydration": {
+            "before": "5-7ml/kg 2-3h avant, puis 3-5ml/kg 15min avant",
+            "during": "500-1000ml par heure selon les conditions",
+            "after": "1.5x le poids perdu pendant l'effort",
+            "notes": "Surveiller la couleur des urines (claires = bonne hydratation)"
+          },
+          "total_macros": {
+            "calories": "Variable selon la durée et l'intensité",
+            "carbs": "Variable selon la durée et l'intensité",
+            "protein": "1.5-1.8g/kg de poids corporel sur 24h",
+            "fat": "Modéré"
+          }
+        }
+      ],
+      "supplements": [
+        {
+          "name": "Électrolytes",
+          "timing": "Avant et pendant l'effort",
+          "dosage": "1 comprimé pour 500ml d'eau",
+          "benefits": "Maintien de l'équilibre électrolytique, prévention des crampes"
+        },
+        {
+          "name": "Caféine",
+          "timing": "30-60min avant le départ et pendant pour les courses longues",
+          "dosage": "3-6mg/kg de poids corporel",
+          "benefits": "Amélioration de la vigilance, réduction de la perception de l'effort"
+        },
+        {
+          "name": "Bêta-alanine",
+          "timing": "3-4g par jour pendant les semaines précédant l'événement",
+          "dosage": "3-4g",
+          "benefits": "Amélioration de la capacité tampon, réduction de la fatigue musculaire"
+        },
+        {
+          "name": "Nitrates (jus de betterave)",
+          "timing": "2-3h avant l'événement",
+          "dosage": "400-500mg de nitrates (environ 300ml de jus)",
+          "benefits": "Amélioration de l'efficacité métabolique, réduction du coût en oxygène"
+        },
+        {
+          "name": "BCAA",
+          "timing": "Pendant les événements très longs (>5h)",
+          "dosage": "5-10g",
+          "benefits": "Réduction du catabolisme musculaire pendant les efforts prolongés"
+        }
+      ],
+      "event_strategies": {
+        "before": {
+          "loading": "Protocole de surcompensation en glucides sur 3 jours (5-7g/kg J-3, 7-10g/kg J-2 et J-1)",
+          "hydration": "Hyperhydratation progressive avec électrolytes les 24-48h précédentes",
+          "tapering": "Réduction du volume d'entraînement tout en maintenant l'intensité"
+        },
+        "during": {
+          "pacing": "Adapter la nutrition à l'effort et au profil de la course",
+          "timing": "Plan de nutrition/hydratation minuté selon les ravitaillements",
+          "adaptation": "Stratégies de secours en cas de problèmes digestifs"
+        },
+        "after": {
+          "recovery": "Phase 1: 30min post-effort (glucides + protéines)",
+          "refueling": "Phase 2: 2h post-effort (repas complet)",
+          "ongoing": "48h de nutrition orientée récupération"
+        }
+      }
+    }
+  ]
+}

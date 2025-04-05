@@ -1,0 +1,219 @@
+[
+  {
+    "id": "accom-001",
+    "name": "Hôtel du Cycliste",
+    "type": "hotel",
+    "cyclistFriendly": true,
+    "location": {
+      "address": "15 rue des Alpes, 74000 Annecy",
+      "latitude": 45.899247,
+      "longitude": 6.129384
+    },
+    "contact": {
+      "phone": "+33 4 50 45 67 89",
+      "email": "contact@hotelducycliste.fr",
+      "website": "https://www.hotelducycliste.fr"
+    },
+    "amenities": [
+      "Garage à vélos sécurisé",
+      "Atelier de réparation",
+      "Lavage de vélos",
+      "Location de vélos",
+      "Cartes d'itinéraires",
+      "Menu spécial cyclistes",
+      "Panier repas"
+    ],
+    "price": {
+      "singleRoom": 85,
+      "doubleRoom": 110,
+      "currency": "EUR"
+    },
+    "rating": 4.8,
+    "description": "Un hôtel conçu par des cyclistes pour des cyclistes, situé au pied des plus beaux cols alpins."
+  },
+  {
+    "id": "accom-002",
+    "name": "Gîte des Pyrénées",
+    "type": "guesthouse",
+    "cyclistFriendly": true,
+    "location": {
+      "address": "23 route du Tourmalet, 65120 Barèges",
+      "latitude": 42.896406,
+      "longitude": 0.062379
+    },
+    "contact": {
+      "phone": "+33 5 62 92 87 45",
+      "email": "info@gitedespyrenees.com",
+      "website": "https://www.gitedespyrenees.com"
+    },
+    "amenities": [
+      "Local à vélos",
+      "Outils de base",
+      "Buanderie",
+      "Cuisine adaptée aux sportifs",
+      "Transfert de bagages",
+      "WiFi gratuit"
+    ],
+    "price": {
+      "perPerson": 45,
+      "currency": "EUR"
+    },
+    "rating": 4.6,
+    "description": "Gîte familial idéalement situé pour les amateurs de cols pyrénéens. Point de départ idéal pour le Tourmalet."
+  },
+  {
+    "id": "accom-003",
+    "name": "Relais du Mont Ventoux",
+    "type": "hotel",
+    "cyclistFriendly": true,
+    "location": {
+      "address": "5 avenue de Provence, 84410 Bédoin",
+      "latitude": 44.124422,
+      "longitude": 5.178520
+    },
+    "contact": {
+      "phone": "+33 4 90 65 61 09",
+      "email": "contact@relaisduventoux.fr",
+      "website": "https://www.relaisduventoux.fr"
+    },
+    "amenities": [
+      "Garage à vélos vidéosurveillé",
+      "Service de guide cycliste",
+      "Massages sportifs",
+      "Petit-déjeuner matinal",
+      "Restaurant spécial sportifs",
+      "Transfert vers/depuis les étapes"
+    ],
+    "price": {
+      "singleRoom": 95,
+      "doubleRoom": 120,
+      "currency": "EUR"
+    },
+    "rating": 4.9,
+    "description": "L'hébergement de référence au pied du géant de Provence. Notre établissement accueille des cyclistes du monde entier."
+  },
+  {
+    "id": "accom-004",
+    "name": "Ostello Stelvio",
+    "type": "hostel",
+    "cyclistFriendly": true,
+    "location": {
+      "address": "Via Roma 28, 23032 Bormio, Italie",
+      "latitude": 46.466511,
+      "longitude": 10.365640
+    },
+    "contact": {
+      "phone": "+39 0342 901398",
+      "email": "info@ostellostelvio.it",
+      "website": "https://www.ostellostelvio.it"
+    },
+    "amenities": [
+      "Garage à vélos",
+      "Atelier réparation",
+      "Séchoir pour vêtements",
+      "Cuisine communautaire",
+      "Informations parcours",
+      "Navette depuis Tirano"
+    ],
+    "price": {
+      "dormitory": 30,
+      "privateRoom": 70,
+      "currency": "EUR"
+    },
+    "rating": 4.5,
+    "description": "Auberge économique et conviviale idéale pour les cyclistes voulant conquérir le Stelvio et les autres cols de la région."
+  },
+  {
+    "id": "accom-005",
+    "name": "Chalet des Vosges",
+    "type": "chalet",
+    "cyclistFriendly": true,
+    "location": {
+      "address": "17 route des crêtes, 68140 Soultzeren",
+      "latitude": 48.057060,
+      "longitude": 7.021742
+    },
+    "contact": {
+      "phone": "+33 3 89 77 35 24",
+      "email": "reservations@chaletdesvosges.com",
+      "website": "https://www.chaletdesvosges.com"
+    },
+    "amenities": [
+      "Rangement vélos intérieur",
+      "Outils de base",
+      "Lavage vélos",
+      "Terrasse panoramique",
+      "Restauration locale",
+      "Conseils itinéraires locaux"
+    ],
+    "price": {
+      "wholeChalet": 180,
+      "perPerson": 40,
+      "currency": "EUR"
+    },
+    "rating": 4.7,
+    "description": "Chalet authentique situé sur la route des crêtes des Vosges, parfait pour découvrir le massif vosgien à vélo."
+  },
+  {
+    "id": "accom-006",
+    "name": "Albergue de Ciclistas",
+    "type": "guesthouse",
+    "cyclistFriendly": true,
+    "location": {
+      "address": "Calle Mayor 8, 22640 Biescas, Espagne",
+      "latitude": 42.629524,
+      "longitude": -0.320971
+    },
+    "contact": {
+      "phone": "+34 974 495 512",
+      "email": "info@alberguedeciclistas.es",
+      "website": "https://www.alberguedeciclistas.es"
+    },
+    "amenities": [
+      "Grand garage à vélos",
+      "Atelier complet",
+      "Laverie",
+      "Restaurant avec menu cycliste",
+      "Boutique accessoires",
+      "Guides locaux disponibles"
+    ],
+    "price": {
+      "dormitory": 25,
+      "privateRoom": 65,
+      "currency": "EUR"
+    },
+    "rating": 4.6,
+    "description": "Hébergement spécialisé pour cyclistes au pied des cols pyrénéens espagnols. Ambiance internationale garantie."
+  },
+  {
+    "id": "accom-007",
+    "name": "Gasthof Alpenrose",
+    "type": "hotel",
+    "cyclistFriendly": true,
+    "location": {
+      "address": "Dorfstrasse 25, 6083 Ellmau, Autriche",
+      "latitude": 47.513661,
+      "longitude": 12.298415
+    },
+    "contact": {
+      "phone": "+43 5358 2331",
+      "email": "willkommen@gasthof-alpenrose.at",
+      "website": "https://www.gasthof-alpenrose.at"
+    },
+    "amenities": [
+      "Local à vélos sécurisé",
+      "Sauna et spa",
+      "Menus énergétiques",
+      "Lavage de vêtements techniques",
+      "Cartes de la région",
+      "Partenariat avec loueur de vélos"
+    ],
+    "price": {
+      "singleRoom": 90,
+      "doubleRoom": 130,
+      "currency": "EUR"
+    },
+    "rating": 4.8,
+    "description": "Hôtel autrichien traditionnel avec une attention particulière pour les cyclistes. Parfait pour explorer les Alpes tyroliennes."
+  }
+]

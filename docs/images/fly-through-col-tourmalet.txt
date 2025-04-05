@@ -1,0 +1,10 @@
+Cette image doit montrer le Fly-through en action sur le Col du Tourmalet (col avec beaucoup de virages).
+
+Éléments à inclure :
+- La vue en pleine action pendant la descente du col
+- La caméra positionnée pour montrer les virages en épingle caractéristiques
+- L'interface affichant la pente négative significative
+- L'animation des virages optimisée montrant la fluidité malgré la complexité
+- La qualité visuelle élevée de l'expérience
+
+Cette capture devrait être prise pendant l'animation, montrant la qualité de l'interpolation adaptative sur un col complexe.

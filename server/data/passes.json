@@ -1,0 +1,202 @@
+[
+  {
+    "id": "alpe-dhuez",
+    "name": "Alpe d'Huez",
+    "region": "Alpes",
+    "country": "France",
+    "elevation": 1860,
+    "length": 13.8,
+    "averageGradient": 8.1,
+    "maxGradient": 13,
+    "difficulty": "HC",
+    "segments": [
+      {"name": "Virage 21 à 16", "gradient": 10.6, "length": 3.9, "difficulty": "Très difficile"},
+      {"name": "Virage 16 à 7", "gradient": 7.7, "length": 4.4, "difficulty": "Difficile"},
+      {"name": "Virage 7 à 1", "gradient": 6.5, "length": 5.5, "difficulty": "Modéré"}
+    ],
+    "history": [
+      {"event": "Tour de France", "year": 1952, "description": "Première apparition au Tour de France"},
+      {"event": "Tour de France", "year": 2022, "description": "Victoire de Tom Pidcock"}
+    ],
+    "records": {
+      "official": "37:35 (Marco Pantani, 1997)",
+      "strava": "39:02 (Nairo Quintana, 2015)"
+    },
+    "pointsOfInterest": [
+      {"name": "Restaurant Le Virage 7", "type": "ravitaillement", "location": "Virage 7"},
+      {"name": "Panorama Grandes Rousses", "type": "panorama", "location": "Virage 4"}
+    ],
+    "description": "L'Alpe d'Huez est l'un des cols les plus emblématiques du cyclisme mondial. Avec ses 21 virages numérotés à l'envers, il est devenu un mythe du Tour de France et attire chaque année des milliers de cyclistes amateurs."
+  },
+  {
+    "id": "tourmalet",
+    "name": "Col du Tourmalet",
+    "region": "Pyrénées",
+    "country": "France",
+    "elevation": 2115,
+    "length": 19,
+    "averageGradient": 7.4,
+    "maxGradient": 10.2,
+    "difficulty": "HC",
+    "segments": [
+      {"name": "Sainte-Marie-de-Campan à La Mongie", "gradient": 6.5, "length": 10, "difficulty": "Difficile"},
+      {"name": "La Mongie au sommet", "gradient": 8.3, "length": 9, "difficulty": "Très difficile"}
+    ],
+    "history": [
+      {"event": "Tour de France", "year": 1910, "description": "Première apparition au Tour de France"},
+      {"event": "Tour de France", "year": 2023, "description": "Victoire de Jonas Vingegaard"}
+    ],
+    "records": {
+      "official": "48:35 (Thibaut Pinot, 2019)",
+      "strava": "49:31 (Tadej Pogačar, 2023)"
+    },
+    "pointsOfInterest": [
+      {"name": "Statue du Géant du Tourmalet", "type": "monument", "location": "Sommet"},
+      {"name": "Café Le Tourmalet", "type": "ravitaillement", "location": "La Mongie"}
+    ],
+    "description": "Le col du Tourmalet est le col routier le plus élevé des Pyrénées françaises. Il est également l'un des plus anciens et des plus fréquemment escaladés dans l'histoire du Tour de France."
+  },
+  {
+    "id": "stelvio",
+    "name": "Passo dello Stelvio",
+    "region": "Alpes orientales",
+    "country": "Italie",
+    "elevation": 2758,
+    "length": 24.3,
+    "averageGradient": 7.4,
+    "maxGradient": 14,
+    "difficulty": "HC",
+    "segments": [
+      {"name": "Prato allo Stelvio à mi-parcours", "gradient": 7.1, "length": 12, "difficulty": "Difficile"},
+      {"name": "Mi-parcours au sommet", "gradient": 7.7, "length": 12.3, "difficulty": "Très difficile"}
+    ],
+    "history": [
+      {"event": "Giro d'Italia", "year": 1953, "description": "Première apparition au Giro d'Italia"},
+      {"event": "Giro d'Italia", "year": 2020, "description": "Victoire de Jai Hindley"}
+    ],
+    "records": {
+      "official": "1:12:05 (Marco Pantani, 1994)",
+      "strava": "1:15:42 (Rohan Dennis, 2020)"
+    },
+    "pointsOfInterest": [
+      {"name": "Rifugio Garibaldi", "type": "ravitaillement", "location": "Sommet"},
+      {"name": "Vue panoramique sur l'Ortles", "type": "panorama", "location": "Virage 14"}
+    ],
+    "description": "Avec ses 48 virages en épingle à cheveux du côté de Prato, le Stelvio est l'un des cols les plus spectaculaires d'Europe. C'est le deuxième col routier le plus élevé des Alpes et un défi majeur pour tout cycliste."
+  },
+  {
+    "id": "ventoux",
+    "name": "Mont Ventoux",
+    "region": "Provence",
+    "country": "France",
+    "elevation": 1909,
+    "length": 21.5,
+    "averageGradient": 7.5,
+    "maxGradient": 12,
+    "difficulty": "HC",
+    "segments": [
+      {"name": "Bédoin à la forêt", "gradient": 5.5, "length": 5.5, "difficulty": "Modéré"},
+      {"name": "Traversée de la forêt", "gradient": 9.5, "length": 9, "difficulty": "Très difficile"},
+      {"name": "Chalet Reynard au sommet", "gradient": 7.2, "length": 7, "difficulty": "Difficile"}
+    ],
+    "history": [
+      {"event": "Tour de France", "year": 1951, "description": "Première apparition au Tour de France"},
+      {"event": "Tour de France", "year": 1967, "description": "Décès tragique de Tom Simpson"},
+      {"event": "Tour de France", "year": 2021, "description": "Double ascension dans la même étape"}
+    ],
+    "records": {
+      "official": "55:51 (Iban Mayo, 2004)",
+      "strava": "57:30 (Miguel Ángel López, 2021)"
+    },
+    "pointsOfInterest": [
+      {"name": "Chalet Reynard", "type": "ravitaillement", "location": "Mi-parcours"},
+      {"name": "Mémorial Tom Simpson", "type": "monument", "location": "1.5km avant le sommet"}
+    ],
+    "description": "Surnommé le 'Géant de Provence', le Mont Ventoux est reconnaissable de loin par son sommet chauve et lunaire. C'est un col mythique du Tour de France, redouté pour ses conditions climatiques extrêmes et ses pentes impitoyables."
+  },
+  {
+    "id": "galibier",
+    "name": "Col du Galibier",
+    "region": "Alpes",
+    "country": "France",
+    "elevation": 2642,
+    "length": 17.7,
+    "averageGradient": 6.9,
+    "maxGradient": 10.1,
+    "difficulty": "HC",
+    "segments": [
+      {"name": "Col du Télégraphe", "gradient": 7.3, "length": 12, "difficulty": "Difficile"},
+      {"name": "Valloire au Plan Lachat", "gradient": 5.5, "length": 9, "difficulty": "Modéré"},
+      {"name": "Plan Lachat au sommet", "gradient": 8.9, "length": 8.7, "difficulty": "Très difficile"}
+    ],
+    "history": [
+      {"event": "Tour de France", "year": 1911, "description": "Première apparition au Tour de France"},
+      {"event": "Tour de France", "year": 2022, "description": "Passage du Tour pour la 61ème fois"}
+    ],
+    "records": {
+      "official": "1:03:12 (Nairo Quintana, 2019)",
+      "strava": "1:04:58 (Jonas Vingegaard, 2022)"
+    },
+    "pointsOfInterest": [
+      {"name": "Monument Henri Desgrange", "type": "monument", "location": "Sommet"},
+      {"name": "Restaurant l'Étape du Galibier", "type": "ravitaillement", "location": "Valloire"}
+    ],
+    "description": "Le Col du Galibier est l'un des géants des Alpes françaises. Souvent couplé avec le Col du Télégraphe, il constitue un défi majeur avec ses 35 km d'ascension totale. C'est l'un des cols les plus hauts régulièrement inclus dans le Tour de France."
+  },
+  {
+    "id": "grossglockner",
+    "name": "Grossglockner Hochalpenstrasse",
+    "region": "Alpes autrichiennes",
+    "country": "Autriche",
+    "elevation": 2504,
+    "length": 22.9,
+    "averageGradient": 5.9,
+    "maxGradient": 12,
+    "difficulty": "HC",
+    "segments": [
+      {"name": "Bruck à Fusch", "gradient": 5.1, "length": 9, "difficulty": "Modéré"},
+      {"name": "Fusch à Edelweissspitze", "gradient": 6.4, "length": 13.9, "difficulty": "Difficile"}
+    ],
+    "history": [
+      {"event": "Tour d'Autriche", "year": 1971, "description": "Première apparition sur le Tour d'Autriche"},
+      {"event": "Tour d'Autriche", "year": 2023, "description": "Étape reine avec arrivée au sommet"}
+    ],
+    "records": {
+      "official": "1:05:34 (Riccardo Ricco, 2006)",
+      "strava": "1:07:22 (Felix Großschartner, 2020)"
+    },
+    "pointsOfInterest": [
+      {"name": "Restaurant Fuschertörl", "type": "ravitaillement", "location": "Fuschertörl"},
+      {"name": "Vue sur le Grossglockner", "type": "panorama", "location": "Edelweissspitze"}
+    ],
+    "description": "La route du Grossglockner est la plus haute route asphaltée d'Autriche. Elle offre des vues spectaculaires sur le plus haut sommet du pays et constitue un défi majeur pour les cyclistes visitant les Alpes orientales."
+  },
+  {
+    "id": "grand-ballon",
+    "name": "Grand Ballon",
+    "region": "Vosges",
+    "country": "France",
+    "elevation": 1424,
+    "length": 20.3,
+    "averageGradient": 6.4,
+    "maxGradient": 9.1,
+    "difficulty": "1",
+    "segments": [
+      {"name": "Willer-sur-Thur à Goldbach", "gradient": 5.2, "length": 8.3, "difficulty": "Modéré"},
+      {"name": "Goldbach au sommet", "gradient": 7.3, "length": 12, "difficulty": "Difficile"}
+    ],
+    "history": [
+      {"event": "Tour de France", "year": 1969, "description": "Première apparition au Tour de France"},
+      {"event": "Tour d'Alsace", "year": 2023, "description": "Étape reine de la course régionale"}
+    ],
+    "records": {
+      "official": "51:22 (Julian Alaphilippe, 2019)",
+      "strava": "52:37 (Thibaut Pinot, 2022)"
+    },
+    "pointsOfInterest": [
+      {"name": "Restaurant Le Grand Ballon", "type": "ravitaillement", "location": "Sommet"},
+      {"name": "Vue panoramique sur les Alpes", "type": "panorama", "location": "Sommet"}
+    ],
+    "description": "Le Grand Ballon est le point culminant du massif des Vosges. Son ascension est un classique du cyclisme dans l'Est de la France, offrant des vues panoramiques exceptionnelles sur la plaine d'Alsace, la Forêt-Noire et même les Alpes par temps clair."
+  }
+]

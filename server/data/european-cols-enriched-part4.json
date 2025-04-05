@@ -1,0 +1,479 @@
+[
+  {
+    "id": "colle-delle-finestre",
+    "name": "Colle delle Finestre",
+    "altitude": 2178,
+    "location": {
+      "latitude": 45.0775,
+      "longitude": 7.0533,
+      "region": "Alpes italiennes",
+      "country": "Italie",
+      "nearbyTowns": ["Susa", "Meana di Susa", "Sestriere"]
+    },
+    "climbData": {
+      "susaSide": {
+        "startLocation": "Susa",
+        "length": 18.6,
+        "elevation": 1694,
+        "averageGradient": 9.1,
+        "maxGradient": 14.0,
+        "difficulty": 10
+      },
+      "pragelato": {
+        "startLocation": "Pragelato",
+        "length": 20.0,
+        "elevation": 1015,
+        "averageGradient": 5.1,
+        "maxGradient": 9.0,
+        "difficulty": 7
+      }
+    },
+    "history": {
+      "firstGiroYear": 2005,
+      "giroAppearances": 4,
+      "famousStories": [
+        "La partie supérieure de la route est non-asphaltée, avec 8 km de chemin en terre battue.",
+        "En 2018, Chris Froome lance une attaque à 80 km de l'arrivée sur les pentes du Finestre, remportant l'étape et le maillot rose.",
+        "Le col a été construit à des fins militaires au 18ème siècle pour protéger la frontière italo-française."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Chris Froome",
+          "time": "45:22",
+          "year": 2018,
+          "side": "susa"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Début du secteur sterrato",
+        "description": "Point où l'asphalte laisse place à la terre battue, à environ 10 km du sommet.",
+        "coordinates": [45.0636, 7.0373],
+        "type": "landmark"
+      },
+      {
+        "name": "45 virages en épingle",
+        "description": "Série impressionnante de virages serrés qui serpentent à flanc de montagne.",
+        "coordinates": [45.0636, 7.0373],
+        "type": "landmark"
+      },
+      {
+        "name": "Panorama sur les Alpes",
+        "description": "Vue exceptionnelle sur la vallée de Susa et les Alpes environnantes.",
+        "coordinates": [45.0775, 7.0533],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne sur la partie asphaltée, moyenne sur les 8 km de terre",
+      "trafficLevel": "Faible",
+      "winterClosure": "Fermé d'octobre à mai/juin",
+      "facilities": ["Aucune installation permanente au sommet"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaine à mi-parcours", "Apporter ses réserves pour la partie supérieure"]
+    },
+    "images": {
+      "main": "/images/cols/finestre/main.jpg",
+      "gallery": [
+        "/images/cols/finestre/gravel-section.jpg",
+        "/images/cols/finestre/hairpins.jpg",
+        "/images/cols/finestre/susa-side.jpg",
+        "/images/cols/finestre/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte et terre battue",
+    "trainingTips": [
+      "Pour la partie non-asphaltée, des pneus d'au moins 28mm sont recommandés.",
+      "Le versant de Susa est beaucoup plus difficile que celui de Pragelato.",
+      "La partie en terre peut être poussiéreuse et glissante en été, boueuse après la pluie."
+    ],
+    "recommendedBikeTypes": ["Gravel bike", "Vélo de route avec pneus larges"]
+  },
+  {
+    "id": "col-du-granon",
+    "name": "Col du Granon",
+    "altitude": 2413,
+    "location": {
+      "latitude": 44.9858,
+      "longitude": 6.5992,
+      "region": "Alpes françaises",
+      "country": "France",
+      "nearbyTowns": ["Briançon", "Saint-Chaffrey"]
+    },
+    "climbData": {
+      "saintChaffreySide": {
+        "startLocation": "Saint-Chaffrey",
+        "length": 11.5,
+        "elevation": 1060,
+        "averageGradient": 9.2,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1986,
+      "tourDeFranceAppearances": 2,
+      "famousStories": [
+        "En 1986, lors de sa première apparition au Tour, Bernard Hinault perd son maillot jaune au profit de Greg LeMond.",
+        "En 2022, Jonas Vingegaard y attaque Tadej Pogačar et prend le maillot jaune qu'il conservera jusqu'à Paris.",
+        "Malgré sa difficulté exceptionnelle, le col n'a été utilisé que rarement dans le Tour de France."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Jonas Vingegaard",
+          "time": "32:20",
+          "year": 2022,
+          "side": "saint-chaffrey"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Fort du Granon",
+        "description": "Ancienne fortification militaire au sommet, construite pour défendre la frontière franco-italienne.",
+        "coordinates": [44.9858, 6.5992],
+        "type": "historical"
+      },
+      {
+        "name": "Panorama sur la Meije",
+        "description": "Vue exceptionnelle sur le massif de la Meije et le parc national des Écrins.",
+        "coordinates": [44.9858, 6.5992],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Alpage du Granon",
+        "description": "Zone pastorale traditionnelle avec troupeaux de moutons en été.",
+        "coordinates": [44.9814, 6.5943],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne",
+      "trafficLevel": "Faible",
+      "winterClosure": "Fermé d'octobre à mai/juin",
+      "facilities": ["Aucune installation permanente au sommet"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaine à mi-parcours, près de Granon village"]
+    },
+    "images": {
+      "main": "/images/cols/granon/main.jpg",
+      "gallery": [
+        "/images/cols/granon/climb.jpg",
+        "/images/cols/granon/fort.jpg",
+        "/images/cols/granon/view.jpg",
+        "/images/cols/granon/tour.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Une des montées les plus difficiles de France avec une pente constamment supérieure à 9%.",
+      "Peu d'ombre sur le parcours, évitez les heures les plus chaudes en été.",
+      "La combinaison de la pente et de l'altitude en fait un défi extrême."
+    ],
+    "recommendedBikeTypes": ["Vélo de route avec rapport de transmission adapté"]
+  },
+  {
+    "id": "passo-giau",
+    "name": "Passo Giau",
+    "altitude": 2236,
+    "location": {
+      "latitude": 46.4639,
+      "longitude": 12.0644,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Cortina d'Ampezzo", "Selva di Cadore"]
+    },
+    "climbData": {
+      "cortinaSide": {
+        "startLocation": "Cortina d'Ampezzo",
+        "length": 16.0,
+        "elevation": 1103,
+        "averageGradient": 6.9,
+        "maxGradient": 14.0,
+        "difficulty": 9
+      },
+      "selvaSide": {
+        "startLocation": "Selva di Cadore",
+        "length": 9.8,
+        "elevation": 922,
+        "averageGradient": 9.4,
+        "maxGradient": 14.0,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstGiroYear": 1973,
+      "giroAppearances": 8,
+      "famousStories": [
+        "Le paysage environnant est l'un des plus spectaculaires des Dolomites, avec des pics rocheux caractéristiques.",
+        "En 2016, l'ascension a été le théâtre d'une attaque décisive de Vincenzo Nibali qui remportera le Giro.",
+        "En 2021, Egan Bernal franchit le sommet en tête sous une tempête de neige, consolidant sa victoire finale."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Gilberto Simoni",
+          "time": "44:43",
+          "year": 2007,
+          "side": "selva"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Rifugio Giau",
+        "description": "Refuge de montagne au sommet offrant restauration et hébergement.",
+        "coordinates": [46.4639, 12.0644],
+        "type": "accommodation"
+      },
+      {
+        "name": "Panorama sur les Dolomites",
+        "description": "Vue spectaculaire sur les sommets environnants, dont le Tofane, le Croda da Lago et le Monte Pelmo.",
+        "coordinates": [46.4639, 12.0644],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Cinquante lacets",
+        "description": "Série de virages en épingle qui serpentent sur le versant de Selva di Cadore.",
+        "coordinates": [46.4535, 12.0518],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré, plus élevé en juillet-août",
+      "winterClosure": "Fermé d'octobre à mai/juin",
+      "facilities": ["Refuge avec restaurant au sommet", "Boutique souvenirs", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Refuge au sommet", "Fontaines à mi-parcours"]
+    },
+    "images": {
+      "main": "/images/cols/giau/main.jpg",
+      "gallery": [
+        "/images/cols/giau/cortina-side.jpg",
+        "/images/cols/giau/selva-side.jpg",
+        "/images/cols/giau/dolomites.jpg",
+        "/images/cols/giau/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant de Selva est beaucoup plus difficile avec une pente constante d'environ 9-10%.",
+      "Souvent combiné avec d'autres cols des Dolomites comme le Passo Falzarego ou le Passo Pordoi.",
+      "La route est relativement étroite par endroits, prudence dans les descentes."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "monte-zoncolan",
+    "name": "Monte Zoncolan",
+    "altitude": 1730,
+    "location": {
+      "latitude": 46.5002,
+      "longitude": 12.9155,
+      "region": "Alpes carniques",
+      "country": "Italie",
+      "nearbyTowns": ["Ovaro", "Sutrio", "Priola"]
+    },
+    "climbData": {
+      "ovaroSide": {
+        "startLocation": "Ovaro",
+        "length": 10.1,
+        "elevation": 1210,
+        "averageGradient": 11.9,
+        "maxGradient": 22.0,
+        "difficulty": 10
+      },
+      "sutrioSide": {
+        "startLocation": "Sutrio",
+        "length": 13.5,
+        "elevation": 1210,
+        "averageGradient": 9.0,
+        "maxGradient": 15.0,
+        "difficulty": 9
+      },
+      "priolaSide": {
+        "startLocation": "Priola",
+        "length": 8.9,
+        "elevation": 1140,
+        "averageGradient": 12.8,
+        "maxGradient": 27.0,
+        "difficulty": 10,
+        "note": "Côté rarement utilisé, partiellement fermé aux véhicules"
+      }
+    },
+    "history": {
+      "firstGiroYear": 2003,
+      "giroAppearances": 7,
+      "famousStories": [
+        "Surnommé 'le Kaiser' et considéré comme l'une des montées les plus difficiles d'Europe.",
+        "En 2007, Gilberto Simoni remporte la première étape du Giro se terminant au sommet par le versant d'Ovaro.",
+        "Le versant de Priola, avec des pentes atteignant 27%, est si difficile qu'il n'a jamais été inclus dans une course professionnelle."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Gilberto Simoni",
+          "time": "39:05",
+          "year": 2007,
+          "side": "ovaro"
+        },
+        "modern": {
+          "holder": "Chris Froome",
+          "time": "40:34",
+          "year": 2018,
+          "side": "ovaro"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Tunnel final",
+        "description": "Court tunnel juste avant le sommet, éclairé par des lumières colorées.",
+        "coordinates": [46.5002, 12.9155],
+        "type": "landmark"
+      },
+      {
+        "name": "Station de ski",
+        "description": "Petite station familiale au sommet.",
+        "coordinates": [46.5002, 12.9155],
+        "type": "tourism"
+      },
+      {
+        "name": "Section à 22%",
+        "description": "L'un des passages les plus raides de la montée d'Ovaro, à environ 3 km du sommet.",
+        "coordinates": [46.4965, 12.9124],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Bonne mais très étroite",
+      "trafficLevel": "Faible",
+      "winterClosure": "Généralement accessible toute l'année jusqu'à la station de ski",
+      "facilities": ["Restaurant à la station", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Station au sommet", "Quelques sources le long du parcours"]
+    },
+    "images": {
+      "main": "/images/cols/zoncolan/main.jpg",
+      "gallery": [
+        "/images/cols/zoncolan/ovaro-side.jpg",
+        "/images/cols/zoncolan/sutrio-side.jpg",
+        "/images/cols/zoncolan/steep-section.jpg",
+        "/images/cols/zoncolan/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Pour l'ascension par Ovaro, un rapport minimum de 34x32 est recommandé, voire un triple plateau.",
+      "Le versant de Sutrio est significativement plus facile que celui d'Ovaro.",
+      "La descente peut être très technique, surtout par le versant d'Ovaro en raison des pentes raides et de la route étroite."
+    ],
+    "recommendedBikeTypes": ["Vélo de route avec triple plateau ou compact avec grande cassette"]
+  },
+  {
+    "id": "colle-del-nivolet",
+    "name": "Colle del Nivolet",
+    "altitude": 2612,
+    "location": {
+      "latitude": 45.4800,
+      "longitude": 7.1397,
+      "region": "Alpes Graies",
+      "country": "Italie",
+      "nearbyTowns": ["Ceresole Reale", "Locana"]
+    },
+    "climbData": {
+      "ceresoleSide": {
+        "startLocation": "Ceresole Reale",
+        "length": 11.8,
+        "elevation": 742,
+        "averageGradient": 6.3,
+        "maxGradient": 12.0,
+        "difficulty": 7
+      },
+      "locanaSide": {
+        "startLocation": "Locana",
+        "length": 40.0,
+        "elevation": 2000,
+        "averageGradient": 5.0,
+        "maxGradient": 14.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "notableEvents": ["Giro del Piemonte"],
+      "famousStories": [
+        "La scène finale du film 'The Italian Job' (1969) a été tournée sur cette route.",
+        "La route a été construite dans les années 1950 pour servir le barrage de Ceresole.",
+        "Bien que jamais inclus dans le Giro d'Italia, ce col est considéré comme l'un des plus beaux d'Italie."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Manuel Bongiorno",
+          "time": "49:30",
+          "year": 2019,
+          "side": "ceresole"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Lac de Ceresole",
+        "description": "Grand lac artificiel aux eaux turquoise que l'on longe pendant la première partie de l'ascension.",
+        "coordinates": [45.4600, 7.2000],
+        "type": "natural"
+      },
+      {
+        "name": "Lacs Serrù et Agnel",
+        "description": "Deux magnifiques lacs d'altitude sur la partie supérieure de l'ascension.",
+        "coordinates": [45.4747, 7.1331],
+        "type": "natural"
+      },
+      {
+        "name": "Chapelle au sommet",
+        "description": "Petite chapelle au sommet offrant un point de repère pittoresque.",
+        "coordinates": [45.4800, 7.1397],
+        "type": "cultural"
+      },
+      {
+        "name": "Parc National du Grand Paradis",
+        "description": "Le col est situé dans ce parc national, l'un des plus anciens d'Italie, riche en faune (bouquetins, marmottes).",
+        "coordinates": [45.4800, 7.1397],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Faible à modéré, route fermée aux véhicules motorisés certains jours en été",
+      "winterClosure": "Fermé d'octobre à juin",
+      "facilities": ["Refuge près du sommet", "Cafés à Ceresole Reale"],
+      "parkingAvailable": true,
+      "waterPoints": ["Refuge près du sommet", "Sources naturelles le long du parcours"]
+    },
+    "images": {
+      "main": "/images/cols/nivolet/main.jpg",
+      "gallery": [
+        "/images/cols/nivolet/ceresole-lake.jpg",
+        "/images/cols/nivolet/upper-lakes.jpg",
+        "/images/cols/nivolet/hairpins.jpg",
+        "/images/cols/nivolet/chapel.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "L'ascension depuis Ceresole est relativement facile, celle depuis Locana est beaucoup plus longue et exigeante.",
+      "L'altitude se fait sentir dans les derniers kilomètres.",
+      "Possibilité de voir des animaux sauvages, notamment des marmottes."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  }
+]

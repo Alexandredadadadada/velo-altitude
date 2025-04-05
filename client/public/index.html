@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/images/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1976d2" />
+  <meta
+    name="description"
+    content="Velo-Altitude - Le plus grand dashboard vélo d'Europe. Analyse de performances, planification d'entraînements, nutrition et défis cyclistes avec visualisation 3D des cols d'Europe."
+  />
+  <meta name="keywords" content="cyclisme, Europe, altitude, cols, performance, entraînement, vélo, cycliste, montagne, nutrition, défis, 3D, visualisation" />
+  <meta name="author" content="Velo-Altitude" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://velo-altitude.com/" />
+  <meta property="og:title" content="Velo-Altitude | Le dashboard vélo ultime pour les passionnés de cols" />
+  <meta property="og:description" content="Planifiez vos entraînements, suivez vos performances et relevez des défis cyclistes dans les plus beaux cols d'Europe avec des visualisations 3D exclusives." />
+  <meta property="og:image" content="%PUBLIC_URL%/images/social/velo-altitude-facebook.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://velo-altitude.com/" />
+  <meta property="twitter:title" content="Velo-Altitude | Le dashboard vélo ultime pour les passionnés de cols" />
+  <meta property="twitter:description" content="Planifiez vos entraînements, suivez vos performances et relevez des défis cyclistes dans les plus beaux cols d'Europe avec des visualisations 3D exclusives." />
+  <meta property="twitter:image" content="%PUBLIC_URL%/images/social/velo-altitude-twitter.png" />
+  
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/icons/icon-192.png" />
+  
+  <!-- Préchargement des ressources critiques -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="%PUBLIC_URL%/images/placeholder.svg" as="image" type="image/svg+xml">
+  
+  <!-- Styles de fallback en cas d'échec du chargement CSS -->
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+    .loading-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      flex-direction: column;
+    }
+    .loading-spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top: 4px solid #1976d2;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+  <title>Velo-Altitude | Le dashboard vélo ultime pour les passionnés de cols</title>
+</head>
+<body>
+  <noscript>Vous devez activer JavaScript pour utiliser cette application.</noscript>
+  <div id="root">
+    <!-- Indicateur de chargement affiché avant le rendu React -->
+    <div class="loading-indicator">
+      <div class="loading-spinner"></div>
+      <p>Chargement de Velo-Altitude...</p>
+    </div>
+  </div>
+  
+  <!-- Script de gestion des images manquantes -->
+  <script src="%PUBLIC_URL%/js/image-fallback.js"></script>
+  
+  <!-- Gestion des erreurs globales -->
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error('Erreur globale capturée:', e.message);
+      // Éviter l'interruption complète en cas d'erreur non critique
+      if (e.message.includes('weather-map') || e.message.includes('Leaflet')) {
+        console.warn('Erreur non critique dans une bibliothèque externe');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

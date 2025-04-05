@@ -1,0 +1,129 @@
+/* Styles pour GlobalNavigation.js */
+
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.skip-to-content:focus {
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 16px;
+  background-color: var(--mui-palette-primary-main);
+  color: var(--mui-palette-primary-contrastText);
+  font-weight: 600;
+  clip: auto;
+  outline: none;
+}
+
+/* Animation des éléments de navigation */
+.nav-item-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.nav-item-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in, transform 300ms ease-out;
+}
+
+.nav-item-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-item-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms ease-in, transform 300ms ease-out;
+}
+
+/* Animation du menu déroulant */
+.dropdown-enter {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.dropdown-enter-active {
+  max-height: 500px;
+  transition: max-height 300ms ease-in-out;
+}
+
+.dropdown-exit {
+  max-height: 500px;
+}
+
+.dropdown-exit-active {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease-in-out;
+}
+
+/* Mobile drawer animation */
+.drawer-enter {
+  transform: translateX(-100%);
+}
+
+.drawer-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-out;
+}
+
+.drawer-exit {
+  transform: translateX(0);
+}
+
+.drawer-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in;
+}
+
+/* Styles pour améliorer les focus pour accessibilité */
+.nav-focus-visible:focus-visible {
+  outline: 2px solid var(--mui-palette-primary-main);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Styles pour les annonces visuelles (pour lecteurs d'écran) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Support des préférences de réduction de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  .nav-item-enter,
+  .nav-item-enter-active,
+  .nav-item-exit,
+  .nav-item-exit-active,
+  .dropdown-enter,
+  .dropdown-enter-active,
+  .dropdown-exit,
+  .dropdown-exit-active,
+  .drawer-enter,
+  .drawer-enter-active,
+  .drawer-exit,
+  .drawer-exit-active {
+    transition: none !important;
+    transform: none !important;
+    max-height: none !important;
+  }
+}

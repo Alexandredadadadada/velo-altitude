@@ -1,0 +1,536 @@
+/* SocialHub Styles */
+.social-hub {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f5f7fa;
+}
+
+.social-hub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.social-hub-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.user-profile-summary {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 2px solid #3498db;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.user-location {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.social-navigation {
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  overflow-x: auto;
+  padding: 0 1rem;
+}
+
+.social-nav-button {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #7f8c8d;
+  font-weight: 500;
+  position: relative;
+  white-space: nowrap;
+}
+
+.social-nav-button i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.social-nav-button.active {
+  color: #3498db;
+}
+
+.social-nav-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #3498db;
+}
+
+.social-nav-button:hover:not(.active) {
+  color: #34495e;
+  background-color: #f8f9fa;
+}
+
+.social-content {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+}
+
+.social-hub-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
+/* CommunityFeed Styles */
+.community-feed {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-filters {
+  display: flex;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.filter-button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.filter-button.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.create-post-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.create-post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.create-post-input {
+  flex: 1;
+  margin-left: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background-color: #f5f7fa;
+  cursor: pointer;
+}
+
+.create-post-input:hover {
+  background-color: #edf0f5;
+}
+
+.post-options {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.post-option {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.post-option i {
+  margin-right: 8px;
+}
+
+.post-option:hover {
+  background-color: #f5f7fa;
+}
+
+.post-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-header {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.post-user-info {
+  margin-left: 0.75rem;
+}
+
+.post-user-name {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 2px;
+}
+
+.post-time {
+  color: #7f8c8d;
+  font-size: 0.8rem;
+}
+
+.post-content {
+  margin-bottom: 1rem;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 0.75rem;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.post-action {
+  display: flex;
+  align-items: center;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.post-action i {
+  margin-right: 6px;
+}
+
+.post-action:hover {
+  background-color: #f5f7fa;
+}
+
+.post-action.liked {
+  color: #e74c3c;
+}
+
+/* RouteSharing Styles */
+.route-sharing {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.route-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.routes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.route-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.route-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.route-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.route-difficulty {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+  color: white;
+}
+
+.route-difficulty.easy {
+  background-color: #2ecc71;
+}
+
+.route-difficulty.moderate {
+  background-color: #f39c12;
+}
+
+.route-difficulty.hard {
+  background-color: #e74c3c;
+}
+
+.route-info {
+  padding: 1.25rem;
+}
+
+.route-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.route-location {
+  display: flex;
+  align-items: center;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.route-location i {
+  margin-right: 6px;
+}
+
+.route-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.route-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.route-stat-value {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.route-stat-label {
+  color: #7f8c8d;
+  font-size: 0.8rem;
+}
+
+.route-actions {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1rem;
+}
+
+/* EventsCalendar Styles */
+.events-calendar {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-header {
+  margin-bottom: 2rem;
+}
+
+.user-events-section {
+  margin-bottom: 2rem;
+}
+
+.calendar-view {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header {
+  margin-bottom: 1rem;
+}
+
+.calendar-day {
+  min-height: 100px;
+  height: 100%;
+}
+
+.calendar-day.has-events {
+  background-color: #f8f9fa;
+}
+
+.calendar-event {
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.calendar-event:hover {
+  transform: scale(1.02);
+}
+
+.event-card {
+  height: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.list-view {
+  margin-top: 2rem;
+}
+
+/* UserProfile Styles */
+.user-profile {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-header-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.profile-stat {
+  text-align: center;
+  min-width: 100px;
+}
+
+.achievements-panel,
+.activities-panel,
+.stats-panel,
+.clubs-panel {
+  margin-top: 1rem;
+}
+
+/* ClubsDirectory Styles */
+.clubs-directory {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clubs-header {
+  margin-bottom: 2rem;
+}
+
+.club-card {
+  height: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.club-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .social-hub-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .user-profile-summary {
+    margin-top: 1rem;
+  }
+  
+  .social-navigation {
+    padding: 0;
+  }
+  
+  .social-nav-button {
+    padding: 1rem;
+  }
+  
+  .social-content {
+    padding: 1rem;
+  }
+  
+  .routes-container,
+  .events-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .calendar-day {
+    min-height: 80px;
+  }
+}
+
+/* Dialog Styles */
+.MuiDialog-paperScrollPaper {
+  max-height: 90vh !important;
+}
+
+/* Additional styles for Material UI components integration */
+.MuiChip-root {
+  margin: 0.25rem !important;
+}
+
+.MuiTab-root {
+  min-width: auto !important;
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "id": "col-d-aspin",
+    "name": "Col d'Aspin",
+    "altitude": 1490,
+    "location": {
+      "latitude": 42.9592,
+      "longitude": 0.3315,
+      "region": "Pyrénées",
+      "country": "France",
+      "nearbyTowns": ["Arreau", "Sainte-Marie-de-Campan"]
+    },
+    "climbData": {
+      "arreauSide": {
+        "startLocation": "Arreau",
+        "length": 12.0,
+        "elevation": 770,
+        "averageGradient": 6.4,
+        "maxGradient": 9.5,
+        "difficulty": 7
+      },
+      "campanSide": {
+        "startLocation": "Sainte-Marie-de-Campan",
+        "length": 12.8,
+        "elevation": 640,
+        "averageGradient": 5.0,
+        "maxGradient": 8.0,
+        "difficulty": 6
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1910,
+      "tourDeFranceAppearances": 73,
+      "famousStories": [
+        "L'Aspin figure parmi les cols les plus visités dans l'histoire du Tour de France.",
+        "En 1954, Federico Bahamontes, 'l'Aigle de Tolède', franchit le col en tête et consolide sa réputation de grimpeur exceptionnel.",
+        "Le col est souvent combiné avec le Tourmalet et d'autres cols pyrénéens pour former des étapes de montagne légendaires."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Claudio Chiappucci",
+          "time": "23:57",
+          "year": 1993,
+          "side": "arreau"
+        },
+        "modern": {
+          "holder": "Thibaut Pinot",
+          "time": "24:41",
+          "year": 2019,
+          "side": "arreau"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Réserve Naturelle du Néouvielle",
+        "description": "Accès à cette réserve naturelle contenant plus de 70 lacs d'altitude et une flore exceptionnelle.",
+        "coordinates": [42.9500, 0.3200],
+        "type": "natural"
+      },
+      {
+        "name": "Panorama sur le Pic du Midi",
+        "description": "Vue exceptionnelle sur le Pic du Midi de Bigorre et son observatoire.",
+        "coordinates": [42.9592, 0.3315],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Lac d'Aspin",
+        "description": "Petit lac situé sur le versant est du col, accessible par un court sentier.",
+        "coordinates": [42.9630, 0.3289],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré, plus élevé en juillet-août",
+      "winterClosure": "Généralement fermé de novembre à avril",
+      "facilities": ["Petit stand de boissons au sommet en été", "Tables de pique-nique"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaine au sommet"]
+    },
+    "images": {
+      "main": "/images/cols/aspin/main.jpg",
+      "gallery": [
+        "/images/cols/aspin/arreau-side.jpg",
+        "/images/cols/aspin/campan-side.jpg",
+        "/images/cols/aspin/summit.jpg",
+        "/images/cols/aspin/lake.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant d'Arreau est plus difficile que celui de Sainte-Marie-de-Campan.",
+      "Col relativement facile permettant d'enchaîner avec d'autres ascensions dans la même journée.",
+      "Idéal pour débuter dans les cols pyrénéens avant d'affronter des ascensions plus difficiles."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "passo-sella",
+    "name": "Passo Sella",
+    "altitude": 2244,
+    "location": {
+      "latitude": 46.5125,
+      "longitude": 11.7582,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Canazei", "Selva di Val Gardena"]
+    },
+    "climbData": {
+      "canazeiSide": {
+        "startLocation": "Canazei",
+        "length": 8.7,
+        "elevation": 526,
+        "averageGradient": 6.0,
+        "maxGradient": 11.0,
+        "difficulty": 7
+      },
+      "selvaSide": {
+        "startLocation": "Selva di Val Gardena",
+        "length": 5.5,
+        "elevation": 337,
+        "averageGradient": 6.1,
+        "maxGradient": 10.0,
+        "difficulty": 6
+      }
+    },
+    "history": {
+      "firstGiroYear": 1940,
+      "giroAppearances": 15,
+      "famousStories": [
+        "Le col fait partie du circuit Sella Ronda, une boucle de quatre cols dolomitiques (Sella, Pordoi, Campolongo et Gardena).",
+        "Depuis 2017, la circulation est restreinte certains jours d'été pour permettre aux cyclistes et randonneurs de profiter pleinement du col.",
+        "En 1987, lors du Giro, Stephen Roche y franchit le sommet en tête lors d'une étape mémorable où il défiera son propre chef d'équipe."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "19:22",
+          "year": 1994,
+          "side": "canazei"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Groupe du Sella",
+        "description": "Massif montagneux impressionnant qui domine le col, avec des parois verticales caractéristiques des Dolomites.",
+        "coordinates": [46.5131, 11.7589],
+        "type": "natural"
+      },
+      {
+        "name": "Rifugio Plan de Gralba",
+        "description": "Refuge de montagne situé sur le versant de Selva di Val Gardena.",
+        "coordinates": [46.5182, 11.7480],
+        "type": "accommodation"
+      },
+      {
+        "name": "Sassolungo",
+        "description": "Vue exceptionnelle sur ce sommet emblématique des Dolomites (3181m).",
+        "coordinates": [46.5044, 11.7408],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre, avec restriction de circulation pour les véhicules certains jours",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Élevé en haute saison touristique",
+      "winterClosure": "Généralement ouvert toute l'année (sauf conditions exceptionnelles)",
+      "facilities": ["Restaurants", "Boutiques souvenirs", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Plusieurs sources au sommet et à mi-parcours"]
+    },
+    "images": {
+      "main": "/images/cols/sella/main.jpg",
+      "gallery": [
+        "/images/cols/sella/canazei-side.jpg",
+        "/images/cols/sella/selva-side.jpg",
+        "/images/cols/sella/sella-group.jpg",
+        "/images/cols/sella/sassolungo.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Col relativement court et pas trop difficile, idéal dans le cadre du circuit Sella Ronda.",
+      "Évitez les heures de pointe touristique (10h-16h) pendant la haute saison.",
+      "Le Sella Ronda Day (circulation restreinte) est idéal pour grimper ce col sans trafic."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "col-de-la-croix-de-fer",
+    "name": "Col de la Croix de Fer",
+    "altitude": 2067,
+    "location": {
+      "latitude": 45.2265,
+      "longitude": 6.1824,
+      "region": "Alpes françaises",
+      "country": "France",
+      "nearbyTowns": ["Saint-Jean-de-Maurienne", "Le Bourg-d'Oisans"]
+    },
+    "climbData": {
+      "saintJeanSide": {
+        "startLocation": "Saint-Jean-de-Maurienne",
+        "length": 29.5,
+        "elevation": 1522,
+        "averageGradient": 5.1,
+        "maxGradient": 11.0,
+        "difficulty": 8,
+        "note": "Passage par le Col du Glandon"
+      },
+      "bourgDOisansSide": {
+        "startLocation": "Le Bourg-d'Oisans",
+        "length": 27.5,
+        "elevation": 1470,
+        "averageGradient": 5.3,
+        "maxGradient": 11.0,
+        "difficulty": 8,
+        "note": "Passage par le Col du Glandon"
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1947,
+      "tourDeFranceAppearances": 20,
+      "famousStories": [
+        "Le col doit son nom à la croix en fer forgé érigée à son sommet.",
+        "En 1986, Bernard Hinault et Greg LeMond y franchissent la ligne de sommet main dans la main, symbolisant leur rivalité et leur respect mutuel.",
+        "L'ascension inclut un court passage en descente à Saint-Sorlin-d'Arves, particulièrement déstabilisant pour les coureurs."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Pierre Latour",
+          "time": "1:06:00",
+          "year": 2018,
+          "side": "saint-jean"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Croix en fer forgé",
+        "description": "Symbole emblématique du col, cette croix en fer forgé est érigée au sommet.",
+        "coordinates": [45.2265, 6.1824],
+        "type": "monument"
+      },
+      {
+        "name": "Lacs de la Croix de Fer",
+        "description": "Série de lacs d'altitude à proximité du col, dont le Grand Lac et le Lac Bramant.",
+        "coordinates": [45.2250, 6.1900],
+        "type": "natural"
+      },
+      {
+        "name": "Col du Glandon",
+        "description": "Col voisin situé à moins de 2 km, offrant un panorama complémentaire.",
+        "coordinates": [45.2290, 6.1630],
+        "type": "landmark"
+      },
+      {
+        "name": "Vue sur les Aiguilles d'Arves",
+        "description": "Panorama exceptionnel sur ces trois sommets emblématiques des Alpes.",
+        "coordinates": [45.2265, 6.1824],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne",
+      "trafficLevel": "Modéré",
+      "winterClosure": "Fermé de novembre à mai",
+      "facilities": ["Restaurant-refuge au sommet", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Refuge au sommet", "Fontaines dans les villages traversés"]
+    },
+    "images": {
+      "main": "/images/cols/croix-de-fer/main.jpg",
+      "gallery": [
+        "/images/cols/croix-de-fer/saint-jean-side.jpg",
+        "/images/cols/croix-de-fer/bourg-oisans-side.jpg",
+        "/images/cols/croix-de-fer/lakes.jpg",
+        "/images/cols/croix-de-fer/cross.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "L'ascension est longue, irrégulière et comprend quelques sections en faux plats ou en légère descente.",
+      "Depuis Saint-Jean-de-Maurienne, le passage le plus difficile se situe à Saint-Sorlin-d'Arves.",
+      "Souvent combiné avec d'autres cols comme le Télégraphe, le Galibier ou l'Alpe d'Huez."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "klausen-pass",
+    "name": "Klausenpass",
+    "altitude": 1948,
+    "location": {
+      "latitude": 46.8694,
+      "longitude": 8.8519,
+      "region": "Alpes suisses",
+      "country": "Suisse",
+      "nearbyTowns": ["Altdorf", "Linthal"]
+    },
+    "climbData": {
+      "altdorfSide": {
+        "startLocation": "Altdorf",
+        "length": 21.5,
+        "elevation": 1650,
+        "averageGradient": 7.7,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      },
+      "linthalSide": {
+        "startLocation": "Linthal",
+        "length": 16.5,
+        "elevation": 1110,
+        "averageGradient": 6.7,
+        "maxGradient": 10.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "famousEvents": ["Klausenpass Historic Car Race", "Tour de Suisse"],
+      "tourDeSuisseAppearances": 14,
+      "famousStories": [
+        "Entre 1922 et 1934, le col accueillait la célèbre course automobile de côte 'Klausenrennen', récemment relancée comme événement historique.",
+        "Le col joue un rôle important dans l'histoire et la mythologie suisse, étant situé près des lieux associés à Guillaume Tell.",
+        "La route actuelle, construite dans les années 1940, est l'une des plus belles routes alpines de Suisse."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Andy Schleck",
+          "time": "55:30",
+          "year": 2010,
+          "side": "altdorf"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Urnerboden",
+        "description": "Plus grand alpage de Suisse, situé à mi-parcours du versant est. Village typique alpin avec fromageries traditionnelles.",
+        "coordinates": [46.8914, 8.9204],
+        "type": "cultural"
+      },
+      {
+        "name": "Balm",
+        "description": "Au sommet, site naturel impressionnant avec vue panoramique et point d'observation pour la faune alpine.",
+        "coordinates": [46.8694, 8.8519],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Chapelle Bruder Klaus",
+        "description": "Petite chapelle dédiée au saint patron de la Suisse, située au sommet du col.",
+        "coordinates": [46.8694, 8.8519],
+        "type": "cultural"
+      },
+      {
+        "name": "Klön Valley",
+        "description": "Vallée pittoresque avec son lac que l'on traverse en montant depuis Linthal.",
+        "coordinates": [46.9019, 8.9444],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré, plus élevé les weekends",
+      "winterClosure": "Fermé d'octobre à mai",
+      "facilities": ["Restaurant au sommet", "Boutique souvenirs", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaines au sommet et dans les villages traversés"]
+    },
+    "images": {
+      "main": "/images/cols/klausenpass/main.jpg",
+      "gallery": [
+        "/images/cols/klausenpass/altdorf-side.jpg",
+        "/images/cols/klausenpass/linthal-side.jpg",
+        "/images/cols/klausenpass/urnerboden.jpg",
+        "/images/cols/klausenpass/summit.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant d'Altdorf est nettement plus difficile et plus long.",
+      "Les deux versants offrent une bonne protection contre le soleil en raison des nombreux arbres.",
+      "Col idéal pour découvrir les Alpes suisses, moins fréquenté que les cols plus connus comme le Gotthard."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "colle-del-finestre",
+    "name": "Colle del Sestriere",
+    "altitude": 2035,
+    "location": {
+      "latitude": 44.9516,
+      "longitude": 6.8768,
+      "region": "Alpes occidentales",
+      "country": "Italie",
+      "nearbyTowns": ["Sestriere", "Cesana Torinese", "Oulx"]
+    },
+    "climbData": {
+      "sestriereSide": {
+        "startLocation": "Sestriere",
+        "length": 8.0,
+        "elevation": 380,
+        "averageGradient": 4.8,
+        "maxGradient": 9.0,
+        "difficulty": 5
+      },
+      "cesanaSide": {
+        "startLocation": "Cesana Torinese",
+        "length": 11.2,
+        "elevation": 581,
+        "averageGradient": 5.2,
+        "maxGradient": 9.0,
+        "difficulty": 6
+      },
+      "oulxSide": {
+        "startLocation": "Oulx",
+        "length": 17.2,
+        "elevation": 925,
+        "averageGradient": 5.4,
+        "maxGradient": 10.0,
+        "difficulty": 7
+      }
+    },
+    "history": {
+      "firstGiroYear": 1911,
+      "giroAppearances": 15,
+      "tourDeFranceAppearances": 4,
+      "famousStories": [
+        "Lors des Jeux Olympiques d'hiver de Turin 2006, Sestriere a accueilli plusieurs épreuves de ski alpin.",
+        "En 1952, Fausto Coppi y remporte une victoire mémorable au Giro, consolidant sa place dans l'histoire du cyclisme.",
+        "En 1999, lors du Tour de France, Lance Armstrong domine l'étape contre-la-montre en montagne arrivant à Sestriere."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Lance Armstrong",
+          "time": "38:43",
+          "year": 1999,
+          "side": "oulx"
+        },
+        "modern": {
+          "holder": "Rohan Dennis",
+          "time": "40:35",
+          "year": 2018,
+          "side": "cesana"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Station de ski de Sestriere",
+        "description": "L'une des plus grandes stations de ski italiennes, hôte des Jeux Olympiques d'hiver de 2006.",
+        "coordinates": [44.9516, 6.8768],
+        "type": "tourism"
+      },
+      {
+        "name": "Vue sur le Monte Chaberton",
+        "description": "Panorama sur cette montagne caractéristique avec sa forme pyramidale et les ruines de fortifications à son sommet.",
+        "coordinates": [44.9516, 6.8768],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Torre di Fraile",
+        "description": "Tour caractéristique en forme de cylindre, symbole de Sestriere, construite dans les années 1930.",
+        "coordinates": [44.9516, 6.8768],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre pour le vélo, décembre à mars pour le ski",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré, plus élevé en saison touristique",
+      "winterClosure": "Ouvert toute l'année (déneigé pour accès à la station de ski)",
+      "facilities": ["Nombreux restaurants", "Boutiques", "Hébergements", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Nombreuses fontaines dans la station"]
+    },
+    "images": {
+      "main": "/images/cols/sestriere/main.jpg",
+      "gallery": [
+        "/images/cols/sestriere/cesana-side.jpg",
+        "/images/cols/sestriere/oulx-side.jpg",
+        "/images/cols/sestriere/ski-resort.jpg",
+        "/images/cols/sestriere/torre.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Col relativement facile comparé à d'autres cols alpins, idéal pour les grimpeurs débutants.",
+      "Le versant d'Oulx est le plus long et le plus difficile des trois.",
+      "Souvent intégré dans un circuit incluant le Col de Montgenèvre ou le Colle delle Finestre."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  }
+]

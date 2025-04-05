@@ -1,0 +1,369 @@
+[
+  {
+    "id": "route-001",
+    "name": "Tour des Grands Cols Alpins",
+    "theme": "Challenge sportif",
+    "region": "Alpes",
+    "country": "France",
+    "duration": 7,
+    "totalDistance": 485,
+    "totalElevation": 12500,
+    "maxGradient": 12.5,
+    "difficulty": "Très difficile",
+    "segments": [
+      {
+        "name": "Jour 1 : Annecy - Albertville",
+        "distance": 65,
+        "elevation": 850,
+        "averageGradient": 3.2,
+        "description": "Départ d'Annecy et traversée des pré-Alpes par le Col de Tamié (907m)",
+        "points": ["Annecy", "Duingt", "Faverges", "Col de Tamié", "Albertville"]
+      },
+      {
+        "name": "Jour 2 : Albertville - Bourg-Saint-Maurice",
+        "distance": 82,
+        "elevation": 2100,
+        "averageGradient": 5.9,
+        "description": "Franchissement du Col de la Madeleine (1993m), descente vers Moûtiers puis remontée vers Bourg-Saint-Maurice",
+        "points": ["Albertville", "Col de la Madeleine", "Moûtiers", "Bourg-Saint-Maurice"]
+      },
+      {
+        "name": "Jour 3 : Bourg-Saint-Maurice - Val d'Isère",
+        "distance": 48,
+        "elevation": 1850,
+        "averageGradient": 6.1,
+        "description": "Montée du Col de l'Iseran (2770m), le plus haut col routier des Alpes françaises",
+        "points": ["Bourg-Saint-Maurice", "Sainte-Foy-Tarentaise", "Val d'Isère", "Col de l'Iseran"]
+      },
+      {
+        "name": "Jour 4 : Val d'Isère - Valloire",
+        "distance": 95,
+        "elevation": 2800,
+        "averageGradient": 4.8,
+        "description": "Descente vers Lanslebourg, puis montée du Col du Mont-Cenis (2083m) et du Col du Télégraphe (1566m)",
+        "points": ["Val d'Isère", "Lanslebourg", "Col du Mont-Cenis", "Modane", "Saint-Michel-de-Maurienne", "Col du Télégraphe", "Valloire"]
+      },
+      {
+        "name": "Jour 5 : Valloire - Le Bourg-d'Oisans",
+        "distance": 75,
+        "elevation": 2200,
+        "averageGradient": 7.2,
+        "description": "Ascension du mythique Col du Galibier (2642m), descente sur Briançon, puis montée du Col du Lautaret (2058m)",
+        "points": ["Valloire", "Col du Galibier", "Briançon", "Col du Lautaret", "Le Bourg-d'Oisans"]
+      },
+      {
+        "name": "Jour 6 : Le Bourg-d'Oisans - L'Alpe d'Huez - Le Bourg-d'Oisans",
+        "distance": 60,
+        "elevation": 1850,
+        "averageGradient": 8.0,
+        "description": "Journée dédiée à l'ascension de l'Alpe d'Huez et ses 21 virages mythiques, puis exploration des villages environnants",
+        "points": ["Le Bourg-d'Oisans", "L'Alpe d'Huez", "Villard-Reculas", "Allemond", "Le Bourg-d'Oisans"]
+      },
+      {
+        "name": "Jour 7 : Le Bourg-d'Oisans - Annecy",
+        "distance": 60,
+        "elevation": 850,
+        "averageGradient": 3.5,
+        "description": "Retour vers Annecy par Chambéry et le Lac du Bourget, conclusion de la boucle alpine",
+        "points": ["Le Bourg-d'Oisans", "Rochetaillée", "Chambéry", "Aix-les-Bains", "Annecy"]
+      }
+    ],
+    "pointsOfInterest": [
+      {"name": "Musée de la Bicyclette", "type": "culture", "location": "Albertville"},
+      {"name": "Lac de Roselend", "type": "paysage", "location": "Col du Pré"},
+      {"name": "Fromagerie de Beaufort", "type": "gastronomie", "location": "Beaufort"},
+      {"name": "Parc national de la Vanoise", "type": "nature", "location": "Val d'Isère"},
+      {"name": "Mémorial du Galibier", "type": "histoire", "location": "Col du Galibier"},
+      {"name": "Musée d'Art Sacré Alpin", "type": "culture", "location": "Lanslebourg"}
+    ],
+    "image": "/images/routes/grands-cols-alpins.jpg",
+    "gpxFile": "/gpx/tour-grands-cols-alpins.gpx",
+    "createdAt": "2025-02-15T10:30:00.000Z",
+    "updatedAt": "2025-03-20T14:15:00.000Z"
+  },
+  {
+    "id": "route-002",
+    "name": "Route des Vins d'Alsace à Vélo",
+    "theme": "Gastronomie régionale",
+    "region": "Alsace",
+    "country": "France",
+    "duration": 5,
+    "totalDistance": 170,
+    "totalElevation": 1850,
+    "maxGradient": 6.0,
+    "difficulty": "Modéré",
+    "segments": [
+      {
+        "name": "Jour 1 : Strasbourg - Obernai",
+        "distance": 30,
+        "elevation": 210,
+        "averageGradient": 1.8,
+        "description": "Départ de Strasbourg à travers la plaine d'Alsace jusqu'au charmant village d'Obernai",
+        "points": ["Strasbourg", "Lingolsheim", "Entzheim", "Hindisheim", "Obernai"]
+      },
+      {
+        "name": "Jour 2 : Obernai - Ribeauvillé",
+        "distance": 35,
+        "elevation": 480,
+        "averageGradient": 3.5,
+        "description": "Traversée de plusieurs villages viticoles typiques avec dégustation possible dans les domaines",
+        "points": ["Obernai", "Barr", "Andlau", "Itterswiller", "Dambach-la-Ville", "Ribeauvillé"]
+      },
+      {
+        "name": "Jour 3 : Ribeauvillé - Colmar",
+        "distance": 25,
+        "elevation": 320,
+        "averageGradient": 2.6,
+        "description": "Visite de Riquewihr, l'un des plus beaux villages de France, puis route vers Colmar",
+        "points": ["Ribeauvillé", "Hunawihr", "Riquewihr", "Kientzheim", "Sigolsheim", "Colmar"]
+      },
+      {
+        "name": "Jour 4 : Colmar - Guebwiller",
+        "distance": 40,
+        "elevation": 520,
+        "averageGradient": 3.8,
+        "description": "Itinéraire à travers le vignoble jusqu'à Guebwiller, aux portes du Parc Naturel des Ballons des Vosges",
+        "points": ["Colmar", "Eguisheim", "Rouffach", "Soultzmatt", "Guebwiller"]
+      },
+      {
+        "name": "Jour 5 : Guebwiller - Strasbourg (train)",
+        "distance": 40,
+        "elevation": 320,
+        "averageGradient": 2.1,
+        "description": "Dernière étape jusqu'à Mulhouse, puis retour en train vers Strasbourg",
+        "points": ["Guebwiller", "Cernay", "Wittelsheim", "Mulhouse", "Strasbourg (train)"]
+      }
+    ],
+    "pointsOfInterest": [
+      {"name": "Cave historique des Hospices de Strasbourg", "type": "gastronomie", "location": "Strasbourg"},
+      {"name": "Domaine Weinbach", "type": "gastronomie", "location": "Kaysersberg"},
+      {"name": "Village fortifié de Riquewihr", "type": "patrimoine", "location": "Riquewihr"},
+      {"name": "Musée Unterlinden", "type": "culture", "location": "Colmar"},
+      {"name": "Château du Haut-Koenigsbourg", "type": "patrimoine", "location": "Orschwiller"}
+    ],
+    "image": "/images/routes/route-vins-alsace.jpg",
+    "gpxFile": "/gpx/route-vins-alsace.gpx",
+    "createdAt": "2025-01-10T09:15:00.000Z",
+    "updatedAt": "2025-03-15T11:30:00.000Z"
+  },
+  {
+    "id": "route-003",
+    "name": "Tour des Châteaux de la Loire",
+    "theme": "Patrimoine historique",
+    "region": "Centre-Val de Loire",
+    "country": "France",
+    "duration": 6,
+    "totalDistance": 230,
+    "totalElevation": 980,
+    "maxGradient": 4.0,
+    "difficulty": "Facile",
+    "segments": [
+      {
+        "name": "Jour 1 : Tours - Amboise",
+        "distance": 30,
+        "elevation": 120,
+        "averageGradient": 1.2,
+        "description": "Départ de Tours le long de la Loire pour rejoindre Amboise et son château royal",
+        "points": ["Tours", "Vouvray", "Amboise"]
+      },
+      {
+        "name": "Jour 2 : Amboise - Chenonceaux",
+        "distance": 35,
+        "elevation": 150,
+        "averageGradient": 1.5,
+        "description": "Visite du Clos Lucé, dernière demeure de Léonard de Vinci, puis route vers le château de Chenonceau",
+        "points": ["Amboise", "Clos Lucé", "Bléré", "Chenonceaux"]
+      },
+      {
+        "name": "Jour 3 : Chenonceaux - Chaumont-sur-Loire",
+        "distance": 25,
+        "elevation": 140,
+        "averageGradient": 1.6,
+        "description": "Étape paisible le long du Cher puis de la Loire jusqu'au château de Chaumont",
+        "points": ["Chenonceaux", "Montrichard", "Chaumont-sur-Loire"]
+      },
+      {
+        "name": "Jour 4 : Chaumont-sur-Loire - Blois",
+        "distance": 20,
+        "elevation": 90,
+        "averageGradient": 1.3,
+        "description": "Court trajet jusqu'à Blois pour visiter son château royal aux quatre styles architecturaux",
+        "points": ["Chaumont-sur-Loire", "Candé-sur-Beuvron", "Blois"]
+      },
+      {
+        "name": "Jour 5 : Blois - Chambord",
+        "distance": 40,
+        "elevation": 180,
+        "averageGradient": 1.4,
+        "description": "Traversée de la forêt de Boulogne pour atteindre le majestueux château de Chambord",
+        "points": ["Blois", "Saint-Claude-de-Diray", "Huisseau-sur-Cosson", "Chambord"]
+      },
+      {
+        "name": "Jour 6 : Chambord - Tours",
+        "distance": 80,
+        "elevation": 300,
+        "averageGradient": 1.8,
+        "description": "Grande étape finale pour revenir à Tours en passant par Cheverny et Villandry",
+        "points": ["Chambord", "Cheverny", "Montlouis-sur-Loire", "Villandry", "Tours"]
+      }
+    ],
+    "pointsOfInterest": [
+      {"name": "Caves troglodytiques de Vouvray", "type": "gastronomie", "location": "Vouvray"},
+      {"name": "Château d'Amboise", "type": "patrimoine", "location": "Amboise"},
+      {"name": "Château de Chenonceau", "type": "patrimoine", "location": "Chenonceaux"},
+      {"name": "Maison de la Magie", "type": "culture", "location": "Blois"},
+      {"name": "Château de Chambord", "type": "patrimoine", "location": "Chambord"},
+      {"name": "Jardins de Villandry", "type": "patrimoine", "location": "Villandry"}
+    ],
+    "image": "/images/routes/chateaux-loire.jpg",
+    "gpxFile": "/gpx/tour-chateaux-loire.gpx",
+    "createdAt": "2025-01-25T14:40:00.000Z",
+    "updatedAt": "2025-03-05T09:20:00.000Z"
+  },
+  {
+    "id": "route-004",
+    "name": "Traversée des Pyrénées",
+    "theme": "Challenge sportif",
+    "region": "Pyrénées",
+    "country": "France",
+    "duration": 8,
+    "totalDistance": 750,
+    "totalElevation": 15000,
+    "maxGradient": 14.0,
+    "difficulty": "Très difficile",
+    "segments": [
+      {
+        "name": "Jour 1 : Hendaye - Saint-Jean-Pied-de-Port",
+        "distance": 85,
+        "elevation": 1400,
+        "averageGradient": 3.8,
+        "description": "Départ de l'Atlantique et première incursion dans les Pyrénées basques",
+        "points": ["Hendaye", "Saint-Jean-de-Luz", "Espelette", "Saint-Jean-Pied-de-Port"]
+      },
+      {
+        "name": "Jour 2 : Saint-Jean-Pied-de-Port - Larrau",
+        "distance": 70,
+        "elevation": 2100,
+        "averageGradient": 6.2,
+        "description": "Ascension du Col d'Iraty et de la difficile Pierre Saint-Martin",
+        "points": ["Saint-Jean-Pied-de-Port", "Col d'Iraty", "Pierre Saint-Martin", "Larrau"]
+      },
+      {
+        "name": "Jour 3 : Larrau - Argelès-Gazost",
+        "distance": 110,
+        "elevation": 2200,
+        "averageGradient": 5.5,
+        "description": "Longue étape avec les cols du Soulor et d'Aubisque",
+        "points": ["Larrau", "Laruns", "Col d'Aubisque", "Col du Soulor", "Argelès-Gazost"]
+      },
+      {
+        "name": "Jour 4 : Argelès-Gazost - Bagnères-de-Luchon",
+        "distance": 100,
+        "elevation": 2700,
+        "averageGradient": 7.2,
+        "description": "Franchissement des mythiques Tourmalet et Aspin",
+        "points": ["Argelès-Gazost", "Col du Tourmalet", "Col d'Aspin", "Bagnères-de-Luchon"]
+      },
+      {
+        "name": "Jour 5 : Bagnères-de-Luchon - Saint-Girons",
+        "distance": 95,
+        "elevation": 2300,
+        "averageGradient": 6.5,
+        "description": "Ascension du célèbre Col de Peyresourde et du Col de Portet d'Aspet",
+        "points": ["Bagnères-de-Luchon", "Col de Peyresourde", "Col de Portet d'Aspet", "Saint-Girons"]
+      },
+      {
+        "name": "Jour 6 : Saint-Girons - Ax-les-Thermes",
+        "distance": 120,
+        "elevation": 2100,
+        "averageGradient": 4.8,
+        "description": "Traversée de l'Ariège par les cols de Port et d'Agnes",
+        "points": ["Saint-Girons", "Col de Port", "Col d'Agnes", "Ax-les-Thermes"]
+      },
+      {
+        "name": "Jour 7 : Ax-les-Thermes - Prades",
+        "distance": 90,
+        "elevation": 1600,
+        "averageGradient": 5.1,
+        "description": "Route vers les Pyrénées catalanes par le Col de Pailhères",
+        "points": ["Ax-les-Thermes", "Col de Pailhères", "Mont-Louis", "Prades"]
+      },
+      {
+        "name": "Jour 8 : Prades - Cerbère",
+        "distance": 80,
+        "elevation": 600,
+        "averageGradient": 2.5,
+        "description": "Dernière étape vers la Méditerranée avec arrivée à Cerbère",
+        "points": ["Prades", "Perpignan", "Collioure", "Cerbère"]
+      }
+    ],
+    "pointsOfInterest": [
+      {"name": "Maison basque typique", "type": "patrimoine", "location": "Espelette"},
+      {"name": "Station thermale", "type": "bien-être", "location": "Argelès-Gazost"},
+      {"name": "Observatoire du Pic du Midi", "type": "culture", "location": "Col du Tourmalet"},
+      {"name": "Thermes romains", "type": "patrimoine", "location": "Bagnères-de-Luchon"},
+      {"name": "Château de Puilaurens", "type": "patrimoine", "location": "Lapradelle-Puilaurens"}
+    ],
+    "image": "/images/routes/traversee-pyrenees.jpg",
+    "gpxFile": "/gpx/traversee-pyrenees.gpx",
+    "createdAt": "2025-02-05T16:20:00.000Z",
+    "updatedAt": "2025-03-10T17:45:00.000Z"
+  },
+  {
+    "id": "route-005",
+    "name": "Tour du Mont Blanc",
+    "theme": "Nature et paysages",
+    "region": "Alpes",
+    "country": "International",
+    "duration": 4,
+    "totalDistance": 170,
+    "totalElevation": 8000,
+    "maxGradient": 10.5,
+    "difficulty": "Difficile",
+    "segments": [
+      {
+        "name": "Jour 1 : Chamonix - Courmayeur",
+        "distance": 45,
+        "elevation": 2300,
+        "averageGradient": 8.5,
+        "description": "Départ de Chamonix, montée du Col de Voza puis du Col du Bonhomme, passage en Italie par le Col de la Seigne",
+        "points": ["Chamonix", "Col de Voza", "Les Contamines", "Col du Bonhomme", "Col de la Seigne", "Courmayeur"]
+      },
+      {
+        "name": "Jour 2 : Courmayeur - Champex",
+        "distance": 50,
+        "elevation": 2100,
+        "averageGradient": 6.8,
+        "description": "Traversée du Val Ferret italien puis passage en Suisse par le Grand Col Ferret",
+        "points": ["Courmayeur", "Val Ferret", "Grand Col Ferret", "La Fouly", "Champex"]
+      },
+      {
+        "name": "Jour 3 : Champex - Vallorcine",
+        "distance": 40,
+        "elevation": 1900,
+        "averageGradient": 7.2,
+        "description": "Franchissement du Col de la Forclaz et du Col des Montets",
+        "points": ["Champex", "Col de la Forclaz", "Trient", "Col des Montets", "Vallorcine"]
+      },
+      {
+        "name": "Jour 4 : Vallorcine - Chamonix",
+        "distance": 35,
+        "elevation": 1700,
+        "averageGradient": 6.5,
+        "description": "Retour à Chamonix par Argentière et la vallée de Chamonix",
+        "points": ["Vallorcine", "Argentière", "Les Praz", "Chamonix"]
+      }
+    ],
+    "pointsOfInterest": [
+      {"name": "Aiguille du Midi", "type": "panorama", "location": "Chamonix"},
+      {"name": "Glacier du Tour", "type": "nature", "location": "Le Tour"},
+      {"name": "Lac Blanc", "type": "nature", "location": "Chamonix"},
+      {"name": "Glacier de Bionnassay", "type": "nature", "location": "Les Contamines"},
+      {"name": "Val Veny", "type": "panorama", "location": "Courmayeur"}
+    ],
+    "image": "/images/routes/tour-mont-blanc.jpg",
+    "gpxFile": "/gpx/tour-mont-blanc.gpx",
+    "createdAt": "2025-02-20T11:45:00.000Z",
+    "updatedAt": "2025-03-25T13:10:00.000Z"
+  }
+]

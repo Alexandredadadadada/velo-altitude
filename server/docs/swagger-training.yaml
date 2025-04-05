@@ -1,0 +1,689 @@
+openapi: 3.0.0
+info:
+  title: Dashboard-Velo API - Entraînement et Zones
+  description: Documentation des endpoints pour l'entraînement cycliste et les zones d'entraînement
+  version: 2.0.0
+
+paths:
+  /training/zones/{userId}:
+    get:
+      summary: Zones d'entraînement
+      description: |
+        Récupère les zones d'entraînement personnalisées d'un utilisateur.
+        Supporte les zones de puissance, fréquence cardiaque et allure.
+      tags:
+        - Entraînement
+      parameters:
+        - name: userId
+          in: path
+          description: Identifiant de l'utilisateur
+          required: true
+          schema:
+            type: string
+        - name: type
+          in: query
+          description: Type de zones
+          required: false
+          schema:
+            type: string
+            enum: [power, hr, pace]
+            default: power
+        - $ref: 'swagger-core.yaml#/components/parameters/RegionParam'
+      responses:
+        '200':
+          description: Zones d'entraînement
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-core.yaml#/components/schemas/TrainingZones'
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+        '429':
+          $ref: 'swagger-core.yaml#/components/responses/TooManyRequests'
+
+  /training/zones/update:
+    post:
+      summary: Mettre à jour les zones d'entraînement
+      description: Met à jour les zones d'entraînement d'un utilisateur
+      tags:
+        - Entraînement
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - type
+              properties:
+                type:
+                  type: string
+                  enum: [power, hr, pace]
+                ftp:
+                  type: number
+                  description: Puissance seuil fonctionnelle (W)
+                maxHr:
+                  type: number
+                  description: Fréquence cardiaque maximale (bpm)
+                restingHr:
+                  type: number
+                  description: Fréquence cardiaque au repos (bpm)
+                zones:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      zone:
+                        type: integer
+                      name:
+                        type: string
+                      min:
+                        type: number
+                      max:
+                        type: number
+                      description:
+                        type: string
+      responses:
+        '200':
+          description: Zones mises à jour
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-core.yaml#/components/schemas/TrainingZones'
+        '401':
+          $ref: 'swagger-core.yaml#/components/responses/Unauthorized'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /training/zones/calculate:
+    post:
+      summary: Calculer les zones d'entraînement
+      description: |
+        Calcule automatiquement les zones d'entraînement en fonction des paramètres fournis.
+        Utilise les formules standard pour chaque type de zone.
+      tags:
+        - Entraînement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - type
+              properties:
+                type:
+                  type: string
+                  enum: [power, hr, pace]
+                ftp:
+                  type: number
+                  description: Puissance seuil fonctionnelle (W)
+                weight:
+                  type: number
+                  description: Poids en kg (pour calcul W/kg)
+                maxHr:
+                  type: number
+                  description: Fréquence cardiaque maximale (bpm)
+                restingHr:
+                  type: number
+                  description: Fréquence cardiaque au repos (bpm)
+                lthr:
+                  type: number
+                  description: Fréquence cardiaque au seuil lactique (bpm)
+                method:
+                  type: string
+                  enum: [traditional, polarized, coggan, seiler, custom]
+                  default: coggan
+                  description: Méthode de calcul des zones
+      responses:
+        '200':
+          description: Zones calculées
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-core.yaml#/components/schemas/TrainingZones'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /training/ftp/estimate:
+    post:
+      summary: Estimer le FTP
+      description: |
+        Estime la puissance seuil fonctionnelle (FTP) en fonction des performances récentes.
+        Utilise différentes méthodes d'estimation selon les données disponibles.
+      tags:
+        - Entraînement
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                method:
+                  type: string
+                  enum: [best20min, ramp, recent_activities, critical_power]
+                  default: best20min
+                best20minPower:
+                  type: number
+                  description: Meilleure puissance sur 20 minutes (W)
+                rampTestFinalPower:
+                  type: number
+                  description: Puissance finale du test rampe (W)
+                criticalPowerData:
+                  type: object
+                  description: Données pour le modèle de puissance critique
+                useStravaData:
+                  type: boolean
+                  description: Utiliser les données Strava pour l'estimation
+                  default: false
+      responses:
+        '200':
+          description: FTP estimé
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  estimatedFtp:
+                    type: number
+                  confidence:
+                    type: number
+                    description: Indice de confiance (0-100)
+                  method:
+                    type: string
+                  suggestedZones:
+                    $ref: 'swagger-core.yaml#/components/schemas/TrainingZones'
+        '401':
+          $ref: 'swagger-core.yaml#/components/responses/Unauthorized'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /training/plans:
+    get:
+      summary: Plans d'entraînement
+      description: Récupère les plans d'entraînement disponibles
+      tags:
+        - Entraînement
+      parameters:
+        - name: goal
+          in: query
+          description: Objectif d'entraînement
+          required: false
+          schema:
+            type: string
+            enum: [endurance, climbing, racing, gran_fondo, recovery]
+        - name: level
+          in: query
+          description: Niveau du cycliste
+          required: false
+          schema:
+            type: string
+            enum: [beginner, intermediate, advanced, elite]
+        - name: duration
+          in: query
+          description: Durée du plan en semaines
+          required: false
+          schema:
+            type: integer
+            minimum: 4
+            maximum: 24
+        - $ref: 'swagger-core.yaml#/components/parameters/RegionParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/LimitParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/OffsetParam'
+      responses:
+        '200':
+          description: Plans d'entraînement
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  offset:
+                    type: integer
+                  limit:
+                    type: integer
+                  plans:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        goal:
+                          type: string
+                        level:
+                          type: string
+                        duration:
+                          type: integer
+                        description:
+                          type: string
+                        weeklyHours:
+                          type: object
+                          properties:
+                            min:
+                              type: number
+                            max:
+                              type: number
+                        rating:
+                          type: number
+                        reviewCount:
+                          type: integer
+                        previewUrl:
+                          type: string
+                          format: uri
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /training/plans/{planId}:
+    get:
+      summary: Détails d'un plan d'entraînement
+      description: Récupère les détails complets d'un plan d'entraînement
+      tags:
+        - Entraînement
+      parameters:
+        - name: planId
+          in: path
+          description: Identifiant du plan
+          required: true
+          schema:
+            type: string
+        - $ref: 'swagger-core.yaml#/components/parameters/LanguageParam'
+      responses:
+        '200':
+          description: Détails du plan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  goal:
+                    type: string
+                  level:
+                    type: string
+                  duration:
+                    type: integer
+                  description:
+                    type: string
+                  weeklyHours:
+                    type: object
+                    properties:
+                      min:
+                        type: number
+                      max:
+                        type: number
+                  weeks:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        weekNumber:
+                          type: integer
+                        focus:
+                          type: string
+                        description:
+                          type: string
+                        workouts:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              day:
+                                type: integer
+                              name:
+                                type: string
+                              type:
+                                type: string
+                              duration:
+                                type: integer
+                              intensity:
+                                type: string
+                              description:
+                                type: string
+                              zoneDistribution:
+                                type: object
+                  equipment:
+                    type: array
+                    items:
+                      type: string
+                  prerequisites:
+                    type: array
+                    items:
+                      type: string
+                  adaptations:
+                    type: object
+                    description: Adaptations possibles du plan
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+
+  /training/workouts:
+    get:
+      summary: Séances d'entraînement
+      description: Récupère les séances d'entraînement disponibles
+      tags:
+        - Entraînement
+      parameters:
+        - name: type
+          in: query
+          description: Type de séance
+          required: false
+          schema:
+            type: string
+            enum: [endurance, interval, threshold, vo2max, recovery, strength]
+        - name: duration
+          in: query
+          description: Durée en minutes
+          required: false
+          schema:
+            type: integer
+            minimum: 15
+            maximum: 300
+        - name: intensity
+          in: query
+          description: Niveau d'intensité
+          required: false
+          schema:
+            type: string
+            enum: [low, medium, high]
+        - $ref: 'swagger-core.yaml#/components/parameters/LimitParam'
+        - $ref: 'swagger-core.yaml#/components/parameters/OffsetParam'
+      responses:
+        '200':
+          description: Séances d'entraînement
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  offset:
+                    type: integer
+                  limit:
+                    type: integer
+                  workouts:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        type:
+                          type: string
+                        duration:
+                          type: integer
+                        intensity:
+                          type: string
+                        description:
+                          type: string
+                        tssEstimate:
+                          type: number
+                          description: Training Stress Score estimé
+                        zoneDistribution:
+                          type: object
+                        hasStructuredData:
+                          type: boolean
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /training/workouts/{workoutId}:
+    get:
+      summary: Détails d'une séance d'entraînement
+      description: Récupère les détails complets d'une séance d'entraînement
+      tags:
+        - Entraînement
+      parameters:
+        - name: workoutId
+          in: path
+          description: Identifiant de la séance
+          required: true
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Format des données structurées
+          required: false
+          schema:
+            type: string
+            enum: [json, fit, zwo, mrc]
+            default: json
+      responses:
+        '200':
+          description: Détails de la séance
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  type:
+                    type: string
+                  duration:
+                    type: integer
+                  intensity:
+                    type: string
+                  description:
+                    type: string
+                  tssEstimate:
+                    type: number
+                  zoneDistribution:
+                    type: object
+                  intervals:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        duration:
+                          type: integer
+                        power:
+                          type: object
+                          properties:
+                            min:
+                              type: number
+                            max:
+                              type: number
+                            target:
+                              type: number
+                            zone:
+                              type: integer
+                        cadence:
+                          type: object
+                          properties:
+                            min:
+                              type: integer
+                            max:
+                              type: integer
+                            target:
+                              type: integer
+                        repetitions:
+                          type: integer
+                        recoveryDuration:
+                          type: integer
+                        description:
+                          type: string
+                  downloadUrl:
+                    type: string
+                    format: uri
+                  visualizationData:
+                    type: object
+        '404':
+          $ref: 'swagger-core.yaml#/components/responses/NotFound'
+
+  /training/analytics/tss:
+    post:
+      summary: Calculer le TSS
+      description: |
+        Calcule le Training Stress Score (TSS) pour une activité.
+        Peut utiliser différentes méthodes de calcul selon les données disponibles.
+      tags:
+        - Entraînement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                activityData:
+                  type: object
+                  description: Données de l'activité
+                method:
+                  type: string
+                  enum: [power, hr, pace, perceived]
+                  default: power
+                duration:
+                  type: integer
+                  description: Durée en secondes
+                normalizedPower:
+                  type: number
+                averagePower:
+                  type: number
+                ftp:
+                  type: number
+                hrif:
+                  type: number
+                  description: Facteur d'intensité cardiaque
+                rpe:
+                  type: number
+                  description: Perception de l'effort (1-10)
+      responses:
+        '200':
+          description: TSS calculé
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tss:
+                    type: number
+                  if:
+                    type: number
+                    description: Facteur d'intensité
+                  method:
+                    type: string
+                  details:
+                    type: object
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'
+
+  /training/analytics/progression:
+    get:
+      summary: Progression d'entraînement
+      description: |
+        Analyse la progression d'entraînement sur une période donnée.
+        Nécessite une authentification.
+      tags:
+        - Entraînement
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: startDate
+          in: query
+          description: Date de début (YYYY-MM-DD)
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          description: Date de fin (YYYY-MM-DD)
+          required: true
+          schema:
+            type: string
+            format: date
+        - name: metrics
+          in: query
+          description: Métriques à analyser
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: [tss, ctl, atl, tsb, if, np, vo2max]
+            default: ["tss", "ctl", "atl", "tsb"]
+      responses:
+        '200':
+          description: Données de progression
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  period:
+                    type: object
+                    properties:
+                      start:
+                        type: string
+                        format: date
+                      end:
+                        type: string
+                        format: date
+                  dailyData:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          format: date
+                        metrics:
+                          type: object
+                          additionalProperties:
+                            type: number
+                  weeklyData:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        weekStart:
+                          type: string
+                          format: date
+                        metrics:
+                          type: object
+                          additionalProperties:
+                            type: number
+                  summary:
+                    type: object
+                    properties:
+                      totalTSS:
+                        type: number
+                      avgWeeklyTSS:
+                        type: number
+                      ctlChange:
+                        type: number
+                      peakCTL:
+                        type: number
+                      lowestTSB:
+                        type: number
+                  recommendations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                        message:
+                          type: string
+                        priority:
+                          type: string
+        '401':
+          $ref: 'swagger-core.yaml#/components/responses/Unauthorized'
+        '400':
+          $ref: 'swagger-core.yaml#/components/responses/BadRequest'

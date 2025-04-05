@@ -1,0 +1,162 @@
+[
+  {
+    "id": "transalpina",
+    "name": {
+      "fr": "Transalpina",
+      "en": "Transalpina",
+      "de": "Transalpina",
+      "it": "Transalpina",
+      "es": "Transalpina"
+    },
+    "altitude": 2145,
+    "location": {
+      "latitude": 45.3481,
+      "longitude": 23.6774,
+      "region": "Carpates méridionales",
+      "country": "Roumanie",
+      "nearbyTowns": ["Novaci", "Sebeș", "Rânca"]
+    },
+    "climbData": {
+      "novaciSide": {
+        "startLocation": "Novaci",
+        "length": 33.5,
+        "elevation": 1785,
+        "averageGradient": 5.3,
+        "maxGradient": 11.8,
+        "difficulty": 8
+      },
+      "sebesSide": {
+        "startLocation": "Sebeș",
+        "length": 41.2,
+        "elevation": 1643,
+        "averageGradient": 4.0,
+        "maxGradient": 10.5,
+        "difficulty": 7
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 2011,
+      "giroAppearances": 0,
+      "tourDeFranceAppearances": 0,
+      "tourOfRomaniaAppearances": 5,
+      "famousStories": [
+        "La Transalpina (DN67C) est la route la plus haute de Roumanie, dépassant même la Transfăgărășan en altitude.",
+        "Aussi connue sous le nom de 'Route du Roi' (Drumul Regelui), elle a été inaugurée par le roi Carol II en 1938, bien que son histoire remonte à l'Empire romain.",
+        "Pendant la Seconde Guerre mondiale, elle a été utilisée par les troupes allemandes comme voie stratégique, puis a été partiellement oubliée pendant l'ère communiste.",
+        "Elle a été entièrement asphaltée en 2009, devenant ainsi accessible aux cyclistes modernes."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Serghei Țvetcov",
+          "time": "1:43:22",
+          "year": 2022,
+          "side": "novaciSide"
+        },
+        "modern": {
+          "holder": "Serghei Țvetcov",
+          "time": "1:43:22",
+          "year": 2022,
+          "side": "novaciSide"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Pasul Urdele",
+        "description": "Point culminant à 2145m, le plus haut passage routier de Roumanie.",
+        "coordinates": [45.3481, 23.6774],
+        "type": "landmark"
+      },
+      {
+        "name": "Station Rânca",
+        "description": "Station de montagne située à mi-parcours du côté de Novaci, offrant hébergement et restauration.",
+        "coordinates": [45.3323, 23.6502],
+        "type": "accommodation"
+      },
+      {
+        "name": "Lac Oașa",
+        "description": "Lac de barrage situé sur le versant nord, paysage spectaculaire.",
+        "coordinates": [45.4604, 23.6042],
+        "type": "nature"
+      },
+      {
+        "name": "Obârșia Lotrului",
+        "description": "Carrefour historique où les routes Transalpina et DN7A se croisent, avec quelques services.",
+        "coordinates": [45.4157, 23.6322],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mi-juin à fin septembre",
+      "roadCondition": "Bonne, entièrement asphaltée depuis 2009",
+      "trafficLevel": "Modéré, plus élevé les weekends d'été",
+      "winterClosure": "Fermé d'octobre à mai/juin",
+      "facilities": ["Restaurant à Rânca", "Hébergement à Rânca et Obârșia Lotrului", "Quelques points de vue aménagés"],
+      "parkingAvailable": true,
+      "waterPoints": ["Rânca", "Obârșia Lotrului", "Quelques sources naturelles"]
+    },
+    "images": {
+      "main": "/images/cols/transalpina/main.jpg",
+      "gallery": [
+        "/images/cols/transalpina/urdele-pass.jpg",
+        "/images/cols/transalpina/ranca-view.jpg",
+        "/images/cols/transalpina/oasa-lake.jpg",
+        "/images/cols/transalpina/novaci-side.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "La montée depuis Novaci est plus raide et plus courte, meilleur choix pour une journée.",
+      "Depuis Sebeș, c'est une longue ascension plus progressive, idéale pour le développement de l'endurance.",
+      "Les sections exposées peuvent être très venteuses, entraînez-vous à gérer votre vélo par vent latéral."
+    ],
+    "recommendedBikeTypes": ["Vélo de route", "Gravel"],
+    "weatherInfo": {
+      "bestSeason": "Juillet à août",
+      "closedPeriod": "Octobre à mai (neige)",
+      "windExposure": "Très élevée sur les crêtes et le sommet",
+      "temperatureDelta": "Différence de 12-18°C entre la base et le sommet",
+      "thunderstormRisk": "Élevé en après-midi d'été"
+    },
+    "services": {
+      "water": [
+        {"km": 12, "description": "Fontaine à l'entrée de Rânca"},
+        {"km": 24, "description": "Source naturelle balisée"},
+        {"km": 33, "description": "Restaurant au sommet (saisonnier)"}
+      ],
+      "food": [
+        {"name": "Restaurant Rânca", "km": 12, "type": "restaurant", "openingHours": "9h-21h"},
+        {"name": "Cabane Pasul Urdele", "km": 33, "type": "refuge", "openingHours": "10h-18h (juin-septembre)"}
+      ],
+      "shelter": [
+        {"name": "Hôtel Rânca", "km": 12, "type": "hotel"},
+        {"name": "Refuge Obârșia Lotrului", "km": 23, "type": "refuge"}
+      ],
+      "mechanics": [
+        {"name": "Service Auto Novaci", "location": "Novaci", "distance": 0, "notes": "Réparations basiques uniquement"}
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Cristian Munteanu",
+        "date": "2024-08-05",
+        "rating": 5,
+        "text": "Une ascension épique et moins connue que la Transfăgărășan. J'ai grimpé les deux versants sur deux jours. Le côté Novaci est plus spectaculaire avec des vues incroyables sur les montagnes du Parâng."
+      },
+      {
+        "author": "Léa Bernard",
+        "date": "2023-07-12",
+        "rating": 4.5,
+        "text": "Route magnifique mais attention aux conditions météo qui changent très vite. J'ai commencé sous le soleil et terminé sous un orage. Heureusement, il y a un petit refuge au sommet."
+      },
+      {
+        "author": "Michael Wagner",
+        "date": "2024-06-30",
+        "rating": 5,
+        "text": "C'est l'un des secrets les mieux gardés des Carpates. Moins fréquentée que la Transfăgărășan, la route est en excellent état et les paysages sont stupéfiants. La montée depuis Novaci est longue mais régulière, parfaite pour trouver son rythme."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:30:00Z"
+  }
+]

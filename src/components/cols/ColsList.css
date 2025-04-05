@@ -1,0 +1,61 @@
+.col-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.col-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.col-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.altitude-chip {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.difficulty-box {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.weather-summary {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.weather-box {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.route-box {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 3px solid #2196f3;
+}
+
+@media (max-width: 768px) {
+  .col-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .altitude-chip {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}

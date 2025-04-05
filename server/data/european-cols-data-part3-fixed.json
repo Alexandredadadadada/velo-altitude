@@ -1,0 +1,497 @@
+[
+  {
+    "id": "passo-pordoi",
+    "name": "Passo Pordoi",
+    "altitude": 2239,
+    "location": {
+      "latitude": 46.4883,
+      "longitude": 11.8133,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Arabba", "Canazei", "Selva di Val Gardena"]
+    },
+    "climbData": {
+      "arabbaSide": {
+        "startLocation": "Arabba",
+        "length": 9.2,
+        "elevation": 637,
+        "averageGradient": 6.9,
+        "maxGradient": 9.0,
+        "difficulty": 7
+      },
+      "canazeiSide": {
+        "startLocation": "Canazei",
+        "length": 11.8,
+        "elevation": 642,
+        "averageGradient": 5.4,
+        "maxGradient": 9.0,
+        "difficulty": 6
+      }
+    },
+    "history": {
+      "firstGiroYear": 1940,
+      "giroAppearances": 40,
+      "famousStories": [
+        "Le Passo Pordoi est le col le plus fréquemment franchi dans l'histoire du Giro d'Italia.",
+        "Au sommet se trouve le monument dédié à Fausto Coppi, légende du cyclisme italien.",
+        "Fait partie du célèbre circuit Sella Ronda, itinéraire touristique traversant quatre cols des Dolomites."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Gilberto Simoni",
+          "time": "24:37",
+          "year": 2003,
+          "side": "Arabba"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Monument Fausto Coppi",
+        "description": "Statue en bronze dédiée au 'Campionissimo' Fausto Coppi, située au sommet du col.",
+        "coordinates": [46.4883, 11.8133],
+        "type": "monument"
+      },
+      {
+        "name": "Vue sur le Gruppo Sella",
+        "description": "Panorama spectaculaire sur le massif du Sella et ses formations rocheuses caractéristiques.",
+        "coordinates": [46.4883, 11.8133],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Rifugio Pordoi",
+        "description": "Refuge de montagne offrant restauration et hébergement, point de départ pour randonnées.",
+        "coordinates": [46.4883, 11.8133],
+        "type": "facility"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Excellente, bien entretenue",
+      "trafficLevel": "Élevé en été, modéré hors saison",
+      "winterClosure": "Généralement fermé de novembre à mai",
+      "facilities": ["Restaurants", "Hôtels", "Boutiques souvenirs", "Téléphérique"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/pordoi/main.jpg",
+      "gallery": [
+        "/images/cols/pordoi/arabba-side.jpg",
+        "/images/cols/pordoi/canazei-side.jpg",
+        "/images/cols/pordoi/coppi-monument.jpg",
+        "/images/cols/pordoi/sella-view.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "arabbaSide": "/data/elevation/pordoi-arabba.json",
+      "canazeiSide": "/data/elevation/pordoi-canazei.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 14,
+        "winter": -8
+      },
+      "windExposure": "Modérée",
+      "precipitationRisk": "Modérée"
+    },
+    "relatedCols": ["passo-sella", "passo-gardena", "passo-campolongo", "passo-fedaia"],
+    "difficulty": 7,
+    "popularity": 9,
+    "coordinates3D": [
+      [11.8133, 46.4883, 2239]
+    ]
+  },
+  {
+    "id": "col-croix-de-fer",
+    "name": "Col de la Croix de Fer",
+    "altitude": 2067,
+    "location": {
+      "latitude": 45.2275,
+      "longitude": 6.1775,
+      "region": "Alpes du Nord",
+      "country": "France",
+      "nearbyTowns": ["Saint-Jean-de-Maurienne", "Le Bourg-d'Oisans", "Saint-Sorlin-d'Arves"]
+    },
+    "climbData": {
+      "eastSide": {
+        "startLocation": "Saint-Jean-de-Maurienne",
+        "length": 29.0,
+        "elevation": 1522,
+        "averageGradient": 5.2,
+        "maxGradient": 11.0,
+        "difficulty": 8
+      },
+      "westSide": {
+        "startLocation": "Le Bourg-d'Oisans",
+        "length": 27.0,
+        "elevation": 1550,
+        "averageGradient": 5.7,
+        "maxGradient": 11.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1947,
+      "tourDeFranceAppearances": 20,
+      "famousStories": [
+        "Nommé d'après la croix en fer forgé érigée au sommet.",
+        "En 1986, Bernard Hinault et Greg LeMond ont franchi le col ensemble, symbolisant leur rivalité et leur respect mutuel.",
+        "Souvent combiné avec le Col du Glandon, dont le sommet n'est qu'à 2,5 km."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Pierre Latour",
+          "time": "1:06:00",
+          "year": 2018,
+          "side": "est"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Croix en fer forgé",
+        "description": "Croix emblématique qui a donné son nom au col, située au sommet.",
+        "coordinates": [45.2275, 6.1775],
+        "type": "monument"
+      },
+      {
+        "name": "Lac de Grand Maison",
+        "description": "Grand lac artificiel visible depuis la route du col, côté est.",
+        "coordinates": [45.2200, 6.1700],
+        "type": "natural_feature"
+      },
+      {
+        "name": "Vue sur les Aiguilles d'Arves",
+        "description": "Panorama sur les trois pics caractéristiques des Aiguilles d'Arves.",
+        "coordinates": [45.2275, 6.1775],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Bonne, quelques sections étroites",
+      "trafficLevel": "Modéré, plus élevé en été",
+      "winterClosure": "Fermé de novembre à mai",
+      "facilities": ["Restaurant", "Boutique souvenirs", "Toilettes"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/croix-de-fer/main.jpg",
+      "gallery": [
+        "/images/cols/croix-de-fer/east-approach.jpg",
+        "/images/cols/croix-de-fer/west-approach.jpg",
+        "/images/cols/croix-de-fer/iron-cross.jpg",
+        "/images/cols/croix-de-fer/lake-view.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "eastSide": "/data/elevation/croix-de-fer-east.json",
+      "westSide": "/data/elevation/croix-de-fer-west.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 13,
+        "winter": -7
+      },
+      "windExposure": "Élevée",
+      "precipitationRisk": "Modérée à élevée"
+    },
+    "relatedCols": ["col-glandon", "col-madeleine", "alpe-dhuez", "col-mollard"],
+    "difficulty": 8,
+    "popularity": 8,
+    "coordinates3D": [
+      [6.1775, 45.2275, 2067]
+    ]
+  },
+  {
+    "id": "col-vars",
+    "name": "Col de Vars",
+    "altitude": 2109,
+    "location": {
+      "latitude": 44.5392,
+      "longitude": 6.7025,
+      "region": "Alpes du Sud",
+      "country": "France",
+      "nearbyTowns": ["Guillestre", "Saint-Paul-sur-Ubaye", "Barcelonnette"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Guillestre",
+        "length": 19.0,
+        "elevation": 1099,
+        "averageGradient": 5.8,
+        "maxGradient": 9.0,
+        "difficulty": 7
+      },
+      "southSide": {
+        "startLocation": "Saint-Paul-sur-Ubaye",
+        "length": 15.0,
+        "elevation": 765,
+        "averageGradient": 5.1,
+        "maxGradient": 8.0,
+        "difficulty": 6
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1922,
+      "tourDeFranceAppearances": 34,
+      "famousStories": [
+        "Souvent franchi lors du Tour de France, généralement en combinaison avec le Col d'Izoard ou le Col de la Bonette.",
+        "En 1948, Gino Bartali franchit le col en tête lors de sa victoire au Tour de France.",
+        "En 2017, Warren Barguil passe en tête au sommet avant de remporter l'étape à l'Izoard."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Warren Barguil",
+          "time": "46:30",
+          "year": 2017,
+          "side": "nord"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Chapelle Sainte-Marie-Madeleine",
+        "description": "Petite chapelle historique située près du sommet.",
+        "coordinates": [44.5392, 6.7025],
+        "type": "landmark"
+      },
+      {
+        "name": "Vue sur le Massif des Écrins",
+        "description": "Panorama exceptionnel sur le Massif des Écrins et ses sommets enneigés.",
+        "coordinates": [44.5392, 6.7025],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Forêt de mélèzes",
+        "description": "Magnifique forêt de mélèzes sur le versant nord, particulièrement belle en automne.",
+        "coordinates": [44.5500, 6.7100],
+        "type": "natural_feature"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Bonne, bien entretenue",
+      "trafficLevel": "Modéré, plus élevé en été",
+      "winterClosure": "Fermé de novembre à mai",
+      "facilities": ["Restaurant saisonnier", "Toilettes"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/vars/main.jpg",
+      "gallery": [
+        "/images/cols/vars/north-approach.jpg",
+        "/images/cols/vars/south-approach.jpg",
+        "/images/cols/vars/summit.jpg",
+        "/images/cols/vars/ecrins-view.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "northSide": "/data/elevation/vars-north.json",
+      "southSide": "/data/elevation/vars-south.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 15,
+        "winter": -6
+      },
+      "windExposure": "Modérée à élevée",
+      "precipitationRisk": "Modérée"
+    },
+    "relatedCols": ["col-izoard", "col-agnel", "col-bonette", "col-cayolle"],
+    "difficulty": 7,
+    "popularity": 7,
+    "coordinates3D": [
+      [6.7025, 44.5392, 2109]
+    ]
+  },
+  {
+    "id": "col-bonette",
+    "name": "Col de la Bonette",
+    "altitude": 2715,
+    "location": {
+      "latitude": 44.3217,
+      "longitude": 6.8064,
+      "region": "Alpes du Sud",
+      "country": "France",
+      "nearbyTowns": ["Jausiers", "Saint-Étienne-de-Tinée", "Barcelonnette"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Jausiers",
+        "length": 24.0,
+        "elevation": 1589,
+        "averageGradient": 6.6,
+        "maxGradient": 10.0,
+        "difficulty": 9
+      },
+      "southSide": {
+        "startLocation": "Saint-Étienne-de-Tinée",
+        "length": 26.0,
+        "elevation": 1652,
+        "averageGradient": 6.4,
+        "maxGradient": 10.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1962,
+      "tourDeFranceAppearances": 4,
+      "famousStories": [
+        "Souvent présenté comme la plus haute route asphaltée d'Europe, bien que ce soit techniquement la Cime de la Bonette (2802m) qui détient ce record, avec sa boucle autour du sommet.",
+        "La route a été construite pour des raisons militaires entre 1960 et 1961.",
+        "En 2008, John-Lee Augustyn est passé en tête au sommet avant de chuter dans la descente lors du Tour de France."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Simon Yates",
+          "time": "1:23:00",
+          "year": 2018,
+          "side": "nord"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Cime de la Bonette",
+        "description": "Boucle routière autour du sommet culminant à 2802m, offrant une vue à 360°.",
+        "coordinates": [44.3217, 6.8064],
+        "type": "road_feature"
+      },
+      {
+        "name": "Vestiges militaires",
+        "description": "Anciennes fortifications et casernes militaires témoignant de l'histoire stratégique de la région.",
+        "coordinates": [44.3200, 6.8050],
+        "type": "landmark"
+      },
+      {
+        "name": "Parc national du Mercantour",
+        "description": "Le col se trouve à la limite du Parc national du Mercantour, riche en faune et flore alpines.",
+        "coordinates": [44.3217, 6.8064],
+        "type": "natural_feature"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juillet à Septembre",
+      "roadCondition": "Bonne, quelques sections exposées",
+      "trafficLevel": "Modéré, plus élevé en été",
+      "winterClosure": "Fermé d'octobre à juin",
+      "facilities": ["Parking", "Tables de pique-nique"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/bonette/main.jpg",
+      "gallery": [
+        "/images/cols/bonette/north-approach.jpg",
+        "/images/cols/bonette/south-approach.jpg",
+        "/images/cols/bonette/cime-loop.jpg",
+        "/images/cols/bonette/panorama.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "northSide": "/data/elevation/bonette-north.json",
+      "southSide": "/data/elevation/bonette-south.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 10,
+        "winter": -12
+      },
+      "windExposure": "Très élevée",
+      "precipitationRisk": "Élevée, risque de neige même en été"
+    },
+    "relatedCols": ["col-vars", "col-cayolle", "col-allos", "col-restefond"],
+    "difficulty": 9,
+    "popularity": 8,
+    "coordinates3D": [
+      [6.8064, 44.3217, 2715]
+    ]
+  },
+  {
+    "id": "grossglockner",
+    "name": "Grossglockner Hochalpenstrasse",
+    "altitude": 2504,
+    "location": {
+      "latitude": 47.0742,
+      "longitude": 12.8306,
+      "region": "Alpes autrichiennes",
+      "country": "Autriche",
+      "nearbyTowns": ["Heiligenblut", "Bruck", "Fusch an der Großglocknerstraße"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Fusch",
+        "length": 25.3,
+        "elevation": 1738,
+        "averageGradient": 6.9,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      },
+      "southSide": {
+        "startLocation": "Heiligenblut",
+        "length": 14.5,
+        "elevation": 1234,
+        "averageGradient": 8.5,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourOfAustriaYear": 1950,
+      "tourOfAustriaAppearances": 25,
+      "famousStories": [
+        "Construite entre 1930 et 1935, cette route panoramique est l'une des plus célèbres des Alpes.",
+        "Nommée d'après le Grossglockner, plus haut sommet d'Autriche (3798m).",
+        "Le point culminant de la route est le col d'Hochtor à 2504m, mais la route monte jusqu'à l'observatoire de Franz-Josefs-Höhe (2369m) offrant une vue sur le glacier Pasterze."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Riccardo Zoidl",
+          "time": "1:07:30",
+          "year": 2019,
+          "side": "nord"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Franz-Josefs-Höhe",
+        "description": "Plateforme d'observation offrant une vue spectaculaire sur le glacier Pasterze et le Grossglockner.",
+        "coordinates": [47.0742, 12.8306],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Musée Alpin",
+        "description": "Musée présentant l'histoire de la construction de la route et de la région.",
+        "coordinates": [47.0800, 12.8400],
+        "type": "facility"
+      },
+      {
+        "name": "Edelweissspitze",
+        "description": "Point culminant accessible en voiture à 2571m, offrant une vue panoramique à 360°.",
+        "coordinates": [47.1200, 12.8300],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à Octobre",
+      "roadCondition": "Excellente, bien entretenue",
+      "trafficLevel": "Élevé en été",
+      "winterClosure": "Fermé de novembre à avril/mai",
+      "facilities": ["Restaurants", "Musées", "Boutiques souvenirs", "Toilettes"],
+      "parkingAvailable": true,
+      "tollRoad": true,
+      "tollFee": "€37.50 par voiture (2023)"
+    },
+    "images": {
+      "main": "/images/cols/grossglockner/main.jpg",
+      "gallery": [
+        "/images/cols/grossglockner/north-approach.jpg",
+        "/images/cols/grossglockner/south-approach.jpg",
+        "/images/cols/grossglockner/glacier-view.jpg",
+        "/images/cols/grossglockner/hairpins.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "northSide": "/data/elevation/grossglockner-north.json",
+(Content truncated due to size limit. Use line ranges to read in chunks)

@@ -1,0 +1,605 @@
+{
+  "cols": [
+    {
+      "id": "col-du-donon",
+      "name": "Col du Donon",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Bas-Rhin",
+        "coordinates": {
+          "lat": 48.5119,
+          "lng": 7.1536
+        }
+      },
+      "statistics": {
+        "length": 9.5,
+        "elevation_gain": 649,
+        "avg_gradient": 6.8,
+        "max_gradient": 13.0,
+        "start_elevation": 300,
+        "summit_elevation": 949
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 300, "gradient": 0},
+        {"distance": 2, "elevation": 420, "gradient": 6.0},
+        {"distance": 4, "elevation": 560, "gradient": 7.0},
+        {"distance": 6, "elevation": 710, "gradient": 7.5},
+        {"distance": 8, "elevation": 860, "gradient": 7.5},
+        {"distance": 9.5, "elevation": 949, "gradient": 5.9}
+      ],
+      "segments": [
+        {"name": "Départ - Forêt", "length": 2.5, "gradient": 5.8, "difficulty": "Modéré"},
+        {"name": "Section forestière", "length": 4.5, "gradient": 7.3, "difficulty": "Difficile"},
+        {"name": "Dernière rampe", "length": 2.5, "gradient": 6.8, "difficulty": "Modéré"}
+      ],
+      "difficulty": "2",
+      "history": {
+        "tour_appearances": 3,
+        "first_appearance": 1967,
+        "notable_events": [
+          "Passage du Tour de France en 1967",
+          "Course des Trois Ballons en 2018",
+          "Championnat du Grand Est 2021"
+        ],
+        "records": {
+          "official": "23:42 par Thibaut Pinot en 2019",
+          "strava": "24:58 par Julian Alaphilippe en 2022"
+        }
+      },
+      "recommended_season": ["avril", "mai", "juin", "juillet", "août", "septembre", "octobre"],
+      "images": [
+        "https://example.com/images/cols/donon1.jpg",
+        "https://example.com/images/cols/donon2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au village de Schirmeck ou au pied du col",
+        "water_points": ["Fontaine à mi-parcours", "Restaurant au sommet (en saison)"],
+        "hazards": ["Route étroite par endroits", "Circulation touristique en été"]
+      },
+      "description": "Le Col du Donon est situé dans le massif des Vosges. Son ascension offre de superbes panoramas sur les vallées vosgiennes. Le col donne accès au sommet du Donon, montagne emblématique et lieu chargé d'histoire avec ses vestiges gallo-romains. L'ascension est régulière avec quelques passages plus raides dans sa partie médiane.",
+      "tags": ["vosges", "grand-est", "montagne", "forêt"]
+    },
+    {
+      "id": "ballon-dalsace",
+      "name": "Ballon d'Alsace",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Vosges",
+        "coordinates": {
+          "lat": 47.8217,
+          "lng": 6.8561
+        }
+      },
+      "statistics": {
+        "length": 11.7,
+        "elevation_gain": 792,
+        "avg_gradient": 6.8,
+        "max_gradient": 9.5,
+        "start_elevation": 399,
+        "summit_elevation": 1191
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 399, "gradient": 0},
+        {"distance": 2, "elevation": 530, "gradient": 6.5},
+        {"distance": 4, "elevation": 670, "gradient": 7.0},
+        {"distance": 6, "elevation": 810, "gradient": 7.0},
+        {"distance": 8, "elevation": 950, "gradient": 7.0},
+        {"distance": 10, "elevation": 1090, "gradient": 7.0},
+        {"distance": 11.7, "elevation": 1191, "gradient": 5.9}
+      ],
+      "segments": [
+        {"name": "Sewen - Virage en épingle", "length": 4.0, "gradient": 6.5, "difficulty": "Modéré"},
+        {"name": "Section centrale", "length": 5.0, "gradient": 7.0, "difficulty": "Difficile"},
+        {"name": "Derniers kilomètres", "length": 2.7, "gradient": 6.5, "difficulty": "Modéré"}
+      ],
+      "difficulty": "2",
+      "history": {
+        "tour_appearances": 22,
+        "first_appearance": 1905,
+        "notable_events": [
+          "Premier col franchi par le Tour de France en 1905",
+          "Passage du Tour de France en 2019",
+          "Étape de la Semaine Cycliste Internationale"
+        ],
+        "records": {
+          "official": "27:10 par Richard Virenque en 1997",
+          "strava": "29:45 par Thibaut Pinot en 2020"
+        }
+      },
+      "recommended_season": ["mai", "juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/images/cols/ballon-alsace1.jpg",
+        "https://example.com/images/cols/ballon-alsace2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au sommet et à Sewen",
+        "water_points": ["Fontaine à Sewen", "Auberge à mi-parcours", "Restaurant au sommet"],
+        "hazards": ["Tunnel sur certains itinéraires", "Brouillard fréquent au sommet"]
+      },
+      "description": "Le Ballon d'Alsace est un col mythique, premier col de montagne franchi par le Tour de France en 1905. Il offre une ascension régulière avec des pentes constantes et bien réparties. Le sommet offre un panorama exceptionnel sur les Vosges, l'Alsace, et par temps clair, sur les Alpes suisses.",
+      "tags": ["vosges", "grand-est", "historique", "tour-de-france"]
+    },
+    {
+      "id": "col-de-la-schlucht",
+      "name": "Col de la Schlucht",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Haut-Rhin",
+        "coordinates": {
+          "lat": 48.0536,
+          "lng": 7.0011
+        }
+      },
+      "statistics": {
+        "length": 9.3,
+        "elevation_gain": 631,
+        "avg_gradient": 6.8,
+        "max_gradient": 10.2,
+        "start_elevation": 642,
+        "summit_elevation": 1139
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 642, "gradient": 0},
+        {"distance": 2, "elevation": 770, "gradient": 6.4},
+        {"distance": 4, "elevation": 880, "gradient": 5.5},
+        {"distance": 6, "elevation": 980, "gradient": 5.0},
+        {"distance": 8, "elevation": 1080, "gradient": 5.0},
+        {"distance": 9.3, "elevation": 1139, "gradient": 4.5}
+      ],
+      "segments": [
+        {"name": "Munster - Bois de Stosswihr", "length": 3.0, "gradient": 6.0, "difficulty": "Modéré"},
+        {"name": "Zone forestière", "length": 3.5, "gradient": 7.5, "difficulty": "Difficile"},
+        {"name": "Route des Crêtes", "length": 2.8, "gradient": 5.0, "difficulty": "Modéré"}
+      ],
+      "difficulty": "2",
+      "history": {
+        "tour_appearances": 11,
+        "first_appearance": 1931,
+        "notable_events": [
+          "Passage régulier du Tour de France",
+          "Classique des Trois Ballons",
+          "Route touristique historique entre l'Alsace et les Vosges"
+        ],
+        "records": {
+          "official": "24:12 par Laurent Jalabert en 1995",
+          "strava": "25:05 par Romain Bardet en 2018"
+        }
+      },
+      "recommended_season": ["mai", "juin", "juillet", "août", "septembre", "octobre"],
+      "images": [
+        "https://example.com/images/cols/schlucht1.jpg",
+        "https://example.com/images/cols/schlucht2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Vaste parking au sommet et aires à Munster",
+        "water_points": ["Hôtel-restaurant au sommet", "Plusieurs sources en chemin"],
+        "hazards": ["Forte affluence touristique en été", "Risque de neige tardive au printemps"]
+      },
+      "description": "Le Col de la Schlucht relie la vallée de Munster à celle de Gérardmer. C'est l'un des principaux cols des Vosges et un passage historique entre l'Alsace et la Lorraine. L'ascension depuis Munster offre de beaux panoramas sur la vallée et les sommets environnants. Le col est également un point de départ idéal pour de nombreuses randonnées sur la Route des Crêtes.",
+      "tags": ["vosges", "grand-est", "route-des-cretes", "frontière-historique"]
+    },
+    {
+      "id": "col-du-firstplan",
+      "name": "Col du Firstplan",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Haut-Rhin",
+        "coordinates": {
+          "lat": 48.1371,
+          "lng": 7.1456
+        }
+      },
+      "statistics": {
+        "length": 7.4,
+        "elevation_gain": 574,
+        "avg_gradient": 7.8,
+        "max_gradient": 13.0,
+        "start_elevation": 452,
+        "summit_elevation": 1026
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 452, "gradient": 0},
+        {"distance": 1.5, "elevation": 580, "gradient": 8.5},
+        {"distance": 3, "elevation": 720, "gradient": 9.3},
+        {"distance": 4.5, "elevation": 850, "gradient": 8.7},
+        {"distance": 6, "elevation": 950, "gradient": 6.7},
+        {"distance": 7.4, "elevation": 1026, "gradient": 5.4}
+      ],
+      "segments": [
+        {"name": "Départ - Domaine Viticole", "length": 2.0, "gradient": 8.0, "difficulty": "Difficile"},
+        {"name": "Section centrale", "length": 3.0, "gradient": 9.0, "difficulty": "Très difficile"},
+        {"name": "Partie finale", "length": 2.4, "gradient": 6.0, "difficulty": "Modéré"}
+      ],
+      "difficulty": "3",
+      "history": {
+        "tour_appearances": 0,
+        "first_appearance": null,
+        "notable_events": [
+          "Tour d'Alsace 2018",
+          "Cyclosportive des Trois Ballons",
+          "Championnats d'Alsace 2016"
+        ],
+        "records": {
+          "official": "22:18 par Julien Bernard en 2018",
+          "strava": "23:42 par local KOM"
+        }
+      },
+      "recommended_season": ["avril", "mai", "juin", "juillet", "août", "septembre", "octobre"],
+      "images": [
+        "https://example.com/images/cols/firstplan1.jpg",
+        "https://example.com/images/cols/firstplan2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Stationnement limité au sommet, parkings à Turckheim",
+        "water_points": ["Auberge des Trois Epis à mi-parcours"],
+        "hazards": ["Passages très raides", "Virages en épingle"]
+      },
+      "description": "Le Col du Firstplan est une ascension exigeante des Vosges alsaciennes. Partant de Turckheim, cette montée traverse d'abord le vignoble alsacien avant de s'enfoncer dans la forêt vosgienne avec des passages raides. Son profil irrégulier en fait un défi technique pour les cyclistes. Le sommet offre une vue exceptionnelle sur la plaine d'Alsace et, par temps clair, jusqu'à la Forêt-Noire.",
+      "tags": ["vosges", "grand-est", "vignoble", "technique"]
+    },
+    {
+      "id": "col-du-bonhomme",
+      "name": "Col du Bonhomme",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Haut-Rhin",
+        "coordinates": {
+          "lat": 48.1795,
+          "lng": 7.0964
+        }
+      },
+      "statistics": {
+        "length": 7.6,
+        "elevation_gain": 458,
+        "avg_gradient": 6.0,
+        "max_gradient": 8.5,
+        "start_elevation": 471,
+        "summit_elevation": 929
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 471, "gradient": 0},
+        {"distance": 1.5, "elevation": 560, "gradient": 5.9},
+        {"distance": 3, "elevation": 650, "gradient": 6.0},
+        {"distance": 4.5, "elevation": 745, "gradient": 6.3},
+        {"distance": 6, "elevation": 835, "gradient": 6.0},
+        {"distance": 7.6, "elevation": 929, "gradient": 5.9}
+      ],
+      "segments": [
+        {"name": "Fréland - Virage des chasseurs", "length": 2.5, "gradient": 5.8, "difficulty": "Modéré"},
+        {"name": "Tronçon central", "length": 3.0, "gradient": 6.3, "difficulty": "Modéré"},
+        {"name": "Section finale", "length": 2.1, "gradient": 5.9, "difficulty": "Modéré"}
+      ],
+      "difficulty": "2",
+      "history": {
+        "tour_appearances": 4,
+        "first_appearance": 1957,
+        "notable_events": [
+          "Passage du Tour de France en 1957, 1969, 1992 et 2009",
+          "Route historique entre l'Alsace et la Lorraine",
+          "Chemin des contrebandiers du XVIIIe siècle"
+        ],
+        "records": {
+          "official": "18:46 par Thomas Voeckler en 2009",
+          "strava": "19:32 par Guillaume Martin en 2021"
+        }
+      },
+      "recommended_season": ["avril", "mai", "juin", "juillet", "août", "septembre", "octobre"],
+      "images": [
+        "https://example.com/images/cols/bonhomme1.jpg",
+        "https://example.com/images/cols/bonhomme2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au village du Bonhomme et à Lapoutroie",
+        "water_points": ["Fontaine au village du Bonhomme", "Commerces à Lapoutroie"],
+        "hazards": ["Circulation modérée (RD 415)"]
+      },
+      "description": "Le Col du Bonhomme relie les vallées de Kaysersberg et de Saint-Dié. C'est un passage historique entre l'Alsace et la Lorraine, longtemps emprunté par les marchands et les contrebandiers. L'ascension depuis Fréland est régulière et agréable, à travers les paysages bucoliques des Vosges moyennes. Le col est moins fréquenté que ses voisins, ce qui en fait une alternative plaisante pour les cyclistes cherchant plus de tranquillité.",
+      "tags": ["vosges", "grand-est", "historique", "tranquille"]
+    },
+    {
+      "id": "col-du-grand-ballon",
+      "name": "Col du Grand Ballon",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Haut-Rhin",
+        "coordinates": {
+          "lat": 47.9003,
+          "lng": 7.0845
+        }
+      },
+      "statistics": {
+        "length": 13.6,
+        "elevation_gain": 1116,
+        "avg_gradient": 8.2,
+        "max_gradient": 13.0,
+        "start_elevation": 350,
+        "summit_elevation": 1424
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 350, "gradient": 0},
+        {"distance": 2, "elevation": 510, "gradient": 8.0},
+        {"distance": 4, "elevation": 670, "gradient": 8.0},
+        {"distance": 6, "elevation": 830, "gradient": 8.0},
+        {"distance": 8, "elevation": 1000, "gradient": 8.5},
+        {"distance": 10, "elevation": 1170, "gradient": 8.5},
+        {"distance": 12, "elevation": 1330, "gradient": 8.0},
+        {"distance": 13.6, "elevation": 1424, "gradient": 7.5}
+      ],
+      "segments": [
+        {"name": "Willer-sur-Thur - Goldbach", "length": 4.0, "gradient": 7.8, "difficulty": "Difficile"},
+        {"name": "Goldbach - Refuge", "length": 5.0, "gradient": 8.3, "difficulty": "Très difficile"},
+        {"name": "Section finale", "length": 4.6, "gradient": 8.0, "difficulty": "Difficile"}
+      ],
+      "difficulty": "HC",
+      "history": {
+        "tour_appearances": 13,
+        "first_appearance": 1969,
+        "notable_events": [
+          "Passages mémorables du Tour de France",
+          "Étape reine de la Cyclosportive des Trois Ballons",
+          "Plus haut sommet des Vosges"
+        ],
+        "records": {
+          "official": "42:15 par Marco Pantani en 1997",
+          "strava": "43:56 par Thibaut Pinot en 2014"
+        }
+      },
+      "recommended_season": ["mai", "juin", "juillet", "août", "septembre"],
+      "images": [
+        "https://example.com/images/cols/grand-ballon1.jpg",
+        "https://example.com/images/cols/grand-ballon2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au sommet et à Goldbach",
+        "water_points": ["Source à Goldbach", "Restaurant au sommet"],
+        "hazards": ["Brouillard fréquent", "Vent fort au sommet", "Route étroite dans la section finale"]
+      },
+      "description": "Le Col du Grand Ballon, menant au point culminant des Vosges, est l'ascension la plus exigeante de la région Grand Est. Depuis Willer-sur-Thur, ce col hors catégorie offre une montée constamment difficile avec des pentes soutenues. L'effort est récompensé par des panoramas exceptionnels sur la plaine d'Alsace, la Forêt-Noire et, par temps clair, les Alpes suisses. Le col est couronné par la caractéristique boule radar et le monument des Diables Bleus.",
+      "tags": ["vosges", "grand-est", "hors-catégorie", "tour-de-france", "sommet"]
+    },
+    {
+      "id": "col-de-saales",
+      "name": "Col de Saâles",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Bas-Rhin",
+        "coordinates": {
+          "lat": 48.3539,
+          "lng": 7.1067
+        }
+      },
+      "statistics": {
+        "length": 8.2,
+        "elevation_gain": 371,
+        "avg_gradient": 4.5,
+        "max_gradient": 7.0,
+        "start_elevation": 280,
+        "summit_elevation": 651
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 280, "gradient": 0},
+        {"distance": 2, "elevation": 350, "gradient": 3.5},
+        {"distance": 4, "elevation": 440, "gradient": 4.5},
+        {"distance": 6, "elevation": 540, "gradient": 5.0},
+        {"distance": 8.2, "elevation": 651, "gradient": 5.0}
+      ],
+      "segments": [
+        {"name": "Saint-Blaise-la-Roche - Bois", "length": 3.0, "gradient": 4.0, "difficulty": "Facile"},
+        {"name": "Zone forestière", "length": 3.2, "gradient": 4.7, "difficulty": "Modéré"},
+        {"name": "Dernière portion", "length": 2.0, "gradient": 5.0, "difficulty": "Modéré"}
+      ],
+      "difficulty": "3",
+      "history": {
+        "tour_appearances": 2,
+        "first_appearance": 1975,
+        "notable_events": [
+          "Passage du Tour de France en 1975 et 2006",
+          "Frontière historique entre l'Alsace et la Lorraine jusqu'en 1870",
+          "Route stratégique pendant les deux guerres mondiales"
+        ],
+        "records": {
+          "official": "17:23 par Laurent Brochard en 2006",
+          "strava": "18:46 par local KOM"
+        }
+      },
+      "recommended_season": ["avril", "mai", "juin", "juillet", "août", "septembre", "octobre"],
+      "images": [
+        "https://example.com/images/cols/saales1.jpg",
+        "https://example.com/images/cols/saales2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking au village de Saâles et aires de repos le long de la route",
+        "water_points": ["Fontaine au village de Saâles", "Auberge à mi-parcours"],
+        "hazards": ["Circulation modérée (RD 420)"]
+      },
+      "description": "Le Col de Saâles est un col accessible des Vosges moyennes. Il relie la vallée de la Bruche à celle de la Fave, marquant historiquement la frontière entre l'Alsace et la Lorraine. Son ascension depuis Saint-Blaise-la-Roche est progressive, avec des pentes douces qui en font un col idéal pour les cyclistes débutants ou en début de saison. Entouré de forêts de sapins et de pâturages, ce col offre un cadre naturel apaisant.",
+      "tags": ["vosges", "grand-est", "facile", "débutant", "frontière-historique"]
+    },
+    {
+      "id": "col-du-plafond",
+      "name": "Col du Plafond",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Moselle",
+        "coordinates": {
+          "lat": 48.9872,
+          "lng": 6.8925
+        }
+      },
+      "statistics": {
+        "length": 7.3,
+        "elevation_gain": 384,
+        "avg_gradient": 5.3,
+        "max_gradient": 9.8,
+        "start_elevation": 236,
+        "summit_elevation": 620
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 236, "gradient": 0},
+        {"distance": 1.5, "elevation": 310, "gradient": 4.9},
+        {"distance": 3.0, "elevation": 390, "gradient": 5.3},
+        {"distance": 4.5, "elevation": 480, "gradient": 6.0},
+        {"distance": 6.0, "elevation": 550, "gradient": 4.7},
+        {"distance": 7.3, "elevation": 620, "gradient": 5.4}
+      ],
+      "segments": [
+        {"name": "Départ Saint-Quirin", "length": 2.2, "gradient": 4.8, "difficulty": "Facile"},
+        {"name": "Épingle des Quatre Vents", "length": 2.7, "gradient": 6.1, "difficulty": "Modéré"},
+        {"name": "Traversée forestière", "length": 2.4, "gradient": 4.9, "difficulty": "Modéré"}
+      ],
+      "difficulty": "3",
+      "history": {
+        "tour_appearances": 0,
+        "first_appearance": null,
+        "notable_events": [
+          "Tour de Moselle 2018",
+          "Championnat régional Junior 2022",
+          "Course cycliste des Lacs 2019"
+        ],
+        "records": {
+          "official": "21:49 par Olivier Delore en 2018",
+          "strava": "22:37 par Ludovic Champenois en 2021"
+        }
+      },
+      "recommended_season": ["avril", "mai", "juin", "juillet", "août", "septembre", "octobre"],
+      "images": [
+        "https://example.com/images/cols/plafond1.jpg",
+        "https://example.com/images/cols/plafond2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking à Saint-Quirin et aire de stationnement aux 3/4 du parcours",
+        "water_points": ["Fontaine à Saint-Quirin", "Source naturelle à mi-parcours"],
+        "hazards": ["Descente technique avec virages serrés", "Route étroite dans la section forestière"]
+      },
+      "description": "Le Col du Plafond offre une ascension plaisante au cœur du Parc naturel régional de Lorraine. Relativement méconnu, ce col est apprécié des cyclistes locaux pour ses paysages variés, alternant entre espaces ouverts et denses forêts de hêtres. Le dernier tiers de l'ascension offre des vues imprenables sur les étangs mosellans et, par temps clair, jusqu'aux premiers contreforts des Vosges. L'ascension est régulière avec une section plus exigeante après le deuxième kilomètre.",
+      "tags": ["lorraine", "grand-est", "forêt", "lac", "méconnu"]
+    },
+    {
+      "id": "col-des-trois-fontaines",
+      "name": "Col des Trois Fontaines",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Marne",
+        "coordinates": {
+          "lat": 49.1128,
+          "lng": 4.9211
+        }
+      },
+      "statistics": {
+        "length": 6.2,
+        "elevation_gain": 279,
+        "avg_gradient": 4.5,
+        "max_gradient": 8.7,
+        "start_elevation": 183,
+        "summit_elevation": 462
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 183, "gradient": 0},
+        {"distance": 1.5, "elevation": 240, "gradient": 3.8},
+        {"distance": 3.0, "elevation": 315, "gradient": 5.0},
+        {"distance": 4.5, "elevation": 395, "gradient": 5.3},
+        {"distance": 6.2, "elevation": 462, "gradient": 3.9}
+      ],
+      "segments": [
+        {"name": "Départ Givry-en-Argonne", "length": 1.8, "gradient": 3.6, "difficulty": "Facile"},
+        {"name": "Section médiane", "length": 2.9, "gradient": 5.1, "difficulty": "Modéré"},
+        {"name": "Dernière ligne droite", "length": 1.5, "gradient": 4.2, "difficulty": "Facile"}
+      ],
+      "difficulty": "4",
+      "history": {
+        "tour_appearances": 0,
+        "first_appearance": null,
+        "notable_events": [
+          "Route stratégique pendant la Première Guerre mondiale",
+          "Cyclosportive des Vallons Champenois",
+          "Course de la Marne depuis 2015"
+        ],
+        "records": {
+          "official": "16:37 par Frédéric Bessy en 2017",
+          "strava": "17:09 par Thomas Lemoine en 2020"
+        }
+      },
+      "recommended_season": ["mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre"],
+      "images": [
+        "https://example.com/images/cols/trois-fontaines1.jpg",
+        "https://example.com/images/cols/trois-fontaines2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Parking à Givry-en-Argonne et au sommet",
+        "water_points": ["Les trois fontaines historiques qui donnent leur nom au col", "Auberge à proximité du sommet (ouverte d'avril à octobre)"],
+        "hazards": ["Circulation agricole occasionnelle", "Surface irrégulière après les pluies"]
+      },
+      "description": "Le Col des Trois Fontaines traverse la forêt domaniale du même nom et constitue une ascension douce typique de la Champagne argonnaise. Ce col de catégorie 4 est idéal pour les cyclistes débutants ou pour une sortie de récupération. Il tire son nom des trois sources qui jaillissent près du sommet et qui furent utilisées comme point d'eau par les troupes durant la Grande Guerre. L'ascension se caractérise par une pente régulière et des sous-bois ombragés qui en font un itinéraire apprécié pendant les journées chaudes.",
+      "tags": ["champagne", "grand-est", "débutant", "histoire", "forêt"]
+    },
+    {
+      "id": "cote-de-sion",
+      "name": "Côte de Sion",
+      "location": {
+        "country": "France",
+        "region": "Grand Est",
+        "department": "Meurthe-et-Moselle",
+        "coordinates": {
+          "lat": 48.4478,
+          "lng": 6.0658
+        }
+      },
+      "statistics": {
+        "length": 3.6,
+        "elevation_gain": 193,
+        "avg_gradient": 5.4,
+        "max_gradient": 12.0,
+        "start_elevation": 347,
+        "summit_elevation": 540
+      },
+      "elevation_profile": [
+        {"distance": 0, "elevation": 347, "gradient": 0},
+        {"distance": 0.8, "elevation": 395, "gradient": 6.0},
+        {"distance": 1.6, "elevation": 456, "gradient": 7.6},
+        {"distance": 2.4, "elevation": 498, "gradient": 5.3},
+        {"distance": 3.0, "elevation": 527, "gradient": 4.8},
+        {"distance": 3.6, "elevation": 540, "gradient": 2.2}
+      ],
+      "segments": [
+        {"name": "Départ de Vaudémont", "length": 1.2, "gradient": 6.5, "difficulty": "Modéré"},
+        {"name": "Épingle de la Basilique", "length": 0.8, "gradient": 9.5, "difficulty": "Difficile"},
+        {"name": "Section finale", "length": 1.6, "gradient": 3.7, "difficulty": "Facile"}
+      ],
+      "difficulty": "4",
+      "history": {
+        "tour_appearances": 1,
+        "first_appearance": 2012,
+        "notable_events": [
+          "Passage du Tour de France 2012 (étape Nancy-Tomblaine)",
+          "Grand Prix de la Colline de Sion (course annuelle)",
+          "Site historique depuis l'époque gallo-romaine"
+        ],
+        "records": {
+          "official": "9:12 par Thomas Voeckler en 2012 (Tour de France)",
+          "strava": "9:47 par Julien Bernard en 2019"
+        }
+      },
+      "recommended_season": ["février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre"],
+      "images": [
+        "https://example.com/images/cols/sion1.jpg",
+        "https://example.com/images/cols/sion2.jpg"
+      ],
+      "practical_info": {
+        "parking": "Grand parking au sommet près de la basilique",
+        "water_points": ["Fontaine de la basilique", "Café-restaurant au sommet (ouvert tous les jours en saison)"],
+        "hazards": ["Virage en épingle très serré au milieu de l'ascension", "Trafic touristique important les week-ends et jours fériés"]
+      },
+      "description": "La Côte de Sion, également connue sous le nom de Colline de Sion-Vaudémont, est un site emblématique de Lorraine offrant une courte mais intense ascension. Ce promontoire naturel, surnommé la 'colline inspirée' par Maurice Barrès, domine la plaine lorraine et offre un panorama à 360° exceptionnel. L'ascension depuis Vaudémont présente un profil varié avec un passage particulièrement raide à mi-parcours. Le sommet, couronné par une basilique et un ancien couvent, constitue un lieu historique et spirituel important dans la région.",
+      "tags": ["lorraine", "grand-est", "historique", "panorama", "court"]
+    }
+  ]
+}

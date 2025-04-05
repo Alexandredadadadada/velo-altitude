@@ -1,0 +1,394 @@
+{
+  "challenges": [
+    {
+      "id": "seven-majors-challenge",
+      "name": "Défi des 7 Cols Majeurs",
+      "description": "Gravir les sept cols les plus emblématiques d'Europe, considérés comme les plus difficiles et les plus mythiques du cyclisme.",
+      "difficulty": "Extrême",
+      "estimatedTimeToComplete": "1 an minimum",
+      "category": "Haute montagne",
+      "cols": [
+        "col-1", // Col du Tourmalet
+        "col-2", // Alpe d'Huez
+        "col-3", // Stelvio Pass
+        "col-4", // Mont Ventoux
+        "col-5", // Col du Galibier
+        "col-6", // Col d'Aubisque
+        "col-7"  // Passo di Mortirolo
+      ],
+      "badgeImage": "/assets/badges/seven-majors.svg",
+      "rewards": {
+        "points": 7000,
+        "badge": "Maître des Cols",
+        "certificate": true
+      },
+      "requirements": {
+        "photosRequired": true,
+        "stravaActivities": true,
+        "minimumTimePerCol": null
+      },
+      "leaderboard": true,
+      "tips": [
+        "Prévoir une bonne préparation physique d'au moins 6 mois avant de commencer le défi",
+        "Planifier les ascensions en fonction des saisons et de la météo",
+        "Certains cols sont fermés en hiver, vérifiez les dates d'ouverture",
+        "Prévoyez un bon ravitaillement, certains cols ont peu de points d'eau"
+      ]
+    },
+    {
+      "id": "pyreneean-traverse",
+      "name": "La Traversée des Pyrénées",
+      "description": "Traverser les Pyrénées d'ouest en est en franchissant les plus beaux cols de ce massif frontalier.",
+      "difficulty": "Difficile",
+      "estimatedTimeToComplete": "1 à 2 semaines",
+      "category": "Multi-cols",
+      "cols": [
+        "col-6", // Col d'Aubisque
+        "col-1", // Col du Tourmalet
+        "col-8", // Col d'Aspin
+        "col-9", // Col de Peyresourde
+        "col-10", // Col de Portet d'Aspet
+        "col-11", // Col d'Agnes
+        "col-12"  // Col de Pailhères
+      ],
+      "badgeImage": "/assets/badges/pyreneean-traverse.svg",
+      "rewards": {
+        "points": 5000,
+        "badge": "Grimpeur Pyrénéen",
+        "certificate": true
+      },
+      "requirements": {
+        "photosRequired": true,
+        "stravaActivities": true,
+        "timeLimit": "14 jours"
+      },
+      "leaderboard": true,
+      "stages": [
+        {
+          "name": "Étape 1: Atlantique → Tourmalet",
+          "start": "Hendaye",
+          "end": "Col du Tourmalet",
+          "distance": 180,
+          "elevation": 3500
+        },
+        {
+          "name": "Étape 2: Tourmalet → Peyresourde",
+          "start": "Col du Tourmalet",
+          "end": "Col de Peyresourde",
+          "distance": 120,
+          "elevation": 2800
+        },
+        {
+          "name": "Étape 3: Peyresourde → Pailhères",
+          "start": "Col de Peyresourde",
+          "end": "Col de Pailhères",
+          "distance": 170,
+          "elevation": 3200
+        },
+        {
+          "name": "Étape 4: Pailhères → Méditerranée",
+          "start": "Col de Pailhères",
+          "end": "Banyuls-sur-Mer",
+          "distance": 140,
+          "elevation": 1800
+        }
+      ]
+    },
+    {
+      "id": "alpine-crown",
+      "name": "La Couronne Alpine",
+      "description": "Conquérir les plus hauts cols des Alpes françaises et italiennes dans une boucle majestueuse.",
+      "difficulty": "Très difficile",
+      "estimatedTimeToComplete": "2 semaines",
+      "category": "Haute montagne",
+      "cols": [
+        "col-2", // Alpe d'Huez
+        "col-5", // Col du Galibier
+        "col-13", // Col de l'Iseran
+        "col-14", // Col de la Bonette
+        "col-15", // Col d'Izoard
+        "col-16", // Col Agnel
+        "col-3", // Stelvio Pass
+        "col-17"  // Col du Grand-Saint-Bernard
+      ],
+      "badgeImage": "/assets/badges/alpine-crown.svg",
+      "rewards": {
+        "points": 6000,
+        "badge": "Aigle des Alpes",
+        "certificate": true
+      },
+      "requirements": {
+        "photosRequired": true,
+        "stravaActivities": true,
+        "minimumTimePerCol": null
+      },
+      "leaderboard": true
+    },
+    {
+      "id": "one-day-ventoux",
+      "name": "Le Triple Ventoux",
+      "description": "Gravir le Mont Ventoux par ses trois versants (Bédoin, Malaucène et Sault) en une seule journée.",
+      "difficulty": "Très difficile",
+      "estimatedTimeToComplete": "1 jour",
+      "category": "Défi journalier",
+      "cols": [
+        "col-4" // Mont Ventoux (x3)
+      ],
+      "badgeImage": "/assets/badges/triple-ventoux.svg",
+      "rewards": {
+        "points": 2000,
+        "badge": "Maître du Ventoux",
+        "certificate": true
+      },
+      "requirements": {
+        "photosRequired": true,
+        "stravaActivities": true,
+        "sameDay": true
+      },
+      "leaderboard": true,
+      "routes": [
+        {
+          "name": "Versant Bédoin",
+          "distance": 21.5,
+          "elevation": 1617,
+          "difficulty": "HC",
+          "startPoint": "Bédoin"
+        },
+        {
+          "name": "Versant Malaucène",
+          "distance": 21.2,
+          "elevation": 1572,
+          "difficulty": "HC",
+          "startPoint": "Malaucène"
+        },
+        {
+          "name": "Versant Sault",
+          "distance": 26,
+          "elevation": 1220,
+          "difficulty": "1",
+          "startPoint": "Sault"
+        }
+      ]
+    },
+    {
+      "id": "grand-est-classic",
+      "name": "Le Tour du Grand Est",
+      "description": "Explorer les plus beaux cols et routes de la région Grand Est, des Vosges aux Ardennes.",
+      "difficulty": "Modérée",
+      "estimatedTimeToComplete": "1 semaine",
+      "category": "Régional",
+      "cols": [
+        "col-18", // Col de la Schlucht
+        "col-19", // Grand Ballon
+        "col-20", // Col du Donon
+        "col-21", // Col du Kreuzweg
+        "col-22"  // Col de Steige
+      ],
+      "badgeImage": "/assets/badges/grand-est.svg",
+      "rewards": {
+        "points": 3000,
+        "badge": "Ambassadeur du Grand Est",
+        "certificate": true
+      },
+      "requirements": {
+        "photosRequired": true,
+        "stravaActivities": true,
+        "timeLimit": "10 jours"
+      },
+      "leaderboard": true,
+      "attractions": [
+        {
+          "name": "Route des Crêtes",
+          "region": "Vosges",
+          "description": "Panoramas exceptionnels sur toute la chaîne des Vosges",
+          "points": 500
+        },
+        {
+          "name": "Route des Vins d'Alsace",
+          "region": "Alsace",
+          "description": "Vignobles et villages pittoresques",
+          "points": 300
+        },
+        {
+          "name": "Château du Haut-Kœnigsbourg",
+          "region": "Alsace",
+          "description": "Forteresse médiévale avec vue panoramique",
+          "points": 200
+        }
+      ]
+    },
+    {
+      "id": "cyclosportive-masters",
+      "name": "Maître des Cyclosportives",
+      "description": "Compléter les plus prestigieuses cyclosportives européennes en une saison.",
+      "difficulty": "Difficile",
+      "estimatedTimeToComplete": "1 saison",
+      "category": "Événements",
+      "events": [
+        {
+          "name": "L'Étape du Tour",
+          "country": "France",
+          "distance": "Variable",
+          "elevation": "Variable",
+          "month": "Juillet"
+        },
+        {
+          "name": "La Marmotte",
+          "country": "France",
+          "distance": 174,
+          "elevation": 5000,
+          "month": "Juillet",
+          "cols": ["col-2", "col-5"] // Alpe d'Huez, Galibier
+        },
+        {
+          "name": "Maratona dles Dolomites",
+          "country": "Italie",
+          "distance": 138,
+          "elevation": 4230,
+          "month": "Juillet"
+        },
+        {
+          "name": "La Quebrantahuesos",
+          "country": "Espagne",
+          "distance": 200,
+          "elevation": 3500,
+          "month": "Juin"
+        },
+        {
+          "name": "Granfondo Stelvio Santini",
+          "country": "Italie",
+          "distance": 151,
+          "elevation": 4058,
+          "month": "Juin",
+          "cols": ["col-3"] // Stelvio
+        }
+      ],
+      "badgeImage": "/assets/badges/cyclosportive-master.svg",
+      "rewards": {
+        "points": 5000,
+        "badge": "Champion Cyclosportif",
+        "certificate": true
+      },
+      "requirements": {
+        "photosRequired": true,
+        "officialResults": true,
+        "minimumEvents": 3
+      },
+      "leaderboard": true
+    },
+    {
+      "id": "historic-climbs",
+      "name": "Les Montées Historiques",
+      "description": "Grimper sur les pentes qui ont forgé l'histoire du cyclisme professionnel.",
+      "difficulty": "Difficile",
+      "estimatedTimeToComplete": "Variable",
+      "category": "Historique",
+      "cols": [
+        "col-1", // Col du Tourmalet
+        "col-2", // Alpe d'Huez
+        "col-4", // Mont Ventoux
+        "col-5", // Col du Galibier
+        "col-23" // Puy de Dôme
+      ],
+      "badgeImage": "/assets/badges/historic-climbs.svg",
+      "rewards": {
+        "points": 4000,
+        "badge": "Gardien de l'Histoire",
+        "certificate": true
+      },
+      "requirements": {
+        "photosRequired": true,
+        "stravaActivities": true,
+        "minimumTimePerCol": null
+      },
+      "leaderboard": true,
+      "historicalFacts": [
+        {
+          "col": "col-1",
+          "fact": "C'est au Tourmalet qu'Eugène Christophe répara lui-même sa fourche en 1913, forgeant sa propre légende."
+        },
+        {
+          "col": "col-2",
+          "fact": "L'Alpe d'Huez a forgé la légende de 'l'Américain' Greg LeMond lorsqu'il distança Bernard Hinault en 1986."
+        },
+        {
+          "col": "col-4",
+          "fact": "Le Mont Ventoux est tristement célèbre pour le décès de Tom Simpson en 1967, dont le mémorial est toujours visité."
+        }
+      ]
+    }
+  ],
+  "badges": {
+    "finisher": [
+      {
+        "id": "seven-majors-finisher",
+        "name": "Finisher des 7 Cols Majeurs",
+        "challenge": "seven-majors-challenge",
+        "image": "/assets/badges/seven-majors-finisher.svg",
+        "description": "A conquis les 7 cols les plus mythiques d'Europe",
+        "rarity": "Légendaire",
+        "points": 7000
+      },
+      {
+        "id": "pyreneean-traverse-finisher",
+        "name": "Traverseur des Pyrénées",
+        "challenge": "pyreneean-traverse",
+        "image": "/assets/badges/pyreneean-traverse-finisher.svg",
+        "description": "A traversé les Pyrénées d'une mer à l'autre",
+        "rarity": "Épique",
+        "points": 5000
+      }
+    ],
+    "achievement": [
+      {
+        "id": "speed-climber",
+        "name": "Grimpeur Supersonique",
+        "image": "/assets/badges/speed-climber.svg",
+        "description": "A battu un record personnel sur un col mythique",
+        "rarity": "Rare",
+        "points": 1000,
+        "condition": "Vitesse d'ascension dans le top 5% sur Strava"
+      },
+      {
+        "id": "all-weather-rider",
+        "name": "Cycliste Tout-Temps",
+        "image": "/assets/badges/all-weather-rider.svg",
+        "description": "A gravi des cols dans des conditions météo extrêmes",
+        "rarity": "Rare",
+        "points": 1500,
+        "condition": "Ascension documentée sous la pluie, dans le brouillard ou par température extrême"
+      },
+      {
+        "id": "vintage-climber",
+        "name": "Grimpeur Vintage",
+        "image": "/assets/badges/vintage-climber.svg",
+        "description": "A gravi un col majeur avec un vélo d'époque",
+        "rarity": "Très rare",
+        "points": 2000,
+        "condition": "Ascension avec un vélo d'avant 1990 et documentation photo"
+      }
+    ],
+    "special": [
+      {
+        "id": "grand-slam-cols",
+        "name": "Grand Chelem des Cols",
+        "image": "/assets/badges/grand-slam-cols.svg",
+        "description": "A complété tous les défis majeurs de cols",
+        "rarity": "Unique",
+        "points": 10000,
+        "condition": "Avoir terminé les défis: 7 Cols Majeurs, Traversée des Pyrénées et Couronne Alpine"
+      }
+    ]
+  },
+  "progressions": {
+    "levels": [
+      {"level": 1, "name": "Débutant", "pointsRequired": 0, "badge": "/assets/levels/level1.svg"},
+      {"level": 2, "name": "Amateur", "pointsRequired": 1000, "badge": "/assets/levels/level2.svg"},
+      {"level": 3, "name": "Cycliste confirmé", "pointsRequired": 3000, "badge": "/assets/levels/level3.svg"},
+      {"level": 4, "name": "Grimpeur", "pointsRequired": 6000, "badge": "/assets/levels/level4.svg"},
+      {"level": 5, "name": "Grimpeur d'élite", "pointsRequired": 10000, "badge": "/assets/levels/level5.svg"},
+      {"level": 6, "name": "Maître grimpeur", "pointsRequired": 15000, "badge": "/assets/levels/level6.svg"},
+      {"level": 7, "name": "Légende des cols", "pointsRequired": 25000, "badge": "/assets/levels/level7.svg"}
+    ]
+  }
+}

@@ -1,0 +1,297 @@
+[
+  {
+    "id": "activity1",
+    "userId": "user1",
+    "type": "road",
+    "name": "Sortie matinale col du Donon",
+    "startDate": "2025-04-01T08:30:00Z",
+    "duration": 7200,
+    "distance": 60000,
+    "elevationGain": 850,
+    "averagePower": 235,
+    "normalizedPower": 255,
+    "maxPower": 875,
+    "averageHeartRate": 152,
+    "maxHeartRate": 182,
+    "averageSpeed": 25.5,
+    "maxSpeed": 65.2,
+    "calories": 1850,
+    "weather": {
+      "temperature": 15,
+      "conditions": "Ensoleillé",
+      "windSpeed": 8,
+      "windDirection": 270
+    },
+    "route": {
+      "startPoint": { "lat": 48.5734, "lng": 7.7521 },
+      "endPoint": { "lat": 48.5734, "lng": 7.7521 },
+      "waypoints": [
+        { "lat": 48.5734, "lng": 7.7521 },
+        { "lat": 48.5123, "lng": 7.8023 },
+        { "lat": 48.4920, "lng": 7.9145 },
+        { "lat": 48.5123, "lng": 7.8023 },
+        { "lat": 48.5734, "lng": 7.7521 }
+      ]
+    },
+    "bestEfforts": {
+      "fiveSeconds": 850,
+      "oneMinute": 455,
+      "fiveMinutes": 310,
+      "twentyMinutes": 275,
+      "oneHour": 245
+    },
+    "powerZones": {
+      "z1": 1500,
+      "z2": 3000,
+      "z3": 1800,
+      "z4": 600,
+      "z5": 240,
+      "z6": 60,
+      "z7": 0
+    },
+    "hrZones": {
+      "z1": 600,
+      "z2": 1800,
+      "z3": 3000,
+      "z4": 1500,
+      "z5": 300
+    },
+    "tags": ["entraînement", "col", "vosges"]
+  },
+  {
+    "id": "activity2",
+    "userId": "user1",
+    "type": "road",
+    "name": "Intervalles Route des Crêtes",
+    "startDate": "2025-04-03T17:00:00Z",
+    "duration": 5400,
+    "distance": 45000,
+    "elevationGain": 750,
+    "averagePower": 250,
+    "normalizedPower": 285,
+    "maxPower": 920,
+    "averageHeartRate": 158,
+    "maxHeartRate": 186,
+    "averageSpeed": 23.2,
+    "maxSpeed": 62.8,
+    "calories": 1650,
+    "weather": {
+      "temperature": 18,
+      "conditions": "Partiellement nuageux",
+      "windSpeed": 12,
+      "windDirection": 225
+    },
+    "route": {
+      "startPoint": { "lat": 48.0394, "lng": 7.0089 },
+      "endPoint": { "lat": 48.0394, "lng": 7.0089 },
+      "waypoints": [
+        { "lat": 48.0394, "lng": 7.0089 },
+        { "lat": 48.0591, "lng": 7.0234 },
+        { "lat": 48.0825, "lng": 7.0501 },
+        { "lat": 48.0591, "lng": 7.0234 },
+        { "lat": 48.0394, "lng": 7.0089 }
+      ]
+    },
+    "bestEfforts": {
+      "fiveSeconds": 890,
+      "oneMinute": 485,
+      "fiveMinutes": 325,
+      "twentyMinutes": 295,
+      "oneHour": 255
+    },
+    "powerZones": {
+      "z1": 900,
+      "z2": 1800,
+      "z3": 900,
+      "z4": 1200,
+      "z5": 480,
+      "z6": 120,
+      "z7": 0
+    },
+    "hrZones": {
+      "z1": 300,
+      "z2": 900,
+      "z3": 1500,
+      "z4": 2100,
+      "z5": 600
+    },
+    "tags": ["intervalles", "entraînement", "vosges"]
+  },
+  {
+    "id": "activity3",
+    "userId": "user2",
+    "type": "road",
+    "name": "Sortie endurance plaine d'Alsace",
+    "startDate": "2025-04-02T14:00:00Z",
+    "duration": 9000,
+    "distance": 85000,
+    "elevationGain": 450,
+    "averagePower": 195,
+    "normalizedPower": 210,
+    "maxPower": 780,
+    "averageHeartRate": 145,
+    "maxHeartRate": 172,
+    "averageSpeed": 28.3,
+    "maxSpeed": 55.6,
+    "calories": 2100,
+    "weather": {
+      "temperature": 20,
+      "conditions": "Ensoleillé",
+      "windSpeed": 5,
+      "windDirection": 90
+    },
+    "route": {
+      "startPoint": { "lat": 48.5734, "lng": 7.7521 },
+      "endPoint": { "lat": 48.5734, "lng": 7.7521 },
+      "waypoints": [
+        { "lat": 48.5734, "lng": 7.7521 },
+        { "lat": 48.6123, "lng": 7.8023 },
+        { "lat": 48.7120, "lng": 7.9145 },
+        { "lat": 48.6123, "lng": 7.8023 },
+        { "lat": 48.5734, "lng": 7.7521 }
+      ]
+    },
+    "bestEfforts": {
+      "fiveSeconds": 750,
+      "oneMinute": 380,
+      "fiveMinutes": 260,
+      "twentyMinutes": 235,
+      "oneHour": 210
+    },
+    "powerZones": {
+      "z1": 3600,
+      "z2": 4500,
+      "z3": 720,
+      "z4": 180,
+      "z5": 0,
+      "z6": 0,
+      "z7": 0
+    },
+    "hrZones": {
+      "z1": 2700,
+      "z2": 5400,
+      "z3": 900,
+      "z4": 0,
+      "z5": 0
+    },
+    "tags": ["endurance", "plaine"]
+  },
+  {
+    "id": "activity4",
+    "userId": "user3",
+    "type": "road",
+    "name": "Test FTP",
+    "startDate": "2025-04-01T16:00:00Z",
+    "duration": 3600,
+    "distance": 35000,
+    "elevationGain": 350,
+    "averagePower": 280,
+    "normalizedPower": 310,
+    "maxPower": 950,
+    "averageHeartRate": 165,
+    "maxHeartRate": 188,
+    "averageSpeed": 32.5,
+    "maxSpeed": 58.3,
+    "calories": 1200,
+    "weather": {
+      "temperature": 16,
+      "conditions": "Couvert",
+      "windSpeed": 3,
+      "windDirection": 180
+    },
+    "route": {
+      "startPoint": { "lat": 49.1206, "lng": 6.1727 },
+      "endPoint": { "lat": 49.1206, "lng": 6.1727 },
+      "waypoints": [
+        { "lat": 49.1206, "lng": 6.1727 },
+        { "lat": 49.1405, "lng": 6.2115 },
+        { "lat": 49.1618, "lng": 6.2459 },
+        { "lat": 49.1405, "lng": 6.2115 },
+        { "lat": 49.1206, "lng": 6.1727 }
+      ]
+    },
+    "bestEfforts": {
+      "fiveSeconds": 950,
+      "oneMinute": 525,
+      "fiveMinutes": 385,
+      "twentyMinutes": 355,
+      "oneHour": 320
+    },
+    "powerZones": {
+      "z1": 600,
+      "z2": 600,
+      "z3": 600,
+      "z4": 1500,
+      "z5": 300,
+      "z6": 0,
+      "z7": 0
+    },
+    "hrZones": {
+      "z1": 300,
+      "z2": 600,
+      "z3": 900,
+      "z4": 1500,
+      "z5": 300
+    },
+    "tags": ["test", "ftp"]
+  },
+  {
+    "id": "activity5",
+    "userId": "user4",
+    "type": "gravel",
+    "name": "Exploration chemins forestiers",
+    "startDate": "2025-04-03T10:00:00Z",
+    "duration": 10800,
+    "distance": 75000,
+    "elevationGain": 950,
+    "averagePower": 175,
+    "normalizedPower": 190,
+    "maxPower": 650,
+    "averageHeartRate": 148,
+    "maxHeartRate": 175,
+    "averageSpeed": 18.5,
+    "maxSpeed": 45.2,
+    "calories": 1950,
+    "weather": {
+      "temperature": 14,
+      "conditions": "Nuageux",
+      "windSpeed": 7,
+      "windDirection": 315
+    },
+    "route": {
+      "startPoint": { "lat": 48.3975, "lng": 7.4439 },
+      "endPoint": { "lat": 48.3975, "lng": 7.4439 },
+      "waypoints": [
+        { "lat": 48.3975, "lng": 7.4439 },
+        { "lat": 48.4123, "lng": 7.5023 },
+        { "lat": 48.4520, "lng": 7.5845 },
+        { "lat": 48.4123, "lng": 7.5023 },
+        { "lat": 48.3975, "lng": 7.4439 }
+      ]
+    },
+    "bestEfforts": {
+      "fiveSeconds": 610,
+      "oneMinute": 320,
+      "fiveMinutes": 225,
+      "twentyMinutes": 195,
+      "oneHour": 180
+    },
+    "powerZones": {
+      "z1": 4500,
+      "z2": 5400,
+      "z3": 900,
+      "z4": 0,
+      "z5": 0,
+      "z6": 0,
+      "z7": 0
+    },
+    "hrZones": {
+      "z1": 3600,
+      "z2": 6300,
+      "z3": 900,
+      "z4": 0,
+      "z5": 0
+    },
+    "tags": ["gravel", "forêt", "exploration"]
+  }
+]

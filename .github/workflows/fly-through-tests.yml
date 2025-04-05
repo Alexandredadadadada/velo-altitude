@@ -1,0 +1,109 @@
+name: Fly-Through Feature Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'client/src/components/visualization/**'
+      - 'client/src/services/colsService.js'
+      - 'client/src/utils/testUtils/**'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'client/src/components/visualization/**'
+      - 'client/src/services/colsService.js'
+      - 'client/src/utils/testUtils/**'
+  # Permet l'exécution manuelle depuis l'interface GitHub
+  workflow_dispatch:
+
+jobs:
+  test-fly-through:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: |
+          cd client
+          npm ci
+          
+      - name: Run Fly-Through tests
+        run: |
+          cd client
+          node src/utils/testUtils/runFlyThroughTests.js
+          
+      - name: Check performance thresholds
+        run: |
+          cd client
+          # Script pour vérifier que les performances sont supérieures à certains seuils
+          node -e "
+            const results = require('./src/utils/testUtils/runFlyThroughTests.js').default;
+            
+            // Seuils minimaux de performance
+            const MIN_DESKTOP_FPS = 50;
+            const MIN_HIGH_END_MOBILE_FPS = 40;
+            const MIN_MID_RANGE_MOBILE_FPS = 30;
+            const MIN_LOW_END_MOBILE_FPS = 20;
+            
+            // Vérification des seuils
+            const avgFps = results.summary.averageFps;
+            
+            if (avgFps.desktop < MIN_DESKTOP_FPS) {
+              console.error('❌ Les performances desktop sont en dessous du seuil minimal');
+              process.exit(1);
+            }
+            
+            if (avgFps.highEndMobile < MIN_HIGH_END_MOBILE_FPS) {
+              console.error('❌ Les performances mobile haut de gamme sont en dessous du seuil minimal');
+              process.exit(1);
+            }
+            
+            if (avgFps.midRangeMobile < MIN_MID_RANGE_MOBILE_FPS) {
+              console.error('❌ Les performances mobile milieu de gamme sont en dessous du seuil minimal');
+              process.exit(1);
+            }
+            
+            if (avgFps.lowEndMobile < MIN_LOW_END_MOBILE_FPS) {
+              console.error('❌ Les performances mobile bas de gamme sont en dessous du seuil minimal');
+              process.exit(1);
+            }
+            
+            console.log('✅ Tous les tests de performance ont passé les seuils minimaux');
+            console.log('Desktop FPS:', avgFps.desktop);
+            console.log('Mobile haut de gamme FPS:', avgFps.highEndMobile);
+            console.log('Mobile milieu de gamme FPS:', avgFps.midRangeMobile);
+            console.log('Mobile bas de gamme FPS:', avgFps.lowEndMobile);
+          "
+          
+      - name: Generate test report
+        if: success() || failure()
+        run: |
+          cd client
+          # Générer un rapport de test
+          node -e "
+            const fs = require('fs');
+            const results = require('./src/utils/testUtils/runFlyThroughTests.js').default;
+            
+            const reportContent = {
+              timestamp: new Date().toISOString(),
+              testResults: results,
+              commit: process.env.GITHUB_SHA,
+              workflow: process.env.GITHUB_WORKFLOW,
+            };
+            
+            fs.writeFileSync('fly-through-test-report.json', JSON.stringify(reportContent, null, 2));
+          "
+          
+      - name: Upload test report
+        if: success() || failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: fly-through-test-report
+          path: client/fly-through-test-report.json

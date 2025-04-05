@@ -1,0 +1,486 @@
+[
+  {
+    "id": "col-de-joux-plane",
+    "name": "Col de Joux Plane",
+    "altitude": 1691,
+    "location": {
+      "latitude": 46.0997,
+      "longitude": 6.7339,
+      "region": "Alpes françaises",
+      "country": "France",
+      "nearbyTowns": ["Morzine", "Samoëns"]
+    },
+    "climbData": {
+      "morzineSide": {
+        "startLocation": "Morzine",
+        "length": 11.6,
+        "elevation": 989,
+        "averageGradient": 8.5,
+        "maxGradient": 12.5,
+        "difficulty": 9
+      },
+      "samoensSide": {
+        "startLocation": "Samoëns",
+        "length": 14.0,
+        "elevation": 1018,
+        "averageGradient": 7.3,
+        "maxGradient": 10.5,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1978,
+      "tourDeFranceAppearances": 12,
+      "famousStories": [
+        "En 2000, Lance Armstrong y connaît l'une de ses rares défaillances, cédant du temps à Jan Ullrich avant de se ressaisir.",
+        "En 2016, Chris Froome attaque en descente après le sommet pour remporter l'étape à Morzine.",
+        "Le col est connu pour être particulièrement difficile malgré son altitude modérée en raison de ses pentes irrégulières et raides."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Richard Virenque",
+          "time": "32:50",
+          "year": 2003,
+          "side": "morzine"
+        },
+        "modern": {
+          "holder": "Tadej Pogačar",
+          "time": "33:21",
+          "year": 2023,
+          "side": "morzine"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Lac de Joux Plane",
+        "description": "Petit lac d'altitude situé près du sommet, idéal pour se rafraîchir en été.",
+        "coordinates": [46.1038, 6.7280],
+        "type": "natural"
+      },
+      {
+        "name": "Panorama du Mont-Blanc",
+        "description": "Vue exceptionnelle sur le massif du Mont-Blanc par temps clair.",
+        "coordinates": [46.0997, 6.7339],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Alpage de Joux Plane",
+        "description": "Zone pastorale traditionnelle avec production de fromage en été.",
+        "coordinates": [46.1020, 6.7325],
+        "type": "cultural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne",
+      "trafficLevel": "Faible à modéré",
+      "winterClosure": "Généralement fermé de novembre à mai",
+      "facilities": ["Chalet-restaurant près du lac", "Tables de pique-nique"],
+      "parkingAvailable": true,
+      "waterPoints": ["Restaurant au lac", "Source près du sommet"]
+    },
+    "images": {
+      "main": "/images/cols/joux-plane/main.jpg",
+      "gallery": [
+        "/images/cols/joux-plane/morzine-side.jpg",
+        "/images/cols/joux-plane/samoens-side.jpg",
+        "/images/cols/joux-plane/lake.jpg",
+        "/images/cols/joux-plane/mont-blanc-view.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant de Morzine est plus difficile avec des pentes constamment raides.",
+      "Le col est connu pour provoquer des défaillances en raison de l'irrégularité de ses pentes et de la chaleur qui peut y régner.",
+      "La descente vers Morzine est technique avec de nombreux virages en épingle."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "passo-fedaia",
+    "name": "Passo Fedaia",
+    "altitude": 2057,
+    "location": {
+      "latitude": 46.4597,
+      "longitude": 11.8719,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Canazei", "Rocca Pietore", "Caprile"]
+    },
+    "climbData": {
+      "canazeiSide": {
+        "startLocation": "Canazei",
+        "length": 14.1,
+        "elevation": 645,
+        "averageGradient": 4.6,
+        "maxGradient": 15.0,
+        "difficulty": 7,
+        "note": "Les 3 derniers kilomètres sont les plus difficiles, avec une pente moyenne de 12%"
+      },
+      "caprileSide": {
+        "startLocation": "Caprile",
+        "length": 13.9,
+        "elevation": 1059,
+        "averageGradient": 7.6,
+        "maxGradient": 15.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstGiroYear": 1949,
+      "giroAppearances": 16,
+      "famousStories": [
+        "Le col est dominé par la vue sur le glacier de la Marmolada, le plus grand des Dolomites.",
+        "En 1987, Stephen Roche y lance une attaque contre son propre leader Roberto Visentini, créant une controverse.",
+        "En 2022, Jai Hindley y attaque Richard Carapaz, posant les bases de sa victoire finale au Giro d'Italia."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "33:28",
+          "year": 1998,
+          "side": "caprile"
+        },
+        "modern": {
+          "holder": "Jai Hindley",
+          "time": "37:52",
+          "year": 2022,
+          "side": "canazei"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Barrage de Fedaia",
+        "description": "Grand barrage hydroélectrique formant un lac artificiel près du sommet.",
+        "coordinates": [46.4597, 11.8719],
+        "type": "landmark"
+      },
+      {
+        "name": "Vue sur la Marmolada",
+        "description": "Panorama exceptionnel sur le glacier et le sommet de la Marmolada (3343m).",
+        "coordinates": [46.4597, 11.8719],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Malga Ciapela",
+        "description": "Station au pied du versant est, point de départ du téléphérique pour la Marmolada.",
+        "coordinates": [46.4332, 11.9018],
+        "type": "tourism"
+      },
+      {
+        "name": "Serrai di Sottoguda",
+        "description": "Gorge spectaculaire près de Malga Ciapela, site naturel remarquable.",
+        "coordinates": [46.4233, 11.8950],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré à élevé en été",
+      "winterClosure": "Accessible en hiver pour les stations de ski",
+      "facilities": ["Restaurants au sommet", "Boutiques souvenirs", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Plusieurs au sommet et à mi-parcours"]
+    },
+    "images": {
+      "main": "/images/cols/fedaia/main.jpg",
+      "gallery": [
+        "/images/cols/fedaia/canazei-side.jpg",
+        "/images/cols/fedaia/caprile-side.jpg",
+        "/images/cols/fedaia/marmolada.jpg",
+        "/images/cols/fedaia/dam.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Depuis Canazei, gardez des forces pour les 3 derniers kilomètres qui sont nettement plus difficiles (12-15%).",
+      "Le versant de Caprile est plus régulier mais plus long et globalement plus difficile.",
+      "En été, partez tôt pour éviter l'affluence touristique autour du lac et de la Marmolada."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "port-de-bales",
+    "name": "Port de Balès",
+    "altitude": 1755,
+    "location": {
+      "latitude": 42.9058,
+      "longitude": 0.5458,
+      "region": "Pyrénées centrales",
+      "country": "France",
+      "nearbyTowns": ["Mauléon-Barousse", "Bagnères-de-Luchon"]
+    },
+    "climbData": {
+      "mauleonSide": {
+        "startLocation": "Mauléon-Barousse",
+        "length": 18.8,
+        "elevation": 1195,
+        "averageGradient": 6.3,
+        "maxGradient": 11.0,
+        "difficulty": 8
+      },
+      "luchonSide": {
+        "startLocation": "Bagnères-de-Luchon",
+        "length": 19.2,
+        "elevation": 1185,
+        "averageGradient": 6.2,
+        "maxGradient": 10.5,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 2007,
+      "tourDeFranceAppearances": 4,
+      "famousStories": [
+        "Malgré son apparition récente au Tour de France, le col est devenu célèbre en 2010 lorsque Andy Schleck y perd sa chaîne alors qu'Alberto Contador poursuit son attaque, déclenchant une polémique.",
+        "En 2014, c'est lors de la descente de ce col que Contador chute et doit abandonner le Tour avec une fracture du tibia.",
+        "Le col n'a été entièrement asphalté qu'en 2006, spécifiquement pour permettre son inclusion dans le Tour de France."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Alberto Contador",
+          "time": "45:20",
+          "year": 2010,
+          "side": "mauleon"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Panorama des Pyrénées",
+        "description": "Vue exceptionnelle sur les sommets environnants, dont le Pic du Midi de Bigorre.",
+        "coordinates": [42.9058, 0.5458],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Forêt de hêtres",
+        "description": "Magnifique forêt traversée pendant l'ascension depuis Mauléon.",
+        "coordinates": [42.9240, 0.5342],
+        "type": "natural"
+      },
+      {
+        "name": "Cabane de berger",
+        "description": "Témoignage de l'activité pastorale traditionnelle dans la région.",
+        "coordinates": [42.9058, 0.5445],
+        "type": "cultural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Moyenne à bonne, route étroite par endroits",
+      "trafficLevel": "Très faible",
+      "winterClosure": "Généralement fermé de novembre à avril",
+      "facilities": ["Aucune installation permanente au sommet"],
+      "parkingAvailable": true,
+      "waterPoints": ["Source naturelle au sommet", "Ruisseaux en cours d'ascension"]
+    },
+    "images": {
+      "main": "/images/cols/port-de-bales/main.jpg",
+      "gallery": [
+        "/images/cols/port-de-bales/mauleon-side.jpg",
+        "/images/cols/port-de-bales/luchon-side.jpg",
+        "/images/cols/port-de-bales/summit.jpg",
+        "/images/cols/port-de-bales/mountain-view.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte (qualité variable)",
+    "trainingTips": [
+      "Les deux versants sont assez similaires en difficulté.",
+      "La route est étroite par endroits, soyez vigilant dans les virages.",
+      "Le col est assez isolé, prévoyez suffisamment d'eau et de ravitaillement."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "passo-san-pellegrino",
+    "name": "Passo San Pellegrino",
+    "altitude": 1918,
+    "location": {
+      "latitude": 46.4122,
+      "longitude": 11.7653,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Moena", "Falcade"]
+    },
+    "climbData": {
+      "moenaSide": {
+        "startLocation": "Moena",
+        "length": 12.2,
+        "elevation": 595,
+        "averageGradient": 4.9,
+        "maxGradient": 12.0,
+        "difficulty": 6
+      },
+      "falcadeSide": {
+        "startLocation": "Falcade",
+        "length": 8.5,
+        "elevation": 510,
+        "averageGradient": 6.0,
+        "maxGradient": 10.0,
+        "difficulty": 6
+      }
+    },
+    "history": {
+      "firstGiroYear": 1962,
+      "giroAppearances": 12,
+      "famousStories": [
+        "Le col est une destination de ski populaire en hiver, mais aussi un lieu de passage historique entre les vallées.",
+        "En 2017, durant le Giro, Mikel Landa franchit le col en tête et remporte l'étape à Gardena.",
+        "La zone autour du col est connue pour ses paysages spectaculaires et ses alpages traditionnels."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Mikel Landa",
+          "time": "27:54",
+          "year": 2017,
+          "side": "moena"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Station de ski San Pellegrino",
+        "description": "Importante station de sports d'hiver des Dolomites.",
+        "coordinates": [46.4122, 11.7653],
+        "type": "tourism"
+      },
+      {
+        "name": "Refuge Fuciade",
+        "description": "Refuge de montagne pittoresque situé dans un vallon après le col.",
+        "coordinates": [46.4036, 11.7592],
+        "type": "accommodation"
+      },
+      {
+        "name": "Sources thermales",
+        "description": "Sources d'eau minérale qui ont donné leur nom au col et à la célèbre eau en bouteille (bien que les sources commerciales soient ailleurs en Italie).",
+        "coordinates": [46.4107, 11.7639],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre pour le vélo, décembre à mars pour le ski",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré, plus élevé en haute saison touristique",
+      "winterClosure": "Ouvert toute l'année (déneigé pour accès aux stations de ski)",
+      "facilities": ["Hôtels", "Restaurants", "Boutiques", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Nombreux services au sommet", "Fontaines à mi-parcours"]
+    },
+    "images": {
+      "main": "/images/cols/san-pellegrino/main.jpg",
+      "gallery": [
+        "/images/cols/san-pellegrino/moena-side.jpg",
+        "/images/cols/san-pellegrino/falcade-side.jpg",
+        "/images/cols/san-pellegrino/ski-resort.jpg",
+        "/images/cols/san-pellegrino/dolomites-view.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Col relativement facile comparé à d'autres cols des Dolomites.",
+      "Idéal comme échauffement ou récupération dans un circuit des Dolomites.",
+      "Peut être combiné avec le Passo Valles ou le Passo Rolle pour une boucle intéressante."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "col-de-vars",
+    "name": "Col de Vars",
+    "altitude": 2109,
+    "location": {
+      "latitude": 44.5390,
+      "longitude": 6.7010,
+      "region": "Alpes du Sud",
+      "country": "France",
+      "nearbyTowns": ["Saint-Paul-sur-Ubaye", "Guillestre"]
+    },
+    "climbData": {
+      "saintPaulSide": {
+        "startLocation": "Saint-Paul-sur-Ubaye",
+        "length": 13.0,
+        "elevation": 685,
+        "averageGradient": 5.3,
+        "maxGradient": 9.0,
+        "difficulty": 6
+      },
+      "guillestreSide": {
+        "startLocation": "Guillestre",
+        "length": 19.0,
+        "elevation": 1041,
+        "averageGradient": 5.5,
+        "maxGradient": 10.0,
+        "difficulty": 7
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1922,
+      "tourDeFranceAppearances": 34,
+      "famousStories": [
+        "Le col fait partie de la Route des Grandes Alpes, itinéraire touristique reliant le lac Léman à Nice.",
+        "En 2000, Marco Pantani y attaque Lance Armstrong, qui résiste et conserve son maillot jaune.",
+        "Souvent enchaîné avec le Col d'Izoard ou le Col de la Bonette dans les étapes de montagne du Tour."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Nairo Quintana",
+          "time": "33:05",
+          "year": 2015,
+          "side": "guillestre"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Station de Vars-Sainte-Marie",
+        "description": "Station de ski rencontrée pendant l'ascension depuis Guillestre.",
+        "coordinates": [44.5706, 6.6997],
+        "type": "tourism"
+      },
+      {
+        "name": "Chapelle Saint-Marcellin",
+        "description": "Petite chapelle historique près du sommet.",
+        "coordinates": [44.5390, 6.7010],
+        "type": "cultural"
+      },
+      {
+        "name": "Panorama sur la vallée de l'Ubaye",
+        "description": "Vue exceptionnelle sur la vallée et les sommets environnants.",
+        "coordinates": [44.5390, 6.7010],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne",
+      "trafficLevel": "Modéré en été",
+      "winterClosure": "Généralement fermé de novembre à mai",
+      "facilities": ["Bar-restaurant au sommet", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaine au sommet", "Villages traversés"]
+    },
+    "images": {
+      "main": "/images/cols/vars/main.jpg",
+      "gallery": [
+        "/images/cols/vars/saint-paul-side.jpg",
+        "/images/cols/vars/guillestre-side.jpg",
+        "/images/cols/vars/summit.jpg",
+        "/images/cols/vars/ubaye-valley.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant de Guillestre est plus long mais offre une montée plus progressive.",
+      "Souvent venté au sommet, prévoyez un coupe-vent même par beau temps.",
+      "Point de départ idéal pour un circuit incluant d'autres cols comme Izoard ou Bonette."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  }
+]

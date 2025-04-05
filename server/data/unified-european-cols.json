@@ -1,0 +1,1966 @@
+[
+  {
+    "id": "stelvio-pass",
+    "name": "Passo dello Stelvio",
+    "altitude": 2758,
+    "location": {
+      "latitude": 46.5253,
+      "longitude": 10.4541,
+      "region": "Alpes italiennes",
+      "country": "Italie",
+      "nearbyTowns": [
+        "Bormio",
+        "Prato allo Stelvio",
+        "Santa Maria Val Müstair"
+      ]
+    },
+    "climbData": {
+      "bormioSide": {
+        "startLocation": "Bormio",
+        "length": 21.5,
+        "elevation": 1533,
+        "averageGradient": 7.1,
+        "maxGradient": 14,
+        "difficulty": 10
+      },
+      "pratoSide": {
+        "startLocation": "Prato allo Stelvio",
+        "length": 24.3,
+        "elevation": 1808,
+        "averageGradient": 7.4,
+        "maxGradient": 12,
+        "difficulty": 10
+      },
+      "swissSide": {
+        "startLocation": "Santa Maria Val Müstair",
+        "length": 19,
+        "elevation": 1492,
+        "averageGradient": 7.9,
+        "maxGradient": 12,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstGiroYear": 1953,
+      "giroAppearances": 26,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Le Stelvio est considéré comme le plus haut col routier des Alpes orientales.",
+        "Fausto Coppi l'a franchi en tête lors du Giro d'Italia de 1953, année où il remporta son 5ème et dernier Giro.",
+        "En 2012, l'étape du Giro passant par le Stelvio fut neutralisée à cause de conditions météorologiques extrêmes, provoquant une controverse.",
+        "Ses 48 virages en épingle côté Prato sont numérotés et constituent l'une des routes les plus spectaculaires d'Europe."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "1:03:00",
+          "year": 1994,
+          "side": "bormio"
+        },
+        "modern": {
+          "holder": "Egan Bernal",
+          "time": "1:06:51",
+          "year": 2019,
+          "side": "bormio"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Tornante 48",
+        "description": "Premier virage numéroté en montant depuis Prato, marquant le début de la célèbre série de virages en épingle.",
+        "coordinates": [
+          46.6037,
+          10.5012
+        ],
+        "type": "landmark"
+      },
+      {
+        "name": "Memorial Fausto Coppi",
+        "description": "Monument dédié au grand champion italien au sommet du col.",
+        "coordinates": [
+          46.5253,
+          10.4541
+        ],
+        "type": "monument"
+      },
+      {
+        "name": "Trois frontières",
+        "description": "Point proche du sommet où les frontières de l'Italie, de la Suisse et de l'Autriche se rencontrent.",
+        "coordinates": [
+          46.5151,
+          10.4834
+        ],
+        "type": "landmark"
+      },
+      {
+        "name": "Hotel Stelvio",
+        "description": "Hôtel historique situé au sommet du col, ouvert depuis 1954.",
+        "coordinates": [
+          46.5253,
+          10.4541
+        ],
+        "type": "accommodation"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mi-juin à fin septembre",
+      "roadCondition": "Excellente, bien entretenue mais étroite par endroits",
+      "trafficLevel": "Élevé en été, surtout les weekends",
+      "winterClosure": "Fermé d'octobre à mai",
+      "facilities": [
+        "Restaurants au sommet",
+        "Boutiques souvenirs",
+        "Point d'information",
+        "Toilettes"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Fontaine au sommet",
+        "Restaurants à mi-parcours"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/stelvio/main.jpg",
+      "gallery": [
+        "/images/cols/stelvio/bormio-side.jpg",
+        "/images/cols/stelvio/prato-side.jpg",
+        "/images/cols/stelvio/hairpins.jpg",
+        "/images/cols/stelvio/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Prévoyez plusieurs couches de vêtements car la température peut chuter de 15°C entre le départ et le sommet.",
+      "Le versant de Prato est plus difficile psychologiquement car on voit les nombreux virages en épingle devant soi.",
+      "Emportez suffisamment d'eau et de nourriture, les points de ravitaillement peuvent être éloignés."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel avec cassette adaptée"
+    ]
+  },
+  {
+    "id": "mont-ventoux",
+    "name": "Mont Ventoux",
+    "altitude": 1909,
+    "location": {
+      "latitude": 44.1741,
+      "longitude": 5.2783,
+      "region": "Provence",
+      "country": "France",
+      "nearbyTowns": [
+        "Bédoin",
+        "Malaucène",
+        "Sault"
+      ]
+    },
+    "climbData": {
+      "bedoinSide": {
+        "startLocation": "Bédoin",
+        "length": 21.5,
+        "elevation": 1610,
+        "averageGradient": 7.5,
+        "maxGradient": 12,
+        "difficulty": 10
+      },
+      "malauceneSide": {
+        "startLocation": "Malaucène",
+        "length": 21.2,
+        "elevation": 1570,
+        "averageGradient": 7.4,
+        "maxGradient": 12,
+        "difficulty": 9
+      },
+      "saultSide": {
+        "startLocation": "Sault",
+        "length": 26,
+        "elevation": 1210,
+        "averageGradient": 4.7,
+        "maxGradient": 11,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1951,
+      "tourDeFranceAppearances": 16,
+      "famousStories": [
+        "Le 13 juillet 1967, Tom Simpson s'effondre à 1.5 km du sommet et décède, victime de la chaleur, de l'épuisement et d'un mélange d'amphétamines et d'alcool.",
+        "En 1970, Eddy Merckx frôle l'épuisement après avoir attaqué à 11 km du sommet et doit recevoir de l'oxygène à l'arrivée.",
+        "En 2016, la course fut chaotique en raison de vents violents qui ont fait tomber une arche d'arrivée, forçant Chris Froome à courir à pied sur plusieurs centaines de mètres."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Iban Mayo",
+          "time": "55:51",
+          "year": 2004,
+          "side": "bedoin"
+        },
+        "modern": {
+          "holder": "Miguel Angel Lopez",
+          "time": "58:40",
+          "year": 2021,
+          "side": "bedoin"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Mémorial Tom Simpson",
+        "description": "Monument commémorant le cycliste britannique décédé sur les pentes du Ventoux en 1967.",
+        "coordinates": [
+          44.1728,
+          5.2781
+        ],
+        "type": "monument"
+      },
+      {
+        "name": "Chalet Reynard",
+        "description": "Restaurant situé à la jonction des routes de Bédoin et Sault, dernier point de ravitaillement avant le sommet.",
+        "coordinates": [
+          44.1507,
+          5.2929
+        ],
+        "type": "restaurant"
+      },
+      {
+        "name": "Observatoire du Mont Ventoux",
+        "description": "Station météorologique au sommet, reconnaissable à sa tour blanche visible de loin.",
+        "coordinates": [
+          44.1741,
+          5.2783
+        ],
+        "type": "landmark"
+      },
+      {
+        "name": "Forêt de cèdres",
+        "description": "Forêt traversée lors de l'ascension par Sault, offrant de l'ombre et une atmosphère unique.",
+        "coordinates": [
+          44.1231,
+          5.3123
+        ],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre, éviter juillet-août en raison de la chaleur",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré à élevé en été",
+      "winterClosure": "Parfois fermé en hiver selon conditions météo",
+      "facilities": [
+        "Boutique souvenirs au sommet",
+        "Restaurants à Chalet Reynard",
+        "Toilettes"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Chalet Reynard",
+        "Sommet"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/ventoux/main.jpg",
+      "gallery": [
+        "/images/cols/ventoux/bedoin-side.jpg",
+        "/images/cols/ventoux/malaucene-side.jpg",
+        "/images/cols/ventoux/moonscape.jpg",
+        "/images/cols/ventoux/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Par temps clair, la chaleur peut être accablante sur les pentes exposées après la forêt. Partez tôt.",
+      "Le vent au sommet peut être extrêmement violent, parfois supérieur à 200 km/h.",
+      "La section après Chalet Reynard est totalement exposée et ressemble à un paysage lunaire."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
+  },
+  {
+    "id": "passo-di-gavia",
+    "name": "Passo di Gavia",
+    "altitude": 2621,
+    "location": {
+      "latitude": 46.3461,
+      "longitude": 10.4927,
+      "region": "Alpes lombardes",
+      "country": "Italie",
+      "nearbyTowns": [
+        "Bormio",
+        "Ponte di Legno"
+      ]
+    },
+    "climbData": {
+      "bormioSide": {
+        "startLocation": "Bormio",
+        "length": 25.6,
+        "elevation": 1400,
+        "averageGradient": 5.5,
+        "maxGradient": 16,
+        "difficulty": 9
+      },
+      "ponteSide": {
+        "startLocation": "Ponte di Legno",
+        "length": 17.3,
+        "elevation": 1363,
+        "averageGradient": 7.9,
+        "maxGradient": 16,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstGiroYear": 1960,
+      "giroAppearances": 17,
+      "famousStories": [
+        "L'étape légendaire du Giro 1988 dans une tempête de neige, où Andy Hampsten a pris le maillot rose qu'il gardera jusqu'à la fin.",
+        "La route n'a été complètement asphaltée qu'en 1998, auparavant certaines sections étaient en terre ou en gravier.",
+        "En 2019, l'étape du Giro passant par le Gavia a dû être modifiée en raison du risque d'avalanches."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Ivan Basso",
+          "time": "42:40",
+          "year": 2006,
+          "side": "ponte"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Rifugio Bonetta",
+        "description": "Refuge de montagne situé au sommet, offrant restauration et chambres.",
+        "coordinates": [
+          46.3461,
+          10.4927
+        ],
+        "type": "accommodation"
+      },
+      {
+        "name": "Lac de Gavia",
+        "description": "Petit lac près du sommet, souvent gelé jusqu'en juin.",
+        "coordinates": [
+          46.3437,
+          10.4896
+        ],
+        "type": "natural"
+      },
+      {
+        "name": "Monument d'Andy Hampsten",
+        "description": "Plaque commémorative rappelant l'exploit du cycliste américain en 1988.",
+        "coordinates": [
+          46.3461,
+          10.4927
+        ],
+        "type": "monument"
+      },
+      {
+        "name": "Tunnels de Santa Caterina",
+        "description": "Série de tunnels étroits sur le versant de Bormio, particulièrement impressionnants.",
+        "coordinates": [
+          46.3902,
+          10.5033
+        ],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mi-juin à septembre",
+      "roadCondition": "Moyenne à bonne, route étroite avec tunnels non éclairés",
+      "trafficLevel": "Faible à modéré",
+      "winterClosure": "Fermé d'octobre à mai/juin",
+      "facilities": [
+        "Refuge au sommet avec restaurant",
+        "Toilettes"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Refuge au sommet",
+        "Sources naturelles le long du parcours"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/gavia/main.jpg",
+      "gallery": [
+        "/images/cols/gavia/bormio-side.jpg",
+        "/images/cols/gavia/ponte-side.jpg",
+        "/images/cols/gavia/tunnels.jpg",
+        "/images/cols/gavia/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte (qualité variable)",
+    "trainingTips": [
+      "Emportez des vêtements chauds, même en été. La météo peut changer très rapidement.",
+      "Les tunnels du côté Bormio sont non éclairés, un éclairage est recommandé.",
+      "Le versant Ponte di Legno est plus régulier mais plus raide que celui de Bormio."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel"
+    ]
+  },
+  {
+    "id": "col-du-galibier",
+    "name": "Col du Galibier",
+    "altitude": 2642,
+    "location": {
+      "latitude": 45.0633,
+      "longitude": 6.4083,
+      "region": "Alpes françaises",
+      "country": "France",
+      "nearbyTowns": [
+        "Saint-Michel-de-Maurienne",
+        "Briançon",
+        "Valloire"
+      ]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Valloire",
+        "length": 18,
+        "elevation": 1245,
+        "averageGradient": 6.9,
+        "maxGradient": 12.1,
+        "difficulty": 9
+      },
+      "southSide": {
+        "startLocation": "Col du Lautaret",
+        "length": 8.5,
+        "elevation": 585,
+        "averageGradient": 6.9,
+        "maxGradient": 12,
+        "difficulty": 8
+      },
+      "fullNorthSide": {
+        "startLocation": "Saint-Michel-de-Maurienne",
+        "length": 34.8,
+        "elevation": 2120,
+        "averageGradient": 6.1,
+        "maxGradient": 12.1,
+        "difficulty": 10,
+        "note": "Inclut le Col du Télégraphe"
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1911,
+      "tourDeFranceAppearances": 60,
+      "famousStories": [
+        "Lors de sa première apparition au Tour en 1911, seuls 3 coureurs franchirent le col sans mettre pied à terre.",
+        "En 2011, Andy Schleck a lancé une attaque mémorable à 60 km de l'arrivée pour gagner l'étape.",
+        "Un tunnel a été construit en 1976 pour permettre le passage en hiver, mais les cyclistes empruntent toujours la route qui monte jusqu'au sommet."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "37:15",
+          "year": 1998,
+          "side": "north"
+        },
+        "modern": {
+          "holder": "Tadej Pogačar",
+          "time": "38:29",
+          "year": 2022,
+          "side": "north"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Monument Henri Desgrange",
+        "description": "Mémorial dédié au fondateur du Tour de France, situé près du sommet.",
+        "coordinates": [
+          45.0641,
+          6.4077
+        ],
+        "type": "monument"
+      },
+      {
+        "name": "Panorama sur la Meije",
+        "description": "Vue exceptionnelle sur le massif de la Meije (3983m) depuis le col.",
+        "coordinates": [
+          45.0633,
+          6.4083
+        ],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Tunnel du Galibier",
+        "description": "Tunnel de 365m permettant de traverser sous le col en hiver.",
+        "coordinates": [
+          45.0652,
+          6.4068
+        ],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré à élevé en été",
+      "winterClosure": "Col fermé d'octobre à juin, tunnel ouvert toute l'année",
+      "facilities": [
+        "Boutique souvenirs au sommet en saison",
+        "Restaurant au Col du Lautaret"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Source au sommet",
+        "Restaurants à Valloire et au Col du Lautaret"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/galibier/main.jpg",
+      "gallery": [
+        "/images/cols/galibier/north-side.jpg",
+        "/images/cols/galibier/south-side.jpg",
+        "/images/cols/galibier/monument.jpg",
+        "/images/cols/galibier/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Pour une ascension complète depuis le nord, prévoyez d'enchaîner le Télégraphe puis le Galibier.",
+      "Les derniers kilomètres sont les plus difficiles, avec une pente qui augmente progressivement.",
+      "L'altitude se fait sentir, prévoyez une gestion de l'effort adaptée."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
+  },
+  {
+    "id": "passo-dello-mortirolo",
+    "name": "Passo del Mortirolo",
+    "altitude": 1852,
+    "location": {
+      "latitude": 46.2207,
+      "longitude": 10.3018,
+      "region": "Alpes lombardes",
+      "country": "Italie",
+      "nearbyTowns": [
+        "Mazzo di Valtellina",
+        "Monno",
+        "Grosio"
+      ]
+    },
+    "climbData": {
+      "mazzoSide": {
+        "startLocation": "Mazzo di Valtellina",
+        "length": 12.4,
+        "elevation": 1300,
+        "averageGradient": 10.5,
+        "maxGradient": 18,
+        "difficulty": 10
+      },
+      "monnoSide": {
+        "startLocation": "Monno",
+        "length": 12.6,
+        "elevation": 850,
+        "averageGradient": 6.7,
+        "maxGradient": 16,
+        "difficulty": 8
+      },
+      "grosioSide": {
+        "startLocation": "Grosio",
+        "length": 14.8,
+        "elevation": 1190,
+        "averageGradient": 8,
+        "maxGradient": 16,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstGiroYear": 1990,
+      "giroAppearances": 14,
+      "famousStories": [
+        "Lance Armstrong a déclaré que c'était la montée la plus difficile qu'il ait jamais affrontée.",
+        "En 1994, Marco Pantani a attaqué sur ces pentes, laissant derrière lui des rivaux comme Miguel Indurain.",
+        "Son surnom 'La salita più dura d'Europa' signifie 'la montée la plus dure d'Europe'."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Ivan Basso",
+          "time": "43:55",
+          "year": 2006,
+          "side": "mazzo"
+        },
+        "modern": {
+          "holder": "Nairo Quintana",
+          "time": "45:02",
+          "year": 2017,
+          "side": "mazzo"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Monument Marco Pantani",
+        "description": "Statue commémorative dédiée au 'Pirate', immortalisant son attaque légendaire de 1994.",
+        "coordinates": [
+          46.2355,
+          10.2964
+        ],
+        "type": "monument"
+      },
+      {
+        "name": "Virage 11",
+        "description": "L'un des virages les plus raides de l'ascension par Mazzo, avec une pente dépassant 18%.",
+        "coordinates": [
+          46.234,
+          10.2975
+        ],
+        "type": "landmark"
+      },
+      {
+        "name": "Chapelle San Matteo",
+        "description": "Petite chapelle près du sommet, lieu de recueillement pour nombreux cyclistes.",
+        "coordinates": [
+          46.2207,
+          10.3018
+        ],
+        "type": "cultural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Moyenne à bonne, route étroite",
+      "trafficLevel": "Faible",
+      "winterClosure": "Généralement fermé de novembre à avril",
+      "facilities": [
+        "Petite buvette occasionnelle au sommet en haute saison"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Fontaines à Mazzo et au sommet"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/mortirolo/main.jpg",
+      "gallery": [
+        "/images/cols/mortirolo/mazzo-side.jpg",
+        "/images/cols/mortirolo/monno-side.jpg",
+        "/images/cols/mortirolo/pantani-monument.jpg",
+        "/images/cols/mortirolo/summit.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Pour l'ascension par Mazzo, un rapport de 34x32 minimum est recommandé.",
+      "Ne vous laissez pas piéger par le début relativement facile depuis Mazzo, les pentes s'accentuent rapidement.",
+      "Le versant de Monno est nettement plus accessible et offre de beaux paysages."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route avec triple plateau ou compact"
+    ]
+  },
+  {
+    "id": "transfagarasan",
+    "name": "Transfăgărășan",
+    "region": "Carpates méridionales",
+    "country": "Roumanie",
+    "elevation": 2042,
+    "length": 27.4,
+    "averageGradient": 6.2,
+    "maxGradient": 8.6,
+    "difficulty": "1",
+    "segments": [
+      {
+        "name": "Căpățânenii Ungureni à Vidraru",
+        "gradient": 5.4,
+        "length": 12.5,
+        "difficulty": "Modéré"
+      },
+      {
+        "name": "Barrage Vidraru au Bâlea Lac",
+        "gradient": 6.8,
+        "length": 14.9,
+        "difficulty": "Difficile"
+      }
+    ],
+    "history": [
+      {
+        "event": "Tour de Roumanie",
+        "year": 2008,
+        "description": "Première apparition en compétition internationale"
+      },
+      {
+        "event": "Transfăgărășan Challenge",
+        "year": 2022,
+        "description": "Course amateur annuelle créée pour promouvoir ce col spectaculaire"
+      }
+    ],
+    "records": {
+      "official": "1:15:45 (Ede Molnar, 2019)",
+      "strava": "1:17:32 (Tadej Pogačar, 2023)"
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Barrage Vidraru",
+        "type": "monument",
+        "location": "Mi-parcours"
+      },
+      {
+        "name": "Lac Bâlea",
+        "type": "panorama",
+        "location": "Sommet"
+      },
+      {
+        "name": "Cabana Bâlea",
+        "type": "ravitaillement",
+        "location": "Sommet"
+      }
+    ],
+    "weatherInfo": {
+      "bestSeason": "Juin à Septembre",
+      "closedPeriod": "Octobre à Mai (neige)",
+      "windExposure": "Forte exposition au vent sur la partie supérieure",
+      "temperatureDelta": "Différence de 10-15°C entre la base et le sommet"
+    },
+    "services": {
+      "water": [
+        "Barrage Vidraru",
+        "Cabana Bâlea"
+      ],
+      "food": [
+        "Restaurant Vidraru",
+        "Cabana Bâlea Lac"
+      ],
+      "shelter": [
+        "Tunnel sommital",
+        "Cabana Bâlea"
+      ],
+      "mechanics": [
+        "Căpățânenii Ungureni (village de départ)"
+      ]
+    },
+    "testimonials": [
+      {
+        "name": "Sophie Martin",
+        "date": "2023-07-15",
+        "text": "Une route incroyable! Les paysages sont à couper le souffle et l'ascension est un vrai défi. Attention au vent et aux changements de température en altitude."
+      },
+      {
+        "name": "Adrian Popescu",
+        "date": "2022-08-20",
+        "text": "En tant que cycliste roumain, je conseille de partir tôt le matin pour éviter le trafic touristique en saison. Les derniers kilomètres sont magiques."
+      }
+    ],
+    "images": [
+      "/assets/images/cols/transfagarasan/main.jpg",
+      "/assets/images/cols/transfagarasan/view1.jpg",
+      "/assets/images/cols/transfagarasan/view2.jpg"
+    ],
+    "mapUrl": "/assets/maps/transfagarasan.geojson",
+    "description": "Surnommée 'la plus belle route du monde' par l'émission Top Gear, la Transfăgărășan est l'une des routes les plus spectaculaires d'Europe. Construite entre 1970 et 1974 comme route militaire, elle traverse la partie la plus haute des Carpates roumaines. Son tracé sinueux, ses tunnels et ses vues panoramiques en font un paradis pour les cyclistes en quête d'aventure dans l'Est européen.",
+    "createdAt": "2025-04-05T03:20:00Z",
+    "updatedAt": "2025-04-05T03:20:00Z"
+  },
+  {
+    "id": "passo-giau",
+    "name": "Passo Giau",
+    "region": "Dolomites",
+    "country": "Italie",
+    "elevation": 2236,
+    "length": 9.9,
+    "averageGradient": 9.3,
+    "maxGradient": 14,
+    "difficulty": "HC",
+    "segments": [
+      {
+        "name": "Selva di Cadore à mi-parcours",
+        "gradient": 8.7,
+        "length": 5,
+        "difficulty": "Difficile"
+      },
+      {
+        "name": "Mi-parcours au sommet",
+        "gradient": 9.9,
+        "length": 4.9,
+        "difficulty": "Très difficile"
+      }
+    ],
+    "history": [
+      {
+        "event": "Giro d'Italia",
+        "year": 1973,
+        "description": "Première apparition au Giro"
+      },
+      {
+        "event": "Giro d'Italia",
+        "year": 2021,
+        "description": "Étape reine raccourcie en raison de conditions météorologiques extrêmes"
+      }
+    ],
+    "records": {
+      "official": "37:03 (Egan Bernal, 2021)",
+      "strava": "38:12 (Damiano Caruso, 2021)"
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Rifugio Passo Giau",
+        "type": "ravitaillement",
+        "location": "Sommet"
+      },
+      {
+        "name": "Vue sur le Mont Civetta",
+        "type": "panorama",
+        "location": "Km 7"
+      }
+    ],
+    "weatherInfo": {
+      "bestSeason": "Juin à Septembre",
+      "closedPeriod": "Novembre à Mai (neige)",
+      "windExposure": "Exposition moyenne, plus forte au sommet",
+      "temperatureDelta": "Différence de 8-10°C entre la base et le sommet"
+    },
+    "services": {
+      "water": [
+        "Selva di Cadore",
+        "Rifugio Passo Giau"
+      ],
+      "food": [
+        "Rifugio Passo Giau"
+      ],
+      "shelter": [
+        "Rifugio Passo Giau"
+      ],
+      "mechanics": [
+        "Cortina d'Ampezzo (15km)"
+      ]
+    },
+    "testimonials": [
+      {
+        "name": "Marc Dubois",
+        "date": "2024-07-10",
+        "text": "Ce col est un monstre! 10% de moyenne pendant 10km, c'est brutal. Mais les paysages des Dolomites valent chaque goutte de sueur."
+      },
+      {
+        "name": "Elena Rossi",
+        "date": "2023-08-25",
+        "text": "J'ai grimpé le Giau après une journée de pluie. La route était parfaite et les nuages bas créaient une ambiance mystique. Un conseil: gardez des forces pour les 3 derniers kilomètres!"
+      }
+    ],
+    "images": [
+      "/assets/images/cols/passo-giau/main.jpg",
+      "/assets/images/cols/passo-giau/view1.jpg",
+      "/assets/images/cols/passo-giau/view2.jpg"
+    ],
+    "mapUrl": "/assets/maps/passo-giau.geojson",
+    "description": "Le Passo Giau est considéré comme l'une des ascensions les plus difficiles des Dolomites. Avec sa pente constamment raide et ses paysages spectaculaires sur les sommets environnants, il est devenu un passage emblématique du Giro d'Italia. C'est un col qui ne laisse aucun répit aux cyclistes mais qui récompense l'effort par des vues inoubliables.",
+    "createdAt": "2025-04-05T03:21:00Z",
+    "updatedAt": "2025-04-05T03:21:00Z"
+  },
+  {
+    "id": "sveti-jure",
+    "name": {
+      "fr": "Sveti Jure",
+      "en": "Saint George",
+      "de": "Sankt Georg",
+      "it": "San Giorgio",
+      "es": "San Jorge"
+    },
+    "region": "Montagnes Biokovo",
+    "country": "Croatie",
+    "elevation": 1762,
+    "length": 23,
+    "averageGradient": 5.9,
+    "maxGradient": 13,
+    "difficulty": 5,
+    "segments": [
+      {
+        "name": "Makarska à la forêt",
+        "gradient": 4.8,
+        "length": 10,
+        "difficulty": "Modéré"
+      },
+      {
+        "name": "Zone de forêt",
+        "gradient": 7.1,
+        "length": 5,
+        "difficulty": "Difficile"
+      },
+      {
+        "name": "Dernière section",
+        "gradient": 6.3,
+        "length": 8,
+        "difficulty": "Difficile"
+      }
+    ],
+    "history": {
+      "firstCompetitionYear": 2017,
+      "tourOfCroatiaAppearances": 4,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Sveti Jure est le point culminant des montagnes Biokovo, offrant un contraste saisissant entre la mer Adriatique et la haute montagne.",
+        "La route fut construite pour accéder à la station météorologique et au relais de télécommunication au sommet.",
+        "En 2017, lors du Tour de Croatie, Jaime Rosón a établi le record officiel d'ascension lors d'une étape mémorable.",
+        "Le nom 'Sveti Jure' vient d'une petite chapelle dédiée à Saint Georges (Sveti Jure en croate) située près du sommet."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Jaime Rosón",
+          "time": "1:05:21",
+          "year": 2017,
+          "side": "makarskaRoute"
+        },
+        "modern": {
+          "holder": "Kristijan Đurasek",
+          "time": "1:07:45",
+          "year": 2022,
+          "side": "makarskaRoute"
+        }
+      }
+    },
+    "records": {
+      "official": "1:05:21 (Jaime Rosón, 2017)",
+      "strava": "1:07:45 (Kristijan Đurasek, 2022)"
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Skywalk Biokovo",
+        "description": "Plateforme d'observation en verre suspendue à 1228m d'altitude offrant une vue vertigineuse sur la côte.",
+        "coordinates": [
+          43.3171,
+          17.0586
+        ],
+        "type": "attraction"
+      },
+      {
+        "name": "Chapelle Saint Georges",
+        "description": "Petit édifice religieux datant du Moyen Âge, situé près du sommet.",
+        "coordinates": [
+          43.3196,
+          17.055
+        ],
+        "type": "monument"
+      },
+      {
+        "name": "Parc naturel de Biokovo",
+        "description": "Parc protégé couvrant 196 km² avec une flore et une faune uniques.",
+        "coordinates": [
+          43.31,
+          17.05
+        ],
+        "type": "nature"
+      },
+      {
+        "name": "Station météorologique du sommet",
+        "description": "En service depuis 1964, c'est l'une des stations les plus exposées de Croatie.",
+        "coordinates": [
+          43.3196,
+          17.0558
+        ],
+        "type": "infrastructure"
+      }
+    ],
+    "weatherInfo": {
+      "bestSeason": "Mai à octobre",
+      "closedPeriod": "Décembre à mars possible (neige/vent)",
+      "windExposure": "Extrêmement élevée, la 'bora' (vent du nord) peut dépasser 200 km/h",
+      "temperatureDelta": "Différence de 12-15°C entre la côte et le sommet",
+      "weatherChange": "Très rapide, le beau temps peut se transformer en orage en moins d'une heure"
+    },
+    "services": {
+      "water": [
+        {
+          "km": 0,
+          "description": "Fontaines à Makarska"
+        },
+        {
+          "km": 15,
+          "description": "Centre d'information du parc"
+        },
+        {
+          "km": 23,
+          "description": "Refuge du sommet (saisonnier)"
+        }
+      ],
+      "food": [
+        {
+          "name": "Restaurant à l'entrée du parc",
+          "km": 5,
+          "type": "restaurant",
+          "openingHours": "9h-19h"
+        },
+        {
+          "name": "Café Skywalk",
+          "km": 15,
+          "type": "café",
+          "openingHours": "10h-18h (avril-octobre)"
+        }
+      ],
+      "shelter": [
+        {
+          "name": "Centre d'information",
+          "km": 15,
+          "type": "bâtiment"
+        },
+        {
+          "name": "Refuge du sommet",
+          "km": 23,
+          "type": "refuge"
+        }
+      ],
+      "mechanics": [
+        {
+          "name": "Bike Shop Makarska",
+          "location": "Makarska",
+          "distance": 0
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Pierre Lambert",
+        "date": "2024-06-05",
+        "rating": 5,
+        "text": "Une ascension extraordinaire! En partant de la mer Adriatique, on grimpe jusqu'à presque 1800m avec des vues incroyables tout le long. Le contraste entre le bleu de la mer et les montagnes rocheuses est saisissant."
+      },
+      {
+        "author": "Ana Kovačić",
+        "date": "2023-09-12",
+        "rating": 4,
+        "text": "Attention au vent qui peut être très fort. J'ai dû abandonner ma première tentative à cause des rafales. La deuxième fois, par temps calme, c'était une expérience magique avec la vue sur les îles croates."
+      },
+      {
+        "author": "Marco Bianchi",
+        "date": "2024-05-20",
+        "rating": 5,
+        "text": "J'ai grimpé depuis Podgora, c'est plus court mais nettement plus raide. Le trafic est modéré jusqu'au Skywalk puis presque inexistant jusqu'au sommet. Prévoyez de vous arrêter au Skywalk, la vue est spectaculaire!"
+      }
+    ],
+    "images": {
+      "main": "/images/cols/sveti-jure/main.jpg",
+      "gallery": [
+        "/images/cols/sveti-jure/coast-view.jpg",
+        "/images/cols/sveti-jure/skywalk.jpg",
+        "/images/cols/sveti-jure/hairpins.jpg",
+        "/images/cols/sveti-jure/summit.jpg"
+      ]
+    },
+    "mapUrl": "/assets/maps/sveti-jure.geojson",
+    "description": "Le mont Sveti Jure est le point culminant des montagnes Biokovo en Croatie et l'une des ascensions les plus spectaculaires des Balkans. Partant de la ville côtière de Makarska, cette montée offre un contraste saisissant: on passe de la Méditerranée à un paysage alpin en quelques heures de vélo. Le sommet offre une vue panoramique sur la côte dalmate et ses îles, ainsi que sur la Bosnie-Herzégovine à l'intérieur des terres.",
+    "createdAt": "2025-04-05T03:22:00Z",
+    "updatedAt": "2025-04-05T03:22:00Z",
+    "altitude": 1762,
+    "location": {
+      "latitude": 43.3196,
+      "longitude": 17.0558,
+      "region": "Montagnes Biokovo",
+      "country": "Croatie",
+      "nearbyTowns": [
+        "Makarska",
+        "Podgora",
+        "Tučepi"
+      ]
+    },
+    "climbData": {
+      "makarskaRoute": {
+        "startLocation": "Makarska",
+        "length": 23,
+        "elevation": 1762,
+        "averageGradient": 7.7,
+        "maxGradient": 13,
+        "difficulty": 9
+      },
+      "podgoraRoute": {
+        "startLocation": "Podgora",
+        "length": 19.5,
+        "elevation": 1732,
+        "averageGradient": 8.9,
+        "maxGradient": 15,
+        "difficulty": 10
+      }
+    },
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Bonne, entièrement asphaltée mais étroite",
+      "trafficLevel": "Modéré en saison touristique, surtout jusqu'au Skywalk",
+      "winterClosure": "Possible de décembre à mars selon conditions",
+      "facilities": [
+        "Centre d'information du parc",
+        "Toilettes au Skywalk",
+        "Petit refuge au sommet"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Entrée du parc",
+        "Skywalk",
+        "Sommet (saisonnier)"
+      ]
+    },
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Partez tôt le matin pour éviter les fortes chaleurs estivales et le trafic touristique.",
+      "Le vent peut être extrêmement fort, entraînez-vous à rouler par vent latéral violent.",
+      "Prévoyez plus d'eau que d'habitude, la chaleur réfléchie par les roches blanches augmente la déshydratation."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel"
+    ],
+    "lastUpdated": "2025-04-05T03:32:00Z"
+  },
+  {
+    "id": "angliru",
+    "name": {
+      "fr": "Alto de l'Angliru",
+      "en": "Alto de l'Angliru",
+      "de": "Alto de l'Angliru",
+      "it": "Alto de l'Angliru",
+      "es": "Alto de l'Angliru"
+    },
+    "altitude": 1573,
+    "location": {
+      "latitude": 43.2218,
+      "longitude": -5.9275,
+      "region": "Asturies",
+      "country": "Espagne",
+      "nearbyTowns": [
+        "La Vega",
+        "Riosa",
+        "Oviedo"
+      ]
+    },
+    "climbData": {
+      "mainSide": {
+        "startLocation": "La Vega",
+        "length": 12.5,
+        "elevation": 1248,
+        "averageGradient": 10,
+        "maxGradient": 23.5,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 1999,
+      "vuealtaAppearances": 9,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "L'Angliru est considéré comme l'une des montées les plus difficiles du cyclisme professionnel, avec des pentes qui atteignent 23,5%.",
+        "En 2002, David Millar a déchiré son dossard juste avant la ligne d'arrivée en protestation contre les conditions extrêmes de l'ascension.",
+        "En 2017, Alberto Contador y a remporté sa dernière victoire professionnelle avant sa retraite, un moment emblématique pour le cyclisme espagnol.",
+        "La montée fut controversée lors de son introduction en 1999, certains coureurs la considérant comme trop extrême pour la compétition."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Roberto Heras",
+          "time": "41:55",
+          "year": 2000,
+          "side": "mainSide"
+        },
+        "modern": {
+          "holder": "Hugh Carthy",
+          "time": "43:16",
+          "year": 2020,
+          "side": "mainSide"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Virage de la Cueña les Cabres",
+        "description": "Section la plus raide avec 23,5% de pente, aussi appelée 'le virage de la casse'.",
+        "coordinates": [
+          43.2122,
+          -5.9328
+        ],
+        "type": "landmark"
+      },
+      {
+        "name": "Monument à José María Jiménez",
+        "description": "Hommage au grimpeur espagnol, premier vainqueur sur l'Angliru en 1999.",
+        "coordinates": [
+          43.2218,
+          -5.9275
+        ],
+        "type": "monument"
+      },
+      {
+        "name": "Mirador de l'Angliru",
+        "description": "Point de vue panoramique sur les montagnes des Asturies.",
+        "coordinates": [
+          43.2218,
+          -5.9275
+        ],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Bon état général, surface parfois irrégulière",
+      "trafficLevel": "Faible, route à faible trafic",
+      "winterClosure": "Possible de novembre à avril selon conditions",
+      "facilities": [
+        "Petit bar au sommet (saisonnier)",
+        "Parking au sommet"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Fontaine à La Vega",
+        "Bar au sommet (saisonnier)"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/angliru/main.jpg",
+      "gallery": [
+        "/images/cols/angliru/steep-section.jpg",
+        "/images/cols/angliru/summit.jpg",
+        "/images/cols/angliru/view.jpg",
+        "/images/cols/angliru/gradient-sign.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Préparez-vous avec un développement très souple (34x32 minimum, idéalement 34x34 ou 36x34).",
+      "Entraînez-vous spécifiquement sur des pentes très raides avant de tenter l'Angliru.",
+      "Effectuez un échauffement complet avant d'attaquer la montée."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route avec triple plateau ou compact+grande cassette"
+    ],
+    "weatherInfo": {
+      "bestSeason": "Juin à septembre",
+      "closedPeriod": "Conditions difficiles de novembre à avril",
+      "windExposure": "Modérée, partiellement protégé par la forêt",
+      "temperatureDelta": "Différence de 5-8°C entre la base et le sommet",
+      "mistRisk": "Élevé, brouillard fréquent même en été"
+    },
+    "services": {
+      "water": [
+        {
+          "km": 0,
+          "description": "Fontaine à La Vega"
+        },
+        {
+          "km": 12,
+          "description": "Bar au sommet (saisonnier)"
+        }
+      ],
+      "food": [
+        {
+          "name": "Restaurant La Vega",
+          "km": 0,
+          "type": "restaurant",
+          "openingHours": "12h-22h"
+        },
+        {
+          "name": "Bar Angliru",
+          "km": 12,
+          "type": "café",
+          "openingHours": "11h-18h (mai-octobre)"
+        }
+      ],
+      "shelter": [
+        {
+          "name": "Abri au sommet",
+          "km": 12,
+          "type": "abri"
+        }
+      ],
+      "mechanics": [
+        {
+          "name": "Ciclos Fran",
+          "location": "Riosa",
+          "distance": 5
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Carlos Rodríguez",
+        "date": "2023-09-20",
+        "rating": 5,
+        "text": "Une ascension mythique et brutale! J'ai utilisé un 34x34 et j'étais à la limite dans les sections à 23%. Prévoyez de pouvoir vous arrêter et repartir dans les pentes raides, c'est un véritable défi."
+      },
+      {
+        "author": "Marie Lefort",
+        "date": "2024-07-15",
+        "rating": 4.5,
+        "text": "J'appréhendais énormément cette montée légendaire, mais finalement j'ai réussi à la grimper en prenant mon temps. Le secret: un bon braquet et surtout une bonne gestion de l'effort dès le début."
+      },
+      {
+        "author": "John Smith",
+        "date": "2022-06-10",
+        "rating": 5,
+        "text": "Une expérience inoubliable, probablement la montée la plus difficile que j'ai jamais faite. La section 'Cueña les Cabres' est surréaliste. Apportez suffisamment d'eau, il n'y a pas grand-chose en chemin."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:31:00Z"
+  },
+  {
+    "id": "pico-veleta",
+    "name": {
+      "fr": "Pico Veleta",
+      "en": "Pico Veleta",
+      "de": "Pico Veleta",
+      "it": "Pico Veleta",
+      "es": "Pico Veleta"
+    },
+    "altitude": 3398,
+    "location": {
+      "latitude": 37.0539,
+      "longitude": -3.3647,
+      "region": "Sierra Nevada",
+      "country": "Espagne",
+      "nearbyTowns": [
+        "Granada",
+        "Monachil",
+        "Pradollano"
+      ]
+    },
+    "climbData": {
+      "granadaRoute": {
+        "startLocation": "Granada",
+        "length": 45.5,
+        "elevation": 2735,
+        "averageGradient": 6,
+        "maxGradient": 12,
+        "difficulty": 10
+      },
+      "pradollanoRoute": {
+        "startLocation": "Pradollano (station de ski)",
+        "length": 18,
+        "elevation": 1140,
+        "averageGradient": 6.3,
+        "maxGradient": 10,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 1979,
+      "vuealtaAppearances": 3,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Le Pico Veleta est la destination de la route asphaltée la plus élevée d'Europe, atteignant 3398m d'altitude, bien que les derniers kilomètres soient fermés aux véhicules motorisés.",
+        "La route a été construite dans les années 1920 pour accéder à l'observatoire astronomique, puis prolongée pour des raisons militaires.",
+        "Une course cycliste, la 'Subida al Veleta', y est organisée depuis 1979, défiant les cyclistes à affronter l'altitude et la longueur.",
+        "La partie finale de la route est souvent enneigée même en été, ce qui peut interrompre l'ascension complète."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Miguel Ángel López",
+          "time": "2:23:45",
+          "year": 2017,
+          "side": "granadaRoute"
+        },
+        "modern": {
+          "holder": "Miguel Ángel López",
+          "time": "2:23:45",
+          "year": 2017,
+          "side": "granadaRoute"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Station de ski de Sierra Nevada",
+        "description": "Station de ski la plus méridionale d'Europe, située à mi-parcours de l'ascension.",
+        "coordinates": [
+          37.0956,
+          -3.3899
+        ],
+        "type": "infrastructure"
+      },
+      {
+        "name": "Mirador du Mulhacén",
+        "description": "Point de vue offrant une perspective sur le Mulhacén, plus haut sommet de la péninsule ibérique.",
+        "coordinates": [
+          37.0553,
+          -3.3699
+        ],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Observatoire de Sierra Nevada",
+        "description": "Complexe astronomique construit à 2850m d'altitude pour profiter du ciel exceptionnellement clair.",
+        "coordinates": [
+          37.0642,
+          -3.3847
+        ],
+        "type": "science"
+      },
+      {
+        "name": "Albergue Universitario",
+        "description": "Refuge de montagne historique géré par l'université de Grenade.",
+        "coordinates": [
+          37.0799,
+          -3.3872
+        ],
+        "type": "accommodation"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne jusqu'à la station de ski, plus irrégulière ensuite",
+      "trafficLevel": "Modéré jusqu'à la station, faible au-delà",
+      "winterClosure": "Fermé au-delà de la station d'octobre à mai",
+      "facilities": [
+        "Restaurants et hôtels à la station",
+        "Petit café saisonnier au col de Veleta"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Granada",
+        "Station de ski",
+        "Albergue Universitario"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/pico-veleta/main.jpg",
+      "gallery": [
+        "/images/cols/pico-veleta/summit-road.jpg",
+        "/images/cols/pico-veleta/ski-resort.jpg",
+        "/images/cols/pico-veleta/high-altitude.jpg",
+        "/images/cols/pico-veleta/granada-view.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte/Terre battue (derniers km)",
+    "trainingTips": [
+      "L'altitude est le principal défi, acclimatez-vous plusieurs jours si possible avant de tenter l'ascension complète.",
+      "Prenez un rythme très modéré au début, la longueur et l'altitude rendront les derniers kilomètres extrêmement difficiles.",
+      "Prévoyez des vêtements chauds même en été, la température peut descendre près de 0°C au sommet."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel"
+    ],
+    "weatherInfo": {
+      "bestSeason": "Juillet à août pour atteindre le sommet",
+      "closedPeriod": "Octobre à juin au-delà de la station de ski",
+      "windExposure": "Très élevée au-dessus de 2500m",
+      "temperatureDelta": "Différence de 15-20°C entre Granada et le sommet",
+      "snowRisk": "Possible même en été au sommet"
+    },
+    "services": {
+      "water": [
+        {
+          "km": 0,
+          "description": "Fontaines à Granada"
+        },
+        {
+          "km": 30,
+          "description": "Station de ski"
+        },
+        {
+          "km": 40,
+          "description": "Albergue Universitario (saisonnier)"
+        }
+      ],
+      "food": [
+        {
+          "name": "Restaurants à la station",
+          "km": 30,
+          "type": "restaurant",
+          "openingHours": "9h-22h"
+        },
+        {
+          "name": "Café Albergue",
+          "km": 40,
+          "type": "café",
+          "openingHours": "10h-18h (juin-septembre)"
+        }
+      ],
+      "shelter": [
+        {
+          "name": "Hôtels à la station",
+          "km": 30,
+          "type": "hotel"
+        },
+        {
+          "name": "Albergue Universitario",
+          "km": 40,
+          "type": "refuge"
+        }
+      ],
+      "mechanics": [
+        {
+          "name": "Bike Shop Granada",
+          "location": "Granada",
+          "distance": 0
+        },
+        {
+          "name": "Service vélo à la station",
+          "location": "Pradollano",
+          "distance": 30
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Alejandro Valverde",
+        "date": "2023-07-08",
+        "rating": 5,
+        "text": "L'ascension la plus haute d'Europe! J'ai senti les effets de l'altitude à partir de 2800m. L'effort devient vraiment difficile dans les derniers kilomètres. La vue depuis le sommet est incroyable, on peut voir jusqu'à l'Afrique par temps clair."
+      },
+      {
+        "author": "Sophie Durand",
+        "date": "2024-08-15",
+        "rating": 4.5,
+        "text": "Une expérience unique! J'ai dû m'arrêter plusieurs fois dans les derniers kilomètres à cause du manque d'oxygène. Conseil: restez quelques jours à Granada avant pour vous acclimater et partez très tôt pour éviter la chaleur."
+      },
+      {
+        "author": "Hans Weber",
+        "date": "2022-09-01",
+        "rating": 5,
+        "text": "J'ai grimpé le Veleta après une semaine d'acclimatation dans la Sierra Nevada. La route est excellente jusqu'à la station, puis correcte jusqu'au sommet. Les paysages lunaires au-dessus de 3000m sont à couper le souffle."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:33:00Z"
+  },
+  {
+    "id": "zoncolan",
+    "name": {
+      "fr": "Monte Zoncolan",
+      "en": "Monte Zoncolan",
+      "de": "Monte Zoncolan",
+      "it": "Monte Zoncolan",
+      "es": "Monte Zoncolan"
+    },
+    "altitude": 1735,
+    "location": {
+      "latitude": 46.5,
+      "longitude": 12.9167,
+      "region": "Alpes Carniques",
+      "country": "Italie",
+      "nearbyTowns": [
+        "Ovaro",
+        "Sutrio",
+        "Tolmezzo"
+      ]
+    },
+    "climbData": {
+      "ovaroSide": {
+        "startLocation": "Ovaro",
+        "length": 10.5,
+        "elevation": 1210,
+        "averageGradient": 11.5,
+        "maxGradient": 22,
+        "difficulty": 10
+      },
+      "sutrioSide": {
+        "startLocation": "Sutrio",
+        "length": 13.5,
+        "elevation": 1140,
+        "averageGradient": 8.9,
+        "maxGradient": 15,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 2003,
+      "giroAppearances": 6,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Le Monte Zoncolan est surnommé 'le monstre des Alpes Carniques' en raison de ses pentes extrêmes.",
+        "La première ascension dans le Giro en 2003 fut par le côté Sutrio, mais c'est le versant d'Ovaro, introduit en 2007, qui a forgé sa réputation.",
+        "En 2018, Chris Froome y a lancé son attaque décisive pour remporter le Giro d'Italia malgré un début de course difficile.",
+        "Gilberto Simoni, double vainqueur du Giro, a remporté deux fois l'étape du Zoncolan (2003 et 2007)."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Gilberto Simoni",
+          "time": "39:05",
+          "year": 2007,
+          "side": "ovaroSide"
+        },
+        "modern": {
+          "holder": "Chris Froome",
+          "time": "39:34",
+          "year": 2018,
+          "side": "ovaroSide"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Chapelle San Pietro",
+        "description": "Petite chapelle située à mi-parcours de l'ascension depuis Ovaro.",
+        "coordinates": [
+          46.4883,
+          12.9083
+        ],
+        "type": "monument"
+      },
+      {
+        "name": "Virage Pantani",
+        "description": "Virage dédié au célèbre grimpeur italien, situé dans la section la plus difficile.",
+        "coordinates": [
+          46.4933,
+          12.9111
+        ],
+        "type": "landmark"
+      },
+      {
+        "name": "Rifugio Zoncolan",
+        "description": "Refuge de montagne au sommet offrant restauration et hébergement.",
+        "coordinates": [
+          46.5,
+          12.9167
+        ],
+        "type": "accommodation"
+      },
+      {
+        "name": "Station de ski du Zoncolan",
+        "description": "Importante station de ski du Frioul, active en hiver au sommet du col.",
+        "coordinates": [
+          46.5,
+          12.9167
+        ],
+        "type": "infrastructure"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Excellente, entièrement asphaltée",
+      "trafficLevel": "Faible à modéré selon saison",
+      "winterClosure": "Généralement accessible jusqu'à la station de ski",
+      "facilities": [
+        "Restaurants au sommet",
+        "Téléphérique",
+        "Toilettes",
+        "Point d'information"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Ovaro/Sutrio",
+        "Rifugio à mi-parcours",
+        "Sommet"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/zoncolan/main.jpg",
+      "gallery": [
+        "/images/cols/zoncolan/ovaro-side.jpg",
+        "/images/cols/zoncolan/sutrio-side.jpg",
+        "/images/cols/zoncolan/steep-gradient.jpg",
+        "/images/cols/zoncolan/summit-view.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Utilisez un développement extrêmement facile (34x32 minimum, idéalement 34x36 ou plus) pour le versant d'Ovaro.",
+      "Le côté Sutrio est plus régulier et constitue une meilleure option pour une première ascension.",
+      "Entraînez-vous spécifiquement sur des pentes supérieures à 15% avant de tenter le Zoncolan."
+    ],
+    "recommendedBikeTypes": [
+      "Vélo de route avec triple plateau ou compact+grande cassette"
+    ],
+    "weatherInfo": {
+      "bestSeason": "Juin à septembre",
+      "closedPeriod": "Versant Ovaro parfois fermé en hiver",
+      "windExposure": "Modérée, principalement dans la section supérieure",
+      "temperatureDelta": "Différence de 7-10°C entre la base et le sommet",
+      "thunderstormRisk": "Modéré en été"
+    },
+    "services": {
+      "water": [
+        {
+          "km": 0,
+          "description": "Fontaines à Ovaro"
+        },
+        {
+          "km": 5,
+          "description": "Source à San Pietro"
+        },
+        {
+          "km": 10,
+          "description": "Rifugio Zoncolan au sommet"
+        }
+      ],
+      "food": [
+        {
+          "name": "Rifugio Zoncolan",
+          "km": 10,
+          "type": "refuge",
+          "openingHours": "9h-18h"
+        },
+        {
+          "name": "Bar Funivia",
+          "km": 10,
+          "type": "café",
+          "openingHours": "9h-17h"
+        }
+      ],
+      "shelter": [
+        {
+          "name": "Chapelle San Pietro",
+          "km": 5,
+          "type": "abri"
+        },
+        {
+          "name": "Rifugio Zoncolan",
+          "km": 10,
+          "type": "refuge"
+        }
+      ],
+      "mechanics": [
+        {
+          "name": "Bike Shop Tolmezzo",
+          "location": "Tolmezzo",
+          "distance": 15
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Marco Rossi",
+        "date": "2023-07-22",
+        "rating": 5,
+        "text": "Le Zoncolan depuis Ovaro est probablement la montée la plus difficile d'Europe. J'ai utilisé un 34x36 et j'ai dû m'arrêter deux fois dans la section à 20%. Une expérience incroyable mais épuisante!"
+      },
+      {
+        "author": "Emma Laurent",
+        "date": "2024-06-15",
+        "rating": 4.5,
+        "text": "J'ai grimpé par Sutrio, c'est plus long mais plus régulier et plus agréable. Les vues sont magnifiques sur les Alpes Carniques. Le rifugio au sommet propose d'excellentes pâtes pour récupérer."
+      },
+      {
+        "author": "Thomas Wagner",
+        "date": "2022-09-08",
+        "rating": 5,
+        "text": "Une ascension emblématique! Le côté Ovaro est brutal, avec des sections où l'on doit zigzaguer pour ne pas s'arrêter. Conseil: enlevez tout poids inutile du vélo et de vos poches avant de commencer."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:34:00Z"
+  },
+  {
+    "id": "gornergrat",
+    "name": {
+      "fr": "Gornergrat",
+      "en": "Gornergrat",
+      "de": "Gornergrat",
+      "it": "Gornergrat",
+      "es": "Gornergrat"
+    },
+    "altitude": 3135,
+    "location": {
+      "latitude": 45.9839,
+      "longitude": 7.7838,
+      "region": "Alpes Pennines",
+      "country": "Suisse",
+      "nearbyTowns": [
+        "Zermatt",
+        "Täsch",
+        "Randa"
+      ]
+    },
+    "climbData": {
+      "zermattRoute": {
+        "startLocation": "Zermatt",
+        "length": 21.6,
+        "elevation": 1985,
+        "averageGradient": 9.2,
+        "maxGradient": 18,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 1993,
+      "tourDeSuisseAppearances": 0,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Le Gornergrat est l'une des ascensions cyclables les plus hautes des Alpes, culminant à 3135m.",
+        "La route suit partiellement le tracé du célèbre train à crémaillère du Gornergrat, inauguré en 1898.",
+        "Bien que jamais inclus dans les grands tours, il accueille chaque année le 'Gornergrat Challenge', une épreuve d'endurance extrême.",
+        "C'est l'un des rares endroits en Europe où l'on peut rouler à vélo avec vue sur des glaciers actifs et le célèbre Cervin."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Urs Huber",
+          "time": "1:29:45",
+          "year": 2019,
+          "side": "zermattRoute"
+        },
+        "modern": {
+          "holder": "Urs Huber",
+          "time": "1:29:45",
+          "year": 2019,
+          "side": "zermattRoute"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Observatoire du Gornergrat",
+        "description": "Observatoire astronomique construit en 1967, toujours actif pour la recherche scientifique.",
+        "coordinates": [
+          45.9839,
+          7.7838
+        ],
+        "type": "science"
+      },
+      {
+        "name": "Vue sur le Cervin",
+        "description": "Point de vue privilégié sur le Cervin (Matterhorn), l'une des montagnes les plus célèbres du monde.",
+        "coordinates": [
+          45.9839,
+          7.7838
+        ],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Glacier du Gorner",
+        "description": "Deuxième plus grand glacier des Alpes, visible depuis plusieurs points de l'ascension.",
+        "coordinates": [
+          45.9706,
+          7.7897
+        ],
+        "type": "nature"
+      },
+      {
+        "name": "Chapelle de Riffelalp",
+        "description": "Petite chapelle alpine historique située à mi-parcours de l'ascension.",
+        "coordinates": [
+          46.0017,
+          7.7536
+        ],
+        "type": "monument"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juillet à septembre",
+      "roadCondition": "Revêtement varié, asphalte et portions en gravier stabilisé",
+      "trafficLevel": "Faible, route majoritairement réservée aux vélos et aux autorisés",
+      "winterClosure": "Fermé d'octobre à juin (neige)",
+      "facilities": [
+        "Hôtel et restaurant au sommet",
+        "Boutique souvenirs",
+        "Toilettes",
+        "Téléscopes"
+      ],
+      "parkingAvailable": true,
+      "waterPoints": [
+        "Zermatt",
+        "Riffelalp",
+        "Riffelberg",
+        "Sommet"
+      ]
+    },
+    "images": {
+      "main": "/images/cols/gornergrat/main.jpg",
+      "gallery": [
+        "/images/cols/gornergrat/matterhorn-view.jpg",
+        "/images/cols/gornergrat/glacier-view.jpg",
+        "/images/cols/gornergrat/steep-section.jpg",
+        "/images/cols/gornergrat/summit-hotel.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte/Gravier stabilisé",
+    "trainingTips": [
+      "L'altitude est le principal défi, prévoyez une acclimatation préalable de quelques jours à Zermatt (1600m).",
+      "Utilisez un développement très souple car la pente combinée à l'altitude rend l'effort beaucoup plus difficile.",
+      "Partez tôt le matin pour bénéficier des meilleures conditions météo et éviter les orages d'après-midi."
+    ],
+    "recommendedBikeTypes": [
+      "VTT",
+      "Gravel",
+      "Vélo électrique"
+    ],
+    "weatherInfo": {
+      "bestSeason": "Mi-juillet à mi-septembre",
+      "closedPeriod": "Octobre à juin (neige)",
+      "windExposure": "Forte au-dessus de 2500m",
+      "temperatureDelta": "Différence de 15-20°C entre Zermatt et le sommet",
+      "snowRisk": "Possible même en été"
+    },
+    "services": {
+      "water": [
+        {
+          "km": 0,
+          "description": "Fontaines à Zermatt"
+        },
+        {
+          "km": 8,
+          "description": "Riffelalp Resort"
+        },
+        {
+          "km": 15,
+          "description": "Riffelberg Hotel"
+        },
+        {
+          "km": 21,
+          "description": "Gornergrat Hotel"
+        }
+      ],
+      "food": [
+        {
+          "name": "Riffelalp Resort",
+          "km": 8,
+          "type": "restaurant",
+          "openingHours": "7h-22h"
+        },
+        {
+          "name": "Riffelberg Hotel",
+          "km": 15,
+          "type": "restaurant",
+          "openingHours": "8h-20h"
+        },
+        {
+          "name": "Gornergrat Hotel",
+          "km": 21,
+          "type": "restaurant",
+          "openingHours": "7h-19h"
+        }
+      ],
+      "shelter": [
+        {
+          "name": "Riffelalp Resort",
+          "km": 8,
+          "type": "hotel"
+        },
+        {
+          "name": "Riffelberg Hotel",
+          "km": 15,
+          "type": "hotel"
+        },
+        {
+          "name": "Gornergrat Hotel",
+          "km": 21,
+          "type": "hotel"
+        }
+      ],
+      "mechanics": [
+        {
+          "name": "Bike Service Zermatt",
+          "location": "Zermatt",
+          "distance": 0
+        },
+        {
+          "name": "Slalom Sport",
+          "location": "Zermatt",
+          "distance": 0
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Peter Müller",
+        "date": "2024-08-10",
+        "rating": 5,
+        "text": "Une ascension exceptionnelle avec des paysages à couper le souffle! La vue sur le Cervin et les glaciers tout au long de la montée est incroyable. J'ai utilisé un VTT avec des pneus de 2.1, parfait pour le revêtement mixte."
+      },
+      {
+        "author": "Claire Dubois",
+        "date": "2023-07-25",
+        "rating": 4.5,
+        "text": "J'ai réalisé cette ascension avec un vélo électrique et c'était une bonne décision. L'altitude se fait sentir après 2500m et le vent peut être très fort. La vue au sommet vaut tous les efforts, on se sent vraiment sur le toit de l'Europe!"
+      },
+      {
+        "author": "Andrea Bernasconi",
+        "date": "2022-09-05",
+        "rating": 5,
+        "text": "J'ai eu la chance de grimper le Gornergrat par une journée parfaitement claire. L'effort est considérable mais les points de ravitaillement sont nombreux. Conseil: réservez à l'avance si vous voulez dormir en altitude pour vous acclimater."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:35:00Z"
+  }
+]

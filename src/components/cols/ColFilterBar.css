@@ -1,0 +1,28 @@
+.col-filter-bar {
+  margin-bottom: 2rem;
+}
+
+.filter-paper {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-chip {
+  background-color: #e3f2fd;
+}
+
+.filter-chip:hover {
+  background-color: #bbdefb;
+}
+
+@media (max-width: 768px) {
+  .filter-paper {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,510 @@
+[
+  {
+    "id": "passo-gavia",
+    "name": "Passo Gavia",
+    "altitude": 2621,
+    "location": {
+      "latitude": 46.3448,
+      "longitude": 10.4926,
+      "region": "Alpes lombardes",
+      "country": "Italie",
+      "nearbyTowns": ["Bormio", "Ponte di Legno"]
+    },
+    "climbData": {
+      "bormioSide": {
+        "startLocation": "Bormio",
+        "length": 25.6,
+        "elevation": 1404,
+        "averageGradient": 5.5,
+        "maxGradient": 16.0,
+        "difficulty": 9
+      },
+      "ponteSide": {
+        "startLocation": "Ponte di Legno",
+        "length": 17.3,
+        "elevation": 1363,
+        "averageGradient": 7.9,
+        "maxGradient": 16.0,
+        "difficulty": 10
+      }
+    },
+    "history": {
+      "firstGiroYear": 1960,
+      "giroAppearances": 14,
+      "famousStories": [
+        "L'étape légendaire du Giro 1988 sous la neige, où Andy Hampsten a consolidé son maillot rose malgré des conditions extrêmes.",
+        "En 2019, une étape du Giro prévue sur le Gavia a dû être annulée en raison d'un risque d'avalanche.",
+        "La route du Gavia n'a été goudronnée qu'en 1970, ce qui explique son inclusion tardive dans les grands tours."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "1:13:30",
+          "year": 1999,
+          "side": "ponte"
+        },
+        "modern": {
+          "holder": "Ivan Basso",
+          "time": "1:16:45",
+          "year": 2010,
+          "side": "ponte"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Rifugio Bonetta",
+        "description": "Refuge historique situé au sommet, lieu de halte traditionnel pour les cyclistes.",
+        "coordinates": [46.3448, 10.4926],
+        "type": "accommodation"
+      },
+      {
+        "name": "Lac de Gavia",
+        "description": "Petit lac alpin situé juste en dessous du col.",
+        "coordinates": [46.3410, 10.4930],
+        "type": "natural"
+      },
+      {
+        "name": "Monument Andy Hampsten",
+        "description": "Petite plaque commémorant l'exploit d'Andy Hampsten lors du Giro 1988.",
+        "coordinates": [46.3448, 10.4926],
+        "type": "monument"
+      },
+      {
+        "name": "Virage de la Santa",
+        "description": "Virage sévère sur le versant de Ponte di Legno avec une petite chapelle, souvent photographié.",
+        "coordinates": [46.3260, 10.5020],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mi-juin à mi-septembre",
+      "roadCondition": "Moyenne, route étroite et rugueuse par endroits",
+      "trafficLevel": "Faible",
+      "winterClosure": "Fermé d'octobre à juin",
+      "facilities": ["Rifugio Bonetta (restaurant-refuge au sommet)"],
+      "parkingAvailable": true,
+      "waterPoints": ["Rifugio Bonetta", "Sources naturelles le long du parcours"]
+    },
+    "images": {
+      "main": "/images/cols/gavia/main.jpg",
+      "gallery": [
+        "/images/cols/gavia/bormio-side.jpg",
+        "/images/cols/gavia/ponte-side.jpg",
+        "/images/cols/gavia/summit.jpg",
+        "/images/cols/gavia/hampsten-snow.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte (rugueuse)",
+    "trainingTips": [
+      "Le versant de Ponte di Legno est plus difficile avec des rampes très raides.",
+      "La route est étroite et sans barrière à de nombreux endroits, restez vigilant.",
+      "Même en été, les conditions météo peuvent changer brusquement, emportez toujours un coupe-vent."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "col-du-grand-colombier",
+    "name": "Col du Grand Colombier",
+    "altitude": 1501,
+    "location": {
+      "latitude": 45.8967,
+      "longitude": 5.6145,
+      "region": "Ain",
+      "country": "France",
+      "nearbyTowns": ["Culoz", "Artemare", "Virieu-le-Petit"]
+    },
+    "climbData": {
+      "culozSide": {
+        "startLocation": "Culoz",
+        "length": 18.3,
+        "elevation": 1250,
+        "averageGradient": 6.8,
+        "maxGradient": 14.0,
+        "difficulty": 8
+      },
+      "artemareSide": {
+        "startLocation": "Artemare",
+        "length": 15.9,
+        "elevation": 1255,
+        "averageGradient": 7.9,
+        "maxGradient": 12.0,
+        "difficulty": 9
+      },
+      "vireuSide": {
+        "startLocation": "Virieu-le-Petit",
+        "length": 11.9,
+        "elevation": 920,
+        "averageGradient": 7.7,
+        "maxGradient": 14.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 2012,
+      "tourDeFranceAppearances": 4,
+      "famousStories": [
+        "Bien que récent dans le Tour de France, le Grand Colombier est vite devenu un col majeur du massif du Jura.",
+        "En 2020, Primož Roglič y a conforté son maillot jaune en distançant Tadej Pogačar, avant de perdre le Tour lors du contre-la-montre final.",
+        "En 2023, Tadej Pogačar y a remporté une victoire d'étape impressionnante, consolidant sa position au classement général."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Tadej Pogačar",
+          "time": "45:03",
+          "year": 2023,
+          "side": "culoz"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Panorama sur le lac du Bourget",
+        "description": "Vue exceptionnelle sur le plus grand lac naturel de France depuis le sommet.",
+        "coordinates": [45.8967, 5.6145],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Table d'orientation",
+        "description": "Table panoramique indiquant les sommets visibles, notamment le Mont Blanc par temps clair.",
+        "coordinates": [45.8967, 5.6145],
+        "type": "landmark"
+      },
+      {
+        "name": "Réserve naturelle du Grand Colombier",
+        "description": "Espace protégé abritant une flore et une faune rare, dont des rapaces et des chamois.",
+        "coordinates": [45.8900, 5.6100],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré",
+      "winterClosure": "Parfois fermé en hiver en fonction des chutes de neige",
+      "facilities": ["Table de pique-nique", "Abri sommaire au sommet"],
+      "parkingAvailable": true,
+      "waterPoints": ["Aucun au sommet, derniers points d'eau dans les villages traversés"]
+    },
+    "images": {
+      "main": "/images/cols/grand-colombier/main.jpg",
+      "gallery": [
+        "/images/cols/grand-colombier/culoz-side.jpg",
+        "/images/cols/grand-colombier/artemare-side.jpg",
+        "/images/cols/grand-colombier/virieu-side.jpg",
+        "/images/cols/grand-colombier/lake-view.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le côté de Culoz, dit 'La Directissime', comprend des sections très raides (>10%).",
+      "Le versant d'Artemare est le plus régulier des trois.",
+      "Le col est souvent exposé au soleil, pensez à bien vous hydrater et à vous protéger."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "passo-fedaia",
+    "name": "Passo Fedaia",
+    "altitude": 2057,
+    "location": {
+      "latitude": 46.4594,
+      "longitude": 11.8700,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Canazei", "Caprile"]
+    },
+    "climbData": {
+      "canazeiSide": {
+        "startLocation": "Canazei",
+        "length": 14.0,
+        "elevation": 640,
+        "averageGradient": 4.6,
+        "maxGradient": 18.0,
+        "difficulty": 7,
+        "note": "Début facile, fin extrêmement difficile"
+      },
+      "caprileSide": {
+        "startLocation": "Caprile",
+        "length": 13.3,
+        "elevation": 645,
+        "averageGradient": 4.8,
+        "maxGradient": 12.0,
+        "difficulty": 7,
+        "note": "Plus régulier mais quelques passages raides"
+      }
+    },
+    "history": {
+      "firstGiroYear": 1975,
+      "giroAppearances": 14,
+      "famousStories": [
+        "Surnommé 'La Marmolada' en référence au glacier adjacent, le plus grand des Dolomites.",
+        "En 2022, Alessandro Covi y a remporté une victoire en solitaire, tandis que Jai Hindley prenait le maillot rose à Richard Carapaz.",
+        "Marco Pantani y a livré plusieurs prestations mémorables, notamment en 1999.",
+        "Le col est célèbre pour son dernier tronçon depuis Malga Ciapela, avec des rampes jusqu'à 18%."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "32:45",
+          "year": 1998,
+          "side": "malga-ciapela"
+        },
+        "modern": {
+          "holder": "Jai Hindley",
+          "time": "33:59",
+          "year": 2022,
+          "side": "malga-ciapela"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Glacier de la Marmolada",
+        "description": "Vue imprenable sur le glacier de la Marmolada, le plus grand des Dolomites.",
+        "coordinates": [46.4333, 11.8616],
+        "type": "natural"
+      },
+      {
+        "name": "Lac de Fedaia",
+        "description": "Lac artificiel aux eaux turquoise situé au sommet du col.",
+        "coordinates": [46.4594, 11.8700],
+        "type": "natural"
+      },
+      {
+        "name": "Téléphérique de la Marmolada",
+        "description": "Station de téléphérique permettant d'accéder au sommet de la Marmolada (3343m).",
+        "coordinates": [46.4594, 11.8700],
+        "type": "tourism"
+      },
+      {
+        "name": "Mur de Malga Ciapela",
+        "description": "Section finale redoutable depuis Malga Ciapela, avec 2,5 km à 12% de moyenne et des passages à 18%.",
+        "coordinates": [46.4512, 11.8880],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré à élevé en saison touristique",
+      "winterClosure": "Généralement ouvert toute l'année (accès aux stations de ski)",
+      "facilities": ["Restaurants", "Hôtels", "Boutiques", "Station service"],
+      "parkingAvailable": true,
+      "waterPoints": ["Restaurants et commerces au sommet"]
+    },
+    "images": {
+      "main": "/images/cols/fedaia/main.jpg",
+      "gallery": [
+        "/images/cols/fedaia/canazei-side.jpg",
+        "/images/cols/fedaia/caprile-side.jpg",
+        "/images/cols/fedaia/lake.jpg",
+        "/images/cols/fedaia/marmolada.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Depuis Canazei, gardez des forces pour les 5 derniers kilomètres qui sont les plus difficiles.",
+      "Le versant de Caprile est plus régulier et peut être préférable pour une première expérience.",
+      "En plein été, partez tôt pour éviter la chaleur et le trafic touristique."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "col-d-eze",
+    "name": "Col d'Èze",
+    "altitude": 507,
+    "location": {
+      "latitude": 43.7268,
+      "longitude": 7.3650,
+      "region": "Alpes-Maritimes",
+      "country": "France",
+      "nearbyTowns": ["Nice", "Èze", "La Turbie"]
+    },
+    "climbData": {
+      "niceSide": {
+        "startLocation": "Nice",
+        "length": 9.4,
+        "elevation": 480,
+        "averageGradient": 5.1,
+        "maxGradient": 9.0,
+        "difficulty": 6
+      },
+      "turbieSide": {
+        "startLocation": "La Turbie",
+        "length": 5.8,
+        "elevation": 120,
+        "averageGradient": 2.1,
+        "maxGradient": 5.0,
+        "difficulty": 2
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1950,
+      "tourDeFranceAppearances": 20,
+      "parisNiceAppearances": 61,
+      "famousStories": [
+        "Le col d'Èze a été un contre-la-montre emblématique de Paris-Nice pendant des décennies, souvent décisif pour le classement général.",
+        "Eddy Merckx y détient le record avec sept victoires dans le chrono d'Èze.",
+        "En 2023, Tadej Pogačar y a scellé sa victoire dans Paris-Nice avec une performance dominante.",
+        "Le col est aussi populaire pour sa vue spectaculaire sur la Méditerranée et la Côte d'Azur."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Tadej Pogačar",
+          "time": "18:45",
+          "year": 2023,
+          "side": "nice"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Vue panoramique sur la Méditerranée",
+        "description": "Perspective exceptionnelle sur la baie de Nice et la Côte d'Azur.",
+        "coordinates": [43.7268, 7.3650],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Village médiéval d'Èze",
+        "description": "Village perché pittoresque à proximité du col, avec ruelles étroites et jardin exotique.",
+        "coordinates": [43.7300, 7.3616],
+        "type": "cultural"
+      },
+      {
+        "name": "Observatoire de Nice",
+        "description": "Institution astronomique historique située sur la route du col.",
+        "coordinates": [43.7250, 7.3000],
+        "type": "cultural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Toute l'année, idéal au printemps et à l'automne",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré à élevé",
+      "winterClosure": "Ouvert toute l'année",
+      "facilities": ["Restaurants à proximité", "Points d'eau"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaines publiques dans le village d'Èze"]
+    },
+    "images": {
+      "main": "/images/cols/eze/main.jpg",
+      "gallery": [
+        "/images/cols/eze/nice-side.jpg",
+        "/images/cols/eze/turbie-side.jpg",
+        "/images/cols/eze/view.jpg",
+        "/images/cols/eze/village.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Idéal pour les séances d'entraînement en intensité, avec chronométrage possible grâce aux nombreuses références.",
+      "Souvent inclus dans des boucles autour de Nice combinant plusieurs cols comme la Madone, Turini ou Braus.",
+      "Attention à la circulation, particulièrement dense en saison touristique."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "grosse-scheidegg",
+    "name": "Grosse Scheidegg",
+    "altitude": 1962,
+    "location": {
+      "latitude": 46.6428,
+      "longitude": 8.0992,
+      "region": "Oberland bernois",
+      "country": "Suisse",
+      "nearbyTowns": ["Grindelwald", "Meiringen"]
+    },
+    "climbData": {
+      "grindelwaldSide": {
+        "startLocation": "Grindelwald",
+        "length": 8.7,
+        "elevation": 885,
+        "averageGradient": 10.2,
+        "maxGradient": 14.0,
+        "difficulty": 9
+      },
+      "meiringenSide": {
+        "startLocation": "Meiringen",
+        "length": 20.0,
+        "elevation": 1340,
+        "averageGradient": 6.7,
+        "maxGradient": 11.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "tourDeSuisseAppearances": 7,
+      "famousStories": [
+        "Le col est spectaculaire car fermé à la circulation motorisée publique, seuls les bus postaux peuvent y circuler.",
+        "Son environnement est particulièrement préservé, avec vue sur certains des sommets les plus célèbres des Alpes suisses.",
+        "En 2007, le col a été inclus dans le Tour de Suisse avec une victoire du Russe Vladimir Efimkin.",
+        "Le col a servi de décor à plusieurs films dont le James Bond 'Au service secret de Sa Majesté'."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Egan Bernal",
+          "time": "35:12",
+          "year": 2019,
+          "side": "grindelwald"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Vue sur l'Eiger",
+        "description": "Panorama exceptionnel sur la face nord de l'Eiger, l'une des parois les plus célèbres des Alpes.",
+        "coordinates": [46.6428, 8.0992],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Berghotel Grosse Scheidegg",
+        "description": "Hôtel de montagne historique situé au sommet du col.",
+        "coordinates": [46.6428, 8.0992],
+        "type": "accommodation"
+      },
+      {
+        "name": "Gorges de Rosenlaui",
+        "description": "Impressionnantes gorges glaciaires sur le versant de Meiringen.",
+        "coordinates": [46.6560, 8.1720],
+        "type": "natural"
+      },
+      {
+        "name": "Glacier de Rosenlaui",
+        "description": "Petit glacier visible depuis la route sur le versant de Meiringen.",
+        "coordinates": [46.6500, 8.1500],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Bonne mais étroite",
+      "trafficLevel": "Faible (fermé à la circulation automobile publique, uniquement bus postaux)",
+      "winterClosure": "Fermé d'octobre à mai",
+      "facilities": ["Hôtel-restaurant au sommet", "Toilettes"],
+      "parkingAvailable": false,
+      "waterPoints": ["Hôtel au sommet", "Fontaines à Rosenlaui"]
+    },
+    "images": {
+      "main": "/images/cols/grosse-scheidegg/main.jpg",
+      "gallery": [
+        "/images/cols/grosse-scheidegg/grindelwald-side.jpg",
+        "/images/cols/grosse-scheidegg/meiringen-side.jpg",
+        "/images/cols/grosse-scheidegg/eiger-view.jpg",
+        "/images/cols/grosse-scheidegg/rosenlaui.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le côté Grindelwald est court mais très raide, nécessitant un bon rapport de développement.",
+      "L'absence de circulation automobile rend l'ascension particulièrement agréable et sécuritaire.",
+      "Attention aux bus postaux qui circulent à horaires réguliers sur la route étroite."
+    ],
+    "recommendedBikeTypes": ["Vélo de route", "Gravel avec cassette adaptée"]
+  }
+]

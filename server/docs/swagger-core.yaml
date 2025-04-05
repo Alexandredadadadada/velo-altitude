@@ -1,0 +1,579 @@
+openapi: 3.0.0
+info:
+  title: Dashboard-Velo API
+  description: |
+    API officielle de Dashboard-Velo.com - Plateforme européenne pour cyclistes
+    
+    Cette API permet d'accéder aux fonctionnalités de Dashboard-Velo, notamment:
+    * Données sur les cols européens
+    * Calcul d'itinéraires optimisés pour cyclistes
+    * Visualisations 3D des cols
+    * Données météorologiques pour cyclistes
+    * Statistiques d'entraînement
+    * Fonctionnalités spécifiques aux régions européennes
+  version: 2.0.0
+  contact:
+    name: Équipe API Dashboard-Velo
+    email: api@dashboard-velo.com
+    url: https://dashboard-velo.com/api/docs
+  license:
+    name: Propriétaire
+    url: https://dashboard-velo.com/terms
+
+servers:
+  - url: https://api.dashboard-velo.com/v2
+    description: Serveur de production
+  - url: https://staging-api.dashboard-velo.com/v2
+    description: Serveur de pré-production
+  - url: http://localhost:5000/api
+    description: Serveur de développement local
+
+tags:
+  - name: Authentification
+    description: Endpoints d'authentification et gestion des tokens
+  - name: Cols
+    description: Informations sur les cols cyclistes européens
+  - name: Visualisation 3D
+    description: Endpoints pour la visualisation 3D des cols
+  - name: Itinéraires
+    description: Planification et gestion des itinéraires cyclistes
+  - name: Météo
+    description: Données météorologiques pour cyclistes
+  - name: Entraînement
+    description: Zones d'entraînement et plans d'entraînement
+  - name: Europe
+    description: Fonctionnalités spécifiques aux régions européennes
+  - name: Utilisateurs
+    description: Gestion des profils utilisateurs
+  - name: Monitoring
+    description: Endpoints de monitoring et diagnostics
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+  
+  parameters:
+    RegionParam:
+      name: region
+      in: query
+      description: Région européenne (western, eastern, northern, southern, central)
+      required: false
+      schema:
+        type: string
+        enum: [western, eastern, northern, southern, central]
+    DeviceParam:
+      name: device
+      in: query
+      description: Type d'appareil client
+      required: false
+      schema:
+        type: string
+        enum: [desktop, tablet, mobile]
+    LanguageParam:
+      name: lang
+      in: query
+      description: Code de langue ISO 639-1
+      required: false
+      schema:
+        type: string
+        enum: [fr, en, de, es, it, nl]
+        default: fr
+    LimitParam:
+      name: limit
+      in: query
+      description: Nombre maximum d'éléments à retourner
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    OffsetParam:
+      name: offset
+      in: query
+      description: Index de départ pour la pagination
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+  
+  responses:
+    Unauthorized:
+      description: Authentification requise ou invalide
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Authentication required"
+              code:
+                type: string
+                example: "AUTH_REQUIRED"
+    Forbidden:
+      description: Accès refusé
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Access denied"
+              code:
+                type: string
+                example: "ACCESS_DENIED"
+    NotFound:
+      description: Ressource non trouvée
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Resource not found"
+              code:
+                type: string
+                example: "NOT_FOUND"
+    BadRequest:
+      description: Requête invalide
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Invalid request parameters"
+              code:
+                type: string
+                example: "INVALID_REQUEST"
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    field:
+                      type: string
+                    message:
+                      type: string
+    TooManyRequests:
+      description: Trop de requêtes
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Rate limit exceeded"
+              code:
+                type: string
+                example: "RATE_LIMIT_EXCEEDED"
+              retryAfter:
+                type: integer
+                description: Secondes avant de réessayer
+                example: 60
+    ServerError:
+      description: Erreur serveur
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Internal server error"
+              code:
+                type: string
+                example: "SERVER_ERROR"
+              requestId:
+                type: string
+                description: ID de la requête pour le suivi
+                example: "req_123456789"
+
+  schemas:
+    Col:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Identifiant unique du col
+        name:
+          type: string
+          description: Nom du col
+        region:
+          type: string
+          description: Région européenne
+          enum: [western, eastern, northern, southern, central]
+        country:
+          type: string
+          description: Code pays ISO
+        elevation:
+          type: number
+          description: Altitude en mètres
+        length:
+          type: number
+          description: Longueur en kilomètres
+        gradient:
+          type: number
+          description: Pourcentage de pente moyenne
+        difficulty:
+          type: string
+          enum: [easy, medium, hard, extreme]
+        coordinates:
+          type: object
+          properties:
+            lat:
+              type: number
+            lng:
+              type: number
+        popularity:
+          type: integer
+          description: Score de popularité
+        description:
+          type: object
+          properties:
+            fr:
+              type: string
+            en:
+              type: string
+        images:
+          type: array
+          items:
+            type: string
+            format: uri
+        hasVisualization3D:
+          type: boolean
+          description: Indique si une visualisation 3D est disponible
+
+    Col3DData:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Identifiant unique du col
+        name:
+          type: string
+          description: Nom du col
+        region:
+          type: string
+          description: Région européenne
+        elevation:
+          type: number
+          description: Altitude en mètres
+        length:
+          type: number
+          description: Longueur en kilomètres
+        gradient:
+          type: number
+          description: Pourcentage de pente moyenne
+        mesh:
+          type: object
+          properties:
+            vertices:
+              type: array
+              items:
+                type: number
+            indices:
+              type: array
+              items:
+                type: integer
+            normals:
+              type: array
+              items:
+                type: number
+            uvs:
+              type: array
+              items:
+                type: number
+            metadata:
+              type: object
+              properties:
+                triangles:
+                  type: integer
+                resolution:
+                  type: string
+                  enum: [high, medium, low, minimal]
+        textures:
+          type: object
+          properties:
+            diffuse:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
+                size:
+                  type: integer
+            normal:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
+                size:
+                  type: integer
+        animation:
+          type: object
+          properties:
+            camera:
+              type: object
+            lighting:
+              type: object
+        metadata:
+          type: object
+          properties:
+            resolution:
+              type: string
+              enum: [high, medium, low, minimal]
+            optimizedFor:
+              type: string
+              enum: [desktop, tablet, mobile]
+            generatedAt:
+              type: string
+              format: date-time
+
+    Route:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Identifiant unique de l'itinéraire
+        name:
+          type: string
+          description: Nom de l'itinéraire
+        region:
+          type: string
+          description: Région européenne
+        start:
+          type: object
+          properties:
+            lat:
+              type: number
+            lng:
+              type: number
+            name:
+              type: string
+        end:
+          type: object
+          properties:
+            lat:
+              type: number
+            lng:
+              type: number
+            name:
+              type: string
+        distance:
+          type: number
+          description: Distance en kilomètres
+        elevationGain:
+          type: number
+          description: Dénivelé positif en mètres
+        estimatedDuration:
+          type: number
+          description: Durée estimée en minutes
+        difficulty:
+          type: string
+          enum: [easy, medium, hard, extreme]
+        points:
+          type: array
+          items:
+            type: object
+            properties:
+              lat:
+                type: number
+              lng:
+                type: number
+              elevation:
+                type: number
+        cols:
+          type: array
+          items:
+            $ref: '#/components/schemas/Col'
+        weather:
+          type: object
+          description: Données météo le long de l'itinéraire
+        createdAt:
+          type: string
+          format: date-time
+
+    TrainingZones:
+      type: object
+      properties:
+        userId:
+          type: string
+        type:
+          type: string
+          enum: [power, hr, pace]
+        zones:
+          type: array
+          items:
+            type: object
+            properties:
+              zone:
+                type: integer
+              name:
+                type: string
+              min:
+                type: number
+              max:
+                type: number
+              description:
+                type: string
+        ftp:
+          type: number
+          description: Puissance seuil fonctionnelle (W)
+        maxHr:
+          type: number
+          description: Fréquence cardiaque maximale (bpm)
+        restingHr:
+          type: number
+          description: Fréquence cardiaque au repos (bpm)
+        updatedAt:
+          type: string
+          format: date-time
+
+    Weather:
+      type: object
+      properties:
+        location:
+          type: object
+          properties:
+            lat:
+              type: number
+            lng:
+              type: number
+            name:
+              type: string
+        current:
+          type: object
+          properties:
+            temperature:
+              type: number
+            feelsLike:
+              type: number
+            humidity:
+              type: number
+            windSpeed:
+              type: number
+            windDirection:
+              type: number
+            precipitation:
+              type: number
+            condition:
+              type: string
+            icon:
+              type: string
+              format: uri
+        forecast:
+          type: array
+          items:
+            type: object
+            properties:
+              time:
+                type: string
+                format: date-time
+              temperature:
+                type: number
+              windSpeed:
+                type: number
+              precipitation:
+                type: number
+              condition:
+                type: string
+        cyclingSpecific:
+          type: object
+          properties:
+            headwind:
+              type: boolean
+            rainRisk:
+              type: number
+            comfortIndex:
+              type: number
+            recommendation:
+              type: string
+
+security:
+  - BearerAuth: []
+  - ApiKeyAuth: []
+
+paths:
+  /health:
+    get:
+      summary: Vérifier l'état de l'API
+      description: Endpoint pour vérifier si l'API est opérationnelle
+      tags:
+        - Monitoring
+      security: []
+      responses:
+        '200':
+          description: API opérationnelle
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "ok"
+                  version:
+                    type: string
+                    example: "2.0.0"
+                  timestamp:
+                    type: string
+                    format: date-time
+
+  /auth/login:
+    post:
+      summary: Authentification utilisateur
+      description: Authentifie un utilisateur et retourne un token JWT
+      tags:
+        - Authentification
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Authentification réussie
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  refreshToken:
+                    type: string
+                  expiresIn:
+                    type: integer
+                  user:
+                    type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '400':
+          $ref: '#/components/responses/BadRequest'

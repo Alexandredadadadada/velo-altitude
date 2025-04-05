@@ -1,0 +1,503 @@
+[
+  {
+    "id": "col-de-peyresourde",
+    "name": "Col de Peyresourde",
+    "altitude": 1569,
+    "location": {
+      "latitude": 42.7978,
+      "longitude": 0.4467,
+      "region": "Pyrénées",
+      "country": "France",
+      "nearbyTowns": ["Bagnères-de-Luchon", "Arreau", "Loudenvielle"]
+    },
+    "climbData": {
+      "luchonSide": {
+        "startLocation": "Bagnères-de-Luchon",
+        "length": 15.2,
+        "elevation": 939,
+        "averageGradient": 6.1,
+        "maxGradient": 9.8,
+        "difficulty": 7
+      },
+      "arreauSide": {
+        "startLocation": "Arreau",
+        "length": 15.0,
+        "elevation": 939,
+        "averageGradient": 6.2,
+        "maxGradient": 8.0,
+        "difficulty": 7
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1910,
+      "tourDeFranceAppearances": 67,
+      "famousStories": [
+        "En 1986, Greg LeMond y attaque son coéquipier Bernard Hinault malgré leur supposée trêve.",
+        "En 1998, Marco Pantani y lance une attaque décisive qui contribuera à sa victoire finale.",
+        "En 2020, il est le théâtre de la première victoire d'étape d'Alexander Lutsenko sur le Tour de France."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Claudio Chiappucci",
+          "time": "30:40",
+          "year": 1991,
+          "side": "luchon"
+        },
+        "modern": {
+          "holder": "Tadej Pogačar",
+          "time": "31:24",
+          "year": 2021,
+          "side": "arreau"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Crêpes de Peyresourde",
+        "description": "Stand légendaire au sommet où les coureurs du Tour de France s'arrêtent parfois pour manger une crêpe.",
+        "coordinates": [42.7978, 0.4467],
+        "type": "food"
+      },
+      {
+        "name": "Station de Peyragudes",
+        "description": "Station de ski située à quelques kilomètres du col, souvent utilisée comme arrivée d'étape.",
+        "coordinates": [42.7845, 0.4453],
+        "type": "tourism"
+      },
+      {
+        "name": "Vallée du Louron",
+        "description": "Magnifique vallée visible depuis le col, avec son lac et ses villages typiques.",
+        "coordinates": [42.8105, 0.4223],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Modéré, plus élevé en juillet-août",
+      "winterClosure": "Généralement fermé de novembre à avril",
+      "facilities": ["Crêperie au sommet en été", "Tables de pique-nique", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaine au sommet"]
+    },
+    "images": {
+      "main": "/images/cols/peyresourde/main.jpg",
+      "gallery": [
+        "/images/cols/peyresourde/luchon-side.jpg",
+        "/images/cols/peyresourde/arreau-side.jpg",
+        "/images/cols/peyresourde/crepes.jpg",
+        "/images/cols/peyresourde/valley-view.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Les deux versants sont similaires en difficulté, avec des pentes régulières.",
+      "Souvent combiné avec le Col d'Aspin pour former une boucle classique.",
+      "La descente vers Luchon est rapide et technique."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "passo-pordoi",
+    "name": "Passo Pordoi",
+    "altitude": 2239,
+    "location": {
+      "latitude": 46.4878,
+      "longitude": 11.8122,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Canazei", "Arabba", "Corvara"]
+    },
+    "climbData": {
+      "canazeiSide": {
+        "startLocation": "Canazei",
+        "length": 11.8,
+        "elevation": 637,
+        "averageGradient": 6.9,
+        "maxGradient": 9.0,
+        "difficulty": 7
+      },
+      "arabbaSide": {
+        "startLocation": "Arabba",
+        "length": 9.2,
+        "elevation": 556,
+        "averageGradient": 6.6,
+        "maxGradient": 9.0,
+        "difficulty": 7
+      }
+    },
+    "history": {
+      "firstGiroYear": 1940,
+      "giroAppearances": 38,
+      "cimaCoppiTimes": 13,
+      "famousStories": [
+        "Le col est connu comme la 'Cima Coppi', ayant été le point culminant du Giro à 13 reprises.",
+        "Un monument dédié à Fausto Coppi est érigé au sommet en hommage au 'campionissimo'.",
+        "Il fait partie du célèbre circuit Sella Ronda, une boucle touristique passant par quatre cols des Dolomites."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Gilberto Simoni",
+          "time": "30:15",
+          "year": 2003,
+          "side": "canazei"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Monument Fausto Coppi",
+        "description": "Statue en bronze honorant le grand champion italien.",
+        "coordinates": [46.4878, 11.8122],
+        "type": "monument"
+      },
+      {
+        "name": "Rifugio Maria",
+        "description": "Refuge de montagne historique au sommet proposant hébergement et restauration.",
+        "coordinates": [46.4878, 11.8122],
+        "type": "accommodation"
+      },
+      {
+        "name": "Panorama sur le Sella",
+        "description": "Vue spectaculaire sur le massif du Sella et ses formations rocheuses caractéristiques.",
+        "coordinates": [46.4878, 11.8122],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Téléphérique du Sass Pordoi",
+        "description": "Remontée mécanique partant du col vers le plateau du Sass Pordoi à 2950m.",
+        "coordinates": [46.4875, 11.8110],
+        "type": "attraction"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente",
+      "trafficLevel": "Élevé en été",
+      "winterClosure": "Fermé de novembre à mai",
+      "facilities": ["Plusieurs restaurants", "Hôtel", "Boutiques souvenirs", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Sources au sommet et à mi-parcours"]
+    },
+    "images": {
+      "main": "/images/cols/pordoi/main.jpg",
+      "gallery": [
+        "/images/cols/pordoi/canazei-side.jpg",
+        "/images/cols/pordoi/arabba-side.jpg",
+        "/images/cols/pordoi/coppi-monument.jpg",
+        "/images/cols/pordoi/dolomites-view.jpg"
+      ]
+    },
+    "difficulty": 3,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Les deux versants sont assez similaires en termes de difficulté.",
+      "Idéal comme première ascension dans les Dolomites ou pour s'acclimater à l'altitude.",
+      "S'intègre parfaitement dans le circuit Sella Ronda avec les cols Sella, Gardena et Campolongo."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "col-du-grand-colombier",
+    "name": "Col du Grand Colombier",
+    "altitude": 1501,
+    "location": {
+      "latitude": 45.8636,
+      "longitude": 5.6425,
+      "region": "Jura",
+      "country": "France",
+      "nearbyTowns": ["Culoz", "Artemare", "Anglefort"]
+    },
+    "climbData": {
+      "culozSide": {
+        "startLocation": "Culoz",
+        "length": 18.3,
+        "elevation": 1255,
+        "averageGradient": 6.9,
+        "maxGradient": 14.0,
+        "difficulty": 8
+      },
+      "artemareSide": {
+        "startLocation": "Artemare",
+        "length": 15.9,
+        "elevation": 1152,
+        "averageGradient": 7.2,
+        "maxGradient": 12.0,
+        "difficulty": 8
+      },
+      "anglefortSide": {
+        "startLocation": "Anglefort",
+        "length": 18.7,
+        "elevation": 1182,
+        "averageGradient": 6.3,
+        "maxGradient": 10.0,
+        "difficulty": 7
+      },
+      "virieu": {
+        "startLocation": "Virieu-le-Petit",
+        "length": 8.7,
+        "elevation": 782,
+        "averageGradient": 9.0,
+        "maxGradient": 19.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 2012,
+      "tourDeFranceAppearances": 5,
+      "famousStories": [
+        "Ce col était longtemps méconnu avant d'être introduit dans le Tour de France en 2012.",
+        "En 2017, Rigoberto Uran remporte au sommet une étape mouvementée où Geraint Thomas et Richie Porte chutent gravement dans la descente.",
+        "En 2020, une étape s'y termine par une victoire de Tadej Pogačar qui consolide son maillot jaune."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Tadej Pogačar",
+          "time": "43:30",
+          "year": 2020,
+          "side": "virieu"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Panorama sur le lac du Bourget",
+        "description": "Vue exceptionnelle sur le plus grand lac naturel de France.",
+        "coordinates": [45.8636, 5.6425],
+        "type": "viewpoint"
+      },
+      {
+        "name": "La Sapinière",
+        "description": "Restaurant au sommet avec terrasse panoramique.",
+        "coordinates": [45.8636, 5.6425],
+        "type": "restaurant"
+      },
+      {
+        "name": "'Le mur', versant de Virieu",
+        "description": "Section avec une pente à 19%, l'une des plus raides de France.",
+        "coordinates": [45.8507, 5.6629],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Avril à octobre",
+      "roadCondition": "Bonne",
+      "trafficLevel": "Faible à modéré",
+      "winterClosure": "Accessible toute l'année mais déconseillé en cas de neige ou verglas",
+      "facilities": ["Restaurant au sommet", "Tables de pique-nique", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Restaurant au sommet", "Fontaines dans les villages traversés"]
+    },
+    "images": {
+      "main": "/images/cols/grand-colombier/main.jpg",
+      "gallery": [
+        "/images/cols/grand-colombier/culoz-side.jpg",
+        "/images/cols/grand-colombier/virieu-side.jpg",
+        "/images/cols/grand-colombier/lake-view.jpg",
+        "/images/cols/grand-colombier/summit.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant par Virieu-le-Petit est le plus difficile avec sa section à 19%.",
+      "Par Culoz, la difficulté est dans l'irrégularité avec des changements constants de pente.",
+      "Par temps chaud, méfiez-vous du versant sud (Culoz) qui est très exposé au soleil."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "col-agnes",
+    "name": "Col d'Agnès",
+    "altitude": 1570,
+    "location": {
+      "latitude": 42.7970,
+      "longitude": 1.3670,
+      "region": "Pyrénées ariégeoises",
+      "country": "France",
+      "nearbyTowns": ["Massat", "Aulus-les-Bains"]
+    },
+    "climbData": {
+      "massatSide": {
+        "startLocation": "Massat",
+        "length": 10.0,
+        "elevation": 750,
+        "averageGradient": 7.5,
+        "maxGradient": 10.0,
+        "difficulty": 8
+      },
+      "aulusSide": {
+        "startLocation": "Aulus-les-Bains",
+        "length": 9.5,
+        "elevation": 650,
+        "averageGradient": 6.8,
+        "maxGradient": 9.0,
+        "difficulty": 7
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1999,
+      "tourDeFranceAppearances": 5,
+      "famousStories": [
+        "En 2011, Jelle Vanendert y signe sa première victoire d'étape sur le Tour.",
+        "En 2017, Warren Barguil franchit le col en tête lors d'une étape qu'il remportera à Foix.",
+        "Ce col fait partie de la Route des Cols des Pyrénées et est apprécié pour son cadre sauvage et préservé."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Thomas Voeckler",
+          "time": "29:34",
+          "year": 2012,
+          "side": "massat"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Panorama sur le Mont Valier",
+        "description": "Vue sur ce sommet emblématique des Pyrénées ariégeoises (2838m).",
+        "coordinates": [42.7970, 1.3670],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Col de Latrape",
+        "description": "Col secondaire situé juste avant le Col d'Agnès en montant depuis Massat.",
+        "coordinates": [42.8045, 1.3388],
+        "type": "landmark"
+      },
+      {
+        "name": "Étang de Lers",
+        "description": "Petit lac d'altitude situé peu après le col en direction d'Aulus.",
+        "coordinates": [42.7861, 1.3731],
+        "type": "natural"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Mai à octobre",
+      "roadCondition": "Bonne",
+      "trafficLevel": "Faible",
+      "winterClosure": "Généralement fermé de novembre à avril",
+      "facilities": ["Aucune installation permanente au sommet", "Restaurant près de l'étang de Lers"],
+      "parkingAvailable": true,
+      "waterPoints": ["Source près du sommet", "Étang de Lers"]
+    },
+    "images": {
+      "main": "/images/cols/agnes/main.jpg",
+      "gallery": [
+        "/images/cols/agnes/massat-side.jpg",
+        "/images/cols/agnes/aulus-side.jpg",
+        "/images/cols/agnes/lers-lake.jpg",
+        "/images/cols/agnes/summit.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Le versant de Massat est plus difficile, avec une pente plus soutenue.",
+      "Souvent combiné avec le Port de Lers pour former une belle boucle.",
+      "La route peut être affectée par des chutes de pierres après de fortes pluies."
+    ],
+    "recommendedBikeTypes": ["Vélo de route"]
+  },
+  {
+    "id": "tre-cime-di-lavaredo",
+    "name": "Tre Cime di Lavaredo",
+    "altitude": 2333,
+    "location": {
+      "latitude": 46.6167,
+      "longitude": 12.3000,
+      "region": "Dolomites",
+      "country": "Italie",
+      "nearbyTowns": ["Misurina", "Auronzo di Cadore"]
+    },
+    "climbData": {
+      "misurinaSide": {
+        "startLocation": "Misurina",
+        "length": 7.5,
+        "elevation": 565,
+        "averageGradient": 7.5,
+        "maxGradient": 14.0,
+        "difficulty": 8
+      },
+      "auronzoSide": {
+        "startLocation": "Auronzo di Cadore",
+        "length": 18.9,
+        "elevation": 1250,
+        "averageGradient": 6.6,
+        "maxGradient": 14.0,
+        "difficulty": 9,
+        "note": "La section finale de 4 km est la plus difficile, avec une moyenne de 12%"
+      }
+    },
+    "history": {
+      "firstGiroYear": 1967,
+      "giroAppearances": 6,
+      "famousStories": [
+        "En 1967, lors de sa première apparition au Giro, Eddy Merckx y remporte l'étape et consolide son maillot rose.",
+        "En 2013, Vincenzo Nibali y signe une victoire mémorable sous la neige.",
+        "La montée est célèbre pour ses trois derniers kilomètres extrêmement difficiles, avec une pente moyenne de 12%."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Vincenzo Nibali",
+          "time": "36:45",
+          "year": 2013,
+          "side": "misurina"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Rifugio Auronzo",
+        "description": "Refuge de montagne à l'arrivée, point de départ pour les randonnées vers les Tre Cime.",
+        "coordinates": [46.6167, 12.3000],
+        "type": "accommodation"
+      },
+      {
+        "name": "Vue sur les Tre Cime",
+        "description": "Panorama exceptionnel sur les trois pics emblématiques des Dolomites.",
+        "coordinates": [46.6167, 12.3000],
+        "type": "viewpoint"
+      },
+      {
+        "name": "Lac de Misurina",
+        "description": "Magnifique lac alpin au pied de l'ascension.",
+        "coordinates": [46.5842, 12.2542],
+        "type": "natural"
+      },
+      {
+        "name": "Route à péage",
+        "description": "La route d'accès est à péage pour les véhicules motorisés, mais gratuite pour les cyclistes.",
+        "coordinates": [46.5961, 12.2750],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Excellente (route à péage)",
+      "trafficLevel": "Modéré à élevé en été",
+      "winterClosure": "Fermé d'octobre à mai",
+      "facilities": ["Refuge avec restaurant au sommet", "Toilettes", "Boutique souvenirs"],
+      "parkingAvailable": true,
+      "waterPoints": ["Refuge au sommet", "Lac de Misurina"]
+    },
+    "images": {
+      "main": "/images/cols/tre-cime/main.jpg",
+      "gallery": [
+        "/images/cols/tre-cime/misurina-side.jpg",
+        "/images/cols/tre-cime/steep-section.jpg",
+        "/images/cols/tre-cime/three-peaks.jpg",
+        "/images/cols/tre-cime/rifugio.jpg"
+      ]
+    },
+    "difficulty": 5,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Les 3-4 derniers kilomètres sont les plus difficiles avec une pente constamment supérieure à 10%.",
+      "L'accès par Misurina est plus court mais tout aussi difficile dans sa section finale.",
+      "En été, partez tôt pour éviter le trafic touristique et profiter des meilleures vues."
+    ],
+    "recommendedBikeTypes": ["Vélo de route avec rapport de transmission adapté"]
+  }
+]

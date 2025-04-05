@@ -1,0 +1,169 @@
+/* EnhancedSocialHub Styles - Version améliorée du hub social */
+
+.enhanced-social-hub {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f5f7fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.enhanced-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.enhanced-navigation {
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  overflow-x: auto;
+  padding: 0 1rem;
+}
+
+.post-action-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.post-action-icon.like {
+  background-image: url('../../../public/images/social/like-icon.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px;
+  padding-left: 24px;
+}
+
+.post-action-icon.comment {
+  background-image: url('../../../public/images/social/comment-icon.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px;
+  padding-left: 24px;
+}
+
+.post-action-icon.share {
+  background-image: url('../../../public/images/social/share-icon.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px;
+  padding-left: 24px;
+}
+
+.post-action-icon.bookmark {
+  background-image: url('../../../public/images/social/bookmark-icon.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px;
+  padding-left: 24px;
+}
+
+/* Styles for post cards */
+.enhanced-post-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.enhanced-post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.enhanced-post-header {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.enhanced-post-content {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.enhanced-post-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.enhanced-post-actions {
+  display: flex;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Friend and connection styles */
+.friend-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.friend-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.friend-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3498db;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .enhanced-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .enhanced-navigation {
+    padding: 0;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .enhanced-post-card {
+    padding: 1rem;
+  }
+}
+
+/* Material UI integration */
+.MuiTab-root {
+  min-width: auto !important;
+  text-transform: none !important;
+}
+
+.MuiChip-root {
+  margin: 0.25rem !important;
+}
+
+.MuiButton-containedPrimary {
+  background-color: #3498db !important;
+}
+
+.MuiButton-outlinedPrimary {
+  color: #3498db !important;
+  border-color: #3498db !important;
+}

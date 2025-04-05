@@ -1,0 +1,29 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#e3f2fd"/>
+  
+  <!-- Ciel et montagne -->
+  <path d="M0,300 L200,150 L350,250 L500,100 L650,200 L800,150 L800,400 L0,400 Z" fill="#4db6ac"/>
+  <path d="M0,400 L800,400 L800,600 L0,600 Z" fill="#81c784"/>
+  
+  <!-- Cycliste au sommet -->
+  <circle cx="400" cy="150" r="30" fill="#ff8a65"/>
+  <line x1="400" y1="180" x2="400" y2="240" stroke="#424242" stroke-width="6"/>
+  <line x1="400" y1="200" x2="360" y2="240" stroke="#424242" stroke-width="6"/>
+  <line x1="400" y1="200" x2="440" y2="240" stroke="#424242" stroke-width="6"/>
+  <circle cx="360" cy="120" r="18" fill="#f5f5f5" stroke="#424242" stroke-width="4"/>
+  <circle cx="440" cy="120" r="18" fill="#f5f5f5" stroke="#424242" stroke-width="4"/>
+  <line x1="360" y1="120" x2="400" y2="150" stroke="#424242" stroke-width="5"/>
+  <line x1="440" y1="120" x2="400" y2="150" stroke="#424242" stroke-width="5"/>
+  
+  <!-- Trophée -->
+  <circle cx="400" cy="350" r="60" fill="#ffd54f" stroke="#f57c00" stroke-width="5"/>
+  <polygon points="370,310 430,310 420,400 380,400" fill="#f57c00"/>
+  <rect x="380" y="400" width="40" height="20" fill="#f57c00"/>
+  <rect x="390" y="420" width="20" height="30" fill="#f57c00"/>
+  <rect x="375" y="450" width="50" height="10" fill="#f57c00"/>
+  
+  <!-- Texte et médaille -->
+  <text x="400" y="80" font-family="Arial" font-size="40" text-anchor="middle" fill="#1565c0" font-weight="bold">Sommet Conquis!</text>
+  <text x="400" y="350" font-family="Arial" font-size="28" text-anchor="middle" fill="#ffffff" font-weight="bold">1ER</text>
+  <text x="400" y="550" font-family="Arial" font-size="30" text-anchor="middle" fill="#2e7d32">+1250m d'élévation</text>
+</svg>

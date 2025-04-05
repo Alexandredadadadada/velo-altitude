@@ -1,0 +1,500 @@
+[
+  {
+    "id": "col-tourmalet",
+    "name": "Col du Tourmalet",
+    "altitude": 2115,
+    "location": {
+      "latitude": 42.9104,
+      "longitude": 0.1425,
+      "region": "Pyrénées centrales",
+      "country": "France",
+      "nearbyTowns": ["Luz-Saint-Sauveur", "La Mongie", "Barèges"]
+    },
+    "climbData": {
+      "eastSide": {
+        "startLocation": "Sainte-Marie-de-Campan",
+        "length": 17.2,
+        "elevation": 1268,
+        "averageGradient": 7.4,
+        "maxGradient": 10.2,
+        "difficulty": 9
+      },
+      "westSide": {
+        "startLocation": "Luz-Saint-Sauveur",
+        "length": 19.0,
+        "elevation": 1404,
+        "averageGradient": 7.4,
+        "maxGradient": 10.5,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1910,
+      "tourDeFranceAppearances": 87,
+      "famousStories": [
+        "En 1910, Octave Lapize fut le premier à franchir le col lors du Tour de France, qualifiant les organisateurs d'assassins.",
+        "En 1969, Eddy Merckx attaqua à 140 km de l'arrivée et remporta l'étape avec plus de 17 minutes d'avance.",
+        "La statue du Géant du Tourmalet, représentant un cycliste en plein effort, est installée au sommet pendant l'été."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Thibaut Pinot",
+          "time": "48:30",
+          "year": 2019,
+          "side": "ouest"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Statue du Géant du Tourmalet",
+        "description": "Sculpture emblématique d'un cycliste en plein effort, installée au sommet pendant la saison estivale.",
+        "coordinates": [42.9104, 0.1425],
+        "type": "monument"
+      },
+      {
+        "name": "Col du Tourmalet Sign",
+        "description": "Panneau iconique marquant le sommet du col, lieu de photos souvenirs pour les cyclistes.",
+        "coordinates": [42.9104, 0.1425],
+        "type": "landmark"
+      },
+      {
+        "name": "Pic du Midi de Bigorre",
+        "description": "Observatoire astronomique visible depuis le col, accessible par téléphérique depuis La Mongie.",
+        "coordinates": [42.9372, 0.1411],
+        "type": "attraction"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Excellente, bien entretenue",
+      "trafficLevel": "Modéré, plus élevé en juillet-août",
+      "winterClosure": "Généralement fermé de novembre à mai",
+      "facilities": ["Café au sommet", "Boutique souvenirs", "Toilettes"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/tourmalet/main.jpg",
+      "gallery": [
+        "/images/cols/tourmalet/east-approach.jpg",
+        "/images/cols/tourmalet/west-approach.jpg",
+        "/images/cols/tourmalet/summit.jpg",
+        "/images/cols/tourmalet/profile.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "eastSide": "/data/elevation/tourmalet-east.json",
+      "westSide": "/data/elevation/tourmalet-west.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 15,
+        "winter": -5
+      },
+      "windExposure": "Élevée",
+      "precipitationRisk": "Modérée"
+    },
+    "relatedCols": ["col-aspin", "col-aubisque", "hautacam", "luz-ardiden"],
+    "difficulty": 9,
+    "popularity": 10,
+    "coordinates3D": [
+      [0.1425, 42.9104, 2115]
+    ]
+  },
+  {
+    "id": "col-galibier",
+    "name": "Col du Galibier",
+    "altitude": 2642,
+    "location": {
+      "latitude": 45.0633,
+      "longitude": 6.4083,
+      "region": "Alpes du Nord",
+      "country": "France",
+      "nearbyTowns": ["Saint-Michel-de-Maurienne", "Valloire", "Briançon"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Valloire",
+        "length": 18.1,
+        "elevation": 1245,
+        "averageGradient": 6.9,
+        "maxGradient": 12.1,
+        "difficulty": 9
+      },
+      "southSide": {
+        "startLocation": "Le Monêtier-les-Bains",
+        "length": 23.0,
+        "elevation": 1180,
+        "averageGradient": 5.1,
+        "maxGradient": 9.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1911,
+      "tourDeFranceAppearances": 60,
+      "famousStories": [
+        "En 1911, Émile Georget fut le premier coureur à franchir le col lors du Tour de France.",
+        "En 1998, Marco Pantani a réalisé une ascension mémorable sous la pluie.",
+        "Le monument Henri Desgrange, fondateur du Tour de France, se trouve près du sommet."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "37:15",
+          "year": 1998,
+          "side": "nord"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Monument Henri Desgrange",
+        "description": "Monument dédié au fondateur du Tour de France, situé près du sommet.",
+        "coordinates": [45.0642, 6.4078],
+        "type": "monument"
+      },
+      {
+        "name": "Tunnel du Galibier",
+        "description": "Tunnel historique construit en 1890, permettant de traverser sous le col en hiver.",
+        "coordinates": [45.0650, 6.4075],
+        "type": "landmark"
+      },
+      {
+        "name": "Vue sur la Meije",
+        "description": "Point de vue exceptionnel sur le massif de la Meije et ses glaciers.",
+        "coordinates": [45.0633, 6.4083],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Bonne, quelques virages serrés",
+      "trafficLevel": "Modéré, plus élevé en été",
+      "winterClosure": "Fermé d'octobre à mai/juin",
+      "facilities": ["Café saisonnier", "Fontaine d'eau"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/galibier/main.jpg",
+      "gallery": [
+        "/images/cols/galibier/north-approach.jpg",
+        "/images/cols/galibier/south-approach.jpg",
+        "/images/cols/galibier/summit.jpg",
+        "/images/cols/galibier/profile.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "northSide": "/data/elevation/galibier-north.json",
+      "southSide": "/data/elevation/galibier-south.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 12,
+        "winter": -10
+      },
+      "windExposure": "Très élevée",
+      "precipitationRisk": "Élevée"
+    },
+    "relatedCols": ["col-telegraphe", "col-lautaret", "col-izoard", "alpe-dhuez"],
+    "difficulty": 9,
+    "popularity": 10,
+    "coordinates3D": [
+      [6.4083, 45.0633, 2642]
+    ]
+  },
+  {
+    "id": "stelvio-pass",
+    "name": "Passo dello Stelvio",
+    "altitude": 2758,
+    "location": {
+      "latitude": 46.5283,
+      "longitude": 10.4543,
+      "region": "Alpes italiennes",
+      "country": "Italie",
+      "nearbyTowns": ["Bormio", "Prato allo Stelvio", "Trafoi"]
+    },
+    "climbData": {
+      "bormioSide": {
+        "startLocation": "Bormio",
+        "length": 21.5,
+        "elevation": 1533,
+        "averageGradient": 7.1,
+        "maxGradient": 14.0,
+        "difficulty": 10
+      },
+      "pratoSide": {
+        "startLocation": "Prato allo Stelvio",
+        "length": 24.3,
+        "elevation": 1808,
+        "averageGradient": 7.4,
+        "maxGradient": 14.0,
+        "difficulty": 10
+      },
+      "swissSide": {
+        "startLocation": "Santa Maria Val Müstair",
+        "length": 13.3,
+        "elevation": 1068,
+        "averageGradient": 8.0,
+        "maxGradient": 14.0,
+        "difficulty": 9
+      }
+    },
+    "history": {
+      "firstGiroYear": 1953,
+      "giroAppearances": 12,
+      "famousStories": [
+        "Construit entre 1820 et 1825 par l'Empire autrichien pour relier la Lombardie au Tyrol.",
+        "En 1953, Fausto Coppi a réalisé une ascension légendaire lors du Giro d'Italia.",
+        "Considéré comme l'un des plus beaux cols des Alpes avec ses 48 virages en épingle côté Prato."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Marco Pantani",
+          "time": "1:03:00",
+          "year": 1994,
+          "side": "Bormio"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "48 Tornanti (Virages en épingle)",
+        "description": "Série impressionnante de 48 virages en épingle numérotés sur le versant de Prato.",
+        "coordinates": [46.5200, 10.4400],
+        "type": "road_feature"
+      },
+      {
+        "name": "Mémorial Fausto Coppi",
+        "description": "Monument dédié au champion cycliste italien au sommet du col.",
+        "coordinates": [46.5283, 10.4543],
+        "type": "monument"
+      },
+      {
+        "name": "Trois frontières",
+        "description": "Point proche où se rencontrent les frontières de l'Italie, la Suisse et l'Autriche.",
+        "coordinates": [46.5300, 10.4600],
+        "type": "landmark"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Bonne, nombreux virages en épingle",
+      "trafficLevel": "Élevé en été, surtout les week-ends",
+      "winterClosure": "Fermé d'octobre à mai",
+      "facilities": ["Restaurants", "Hôtels", "Boutiques", "Musée"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/stelvio/main.jpg",
+      "gallery": [
+        "/images/cols/stelvio/bormio-side.jpg",
+        "/images/cols/stelvio/prato-side.jpg",
+        "/images/cols/stelvio/hairpins.jpg",
+        "/images/cols/stelvio/summit.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "bormioSide": "/data/elevation/stelvio-bormio.json",
+      "pratoSide": "/data/elevation/stelvio-prato.json",
+      "swissSide": "/data/elevation/stelvio-swiss.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 10,
+        "winter": -15
+      },
+      "windExposure": "Élevée",
+      "precipitationRisk": "Modérée"
+    },
+    "relatedCols": ["gavia-pass", "mortirolo-pass", "umbrail-pass", "bernina-pass"],
+    "difficulty": 10,
+    "popularity": 10,
+    "coordinates3D": [
+      [10.4543, 46.5283, 2758]
+    ]
+  },
+  {
+    "id": "col-izoard",
+    "name": "Col d'Izoard",
+    "altitude": 2360,
+    "location": {
+      "latitude": 44.8203,
+      "longitude": 6.7347,
+      "region": "Alpes du Sud",
+      "country": "France",
+      "nearbyTowns": ["Briançon", "Arvieux", "Château-Queyras"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Briançon",
+        "length": 19.0,
+        "elevation": 1110,
+        "averageGradient": 5.8,
+        "maxGradient": 10.0,
+        "difficulty": 8
+      },
+      "southSide": {
+        "startLocation": "Château-Queyras",
+        "length": 14.1,
+        "elevation": 1095,
+        "averageGradient": 7.3,
+        "maxGradient": 10.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1922,
+      "tourDeFranceAppearances": 34,
+      "famousStories": [
+        "Théâtre de duels légendaires entre Fausto Coppi et Louison Bobet dans les années 1950.",
+        "La Casse Déserte, paysage lunaire unique, est l'un des sites les plus emblématiques du Tour de France.",
+        "En 2017, le col a été franchi lors de la 18e étape du Tour de France, remportée par Warren Barguil."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Warren Barguil",
+          "time": "42:18",
+          "year": 2017,
+          "side": "sud"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "La Casse Déserte",
+        "description": "Paysage lunaire spectaculaire de roches érodées, situé sur le versant sud à environ 2 km du sommet.",
+        "coordinates": [44.8150, 6.7400],
+        "type": "natural_feature"
+      },
+      {
+        "name": "Monuments Coppi-Bobet",
+        "description": "Monuments dédiés aux champions Fausto Coppi et Louison Bobet dans la Casse Déserte.",
+        "coordinates": [44.8160, 6.7390],
+        "type": "monument"
+      },
+      {
+        "name": "Refuge Napoléon",
+        "description": "Refuge historique construit sous Napoléon III, offrant restauration et hébergement.",
+        "coordinates": [44.8203, 6.7347],
+        "type": "facility"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Bonne, quelques sections étroites",
+      "trafficLevel": "Modéré, plus élevé en été",
+      "winterClosure": "Fermé d'octobre/novembre à mai",
+      "facilities": ["Refuge", "Restaurant", "Boutique souvenirs"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/izoard/main.jpg",
+      "gallery": [
+        "/images/cols/izoard/north-approach.jpg",
+        "/images/cols/izoard/south-approach.jpg",
+        "/images/cols/izoard/casse-deserte.jpg",
+        "/images/cols/izoard/summit.jpg"
+      ]
+    },
+    "elevationProfile": {
+      "northSide": "/data/elevation/izoard-north.json",
+      "southSide": "/data/elevation/izoard-south.json"
+    },
+    "weather": {
+      "averageTemperature": {
+        "summer": 14,
+        "winter": -8
+      },
+      "windExposure": "Modérée à élevée",
+      "precipitationRisk": "Modérée"
+    },
+    "relatedCols": ["col-galibier", "col-agnel", "col-vars", "col-lautaret"],
+    "difficulty": 8,
+    "popularity": 9,
+    "coordinates3D": [
+      [6.7347, 44.8203, 2360]
+    ]
+  },
+  {
+    "id": "col-aubisque",
+    "name": "Col d'Aubisque",
+    "altitude": 1709,
+    "location": {
+      "latitude": 42.9767,
+      "longitude": -0.3364,
+      "region": "Pyrénées occidentales",
+      "country": "France",
+      "nearbyTowns": ["Laruns", "Gourette", "Argelès-Gazost"]
+    },
+    "climbData": {
+      "eastSide": {
+        "startLocation": "Argelès-Gazost",
+        "length": 30.0,
+        "elevation": 1190,
+        "averageGradient": 4.0,
+        "maxGradient": 13.0,
+        "difficulty": 8
+      },
+      "westSide": {
+        "startLocation": "Laruns",
+        "length": 16.6,
+        "elevation": 1190,
+        "averageGradient": 7.2,
+        "maxGradient": 13.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstTourDeFranceYear": 1910,
+      "tourDeFranceAppearances": 45,
+      "famousStories": [
+        "En 1910, lors du premier passage du Tour, Octave Lapize franchit le col à pied en poussant son vélo.",
+        "La Corniche des Cols, route spectaculaire reliant l'Aubisque au Col du Soulor, est taillée dans la falaise.",
+        "Les vélos colorés installés au sommet sont devenus un symbole emblématique du col."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Thibaut Pinot",
+          "time": "52:30",
+          "year": 2015,
+          "side": "ouest"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Vélos colorés",
+        "description": "Installation artistique de vélos peints en couleurs vives au sommet, devenue emblématique.",
+        "coordinates": [42.9767, -0.3364],
+        "type": "landmark"
+      },
+      {
+        "name": "Corniche des Cols",
+        "description": "Route spectaculaire taillée dans la falaise reliant l'Aubisque au Col du Soulor, offrant des vues imprenables.",
+        "coordinates": [42.9700, -0.3100],
+        "type": "road_feature"
+      },
+      {
+        "name": "Vue sur le Pic du Midi d'Ossau",
+        "description": "Panorama exceptionnel sur le Pic du Midi d'Ossau, montagne emblématique des Pyrénées.",
+        "coordinates": [42.9767, -0.3364],
+        "type": "viewpoint"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à Septembre",
+      "roadCondition": "Bonne, attention aux chutes de pierres sur la Corniche",
+      "trafficLevel": "Modéré, plus élevé en été",
+      "winterClosure": "Généralement fermé de novembre à mai",
+      "facilities": ["Restaurant", "Boutique souvenirs", "Toilettes"],
+      "parkingAvailable": true
+    },
+    "images": {
+      "main": "/images/cols/aubisque/main.jpg",
+      "gallery": [
+        "/images/cols/aubisque/east-approach.jpg",
+        "/images/cols/aubisque/west-approach.jpg",
+        "/images/cols/aubisque/corniche.jpg",
+        "/images/cols/aub
+(Content truncated due to size limit. Use line ranges to read in chunks)

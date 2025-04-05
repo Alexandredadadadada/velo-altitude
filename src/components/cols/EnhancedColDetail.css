@@ -1,0 +1,132 @@
+.enhanced-col-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.col-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.col-header h1 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.col-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.col-main-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.col-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  height: 300px;
+}
+
+.col-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.col-summary {
+  flex: 1;
+  min-width: 300px;
+  padding: 1.5rem;
+}
+
+.col-summary h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.col-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.col-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.col-section {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+}
+
+.col-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--light-bg);
+  padding-bottom: 0.5rem;
+}
+
+.elevation-profile {
+  height: 200px;
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.segments-list, .weather-info, .col-history {
+  min-height: 150px;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .col-main-info {
+    flex-direction: column;
+  }
+  
+  .col-image {
+    max-width: 100%;
+    height: 200px;
+  }
+  
+  .col-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

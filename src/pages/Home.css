@@ -1,0 +1,112 @@
+/* Styles pour la page d'accueil */
+.home-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-section {
+  position: relative;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/images/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.modules-section {
+  margin-bottom: 40px;
+}
+
+.modules-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e3a8a;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.module-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+}
+
+.module-card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.module-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.module-card-content {
+  padding: 20px;
+}
+
+.module-card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.module-card-content p {
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 400px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 80%;
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "routes": [
+    {
+      "id": "route-1",
+      "name": "Tour des Grands Cols Pyrénéens",
+      "region": "Pyrénées",
+      "country": "France",
+      "type": "route",
+      "difficulty": 5,
+      "statistics": {
+        "distance": 120.5,
+        "elevation_gain": 3200,
+        "estimated_duration": "8-10 heures"
+      },
+      "points": {
+        "start": {
+          "name": "Luz-Saint-Sauveur",
+          "coordinates": {"lat": 42.8722, "lng": 0.0033}
+        },
+        "end": {
+          "name": "Luz-Saint-Sauveur",
+          "coordinates": {"lat": 42.8722, "lng": 0.0033}
+        }
+      },
+      "gpx_track": "https://example.com/gpx/pyrenees-tour.gpx",
+      "waypoints": [
+        {"name": "Col du Tourmalet", "type": "col", "elevation": 2115, "distance_from_start": 19.0},
+        {"name": "Col d'Aspin", "type": "col", "elevation": 1490, "distance_from_start": 45.2},
+        {"name": "Col de Peyresourde", "type": "col", "elevation": 1569, "distance_from_start": 68.7}
+      ],
+      "points_of_interest": [
+        {"name": "Pic du Midi de Bigorre", "type": "viewpoint", "description": "Observatoire astronomique avec vue panoramique", "distance_from_start": 20.5},
+        {"name": "Cascade d'Artigues", "type": "natural", "description": "Belle cascade à proximité de la route", "distance_from_start": 35.2}
+      ],
+      "services": {
+        "cafes": [
+          {"name": "Café du Tourmalet", "location": "Sommet du Tourmalet", "distance_from_start": 19.0},
+          {"name": "Bar des Cyclistes", "location": "Arreau", "distance_from_start": 52.3}
+        ],
+        "bike_shops": [
+          {"name": "Cycles Pyrénées", "location": "Luz-Saint-Sauveur", "distance_from_start": 0}
+        ],
+        "accommodations": [
+          {"name": "Hôtel des Cols", "location": "Luz-Saint-Sauveur", "type": "hotel", "bike_friendly": true}
+        ]
+      },
+      "narrative": "Cette boucle épique vous emmène à travers les cols légendaires des Pyrénées. Commençant à Luz-Saint-Sauveur, vous affronterez d'abord le mythique Tourmalet, plus haut col routier des Pyrénées françaises. Après une descente technique vers Sainte-Marie-de-Campan, vous enchaînerez avec le Col d'Aspin, moins difficile mais offrant des panoramas exceptionnels. Le Col de Peyresourde vous attend ensuite, avant une longue descente vers la vallée et le retour à Luz-Saint-Sauveur.",
+      "safety_tips": [
+        "Circulation automobile importante en haute saison",
+        "Descentes techniques nécessitant une bonne maîtrise du vélo",
+        "Changements météorologiques rapides possibles en montagne"
+      ],
+      "best_periods": ["juin", "juillet", "août", "septembre"]
+    },
+    {
+      "id": "route-2",
+      "name": "Route des Vins d'Alsace à Vélo",
+      "region": "Alsace",
+      "country": "France",
+      "type": "touristic",
+      "difficulty": 2,
+      "statistics": {
+        "distance": 170.0,
+        "elevation_gain": 1850,
+        "estimated_duration": "3-5 jours"
+      },
+      "points": {
+        "start": {
+          "name": "Strasbourg",
+          "coordinates": {"lat": 48.5734, "lng": 7.7521}
+        },
+        "end": {
+          "name": "Mulhouse",
+          "coordinates": {"lat": 47.7508, "lng": 7.3359}
+        }
+      },
+      "gpx_track": "https://example.com/gpx/alsace-wine-route.gpx",
+      "waypoints": [
+        {"name": "Obernai", "type": "town", "elevation": 210, "distance_from_start": 30.0},
+        {"name": "Ribeauvillé", "type": "town", "elevation": 220, "distance_from_start": 65.0},
+        {"name": "Colmar", "type": "city", "elevation": 190, "distance_from_start": 90.0},
+        {"name": "Guebwiller", "type": "town", "elevation": 300, "distance_from_start": 130.0}
+      ],
+      "points_of_interest": [
+        {"name": "Cave historique des Hospices de Strasbourg", "type": "cultural", "description": "Cave à vin historique datant de 1395", "distance_from_start": 0.5},
+        {"name": "Château du Haut-Koenigsbourg", "type": "heritage", "description": "Château médiéval restauré avec vue panoramique", "distance_from_start": 55.0},
+        {"name": "Village de Riquewihr", "type": "heritage", "description": "Un des plus beaux villages de France", "distance_from_start": 70.0},
+        {"name": "Musée Unterlinden", "type": "cultural", "description": "Musée abritant le retable d'Issenheim", "distance_from_start": 90.0}
+      ],
+      "services": {
+        "cafes": [
+          {"name": "Winstub Le Clou", "location": "Strasbourg", "distance_from_start": 0.0},
+          {"name": "Café Rapp", "location": "Colmar", "distance_from_start": 90.0}
+        ],
+        "bike_shops": [
+          {"name": "Vélo U", "location": "Strasbourg", "distance_from_start": 0.0},
+          {"name": "Cycles Meyer", "location": "Colmar", "distance_from_start": 90.0}
+        ],
+        "accommodations": [
+          {"name": "Hôtel Le Colombier", "location": "Obernai", "type": "hotel", "bike_friendly": true},
+          {"name": "Auberge du Rempart", "location": "Ribeauvillé", "type": "guesthouse", "bike_friendly": true},
+          {"name": "Hôtel Saint-Martin", "location": "Colmar", "type": "hotel", "bike_friendly": true}
+        ],
+        "wineries": [
+          {"name": "Domaine Weinbach", "location": "Kaysersberg", "distance_from_start": 85.0},
+          {"name": "Domaine Zind-Humbrecht", "location": "Turckheim", "distance_from_start": 95.0},
+          {"name": "Domaine Marcel Deiss", "location": "Bergheim", "distance_from_start": 75.0}
+        ]
+      },
+      "narrative": "La Route des Vins d'Alsace à vélo est un parcours enchanteur à travers les vignobles et villages pittoresques alsaciens. De Strasbourg à Mulhouse, vous traverserez des paysages viticoles exceptionnels, des villages médiévaux préservés et découvrirez la richesse gastronomique de la région. L'itinéraire, majoritairement plat à vallonné, est accessible aux cyclistes de tous niveaux et peut se parcourir en plusieurs étapes pour profiter pleinement des dégustations de vins et visites culturelles.",
+      "safety_tips": [
+        "Modération lors des dégustations de vin",
+        "Empruntez les pistes cyclables balisées quand elles sont disponibles",
+        "Soyez vigilant lors des traversées de villages touristiques en haute saison"
+      ],
+      "best_periods": ["avril", "mai", "juin", "septembre", "octobre"]
+    },
+    {
+      "id": "route-3",
+      "name": "Tour des Châteaux de la Loire",
+      "region": "Centre-Val de Loire",
+      "country": "France",
+      "type": "cultural",
+      "difficulty": 1,
+      "statistics": {
+        "distance": 230.0,
+        "elevation_gain": 980,
+        "estimated_duration": "4-6 jours"
+      },
+      "points": {
+        "start": {
+          "name": "Tours",
+          "coordinates": {"lat": 47.3941, "lng": 0.6848}
+        },
+        "end": {
+          "name": "Chambord",
+          "coordinates": {"lat": 47.6158, "lng": 1.5187}
+        }
+      },
+      "gpx_track": "https://example.com/gpx/loire-castles.gpx",
+      "waypoints": [
+        {"name": "Amboise", "type": "town", "elevation": 65, "distance_from_start": 30.0},
+        {"name": "Chenonceaux", "type": "castle", "elevation": 80, "distance_from_start": 65.0},
+        {"name": "Chaumont-sur-Loire", "type": "castle", "elevation": 75, "distance_from_start": 90.0},
+        {"name": "Blois", "type": "city", "elevation": 70, "distance_from_start": 150.0},
+        {"name": "Chambord", "type": "castle", "elevation": 85, "distance_from_start": 230.0}
+      ],
+      "points_of_interest": [
+        {"name": "Château d'Amboise", "type": "heritage", "description": "Résidence royale et tombeau de Léonard de Vinci", "distance_from_start": 30.0},
+        {"name": "Clos Lucé", "type": "heritage", "description": "Dernière demeure de Léonard de Vinci", "distance_from_start": 31.0},
+        {"name": "Château de Chenonceau", "type": "heritage", "description": "Château Renaissance enjambant le Cher", "distance_from_start": 65.0},
+        {"name": "Festival International des Jardins", "type": "cultural", "description": "Exposition de jardins contemporains à Chaumont", "distance_from_start": 90.0},
+        {"name": "Château de Blois", "type": "heritage", "description": "Château royal aux quatre styles architecturaux", "distance_from_start": 150.0},
+        {"name": "Château de Chambord", "type": "heritage", "description": "Plus grand château de la Loire, chef-d'œuvre Renaissance", "distance_from_start": 230.0}
+      ],
+      "services": {
+        "cafes": [
+          {"name": "Café du Château", "location": "Amboise", "distance_from_start": 30.0},
+          {"name": "Café de la Loire", "location": "Blois", "distance_from_start": 150.0}
+        ],
+        "bike_shops": [
+          {"name": "Détours de Loire", "location": "Tours", "distance_from_start": 0.0},
+          {"name": "Loire à Vélo Services", "location": "Blois", "distance_from_start": 150.0}
+        ],
+        "accommodations": [
+          {"name": "Hôtel Le Manoir les Minimes", "location": "Amboise", "type": "hotel", "bike_friendly": true},
+          {"name": "Auberge de Jeunesse", "location": "Blois", "type": "hostel", "bike_friendly": true},
+          {"name": "Relais de Chambord", "location": "Chambord", "type": "hotel", "bike_friendly": true}
+        ]
+      },
+      "narrative": "Le Tour des Châteaux de la Loire offre une immersion dans l'histoire et la culture française en suivant le cours de la Loire à vélo. Ce parcours plat et facile relie plusieurs joyaux architecturaux de la Renaissance. Depuis Tours, vous longerez la Loire jusqu'à Amboise, puis découvrirez le splendide Château de Chenonceau enjambant le Cher. L'itinéraire vous mènera ensuite à Chaumont-sur-Loire, Blois, et enfin au majestueux Chambord, chef-d'œuvre de François Ier.",
+      "safety_tips": [
+        "Suivre les itinéraires balisés 'Loire à Vélo'",
+        "Prévoir un éclairage si visite tardive des châteaux",
+        "Forte affluence touristique en été près des châteaux"
+      ],
+      "best_periods": ["avril", "mai", "juin", "septembre", "octobre"]
+    },
+    {
+      "id": "route-4",
+      "name": "Tour du Mont Blanc à Vélo",
+      "region": "Alpes",
+      "country": "France/Italie/Suisse",
+      "type": "challenge",
+      "difficulty": 5,
+      "statistics": {
+        "distance": 330.0,
+        "elevation_gain": 8000,
+        "estimated_duration": "3-5 jours"
+      },
+      "points": {
+        "start": {
+          "name": "Chamonix",
+          "coordinates": {"lat": 45.9237, "lng": 6.8694}
+        },
+        "end": {
+          "name": "Chamonix",
+          "coordinates": {"lat": 45.9237, "lng": 6.8694}
+        }
+      },
+      "gpx_track": "https://example.com/gpx/tour-mont-blanc.gpx",
+      "waypoints": [
+        {"name": "Col des Montets", "type": "col", "elevation": 1461, "distance_from_start": 12.0},
+        {"name": "Martigny", "type": "city", "elevation": 471, "distance_from_start": 40.0},
+        {"name": "Grand-Saint-Bernard", "type": "col", "elevation": 2469, "distance_from_start": 95.0},
+        {"name": "Aoste", "type": "city", "elevation": 583, "distance_from_start": 140.0},
+        {"name": "Col du Petit-Saint-Bernard", "type": "col", "elevation": 2188, "distance_from_start": 210.0},
+        {"name": "Bourg-Saint-Maurice", "type": "town", "elevation": 865, "distance_from_start": 240.0},
+        {"name": "Col de la Forclaz", "type": "col", "elevation": 1527, "distance_from_start": 302.0}
+      ],
+      "points_of_interest": [
+        {"name": "Glacier d'Argentière", "type": "natural", "description": "Impressionnant glacier visible depuis la route", "distance_from_start": 8.0},
+        {"name": "Hospice du Grand-Saint-Bernard", "type": "heritage", "description": "Hospice historique fondé au XIe siècle", "distance_from_start": 95.0},
+        {"name": "Théâtre romain d'Aoste", "type": "heritage", "description": "Vestiges romains bien conservés", "distance_from_start": 141.0},
+        {"name": "La Rosière", "type": "viewpoint", "description": "Vue panoramique sur la vallée de la Tarentaise", "distance_from_start": 202.0},
+        {"name": "Aiguille du Midi", "type": "natural", "description": "Sommet accessible par téléphérique depuis Chamonix", "distance_from_start": 329.0}
+      ],
+      "services": {
+        "cafes": [
+          {"name": "Café des Alpes", "location": "Chamonix", "distance_from_start": 0.0},
+          {"name": "Restaurant du Col", "location": "Grand-Saint-Bernard", "distance_from_start": 95.0},
+          {"name": "Bar Alpino", "location": "Aoste", "distance_from_start": 140.0}
+        ],
+        "bike_shops": [
+          {"name": "Sanglard Sports", "location": "Chamonix", "distance_from_start": 0.0},
+          {"name": "Cycles Aoste", "location": "Aoste", "distance_from_start": 140.0},
+          {"name": "Intersport", "location": "Bourg-Saint-Maurice", "distance_from_start": 240.0}
+        ],
+        "accommodations": [
+          {"name": "Hôtel de l'Arve", "location": "Chamonix", "type": "hotel", "bike_friendly": true},
+          {"name": "Auberge du Grand-Saint-Bernard", "location": "Col du Grand-Saint-Bernard", "type": "hostel", "bike_friendly": true},
+          {"name": "Hôtel Duca d'Aosta", "location": "Aoste", "type": "hotel", "bike_friendly": true},
+          {"name": "Hôtel l'Autantic", "location": "Bourg-Saint-Maurice", "type": "hotel", "bike_friendly": true}
+        ]
+      },
+      "narrative": "Le Tour du Mont Blanc à vélo est un défi exceptionnel pour cyclistes aguerris. Cette boucle de 330 km autour du massif du Mont Blanc traverse trois pays et franchit plusieurs cols alpins. Au départ de Chamonix, vous franchirez le Col des Montets pour rejoindre la Suisse, puis le mythique Col du Grand-Saint-Bernard vers l'Italie. Après Aoste, vous remonterez vers le Col du Petit-Saint-Bernard pour revenir en France, puis le Col des Saisies et le Col de la Forclaz avant de retrouver Chamonix. Un périple exigeant offrant des paysages grandioses.",
+      "safety_tips": [
+        "Prévoir des vêtements chauds même en été pour les cols",
+        "Descentes techniques nécessitant une bonne maîtrise du vélo",
+        "Conditions météorologiques changeantes en altitude",
+        "Trafic dense sur certaines sections, notamment en haute saison"
+      ],
+      "best_periods": ["juin", "juillet", "août", "septembre"]
+    },
+    {
+      "id": "route-5",
+      "name": "La Véloscénie Paris-Mont-Saint-Michel",
+      "region": "Normandie/Ile-de-France",
+      "country": "France",
+      "type": "long-distance",
+      "difficulty": 2,
+      "statistics": {
+        "distance": 450.0,
+        "elevation_gain": 3500,
+        "estimated_duration": "5-7 jours"
+      },
+      "points": {
+        "start": {
+          "name": "Paris",
+          "coordinates": {"lat": 48.8566, "lng": 2.3522}
+        },
+        "end": {
+          "name": "Mont-Saint-Michel",
+          "coordinates": {"lat": 48.6361, "lng": -1.5115}
+        }
+      },
+      "gpx_track": "https://example.com/gpx/veloscenie.gpx",
+      "waypoints": [
+        {"name": "Versailles", "type": "city", "elevation": 130, "distance_from_start": 25.0},
+        {"name": "Chartres", "type": "city", "elevation": 155, "distance_from_start": 90.0},
+        {"name": "Alençon", "type": "city", "elevation": 135, "distance_from_start": 230.0},
+        {"name": "Domfront", "type": "town", "elevation": 210, "distance_from_start": 320.0},
+        {"name": "Avranches", "type": "town", "elevation": 90, "distance_from_start": 420.0}
+      ],
+      "points_of_interest": [
+        {"name": "Château de Versailles", "type": "heritage", "description": "Ancien château royal et ses jardins", "distance_from_start": 25.0},
+        {"name": "Cathédrale de Chartres", "type": "heritage", "description": "Chef-d'œuvre de l'art gothique", "distance_from_start": 90.0},
+        {"name": "Forêt d'Écouves", "type": "natural", "description": "Plus grand massif forestier de Normandie", "distance_from_start": 195.0},
+        {"name": "Château de Carrouges", "type": "heritage", "description": "Château médiéval du XIVe siècle", "distance_from_start": 210.0},
+        {"name": "Viaduc de la Souleuvre", "type": "heritage", "description": "Ancien viaduc ferroviaire de Gustave Eiffel", "distance_from_start": 350.0},
+        {"name": "Baie du Mont-Saint-Michel", "type": "natural", "description": "Baie aux grandes marées d'Europe", "distance_from_start": 445.0}
+      ],
+      "services": {
+        "cafes": [
+          {"name": "Café de la Gare", "location": "Versailles", "distance_from_start": 25.0},
+          {"name": "Le Café Bleu", "location": "Chartres", "distance_from_start": 90.0},
+          {"name": "Le Saint-Léonard", "location": "Alençon", "distance_from_start": 230.0}
+        ],
+        "bike_shops": [
+          {"name": "Paris Bike Tour", "location": "Paris", "distance_from_start": 0.0},
+          {"name": "Cycles Bardet", "location": "Chartres", "distance_from_start": 90.0},
+          {"name": "Vélo Service", "location": "Avranches", "distance_from_start": 420.0}
+        ],
+        "accommodations": [
+          {"name": "Hôtel des Roys", "location": "Versailles", "type": "hotel", "bike_friendly": true},
+          {"name": "Le Parvis", "location": "Chartres", "type": "hotel", "bike_friendly": true},
+          {"name": "Hôtel des Ducs", "location": "Alençon", "type": "hotel", "bike_friendly": true},
+          {"name": "Auberge de la Baie", "location": "Mont-Saint-Michel", "type": "hotel", "bike_friendly": true}
+        ]
+      },
+      "narrative": "La Véloscénie est un itinéraire cyclable emblématique reliant Paris au Mont-Saint-Michel. Partant de Notre-Dame de Paris, le parcours vous mène d'abord au château de Versailles puis à travers les vastes plaines de la Beauce jusqu'à Chartres et sa magnifique cathédrale. L'itinéraire traverse ensuite le Perche et ses collines verdoyantes, puis le Parc Naturel Régional Normandie-Maine. Après Domfront et sa cité médiévale, vous descendrez vers Avranches avant de découvrir la baie du Mont-Saint-Michel et son abbaye millénaire, point d'orgue de cette aventure culturelle et naturelle.",
+      "safety_tips": [
+        "Certaines sections se font sur routes partagées, rester vigilant",
+        "Prévoir un éclairage pour les passages en forêt",
+        "Vérifier les horaires des marées pour l'arrivée au Mont-Saint-Michel"
+      ],
+      "best_periods": ["avril", "mai", "juin", "juillet", "août", "septembre", "octobre"]
+    }
+  ]
+}

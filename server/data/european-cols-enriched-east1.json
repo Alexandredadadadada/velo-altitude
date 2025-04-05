@@ -1,0 +1,312 @@
+[
+  {
+    "id": "transfagarasan",
+    "name": {
+      "fr": "Transfăgărășan",
+      "en": "Transfăgărășan",
+      "de": "Transfăgărășan",
+      "it": "Transfăgărășan",
+      "es": "Transfăgărășan"
+    },
+    "altitude": 2042,
+    "location": {
+      "latitude": 45.6039,
+      "longitude": 24.6175,
+      "region": "Carpates méridionales",
+      "country": "Roumanie",
+      "nearbyTowns": ["Curtea de Argeș", "Cârțișoara", "Sibiu"]
+    },
+    "climbData": {
+      "northSide": {
+        "startLocation": "Cârțișoara",
+        "length": 27.4,
+        "elevation": 1257,
+        "averageGradient": 6.0,
+        "maxGradient": 8.6,
+        "difficulty": 9
+      },
+      "southSide": {
+        "startLocation": "Curtea de Argeș",
+        "length": 30.8,
+        "elevation": 1573,
+        "averageGradient": 5.4,
+        "maxGradient": 10.2,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 2008,
+      "giroAppearances": 0,
+      "tourDeFranceAppearances": 0,
+      "tourOfRomaniaAppearances": 7,
+      "famousStories": [
+        "La route Transfăgărășan a été construite entre 1970 et 1974 sous le régime de Nicolae Ceaușescu comme route militaire après l'invasion soviétique de la Tchécoslovaquie.",
+        "L'émission Top Gear l'a déclarée 'la plus belle route du monde' en 2009, augmentant sa popularité auprès des cyclistes du monde entier.",
+        "Malgré sa beauté, elle n'est ouverte que 4-5 mois par an en raison des conditions hivernales extrêmes."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Ede Molnar",
+          "time": "1:15:45",
+          "year": 2019,
+          "side": "northSide"
+        },
+        "modern": {
+          "holder": "Tadej Pogačar",
+          "time": "1:17:32",
+          "year": 2023,
+          "side": "northSide"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Lac Bâlea",
+        "description": "Lac glaciaire à 2034m d'altitude, accessible par téléphérique en hiver.",
+        "coordinates": [45.6044, 24.6175],
+        "type": "landmark"
+      },
+      {
+        "name": "Barrage et lac de Vidraru",
+        "description": "Barrage construit dans les années 1960, avec une statue de Prométhée sur la crête.",
+        "coordinates": [45.3667, 24.6278],
+        "type": "landmark"
+      },
+      {
+        "name": "Tunnel de Bâlea",
+        "description": "Tunnel de 887m de long qui relie les deux versants à travers la montagne.",
+        "coordinates": [45.6044, 24.6169],
+        "type": "infrastructure"
+      },
+      {
+        "name": "Cabana Bâlea",
+        "description": "Refuge de montagne offrant restauration et hébergement à proximité du lac.",
+        "coordinates": [45.6044, 24.6186],
+        "type": "accommodation"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juillet à septembre",
+      "roadCondition": "Bonne en saison, quelques nids-de-poule possibles",
+      "trafficLevel": "Élevé en haute saison, faible les jours de semaine",
+      "winterClosure": "Fermé d'octobre à juin",
+      "facilities": ["Restaurants au lac Bâlea", "Boutiques souvenirs", "Hébergement au lac", "Toilettes"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaines naturelles", "Lac Bâlea", "Cabana Bâlea"]
+    },
+    "images": {
+      "main": "/images/cols/transfagarasan/main.jpg",
+      "gallery": [
+        "/images/cols/transfagarasan/south-side.jpg",
+        "/images/cols/transfagarasan/north-side.jpg",
+        "/images/cols/transfagarasan/balea-lake.jpg",
+        "/images/cols/transfagarasan/vidraru-dam.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte",
+    "trainingTips": [
+      "Partez tôt le matin pour éviter le trafic touristique en haute saison.",
+      "Prévoyez des vêtements chauds même en été, la température peut chuter brutalement au sommet.",
+      "L'ascension est longue mais régulière, privilégiez un rythme constant plutôt que des accélérations."
+    ],
+    "recommendedBikeTypes": ["Vélo de route", "Gravel"],
+    "weatherInfo": {
+      "bestSeason": "Juillet à août",
+      "closedPeriod": "Octobre à juin (neige)",
+      "windExposure": "Forte exposition au vent sur la partie supérieure",
+      "temperatureDelta": "Différence de 10-15°C entre la base et le sommet",
+      "thunderstormRisk": "Élevé en après-midi pendant l'été"
+    },
+    "services": {
+      "water": [
+        {"km": 10, "description": "Fontaine au village d'Arefu"},
+        {"km": 20, "description": "Source naturelle près du barrage Vidraru"},
+        {"km": 27, "description": "Cabana Bâlea au sommet"}
+      ],
+      "food": [
+        {"name": "Restaurant Vidraru", "km": 18, "type": "restaurant", "openingHours": "9h-20h"},
+        {"name": "Cabana Bâlea Lac", "km": 27, "type": "refuge", "openingHours": "8h-22h"}
+      ],
+      "shelter": [
+        {"name": "Tunnel sommital", "km": 26, "type": "tunnel"},
+        {"name": "Cabana Bâlea", "km": 27, "type": "refuge"}
+      ],
+      "mechanics": [
+        {"name": "Service Vélo", "location": "Curtea de Argeș", "distance": 5}
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Sophie Martin",
+        "date": "2023-07-15",
+        "rating": 5,
+        "text": "Une route incroyable! Les paysages sont à couper le souffle et l'ascension est un vrai défi. Attention au vent et aux changements de température en altitude."
+      },
+      {
+        "author": "Adrian Popescu",
+        "date": "2022-08-20",
+        "rating": 4.5,
+        "text": "En tant que cycliste roumain, je conseille de partir tôt le matin pour éviter le trafic touristique en saison. Les derniers kilomètres sont magiques, avec des vues panoramiques sur les Carpates."
+      },
+      {
+        "author": "Jean Dubois",
+        "date": "2024-07-05",
+        "rating": 5,
+        "text": "J'ai grimpé les deux versants sur deux jours. Le côté nord est plus raide mais plus court, le côté sud offre des paysages plus variés. La descente est technique, surtout par temps humide."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:25:00Z"
+  },
+  {
+    "id": "babia-gora",
+    "name": {
+      "fr": "Babia Góra",
+      "en": "Babia Mountain",
+      "de": "Babia Góra",
+      "it": "Monte Babia",
+      "es": "Montaña Babia"
+    },
+    "altitude": 1725,
+    "location": {
+      "latitude": 49.5734,
+      "longitude": 19.5294,
+      "region": "Beskides",
+      "country": "Pologne/Slovaquie",
+      "nearbyTowns": ["Zawoja", "Oravská Polhora", "Sucha Beskidzka"]
+    },
+    "climbData": {
+      "zawojaSide": {
+        "startLocation": "Zawoja",
+        "length": 16.5,
+        "elevation": 1175,
+        "averageGradient": 7.1,
+        "maxGradient": 15.0,
+        "difficulty": 8
+      },
+      "oravskaSide": {
+        "startLocation": "Oravská Polhora",
+        "length": 14.8,
+        "elevation": 1085,
+        "averageGradient": 7.3,
+        "maxGradient": 14.0,
+        "difficulty": 8
+      }
+    },
+    "history": {
+      "firstCompetitionYear": 2005,
+      "tourDePologne": 3,
+      "tourDeFranceAppearances": 0,
+      "famousStories": [
+        "Babia Góra est surnommée 'la Reine des Beskides' et marque la frontière naturelle entre la Pologne et la Slovaquie.",
+        "Selon la légende, c'était un lieu de rassemblement pour les sorcières (Babia signifie 'la vieille femme').",
+        "C'est l'un des sommets les plus venteux d'Europe, avec des conditions météorologiques extrêmement changeantes."
+      ],
+      "records": {
+        "ascent": {
+          "holder": "Rafał Majka",
+          "time": "57:22",
+          "year": 2016,
+          "side": "zawojaSide"
+        },
+        "modern": {
+          "holder": "Michal Kwiatkowski",
+          "time": "58:45",
+          "year": 2022,
+          "side": "zawojaSide"
+        }
+      }
+    },
+    "pointsOfInterest": [
+      {
+        "name": "Parc National de Babia Góra",
+        "description": "Réserve de biosphère UNESCO protégeant des écosystèmes alpins uniques.",
+        "coordinates": [49.5730, 19.5290],
+        "type": "nature"
+      },
+      {
+        "name": "Diablak",
+        "description": "Point culminant, offrant une vue à 360° sur la Pologne, la Slovaquie, et par temps clair, les Tatras.",
+        "coordinates": [49.5734, 19.5294],
+        "type": "landmark"
+      },
+      {
+        "name": "Refuge PTTK Markowe Szczawiny",
+        "description": "Refuge de montagne historique situé à 1180m d'altitude.",
+        "coordinates": [49.5879, 19.5123],
+        "type": "accommodation"
+      }
+    ],
+    "practicalInfo": {
+      "bestTimeToVisit": "Juin à septembre",
+      "roadCondition": "Asphalte jusqu'aux parkings, puis sentiers forestiers/alpins",
+      "trafficLevel": "Modéré en saison touristique",
+      "winterClosure": "Routes d'accès parfois fermées de novembre à avril",
+      "facilities": ["Refuges de montagne", "Restaurants dans les villages", "Parking aux points de départ"],
+      "parkingAvailable": true,
+      "waterPoints": ["Fontaines dans les villages", "Sources naturelles balisées", "Refuges"]
+    },
+    "images": {
+      "main": "/images/cols/babia-gora/main.jpg",
+      "gallery": [
+        "/images/cols/babia-gora/polish-side.jpg",
+        "/images/cols/babia-gora/slovak-side.jpg",
+        "/images/cols/babia-gora/summit-view.jpg",
+        "/images/cols/babia-gora/forest-section.jpg"
+      ]
+    },
+    "difficulty": 4,
+    "surfaceType": "Asphalte/Gravier",
+    "trainingTips": [
+      "La montée comporte des sections techniques sur des chemins forestiers, un VTT ou gravel est recommandé.",
+      "Prévoyez des vêtements imperméables, les changements météo peuvent être très rapides.",
+      "Entraînez-vous aux longues montées avec des pentes irrégulières pour préparer cette ascension."
+    ],
+    "recommendedBikeTypes": ["VTT", "Gravel"],
+    "weatherInfo": {
+      "bestSeason": "Juillet à août",
+      "closedPeriod": "Décembre à mars (neige)",
+      "windExposure": "Très élevée, particulièrement au sommet",
+      "temperatureDelta": "Différence de 8-12°C entre la base et le sommet",
+      "thunderstormRisk": "Très élevé en été"
+    },
+    "services": {
+      "water": [
+        {"km": 5, "description": "Fontaine à Zawoja"},
+        {"km": 10, "description": "Source marquée près du sentier principal"},
+        {"km": 15, "description": "Refuge Markowe Szczawiny"}
+      ],
+      "food": [
+        {"name": "Karczma Zawojska", "km": 0, "type": "restaurant", "openingHours": "10h-21h"},
+        {"name": "Refuge Markowe Szczawiny", "km": 15, "type": "refuge", "openingHours": "8h-20h"}
+      ],
+      "shelter": [
+        {"name": "Refuge Markowe Szczawiny", "km": 15, "type": "refuge"}
+      ],
+      "mechanics": [
+        {"name": "Bike Service Zawoja", "location": "Zawoja", "distance": 0}
+      ]
+    },
+    "testimonials": [
+      {
+        "author": "Piotr Kowalski",
+        "date": "2023-08-10",
+        "rating": 4,
+        "text": "Une montée exigeante mais très satisfaisante. J'ai dû utiliser mon VTT car certaines sections ne sont pas adaptées aux vélos de route. Les vues depuis le sommet sont spectaculaires."
+      },
+      {
+        "author": "Eva Novakova",
+        "date": "2022-07-22",
+        "rating": 5,
+        "text": "J'ai grimpé depuis le côté slovaque, c'est moins fréquenté et plus sauvage. Attention aux orages qui peuvent se former très rapidement, même par beau temps."
+      },
+      {
+        "author": "Thomas Schmidt",
+        "date": "2024-06-18",
+        "rating": 4.5,
+        "text": "Un défi pour les cyclistes qui cherchent à sortir des sentiers battus. J'ai particulièrement apprécié la diversité des paysages, depuis les forêts denses jusqu'aux prairies alpines."
+      }
+    ],
+    "lastUpdated": "2025-04-05T03:28:00Z"
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "user1",
+    "email": "cycliste1@example.com",
+    "name": "Thomas Lefort",
+    "gender": "male",
+    "weight": 75,
+    "height": 180,
+    "ftp": 285,
+    "maxHr": 185,
+    "restingHr": 48,
+    "experienceLevel": "intermediate",
+    "preferences": {
+      "units": "metric",
+      "language": "fr",
+      "notifications": true
+    }
+  },
+  {
+    "id": "user2",
+    "email": "cycliste2@example.com",
+    "name": "Sophie Martin",
+    "gender": "female",
+    "weight": 62,
+    "height": 167,
+    "ftp": 240,
+    "maxHr": 192,
+    "restingHr": 52,
+    "experienceLevel": "advanced",
+    "preferences": {
+      "units": "metric",
+      "language": "fr",
+      "notifications": true
+    }
+  },
+  {
+    "id": "user3",
+    "email": "cycliste3@example.com",
+    "name": "Michael Schmitt",
+    "gender": "male",
+    "weight": 85,
+    "height": 185,
+    "ftp": 320,
+    "maxHr": 180,
+    "restingHr": 45,
+    "experienceLevel": "elite",
+    "preferences": {
+      "units": "metric",
+      "language": "de",
+      "notifications": false
+    }
+  },
+  {
+    "id": "user4",
+    "email": "cycliste4@example.com",
+    "name": "Léa Dubois",
+    "gender": "female",
+    "weight": 58,
+    "height": 162,
+    "ftp": 210,
+    "maxHr": 195,
+    "restingHr": 55,
+    "experienceLevel": "beginner",
+    "preferences": {
+      "units": "metric",
+      "language": "fr",
+      "notifications": true
+    }
+  },
+  {
+    "id": "user5",
+    "email": "cycliste5@example.com",
+    "name": "Jan Kowalski",
+    "gender": "male",
+    "weight": 78,
+    "height": 178,
+    "ftp": 265,
+    "maxHr": 188,
+    "restingHr": 50,
+    "experienceLevel": "intermediate",
+    "preferences": {
+      "units": "metric",
+      "language": "pl",
+      "notifications": true
+    }
+  }
+]

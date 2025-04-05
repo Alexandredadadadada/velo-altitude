@@ -1,0 +1,197 @@
+.pass-comparison-container {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.pass-comparison-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pass-comparison-header h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.pass-comparison-export-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.pass-comparison-export-buttons button {
+  padding: 8px 15px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pass-comparison-export-buttons button:hover {
+  background-color: #1a2530;
+}
+
+.pass-comparison-titles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pass-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-align: center;
+  flex: 1;
+}
+
+.pass-title.pass1 {
+  background-color: rgba(136, 132, 216, 0.2);
+  color: #5755a3;
+}
+
+.pass-title.pass2 {
+  background-color: rgba(130, 202, 157, 0.2);
+  color: #2e7d52;
+}
+
+.pass-title-vs {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 15px;
+  color: #7f8c8d;
+}
+
+.pass-comparison-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pass-comparison-tabs button {
+  padding: 10px 20px;
+  background-color: #ecf0f1;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #7f8c8d;
+  transition: all 0.3s ease;
+}
+
+.pass-comparison-tabs button:hover {
+  background-color: #d5dbdb;
+  color: #2c3e50;
+}
+
+.pass-comparison-tabs button.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.pass-comparison-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.pass-comparison-chart {
+  margin-bottom: 30px;
+}
+
+.pass-comparison-chart h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.pass-comparison-table {
+  margin-bottom: 30px;
+}
+
+.pass-comparison-table h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.pass-comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pass-comparison-table th,
+.pass-comparison-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pass-comparison-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.pass-comparison-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.pass-comparison-table td.positive {
+  color: #27ae60;
+}
+
+.pass-comparison-table td.negative {
+  color: #e74c3c;
+}
+
+.pass-comparison-analysis {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 6px;
+}
+
+.pass-comparison-analysis h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.pass-comparison-analysis p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.pass-comparison-loading,
+.pass-comparison-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 1.5rem;
+}
+
+.pass-comparison-loading {
+  color: #7f8c8d;
+}
+
+.pass-comparison-error {
+  color: #e74c3c;
+}

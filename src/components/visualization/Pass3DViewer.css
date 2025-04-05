@@ -1,0 +1,167 @@
+.pass-3d-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 20px;
+  height: 600px;
+}
+
+.pass-3d-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pass-3d-header h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.pass-3d-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.pass-3d-controls button {
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pass-3d-controls button:hover {
+  background-color: #2980b9;
+}
+
+.pass-3d-viewer {
+  flex-grow: 1;
+  position: relative;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.pass-3d-loading, .pass-3d-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.5rem;
+  color: #7f8c8d;
+}
+
+.pass-3d-error {
+  color: #e74c3c;
+}
+
+.pass-3d-info-panel {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  width: 300px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.pass-3d-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px 6px 0 0;
+}
+
+.pass-3d-info-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.pass-3d-info-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pass-3d-info-content {
+  padding: 15px;
+}
+
+.pass-3d-elevation-info {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.pass-3d-legend {
+  background-color: white;
+  border-radius: 6px;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pass-3d-legend h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.pass-3d-legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.legend-color.start {
+  background-color: #4CAF50;
+}
+
+.legend-color.summit {
+  background-color: #F44336;
+}
+
+.legend-color.panorama {
+  background-color: #2196F3;
+}
+
+.legend-color.ravitaillement {
+  background-color: #FF9800;
+}
+
+.pass-3d-instructions {
+  background-color: #ecf0f1;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}

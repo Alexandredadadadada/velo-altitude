@@ -1,0 +1,13 @@
+Cette image doit montrer les contrôles du mode Fly-through pendant qu'il est actif.
+
+Éléments à inclure :
+- La barre de contrôle complète en bas de l'écran
+- Le bouton Play/Pause clairement visible
+- Le curseur de progression au centre
+- Le menu déroulant pour la vitesse
+- L'affichage de l'altitude et de la pente actuelles
+- La visualisation 3D du col en arrière-plan
+
+Variantes à créer :
+1. Version desktop (1920x1080)
+2. Version mobile en orientation paysage (812x375)

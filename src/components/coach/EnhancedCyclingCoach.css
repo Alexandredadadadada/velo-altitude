@@ -1,0 +1,166 @@
+.enhanced-cycling-coach {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.coach-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.coach-header h1 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.coach-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.coach-interaction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+}
+
+.coach-avatar {
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coach-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--light-bg);
+  padding: 0.5rem;
+}
+
+.coach-dialog {
+  flex: 1;
+  min-width: 300px;
+}
+
+.coach-message {
+  background-color: var(--light-bg);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.coach-message p {
+  margin: 0;
+}
+
+.user-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.user-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.send-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.send-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.coach-suggestions {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+}
+
+.coach-suggestions h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.suggestion-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.suggestion-button {
+  padding: 0.75rem 1rem;
+  background-color: var(--light-bg);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.suggestion-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.coach-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .coach-interaction {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .coach-avatar {
+    margin-bottom: 1rem;
+  }
+}
