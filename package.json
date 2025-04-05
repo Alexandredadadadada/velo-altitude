@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./server/server.js",
     "dev": "nodemon ./server/server.js",
-    "build": "CI=true webpack --mode production",
+    "build": "webpack --mode production",
     "lint": "eslint .",
     "test": "jest",
     "check-deps": "node ./scripts/check-dependencies.js",

@@ -1,11 +1,12 @@
 [build]
-  command = "CI='' npm install webpack webpack-cli --no-save && CI='' npx webpack --mode production"
+  command = "npm install && npm run build"
   publish = "build"
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18.17.0"
   NPM_VERSION = "9.6.7"
+  CI = "false"
 
 # Règle de redirection pour les API
 [[redirects]]
