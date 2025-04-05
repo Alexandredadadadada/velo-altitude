@@ -1,0 +1,135 @@
+{
+  "id": "tourmalet",
+  "name": {
+    "fr": "Col du Tourmalet",
+    "en": "Tourmalet Pass",
+    "de": "Tourmalet-Pass",
+    "it": "Colle del Tourmalet",
+    "es": "Puerto de Tourmalet"
+  },
+  "altitude": 2115,
+  "location": {
+    "latitude": 42.9104,
+    "longitude": 0.1426,
+    "region": "Hautes-Pyrénées",
+    "country": "France",
+    "nearbyTowns": ["Luz-Saint-Sauveur", "Sainte-Marie-de-Campan", "Barèges"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Luz-Saint-Sauveur",
+      "length": 19.0,
+      "elevation": 1404,
+      "averageGradient": 7.4,
+      "maxGradient": 10.5,
+      "difficulty": 9
+    },
+    "alternateSide": {
+      "startLocation": "Sainte-Marie-de-Campan",
+      "length": 17.2,
+      "elevation": 1268,
+      "averageGradient": 7.4,
+      "maxGradient": 10.0,
+      "difficulty": 8
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1910,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 87,
+    "giroAppearances": 0,
+    "famousStories": [
+      "Le Tourmalet a été franchi pour la première fois dans le Tour de France en 1910, où Octave Lapize aurait lancé son célèbre 'Vous êtes des assassins !' aux organisateurs.",
+      "C'est le col le plus fréquemment utilisé dans le Tour de France avec plus de 85 passages depuis sa création.",
+      "En 1969, Eddy Merckx y réalisa un exploit mémorable en attaquant à 140 km de l'arrivée pour consolider son maillot jaune.",
+      "La statue 'Le Géant du Tourmalet', représentant un cycliste en plein effort, est déplacée au sommet chaque été depuis 1999.",
+      "En 2010, pour le centenaire de sa première ascension dans le Tour, une arrivée d'étape a été organisée au sommet, remportée par Andy Schleck."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Thibaut Pinot",
+        "time": "48:52",
+        "year": 2019,
+        "side": "Luz-Saint-Sauveur"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Le Géant du Tourmalet",
+      "description": "Statue emblématique d'un cycliste, placée au sommet pendant la saison estivale.",
+      "coordinates": {
+        "latitude": 42.9104,
+        "longitude": 0.1426
+      }
+    },
+    {
+      "name": "Col du Tourmalet Monument",
+      "description": "Stèle commémorative indiquant le sommet et l'altitude, lieu incontournable pour les photos.",
+      "coordinates": {
+        "latitude": 42.9104,
+        "longitude": 0.1426
+      }
+    },
+    {
+      "name": "La Mongie",
+      "description": "Station de ski située sur le versant est, à environ 5 km du sommet.",
+      "coordinates": {
+        "latitude": 42.9097,
+        "longitude": 0.1781
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de juin à octobre",
+    "bestPeriod": "Juillet à septembre",
+    "notes": "Fermeture hivernale due à la neige. Peut être ouvert plus tôt selon les conditions."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.cycling-challenge.com/wp-content/uploads/2017/07/IMG_1485.jpg",
+        "caption": "Le Géant du Tourmalet au sommet",
+        "credit": "Cycling-Challenge.com"
+      },
+      {
+        "url": "https://www.cyclingcols.com/sites/default/files/col/tourmalet.jpg",
+        "caption": "Vue panoramique depuis le sommet",
+        "credit": "CyclingCols.com"
+      },
+      {
+        "url": "https://cdn.climbbybike.com/climb/Col-de-Tourmalet-from-Luz-Saint-Sauveur/Col-de-Tourmalet-from-Luz-Saint-Sauveur_profile.jpg",
+        "caption": "Profil d'ascension depuis Luz-Saint-Sauveur",
+        "credit": "ClimbByBike.com"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=1YZC6rMpZpM",
+        "title": "Col du Tourmalet - Ascension depuis Luz-Saint-Sauveur",
+        "duration": "26:45"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.5 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 ou 11-34 recommandée avec un compact 34-50",
+    "preparation": "Programme d'entraînement progressif de 12 semaines avec focus sur l'endurance et les longs cols",
+    "cautionPoints": [
+      "Changements météorologiques rapides typiques des Pyrénées",
+      "Forte affluence pendant le Tour de France",
+      "Chaleur potentiellement intense en été dans les sections inférieures"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Luz-Saint-Sauveur", "Barèges", "La Mongie", "Sommet"],
+    "restaurants": ["Restaurant du Col (sommet)", "Nombreux cafés à La Mongie"],
+    "accommodation": ["Hôtels à Luz-Saint-Sauveur", "Gîtes et refuges à La Mongie"],
+    "bikeMechanic": "Magasins de vélos à Luz-Saint-Sauveur et La Mongie"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["pyrenees-circuit", "luz-ardiden-tourmalet"]
+  }
+}

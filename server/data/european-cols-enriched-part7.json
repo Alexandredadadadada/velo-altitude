@@ -8,12 +8,15 @@
       "longitude": 0.3315,
       "region": "Pyrénées",
       "country": "France",
-      "nearbyTowns": ["Arreau", "Sainte-Marie-de-Campan"]
+      "nearbyTowns": [
+        "Arreau",
+        "Sainte-Marie-de-Campan"
+      ]
     },
     "climbData": {
       "arreauSide": {
         "startLocation": "Arreau",
-        "length": 12.0,
+        "length": 12,
         "elevation": 770,
         "averageGradient": 6.4,
         "maxGradient": 9.5,
@@ -23,8 +26,8 @@
         "startLocation": "Sainte-Marie-de-Campan",
         "length": 12.8,
         "elevation": 640,
-        "averageGradient": 5.0,
-        "maxGradient": 8.0,
+        "averageGradient": 5,
+        "maxGradient": 8,
         "difficulty": 6
       }
     },
@@ -55,19 +58,28 @@
       {
         "name": "Réserve Naturelle du Néouvielle",
         "description": "Accès à cette réserve naturelle contenant plus de 70 lacs d'altitude et une flore exceptionnelle.",
-        "coordinates": [42.9500, 0.3200],
+        "coordinates": [
+          42.95,
+          0.32
+        ],
         "type": "natural"
       },
       {
         "name": "Panorama sur le Pic du Midi",
         "description": "Vue exceptionnelle sur le Pic du Midi de Bigorre et son observatoire.",
-        "coordinates": [42.9592, 0.3315],
+        "coordinates": [
+          42.9592,
+          0.3315
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Lac d'Aspin",
         "description": "Petit lac situé sur le versant est du col, accessible par un court sentier.",
-        "coordinates": [42.9630, 0.3289],
+        "coordinates": [
+          42.963,
+          0.3289
+        ],
         "type": "natural"
       }
     ],
@@ -76,9 +88,14 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré, plus élevé en juillet-août",
       "winterClosure": "Généralement fermé de novembre à avril",
-      "facilities": ["Petit stand de boissons au sommet en été", "Tables de pique-nique"],
+      "facilities": [
+        "Petit stand de boissons au sommet en été",
+        "Tables de pique-nique"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Fontaine au sommet"]
+      "waterPoints": [
+        "Fontaine au sommet"
+      ]
     },
     "images": {
       "main": "/images/cols/aspin/main.jpg",
@@ -96,7 +113,10 @@
       "Col relativement facile permettant d'enchaîner avec d'autres ascensions dans la même journée.",
       "Idéal pour débuter dans les cols pyrénéens avant d'affronter des ascensions plus difficiles."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "col-daspin"
   },
   {
     "id": "passo-sella",
@@ -107,15 +127,18 @@
       "longitude": 11.7582,
       "region": "Dolomites",
       "country": "Italie",
-      "nearbyTowns": ["Canazei", "Selva di Val Gardena"]
+      "nearbyTowns": [
+        "Canazei",
+        "Selva di Val Gardena"
+      ]
     },
     "climbData": {
       "canazeiSide": {
         "startLocation": "Canazei",
         "length": 8.7,
         "elevation": 526,
-        "averageGradient": 6.0,
-        "maxGradient": 11.0,
+        "averageGradient": 6,
+        "maxGradient": 11,
         "difficulty": 7
       },
       "selvaSide": {
@@ -123,7 +146,7 @@
         "length": 5.5,
         "elevation": 337,
         "averageGradient": 6.1,
-        "maxGradient": 10.0,
+        "maxGradient": 10,
         "difficulty": 6
       }
     },
@@ -148,19 +171,28 @@
       {
         "name": "Groupe du Sella",
         "description": "Massif montagneux impressionnant qui domine le col, avec des parois verticales caractéristiques des Dolomites.",
-        "coordinates": [46.5131, 11.7589],
+        "coordinates": [
+          46.5131,
+          11.7589
+        ],
         "type": "natural"
       },
       {
         "name": "Rifugio Plan de Gralba",
         "description": "Refuge de montagne situé sur le versant de Selva di Val Gardena.",
-        "coordinates": [46.5182, 11.7480],
+        "coordinates": [
+          46.5182,
+          11.748
+        ],
         "type": "accommodation"
       },
       {
         "name": "Sassolungo",
         "description": "Vue exceptionnelle sur ce sommet emblématique des Dolomites (3181m).",
-        "coordinates": [46.5044, 11.7408],
+        "coordinates": [
+          46.5044,
+          11.7408
+        ],
         "type": "viewpoint"
       }
     ],
@@ -169,9 +201,15 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Élevé en haute saison touristique",
       "winterClosure": "Généralement ouvert toute l'année (sauf conditions exceptionnelles)",
-      "facilities": ["Restaurants", "Boutiques souvenirs", "Toilettes"],
+      "facilities": [
+        "Restaurants",
+        "Boutiques souvenirs",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Plusieurs sources au sommet et à mi-parcours"]
+      "waterPoints": [
+        "Plusieurs sources au sommet et à mi-parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/sella/main.jpg",
@@ -189,7 +227,9 @@
       "Évitez les heures de pointe touristique (10h-16h) pendant la haute saison.",
       "Le Sella Ronda Day (circulation restreinte) est idéal pour grimper ce col sans trafic."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "col-de-la-croix-de-fer",
@@ -200,7 +240,10 @@
       "longitude": 6.1824,
       "region": "Alpes françaises",
       "country": "France",
-      "nearbyTowns": ["Saint-Jean-de-Maurienne", "Le Bourg-d'Oisans"]
+      "nearbyTowns": [
+        "Saint-Jean-de-Maurienne",
+        "Le Bourg-d'Oisans"
+      ]
     },
     "climbData": {
       "saintJeanSide": {
@@ -208,7 +251,7 @@
         "length": 29.5,
         "elevation": 1522,
         "averageGradient": 5.1,
-        "maxGradient": 11.0,
+        "maxGradient": 11,
         "difficulty": 8,
         "note": "Passage par le Col du Glandon"
       },
@@ -217,7 +260,7 @@
         "length": 27.5,
         "elevation": 1470,
         "averageGradient": 5.3,
-        "maxGradient": 11.0,
+        "maxGradient": 11,
         "difficulty": 8,
         "note": "Passage par le Col du Glandon"
       }
@@ -243,25 +286,37 @@
       {
         "name": "Croix en fer forgé",
         "description": "Symbole emblématique du col, cette croix en fer forgé est érigée au sommet.",
-        "coordinates": [45.2265, 6.1824],
+        "coordinates": [
+          45.2265,
+          6.1824
+        ],
         "type": "monument"
       },
       {
         "name": "Lacs de la Croix de Fer",
         "description": "Série de lacs d'altitude à proximité du col, dont le Grand Lac et le Lac Bramant.",
-        "coordinates": [45.2250, 6.1900],
+        "coordinates": [
+          45.225,
+          6.19
+        ],
         "type": "natural"
       },
       {
         "name": "Col du Glandon",
         "description": "Col voisin situé à moins de 2 km, offrant un panorama complémentaire.",
-        "coordinates": [45.2290, 6.1630],
+        "coordinates": [
+          45.229,
+          6.163
+        ],
         "type": "landmark"
       },
       {
         "name": "Vue sur les Aiguilles d'Arves",
         "description": "Panorama exceptionnel sur ces trois sommets emblématiques des Alpes.",
-        "coordinates": [45.2265, 6.1824],
+        "coordinates": [
+          45.2265,
+          6.1824
+        ],
         "type": "viewpoint"
       }
     ],
@@ -270,9 +325,15 @@
       "roadCondition": "Bonne",
       "trafficLevel": "Modéré",
       "winterClosure": "Fermé de novembre à mai",
-      "facilities": ["Restaurant-refuge au sommet", "Toilettes"],
+      "facilities": [
+        "Restaurant-refuge au sommet",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Refuge au sommet", "Fontaines dans les villages traversés"]
+      "waterPoints": [
+        "Refuge au sommet",
+        "Fontaines dans les villages traversés"
+      ]
     },
     "images": {
       "main": "/images/cols/croix-de-fer/main.jpg",
@@ -290,7 +351,9 @@
       "Depuis Saint-Jean-de-Maurienne, le passage le plus difficile se situe à Saint-Sorlin-d'Arves.",
       "Souvent combiné avec d'autres cols comme le Télégraphe, le Galibier ou l'Alpe d'Huez."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "klausen-pass",
@@ -301,7 +364,10 @@
       "longitude": 8.8519,
       "region": "Alpes suisses",
       "country": "Suisse",
-      "nearbyTowns": ["Altdorf", "Linthal"]
+      "nearbyTowns": [
+        "Altdorf",
+        "Linthal"
+      ]
     },
     "climbData": {
       "altdorfSide": {
@@ -309,7 +375,7 @@
         "length": 21.5,
         "elevation": 1650,
         "averageGradient": 7.7,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       },
       "linthalSide": {
@@ -317,12 +383,15 @@
         "length": 16.5,
         "elevation": 1110,
         "averageGradient": 6.7,
-        "maxGradient": 10.0,
+        "maxGradient": 10,
         "difficulty": 8
       }
     },
     "history": {
-      "famousEvents": ["Klausenpass Historic Car Race", "Tour de Suisse"],
+      "famousEvents": [
+        "Klausenpass Historic Car Race",
+        "Tour de Suisse"
+      ],
       "tourDeSuisseAppearances": 14,
       "famousStories": [
         "Entre 1922 et 1934, le col accueillait la célèbre course automobile de côte 'Klausenrennen', récemment relancée comme événement historique.",
@@ -342,25 +411,37 @@
       {
         "name": "Urnerboden",
         "description": "Plus grand alpage de Suisse, situé à mi-parcours du versant est. Village typique alpin avec fromageries traditionnelles.",
-        "coordinates": [46.8914, 8.9204],
+        "coordinates": [
+          46.8914,
+          8.9204
+        ],
         "type": "cultural"
       },
       {
         "name": "Balm",
         "description": "Au sommet, site naturel impressionnant avec vue panoramique et point d'observation pour la faune alpine.",
-        "coordinates": [46.8694, 8.8519],
+        "coordinates": [
+          46.8694,
+          8.8519
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Chapelle Bruder Klaus",
         "description": "Petite chapelle dédiée au saint patron de la Suisse, située au sommet du col.",
-        "coordinates": [46.8694, 8.8519],
+        "coordinates": [
+          46.8694,
+          8.8519
+        ],
         "type": "cultural"
       },
       {
         "name": "Klön Valley",
         "description": "Vallée pittoresque avec son lac que l'on traverse en montant depuis Linthal.",
-        "coordinates": [46.9019, 8.9444],
+        "coordinates": [
+          46.9019,
+          8.9444
+        ],
         "type": "natural"
       }
     ],
@@ -369,9 +450,15 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré, plus élevé les weekends",
       "winterClosure": "Fermé d'octobre à mai",
-      "facilities": ["Restaurant au sommet", "Boutique souvenirs", "Toilettes"],
+      "facilities": [
+        "Restaurant au sommet",
+        "Boutique souvenirs",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Fontaines au sommet et dans les villages traversés"]
+      "waterPoints": [
+        "Fontaines au sommet et dans les villages traversés"
+      ]
     },
     "images": {
       "main": "/images/cols/klausenpass/main.jpg",
@@ -389,7 +476,10 @@
       "Les deux versants offrent une bonne protection contre le soleil en raison des nombreux arbres.",
       "Col idéal pour découvrir les Alpes suisses, moins fréquenté que les cols plus connus comme le Gotthard."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "klausenpass"
   },
   {
     "id": "colle-del-finestre",
@@ -400,15 +490,19 @@
       "longitude": 6.8768,
       "region": "Alpes occidentales",
       "country": "Italie",
-      "nearbyTowns": ["Sestriere", "Cesana Torinese", "Oulx"]
+      "nearbyTowns": [
+        "Sestriere",
+        "Cesana Torinese",
+        "Oulx"
+      ]
     },
     "climbData": {
       "sestriereSide": {
         "startLocation": "Sestriere",
-        "length": 8.0,
+        "length": 8,
         "elevation": 380,
         "averageGradient": 4.8,
-        "maxGradient": 9.0,
+        "maxGradient": 9,
         "difficulty": 5
       },
       "cesanaSide": {
@@ -416,7 +510,7 @@
         "length": 11.2,
         "elevation": 581,
         "averageGradient": 5.2,
-        "maxGradient": 9.0,
+        "maxGradient": 9,
         "difficulty": 6
       },
       "oulxSide": {
@@ -424,7 +518,7 @@
         "length": 17.2,
         "elevation": 925,
         "averageGradient": 5.4,
-        "maxGradient": 10.0,
+        "maxGradient": 10,
         "difficulty": 7
       }
     },
@@ -456,19 +550,28 @@
       {
         "name": "Station de ski de Sestriere",
         "description": "L'une des plus grandes stations de ski italiennes, hôte des Jeux Olympiques d'hiver de 2006.",
-        "coordinates": [44.9516, 6.8768],
+        "coordinates": [
+          44.9516,
+          6.8768
+        ],
         "type": "tourism"
       },
       {
         "name": "Vue sur le Monte Chaberton",
         "description": "Panorama sur cette montagne caractéristique avec sa forme pyramidale et les ruines de fortifications à son sommet.",
-        "coordinates": [44.9516, 6.8768],
+        "coordinates": [
+          44.9516,
+          6.8768
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Torre di Fraile",
         "description": "Tour caractéristique en forme de cylindre, symbole de Sestriere, construite dans les années 1930.",
-        "coordinates": [44.9516, 6.8768],
+        "coordinates": [
+          44.9516,
+          6.8768
+        ],
         "type": "landmark"
       }
     ],
@@ -477,9 +580,16 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré, plus élevé en saison touristique",
       "winterClosure": "Ouvert toute l'année (déneigé pour accès à la station de ski)",
-      "facilities": ["Nombreux restaurants", "Boutiques", "Hébergements", "Toilettes"],
+      "facilities": [
+        "Nombreux restaurants",
+        "Boutiques",
+        "Hébergements",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Nombreuses fontaines dans la station"]
+      "waterPoints": [
+        "Nombreuses fontaines dans la station"
+      ]
     },
     "images": {
       "main": "/images/cols/sestriere/main.jpg",
@@ -497,6 +607,9 @@
       "Le versant d'Oulx est le plus long et le plus difficile des trois.",
       "Souvent intégré dans un circuit incluant le Col de Montgenèvre ou le Colle delle Finestre."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "colle-del-sestriere"
   }
 ]

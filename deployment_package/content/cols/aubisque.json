@@ -1,0 +1,135 @@
+{
+  "id": "aubisque",
+  "name": {
+    "fr": "Col d'Aubisque",
+    "en": "Col d'Aubisque",
+    "de": "Col d'Aubisque",
+    "it": "Colle d'Aubisque",
+    "es": "Puerto de Aubisque"
+  },
+  "altitude": 1709,
+  "location": {
+    "latitude": 42.9767,
+    "longitude": -0.3388,
+    "region": "Pyrénées-Atlantiques",
+    "country": "France",
+    "nearbyTowns": ["Laruns", "Gourette", "Argelès-Gazost"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Laruns",
+      "length": 16.6,
+      "elevation": 1190,
+      "averageGradient": 7.2,
+      "maxGradient": 13.0,
+      "difficulty": 8
+    },
+    "alternateSide": {
+      "startLocation": "Argelès-Gazost",
+      "length": 30.5,
+      "elevation": 1563,
+      "averageGradient": 5.1,
+      "maxGradient": 10.0,
+      "difficulty": 7
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1910,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 70,
+    "giroAppearances": 0,
+    "famousStories": [
+      "Le Col d'Aubisque a fait partie des quatre premiers cols pyrénéens introduits dans le Tour de France en 1910, aux côtés du Peyresourde, de l'Aspin et du Tourmalet.",
+      "La route spectaculaire reliant l'Aubisque au Col du Soulor, connue sous le nom de 'Cirque du Litor', est taillée à flanc de montagne et offre des vues à couper le souffle.",
+      "En 1951, Wim van Est, maillot jaune, a fait une chute de 70 mètres dans un ravin. Il a survécu mais a perdu le maillot jaune.",
+      "Souvent, des cyclistes s'arrêtent pour prendre des photos avec les vélos colorés géants installés au sommet, devenus des emblèmes du col.",
+      "En 2007, Michael Rasmussen y a consolidé son maillot jaune, qu'il perdra quelques jours plus tard, exclu de la course pour des problèmes de localisation dans sa préparation."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Thomas Voeckler",
+        "time": "41:20",
+        "year": 2012,
+        "side": "Laruns"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Vélos colorés géants",
+      "description": "Sculptures emblématiques de vélos de différentes couleurs installées au sommet, lieu photo iconique.",
+      "coordinates": {
+        "latitude": 42.9767,
+        "longitude": -0.3388
+      }
+    },
+    {
+      "name": "Cirque du Litor",
+      "description": "Section spectaculaire de route entre l'Aubisque et le Soulor, taillée dans la falaise.",
+      "coordinates": {
+        "latitude": 42.9721,
+        "longitude": -0.3142
+      }
+    },
+    {
+      "name": "Station de Gourette",
+      "description": "Station de ski sur le versant Laruns, point de passage de l'ascension.",
+      "coordinates": {
+        "latitude": 42.9590,
+        "longitude": -0.3334
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de mai à novembre",
+    "bestPeriod": "Juin à septembre",
+    "notes": "Fermeture hivernale due à la neige. Le Cirque du Litor peut rester fermé plus longtemps au printemps en raison des chutes de pierres."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.climbbybike.com/images/Col_d_Aubisque_1.jpg",
+        "caption": "Vue panoramique depuis le sommet du Col d'Aubisque",
+        "credit": "ClimbByBike.com"
+      },
+      {
+        "url": "https://www.cycling-challenge.com/wp-content/uploads/2010/07/img_3142.jpg",
+        "caption": "Les vélos colorés géants au sommet",
+        "credit": "Cycling-Challenge.com"
+      },
+      {
+        "url": "https://cdn.france-montagnes.com/sites/default/files/styles/header_webzine/public/header/aubisque-5.jpg",
+        "caption": "La route spectaculaire du Cirque du Litor",
+        "credit": "France-Montagnes.com"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=DVYN45QoiU0",
+        "title": "Col d'Aubisque - Ascension depuis Laruns",
+        "duration": "1:15:30"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.2 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 recommandée avec un compact 34-50",
+    "preparation": "Programme d'endurance avec travail spécifique sur les longues montées",
+    "cautionPoints": [
+      "Brouillard fréquent au sommet, surtout le matin",
+      "Section très raide avant Gourette (10-13%)",
+      "Circulation touristique dense en haute saison"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Laruns", "Eaux-Bonnes", "Gourette", "Sommet"],
+    "restaurants": ["Restaurant Col d'Aubisque (sommet)", "Nombreuses options à Gourette"],
+    "accommodation": ["Hôtels à Laruns et Gourette", "Refuge au col (été uniquement)"],
+    "bikeMechanic": "Magasins de vélos à Laruns"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["boucle-aubisque-soulor", "circuit-tourmalet-aspin-aubisque"]
+  }
+}

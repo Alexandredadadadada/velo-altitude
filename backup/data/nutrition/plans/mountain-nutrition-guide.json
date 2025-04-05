@@ -1,0 +1,70 @@
+{
+  "id": "mountain-nutrition-guide",
+  "name": {
+    "fr": "Guide Nutritionnel pour Défis en Montagne",
+    "en": "Mountain Challenge Nutrition Guide"
+  },
+  "slug": "mountain-nutrition-guide",
+  "category": "",
+  "description": {
+    "fr": "Guide nutritionnel complet pour optimiser vos performances lors de défis cyclistes en montagne. Stratégies adaptées aux différentes phases d'effort et aux conditions spécifiques d'altitude.",
+    "en": "Comprehensive nutrition guide to optimize your performance during mountain cycling challenges. Strategies adapted to different effort phases and specific altitude conditions."
+  },
+  "days": [],
+  "recipes": {
+    "homemade_energy": [
+      {
+        "name": {
+          "fr": "Barres de riz gluant",
+          "en": "Sticky rice bars"
+        },
+        "ingredients": [
+          "200g riz à sushi",
+          "50g sucre",
+          "Pincée de sel",
+          "30g fruits secs hachés",
+          "15g miel"
+        ],
+        "macros": {
+          "carbs": "30g par barre",
+          "protein": "2g par barre",
+          "fat": "1g par barre"
+        },
+        "preparation": {
+          "fr": "Cuire le riz, mélanger avec les autres ingrédients chauds, former des barres, laisser refroidir, emballer individuellement.",
+          "en": "Cook rice, mix with other hot ingredients, form bars, let cool, wrap individually."
+        }
+      },
+      {
+        "name": {
+          "fr": "Boisson maltodextrine maison",
+          "en": "Homemade maltodextrin drink"
+        },
+        "ingredients": [
+          "70g maltodextrine",
+          "30g fructose",
+          "1/4 cc sel",
+          "Jus de citron",
+          "1L eau"
+        ],
+        "macros": {
+          "carbs": "100g/L",
+          "protein": "0g",
+          "fat": "0g"
+        },
+        "preparation": {
+          "fr": "Mélanger tous les ingrédients secs, ajouter progressivement l'eau en mélangeant, ajouter le citron pour le goût.",
+          "en": "Mix all dry ingredients, gradually add water while mixing, add lemon for taste."
+        }
+      }
+    ]
+  },
+  "supplements": [],
+  "hydration": {},
+  "variations": [],
+  "related_cols": [],
+  "related_training": [],
+  "status": "active",
+  "completeness": 40,
+  "last_updated": "2025-04-06T02:40:00Z"
+}

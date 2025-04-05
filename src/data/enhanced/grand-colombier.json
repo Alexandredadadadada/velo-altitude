@@ -1,0 +1,89 @@
+{
+  "id": "grand-colombier",
+  "name": "Grand Colombier",
+  "region": "jura",
+  "country": "France",
+  "altitude": 1501,
+  "length": 18.3,
+  "avgGradient": 7.6,
+  "maxGradient": 14,
+  "difficulty": "hard",
+  "elevationGain": 1390,
+  "startLocation": "Culoz",
+  "endLocation": "Grand Colombier",
+  "description": "Le Grand Colombier est l'un des cols les plus difficiles du Jura, avec quatre versants différents dont certains particulièrement exigeants. Ses pentes sévères en font un terrain d'entraînement privilégié pour les cyclistes professionnels de la région.",
+  "history": "Intégré au Tour de France pour la première fois en 2012, le col s'est rapidement fait connaître pour sa difficulté. En 2020, une étape s'est terminée à son sommet avec une victoire de Tadej Pogačar.",
+  "imageUrl": "/images/cols/grand-colombier/main.jpg",
+  "profileUrl": "/images/cols/grand-colombier/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Sud (Culoz)",
+      "startLocation": "Culoz",
+      "length": 18.3,
+      "elevationGain": 1390,
+      "avgGradient": 7.6,
+      "maxGradient": 14,
+      "difficulty": "hard",
+      "description": "L'ascension la plus longue avec des passages très raides"
+    },
+    {
+      "name": "Versant Ouest (Virieu-le-Petit)",
+      "startLocation": "Virieu-le-Petit",
+      "length": 8.7,
+      "elevationGain": 790,
+      "avgGradient": 9.1,
+      "maxGradient": 19,
+      "difficulty": "extreme",
+      "description": "La montée la plus difficile, avec des passages à près de 20%"
+    },
+    {
+      "name": "Versant Nord (Anglefort)",
+      "startLocation": "Anglefort",
+      "length": 15.3,
+      "elevationGain": 1335,
+      "avgGradient": 8.7,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "Version régulièrement difficile avec peu de répit"
+    },
+    {
+      "name": "Versant Est (Artemare)",
+      "startLocation": "Artemare",
+      "length": 18.4,
+      "elevationGain": 1255,
+      "avgGradient": 6.8,
+      "maxGradient": 10.5,
+      "difficulty": "medium",
+      "description": "La montée la plus longue mais avec une pente plus clémente"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Virieu - Sommet",
+      "length": 8.7,
+      "gradient": 9.1,
+      "description": "Le versant le plus raide, véritable test pour les grimpeurs"
+    }
+  ],
+  "touristicInfo": "Du sommet, on peut admirer une vue panoramique sur le lac du Bourget, le plus grand lac naturel de France, ainsi que sur les Alpes avec le Mont Blanc par temps clair.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Virieu-le-Petit",
+      "description": "Fontaine au centre du village"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant ouvert en saison"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Le sommet peut être venteux. Par temps clair, vue exceptionnelle sur les Alpes.",
+  "strava": {
+    "segmentId": "636973",
+    "komTime": "48:30",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "grand-colombier"
+}

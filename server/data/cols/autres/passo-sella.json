@@ -1,0 +1,53 @@
+{
+  "id": "passo-sella",
+  "name": "Passo Sella",
+  "slug": "passo-sella",
+  "country": "",
+  "region": "",
+  "altitude": 2244,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 3,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/sella/main.jpg",
+    "gallery": [
+      "/images/cols/sella/canazei-side.jpg",
+      "/images/cols/sella/selva-side.jpg",
+      "/images/cols/sella/sella-group.jpg",
+      "/images/cols/sella/sassolungo.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.884Z"
+}

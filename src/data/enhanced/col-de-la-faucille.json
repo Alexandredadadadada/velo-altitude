@@ -1,0 +1,79 @@
+{
+  "id": "col-de-la-faucille",
+  "name": "Col de la Faucille",
+  "region": "jura",
+  "country": "France",
+  "altitude": 1323,
+  "length": 13.5,
+  "avgGradient": 5.8,
+  "maxGradient": 9,
+  "difficulty": "medium",
+  "elevationGain": 783,
+  "startLocation": "Gex",
+  "endLocation": "Col de la Faucille",
+  "description": "Le Col de la Faucille est un passage historique entre la Suisse et la France, offrant des vues spectaculaires sur le lac Léman et la chaîne du Mont-Blanc. Cette ascension régulière et bien entretenue est parfaite pour les cyclistes de tous niveaux, avec son gradient constant et ses lacets harmonieux au milieu des forêts de sapins du Jura.",
+  "history": "Emprunté par le Tour de France dès 1911, le Col de la Faucille a vu passer des légendes comme Coppi, Anquetil et Hinault. C'était autrefois un col stratégique sur la route Genève-Paris. Au sommet se trouve un ancien poste de douane témoignant de ce passé frontalier.",
+  "imageUrl": "/images/cols/faucille/main.jpg",
+  "profileUrl": "/images/cols/faucille/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Gex - Sommet",
+      "length": 11.2,
+      "gradient": 6.2,
+      "description": "La montée classique depuis Gex, régulière et progressive"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Est (Gex)",
+      "startLocation": "Gex",
+      "length": 13.5,
+      "elevationGain": 783,
+      "avgGradient": 5.8,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "L'ascension principale avec vue sur le lac Léman et les Alpes"
+    },
+    {
+      "name": "Versant Ouest (Mijoux)",
+      "startLocation": "Mijoux",
+      "length": 5.8,
+      "elevationGain": 282,
+      "avgGradient": 4.9,
+      "maxGradient": 7,
+      "difficulty": "easy",
+      "description": "Montée plus courte depuis la vallée de la Valserine"
+    },
+    {
+      "name": "Versant Sud (Vesancy)",
+      "startLocation": "Vesancy",
+      "length": 12.3,
+      "elevationGain": 725,
+      "avgGradient": 5.9,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Variante moins fréquentée avec des passages en forêt"
+    }
+  ],
+  "touristicInfo": "Le col est une station de sports d'hiver et d'été avec plusieurs activités: randonnées, luge d'été, ski, parapente. On y trouve la célèbre tyrolienne \"La Faucille Aventure\" et le Monnet Parc. Tout près se trouvent également le Mont Rond et le Col de Crozet.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Au col",
+      "description": "Fontaines et services dans les établissements au sommet"
+    },
+    {
+      "type": "food",
+      "location": "Col de la Faucille",
+      "description": "Plusieurs restaurants, hôtels et boulangerie au sommet"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Ouvert toute l'année, mais attention aux vents forts et au brouillard qui peuvent s'installer rapidement. En hiver, la route est généralement bien déneigée mais des équipements peuvent être nécessaires.",
+  "strava": {
+    "segmentId": "686421",
+    "komTime": "35:12",
+    "komName": "Romain Bardet"
+  },
+  "slug": "col-de-la-faucille"
+}

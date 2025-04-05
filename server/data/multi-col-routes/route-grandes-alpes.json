@@ -1,0 +1,598 @@
+{
+  "id": "multi-col-grandes-alpes",
+  "name": {
+    "fr": "Route des Grandes Alpes",
+    "en": "Great Alps Route"
+  },
+  "slug": "route-grandes-alpes",
+  "type": "multi-day-tour",
+  "description": {
+    "fr": "Parcours emblématique traversant les Alpes françaises du lac Léman à la Méditerranée, enchaînant les plus grands cols alpins sur un itinéraire légendaire.",
+    "en": "Iconic route crossing the French Alps from Lake Geneva to the Mediterranean, linking the greatest Alpine passes on a legendary itinerary."
+  },
+  "overview": {
+    "distance_total": 720,
+    "elevation_total": 17000,
+    "days_recommended": {
+      "recreational": 10,
+      "intermediate": 7,
+      "advanced": 5
+    },
+    "difficulty": 4,
+    "best_period": ["juin", "juillet", "août", "septembre"],
+    "starting_point": {
+      "name": "Thonon-les-Bains",
+      "coordinates": {
+        "lat": 46.371,
+        "lng": 6.479
+      },
+      "transport_access": {
+        "train": true,
+        "airport_proximity": "Genève (50km)"
+      }
+    },
+    "ending_point": {
+      "name": "Nice",
+      "coordinates": {
+        "lat": 43.701,
+        "lng": 7.268
+      },
+      "transport_access": {
+        "train": true,
+        "airport_proximity": "Nice (7km)"
+      }
+    }
+  },
+  "stages": [
+    {
+      "day": 1,
+      "title": {
+        "fr": "Thonon-les-Bains - Morzine",
+        "en": "Thonon-les-Bains - Morzine"
+      },
+      "distance": 50,
+      "elevation": 1300,
+      "cols": [
+        {
+          "id": "col-des-gets",
+          "name": "Col des Gets",
+          "altitude": 1170,
+          "category": 2
+        }
+      ],
+      "description": {
+        "fr": "Étape d'entrée en matière relativement douce, permettant de s'acclimater progressivement à la montagne. Le Col des Gets offre une belle mise en jambes sans être excessivement difficile.",
+        "en": "A relatively gentle introductory stage, allowing for a progressive acclimation to the mountains. The Col des Gets offers a good warm-up without being excessively difficult."
+      },
+      "accommodation": {
+        "recommended": [
+          {
+            "name": "Hôtel Les Fleurs",
+            "type": "hotel",
+            "bike_friendly": true,
+            "price_range": "€€",
+            "website": "www.hotellesfleurs.com"
+          },
+          {
+            "name": "Chalet du Cycliste",
+            "type": "guesthouse",
+            "bike_friendly": true,
+            "price_range": "€€",
+            "website": "www.chaletducycliste.com"
+          }
+        ]
+      },
+      "refreshment_points": [
+        {
+          "name": "Café du Col",
+          "location": "Sommet du Col des Gets",
+          "km_mark": 40,
+          "services": ["Eau", "Café", "Encas"]
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "day": 2,
+      "title": {
+        "fr": "Morzine - Bourg-Saint-Maurice",
+        "en": "Morzine - Bourg-Saint-Maurice"
+      },
+      "distance": 90,
+      "elevation": 2200,
+      "cols": [
+        {
+          "id": "col-de-la-colombiere",
+          "name": "Col de la Colombière",
+          "altitude": 1618,
+          "category": 1
+        },
+        {
+          "id": "col-des-aravis",
+          "name": "Col des Aravis",
+          "altitude": 1486,
+          "category": 2
+        },
+        {
+          "id": "col-des-saisies",
+          "name": "Col des Saisies",
+          "altitude": 1650,
+          "category": 2
+        }
+      ],
+      "description": {
+        "fr": "Première étape véritablement alpine avec trois cols majeurs. La Colombière offre une belle montée régulière, tandis que les Aravis charment par leurs paysages typiques du Beaufortain. Les Saisies terminent la journée par une montée plus douce.",
+        "en": "First truly Alpine stage with three major passes. La Colombière offers a nice regular climb, while the Aravis charm with their typical Beaufortain landscapes. Les Saisies end the day with a gentler climb."
+      },
+      "accommodation": {
+        "recommended": [
+          {
+            "name": "Autantic Hôtel",
+            "type": "hotel",
+            "bike_friendly": true,
+            "price_range": "€€",
+            "website": "www.autantic-hotel.fr"
+          }
+        ]
+      },
+      "refreshment_points": [
+        {
+          "name": "Boulangerie du Grand-Bornand",
+          "location": "Grand-Bornand",
+          "km_mark": 30,
+          "services": ["Eau", "Pâtisseries", "Sandwichs"]
+        },
+        {
+          "name": "Café des Aravis",
+          "location": "Sommet Col des Aravis",
+          "km_mark": 45,
+          "services": ["Eau", "Café", "Boissons chaudes/froides", "Repas légers"]
+        }
+      ],
+      "difficulty": 3
+    },
+    {
+      "day": 3,
+      "title": {
+        "fr": "Bourg-Saint-Maurice - Val Cenis",
+        "en": "Bourg-Saint-Maurice - Val Cenis"
+      },
+      "distance": 95,
+      "elevation": 2800,
+      "cols": [
+        {
+          "id": "col-de-l-iseran",
+          "name": "Col de l'Iseran",
+          "altitude": 2770,
+          "category": "HC"
+        }
+      ],
+      "description": {
+        "fr": "Étape reine avec l'ascension du plus haut col routier des Alpes. L'Iseran est un monument du cyclisme avec ses 47km d'ascension depuis Bourg-Saint-Maurice, traversant le magnifique parc national de la Vanoise.",
+        "en": "Queen stage with the climb of the highest paved pass in the Alps. The Iseran is a cycling monument with its 47km ascent from Bourg-Saint-Maurice, crossing the magnificent Vanoise National Park."
+      },
+      "accommodation": {
+        "recommended": [
+          {
+            "name": "Hôtel La Vallée",
+            "type": "hotel",
+            "bike_friendly": true,
+            "price_range": "€€",
+            "website": "www.hotel-la-vallee.com"
+          }
+        ]
+      },
+      "refreshment_points": [
+        {
+          "name": "Boulangerie Val d'Isère",
+          "location": "Val d'Isère",
+          "km_mark": 65,
+          "services": ["Eau", "Pâtisseries", "Sandwichs"]
+        },
+        {
+          "name": "Refuge de l'Iseran",
+          "location": "Sommet Col de l'Iseran",
+          "km_mark": 80,
+          "services": ["Eau", "Repas chauds", "Boissons"]
+        }
+      ],
+      "altitude_warning": {
+        "fr": "Le Col de l'Iseran culmine à 2770m, prévoyez des vêtements chauds même en été, la température peut être 15°C plus basse qu'en vallée.",
+        "en": "Col de l'Iseran peaks at 2770m, bring warm clothing even in summer, temperature can be 15°C lower than in the valley."
+      },
+      "difficulty": 5
+    },
+    {
+      "day": 4,
+      "title": {
+        "fr": "Val Cenis - Briançon",
+        "en": "Val Cenis - Briançon"
+      },
+      "distance": 120,
+      "elevation": 2600,
+      "cols": [
+        {
+          "id": "col-du-mont-cenis",
+          "name": "Col du Mont Cenis",
+          "altitude": 2081,
+          "category": 1
+        },
+        {
+          "id": "col-du-galibier",
+          "name": "Col du Galibier",
+          "altitude": 2642,
+          "category": "HC"
+        }
+      ],
+      "description": {
+        "fr": "Journée internationale avec un passage en Italie via le Mont Cenis, avant de revenir en France pour gravir le mythique Galibier, l'un des géants des Alpes.",
+        "en": "International day with a passage in Italy via Mont Cenis, before returning to France to climb the mythical Galibier, one of the giants of the Alps."
+      },
+      "accommodation": {
+        "recommended": [
+          {
+            "name": "Hôtel de Paris",
+            "type": "hotel",
+            "bike_friendly": true,
+            "price_range": "€€",
+            "website": "www.hoteldeparis-briancon.com"
+          }
+        ]
+      },
+      "refreshment_points": [
+        {
+          "name": "Bar du Lac",
+          "location": "Lac du Mont Cenis",
+          "km_mark": 15,
+          "services": ["Eau", "Café", "Encas"]
+        },
+        {
+          "name": "Refuge du Galibier",
+          "location": "Plan Lachat",
+          "km_mark": 85,
+          "services": ["Eau", "Boissons chaudes", "Soupes"]
+        }
+      ],
+      "difficulty": 5
+    },
+    {
+      "day": 5,
+      "title": {
+        "fr": "Briançon - Barcelonnette",
+        "en": "Briançon - Barcelonnette"
+      },
+      "distance": 80,
+      "elevation": 2100,
+      "cols": [
+        {
+          "id": "col-d-izoard",
+          "name": "Col d'Izoard",
+          "altitude": 2360,
+          "category": "HC"
+        },
+        {
+          "id": "col-de-vars",
+          "name": "Col de Vars",
+          "altitude": 2109,
+          "category": 1
+        }
+      ],
+      "description": {
+        "fr": "Étape iconique traversant la spectaculaire Casse Déserte de l'Izoard, puis le Col de Vars, offrant des panoramas exceptionnels sur les Alpes du Sud.",
+        "en": "Iconic stage crossing the spectacular Casse Déserte of Izoard, then the Col de Vars, offering exceptional panoramas of the Southern Alps."
+      },
+      "accommodation": {
+        "recommended": [
+          {
+            "name": "Hôtel Les Pins",
+            "type": "hotel",
+            "bike_friendly": true,
+            "price_range": "€€",
+            "website": "www.hotellespins.fr"
+          }
+        ]
+      },
+      "refreshment_points": [
+        {
+          "name": "Refuge Napoléon",
+          "location": "Sommet Col d'Izoard",
+          "km_mark": 30,
+          "services": ["Eau", "Repas", "Boissons"]
+        },
+        {
+          "name": "Auberge du Col de Vars",
+          "location": "Sommet Col de Vars",
+          "km_mark": 60,
+          "services": ["Eau", "Café", "Encas", "Repas"]
+        }
+      ],
+      "photo_opportunity": {
+        "fr": "La Casse Déserte sur l'Izoard offre un paysage lunaire unique, propice aux photos mémorables.",
+        "en": "The Casse Déserte on Izoard offers a unique lunar landscape, perfect for memorable photos."
+      },
+      "difficulty": 4
+    },
+    {
+      "day": 6,
+      "title": {
+        "fr": "Barcelonnette - Valberg",
+        "en": "Barcelonnette - Valberg"
+      },
+      "distance": 110,
+      "elevation": 2800,
+      "cols": [
+        {
+          "id": "cime-de-la-bonette",
+          "name": "Cime de la Bonette",
+          "altitude": 2802,
+          "category": "HC"
+        },
+        {
+          "id": "col-de-la-cayolle",
+          "name": "Col de la Cayolle",
+          "altitude": 2326,
+          "category": 1
+        }
+      ],
+      "description": {
+        "fr": "Journée d'altitude avec l'ascension de la plus haute route d'Europe à la Bonette, suivie du sauvage Col de la Cayolle traversant le Parc National du Mercantour.",
+        "en": "High-altitude day with the ascent of Europe's highest road at Bonette, followed by the wild Col de la Cayolle crossing the Mercantour National Park."
+      },
+      "accommodation": {
+        "recommended": [
+          {
+            "name": "Hôtel Le Chalet Suisse",
+            "type": "hotel",
+            "bike_friendly": true,
+            "price_range": "€€",
+            "website": "www.chaletsuisse-valberg.com"
+          }
+        ]
+      },
+      "refreshment_points": [
+        {
+          "name": "Refuge de Bayasse",
+          "location": "Vallon de Bayasse",
+          "km_mark": 60,
+          "services": ["Eau", "Repas", "Boissons"]
+        }
+      ],
+      "wildlife_warning": {
+        "fr": "Vous traversez le Parc National du Mercantour, connu pour sa faune sauvage. Restez sur les routes et respectez l'environnement.",
+        "en": "You are crossing the Mercantour National Park, known for its wildlife. Stay on the roads and respect the environment."
+      },
+      "difficulty": 5
+    },
+    {
+      "day": 7,
+      "title": {
+        "fr": "Valberg - Nice",
+        "en": "Valberg - Nice"
+      },
+      "distance": 100,
+      "elevation": 900,
+      "cols": [
+        {
+          "id": "col-de-turini",
+          "name": "Col de Turini",
+          "altitude": 1607,
+          "category": 1
+        },
+        {
+          "id": "col-d-eze",
+          "name": "Col d'Èze",
+          "altitude": 507,
+          "category": 2
+        }
+      ],
+      "description": {
+        "fr": "Dernière étape descendant progressivement vers la Méditerranée, avec quelques dernières difficultés dont le Turini, célèbre pour le Rallye de Monte-Carlo, et l'Èze qui offre une vue spectaculaire sur la Côte d'Azur.",
+        "en": "Final stage gradually descending to the Mediterranean, with a few last difficulties including Turini, famous for the Monte Carlo Rally, and Èze which offers a spectacular view of the French Riviera."
+      },
+      "accommodation": {
+        "recommended": [
+          {
+            "name": "Hôtel Promenade des Anglais",
+            "type": "hotel",
+            "bike_friendly": true,
+            "price_range": "€€€",
+            "website": "www.hotel-promenade-nice.com"
+          }
+        ]
+      },
+      "refreshment_points": [
+        {
+          "name": "Restaurant du Col de Turini",
+          "location": "Sommet Col de Turini",
+          "km_mark": 35,
+          "services": ["Eau", "Repas", "Boissons"]
+        }
+      ],
+      "celebration": {
+        "fr": "Tradition: tremper les roues dans la Méditerranée à l'arrivée sur la Promenade des Anglais pour marquer la fin de ce périple exceptionnel.",
+        "en": "Tradition: dip your wheels in the Mediterranean upon arrival on the Promenade des Anglais to mark the end of this exceptional journey."
+      },
+      "difficulty": 3
+    }
+  ],
+  "logistics": {
+    "baggage_transfer": [
+      {
+        "name": "Alps Luggage Transfer",
+        "contact": "+33 4 56 XX XX XX",
+        "website": "www.alps-luggage.com",
+        "price_indication": "À partir de 60€/jour pour le groupe"
+      },
+      {
+        "name": "Bag Moving",
+        "contact": "+33 4 92 XX XX XX",
+        "website": "www.bagmoving.fr",
+        "price_indication": "À partir de 350€ pour tout le parcours"
+      }
+    ],
+    "bike_rental": [
+      {
+        "name": "Alps Bike Rental",
+        "location": "Thonon-les-Bains (et retour depuis Nice)",
+        "bike_types": ["Route", "Gravel", "VAE"],
+        "website": "www.alpsbikerental.com"
+      }
+    ],
+    "vehicle_return": [
+      {
+        "name": "Train SNCF",
+        "description": {
+          "fr": "Retour en train Nice-Thonon (correspondances à Lyon ou Genève)",
+          "en": "Return by train Nice-Thonon (connections in Lyon or Geneva)"
+        },
+        "website": "www.sncf-connect.com"
+      },
+      {
+        "name": "One-way Car Rental",
+        "description": {
+          "fr": "Location de voiture aller simple Nice-Thonon (surcharge à prévoir)",
+          "en": "One-way car rental Nice-Thonon (surcharge expected)"
+        }
+      }
+    ]
+  },
+  "preparation_advice": {
+    "physical": {
+      "fr": "Préparez-vous avec au moins 12 semaines d'entraînement spécifique incluant des sorties longues (>100km) et du dénivelé cumulé important. Travaillez votre endurance de base et votre récupération entre efforts répétés.",
+      "en": "Prepare with at least 12 weeks of specific training including long rides (>100km) and significant cumulative elevation. Work on your base endurance and recovery between repeated efforts."
+    },
+    "mental": {
+      "fr": "Découpez le défi en étapes journalières et concentrez-vous uniquement sur l'étape du jour. Prévoyez des alternatives ou des raccourcis en cas de défaillance.",
+      "en": "Break the challenge into daily stages and focus only on the day's stage. Plan alternatives or shortcuts in case of failure."
+    },
+    "equipment": {
+      "essential": [
+        {
+          "fr": "Vélo avec triple plateau ou compact et cassette 11-32 minimum",
+          "en": "Bike with triple chainring or compact and minimum 11-32 cassette"
+        },
+        {
+          "fr": "Vêtements pour toutes conditions (chaleur, froid, pluie)",
+          "en": "Clothing for all conditions (heat, cold, rain)"
+        },
+        {
+          "fr": "Éclairage avant/arrière (tunnels sur certains cols)",
+          "en": "Front/rear lighting (tunnels on some passes)"
+        },
+        {
+          "fr": "Kit de réparation complet (chambre à air, démonte-pneu, pompe, multi-outils)",
+          "en": "Complete repair kit (inner tube, tire levers, pump, multi-tool)"
+        }
+      ],
+      "recommended": [
+        {
+          "fr": "GPS avec cartes détaillées et traces pré-chargées",
+          "en": "GPS with detailed maps and pre-loaded tracks"
+        },
+        {
+          "fr": "Batterie externe pour recharger les appareils",
+          "en": "External battery for charging devices"
+        },
+        {
+          "fr": "Crème solaire haute protection et baume à lèvres",
+          "en": "High protection sunscreen and lip balm"
+        }
+      ]
+    }
+  },
+  "support_resources": {
+    "gps_tracks": "/files/multi-col-routes/grandes-alpes/gps-tracks.gpx",
+    "detailed_roadbook": "/files/multi-col-routes/grandes-alpes/roadbook.pdf",
+    "accommodation_list": "/files/multi-col-routes/grandes-alpes/accommodations.pdf",
+    "elevation_profiles": "/files/multi-col-routes/grandes-alpes/elevation-profiles.pdf"
+  },
+  "health_safety": {
+    "emergency_contacts": {
+      "general": "112",
+      "mountain_rescue": "0033 4 56 12 34 56"
+    },
+    "medical_facilities": [
+      {
+        "name": "Hôpital de Sallanches",
+        "location": "Sallanches",
+        "services": ["Urgences", "Traumatologie"],
+        "proximity": "Étape 2"
+      },
+      {
+        "name": "Centre Hospitalier de Briançon",
+        "location": "Briançon",
+        "services": ["Urgences", "Traumatologie"],
+        "proximity": "Étape 4"
+      },
+      {
+        "name": "CHU de Nice",
+        "location": "Nice",
+        "services": ["Tous services"],
+        "proximity": "Étape 7"
+      }
+    ],
+    "pharmacies": "Une liste complète des pharmacies sur le parcours est disponible dans le roadbook."
+  },
+  "testimonials": [
+    {
+      "name": "Pierre Rolland",
+      "text": {
+        "fr": "La Route des Grandes Alpes est l'un des plus beaux défis cyclistes en Europe. J'ai particulièrement apprécié l'enchaînement Izoard-Vars qui offre des paysages à couper le souffle.",
+        "en": "The Route des Grandes Alpes is one of the most beautiful cycling challenges in Europe. I particularly enjoyed the Izoard-Vars sequence which offers breathtaking landscapes."
+      }
+    },
+    {
+      "name": "Emma Wilson",
+      "text": {
+        "fr": "Une expérience inoubliable! J'ai pris 10 jours pour savourer chaque col et profiter pleinement des paysages. Le transfert de bagages a été un vrai plus pour apprécier pleinement ce voyage.",
+        "en": "An unforgettable experience! I took 10 days to savor each pass and fully enjoy the landscapes. The baggage transfer was a real plus to fully appreciate this journey."
+      },
+      "level": "recreational"
+    }
+  ],
+  "history": {
+    "fr": "La Route des Grandes Alpes a été créée en 1911 par le Touring Club de France pour promouvoir le tourisme dans les Alpes françaises. À l'origine conçue pour les automobiles, elle est devenue un défi emblématique pour les cyclistes du monde entier.",
+    "en": "The Route des Grandes Alpes was created in 1911 by the Touring Club de France to promote tourism in the French Alps. Originally designed for automobiles, it has become an iconic challenge for cyclists from around the world."
+  },
+  "media_gallery": {
+    "images": [
+      "/images/multi-col-routes/grandes-alpes/overview-map.jpg",
+      "/images/multi-col-routes/grandes-alpes/col-iseran.jpg",
+      "/images/multi-col-routes/grandes-alpes/casse-deserte.jpg",
+      "/images/multi-col-routes/grandes-alpes/bonette-view.jpg",
+      "/images/multi-col-routes/grandes-alpes/nice-arrival.jpg"
+    ],
+    "videos": [
+      {
+        "title": "Les plus beaux cols de la Route des Grandes Alpes",
+        "url": "/videos/multi-col-routes/grandes-alpes-highlights.mp4"
+      },
+      {
+        "title": "Descente du Col de l'Iseran",
+        "url": "/videos/multi-col-routes/iseran-descent.mp4"
+      }
+    ]
+  },
+  "tips_from_locals": [
+    {
+      "fr": "À Briançon, ne manquez pas la vieille ville fortifiée, classée au patrimoine mondial de l'UNESCO.",
+      "en": "In Briançon, don't miss the fortified old town, a UNESCO World Heritage site."
+    },
+    {
+      "fr": "Dans le Beaufortain, profitez-en pour goûter le fromage local qui donne de l'énergie pour les cols à venir.",
+      "en": "In the Beaufortain, take the opportunity to taste the local cheese which gives energy for the passes to come."
+    },
+    {
+      "fr": "À Nice, l'apéritif traditionnel au Pastis sur la Promenade des Anglais est le rituel parfait pour célébrer l'arrivée.",
+      "en": "In Nice, the traditional Pastis aperitif on the Promenade des Anglais is the perfect ritual to celebrate the arrival."
+    }
+  ],
+  "related_content": {
+    "cols": ["col-du-galibier", "col-d-izoard", "cime-de-la-bonette", "col-de-l-iseran"],
+    "preparation_guides": ["guide-alpe-d-huez", "guide-galibier", "guide-izoard"],
+    "seasonal_guides": ["seasonal-summer-alps"]
+  },
+  "status": "active",
+  "completeness": 95,
+  "last_updated": "2025-04-06T02:30:00Z"
+}

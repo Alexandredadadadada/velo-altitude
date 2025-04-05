@@ -1,0 +1,69 @@
+{
+  "id": "passo-pordoi",
+  "name": "Passo Pordoi",
+  "region": "dolomites",
+  "country": "Italie",
+  "altitude": 2239,
+  "length": 9.2,
+  "avgGradient": 6.9,
+  "maxGradient": 9,
+  "difficulty": "medium",
+  "elevationGain": 635,
+  "startLocation": "Arabba",
+  "endLocation": "Passo Pordoi",
+  "description": "Le Passo Pordoi est l'un des cols les plus emblématiques des Dolomites et fait partie du célèbre circuit Sella Ronda. Ses virages réguliers et ses vues spectaculaires en font une ascension populaire parmi les cyclistes.",
+  "history": "Ce col a été franchi plus de 40 fois par le Giro d'Italia, ce qui en fait l'un des plus visités. Il est surnommé la \"Cima Coppi\" en hommage au champion Fausto Coppi qui y a triomphé à plusieurs reprises.",
+  "imageUrl": "/images/cols/pordoi/main.jpg",
+  "profileUrl": "/images/cols/pordoi/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Est (Arabba)",
+      "startLocation": "Arabba",
+      "length": 9.2,
+      "elevationGain": 635,
+      "avgGradient": 6.9,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Ascension régulière avec de beaux virages en épingle"
+    },
+    {
+      "name": "Versant Ouest (Canazei)",
+      "startLocation": "Canazei",
+      "length": 11.8,
+      "elevationGain": 704,
+      "avgGradient": 6,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Version légèrement plus longue et douce"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Plan de Salesei - Sommet",
+      "length": 6.8,
+      "gradient": 7.2,
+      "description": "Partie supérieure avec les meilleurs panoramas"
+    }
+  ],
+  "touristicInfo": "Au sommet se trouve le monument à Fausto Coppi et un téléphérique qui mène au Sass Pordoi (2950m). Le col fait partie de la route des Dolomites et de la Sella Ronda, un circuit touristique populaire.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Sommet",
+      "description": "Fontaines et restaurants"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Plusieurs hôtels et restaurants"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col généralement fermé de novembre à mai. Les matinées offrent souvent les meilleures conditions.",
+  "strava": {
+    "segmentId": "667542",
+    "komTime": "24:10",
+    "komName": "Egan Bernal"
+  },
+  "slug": "passo-pordoi"
+}

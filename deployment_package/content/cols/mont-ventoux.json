@@ -1,0 +1,143 @@
+{
+  "id": "mont-ventoux",
+  "name": {
+    "fr": "Mont Ventoux",
+    "en": "Mont Ventoux",
+    "de": "Mont Ventoux",
+    "it": "Monte Ventoso",
+    "es": "Monte Ventoux"
+  },
+  "altitude": 1909,
+  "location": {
+    "latitude": 44.1741,
+    "longitude": 5.2783,
+    "region": "Vaucluse",
+    "country": "France",
+    "nearbyTowns": ["Bédoin", "Malaucène", "Sault"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Bédoin",
+      "length": 21.5,
+      "elevation": 1610,
+      "averageGradient": 7.5,
+      "maxGradient": 12.0,
+      "difficulty": 10
+    },
+    "alternateSide": {
+      "startLocation": "Malaucène",
+      "length": 21.2,
+      "elevation": 1570,
+      "averageGradient": 7.4,
+      "maxGradient": 12.0,
+      "difficulty": 9
+    },
+    "thirdSide": {
+      "startLocation": "Sault",
+      "length": 26.0,
+      "elevation": 1210,
+      "averageGradient": 4.7,
+      "maxGradient": 11.0,
+      "difficulty": 7
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1951,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 27,
+    "giroAppearances": 0,
+    "famousStories": [
+      "Le Mont Ventoux est célèbre pour le décès tragique de Tom Simpson en 1967, qui s'est effondré à 1.5 km du sommet. Un mémorial marque l'emplacement de sa chute.",
+      "Lors du Tour de France 2016, dans des conditions de vents violents, Chris Froome a dû courir à pied après avoir cassé son vélo dans une chute.",
+      "En 2021, le Ventoux a été gravi deux fois dans la même étape du Tour, une première dans l'histoire.",
+      "Le surnom de 'Géant de Provence' lui vient de sa silhouette imposante et isolée, visible à des dizaines de kilomètres à la ronde.",
+      "Son sommet dénudé et rocailleux, qui lui donne son aspect lunaire, est dû à la déforestation intensive au Moyen Âge, et non à l'altitude comme on le croit souvent."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Iban Mayo",
+        "time": "55:51",
+        "year": 2004,
+        "side": "Bédoin"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Mémorial Tom Simpson",
+      "description": "Monument érigé à l'endroit où le cycliste britannique Tom Simpson est décédé lors du Tour de France 1967.",
+      "coordinates": {
+        "latitude": 44.1728,
+        "longitude": 5.2770
+      }
+    },
+    {
+      "name": "Chalet Reynard",
+      "description": "Restaurant situé à la jonction entre la forêt et le désert de pierres, point de ravitaillement populaire.",
+      "coordinates": {
+        "latitude": 44.1608,
+        "longitude": 5.2924
+      }
+    },
+    {
+      "name": "Observatoire du sommet",
+      "description": "Station météorologique au sommet, reconnaissable à sa tour distinctive.",
+      "coordinates": {
+        "latitude": 44.1741,
+        "longitude": 5.2783
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de mai à octobre",
+    "bestPeriod": "Juin à septembre",
+    "notes": "Fermeture fréquente en cas de Mistral (vents violents pouvant dépasser 200 km/h). Vérifiez les conditions avant de partir."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.velowire.com/images/blog/mont-ventoux/mont-ventoux-summit.jpg",
+        "caption": "Le sommet lunaire du Mont Ventoux",
+        "credit": "VeloWire.com"
+      },
+      {
+        "url": "https://www.cyclingweekly.com/app/uploads/2022/06/DSC_8080.jpg",
+        "caption": "La transition entre la forêt et le désert de pierres au niveau du Chalet Reynard",
+        "credit": "Cycling Weekly"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Mont_Ventoux_memorial_Tom_Simpson.jpg",
+        "caption": "Le mémorial Tom Simpson",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=hgPwNT6gznU",
+        "title": "Mont Ventoux - Ascension par Bédoin",
+        "duration": "1:15:20"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.7 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 ou 11-34 recommandée avec un compact 34-50",
+    "preparation": "Entraînement spécifique pour les longues montées soutenues et la gestion de l'effort dans la durée",
+    "cautionPoints": [
+      "Conditions climatiques extrêmes : chaleur intense en été (jusqu'à 40°C) et vents violents au sommet",
+      "Transition difficile entre la forêt et la zone désertique après le Chalet Reynard",
+      "Pas d'ombre sur les 6 derniers kilomètres, prévoyez protection solaire et hydratation suffisante"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Bédoin", "Saint-Estève", "Chalet Reynard", "Sommet"],
+    "restaurants": ["Chalet Reynard (mi-parcours)", "Restaurant au sommet (ouvert en saison)"],
+    "accommodation": ["Hôtels à Bédoin", "Gîtes dans les villages environnants"],
+    "bikeMechanic": "Magasins de vélos à Bédoin et Malaucène"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["circuit-ventoux-3-faces", "route-des-vins-provence"]
+  }
+}

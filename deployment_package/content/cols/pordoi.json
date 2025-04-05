@@ -1,0 +1,135 @@
+{
+  "id": "pordoi",
+  "name": {
+    "fr": "Passo Pordoi",
+    "en": "Pordoi Pass",
+    "de": "Pordoi-Pass",
+    "it": "Passo Pordoi",
+    "es": "Puerto Pordoi"
+  },
+  "altitude": 2239,
+  "location": {
+    "latitude": 46.4880,
+    "longitude": 11.8180,
+    "region": "Trentin-Haut-Adige/Vénétie",
+    "country": "Italie",
+    "nearbyTowns": ["Canazei", "Arabba", "Cortina d'Ampezzo"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Canazei",
+      "length": 11.8,
+      "elevation": 651,
+      "averageGradient": 5.5,
+      "maxGradient": 9.0,
+      "difficulty": 6
+    },
+    "alternateSide": {
+      "startLocation": "Arabba",
+      "length": 9.2,
+      "elevation": 637,
+      "averageGradient": 6.9,
+      "maxGradient": 10.0,
+      "difficulty": 7
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1940,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 0,
+    "giroAppearances": 40,
+    "famousStories": [
+      "Le Passo Pordoi est le col qui a été le plus franchi dans l'histoire du Giro d'Italia, avec plus de 40 passages.",
+      "Il est connu comme 'Cima Coppi', le point le plus élevé du Giro, à de nombreuses reprises, bien qu'il ne soit pas le plus haut col des Dolomites.",
+      "Au sommet se trouve un monument dédié à Fausto Coppi, le 'Campionissimo', véritable légende du cyclisme italien.",
+      "C'est un col central du fameux circuit Sella Ronda, itinéraire cycliste et skiable qui traverse quatre cols autour du massif du Sella.",
+      "Pendant la Première Guerre mondiale, il était situé sur la ligne de front entre les armées italiennes et austro-hongroises."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Egan Bernal",
+        "time": "28:32",
+        "year": 2021,
+        "side": "Arabba"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Monument Fausto Coppi",
+      "description": "Statue en hommage au grand champion italien Fausto Coppi, érigée au sommet du col.",
+      "coordinates": {
+        "latitude": 46.4880,
+        "longitude": 11.8180
+      }
+    },
+    {
+      "name": "Terrasse panoramique",
+      "description": "Plateforme d'observation avec vue à 360° sur les sommets des Dolomites, notamment le massif du Sella.",
+      "coordinates": {
+        "latitude": 46.4885,
+        "longitude": 11.8185
+      }
+    },
+    {
+      "name": "Musée de la Grande Guerre",
+      "description": "Petit musée présentant des objets et photos de la Première Guerre mondiale dans les Dolomites.",
+      "coordinates": {
+        "latitude": 46.4875,
+        "longitude": 11.8190
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de juin à octobre",
+    "bestPeriod": "Juillet à septembre",
+    "notes": "En hiver, le col devient une partie du domaine skiable du Sella Ronda."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.alpinebrevet.com/bilder/events/pordoi/passo_pordoi_dolomites.jpg",
+        "caption": "Vue panoramique du Passo Pordoi avec ses lacets caractéristiques",
+        "credit": "AlpineBrevet.com"
+      },
+      {
+        "url": "https://www.cyclingdolomites.com/wp-content/uploads/2018/10/Passo-Pordoi-1.jpg",
+        "caption": "Monument dédié à Fausto Coppi au sommet",
+        "credit": "CyclingDolomites.com"
+      },
+      {
+        "url": "https://www.alpy.cz/img/hory/pordoi/pordoi-01.jpg",
+        "caption": "Vue sur le massif du Sella depuis le sommet",
+        "credit": "Alpy.cz"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=lLbW6ocR3kA",
+        "title": "Passo Pordoi - Ascension depuis Canazei",
+        "duration": "45:12"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.0 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-28 ou 11-32 selon votre niveau",
+    "preparation": "Entraînement d'endurance basique, ce col est accessible aux cyclistes intermédiaires",
+    "cautionPoints": [
+      "Trafic important en haute saison touristique",
+      "Conditions météorologiques changeantes, même en été",
+      "Col souvent enchaîné avec d'autres dans le circuit Sella Ronda, gérer son effort est crucial"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Canazei", "Mi-parcours", "Sommet"],
+    "restaurants": ["Plusieurs refuges et restaurants au sommet"],
+    "accommodation": ["Hôtels à Canazei et Arabba", "Refuge au sommet (été uniquement)"],
+    "bikeMechanic": "Magasins de vélos à Canazei et Arabba"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["sella-ronda", "dolomites-haute-route"]
+  }
+}

@@ -27,9 +27,9 @@ import {
   Search as SearchIcon, 
   AccessTime as TimeIcon, 
   FitnessCenter as FitnessIcon, 
-  Trending as TrendingIcon, 
   People as PeopleIcon 
 } from '@mui/icons-material';
+import TrendingIcon from '../../components/icons/TrendingIcon';
 
 // Import de l'index des programmes
 import trainingPrograms from '../../data/trainingProgramsIndex';

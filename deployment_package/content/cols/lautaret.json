@@ -1,0 +1,135 @@
+{
+  "id": "lautaret",
+  "name": {
+    "fr": "Col du Lautaret",
+    "en": "Col du Lautaret",
+    "de": "Col du Lautaret",
+    "it": "Colle del Lautaret",
+    "es": "Puerto de Lautaret"
+  },
+  "altitude": 2058,
+  "location": {
+    "latitude": 45.0332,
+    "longitude": 6.4110,
+    "region": "Hautes-Alpes",
+    "country": "France",
+    "nearbyTowns": ["Briançon", "Le Monêtier-les-Bains", "La Grave"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Briançon",
+      "length": 27.8,
+      "elevation": 849,
+      "averageGradient": 3.1,
+      "maxGradient": 7.0,
+      "difficulty": 5
+    },
+    "alternateSide": {
+      "startLocation": "Bourg-d'Oisans",
+      "length": 39.0,
+      "elevation": 1219,
+      "averageGradient": 3.1,
+      "maxGradient": 8.0,
+      "difficulty": 6
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1911,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 40,
+    "giroAppearances": 0,
+    "famousStories": [
+      "Le Col du Lautaret est un passage stratégique des Alpes, reliant les vallées de la Guisane et de la Romanche, et servant souvent de tremplin vers le Galibier.",
+      "Il est traversé depuis 1911 par le Tour de France, généralement comme une étape intermédiaire avant d'attaquer le Col du Galibier, 8 km plus loin.",
+      "Le jardin botanique alpin du Lautaret, créé en 1899, est l'un des plus hauts d'Europe et abrite plus de 2000 espèces de plantes alpines du monde entier.",
+      "Le col était autrefois sujet à d'importantes avalanches qui coupaient régulièrement la route en hiver, avant la construction de galeries de protection.",
+      "C'est l'un des cols les plus faciles d'accès à plus de 2000 mètres d'altitude dans les Alpes, ce qui en fait un passage très fréquenté."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Nairo Quintana",
+        "time": "44:20",
+        "year": 2019,
+        "side": "Bourg-d'Oisans"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Jardin Alpin du Lautaret",
+      "description": "Jardin botanique créé en 1899, abritant plus de 2000 espèces de plantes de montagne du monde entier.",
+      "coordinates": {
+        "latitude": 45.0332,
+        "longitude": 6.4110
+      }
+    },
+    {
+      "name": "Point de vue sur La Meije",
+      "description": "Vue imprenable sur le massif de La Meije et ses glaciers, l'un des paysages les plus impressionnants des Alpes.",
+      "coordinates": {
+        "latitude": 45.0350,
+        "longitude": 6.4080
+      }
+    },
+    {
+      "name": "Maison du Col",
+      "description": "Centre d'information touristique avec exposition sur la faune, la flore et l'histoire du col.",
+      "coordinates": {
+        "latitude": 45.0332,
+        "longitude": 6.4115
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de mai à novembre",
+    "bestPeriod": "Juin à septembre",
+    "notes": "Le col est déneigé plus tôt que beaucoup d'autres cols alpins, ce qui en fait une destination cycliste privilégiée au printemps."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.cyclingcols.com/sites/default/files/col/Lautaret/P1120318.JPG",
+        "caption": "Vue panoramique du Col du Lautaret avec les sommets environnants",
+        "credit": "CyclingCols.com"
+      },
+      {
+        "url": "https://www.climbbybike.com/profile_smoothed/Col-du-Lautaret-from-Briancon_profile.gif",
+        "caption": "Profil d'ascension depuis Briançon",
+        "credit": "ClimbByBike.com"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/La_Meije_du_Col_du_Lautaret.jpg/1280px-La_Meije_du_Col_du_Lautaret.jpg",
+        "caption": "La Meije vue depuis le Col du Lautaret",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=T5oZ3FoCV0Y",
+        "title": "Col du Lautaret - Ascension depuis Briançon",
+        "duration": "1:15:00"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 2.8 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-28 généralement suffisante",
+    "preparation": "Bon col pour développer l'endurance et comme préparation aux cols plus difficiles",
+    "cautionPoints": [
+      "Ascension longue nécessitant une bonne gestion de l'effort",
+      "Trafic routier souvent important, car c'est un axe majeur de circulation",
+      "Conditions venteuses fréquentes au sommet"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Briançon", "Le Monêtier-les-Bains", "Sommet"],
+    "restaurants": ["Plusieurs restaurants et cafés au sommet"],
+    "accommodation": ["Hôtels au col (été)", "Nombreuses options à Briançon et Le Monêtier-les-Bains"],
+    "bikeMechanic": "Magasins de vélos à Briançon"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["route-des-grandes-alpes", "boucle-galibier-lautaret"]
+  }
+}

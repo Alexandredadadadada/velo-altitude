@@ -1,0 +1,53 @@
+{
+  "id": "klausen-pass",
+  "name": "Klausenpass",
+  "slug": "klausenpass",
+  "country": "",
+  "region": "",
+  "altitude": 1948,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 4,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/klausenpass/main.jpg",
+    "gallery": [
+      "/images/cols/klausenpass/altdorf-side.jpg",
+      "/images/cols/klausenpass/linthal-side.jpg",
+      "/images/cols/klausenpass/urnerboden.jpg",
+      "/images/cols/klausenpass/summit.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.886Z"
+}

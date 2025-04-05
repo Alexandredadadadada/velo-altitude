@@ -1,0 +1,360 @@
+/**
+ * Programme d'entraînement cycliste axé sur la compétition
+ * Structuré sur 12 semaines avec progression de la charge et de l'intensité
+ */
+
+const raceProgram = {
+  id: 'race-training-program',
+  name: 'Programme Compétition',
+  description: 'Programme d\'entraînement complet de 12 semaines pour préparer les cyclistes aux compétitions. Développe la puissance, l\'endurance et les capacités tactiques nécessaires pour la course.',
+  duration: 12, // semaines
+  level: ['intermédiaire', 'avancé'],
+  goals: [
+    'Améliorer la puissance et l\'endurance spécifiques à la compétition',
+    'Développer les compétences tactiques et techniques',
+    'Optimiser le pic de forme pour les événements ciblés',
+    'Augmenter la résistance à la fatigue sur les efforts répétés'
+  ],
+  requirements: {
+    minFTP: 230,
+    minTrainingHours: 8,
+    equipment: ['Home trainer/capteur de puissance recommandé', 'Heart rate monitor']
+  },
+  phases: [
+    {
+      id: 'base',
+      name: 'Phase de base',
+      weeks: 4,
+      focus: 'Développement de l\'endurance fondamentale et travail technique',
+      description: 'Établir une base solide d\'endurance et améliorer l\'efficacité technique pour préparer des charges d\'entraînement plus intenses.'
+    },
+    {
+      id: 'build',
+      name: 'Phase de construction',
+      weeks: 5,
+      focus: 'Développement de la puissance et capacité lactique',
+      description: 'Augmentation progressive de l\'intensité et introduction d\'entraînements spécifiques à la compétition.'
+    },
+    {
+      id: 'peak',
+      name: 'Phase de pic',
+      weeks: 2,
+      focus: 'Affûtage et préparation compétition',
+      description: 'Réduction du volume tout en maintenant l\'intensité pour maximiser la forme de compétition.'
+    },
+    {
+      id: 'race',
+      name: 'Période de compétition',
+      weeks: 1,
+      focus: 'Gestion de la compétition et récupération',
+      description: 'Stratégies de récupération entre les événements et maintien de la forme.'
+    }
+  ],
+  weeklyPlans: [
+    // PHASE 1: BASE - SEMAINES 1-4
+    {
+      week: 1,
+      theme: 'Adaptation et technique',
+      workouts: [
+        {
+          day: 1,
+          name: 'Endurance fondamentale',
+          type: 'Endurance',
+          duration: 90,
+          intensityType: 'Zone 2',
+          description: 'Sortie longue à intensité modérée, focus sur la cadence élevée (90-100 rpm)',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Endurance rythme régulier', duration: 60, zone: 2 },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 3,
+          name: 'Exercices techniques',
+          type: 'Technique',
+          duration: 75,
+          intensityType: 'Zone 1-3',
+          description: 'Travail technique incluant des exercices de pilotage, d\'agilité et de position',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Exercices d\'agilité', duration: 15, zone: 2 },
+            { name: 'Travail de position', duration: 20, zone: 2 },
+            { name: 'Accélérations contrôlées', duration: 15, zone: 3 },
+            { name: 'Retour au calme', duration: 10, zone: 1 }
+          ]
+        },
+        {
+          day: 5,
+          name: 'Sweet Spot Introduction',
+          type: 'Seuil',
+          duration: 60,
+          intensityType: 'Zone 3-4',
+          description: 'Introduction au travail Sweet Spot (entre le seuil et la puissance maximale aérobie)',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Sweet Spot 3x8min', duration: 30, zone: '3-4', intervals: true },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 7,
+          name: 'Sortie longue progressive',
+          type: 'Endurance',
+          duration: 120,
+          intensityType: 'Zone 2-3',
+          description: 'Sortie d\'endurance avec augmentation progressive de l\'intensité',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Endurance régulière', duration: 60, zone: 2 },
+            { name: 'Progression légère', duration: 30, zone: '2-3' },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        }
+      ]
+    },
+    {
+      week: 2,
+      theme: 'Développement d\'endurance',
+      workouts: [
+        {
+          day: 1,
+          name: 'Endurance avec variations de cadence',
+          type: 'Endurance',
+          duration: 100,
+          intensityType: 'Zone 2',
+          description: 'Sortie d\'endurance avec blocs alternant haute et basse cadence',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Endurance + blocs haute cadence (100-110 rpm)', duration: 70, zone: 2 },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 3,
+          name: 'Force-vitesse',
+          type: 'Force',
+          duration: 75,
+          intensityType: 'Zone 2-5',
+          description: 'Développement de la force spécifique avec des accélérations et micro-sprints',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Micro-sprints 8x15sec', duration: 20, zone: '4-5', intervals: true },
+            { name: 'Récupération active', duration: 25, zone: 2 },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 5,
+          name: 'Sweet Spot Progression',
+          type: 'Seuil',
+          duration: 70,
+          intensityType: 'Zone 3-4',
+          description: 'Intervalles en Sweet Spot avec progression en durée',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Sweet Spot 2x12min', duration: 40, zone: '3-4', intervals: true },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 7,
+          name: 'Sortie longue avec relief',
+          type: 'Endurance',
+          duration: 150,
+          intensityType: 'Zone 2-3',
+          description: 'Endurance sur parcours vallonné avec ascensions à allure soutenue',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Endurance vallonnée', duration: 120, zone: '2-3' },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        }
+      ]
+    },
+    // Suite des semaines pour la phase 1...
+
+    // PHASE 2: CONSTRUCTION - SEMAINES 5-9
+    {
+      week: 5,
+      theme: 'Introduction haute intensité',
+      workouts: [
+        {
+          day: 1,
+          name: 'Endurance et récupération',
+          type: 'Récupération',
+          duration: 60,
+          intensityType: 'Zone 1-2',
+          description: 'Sortie légère de récupération active'
+        },
+        {
+          day: 2,
+          name: 'VO2max Introduction',
+          type: 'VO2max',
+          duration: 75,
+          intensityType: 'Zone 5',
+          description: 'Premiers intervalles VO2max courts pour développer la capacité aérobie',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Intervalles 6x3min Zone 5', duration: 45, zone: 5, intervals: true },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 4,
+          name: 'Seuil Lactique',
+          type: 'Seuil',
+          duration: 80,
+          intensityType: 'Zone 4',
+          description: 'Intervalles au seuil pour développer la résistance lactique',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Intervalles 3x10min Zone 4', duration: 50, zone: 4, intervals: true },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 5,
+          name: 'Récupération active',
+          type: 'Récupération',
+          duration: 45,
+          intensityType: 'Zone 1',
+          description: 'Sortie très légère pour favoriser la récupération'
+        },
+        {
+          day: 7,
+          name: 'Sortie longue spécifique',
+          type: 'Endurance',
+          duration: 180,
+          intensityType: 'Zone 2-4',
+          description: 'Sortie longue avec simulations de situations de course',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Endurance progressive', duration: 120, zone: 2 },
+            { name: 'Simulations d\'attaques 5x3min', duration: 30, zone: 4, intervals: true },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        }
+      ]
+    },
+    // Suite des semaines pour la phase 2...
+
+    // PHASE 3: PIC - SEMAINES 10-11
+    {
+      week: 10,
+      theme: 'Affûtage et intensité',
+      workouts: [
+        {
+          day: 1,
+          name: 'Récupération active',
+          type: 'Récupération',
+          duration: 45,
+          intensityType: 'Zone 1',
+          description: 'Sortie légère pour maintenir l\'activation'
+        },
+        {
+          day: 2,
+          name: 'Intensité Race-Pace',
+          type: 'Race-Specific',
+          duration: 75,
+          intensityType: 'Zone 3-5',
+          description: 'Entraînement simulant les intensités de course',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Intervalles race-pace variés', duration: 45, zone: '3-5', intervals: true },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 4,
+          name: 'Endurance technique',
+          type: 'Technique',
+          duration: 60,
+          intensityType: 'Zone 2',
+          description: 'Maintien de l\'endurance avec focus technique'
+        },
+        {
+          day: 5,
+          name: 'Affûtage - Activation',
+          type: 'Activation',
+          duration: 50,
+          intensityType: 'Zone 1-4',
+          description: 'Activation avec courtes pointes d\'intensité',
+          structure: [
+            { name: 'Échauffement', duration: 15, zone: 1 },
+            { name: 'Activations 6x1min', duration: 20, zone: 4, intervals: true },
+            { name: 'Retour au calme', duration: 15, zone: 1 }
+          ]
+        },
+        {
+          day: 7,
+          name: 'Sortie contrôlée pré-compétition',
+          type: 'Préparation',
+          duration: 90,
+          intensityType: 'Zone 1-3',
+          description: 'Sortie modérée avec quelques accélérations contrôlées'
+        }
+      ]
+    },
+    
+    // PHASE 4: COMPÉTITION - SEMAINE 12
+    {
+      week: 12,
+      theme: 'Semaine de compétition',
+      workouts: [
+        {
+          day: 1,
+          name: 'Récupération post-course',
+          type: 'Récupération',
+          duration: 40,
+          intensityType: 'Zone 1',
+          description: 'Récupération active très légère'
+        },
+        {
+          day: 3,
+          name: 'Activation course suivante',
+          type: 'Activation',
+          duration: 50,
+          intensityType: 'Zone 1-4',
+          description: 'Activation pré-compétition avec courtes accélérations'
+        },
+        {
+          day: 5,
+          name: 'Échauffement pré-course',
+          type: 'Échauffement',
+          duration: 40,
+          intensityType: 'Zone 1-4',
+          description: 'Protocole d\'échauffement complet pour préparer la compétition'
+        },
+        {
+          day: 6,
+          name: 'COMPÉTITION',
+          type: 'Course',
+          duration: 'Variable',
+          intensityType: 'Race',
+          description: 'Jour de compétition - suivre stratégie de course'
+        },
+        {
+          day: 7,
+          name: 'Récupération post-course',
+          type: 'Récupération',
+          duration: 30,
+          intensityType: 'Zone 1',
+          description: 'Récupération très légère après compétition'
+        }
+      ]
+    }
+  ],
+  adaptations: {
+    recovery: 'Ajouter un jour de récupération supplémentaire si la fatigue est excessive',
+    progression: 'Augmenter le volume des sorties longues de 10-20% pour les cyclistes avec plus d\'endurance',
+    alternative: 'Remplacer certaines séances extérieures par des séances sur home trainer en cas de mauvais temps'
+  },
+  nutrition: {
+    trainingDays: 'Augmenter les glucides les jours d\'entraînement intense (6-8g/kg de poids corporel)',
+    recoveryStrategy: 'Consommer 20-25g de protéines et 60-80g de glucides dans les 30 minutes suivant un entraînement intense',
+    raceDay: 'Charger en glucides la veille (8-10g/kg) et consommer 60-90g de glucides/heure pendant la compétition'
+  }
+};
+
+export default raceProgram;

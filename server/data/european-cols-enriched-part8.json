@@ -8,7 +8,11 @@
       "longitude": 6.9875,
       "region": "Alpes Cottiennes",
       "country": "Italie/France",
-      "nearbyTowns": ["Château-Ville-Vieille", "Pontechianale", "Sampeyre"]
+      "nearbyTowns": [
+        "Château-Ville-Vieille",
+        "Pontechianale",
+        "Sampeyre"
+      ]
     },
     "climbData": {
       "franceSide": {
@@ -16,7 +20,7 @@
         "length": 20.5,
         "elevation": 1725,
         "averageGradient": 8.4,
-        "maxGradient": 14.0,
+        "maxGradient": 14,
         "difficulty": 9
       },
       "italieSide": {
@@ -24,7 +28,7 @@
         "length": 21.7,
         "elevation": 1315,
         "averageGradient": 6.1,
-        "maxGradient": 15.0,
+        "maxGradient": 15,
         "difficulty": 8
       }
     },
@@ -57,19 +61,28 @@
       {
         "name": "Lac de Castello",
         "description": "Magnifique lac de barrage que l'on longe lors de l'ascension côté italien.",
-        "coordinates": [44.6194, 7.0431],
+        "coordinates": [
+          44.6194,
+          7.0431
+        ],
         "type": "natural"
       },
       {
         "name": "Panneau frontalier",
         "description": "Marque la frontière entre la France et l'Italie au sommet, lieu de photos souvenir.",
-        "coordinates": [44.6778, 6.9875],
+        "coordinates": [
+          44.6778,
+          6.9875
+        ],
         "type": "landmark"
       },
       {
         "name": "Vue sur le Mont Viso",
         "description": "Panorama exceptionnel sur le Mont Viso (3841m), l'un des plus hauts sommets des Alpes italiennes.",
-        "coordinates": [44.6778, 6.9875],
+        "coordinates": [
+          44.6778,
+          6.9875
+        ],
         "type": "viewpoint"
       }
     ],
@@ -78,9 +91,14 @@
       "roadCondition": "Bonne mais étroite par endroits",
       "trafficLevel": "Faible",
       "winterClosure": "Fermé d'octobre à juin",
-      "facilities": ["Aucune installation permanente au sommet"],
+      "facilities": [
+        "Aucune installation permanente au sommet"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Sources à mi-parcours", "Dernier point d'eau à Pontechianale côté italien, et à Château-Ville-Vieille côté français"]
+      "waterPoints": [
+        "Sources à mi-parcours",
+        "Dernier point d'eau à Pontechianale côté italien, et à Château-Ville-Vieille côté français"
+      ]
     },
     "images": {
       "main": "/images/cols/agnello/main.jpg",
@@ -98,7 +116,10 @@
       "L'altitude se fait sentir dans les derniers kilomètres, prévoyez une gestion d'effort adaptée.",
       "L'ascension est très exposée, emportez suffisamment d'eau et de la protection solaire."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "colle-dellagnello"
   },
   {
     "id": "col-de-la-loze",
@@ -109,15 +130,18 @@
       "longitude": 6.5793,
       "region": "Savoie",
       "country": "France",
-      "nearbyTowns": ["Méribel", "Courchevel"]
+      "nearbyTowns": [
+        "Méribel",
+        "Courchevel"
+      ]
     },
     "climbData": {
       "meribelSide": {
         "startLocation": "Méribel",
-        "length": 7.0,
+        "length": 7,
         "elevation": 735,
         "averageGradient": 10.5,
-        "maxGradient": 24.0,
+        "maxGradient": 24,
         "difficulty": 10
       },
       "courchevelSide": {
@@ -125,7 +149,7 @@
         "length": 12.6,
         "elevation": 1052,
         "averageGradient": 8.3,
-        "maxGradient": 18.0,
+        "maxGradient": 18,
         "difficulty": 9
       }
     },
@@ -151,19 +175,28 @@
       {
         "name": "Piste cyclable dédiée",
         "description": "Route spécialement conçue pour les cyclistes entre Méribel et le col, interdite aux véhicules motorisés.",
-        "coordinates": [45.4150, 6.5720],
+        "coordinates": [
+          45.415,
+          6.572
+        ],
         "type": "landmark"
       },
       {
         "name": "Panorama sur le Mont Blanc",
         "description": "Vue exceptionnelle sur le massif du Mont Blanc par temps clair.",
-        "coordinates": [45.4086, 6.5793],
+        "coordinates": [
+          45.4086,
+          6.5793
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Passage à 24%",
         "description": "Section ultra-raide à environ 1.5 km du sommet en montant depuis Méribel.",
-        "coordinates": [45.4114, 6.5748],
+        "coordinates": [
+          45.4114,
+          6.5748
+        ],
         "type": "landmark"
       }
     ],
@@ -172,9 +205,13 @@
       "roadCondition": "Excellente (route neuve)",
       "trafficLevel": "Faible (route réservée aux cyclistes au-dessus de Méribel)",
       "winterClosure": "Fermé d'octobre à juin",
-      "facilities": ["Aucune installation permanente au sommet"],
+      "facilities": [
+        "Aucune installation permanente au sommet"
+      ],
       "parkingAvailable": false,
-      "waterPoints": ["Derniers points d'eau à Méribel et Courchevel"]
+      "waterPoints": [
+        "Derniers points d'eau à Méribel et Courchevel"
+      ]
     },
     "images": {
       "main": "/images/cols/loze/main.jpg",
@@ -192,7 +229,9 @@
       "Équipez-vous d'un rapport très faible (34x32 minimum, idéalement plus).",
       "Les changements de pente sont brutaux, avec des sections à plus de 15% suivies de plats."
     ],
-    "recommendedBikeTypes": ["Vélo de route avec triple plateau ou compact avec grande cassette"]
+    "recommendedBikeTypes": [
+      "Vélo de route avec triple plateau ou compact avec grande cassette"
+    ]
   },
   {
     "id": "passo-del-mortirolo",
@@ -203,7 +242,11 @@
       "longitude": 10.3018,
       "region": "Lombardie",
       "country": "Italie",
-      "nearbyTowns": ["Mazzo di Valtellina", "Monno", "Grosio"]
+      "nearbyTowns": [
+        "Mazzo di Valtellina",
+        "Monno",
+        "Grosio"
+      ]
     },
     "climbData": {
       "mazzoSide": {
@@ -211,7 +254,7 @@
         "length": 12.4,
         "elevation": 1300,
         "averageGradient": 10.5,
-        "maxGradient": 18.0,
+        "maxGradient": 18,
         "difficulty": 10
       },
       "monnoSide": {
@@ -219,15 +262,15 @@
         "length": 12.6,
         "elevation": 850,
         "averageGradient": 6.7,
-        "maxGradient": 16.0,
+        "maxGradient": 16,
         "difficulty": 8
       },
       "grosioSide": {
         "startLocation": "Grosio",
         "length": 14.8,
         "elevation": 1190,
-        "averageGradient": 8.0,
-        "maxGradient": 16.0,
+        "averageGradient": 8,
+        "maxGradient": 16,
         "difficulty": 9
       }
     },
@@ -258,19 +301,28 @@
       {
         "name": "Monument Marco Pantani",
         "description": "Statue commémorative dédiée au 'Pirate', immortalisant son attaque légendaire de 1994.",
-        "coordinates": [46.2355, 10.2964],
+        "coordinates": [
+          46.2355,
+          10.2964
+        ],
         "type": "monument"
       },
       {
         "name": "Virage 11",
         "description": "L'un des virages les plus raides de l'ascension par Mazzo, avec une pente dépassant 18%.",
-        "coordinates": [46.2340, 10.2975],
+        "coordinates": [
+          46.234,
+          10.2975
+        ],
         "type": "landmark"
       },
       {
         "name": "Chapelle San Matteo",
         "description": "Petite chapelle près du sommet, lieu de recueillement pour nombreux cyclistes.",
-        "coordinates": [46.2207, 10.3018],
+        "coordinates": [
+          46.2207,
+          10.3018
+        ],
         "type": "cultural"
       }
     ],
@@ -279,9 +331,13 @@
       "roadCondition": "Moyenne à bonne, route étroite",
       "trafficLevel": "Faible",
       "winterClosure": "Généralement fermé de novembre à avril",
-      "facilities": ["Petite buvette occasionnelle au sommet en haute saison"],
+      "facilities": [
+        "Petite buvette occasionnelle au sommet en haute saison"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Fontaines à Mazzo et au sommet"]
+      "waterPoints": [
+        "Fontaines à Mazzo et au sommet"
+      ]
     },
     "images": {
       "main": "/images/cols/mortirolo/main.jpg",
@@ -299,7 +355,9 @@
       "Ne vous laissez pas piéger par le début relativement facile depuis Mazzo, les pentes s'accentuent rapidement.",
       "Le versant de Monno est nettement plus accessible et offre de beaux paysages."
     ],
-    "recommendedBikeTypes": ["Vélo de route avec triple plateau ou compact avec grande cassette"]
+    "recommendedBikeTypes": [
+      "Vélo de route avec triple plateau ou compact avec grande cassette"
+    ]
   },
   {
     "id": "grimsel-pass",
@@ -310,23 +368,27 @@
       "longitude": 8.3372,
       "region": "Alpes bernoises",
       "country": "Suisse",
-      "nearbyTowns": ["Meiringen", "Gletsch", "Oberwald"]
+      "nearbyTowns": [
+        "Meiringen",
+        "Gletsch",
+        "Oberwald"
+      ]
     },
     "climbData": {
       "meiringenSide": {
         "startLocation": "Meiringen",
-        "length": 26.0,
+        "length": 26,
         "elevation": 1635,
         "averageGradient": 6.3,
-        "maxGradient": 11.0,
+        "maxGradient": 11,
         "difficulty": 8
       },
       "gletschSide": {
         "startLocation": "Gletsch",
-        "length": 6.0,
+        "length": 6,
         "elevation": 540,
-        "averageGradient": 9.0,
-        "maxGradient": 12.0,
+        "averageGradient": 9,
+        "maxGradient": 12,
         "difficulty": 8
       }
     },
@@ -351,25 +413,37 @@
       {
         "name": "Lacs de barrage",
         "description": "Série de lacs artificiels aux eaux turquoise, dont le Grimselsee et le Räterichsbodensee.",
-        "coordinates": [46.5700, 8.3290],
+        "coordinates": [
+          46.57,
+          8.329
+        ],
         "type": "natural"
       },
       {
         "name": "Hôtel historique Grimsel Hospiz",
         "description": "Hôtel de montagne traditionnel avec une histoire remontant au 14ème siècle.",
-        "coordinates": [46.5618, 8.3372],
+        "coordinates": [
+          46.5618,
+          8.3372
+        ],
         "type": "accommodation"
       },
       {
         "name": "Vue sur le glacier du Rhône",
         "description": "Panorama sur la source du Rhône et son glacier depuis le versant de Gletsch.",
-        "coordinates": [46.5618, 8.3372],
+        "coordinates": [
+          46.5618,
+          8.3372
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Nufenen-Chelenalp",
         "description": "Zone protégée avec une flore alpine rare et diversifiée.",
-        "coordinates": [46.5550, 8.3300],
+        "coordinates": [
+          46.555,
+          8.33
+        ],
         "type": "natural"
       }
     ],
@@ -378,9 +452,15 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré à élevé pendant la saison touristique",
       "winterClosure": "Fermé d'octobre à mai/juin",
-      "facilities": ["Hôtel-restaurant au sommet", "Aires de pique-nique", "Toilettes"],
+      "facilities": [
+        "Hôtel-restaurant au sommet",
+        "Aires de pique-nique",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Sources au sommet et dans les sites touristiques le long de l'ascension"]
+      "waterPoints": [
+        "Sources au sommet et dans les sites touristiques le long de l'ascension"
+      ]
     },
     "images": {
       "main": "/images/cols/grimsel/main.jpg",
@@ -398,7 +478,10 @@
       "Le versant depuis Gletsch est plus court mais plus raide.",
       "Souvent combiné avec le Furkapass et le Sustenpass pour le fameux circuit des Trois Cols."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "grimselpass"
   },
   {
     "id": "passo-dello-stelvio",
@@ -409,7 +492,11 @@
       "longitude": 10.4541,
       "region": "Alpes du Tyrol du Sud",
       "country": "Italie",
-      "nearbyTowns": ["Bormio", "Prato allo Stelvio", "Santa Maria Val Müstair"]
+      "nearbyTowns": [
+        "Bormio",
+        "Prato allo Stelvio",
+        "Santa Maria Val Müstair"
+      ]
     },
     "climbData": {
       "bormioSide": {
@@ -417,7 +504,7 @@
         "length": 21.5,
         "elevation": 1533,
         "averageGradient": 7.1,
-        "maxGradient": 14.0,
+        "maxGradient": 14,
         "difficulty": 10
       },
       "pratoSide": {
@@ -425,15 +512,15 @@
         "length": 24.3,
         "elevation": 1808,
         "averageGradient": 7.4,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 10
       },
       "swissSide": {
         "startLocation": "Santa Maria Val Müstair",
-        "length": 19.0,
+        "length": 19,
         "elevation": 1492,
         "averageGradient": 7.9,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       }
     },
@@ -466,25 +553,37 @@
       {
         "name": "48 virages en épingle",
         "description": "Série impressionnante de virages numérotés sur le versant de Prato.",
-        "coordinates": [46.5550, 10.4730],
+        "coordinates": [
+          46.555,
+          10.473
+        ],
         "type": "landmark"
       },
       {
         "name": "Mémorial Fausto Coppi",
         "description": "Monument dédié au grand champion italien au sommet du col.",
-        "coordinates": [46.5253, 10.4541],
+        "coordinates": [
+          46.5253,
+          10.4541
+        ],
         "type": "monument"
       },
       {
         "name": "Point de confluence des trois frontières",
         "description": "Point proche du sommet où les frontières de l'Italie, de la Suisse et de l'Autriche se rencontrent.",
-        "coordinates": [46.5151, 10.4834],
+        "coordinates": [
+          46.5151,
+          10.4834
+        ],
         "type": "landmark"
       },
       {
         "name": "Hôtel Stelvio",
         "description": "Hôtel historique situé au sommet du col, ouvert depuis 1954.",
-        "coordinates": [46.5253, 10.4541],
+        "coordinates": [
+          46.5253,
+          10.4541
+        ],
         "type": "accommodation"
       }
     ],
@@ -493,9 +592,17 @@
       "roadCondition": "Excellente, bien entretenue mais étroite par endroits",
       "trafficLevel": "Élevé en été, surtout les weekends",
       "winterClosure": "Fermé d'octobre à mai",
-      "facilities": ["Restaurants au sommet", "Boutiques souvenirs", "Point d'information", "Toilettes"],
+      "facilities": [
+        "Restaurants au sommet",
+        "Boutiques souvenirs",
+        "Point d'information",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Fontaine au sommet", "Restaurants à mi-parcours"]
+      "waterPoints": [
+        "Fontaine au sommet",
+        "Restaurants à mi-parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/stelvio/main.jpg",
@@ -513,6 +620,9 @@
       "Le versant de Prato est plus difficile psychologiquement car on voit les nombreux virages en épingle devant soi.",
       "Emportez suffisamment d'eau et de nourriture, les points de ravitaillement peuvent être éloignés."
     ],
-    "recommendedBikeTypes": ["Vélo de route", "Gravel avec cassette adaptée"]
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel avec cassette adaptée"
+    ]
   }
 ]

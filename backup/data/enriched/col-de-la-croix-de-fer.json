@@ -1,0 +1,53 @@
+{
+  "id": "col-de-la-croix-de-fer",
+  "name": "Col de la Croix de Fer",
+  "slug": "col-de-la-croix-de-fer",
+  "country": "",
+  "region": "",
+  "altitude": 2067,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 4,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/croix-de-fer/main.jpg",
+    "gallery": [
+      "/images/cols/croix-de-fer/saint-jean-side.jpg",
+      "/images/cols/croix-de-fer/bourg-oisans-side.jpg",
+      "/images/cols/croix-de-fer/lakes.jpg",
+      "/images/cols/croix-de-fer/cross.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.885Z"
+}

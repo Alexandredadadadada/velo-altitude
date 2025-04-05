@@ -1,0 +1,135 @@
+{
+  "id": "croix-de-fer",
+  "name": {
+    "fr": "Col de la Croix de Fer",
+    "en": "Col de la Croix de Fer",
+    "de": "Col de la Croix de Fer",
+    "it": "Colle della Croce di Ferro",
+    "es": "Col de la Croix de Fer"
+  },
+  "altitude": 2067,
+  "location": {
+    "latitude": 45.2242,
+    "longitude": 6.1856,
+    "region": "Savoie",
+    "country": "France",
+    "nearbyTowns": ["Saint-Jean-de-Maurienne", "Le Bourg-d'Oisans", "Saint-Sorlin-d'Arves"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Saint-Jean-de-Maurienne",
+      "length": 29.5,
+      "elevation": 1522,
+      "averageGradient": 5.2,
+      "maxGradient": 11.0,
+      "difficulty": 8
+    },
+    "alternateSide": {
+      "startLocation": "Le Bourg-d'Oisans",
+      "length": 27.5,
+      "elevation": 1550,
+      "averageGradient": 5.6,
+      "maxGradient": 11.0,
+      "difficulty": 8
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1947,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 23,
+    "giroAppearances": 0,
+    "famousStories": [
+      "Le nom du col vient d'une croix en fer forgé érigée au sommet, symbole de la foi dans cette région isolée.",
+      "La Croix de Fer est célèbre pour ses paysages à couper le souffle et ses lacs alpins, notamment le lac de Grand Maison.",
+      "C'est l'un des cols principaux de la cyclosportive La Marmotte, l'une des plus difficiles d'Europe.",
+      "En 1986, Bernard Hinault et Greg LeMond ont franchi ce col ensemble, symbolisant leur rivalité et leur alliance complexe lors de ce Tour de France.",
+      "Le col offre une vue imprenable sur les aiguilles d'Arves, un ensemble de pics rocheux caractéristiques du paysage."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Pierre Latour",
+        "time": "1:12:00",
+        "year": 2017,
+        "side": "Saint-Jean-de-Maurienne"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "La Croix en fer forgé",
+      "description": "Symbole historique du col, croix en fer forgé érigée au sommet qui a donné son nom au col.",
+      "coordinates": {
+        "latitude": 45.2242,
+        "longitude": 6.1856
+      }
+    },
+    {
+      "name": "Barrage de Grand Maison",
+      "description": "Immense lac artificiel situé en contrebas du col, visible lors de l'ascension depuis Bourg d'Oisans.",
+      "coordinates": {
+        "latitude": 45.2000,
+        "longitude": 6.1500
+      }
+    },
+    {
+      "name": "Col du Glandon",
+      "description": "Col voisin situé à seulement 2km, souvent franchi en combinaison avec la Croix de Fer.",
+      "coordinates": {
+        "latitude": 45.2336,
+        "longitude": 6.1736
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de juin à octobre",
+    "bestPeriod": "Juillet à septembre",
+    "notes": "Fermé l'hiver en raison de l'enneigement. Les conditions météorologiques peuvent changer rapidement, même en été."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.cyclingcols.com/sites/default/files/col/Croix%20de%20Fer/P1010416.JPG",
+        "caption": "La croix en fer forgé au sommet du col",
+        "credit": "CyclingCols.com"
+      },
+      {
+        "url": "https://www.climbbybike.com/images/Col_de_la_Croix_de_Fer_2.jpg",
+        "caption": "Vue panoramique depuis le sommet sur les Alpes",
+        "credit": "ClimbByBike.com"
+      },
+      {
+        "url": "https://media.routard.com/image/88/7/photo.1563887.jpg",
+        "caption": "Le lac de Grand Maison sur la route du col",
+        "credit": "Routard.com"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=qrLSJ8UvQjA",
+        "title": "Col de la Croix de Fer - Ascension depuis Saint-Jean-de-Maurienne",
+        "duration": "1:50:23"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.3 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 recommandée avec un compact 34-50",
+    "preparation": "Entraînement pour l'endurance et la gestion de l'effort sur la durée",
+    "cautionPoints": [
+      "Longueur de l'ascension qui nécessite une bonne gestion de l'effort",
+      "Quelques passages plats ou descendants qui cassent le rythme",
+      "Changements météorologiques rapides fréquents"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Saint-Jean-de-Maurienne", "Saint-Sorlin-d'Arves", "Sommet"],
+    "restaurants": ["Auberge de la Croix de Fer au sommet (ouvert en saison)"],
+    "accommodation": ["Hôtels à Saint-Jean-de-Maurienne et Saint-Sorlin-d'Arves"],
+    "bikeMechanic": "Magasins de vélos à Saint-Jean-de-Maurienne"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["marmotte-granfondo", "boucle-galibier-croix-de-fer"]
+  }
+}

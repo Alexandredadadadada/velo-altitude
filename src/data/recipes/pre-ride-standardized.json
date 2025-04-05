@@ -1,0 +1,882 @@
+[
+  {
+    "id": "pre-1",
+    "name": "Boisson d'énergie au miel et citron",
+    "description": "Une boisson simple et efficace pour hydrater et charger en glycogène avant une sortie longue ou intense.",
+    "image": "/images/recipes/boisson-miel-citron.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "easy",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "500ml d'eau",
+      "40g de miel (environ 2 cuillères à soupe)",
+      "Jus d'un demi-citron",
+      "1 pincée de sel de mer"
+    ],
+    "instructions": [
+      "Mélanger tous les ingrédients dans une bouteille ou un shaker.",
+      "Bien agiter jusqu'à dissolution complète du miel.",
+      "Consommer progressivement dans les 60 à 90 minutes avant l'effort."
+    ],
+    "nutritionalInfo": {
+      "calories": 130,
+      "protein": 0,
+      "carbs": 34,
+      "fat": 0,
+      "fiber": 0,
+      "sugar": 32
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "vegan",
+      "gluten-free",
+      "high-carb"
+    ],
+    "nutrientFocus": "high-carb",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "race-day",
+        "high-intensity",
+        "long-ride"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Le miel fournit un mélange de glucose et fructose facilement assimilables. Le sel aide à la préhydratation et prévient les crampes.",
+    "variations": [
+      "Ajoutez 1/4 cuillère à café de gingembre en poudre pour favoriser la digestion",
+      "Remplacez le miel par du sirop d'érable pour une version végane stricte"
+    ],
+    "slug": "boisson-denergie-au-miel-et-citron"
+  },
+  {
+    "id": "pre-2",
+    "name": "Pancakes de patate douce et avoine",
+    "description": "Des pancakes riches en glucides complexes, idéaux avant une sortie longue pour fournir une énergie durable.",
+    "image": "/images/recipes/pancakes-patate-douce.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 15,
+    "servings": 2,
+    "ingredients": [
+      "200g de patate douce cuite et écrasée",
+      "100g de flocons d'avoine moulus",
+      "2 œufs",
+      "100ml de lait (vache ou végétal)",
+      "1 c. à café de levure chimique",
+      "1 c. à café de cannelle",
+      "1 c. à soupe de miel",
+      "1 pincée de sel"
+    ],
+    "instructions": [
+      "Cuire la patate douce au four ou à la vapeur, puis l'écraser à la fourchette.",
+      "Mixer les flocons d'avoine pour obtenir une farine.",
+      "Mélanger tous les ingrédients jusqu'à obtenir une pâte homogène.",
+      "Chauffer une poêle antiadhésive légèrement huilée à feu moyen.",
+      "Verser des petites louches de pâte et cuire 2-3 minutes de chaque côté.",
+      "Servir avec un peu de yaourt, de miel ou de fruits frais."
+    ],
+    "nutritionalInfo": {
+      "calories": 380,
+      "protein": 14,
+      "carbs": 65,
+      "fat": 8,
+      "fiber": 8,
+      "sugar": 18
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "high-carb"
+    ],
+    "nutrientFocus": "high-carb",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build"
+      ],
+      "effortTypes": [
+        "long-ride",
+        "moderate-intensity"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Consommez 2 à 3 heures avant l'effort pour permettre une digestion complète. La patate douce fournit des glucides complexes à libération lente.",
+    "variations": [
+      "Ajoutez 30g de protéine en poudre pour augmenter l'apport protéique",
+      "Version salée: omettez le miel et la cannelle, ajoutez des herbes et du fromage"
+    ],
+    "slug": "pancakes-de-patate-douce-et-avoine"
+  },
+  {
+    "id": "pre-3",
+    "name": "Bol de riz au poulet et légumes",
+    "description": "Un repas complet riche en glucides complexes et protéines maigres, parfait avant un entraînement intense ou une compétition.",
+    "image": "/images/recipes/riz-poulet-legumes.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 20,
+    "servings": 2,
+    "ingredients": [
+      "150g de riz blanc",
+      "200g de blanc de poulet",
+      "100g de carottes",
+      "100g de courgette",
+      "50g de petits pois",
+      "1 c. à soupe d'huile d'olive",
+      "Sel, poivre, herbes de Provence"
+    ],
+    "instructions": [
+      "Cuire le riz selon les instructions du paquet.",
+      "Couper le poulet en morceaux, assaisonner avec sel et poivre.",
+      "Faire revenir le poulet dans l'huile d'olive jusqu'à ce qu'il soit bien cuit.",
+      "Râper les carottes et la courgette, les ajouter avec les petits pois. Cuire 5 minutes.",
+      "Mélanger le riz et les légumes au poulet. Assaisonner avec herbes de Provence."
+    ],
+    "nutritionalInfo": {
+      "calories": 450,
+      "protein": 35,
+      "carbs": 55,
+      "fat": 10,
+      "fiber": 6,
+      "sugar": 4
+    },
+    "dietaryPreferences": [
+      "high-carb",
+      "low-fiber"
+    ],
+    "nutrientFocus": "high-carb",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "race-day",
+        "high-intensity"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Consommez 3 à 4 heures avant l'effort. Le riz blanc est préféré au riz brun car il est plus facilement digestible avant l'effort.",
+    "variations": [
+      "Remplacez le poulet par du thon ou des œufs pour une alternative différente",
+      "Utilisez du quinoa à la place du riz pour augmenter l'apport en protéines"
+    ],
+    "slug": "bol-de-riz-au-poulet-et-legumes"
+  },
+  {
+    "id": "pre-4",
+    "name": "Smoothie pré-entraînement banane-avoine",
+    "description": "Un smoothie énergétique facile à digérer, parfait pour les matins d'entraînement quand le temps est limité.",
+    "image": "/images/recipes/smoothie-banane-avoine.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "easy",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "1 banane mûre",
+      "30g de flocons d'avoine",
+      "250ml de lait (vache ou végétal)",
+      "1 c. à soupe de miel ou sirop d'érable",
+      "1 c. à café de beurre d'amande",
+      "Glaçons (optionnel)"
+    ],
+    "instructions": [
+      "Placer tous les ingrédients dans un mixeur.",
+      "Mixer jusqu'à obtenir une consistance lisse.",
+      "Servir immédiatement ou conserver au frais jusqu'à 1 heure avant la consommation."
+    ],
+    "nutritionalInfo": {
+      "calories": 320,
+      "protein": 9,
+      "carbs": 60,
+      "fat": 6,
+      "fiber": 5,
+      "sugar": 35
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "high-carb"
+    ],
+    "nutrientFocus": "high-carb",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "moderate-intensity",
+        "morning-ride"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Idéal 60 à 90 minutes avant l'effort. Pour une digestion plus rapide, laissez reposer les flocons d'avoine dans le lait quelques minutes avant de mixer.",
+    "variations": [
+      "Ajoutez 1/2 tasse de baies pour des antioxydants supplémentaires",
+      "Inclure 1 scoop de protéine en poudre pour un apport protéique accru"
+    ],
+    "slug": "smoothie-pre-entrainement-banane-avoine"
+  },
+  {
+    "id": "pre-5",
+    "name": "Barres énergétiques maison aux dattes et noix",
+    "description": "Des barres énergétiques naturelles qui fournissent des glucides rapidement assimilables et des graisses saines pour un effort prolongé.",
+    "image": "/images/recipes/barres-dattes-noix.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 0,
+    "servings": 8,
+    "ingredients": [
+      "200g de dattes dénoyautées",
+      "100g d'amandes",
+      "50g de noix de cajou",
+      "50g de flocons d'avoine",
+      "2 c. à soupe de graines de chia",
+      "1 c. à soupe de miel",
+      "1 c. à café d'extrait de vanille",
+      "1 pincée de sel"
+    ],
+    "instructions": [
+      "Si les dattes sont sèches, les faire tremper 10 minutes dans l'eau chaude puis égoutter.",
+      "Mixer les amandes et les noix de cajou en morceaux grossiers.",
+      "Ajouter les dattes, le miel, la vanille et mixer jusqu'à obtenir une pâte collante.",
+      "Incorporer les flocons d'avoine, les graines de chia et le sel.",
+      "Étaler la préparation dans un moule carré tapissé de papier cuisson.",
+      "Réfrigérer au moins 2 heures avant de couper en barres.",
+      "Conserver au réfrigérateur jusqu'à 1 semaine."
+    ],
+    "nutritionalInfo": {
+      "calories": 220,
+      "protein": 5,
+      "carbs": 30,
+      "fat": 10,
+      "fiber": 4,
+      "sugar": 20
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "vegan",
+      "high-carb"
+    ],
+    "nutrientFocus": "energy-dense",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "long-ride",
+        "endurance-session"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Consommez 30 à 60 minutes avant l'effort ou emportez avec vous pour une collation pendant l'effort. Les dattes fournissent des sucres naturels facilement assimilables.",
+    "variations": [
+      "Ajoutez des pépites de chocolat noir pour plus d'antioxydants",
+      "Incorporez des cranberries séchées pour une touche d'acidité et plus d'antioxydants"
+    ],
+    "slug": "barres-energetiques-maison-aux-dattes-et-noix"
+  },
+  {
+    "id": "pre-6",
+    "name": "Bagel au saumon fumé et fromage frais",
+    "description": "Un repas pré-entraînement équilibré apportant des glucides complexes et des protéines de qualité, idéal pour une sortie longue.",
+    "image": "/images/recipes/bagel-saumon-fromage.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "easy",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "1 bagel complet",
+      "80g de saumon fumé",
+      "30g de fromage frais allégé",
+      "Quelques rondelles de concombre",
+      "Jus de citron",
+      "Poivre noir",
+      "Aneth frais (optionnel)"
+    ],
+    "instructions": [
+      "Couper le bagel en deux et le faire légèrement toaster.",
+      "Étaler le fromage frais sur les deux moitiés.",
+      "Disposer les tranches de saumon fumé.",
+      "Ajouter les rondelles de concombre.",
+      "Arroser d'un filet de jus de citron, poivrer et garnir d'aneth."
+    ],
+    "nutritionalInfo": {
+      "calories": 380,
+      "protein": 25,
+      "carbs": 45,
+      "fat": 12,
+      "fiber": 5,
+      "sugar": 6
+    },
+    "dietaryPreferences": [
+      "high-protein",
+      "low-fiber"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "long-ride",
+        "moderate-intensity"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Consommez 2 à 3 heures avant l'effort. Le saumon apporte des protéines de qualité et des oméga-3 anti-inflammatoires.",
+    "variations": [
+      "Remplacez le saumon par du poulet ou du tofu pour une alternative",
+      "Ajoutez un œuf poché pour augmenter l'apport protéique"
+    ],
+    "slug": "bagel-au-saumon-fume-et-fromage-frais"
+  },
+  {
+    "id": "pre-7",
+    "name": "Pasta salad aux légumes et jambon",
+    "description": "Une salade de pâtes complète et équilibrée, idéale comme repas pré-compétition ou avant un entraînement long.",
+    "image": "/images/recipes/pasta-salad-jambon.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 10,
+    "servings": 2,
+    "ingredients": [
+      "150g de pâtes (penne ou fusilli)",
+      "100g de jambon blanc en dés",
+      "1 poivron rouge émincé",
+      "1 petit concombre en dés",
+      "10 tomates cerises coupées en deux",
+      "30g de fromage (mozzarella ou féta)",
+      "1 c. à soupe d'huile d'olive",
+      "1 c. à soupe de vinaigre balsamique",
+      "Sel, poivre, basilic frais"
+    ],
+    "instructions": [
+      "Cuire les pâtes al dente selon les instructions du paquet, les égoutter et les laisser refroidir.",
+      "Dans un saladier, mélanger les pâtes avec le jambon et les légumes coupés.",
+      "Ajouter le fromage émietté ou coupé en dés.",
+      "Assaisonner avec l'huile d'olive, le vinaigre balsamique, le sel et le poivre.",
+      "Parsemer de basilic frais ciselé avant de servir."
+    ],
+    "nutritionalInfo": {
+      "calories": 420,
+      "protein": 22,
+      "carbs": 60,
+      "fat": 12,
+      "fiber": 5,
+      "sugar": 8
+    },
+    "dietaryPreferences": [
+      "high-carb",
+      "low-fiber"
+    ],
+    "nutrientFocus": "high-carb",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "race-day",
+        "long-ride"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Préparable la veille pour les compétitions matinales. Consommez 3 à 4 heures avant l'effort pour assurer une digestion complète.",
+    "variations": [
+      "Version végétarienne: remplacez le jambon par des œufs durs ou du tofu",
+      "Pour une version plus légère, utilisez des pâtes complètes et ajoutez plus de légumes"
+    ],
+    "slug": "pasta-salad-aux-legumes-et-jambon"
+  },
+  {
+    "id": "pre-8",
+    "name": "Porridge salé au quinoa et œuf",
+    "description": "Un porridge salé original qui fournit des glucides complexes et des protéines, parfait avant un entraînement matinal.",
+    "image": "/images/recipes/porridge-sale-quinoa.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 20,
+    "servings": 1,
+    "ingredients": [
+      "50g de quinoa",
+      "150ml de bouillon de légumes",
+      "1 œuf",
+      "30g d'épinards frais",
+      "30g de champignons émincés",
+      "1 c. à café d'huile d'olive",
+      "Sel, poivre, paprika",
+      "Quelques feuilles de coriandre fraîche (optionnel)"
+    ],
+    "instructions": [
+      "Rincer le quinoa et le cuire dans le bouillon pendant 15-20 minutes jusqu'à absorption du liquide.",
+      "Pendant ce temps, faire revenir les champignons dans l'huile d'olive.",
+      "Ajouter les épinards et laisser flétrir.",
+      "Incorporer les légumes au quinoa.",
+      "Faire un puits au centre et y casser l'œuf.",
+      "Couvrir et laisser cuire 3-4 minutes jusqu'à ce que le blanc soit cuit.",
+      "Assaisonner avec sel, poivre et paprika. Garnir de coriandre."
+    ],
+    "nutritionalInfo": {
+      "calories": 310,
+      "protein": 15,
+      "carbs": 40,
+      "fat": 12,
+      "fiber": 6,
+      "sugar": 2
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "gluten-free"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build"
+      ],
+      "effortTypes": [
+        "moderate-intensity",
+        "morning-ride"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Consommez 1h30 à 2h avant l'effort. Le quinoa est une céréale complète qui apporte à la fois des glucides complexes et des protéines végétales.",
+    "variations": [
+      "Remplacez l'œuf par du tofu brouillé pour une version végane",
+      "Ajoutez des herbes fraîches et des épices pour varier les saveurs"
+    ],
+    "slug": "porridge-sale-au-quinoa-et-oeuf"
+  },
+  {
+    "id": "pre-9",
+    "name": "Wrap à la dinde et au houmous",
+    "description": "Un wrap léger mais énergétique, facile à digérer et parfait pour les heures précédant un effort modéré.",
+    "image": "/images/recipes/wrap-dinde-houmous.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "easy",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "1 tortilla de blé",
+      "80g de blanc de dinde émincé",
+      "2 c. à soupe de houmous",
+      "1/4 d'avocat tranché",
+      "Quelques feuilles de laitue",
+      "1/2 tomate en tranches",
+      "Jus de citron",
+      "Poivre noir"
+    ],
+    "instructions": [
+      "Étaler le houmous sur la tortilla.",
+      "Disposer les tranches de dinde, l'avocat, la laitue et la tomate.",
+      "Arroser d'un filet de jus de citron et poivrer.",
+      "Rouler fermement la tortilla et couper en deux."
+    ],
+    "nutritionalInfo": {
+      "calories": 350,
+      "protein": 25,
+      "carbs": 30,
+      "fat": 15,
+      "fiber": 6,
+      "sugar": 4
+    },
+    "dietaryPreferences": [
+      "high-protein",
+      "low-fiber"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "moderate-intensity",
+        "technique-session"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Idéal 1h30 à 2h avant l'effort. L'avocat apporte des graisses saines et le houmous des protéines végétales complémentaires à la dinde.",
+    "variations": [
+      "Remplacez la dinde par du poulet grillé ou du thon en conserve",
+      "Version végétarienne: utilisez du tofu mariné à la place de la dinde"
+    ],
+    "slug": "wrap-a-la-dinde-et-au-houmous"
+  },
+  {
+    "id": "pre-10",
+    "name": "Tartines de pain complet au beurre de cacahuète et banane",
+    "description": "Une collation simple mais efficace avant l'effort, apportant un bon équilibre entre glucides rapides et lents.",
+    "image": "/images/recipes/tartine-cacahuete-banane.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "easy",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "2 tranches de pain complet",
+      "2 c. à soupe de beurre de cacahuète naturel",
+      "1 banane mûre",
+      "1 c. à café de miel",
+      "1 pincée de cannelle (optionnel)"
+    ],
+    "instructions": [
+      "Toaster légèrement les tranches de pain.",
+      "Étaler le beurre de cacahuète sur chaque tranche.",
+      "Couper la banane en tranches et les disposer sur le beurre de cacahuète.",
+      "Drizzler avec le miel et saupoudrer de cannelle si désiré."
+    ],
+    "nutritionalInfo": {
+      "calories": 380,
+      "protein": 12,
+      "carbs": 55,
+      "fat": 15,
+      "fiber": 7,
+      "sugar": 25
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "vegan",
+      "high-carb"
+    ],
+    "nutrientFocus": "high-carb",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "moderate-intensity",
+        "morning-ride"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Idéal 60 à 90 minutes avant l'effort. La banane fournit des glucides rapides tandis que le pain complet apporte des glucides plus lents.",
+    "variations": [
+      "Utilisez du beurre d'amande à la place du beurre de cacahuète",
+      "Ajoutez quelques raisins secs ou baies pour des sucres supplémentaires"
+    ],
+    "slug": "tartines-de-pain-complet-au-beurre-de-cacahuete-et-banane"
+  },
+  {
+    "id": "pre-11",
+    "name": "Bowl d'énergie au quinoa et fruits secs",
+    "description": "Un bol équilibré riche en glucides complexes et protéines, idéal 2-3 heures avant une sortie longue ou intense.",
+    "image": "/images/recipes/bowl-quinoa-fruits-secs.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 15,
+    "servings": 2,
+    "ingredients": [
+      "150g de quinoa",
+      "400ml de lait d'amande ou de vache",
+      "1 c. à café de cannelle",
+      "1 c. à soupe de miel ou sirop d'érable",
+      "50g d'abricots secs coupés en morceaux",
+      "30g de raisins secs ou cranberries",
+      "30g d'amandes effilées",
+      "1 c. à soupe de graines de chia",
+      "1 banane coupée en rondelles"
+    ],
+    "instructions": [
+      "Rincer le quinoa à l'eau froide.",
+      "Dans une casserole, porter à ébullition le lait avec le quinoa.",
+      "Réduire à feu doux, ajouter la cannelle et laisser mijoter pendant 15 minutes en remuant occasionnellement.",
+      "Une fois le quinoa cuit, retirer du feu et incorporer le miel.",
+      "Ajouter les fruits secs et laisser reposer 5 minutes.",
+      "Servir dans des bols et garnir avec les amandes effilées, les graines de chia et les rondelles de banane."
+    ],
+    "nutritionalInfo": {
+      "calories": 420,
+      "protein": 14,
+      "carbs": 65,
+      "fat": 12,
+      "fiber": 9,
+      "sugar": 25
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "high-carb"
+    ],
+    "nutrientFocus": "high-carb",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "long-ride",
+        "moderate-intensity",
+        "high-intensity"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Le quinoa est une céréale complète offrant tous les acides aminés essentiels. Ce bowl peut être préparé la veille et réchauffé avant la sortie.",
+    "variations": [
+      "Ajoutez une cuillère de protéine en poudre pour augmenter l'apport protéique",
+      "Remplacez les fruits secs par des baies fraîches en saison"
+    ],
+    "slug": "bowl-denergie-au-quinoa-et-fruits-secs"
+  },
+  {
+    "id": "pre-12",
+    "name": "Muffins salés patate douce et feta",
+    "description": "Des muffins pratiques, riches en glucides complexes et protéines, parfaits à emporter pour un entraînement matinal.",
+    "image": "/images/recipes/muffins-patate-feta.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 25,
+    "servings": 6,
+    "ingredients": [
+      "200g de patate douce cuite et écrasée",
+      "150g de farine complète",
+      "100g de feta émiettée",
+      "60ml d'huile d'olive",
+      "2 œufs",
+      "80ml de lait",
+      "1 c. à café de levure chimique",
+      "1 petit oignon émincé",
+      "1 c. à soupe de graines de courge",
+      "Sel, poivre, thym"
+    ],
+    "instructions": [
+      "Préchauffer le four à 180°C et préparer un moule à muffins.",
+      "Dans une poêle, faire revenir l'oignon dans un peu d'huile jusqu'à ce qu'il soit translucide.",
+      "Dans un grand bol, mélanger la farine, la levure, le sel, le poivre et le thym.",
+      "Dans un autre bol, battre les œufs, puis ajouter l'huile d'olive, le lait et la patate douce écrasée.",
+      "Incorporer les ingrédients liquides aux ingrédients secs, puis ajouter l'oignon et la feta.",
+      "Répartir la pâte dans le moule à muffins et saupoudrer de graines de courge.",
+      "Cuire au four pendant 20-25 minutes jusqu'à ce que les muffins soient dorés et fermes."
+    ],
+    "nutritionalInfo": {
+      "calories": 250,
+      "protein": 8,
+      "carbs": 25,
+      "fat": 14,
+      "fiber": 3,
+      "sugar": 4
+    },
+    "dietaryPreferences": [
+      "vegetarian"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "moderate-intensity",
+        "morning-ride"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Ces muffins peuvent être préparés en lot et congelés. Ils se conservent 3 jours au réfrigérateur. Idéaux 1h30-2h avant l'effort.",
+    "variations": [
+      "Ajoutez des épinards hachés ou des poivrons pour plus de nutriments",
+      "Remplacez la feta par du fromage de chèvre ou du cheddar pour varier les saveurs"
+    ],
+    "slug": "muffins-sales-patate-douce-et-feta"
+  },
+  {
+    "id": "pre-13",
+    "name": "Pâtes au pesto d'avocat et poulet",
+    "description": "Un plat équilibré riche en glucides complexes, protéines maigres et graisses saines pour une sortie longue ou intense.",
+    "image": "/images/recipes/pates-pesto-avocat.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 15,
+    "servings": 2,
+    "ingredients": [
+      "160g de pâtes (de préférence complètes)",
+      "200g de blanc de poulet cuit et émincé",
+      "1 avocat mûr",
+      "30g de basilic frais",
+      "1 gousse d'ail",
+      "2 c. à soupe de jus de citron",
+      "2 c. à soupe d'huile d'olive",
+      "20g de parmesan râpé",
+      "20g de pignons de pin",
+      "Sel, poivre"
+    ],
+    "instructions": [
+      "Cuire les pâtes al dente selon les instructions du paquet.",
+      "Pendant ce temps, préparer le pesto : mixer l'avocat, le basilic, l'ail, le jus de citron, l'huile d'olive et le parmesan. Saler et poivrer selon le goût.",
+      "Faire griller légèrement les pignons de pin dans une poêle sèche.",
+      "Égoutter les pâtes et les mélanger immédiatement avec le pesto d'avocat.",
+      "Ajouter le poulet émincé et bien mélanger.",
+      "Servir chaud ou froid, garni de pignons de pin grillés et éventuellement de parmesan supplémentaire."
+    ],
+    "nutritionalInfo": {
+      "calories": 550,
+      "protein": 35,
+      "carbs": 60,
+      "fat": 22,
+      "fiber": 8,
+      "sugar": 3
+    },
+    "dietaryPreferences": [
+      "high-protein"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "long-ride",
+        "high-intensity"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Consommez ce repas 2-3 heures avant l'effort. L'avocat fournit des graisses saines qui ralentissent l'absorption des glucides pour une énergie durable.",
+    "variations": [
+      "Version végétarienne: remplacez le poulet par 100g de pois chiches ou tofu ferme",
+      "Pour un effort très intense ou par temps froid, augmentez la portion de pâtes à 100g par personne"
+    ],
+    "slug": "pates-au-pesto-davocat-et-poulet"
+  },
+  {
+    "id": "pre-14",
+    "name": "Bol de riz basmati au saumon et légumes verts",
+    "description": "Un repas complet, facilement digestible et riche en nutriments essentiels pour préparer un effort prolongé ou intense.",
+    "image": "/images/recipes/riz-saumon-legumes.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "medium",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 20,
+    "servings": 2,
+    "ingredients": [
+      "160g de riz basmati",
+      "200g de filet de saumon",
+      "200g d'asperges vertes",
+      "100g de petits pois frais ou surgelés",
+      "1 c. à soupe d'huile d'olive",
+      "1 citron (zeste et jus)",
+      "2 c. à soupe d'aneth frais haché",
+      "Sel, poivre"
+    ],
+    "instructions": [
+      "Cuire le riz basmati selon les instructions du paquet.",
+      "Pendant ce temps, préchauffer le four à 180°C.",
+      "Placer le filet de saumon sur une feuille de papier cuisson, arroser d'huile d'olive, saler et poivrer.",
+      "Cuire au four pendant 15-18 minutes selon l'épaisseur.",
+      "Cuire les asperges à la vapeur pendant 5 minutes, puis ajouter les petits pois pour 2 minutes supplémentaires.",
+      "Dans un bol, mélanger le riz cuit, les légumes cuits, le zeste et le jus de citron, et l'aneth haché.",
+      "Émietter le saumon cuit sur le dessus et servir."
+    ],
+    "nutritionalInfo": {
+      "calories": 420,
+      "protein": 30,
+      "carbs": 45,
+      "fat": 15,
+      "fiber": 6,
+      "sugar": 3
+    },
+    "dietaryPreferences": [
+      "gluten-free",
+      "high-protein"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "long-ride",
+        "endurance-session"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Le riz basmati a un index glycémique moyen, idéal 3-4 heures avant l'effort. Le saumon apporte des protéines de qualité et des acides gras oméga-3 anti-inflammatoires.",
+    "variations": [
+      "Remplacez le saumon par du thon ou des crevettes pour varier les apports",
+      "Version végétarienne: remplacez le saumon par du tofu ferme mariné au soja et citron"
+    ],
+    "slug": "bol-de-riz-basmati-au-saumon-et-legumes-verts"
+  },
+  {
+    "id": "pre-15",
+    "name": "Energy balls aux dattes et cacao",
+    "description": "Des bouchées énergétiques naturelles, idéales comme collation 60-90 minutes avant l'entraînement pour un boost d'énergie rapide.",
+    "image": "/images/recipes/energy-balls-dattes-cacao.jpg",
+    "mealType": "pre-ride",
+    "difficulty": "easy",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 0,
+    "servings": 10,
+    "ingredients": [
+      "200g de dattes dénoyautées (trempées 10 minutes dans l'eau chaude si elles sont sèches)",
+      "100g d'amandes",
+      "2 c. à soupe de cacao en poudre non sucré",
+      "2 c. à soupe de beurre d'amande",
+      "1 c. à café de vanille",
+      "1 pincée de sel",
+      "2 c. à soupe de pépites de chocolat noir (70% minimum)",
+      "Noix de coco râpée pour l'enrobage (optionnel)"
+    ],
+    "instructions": [
+      "Égoutter les dattes si elles ont été trempées.",
+      "Dans un robot culinaire, mixer les amandes jusqu'à obtenir une texture de farine grossière.",
+      "Ajouter les dattes, le cacao, le beurre d'amande, la vanille et le sel. Mixer jusqu'à obtenir une pâte collante.",
+      "Incorporer les pépites de chocolat et mélanger brièvement.",
+      "Former des boules d'environ 30g avec les mains légèrement humides.",
+      "Rouler dans la noix de coco râpée si désiré.",
+      "Réfrigérer au moins 30 minutes avant de consommer."
+    ],
+    "nutritionalInfo": {
+      "calories": 140,
+      "protein": 3,
+      "carbs": 20,
+      "fat": 7,
+      "fiber": 3,
+      "sugar": 15
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ],
+    "nutrientFocus": "high-carb",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "high-intensity",
+        "morning-ride"
+      ],
+      "timeOfDay": "pre-workout"
+    },
+    "tips": "Ces energy balls se conservent une semaine au réfrigérateur ou un mois au congélateur. Consommez 1-2 boules 60-90 minutes avant l'effort.",
+    "variations": [
+      "Ajoutez 1 c. à soupe de café soluble pour un effet stimulant avant l'effort",
+      "Incorporez 1 c. à soupe de poudre de matcha pour ses effets antioxydants"
+    ],
+    "slug": "energy-balls-aux-dattes-et-cacao"
+  }
+]

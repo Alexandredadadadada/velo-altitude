@@ -1,0 +1,69 @@
+{
+  "id": "col-du-pfaffenschlick",
+  "name": "Col du Pfaffenschlick",
+  "region": "vosges-nord",
+  "country": "France",
+  "altitude": 392,
+  "length": 5.6,
+  "avgGradient": 4.8,
+  "maxGradient": 7.5,
+  "difficulty": "easy",
+  "elevationGain": 269,
+  "startLocation": "Saverne",
+  "endLocation": "Col du Pfaffenschlick",
+  "description": "Le Col du Pfaffenschlick est une montée accessible qui relie la plaine d'Alsace au plateau lorrain à travers la trouée de Saverne. Cette ascension offre une transition paysagère remarquable entre les influences alsaciennes et lorraines, avec une route sinueuse qui serpente à travers des forêts mixtes.",
+  "history": "Ce col a toujours été un passage stratégique entre l'Alsace et la Lorraine. La route actuelle suit en partie l'ancienne voie romaine qui reliait Strasbourg à Metz. Au Moyen Âge, le col était surveillé par les moines de l'abbaye de Marmoutier, d'où son nom (\"Pfaffen\" signifiant \"moine\" en allemand).",
+  "imageUrl": "/images/cols/pfaffenschlick/main.jpg",
+  "profileUrl": "/images/cols/pfaffenschlick/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Est (Saverne)",
+      "startLocation": "Saverne",
+      "length": 5.6,
+      "elevationGain": 269,
+      "avgGradient": 4.8,
+      "maxGradient": 7.5,
+      "difficulty": "easy",
+      "description": "Montée progressive idéale pour les débutants"
+    },
+    {
+      "name": "Versant Ouest (Lutzelbourg)",
+      "startLocation": "Lutzelbourg",
+      "length": 4.9,
+      "elevationGain": 235,
+      "avgGradient": 4.8,
+      "maxGradient": 6.5,
+      "difficulty": "easy",
+      "description": "Ascension légèrement plus courte avec de beaux points de vue sur la vallée"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Virage du Château - Sommet",
+      "length": 2.3,
+      "gradient": 5.5,
+      "description": "Section finale avec vue sur le château de Saverne"
+    }
+  ],
+  "touristicInfo": "La région regorge d'attractions touristiques comme le château des Rohan à Saverne, le jardin botanique et le parc animalier de Sainte-Croix. Le canal de la Marne au Rhin avec son plan incliné de Saint-Louis-Arzviller est également un site remarquable à proximité.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Saverne et aires de repos",
+      "description": "Plusieurs points d'eau sur le parcours"
+    },
+    {
+      "type": "food",
+      "location": "3km après le sommet",
+      "description": "Auberge du Col avec terrasse panoramique"
+    }
+  ],
+  "bestTimeToVisit": "Mars à novembre",
+  "weatherInfo": "Route bien protégée des vents et praticable presque toute l'année. La neige est rare mais possible entre décembre et février.",
+  "strava": {
+    "segmentId": "378654",
+    "komTime": "14:50",
+    "komName": "Guillaume Martin"
+  },
+  "slug": "col-du-pfaffenschlick"
+}

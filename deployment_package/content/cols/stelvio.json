@@ -1,0 +1,143 @@
+{
+  "id": "stelvio",
+  "name": {
+    "fr": "Passo dello Stelvio",
+    "en": "Stelvio Pass",
+    "de": "Stilfserjoch",
+    "it": "Passo dello Stelvio",
+    "es": "Puerto de Stelvio"
+  },
+  "altitude": 2758,
+  "location": {
+    "latitude": 46.5253,
+    "longitude": 10.4541,
+    "region": "Alpes italiennes",
+    "country": "Italie",
+    "nearbyTowns": ["Bormio", "Prato allo Stelvio", "Santa Maria Val Müstair"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Bormio",
+      "length": 21.5,
+      "elevation": 1533,
+      "averageGradient": 7.1,
+      "maxGradient": 14,
+      "difficulty": 10
+    },
+    "alternateSide": {
+      "startLocation": "Prato allo Stelvio",
+      "length": 24.3,
+      "elevation": 1808,
+      "averageGradient": 7.4,
+      "maxGradient": 12,
+      "difficulty": 10
+    },
+    "thirdSide": {
+      "startLocation": "Santa Maria Val Müstair",
+      "length": 19,
+      "elevation": 1492,
+      "averageGradient": 7.9,
+      "maxGradient": 12,
+      "difficulty": 9
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1953,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 0,
+    "giroAppearances": 26,
+    "famousStories": [
+      "Le Stelvio est considéré comme le plus haut col routier des Alpes orientales et l'une des routes les plus spectaculaires d'Europe.",
+      "Construit entre 1820 et 1825 sous l'Empire austro-hongrois par l'ingénieur Carlo Donegani pour connecter le Tyrol à la Lombardie.",
+      "Fausto Coppi l'a franchi en tête lors du Giro d'Italia de 1953, année où il remporta son 5ème et dernier Giro.",
+      "En 2012, l'étape du Giro passant par le Stelvio fut neutralisée à cause de conditions météorologiques extrêmes, provoquant une controverse.",
+      "Ses 48 virages en épingle côté Prato sont numérotés et constituent l'une des attractions touristiques les plus populaires des Alpes italiennes."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Marco Pantani",
+        "time": "1:13:55",
+        "year": 1994,
+        "side": "Bormio"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Les 48 virages",
+      "description": "La section emblématique avec 48 virages en épingle numérotés, offrant des vues spectaculaires sur la vallée.",
+      "coordinates": {
+        "latitude": 46.5150,
+        "longitude": 10.4400
+      }
+    },
+    {
+      "name": "Monument Fausto Coppi",
+      "description": "Monument dédié au champion italien, situé près du sommet.",
+      "coordinates": {
+        "latitude": 46.5259,
+        "longitude": 10.4535
+      }
+    },
+    {
+      "name": "Glacier de l'Ortles",
+      "description": "Vue imprenable sur le glacier du massif de l'Ortles, visible depuis plusieurs points de l'ascension côté Prato.",
+      "coordinates": {
+        "latitude": 46.5081,
+        "longitude": 10.5423
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de début juin à fin octobre",
+    "bestPeriod": "Mi-juin à mi-septembre",
+    "notes": "La neige peut rester tardivement au printemps et les chutes précoces peuvent survenir dès septembre."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.cyclingcols.com/sites/default/files/col/stelvio%20%28155%29.JPG",
+        "caption": "Vue aérienne des 48 virages côté Prato",
+        "credit": "CyclingCols.com"
+      },
+      {
+        "url": "https://www.dangerousroads.org/images/stories/__Roads00000r/Stelvio%20Pass11.jpg",
+        "caption": "Panorama depuis le sommet",
+        "credit": "DangerousRoads.org"
+      },
+      {
+        "url": "https://i0.wp.com/www.colconquerors.com/wp-content/uploads/2019/03/stelvio-pass.png",
+        "caption": "Profil de l'ascension depuis Bormio",
+        "credit": "ColConquerors.com"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=LdZ_VWkUCGg",
+        "title": "GCN monte le Stelvio - Les trois versants",
+        "duration": "15:24"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.2 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 ou 11-34 recommandée avec un compact 34-50 pour la majorité des cyclistes",
+    "preparation": "Programme d'entraînement spécifique de 12 semaines recommandé avec acclimatation à l'altitude",
+    "cautionPoints": [
+      "Variations météorologiques soudaines même en été",
+      "Fort trafic touristique en juillet-août",
+      "Risque d'hypothermie dans la descente qui peut être très froide même en été"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Bormio (départ)", "Trafoi (km 8 côté Prato)", "Au sommet"],
+    "restaurants": ["Rifugio Livrio (sommet)", "Tibet Hütte (2km avant sommet côté Prato)"],
+    "accommodation": ["Hotel Stelvio (sommet)", "Hotel Genziana (Bormio)"],
+    "bikeMechanic": "Disponible à Bormio et au sommet en haute saison"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-stelvio",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["gavia-stelvio-mortirolo", "swiss-italian-loop"]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "passo-sella",
+  "name": "Passo Sella",
+  "region": "dolomites",
+  "country": "Italie",
+  "altitude": 2244,
+  "length": 11.8,
+  "avgGradient": 7.1,
+  "maxGradient": 12,
+  "difficulty": "hard",
+  "elevationGain": 835,
+  "startLocation": "Canazei",
+  "endLocation": "Passo Sella",
+  "description": "Le Passo Sella est un col mythique des Dolomites, offrant une vue spectaculaire sur les massifs du Sella et du Sassolungo. Situé dans un cadre naturel classé au patrimoine mondial de l'UNESCO, il est considéré comme l'un des plus beaux cols cyclistes d'Europe pour ses paysages de falaises calcaires impressionnantes et ses panoramas à 360°.",
+  "history": "Le Passo Sella fait partie du célèbre Sella Ronda, un circuit traversant quatre cols des Dolomites. Il a été régulièrement inclus dans le Giro d'Italia depuis les années 1950, souvent dans des étapes de montagne décisives. En 1990, l'ascension fut le théâtre d'une attaque mémorable de Gianni Bugno qui consolida son maillot rose.",
+  "imageUrl": "/images/cols/passo-sella/main.jpg",
+  "profileUrl": "/images/cols/passo-sella/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Canazei - Passo Sella",
+      "length": 11.8,
+      "gradient": 7.1,
+      "description": "L'ascension classique depuis Canazei, empruntée régulièrement par le Giro"
+    },
+    {
+      "name": "Derniers 5 km",
+      "length": 5,
+      "gradient": 8.2,
+      "description": "La section finale plus pentue avec les vues les plus spectaculaires sur les Dolomites"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Nord (Canazei)",
+      "startLocation": "Canazei",
+      "length": 11.8,
+      "elevationGain": 835,
+      "avgGradient": 7.1,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "L'ascension traditionnelle depuis Val di Fassa, offrant des vues imprenables sur les massifs du Sella et du Sassolungo"
+    },
+    {
+      "name": "Versant Sud (Selva di Val Gardena)",
+      "startLocation": "Selva di Val Gardena",
+      "length": 5.5,
+      "elevationGain": 450,
+      "avgGradient": 8.2,
+      "maxGradient": 10,
+      "difficulty": "medium",
+      "description": "Version plus courte mais plus pentue depuis Val Gardena, souvent combinée avec d'autres cols dans le circuit Sella Ronda"
+    }
+  ],
+  "touristicInfo": "Le Passo Sella est situé au cœur des Dolomites, une région désignée patrimoine mondial de l'UNESCO. En été, de nombreux refuges de montagne sont ouverts. La région est connue pour ses activités de randonnée et d'alpinisme. En hiver, le col fait partie du célèbre domaine skiable Sella Ronda.",
+  "facilities": [
+    {
+      "type": "food",
+      "location": "Sommet du col",
+      "description": "Plusieurs refuges et restaurants offrant des spécialités tyroliennes"
+    },
+    {
+      "type": "water",
+      "location": "Sommet et mi-parcours",
+      "description": "Points d'eau disponibles au sommet et à mi-ascension"
+    },
+    {
+      "type": "bike-shop",
+      "location": "Canazei",
+      "description": "Plusieurs magasins de vélo proposant location, réparation et accessoires"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Les conditions sont généralement bonnes de juin à septembre. Le col peut être fermé en cas de chutes de neige précoces ou tardives. Les orages d'été sont fréquents en fin d'après-midi.",
+  "strava": {
+    "segmentId": "638795",
+    "komTime": "34:22",
+    "komName": "Filippo Ganna"
+  },
+  "slug": "passo-sella"
+}

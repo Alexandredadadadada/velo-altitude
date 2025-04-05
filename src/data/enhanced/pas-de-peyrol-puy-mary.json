@@ -1,0 +1,79 @@
+{
+  "id": "pas-de-peyrol-puy-mary",
+  "name": "Pas de Peyrol (Puy Mary)",
+  "region": "massif-central",
+  "country": "France",
+  "altitude": 1589,
+  "length": 12.4,
+  "avgGradient": 7.2,
+  "maxGradient": 15,
+  "difficulty": "hard",
+  "elevationGain": 897,
+  "startLocation": "Salers",
+  "endLocation": "Pas de Peyrol",
+  "description": "Le Pas de Peyrol, situé au pied du Puy Mary dans le massif des Monts du Cantal, est le plus haut col routier du Massif Central. Cette ascension spectaculaire offre des panoramas à 360° sur les volcans d'Auvergne et représente un défi majeur pour les cyclistes avec ses pentes parfois très raides.",
+  "history": "Le Pas de Peyrol a été gravi à plusieurs reprises par le Tour de France, notamment en 2020 où il a constitué le point culminant d'une étape remportée par Daniel Martinez. Le Puy Mary et ses environs ont été classés Grand Site de France en raison de leur valeur paysagère exceptionnelle.",
+  "imageUrl": "/images/cols/pas-peyrol/main.jpg",
+  "profileUrl": "/images/cols/pas-peyrol/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Virage de Mandailles - Sommet",
+      "length": 4.1,
+      "gradient": 10.2,
+      "description": "Section finale particulièrement difficile avec des pourcentages à deux chiffres"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Nord (Salers)",
+      "startLocation": "Salers",
+      "length": 12.4,
+      "elevationGain": 897,
+      "avgGradient": 7.2,
+      "maxGradient": 15,
+      "difficulty": "hard",
+      "description": "Ascension principale avec des vues imprenables sur le massif cantalien"
+    },
+    {
+      "name": "Versant Sud (Mandailles-Saint-Julien)",
+      "startLocation": "Mandailles-Saint-Julien",
+      "length": 7.8,
+      "elevationGain": 624,
+      "avgGradient": 8,
+      "maxGradient": 15,
+      "difficulty": "hard",
+      "description": "Montée plus courte mais particulièrement raide dans sa partie finale"
+    },
+    {
+      "name": "Versant Est (Le Falgoux)",
+      "startLocation": "Le Falgoux",
+      "length": 10.2,
+      "elevationGain": 662,
+      "avgGradient": 6.5,
+      "maxGradient": 12,
+      "difficulty": "medium",
+      "description": "Ascension par la vallée du Mars avec des paysages volcaniques impressionnants"
+    }
+  ],
+  "touristicInfo": "Le Puy Mary, sommet emblématique qui surplombe le col, est l'un des volcans majeurs d'Europe. Le site est classé Grand Site de France et offre une maison de site avec des expositions sur la géologie et l'histoire de la région. La région est également réputée pour sa gastronomie (fromage de Salers, viande de Salers).",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Maison de site du Puy Mary",
+      "description": "Point d'eau et toilettes (en saison)"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Buron (restaurant traditionnel) ouvert en saison estivale"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col fermé en hiver (généralement de novembre à mai). L'altitude et l'exposition peuvent entraîner des conditions météorologiques difficiles même en été, avec des changements rapides. Les orages sont fréquents en fin d'après-midi.",
+  "strava": {
+    "segmentId": "952384",
+    "komTime": "34:21",
+    "komName": "Romain Bardet"
+  },
+  "slug": "pas-de-peyrol-puy-mary"
+}

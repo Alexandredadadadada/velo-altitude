@@ -1,0 +1,69 @@
+{
+  "id": "col-du-telegraphe",
+  "name": "Col du Télégraphe",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 1566,
+  "length": 11.8,
+  "avgGradient": 7.3,
+  "maxGradient": 9.5,
+  "difficulty": "hard",
+  "elevationGain": 856,
+  "startLocation": "Saint-Michel-de-Maurienne",
+  "endLocation": "Col du Télégraphe",
+  "description": "Souvent utilisé comme prélude au Col du Galibier, le Col du Télégraphe est une ascension exigeante qui permet d'atteindre Valloire. Malgré une altitude modérée, c'est un col imposant en raison de sa pente constante et régulière qui use progressivement les organismes.",
+  "history": "Le Col du Télégraphe a été traversé pour la première fois par le Tour de France en 1911. Son nom vient de la présence d'un ancien système de transmission télégraphique de Chappe au sommet. Ce col est généralement franchi en combinaison avec le Galibier lors des étapes alpines du Tour.",
+  "imageUrl": "/images/cols/telegraphe/main.jpg",
+  "profileUrl": "/images/cols/telegraphe/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Saint-Michel-de-Maurienne)",
+      "startLocation": "Saint-Michel-de-Maurienne",
+      "length": 11.8,
+      "elevationGain": 856,
+      "avgGradient": 7.3,
+      "maxGradient": 9.5,
+      "difficulty": "hard",
+      "description": "L'ascension classique avec 12 kilomètres de montée régulière à travers la forêt"
+    },
+    {
+      "name": "Versant Sud (Valloire)",
+      "startLocation": "Valloire",
+      "length": 4.8,
+      "elevationGain": 150,
+      "avgGradient": 3.1,
+      "maxGradient": 5,
+      "difficulty": "easy",
+      "description": "Montée courte et facile souvent utilisée comme échauffement avant le Galibier"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Virage de Plan Fournier - Sommet",
+      "length": 5.2,
+      "gradient": 7.8,
+      "description": "Section finale après la sortie de la forêt, avec vue sur les sommets environnants"
+    }
+  ],
+  "touristicInfo": "Le col est dominé par le Fort du Télégraphe, une fortification militaire construite au 19ème siècle. Le site offre une vue spectaculaire sur la vallée de la Maurienne et les montagnes environnantes.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Fort du Télégraphe",
+      "description": "Fontaine près du fort"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Café-restaurant du Fort (ouvert en saison)"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Généralement accessible de mai à octobre. Des vents forts peuvent souffler au sommet. Le col est souvent ensoleillé mais peut être recouvert de brouillard en début de matinée.",
+  "strava": {
+    "segmentId": "793468",
+    "komTime": "33:25",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "col-du-telegraphe"
+}

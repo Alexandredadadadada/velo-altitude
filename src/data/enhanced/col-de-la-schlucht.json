@@ -1,0 +1,79 @@
+{
+  "id": "col-de-la-schlucht",
+  "name": "Col de la Schlucht",
+  "region": "vosges",
+  "country": "France",
+  "altitude": 1139,
+  "length": 9.3,
+  "avgGradient": 6.9,
+  "maxGradient": 10,
+  "difficulty": "medium",
+  "elevationGain": 642,
+  "startLocation": "Munster",
+  "endLocation": "Col de la Schlucht",
+  "description": "Le Col de la Schlucht est l'un des cols mythiques des Vosges, reliant l'Alsace à la Lorraine. Cette ascension pittoresque traverse la forêt vosgienne et offre de superbes panoramas sur la vallée de Munster. Étape incontournable des cyclosportives locales, il alterne passages raides et sections plus roulantes.",
+  "history": "Construit à la fin du XIXe siècle, le Col de la Schlucht était autrefois une frontière entre la France et l'Allemagne. Il a été emprunté par le Tour de France à plusieurs reprises, notamment en 2014 lors d'une étape entre Mulhouse et La Planche des Belles Filles remportée par Vincenzo Nibali.",
+  "imageUrl": "/images/cols/schlucht/main.jpg",
+  "profileUrl": "/images/cols/schlucht/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Les Trois Fours",
+      "length": 2.5,
+      "gradient": 8.2,
+      "description": "Section en forêt après Munster, l'une des parties les plus pentues"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Est (Munster)",
+      "startLocation": "Munster",
+      "length": 9.3,
+      "elevationGain": 642,
+      "avgGradient": 6.9,
+      "maxGradient": 10,
+      "difficulty": "medium",
+      "description": "L'ascension classique depuis Munster, offrant de beaux points de vue sur la vallée"
+    },
+    {
+      "name": "Versant Ouest (Gérardmer)",
+      "startLocation": "Gérardmer",
+      "length": 10.8,
+      "elevationGain": 389,
+      "avgGradient": 3.6,
+      "maxGradient": 7,
+      "difficulty": "easy",
+      "description": "Montée plus douce depuis le lac de Gérardmer, parfaite pour les débutants"
+    },
+    {
+      "name": "Le Collet",
+      "startLocation": "Plainfaing",
+      "length": 8.1,
+      "elevationGain": 521,
+      "avgGradient": 6.4,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Un itinéraire alternatif et moins fréquenté"
+    }
+  ],
+  "touristicInfo": "Le Col de la Schlucht est un haut lieu touristique des Vosges avec son complexe hôtelier récemment rénové. Il constitue un point de départ idéal pour des randonnées vers le Hohneck, le Lac Blanc ou la Route des Crêtes. En hiver, c'est une station de ski familiale.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Au col",
+      "description": "Points d'eau disponibles au col et dans les établissements"
+    },
+    {
+      "type": "food",
+      "location": "Col de la Schlucht",
+      "description": "Plusieurs restaurants et fermes-auberges aux alentours proposant des spécialités vosgiennes (marcaire, munster, tarte aux myrtilles)"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Accessible toute l'année mais la neige peut être présente de décembre à mars. Les conditions en altitude peuvent changer rapidement, même en été.",
+  "strava": {
+    "segmentId": "654821",
+    "komTime": "25:37",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "col-de-la-schlucht"
+}

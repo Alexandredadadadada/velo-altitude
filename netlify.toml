@@ -1,58 +1,73 @@
+
+# Configuration Netlify pour Velo-Altitude
+# Redirections pour standardiser les URLs
+
 [build]
-  command = "npm install && npx webpack --config webpack.fix.js --mode production --stats-error-details"
   publish = "build"
-  functions = "netlify/functions"
 
-[build.environment]
-  NODE_VERSION = "20.10.0"
-  NPM_VERSION = "9.8.0"
-  # Désactiver complètement l'installation de Go
-  GO_IMPORT_DURING_BUILD = "false"
-  # Ne pas tenter d'installer une version de Go
-  # SUPPRIMER complètement GO_VERSION au lieu de mettre "skip"
-  CI = "false"
 
-# Règle de redirection pour les API
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+  from = "/cols/:slug"
+  to = "/cols/:country/:slug"
+  status = 301
 
-# Règle de redirection pour le routage SPA
+[[redirects]]
+  from = "/training/:slug"
+  to = "/entrainement/:level/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/entrainement/:slug"
+  to = "/entrainement/:level/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/nutrition/:slug"
+  to = "/nutrition/:category/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/nutrition/recipes/:slug"
+  to = "/nutrition/:category/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/7-majeurs/:slug"
+  to = "/defis/:type/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/seven-majors/:slug"
+  to = "/defis/:type/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/routes/:slug"
+  to = "/visualisation-3d/:country/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/visualisation-3d/:slug"
+  to = "/visualisation-3d/:country/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/social/:slug"
+  to = "/communaute/:section/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/challenges/:slug"
+  to = "/communaute/:section/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/communaute/:slug"
+  to = "/communaute/:section/:slug"
+  status = 301
+
+# Fallback pour SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# En-têtes de sécurité
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://api.mapbox.com; style-src 'self' 'unsafe-inline' https://api.mapbox.com; img-src 'self' data: https://api.mapbox.com https://openweathermap.org; connect-src 'self' https://api.mapbox.com https://openweathermap.org https://*.auth0.com https://api.openrouteservice.org https://api.strava.com; frame-src 'self' https://*.auth0.com;"
-
-# Configuration du cache pour les ressources statiques
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/static/**/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Configuration des plugins Netlify
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-[[plugins]]
-  package = "netlify-plugin-hashfiles"

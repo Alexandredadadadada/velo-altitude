@@ -1,0 +1,79 @@
+{
+  "id": "passo-dello-stelvio",
+  "name": "Passo dello Stelvio",
+  "region": "alpes",
+  "country": "Italie",
+  "altitude": 2758,
+  "length": 21.5,
+  "avgGradient": 7.1,
+  "maxGradient": 14,
+  "difficulty": "extreme",
+  "elevationGain": 1533,
+  "startLocation": "Bormio",
+  "endLocation": "Passo dello Stelvio",
+  "description": "Le Stelvio est l'un des cols les plus emblématiques et difficiles d'Europe. Avec ses 48 virages en épingle côté Prato, il offre des paysages à couper le souffle et un défi sportif exceptionnel.",
+  "history": "Le Stelvio est considéré comme le plus haut col routier des Alpes orientales. Fausto Coppi l'a franchi en tête lors du Giro d'Italia de 1953. En 2012, l'étape du Giro passant par le Stelvio fut neutralisée à cause de conditions météorologiques extrêmes.",
+  "imageUrl": "/images/cols/stelvio/main.jpg",
+  "profileUrl": "/images/cols/stelvio/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Tornante 48 à Tornante 1",
+      "length": 14.3,
+      "gradient": 8.2,
+      "description": "Célèbre section des 48 virages en épingle à cheveux côté Prato"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Bormio",
+      "startLocation": "Bormio",
+      "length": 21.5,
+      "elevationGain": 1533,
+      "avgGradient": 7.1,
+      "maxGradient": 14,
+      "difficulty": "extreme",
+      "description": "Approche plus régulière mais très exigeante"
+    },
+    {
+      "name": "Versant Prato",
+      "startLocation": "Prato allo Stelvio",
+      "length": 24.3,
+      "elevationGain": 1808,
+      "avgGradient": 7.4,
+      "maxGradient": 12,
+      "difficulty": "extreme",
+      "description": "Célèbre pour ses 48 virages en épingle numérotés"
+    },
+    {
+      "name": "Versant Suisse",
+      "startLocation": "Santa Maria Val Müstair",
+      "length": 19,
+      "elevationGain": 1492,
+      "avgGradient": 7.9,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "Version moins connue mais tout aussi exigeante"
+    }
+  ],
+  "touristicInfo": "Le col est fermé en hiver, généralement de fin octobre à mi-juin. Au sommet, vous trouverez plusieurs restaurants et boutiques de souvenirs.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Sommet",
+      "description": "Fontaine d'eau potable"
+    },
+    {
+      "type": "food",
+      "location": "Sommet et mi-parcours",
+      "description": "Plusieurs restaurants"
+    }
+  ],
+  "bestTimeToVisit": "Mi-juin à fin septembre",
+  "weatherInfo": "Conditions alpines avec changements rapides. Possibilité de neige même en été.",
+  "strava": {
+    "segmentId": "1089103",
+    "komTime": "1:03:00",
+    "komName": "Marco Pantani"
+  },
+  "slug": "passo-dello-stelvio"
+}

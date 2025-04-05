@@ -1,0 +1,838 @@
+[
+  {
+    "id": "stelvio-pass",
+    "name": "Passo dello Stelvio",
+    "region": "alpes",
+    "country": "Italie",
+    "altitude": 2758,
+    "length": 21.5,
+    "avgGradient": 7.1,
+    "maxGradient": 14,
+    "difficulty": "extreme",
+    "elevationGain": 1533,
+    "startLocation": "Bormio",
+    "endLocation": "Passo dello Stelvio",
+    "description": "Le Stelvio est l'un des cols les plus emblématiques et difficiles d'Europe. Avec ses 48 virages en épingle côté Prato, il offre des paysages à couper le souffle et un défi sportif exceptionnel.",
+    "history": "Le Stelvio est considéré comme le plus haut col routier des Alpes orientales. Fausto Coppi l'a franchi en tête lors du Giro d'Italia de 1953. En 2012, l'étape du Giro passant par le Stelvio fut neutralisée à cause de conditions météorologiques extrêmes.",
+    "imageUrl": "/images/cols/stelvio/main.jpg",
+    "profileUrl": "/images/cols/stelvio/profile.jpg",
+    "popularSegments": [
+      {
+        "name": "Tornante 48 à Tornante 1",
+        "length": 14.3,
+        "gradient": 8.2,
+        "description": "Célèbre section des 48 virages en épingle à cheveux côté Prato"
+      }
+    ],
+    "routes": [
+      {
+        "name": "Versant Bormio",
+        "startLocation": "Bormio",
+        "length": 21.5,
+        "elevationGain": 1533,
+        "avgGradient": 7.1,
+        "maxGradient": 14,
+        "difficulty": "extreme",
+        "description": "Approche plus régulière mais très exigeante"
+      },
+      {
+        "name": "Versant Prato",
+        "startLocation": "Prato allo Stelvio",
+        "length": 24.3,
+        "elevationGain": 1808,
+        "avgGradient": 7.4,
+        "maxGradient": 12,
+        "difficulty": "extreme",
+        "description": "Célèbre pour ses 48 virages en épingle numérotés"
+      },
+      {
+        "name": "Versant Suisse",
+        "startLocation": "Santa Maria Val Müstair",
+        "length": 19,
+        "elevationGain": 1492,
+        "avgGradient": 7.9,
+        "maxGradient": 12,
+        "difficulty": "hard",
+        "description": "Version moins connue mais tout aussi exigeante"
+      }
+    ],
+    "touristicInfo": "Le col est fermé en hiver, généralement de fin octobre à mi-juin. Au sommet, vous trouverez plusieurs restaurants et boutiques de souvenirs.",
+    "facilities": [
+      {
+        "type": "water",
+        "location": "Sommet",
+        "description": "Fontaine d'eau potable"
+      },
+      {
+        "type": "food",
+        "location": "Sommet et mi-parcours",
+        "description": "Plusieurs restaurants"
+      }
+    ],
+    "bestTimeToVisit": "Mi-juin à fin septembre",
+    "weatherInfo": "Conditions alpines avec changements rapides. Possibilité de neige même en été.",
+    "strava": {
+      "segmentId": "1089103",
+      "komTime": "1:03:00",
+      "komName": "Marco Pantani"
+    },
+    "slug": "passo-dello-stelvio"
+  },
+  {
+    "id": "mont-ventoux",
+    "name": "Mont Ventoux",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 1909,
+    "length": 21.8,
+    "avgGradient": 7.2,
+    "maxGradient": 12,
+    "difficulty": "extreme",
+    "elevationGain": 1572,
+    "startLocation": "Bédoin",
+    "endLocation": "Mont Ventoux",
+    "description": "Le Mont Ventoux, surnommé \"le Géant de Provence\", est l'une des ascensions les plus mythiques du cyclisme mondial. Son profil impitoyable et son paysage lunaire dans sa partie sommitale font de cette montée un défi redouté par tous les cyclistes. La transition entre la forêt dense et le paysage désertique de calcaire blanc crée une ambiance unique qui contribue à la légende de ce mont.",
+    "history": "Rendu tristement célèbre par la mort de Tom Simpson en 1967, le Ventoux est entré dans la légende du Tour de France dès 1951. Chaque ascension est devenue un événement marquant de l'histoire du cyclisme, avec des exploits mémorables de champions comme Eddy Merckx, Marco Pantani ou Chris Froome. Le mont est aujourd'hui un lieu de pèlerinage pour les cyclistes du monde entier.",
+    "imageUrl": "/images/cols/ventoux/main.jpg",
+    "profileUrl": "/images/cols/ventoux/profile.jpg",
+    "popularSegments": [
+      {
+        "name": "Chalet Reynard - Sommet",
+        "length": 6,
+        "gradient": 8.9,
+        "description": "Section finale emblématique dans le désert de pierres blanches"
+      },
+      {
+        "name": "Saint-Estève - Chalet Reynard",
+        "length": 10.1,
+        "gradient": 9.1,
+        "description": "La terrible section forestière avec des pentes constamment raides"
+      }
+    ],
+    "routes": [
+      {
+        "name": "Versant Sud (Bédoin)",
+        "startLocation": "Bédoin",
+        "length": 21.8,
+        "elevationGain": 1572,
+        "avgGradient": 7.2,
+        "maxGradient": 12,
+        "difficulty": "extreme",
+        "description": "L'ascension classique et la plus difficile, empruntée majoritairement par le Tour de France"
+      },
+      {
+        "name": "Versant Est (Sault)",
+        "startLocation": "Sault",
+        "length": 25.7,
+        "elevationGain": 1152,
+        "avgGradient": 4.5,
+        "maxGradient": 11,
+        "difficulty": "medium",
+        "description": "La plus longue mais la moins pentue, rejoignant l'itinéraire de Bédoin au Chalet Reynard"
+      },
+      {
+        "name": "Versant Nord (Malaucène)",
+        "startLocation": "Malaucène",
+        "length": 21.2,
+        "elevationGain": 1535,
+        "avgGradient": 7.2,
+        "maxGradient": 12,
+        "difficulty": "hard",
+        "description": "Alternative aussi difficile que Bédoin mais moins connue, avec des passages en forêt plus ombragés"
+      }
+    ],
+    "touristicInfo": "Le sommet offre une vue panoramique exceptionnelle sur la Provence, les Alpes et parfois jusqu'à la Méditerranée. La région environnante est célèbre pour ses villages perchés, ses champs de lavande (particulièrement à Sault) et ses vignobles. Le site abrite également un observatoire météorologique caractéristique avec sa tour blanche et rouge.",
+    "facilities": [
+      {
+        "type": "water",
+        "location": "Chalet Reynard et sommet",
+        "description": "Points d'eau disponibles au Chalet Reynard et au sommet (en saison)"
+      },
+      {
+        "type": "food",
+        "location": "Chalet Reynard et sommet",
+        "description": "Restaurant au Chalet Reynard ouvert en saison et boutique souvenirs/snacks au sommet"
+      }
+    ],
+    "bestTimeToVisit": "Mai à octobre",
+    "weatherInfo": "Le sommet peut être fermé en cas de vent violent (mistral) dépassant 90 km/h, ce qui est fréquent. En été, les températures peuvent être extrêmement élevées sur les pentes exposées, rendant l'ascension dangereuse en milieu de journée. Le sommet peut connaître des conditions météorologiques très différentes de celles au pied de la montagne.",
+    "strava": {
+      "segmentId": "229377",
+      "komTime": "55:51",
+      "komName": "Egan Bernal"
+    }
+  },
+  {
+    "id": "alpe-huez",
+    "name": "Alpe d'Huez",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 1860,
+    "length": 13.8,
+    "avgGradient": 8.1,
+    "maxGradient": 13,
+    "difficulty": "hard",
+    "elevationGain": 1120,
+    "startLocation": "Bourg d'Oisans",
+    "endLocation": "Alpe d'Huez",
+    "description": "Célèbre pour ses 21 virages numérotés et son atmosphère de fête pendant le Tour de France, l'Alpe d'Huez est sans doute le col le plus connu des Alpes françaises.",
+    "history": "Apparue pour la première fois dans le Tour de France en 1952, l'Alpe d'Huez a été le théâtre de nombreuses batailles épiques. Fausto Coppi fut le premier vainqueur au sommet. Les 21 virages portent les noms des vainqueurs d'étape.",
+    "imageUrl": "/images/cols/alpe-huez/main.jpg",
+    "profileUrl": "/images/cols/alpe-huez/profile.jpg",
+    "routes": [
+      {
+        "name": "Route classique",
+        "startLocation": "Bourg d'Oisans",
+        "length": 13.8,
+        "elevationGain": 1120,
+        "avgGradient": 8.1,
+        "maxGradient": 13,
+        "difficulty": "hard",
+        "description": "La montée classique avec ses 21 virages numérotés"
+      }
+    ],
+    "popularSegments": [
+      {
+        "name": "Virage 21 à Virage 1",
+        "length": 13.8,
+        "gradient": 8.1,
+        "description": "L'ascension complète avec ses 21 virages légendaires"
+      }
+    ],
+    "touristicInfo": "Station de ski animée avec de nombreux restaurants et activités. Ambiance festive lors du passage du Tour de France.",
+    "facilities": [
+      {
+        "type": "water",
+        "location": "Virages 16, 10, 6 et sommet",
+        "description": "Fontaines et bars"
+      },
+      {
+        "type": "food",
+        "location": "Tout au long de l'ascension",
+        "description": "Restaurants et cafés dans les villages traversés"
+      }
+    ],
+    "bestTimeToVisit": "Juin à septembre",
+    "weatherInfo": "Généralement ensoleillé en été, possibilité d'orages l'après-midi",
+    "strava": {
+      "segmentId": "881830",
+      "komTime": "36:50",
+      "komName": "Nairo Quintana"
+    },
+    "slug": "alpe-dhuez"
+  },
+  {
+    "id": "galibier",
+    "name": "Col du Galibier",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 2642,
+    "length": 18.1,
+    "avgGradient": 6.9,
+    "maxGradient": 12.1,
+    "difficulty": "hard",
+    "elevationGain": 1245,
+    "startLocation": "Col du Lautaret",
+    "endLocation": "Col du Galibier",
+    "description": "Avec son sommet à 2642m, le Galibier est l'un des géants des Alpes. Souvent couplé avec le Col du Télégraphe, il offre des panoramas grandioses sur les massifs environnants.",
+    "history": "Première apparition dans le Tour de France en 1911. Henri Desgrange, fondateur du Tour, y fit ériger un monument en son honneur. Marco Pantani y réalisa une attaque mémorable en 1998.",
+    "imageUrl": "/images/cols/galibier/main.jpg",
+    "profileUrl": "/images/cols/galibier/profile.jpg",
+    "routes": [
+      {
+        "name": "Versant Nord (Valloire)",
+        "startLocation": "Valloire",
+        "length": 18.1,
+        "elevationGain": 1245,
+        "avgGradient": 6.9,
+        "maxGradient": 12.1,
+        "difficulty": "hard",
+        "description": "Depuis Valloire, après avoir déjà grimpé le Col du Télégraphe"
+      },
+      {
+        "name": "Versant Sud (Lautaret)",
+        "startLocation": "Col du Lautaret",
+        "length": 8.5,
+        "elevationGain": 585,
+        "avgGradient": 6.9,
+        "maxGradient": 12.1,
+        "difficulty": "medium",
+        "description": "La montée depuis le Col du Lautaret, plus courte mais avec les mêmes pourcentages raides"
+      }
+    ],
+    "popularSegments": [
+      {
+        "name": "Plan Lachat - Sommet",
+        "length": 4.8,
+        "gradient": 8.4,
+        "description": "Section finale avec les pourcentages les plus raides"
+      }
+    ],
+    "touristicInfo": "Le col est généralement ouvert de juin à octobre. Au sommet, une petite buvette et une boutique de souvenirs.",
+    "facilities": [
+      {
+        "type": "water",
+        "location": "Plan Lachat et sommet",
+        "description": "Points d'eau"
+      },
+      {
+        "type": "food",
+        "location": "Sommet",
+        "description": "Buvette et snacks"
+      }
+    ],
+    "bestTimeToVisit": "Juillet à septembre",
+    "weatherInfo": "Conditions alpines, changements météo rapides, neige possible même en été",
+    "strava": {
+      "segmentId": "618514",
+      "komTime": "26:40",
+      "komName": "Egan Bernal"
+    },
+    "slug": "col-du-galibier"
+  },
+  {
+    "id": "izoard",
+    "name": "Col d'Izoard",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 2360,
+    "length": 14.1,
+    "avgGradient": 7.3,
+    "maxGradient": 10,
+    "difficulty": "hard",
+    "elevationGain": 1030,
+    "startLocation": "Briançon",
+    "endLocation": "Col d'Izoard",
+    "description": "Célèbre pour sa \"Casse Déserte\", un paysage lunaire unique, le Col d'Izoard est l'un des cols les plus esthétiques des Alpes. Il a été le théâtre de nombreux exploits dans le Tour de France.",
+    "history": "Lieu d'exploits de Fausto Coppi et Louison Bobet, dont un monument honore la mémoire près du sommet. La première apparition dans le Tour date de 1922.",
+    "imageUrl": "/images/cols/izoard/main.jpg",
+    "profileUrl": "/images/cols/izoard/profile.jpg",
+    "routes": [
+      {
+        "name": "Versant Nord (Briançon)",
+        "startLocation": "Briançon",
+        "length": 19.2,
+        "elevationGain": 1030,
+        "avgGradient": 5.4,
+        "maxGradient": 9,
+        "difficulty": "medium",
+        "description": "Montée plus régulière et moins spectaculaire"
+      },
+      {
+        "name": "Versant Sud (Guillestre)",
+        "startLocation": "Guillestre",
+        "length": 31.5,
+        "elevationGain": 1515,
+        "avgGradient": 4.8,
+        "maxGradient": 10,
+        "difficulty": "hard",
+        "description": "Long itinéraire traversant la spectaculaire Casse Déserte"
+      }
+    ],
+    "popularSegments": [
+      {
+        "name": "Casse Déserte",
+        "length": 3.2,
+        "gradient": 8.2,
+        "description": "Section emblématique avec paysages lunaires"
+      }
+    ],
+    "touristicInfo": "Visitez le monument Coppi-Bobet et admirez la Casse Déserte, paysage unique fait de roches calcaires érodées.",
+    "facilities": [
+      {
+        "type": "water",
+        "location": "Refuge Napoléon (sommet)",
+        "description": "Fontaine et restaurant"
+      },
+      {
+        "type": "food",
+        "location": "Sommet",
+        "description": "Refuge Napoléon, ouvert en saison"
+      }
+    ],
+    "bestTimeToVisit": "Juin à septembre",
+    "weatherInfo": "Col exposé aux vents et aux orages d'été. Amplitude thermique importante.",
+    "strava": {
+      "segmentId": "776169",
+      "komTime": "43:45",
+      "komName": "Warren Barguil"
+    },
+    "slug": "col-dizoard"
+  },
+  {
+    "id": "croix-fer",
+    "name": "Col de la Croix de Fer",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 2067,
+    "length": 29.5,
+    "avgGradient": 5.2,
+    "maxGradient": 11,
+    "difficulty": "hard",
+    "elevationGain": 1522,
+    "startLocation": "Saint-Jean-de-Maurienne",
+    "endLocation": "Col de la Croix de Fer",
+    "description": "Le Col de la Croix de Fer est l'un des cols mythiques des Alpes françaises, offrant des paysages spectaculaires et des vues imprenables sur les sommets environnants. Cette ascension exigeante traverse plusieurs villages pittoresques et permet d'admirer les lacs d'altitude et les alpages verdoyants. Le sommet est marqué par une grande croix métallique qui lui donne son nom et offre un panorama à 360° sur le massif des Grandes Rousses et les Aiguilles d'Arves.",
+    "history": "Apparu pour la première fois dans le Tour de France en 1947, le Col de la Croix de Fer est devenu un lieu emblématique de la Grande Boucle avec plus de 20 passages. En 1986, il a été témoin d'un moment historique lorsque Bernard Hinault et Greg LeMond ont franchi son sommet ensemble, symbolisant leur rivalité et camaraderie. Plus récemment, des champions comme Thibaut Pinot et Warren Barguil y ont réalisé des exploits mémorables. Le col est aussi régulièrement emprunté par les cyclosportives comme la Marmotte.",
+    "imageUrl": "/images/cols/col-de-la-croix-de-fer/main.jpg",
+    "profileUrl": "/images/cols/col-de-la-croix-de-fer/profile.jpg",
+    "popularSegments": [
+      {
+        "name": "Les 7 derniers kilomètres",
+        "length": 7,
+        "gradient": 7.5,
+        "description": "Cette section finale est particulièrement redoutée avec plusieurs passages à plus de 10%. L'environnement devient plus minéral et les vues se dégagent progressivement."
+      },
+      {
+        "name": "Montée depuis le barrage de Grand Maison",
+        "length": 5.2,
+        "gradient": 6.8,
+        "description": "Après une courte descente depuis le Col du Glandon, cette portion offre une ascension régulière avec un beau panorama sur le lac artificiel."
+      }
+    ],
+    "routes": [
+      {
+        "name": "Versant Saint-Jean-de-Maurienne",
+        "startLocation": "Saint-Jean-de-Maurienne",
+        "length": 29.5,
+        "elevationGain": 1522,
+        "avgGradient": 5.2,
+        "maxGradient": 11,
+        "difficulty": "hard",
+        "description": "La plus longue et classique montée, empruntée par le Tour de France. L'ascension débute doucement avant d'affronter plusieurs sections difficiles, notamment après Saint-Sorlin-d'Arves. Le parcours traverse plusieurs villages charmants, offrant des possibilités de ravitaillement."
+      },
+      {
+        "name": "Versant Allemont (via Barrage de Grand Maison)",
+        "startLocation": "Allemont",
+        "length": 19.7,
+        "elevationGain": 1174,
+        "avgGradient": 6,
+        "maxGradient": 9.5,
+        "difficulty": "hard",
+        "description": "Une ascension plus courte mais régulièrement pentue. Cette route permet d'apprécier le magnifique lac artificiel de Grand Maison et passe par le Col du Glandon avant de rejoindre la Croix de Fer. Les paysages sont plus sauvages et la route souvent moins fréquentée."
+      },
+      {
+        "name": "Versant Saint-Colomban-des-Villards",
+        "startLocation": "Saint-Colomban-des-Villards",
+        "length": 12.8,
+        "elevationGain": 873,
+        "avgGradient": 6.8,
+        "maxGradient": 11,
+        "difficulty": "hard",
+        "description": "Ce versant moins connu offre une belle alternative avec des pentes régulièrement soutenues. La route serpente à travers forêts et alpages avant de rejoindre l'itinéraire principal dans les derniers kilomètres."
+      }
+    ],
+    "touristicInfo": "Outre la spectaculaire croix métallique au sommet, les environs du col offrent de nombreux sentiers de randonnée et des lacs d'altitude. Le Lac de Grand Maison en contrebas est un site impressionnant, tout comme les villages typiques de montagne comme Saint-Sorlin-d'Arves. La région est connue pour ses fromages savoyards, notamment la Tomme et le Beaufort que l'on peut découvrir dans les fromageries locales.",
+    "facilities": [
+      {
+        "type": "food",
+        "location": "Sommet du col",
+        "description": "Restaurant-refuge \"La Croix de Fer\" proposant des plats savoyards et boissons chaudes. Terrasse avec vue panoramique."
+      },
+      {
+        "type": "water",
+        "location": "Saint-Sorlin-d'Arves",
+        "description": "Fontaines publiques dans le village, à environ 10 km du sommet."
+      },
+      {
+        "type": "bike-shop",
+        "location": "Saint-Jean-de-Maurienne",
+        "description": "Plusieurs magasins de vélo offrant réparations et équipements au pied de l'ascension."
+      },
+      {
+        "type": "shelter",
+        "location": "Sommet du col",
+        "description": "Abri simple disponible même hors saison en cas de mauvais temps."
+      }
+    ],
+    "bestTimeToVisit": "Juin à septembre, avec juillet et août comme période optimale. Le col est généralement fermé de novembre à mai en raison de la neige.",
+    "weatherInfo": "Les conditions météorologiques peuvent changer rapidement même en été. Les orages sont fréquents en après-midi, et les matinées offrent souvent les meilleures conditions. Le col est exposé au vent, particulièrement au sommet. La température peut chuter de 10-15°C entre la vallée et le sommet, même en plein été.",
+    "strava": {
+      "segmentId": "667871",
+      "komTime": "1:19:42",
+      "komName": "Thibaut Pinot"
+    },
+    "slug": "col-de-la-croix-de-fer"
+  },
+  {
+    "id": "madeleine",
+    "name": "Col de la Madeleine",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 1993,
+    "length": 19.2,
+    "avgGradient": 8,
+    "maxGradient": 12,
+    "difficulty": "hard",
+    "elevationGain": 1536,
+    "startLocation": "La Chambre",
+    "endLocation": "Col de la Madeleine",
+    "description": "Le Col de la Madeleine est une des ascensions les plus difficiles des Alpes françaises, reliant la vallée de la Maurienne à la vallée de la Tarentaise. Sa longueur et sa pente régulièrement exigeante en font un défi redouté des cyclistes.",
+    "history": "Ce col a été franchi pour la première fois par le Tour de France en 1969 et a été le théâtre d'exploits mémorables, comme l'attaque de Richard Virenque en 1995 ou celle de Nairo Quintana en 2013. Il est classé hors catégorie dans le Tour de France.",
+    "imageUrl": "/images/cols/madeleine/main.jpg",
+    "profileUrl": "/images/cols/madeleine/profile.jpg",
+    "routes": [
+      {
+        "name": "Versant Sud (La Chambre)",
+        "startLocation": "La Chambre",
+        "length": 19.2,
+        "elevationGain": 1536,
+        "avgGradient": 8,
+        "maxGradient": 12,
+        "difficulty": "hard",
+        "description": "L'ascension classique, très régulière avec peu de répit"
+      },
+      {
+        "name": "Versant Nord (Aigueblanche)",
+        "startLocation": "Aigueblanche",
+        "length": 25.4,
+        "elevationGain": 1586,
+        "avgGradient": 6.2,
+        "maxGradient": 10.5,
+        "difficulty": "hard",
+        "description": "Montée plus longue et légèrement moins pentue en moyenne"
+      }
+    ],
+    "popularSegments": [
+      {
+        "name": "Le Villaret - Saint-François-Longchamp",
+        "length": 6.7,
+        "gradient": 8.5,
+        "description": "Section médiane avec peu de répit"
+      },
+      {
+        "name": "Montaimont - Sommet",
+        "length": 12.3,
+        "gradient": 7.9,
+        "description": "Partie haute de l'ascension après le premier village"
+      }
+    ],
+    "touristicInfo": "Au sommet, une statue de la Vierge et un panorama exceptionnel sur le Mont Blanc et les sommets environnants. La région est célèbre pour ses fromages, notamment le Beaufort.",
+    "facilities": [
+      {
+        "type": "water",
+        "location": "Saint-François-Longchamp et sommet",
+        "description": "Fontaines et points d'eau"
+      },
+      {
+        "type": "food",
+        "location": "Sommet",
+        "description": "Plusieurs restaurants et buvettes en saison"
+      }
+    ],
+    "bestTimeToVisit": "Mi-juin à septembre",
+    "weatherInfo": "Col généralement fermé de novembre à mai. Les vents peuvent être forts au sommet et les orages sont fréquents en fin d'après-midi en été.",
+    "strava": {
+      "segmentId": "987346",
+      "komTime": "1:05:20",
+      "komName": "Nairo Quintana"
+    },
+    "slug": "col-de-la-madeleine"
+  },
+  {
+    "id": "iseran",
+    "name": "Col de l'Iseran",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 2770,
+    "length": 13.4,
+    "avgGradient": 7.3,
+    "maxGradient": 12,
+    "difficulty": "extreme",
+    "elevationGain": 977,
+    "startLocation": "Val d'Isère",
+    "endLocation": "Col de l'Iseran",
+    "description": "Le Col de l'Iseran est le plus haut col routier des Alpes françaises et le deuxième plus haut d'Europe. Situé dans le parc national de la Vanoise, il offre des paysages à couper le souffle et constitue un défi extrême pour les cyclistes en raison de son altitude élevée.",
+    "history": "Il a été utilisé pour la première fois dans le Tour de France en 1938. En 2019, une étape mémorable se terminant à Tignes a dû être neutralisée en raison d'une coulée de boue sur le col, alors qu'Egan Bernal était en tête et prenait virtuellement le maillot jaune.",
+    "imageUrl": "/images/cols/iseran/main.jpg",
+    "profileUrl": "/images/cols/iseran/profile.jpg",
+    "routes": [
+      {
+        "name": "Versant Nord (Val d'Isère)",
+        "startLocation": "Val d'Isère",
+        "length": 13.4,
+        "elevationGain": 977,
+        "avgGradient": 7.3,
+        "maxGradient": 12,
+        "difficulty": "hard",
+        "description": "La montée classique, plus courte mais très exigeante en raison de l'altitude"
+      },
+      {
+        "name": "Versant Sud (Bonneval-sur-Arc)",
+        "startLocation": "Bonneval-sur-Arc",
+        "length": 31.7,
+        "elevationGain": 1955,
+        "avgGradient": 6.2,
+        "maxGradient": 12,
+        "difficulty": "extreme",
+        "description": "L'ascension intégrale, très longue et à haute altitude"
+      }
+    ],
+    "popularSegments": [
+      {
+        "name": "Pont Saint-Charles - Sommet",
+        "length": 7.3,
+        "gradient": 8.4,
+        "description": "Section finale au-dessus de 2400m d'altitude"
+      }
+    ],
+    "touristicInfo": "Le col marque la frontière entre la vallée de la Tarentaise et la vallée de la Maurienne. Il offre une vue exceptionnelle sur les glaciers environnants. Une chapelle et des bâtiments historiques se trouvent au sommet.",
+    "facilities": [
+      {
+        "type": "water",
+        "location": "Refuge du Col de l'Iseran",
+        "description": "Point d'eau au sommet"
+      },
+      {
+        "type": "food",
+        "location": "Sommet",
+        "description": "Restaurant et café au refuge (en saison estivale uniquement)"
+      }
+    ],
+    "bestTimeToVisit": "Mi-juillet à fin août",
+    "weatherInfo": "Col ouvert seulement l'été (généralement de mi-juin à mi-octobre). La neige est possible même en plein été et les températures au sommet sont souvent très fraîches.",
+    "strava": {
+      "segmentId": "1092347",
+      "komTime": "47:30",
+      "komName": "Egan Bernal"
+    },
+    "slug": "col-de-liseran"
+  },
+  {
+    "id": "col-telegraphe",
+    "name": "Col du Télégraphe",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 1566,
+    "length": 11.8,
+    "avgGradient": 7.3,
+    "maxGradient": 9.5,
+    "difficulty": "hard",
+    "elevationGain": 856,
+    "startLocation": "Saint-Michel-de-Maurienne",
+    "endLocation": "Col du Télégraphe",
+    "description": "Souvent utilisé comme prélude au Col du Galibier, le Col du Télégraphe est une ascension exigeante qui permet d'atteindre Valloire. Malgré une altitude modérée, c'est un col imposant en raison de sa pente constante et régulière qui use progressivement les organismes.",
+    "history": "Le Col du Télégraphe a été traversé pour la première fois par le Tour de France en 1911. Son nom vient de la présence d'un ancien système de transmission télégraphique de Chappe au sommet. Ce col est généralement franchi en combinaison avec le Galibier lors des étapes alpines du Tour.",
+    "imageUrl": "/images/cols/telegraphe/main.jpg",
+    "profileUrl": "/images/cols/telegraphe/profile.jpg",
+    "routes": [
+      {
+        "name": "Versant Nord (Saint-Michel-de-Maurienne)",
+        "startLocation": "Saint-Michel-de-Maurienne",
+        "length": 11.8,
+        "elevationGain": 856,
+        "avgGradient": 7.3,
+        "maxGradient": 9.5,
+        "difficulty": "hard",
+        "description": "L'ascension classique avec 12 kilomètres de montée régulière à travers la forêt"
+      },
+      {
+        "name": "Versant Sud (Valloire)",
+        "startLocation": "Valloire",
+        "length": 4.8,
+        "elevationGain": 150,
+        "avgGradient": 3.1,
+        "maxGradient": 5,
+        "difficulty": "easy",
+        "description": "Montée courte et facile souvent utilisée comme échauffement avant le Galibier"
+      }
+    ],
+    "popularSegments": [
+      {
+        "name": "Virage de Plan Fournier - Sommet",
+        "length": 5.2,
+        "gradient": 7.8,
+        "description": "Section finale après la sortie de la forêt, avec vue sur les sommets environnants"
+      }
+    ],
+    "touristicInfo": "Le col est dominé par le Fort du Télégraphe, une fortification militaire construite au 19ème siècle. Le site offre une vue spectaculaire sur la vallée de la Maurienne et les montagnes environnantes.",
+    "facilities": [
+      {
+        "type": "water",
+        "location": "Fort du Télégraphe",
+        "description": "Fontaine près du fort"
+      },
+      {
+        "type": "food",
+        "location": "Sommet",
+        "description": "Café-restaurant du Fort (ouvert en saison)"
+      }
+    ],
+    "bestTimeToVisit": "Mai à octobre",
+    "weatherInfo": "Généralement accessible de mai à octobre. Des vents forts peuvent souffler au sommet. Le col est souvent ensoleillé mais peut être recouvert de brouillard en début de matinée.",
+    "strava": {
+      "segmentId": "793468",
+      "komTime": "33:25",
+      "komName": "Thibaut Pinot"
+    },
+    "slug": "col-du-telegraphe"
+  },
+  {
+    "id": "col-de-la-colombiere",
+    "name": "Col de la Colombière",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 1618,
+    "length": 16.3,
+    "avgGradient": 6.8,
+    "maxGradient": 12,
+    "difficulty": "hard",
+    "elevationGain": 1108,
+    "startLocation": "Scionzier",
+    "endLocation": "Col de la Colombière",
+    "description": "Le Col de la Colombière est l'un des cols emblématiques des Alpes de Haute-Savoie, offrant une ascension exigeante avec des sections particulièrement raides. Situé entre les vallées du Giffre et de l'Arve, ce col est apprécié pour ses paysages variés allant des forêts denses aux alpages ouverts. Son profil est caractérisé par une montée régulière entrecoupée de quelques passages nettement plus pentus, notamment dans les derniers kilomètres. Du sommet, les cyclistes profitent d'une vue imprenable sur la chaîne du Mont-Blanc au sud et sur les Aravis au nord.",
+    "history": "Présent dans le Tour de France depuis 1960, le Col de la Colombière a été le théâtre de nombreux exploits cyclistes. Il a vu passer des légendes comme Eddy Merckx, Bernard Thévenet et plus récemment des grimpeurs comme Richard Virenque et Vincenzo Nibali. En 2018, Julian Alaphilippe y a remporté une victoire mémorable en solitaire après une attaque fulgurante dans la descente. Ce col est aussi régulièrement inclus dans le Critérium du Dauphiné et dans des cyclosportives comme l'Étape du Tour.",
+    "imageUrl": "/images/cols/col-de-la-colombiere/main.jpg",
+    "profileUrl": "/images/cols/col-de-la-colombiere/profile.jpg",
+    "popularSegments": [
+      {
+        "name": "Les 4 derniers kilomètres",
+        "length": 4,
+        "gradient": 8.5,
+        "description": "Section finale après le village du Reposoir, comprenant les passages les plus raides avec des pourcentages dépassant 10% par endroits."
+      },
+      {
+        "name": "La Frasse - Le Reposoir",
+        "length": 5.2,
+        "gradient": 7,
+        "description": "Portion intermédiaire qui serpente à travers la forêt avec une pente constante et soutenue."
+      }
+    ],
+    "routes": [
+      {
+        "name": "Versant Nord (Scionzier)",
+        "startLocation": "Scionzier",
+        "length": 16.3,
+        "elevationGain": 1108,
+        "avgGradient": 6.8,
+        "maxGradient": 12,
+        "difficulty": "hard",
+        "description": "L'ascension classique du Tour de France. Après un début progressif, la pente s'accentue dans les 7 derniers kilomètres avec des passages difficiles après Le Reposoir."
+      },
+      {
+        "name": "Versant Sud (Le Grand-Bornand)",
+        "startLocation": "Le Grand-Bornand",
+        "length": 11.7,
+        "elevationGain": 763,
+        "avgGradient": 6.5,
+        "maxGradient": 9,
+        "difficulty": "medium",
+        "description": "Montée légèrement moins longue et un peu plus régulière. L'ascension traverse des paysages bucoliques d'alpages où paissent les vaches d'Abondance, avant d'atteindre les flancs plus minéraux près du sommet."
+      }
+    ],
+    "touristicInfo": "Au sommet du col se trouve un restaurant-refuge et une boutique de souvenirs. Le Col de la Colombière est le point de jonction entre le massif des Aravis et le Haut-Giffre. Dans les environs, on peut visiter la chartreuse du Reposoir, fondée au XIIe siècle, ou le charmant village du Grand-Bornand avec ses maisons traditionnelles savoyardes. La région est réputée pour ses fromages AOP comme le Reblochon fermier et l'Abondance, que l'on peut déguster dans les fermes d'alpage.",
+    "facilities": [
+      {
+        "type": "food",
+        "location": "Sommet du col",
+        "description": "Restaurant-refuge \"La Colombière\" proposant cuisine savoyarde et boissons. Grande terrasse avec vue sur les Aravis."
+      },
+      {
+        "type": "water",
+        "location": "Le Reposoir",
+        "description": "Fontaines publiques dans le village, à environ 4 km du sommet."
+      },
+      {
+        "type": "bike-shop",
+        "location": "Cluses et Le Grand-Bornand",
+        "description": "Magasins de vélo dans les villes au pied de l'ascension, proposant réparations et location de matériel."
+      },
+      {
+        "type": "shelter",
+        "location": "Sommet",
+        "description": "Abri disponible au col en cas de mauvais temps, même hors saison d'ouverture du restaurant."
+      }
+    ],
+    "bestTimeToVisit": "Juin à septembre, avec juillet et août comme période optimale. Le col est généralement fermé de novembre à mai en raison de la neige.",
+    "weatherInfo": "La météo peut changer rapidement dans cette région des Alpes. Les orages d'été sont fréquents en après-midi. Le brouillard peut se former subitement au sommet. En début et fin de saison, prévoyez des vêtements chauds même par beau temps, car la température au sommet peut être jusqu'à 10°C plus basse qu'en vallée.",
+    "strava": {
+      "segmentId": "661937",
+      "komTime": "44:37",
+      "komName": "Romain Bardet"
+    }
+  },
+  {
+    "id": "col-de-la-madone",
+    "name": "Col de la Madone",
+    "region": "alpes",
+    "country": "France",
+    "altitude": 925,
+    "length": 12.5,
+    "avgGradient": 6.7,
+    "maxGradient": 10,
+    "difficulty": "medium",
+    "elevationGain": 838,
+    "startLocation": "Menton",
+    "endLocation": "Col de la Madone",
+    "description": "Le Col de la Madone est devenu célèbre grâce aux coureurs professionnels qui s'entraînent sur la Côte d'Azur. Cette ascension offre une combinaison parfaite entre difficulté technique et beauté des paysages. Partant du niveau de la mer à Menton, elle s'élève progressivement à travers les oliviers et maquis méditerranéens, puis la forêt de pins, avant d'atteindre les crêtes offrant des vues spectaculaires sur la Méditerranée. Sa pente régulière et sa route bien entretenue en font un test idéal pour évaluer sa condition physique.",
+    "history": "Rendu célèbre par Lance Armstrong qui l'utilisait comme test avant le Tour de France, le Col de la Madone est devenu un lieu d'entraînement prisé des coureurs professionnels basés à Monaco, comme Chris Froome, Richie Porte et Geraint Thomas. Bien qu'il n'ait jamais figuré dans le Tour de France, son statut est presque mythique dans le milieu du cyclisme professionnel. Il est considéré comme un \"col de référence\" permettant aux coureurs d'évaluer leur forme avant les grandes compétitions.",
+    "imageUrl": "/images/cols/col-de-la-madone/main.jpg",
+    "profileUrl": "/images/cols/col-de-la-madone/profile.jpg",
+    "popularSegments": [
+      {
+        "name": "Sainte-Agnès - Madone",
+        "length": 4.5,
+        "gradient": 7.2,
+        "description": "Section finale après le village perché de Sainte-Agnès, avec des vues imprenables sur la Méditerranée."
+      },
+      {
+        "name": "Montée initiale",
+        "length": 6,
+        "gradient": 6.5,
+        "description": "Première partie de l'ascension depuis Menton, avec de nombreux virages en épingle et passage à travers les oliveraies."
+      }
+    ],
+    "routes": [
+      {
+        "name": "Versant Sud (Menton)",
+        "startLocation": "Menton",
+        "length": 12.5,
+        "elevationGain": 838,
+        "avgGradient": 6.7,
+        "maxGradient": 10,
+        "difficulty": "medium",
+        "description": "L'ascension classique depuis la côte méditerranéenne. Une montée régulière avec vue sur la mer, passant par le village de Sainte-Agnès."
+      },
+      {
+        "name": "Versant Est (Castillon)",
+        "startLocation": "Castillon",
+        "length": 6.2,
+        "elevationGain": 480,
+        "avgGradient": 7.8,
+        "maxGradient": 9,
+        "difficulty": "medium",
+        "description": "Version plus courte mais légèrement plus pentue, offrant également de belles vues sur l'arrière-pays."
+      }
+    ],
+    "touristicInfo": "Outre les vues spectaculaires sur la Côte d'Azur et la Riviera italienne, l'ascension du Col de la Madone permet de découvrir le village médiéval perché de Sainte-Agnès, classé parmi les plus beaux villages de France. Une fois au sommet, vous pourrez apercevoir Monaco, Menton, et par temps clair, la Corse. La région est riche en patrimoine historique, avec des fortifications datant de la ligne Maginot. En redescendant, ne manquez pas de visiter le vieux Menton avec ses façades colorées.",
+    "facilities": [
+      {
+        "type": "food",
+        "location": "Sainte-Agnès",
+        "description": "Plusieurs restaurants et cafés dans ce village pittoresque situé à mi-parcours."
+      },
+      {
+        "type": "water",
+        "location": "Sainte-Agnès et Castillon",
+        "description": "Fontaines publiques dans les deux villages, mais aucune source au sommet."
+      },
+      {
+        "type": "bike-shop",
+        "location": "Menton",
+        "description": "Plusieurs magasins de cycles dans la ville, proposant réparation et location."
+      },
+      {
+        "type": "parking",
+        "location": "Menton et Sainte-Agnès",
+        "description": "Parkings disponibles pour ceux qui souhaitent commencer l'ascension à mi-parcours."
+      }
+    ],
+    "bestTimeToVisit": "Mars à novembre, avec avril-juin et septembre-octobre comme périodes optimales pour éviter la chaleur estivale et profiter de températures clémentes.",
+    "weatherInfo": "Climat méditerranéen avec des étés chauds et des hivers doux. En été, il est recommandé de partir tôt le matin pour éviter les fortes chaleurs. En hiver, le col reste généralement accessible mais peut être frais, surtout au sommet exposé aux vents. Les orages peuvent être violents en fin d'été et début d'automne.",
+    "strava": {
+      "segmentId": "658924",
+      "komTime": "36:55",
+      "komName": "Tadej Pogacar"
+    }
+  }
+]

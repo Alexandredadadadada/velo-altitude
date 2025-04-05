@@ -1,0 +1,79 @@
+{
+  "id": "mont-aigoual",
+  "name": "Mont Aigoual",
+  "region": "massif-central",
+  "country": "France",
+  "altitude": 1567,
+  "length": 16.2,
+  "avgGradient": 7.3,
+  "maxGradient": 11,
+  "difficulty": "medium",
+  "elevationGain": 1183,
+  "startLocation": "Valleraugue",
+  "endLocation": "Mont Aigoual",
+  "description": "Point culminant du massif des Cévennes, le Mont Aigoual est connu pour son observatoire météorologique et ses conditions climatiques extrêmes. L'ascension depuis Valleraugue est longue et régulièrement difficile.",
+  "history": "L'écrivain Antoine de Saint-Exupéry mentionne le Mont Aigoual dans son roman \"Terre des Hommes\". Le Tour de France y est passé à plusieurs reprises, notamment en 2020 avec une arrivée au sommet remportée par Alexey Lutsenko.",
+  "imageUrl": "/images/cols/mont-aigoual/main.jpg",
+  "profileUrl": "/images/cols/mont-aigoual/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Sud (Valleraugue)",
+      "startLocation": "Valleraugue",
+      "length": 16.2,
+      "elevationGain": 1183,
+      "avgGradient": 7.3,
+      "maxGradient": 11,
+      "difficulty": "medium",
+      "description": "L'ascension la plus longue et emblématique"
+    },
+    {
+      "name": "Versant Nord (Meyrueis)",
+      "startLocation": "Meyrueis",
+      "length": 18.5,
+      "elevationGain": 920,
+      "avgGradient": 5,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Version plus douce mais plus longue"
+    },
+    {
+      "name": "Versant Est (L'Espérou)",
+      "startLocation": "L'Espérou",
+      "length": 4.8,
+      "elevationGain": 280,
+      "avgGradient": 5.8,
+      "maxGradient": 8,
+      "difficulty": "easy",
+      "description": "La montée la plus courte et accessible"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Prat Peyrot - Sommet",
+      "length": 5.2,
+      "gradient": 8.4,
+      "description": "Section finale après la station de ski"
+    }
+  ],
+  "touristicInfo": "Au sommet se trouvent l'Observatoire météorologique, une station de ski (Prat Peyrot) et un centre d'interprétation sur le climat. Par temps clair, on peut apercevoir les Alpes, les Pyrénées et la Méditerranée.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "L'Espérou et sommet",
+      "description": "Fontaines"
+    },
+    {
+      "type": "food",
+      "location": "L'Espérou et sommet",
+      "description": "Restaurants et cafés"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Le Mont Aigoual est connu pour avoir l'un des climats les plus extrêmes de France, avec plus de 250 jours de vent fort par an et des tempêtes violentes.",
+  "strava": {
+    "segmentId": "654387",
+    "komTime": "42:15",
+    "komName": "Alexey Lutsenko"
+  },
+  "slug": "mont-aigoual"
+}

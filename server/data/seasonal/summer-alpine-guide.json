@@ -1,0 +1,346 @@
+{
+  "id": "seasonal-summer-alps",
+  "name": {
+    "fr": "Guide d'été pour les Alpes",
+    "en": "Summer Alpine Guide"
+  },
+  "slug": "seasonal-summer-alps",
+  "season": "summer",
+  "region": "alps",
+  "valid_period": {
+    "start": "15/06",
+    "end": "15/09"
+  },
+  "description": {
+    "fr": "Guide complet pour préparer vos ascensions estivales dans les Alpes françaises, avec conseils spécifiques sur les conditions climatiques, l'équipement adapté et les meilleures stratégies pour affronter la chaleur.",
+    "en": "Comprehensive guide to prepare your summer climbs in the French Alps, with specific advice on weather conditions, adapted equipment and the best strategies to deal with heat."
+  },
+  "weather_overview": {
+    "temperature": {
+      "valley": {
+        "avg_low": 15,
+        "avg_high": 30,
+        "record_high": 38
+      },
+      "1500m": {
+        "avg_low": 10,
+        "avg_high": 22,
+        "record_high": 30
+      },
+      "2500m": {
+        "avg_low": 5,
+        "avg_high": 15,
+        "record_high": 25
+      }
+    },
+    "precipitation": {
+      "monthly_avg_mm": 65,
+      "rainy_days": 8,
+      "thunderstorm_probability": "40% en après-midi",
+      "warning": {
+        "fr": "Les orages se forment souvent rapidement en début d'après-midi. Consultez la météo locale avant de partir et envisagez de commencer tôt vos ascensions.",
+        "en": "Thunderstorms often form quickly in the early afternoon. Check local weather before departing and consider starting your climbs early."
+      }
+    },
+    "wind": {
+      "prevailing_direction": "Nord-Ouest",
+      "avg_speed": "10-15 km/h",
+      "strong_wind_areas": ["Col du Galibier", "Mont Ventoux"]
+    },
+    "uv_index": {
+      "avg": 9,
+      "warning": {
+        "fr": "L'indice UV est particulièrement élevé en altitude. Une protection solaire forte (50+) est indispensable, à renouveler toutes les 2 heures.",
+        "en": "The UV index is particularly high at altitude. Strong sun protection (50+) is essential, to be renewed every 2 hours."
+      }
+    }
+  },
+  "equipment_recommendations": {
+    "clothing": [
+      {
+        "fr": "Maillot respirant à manches courtes",
+        "en": "Breathable short-sleeve jersey"
+      },
+      {
+        "fr": "Coupe-vent ultraléger pour les descentes",
+        "en": "Ultralight windbreaker for descents"
+      },
+      {
+        "fr": "Manchettes de protection solaire",
+        "en": "Sun protection arm sleeves"
+      },
+      {
+        "fr": "Casquette sous le casque pour protéger du soleil",
+        "en": "Cap under helmet for sun protection"
+      },
+      {
+        "fr": "Gants légers à faible rembourrage",
+        "en": "Light gloves with minimal padding"
+      },
+      {
+        "fr": "Chaussettes légères mi-hautes",
+        "en": "Light mid-high socks"
+      }
+    ],
+    "hydration": {
+      "fr": "Prévoyez au minimum 2 bidons de 750ml. Un bidon d'eau pure et un d'électrolytes. Renseignez-vous sur les points d'eau le long de votre parcours.",
+      "en": "Plan for at least 2 bottles of 750ml. One bottle of pure water and one with electrolytes. Inquire about water points along your route."
+    },
+    "tire_setup": {
+      "fr": "Optez pour des pneus de 25-28mm avec une pression légèrement inférieure à la normale pour améliorer le confort et l'adhérence sur les routes chaudes.",
+      "en": "Choose 25-28mm tires with slightly lower pressure than normal to improve comfort and grip on hot roads."
+    },
+    "essential_extras": [
+      {
+        "fr": "Crème solaire résistante à la transpiration (SPF 50+)",
+        "en": "Sweat-resistant sunscreen (SPF 50+)"
+      },
+      {
+        "fr": "Lunettes photochromiques ou catégorie 3",
+        "en": "Photochromic or category 3 sunglasses"
+      },
+      {
+        "fr": "Lingettes rafraîchissantes",
+        "en": "Cooling wipes"
+      },
+      {
+        "fr": "Bidon isotherme pour maintenir l'eau fraîche",
+        "en": "Insulated bottle to keep water cool"
+      },
+      {
+        "fr": "Gilet réfléchissant pour les tunnels (notamment sur la route du Galibier)",
+        "en": "Reflective vest for tunnels (especially on the Galibier route)"
+      }
+    ]
+  },
+  "heat_management": {
+    "pre_ride": [
+      {
+        "fr": "Hydratez-vous abondamment dans les 24h précédant votre sortie",
+        "en": "Hydrate abundantly in the 24h before your ride"
+      },
+      {
+        "fr": "Optez pour un départ matinal (avant 8h) pour éviter les heures les plus chaudes",
+        "en": "Opt for an early start (before 8am) to avoid the hottest hours"
+      },
+      {
+        "fr": "Appliquez de la crème solaire 20 minutes avant le départ",
+        "en": "Apply sunscreen 20 minutes before departure"
+      }
+    ],
+    "during_ride": [
+      {
+        "fr": "Buvez avant d'avoir soif, environ 500-750ml par heure",
+        "en": "Drink before you're thirsty, approximately 500-750ml per hour"
+      },
+      {
+        "fr": "Recherchez l'ombre lorsque c'est possible",
+        "en": "Seek shade when possible"
+      },
+      {
+        "fr": "Adaptez votre intensité, réduisez de 10-15% par rapport à votre puissance habituelle",
+        "en": "Adapt your intensity, reduce by 10-15% compared to your usual power"
+      },
+      {
+        "fr": "Arrosez votre nuque et vos avant-bras avec de l'eau fraîche aux fontaines",
+        "en": "Splash your neck and forearms with cool water at fountains"
+      }
+    ],
+    "danger_signs": [
+      {
+        "fr": "Arrêtez-vous immédiatement si vous ressentez: vertiges, confusion, frissons malgré la chaleur, ou cessation de la transpiration",
+        "en": "Stop immediately if you feel: dizziness, confusion, chills despite the heat, or cessation of sweating"
+      },
+      {
+        "fr": "Ces symptômes peuvent indiquer un coup de chaleur, une urgence médicale nécessitant une intervention rapide",
+        "en": "These symptoms may indicate heat stroke, a medical emergency requiring prompt intervention"
+      }
+    ]
+  },
+  "recommended_cols": {
+    "early_morning": ["alpe-d-huez", "col-du-telegraphe", "col-du-galibier"],
+    "heat_resistant": ["col-de-la-madeleine", "col-du-glandon", "col-de-la-croix-de-fer"],
+    "avoid_midday": ["mont-ventoux", "col-d-izoard", "col-agnel"]
+  },
+  "water_points": [
+    {
+      "col": "alpe-d-huez",
+      "locations": [
+        {
+          "name": "La Garde",
+          "km": 3.5,
+          "description": {
+            "fr": "Fontaine sur la place du village",
+            "en": "Fountain in the village square"
+          }
+        },
+        {
+          "name": "Huez Village",
+          "km": 8,
+          "description": {
+            "fr": "Fontaine près de l'église",
+            "en": "Fountain near the church"
+          }
+        }
+      ]
+    },
+    {
+      "col": "col-du-galibier",
+      "locations": [
+        {
+          "name": "Saint-Michel-de-Maurienne",
+          "km": 0,
+          "description": {
+            "fr": "Plusieurs fontaines en centre-ville",
+            "en": "Several fountains in town center"
+          }
+        },
+        {
+          "name": "Valloire",
+          "km": 18,
+          "description": {
+            "fr": "Fontaines dans le village",
+            "en": "Fountains in the village"
+          }
+        },
+        {
+          "name": "Plan Lachat",
+          "km": 28,
+          "description": {
+            "fr": "Dernier point d'eau avant le sommet",
+            "en": "Last water point before the summit"
+          }
+        }
+      ]
+    }
+  ],
+  "road_conditions": {
+    "general_state": {
+      "fr": "Les routes alpines sont généralement en bon état pendant l'été, avec des réparations effectuées après les dégâts hivernaux.",
+      "en": "Alpine roads are generally in good condition during summer, with repairs done after winter damage."
+    },
+    "specific_warnings": [
+      {
+        "location": "Col du Lautaret",
+        "warning": {
+          "fr": "Travaux prévus été 2025 avec circulation alternée possible",
+          "en": "Roadworks planned for summer 2025 with possible alternate traffic"
+        }
+      },
+      {
+        "location": "Tunnel du Galibier",
+        "warning": {
+          "fr": "Éclairage limité, gilet réfléchissant recommandé",
+          "en": "Limited lighting, reflective vest recommended"
+        }
+      }
+    ]
+  },
+  "local_services": {
+    "bike_shops": [
+      {
+        "name": "Cycles Altitude",
+        "location": "Bourg d'Oisans",
+        "services": ["Réparations", "Location", "Accessoires"],
+        "contact": "+33 4 76 80 XX XX"
+      },
+      {
+        "name": "Mountain Bikes",
+        "location": "Saint-Jean-de-Maurienne",
+        "services": ["Réparations", "Pièces détachées"],
+        "contact": "+33 4 79 59 XX XX"
+      }
+    ],
+    "accommodation": [
+      {
+        "name": "Hôtel des Cyclistes",
+        "location": "Bourg d'Oisans",
+        "cyclist_friendly": true,
+        "features": ["Local vélos sécurisé", "Petit-déjeuner cycliste", "Paniers repas"],
+        "contact": "www.hotelcyclistes.fr"
+      },
+      {
+        "name": "Gîte du Col",
+        "location": "Valloire",
+        "cyclist_friendly": true,
+        "features": ["Atelier de réparation", "Lavage vélos", "Cuisine adaptée"],
+        "contact": "giteducol@example.com"
+      }
+    ]
+  },
+  "special_events": [
+    {
+      "name": "La Marmotte",
+      "date": "Premier samedi de juillet",
+      "description": {
+        "fr": "Cyclosportive mythique incluant le Glandon, le Télégraphe, le Galibier et l'Alpe d'Huez",
+        "en": "Legendary cyclosportive including the Glandon, Télégraphe, Galibier and Alpe d'Huez"
+      },
+      "website": "www.marmottegranfondo.com"
+    },
+    {
+      "name": "Tour de France 2025",
+      "date": "Mi-juillet",
+      "description": {
+        "fr": "Passages prévus sur plusieurs cols alpins, consultez le calendrier officiel",
+        "en": "Scheduled passages on several Alpine passes, check the official calendar"
+      },
+      "website": "www.letour.fr"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Philippe Gilbert",
+      "text": {
+        "fr": "L'été dans les Alpes offre des conditions idéales, mais ne sous-estimez jamais la chaleur en vallée et les changements rapides en altitude. Ma stratégie: partir tôt et bien m'hydrater.",
+        "en": "Summer in the Alps offers ideal conditions, but never underestimate the heat in the valley and rapid changes at altitude. My strategy: start early and hydrate well."
+      }
+    },
+    {
+      "name": "Pauline Ferrand-Prévot",
+      "text": {
+        "fr": "Je privilégie toujours les départs à l'aube en été. Non seulement la température est idéale, mais les routes sont moins fréquentées et les paysages magnifiques.",
+        "en": "I always favor dawn departures in summer. Not only is the temperature ideal, but the roads are less busy and the landscapes magnificent."
+      }
+    }
+  ],
+  "photography_tips": [
+    {
+      "fr": "La lumière est optimale tôt le matin et en fin d'après-midi pour capturer les montagnes",
+      "en": "Light is optimal early morning and late afternoon for capturing mountains"
+    },
+    {
+      "fr": "Les virages de l'Alpe d'Huez sont particulièrement photogéniques depuis le virage 7",
+      "en": "Alpe d'Huez hairpins are particularly photogenic from turn 7"
+    },
+    {
+      "fr": "Le Col du Galibier offre une vue panoramique exceptionnelle depuis le sommet",
+      "en": "Col du Galibier offers an exceptional panoramic view from the summit"
+    }
+  ],
+  "multimedia_content": [
+    {
+      "type": "video",
+      "title": "Canicule en montagne: stratégies pour cyclistes",
+      "url": "/videos/seasonal/summer-heat-strategies.mp4"
+    },
+    {
+      "type": "podcast",
+      "title": "Interview avec le météorologue des Alpes",
+      "url": "/audio/seasonal/alpine-meteorologist.mp3"
+    },
+    {
+      "type": "photo_gallery",
+      "title": "Cols alpins en lumière matinale",
+      "url": "/galleries/seasonal/morning-alpine-passes"
+    }
+  ],
+  "related_content": {
+    "training_programs": ["T003", "T013"],
+    "nutrition_plans": ["NP003"],
+    "preparation_guides": ["guide-alpe-d-huez", "guide-galibier"]
+  },
+  "status": "active",
+  "completeness": 90,
+  "last_updated": "2025-04-06T02:15:00Z"
+}

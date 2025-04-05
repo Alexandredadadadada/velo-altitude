@@ -1,0 +1,59 @@
+{
+  "id": "alpe-dhuez",
+  "name": "Alpe d'Huez",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 1860,
+  "length": 13.8,
+  "avgGradient": 8.1,
+  "maxGradient": 13,
+  "difficulty": "hard",
+  "elevationGain": 1120,
+  "startLocation": "Bourg d'Oisans",
+  "endLocation": "Alpe d'Huez",
+  "description": "Célèbre pour ses 21 virages numérotés et son atmosphère de fête pendant le Tour de France, l'Alpe d'Huez est sans doute le col le plus connu des Alpes françaises.",
+  "history": "Apparue pour la première fois dans le Tour de France en 1952, l'Alpe d'Huez a été le théâtre de nombreuses batailles épiques. Fausto Coppi fut le premier vainqueur au sommet. Les 21 virages portent les noms des vainqueurs d'étape.",
+  "imageUrl": "/images/cols/alpe-huez/main.jpg",
+  "profileUrl": "/images/cols/alpe-huez/profile.jpg",
+  "routes": [
+    {
+      "name": "Route classique",
+      "startLocation": "Bourg d'Oisans",
+      "length": 13.8,
+      "elevationGain": 1120,
+      "avgGradient": 8.1,
+      "maxGradient": 13,
+      "difficulty": "hard",
+      "description": "La montée classique avec ses 21 virages numérotés"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Virage 21 à Virage 1",
+      "length": 13.8,
+      "gradient": 8.1,
+      "description": "L'ascension complète avec ses 21 virages légendaires"
+    }
+  ],
+  "touristicInfo": "Station de ski animée avec de nombreux restaurants et activités. Ambiance festive lors du passage du Tour de France.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Virages 16, 10, 6 et sommet",
+      "description": "Fontaines et bars"
+    },
+    {
+      "type": "food",
+      "location": "Tout au long de l'ascension",
+      "description": "Restaurants et cafés dans les villages traversés"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Généralement ensoleillé en été, possibilité d'orages l'après-midi",
+  "strava": {
+    "segmentId": "881830",
+    "komTime": "36:50",
+    "komName": "Nairo Quintana"
+  },
+  "slug": "alpe-dhuez"
+}

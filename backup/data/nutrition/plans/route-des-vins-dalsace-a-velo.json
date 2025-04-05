@@ -1,0 +1,20 @@
+{
+  "id": "route-002",
+  "name": "Route des Vins d'Alsace à Vélo",
+  "slug": "route-des-vins-dalsace-a-velo",
+  "category": "",
+  "description": {
+    "fr": "",
+    "en": ""
+  },
+  "days": [],
+  "recipes": [],
+  "supplements": [],
+  "hydration": {},
+  "variations": [],
+  "related_cols": [],
+  "related_training": [],
+  "status": "active",
+  "completeness": 33,
+  "last_updated": "2025-04-05T20:45:28.719Z"
+}

@@ -8,7 +8,11 @@
       "longitude": 10.4541,
       "region": "Alpes italiennes",
       "country": "Italie",
-      "nearbyTowns": ["Bormio", "Prato allo Stelvio", "Santa Maria Val Müstair"]
+      "nearbyTowns": [
+        "Bormio",
+        "Prato allo Stelvio",
+        "Santa Maria Val Müstair"
+      ]
     },
     "climbData": {
       "bormioSide": {
@@ -16,7 +20,7 @@
         "length": 21.5,
         "elevation": 1533,
         "averageGradient": 7.1,
-        "maxGradient": 14.0,
+        "maxGradient": 14,
         "difficulty": 10
       },
       "pratoSide": {
@@ -24,15 +28,15 @@
         "length": 24.3,
         "elevation": 1808,
         "averageGradient": 7.4,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 10
       },
       "swissSide": {
         "startLocation": "Santa Maria Val Müstair",
-        "length": 19.0,
+        "length": 19,
         "elevation": 1492,
         "averageGradient": 7.9,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       }
     },
@@ -65,25 +69,37 @@
       {
         "name": "Tornante 48",
         "description": "Premier virage numéroté en montant depuis Prato, marquant le début de la célèbre série de virages en épingle.",
-        "coordinates": [46.6037, 10.5012],
+        "coordinates": [
+          46.6037,
+          10.5012
+        ],
         "type": "landmark"
       },
       {
         "name": "Memorial Fausto Coppi",
         "description": "Monument dédié au grand champion italien au sommet du col.",
-        "coordinates": [46.5253, 10.4541],
+        "coordinates": [
+          46.5253,
+          10.4541
+        ],
         "type": "monument"
       },
       {
         "name": "Trois frontières",
         "description": "Point proche du sommet où les frontières de l'Italie, de la Suisse et de l'Autriche se rencontrent.",
-        "coordinates": [46.5151, 10.4834],
+        "coordinates": [
+          46.5151,
+          10.4834
+        ],
         "type": "landmark"
       },
       {
         "name": "Hotel Stelvio",
         "description": "Hôtel historique situé au sommet du col, ouvert depuis 1954.",
-        "coordinates": [46.5253, 10.4541],
+        "coordinates": [
+          46.5253,
+          10.4541
+        ],
         "type": "accommodation"
       }
     ],
@@ -92,9 +108,17 @@
       "roadCondition": "Excellente, bien entretenue mais étroite par endroits",
       "trafficLevel": "Élevé en été, surtout les weekends",
       "winterClosure": "Fermé d'octobre à mai",
-      "facilities": ["Restaurants au sommet", "Boutiques souvenirs", "Point d'information", "Toilettes"],
+      "facilities": [
+        "Restaurants au sommet",
+        "Boutiques souvenirs",
+        "Point d'information",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Fontaine au sommet", "Restaurants à mi-parcours"]
+      "waterPoints": [
+        "Fontaine au sommet",
+        "Restaurants à mi-parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/stelvio/main.jpg",
@@ -112,7 +136,11 @@
       "Le versant de Prato est plus difficile psychologiquement car on voit les nombreux virages en épingle devant soi.",
       "Emportez suffisamment d'eau et de nourriture, les points de ravitaillement peuvent être éloignés."
     ],
-    "recommendedBikeTypes": ["Vélo de route", "Gravel avec cassette adaptée"]
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel avec cassette adaptée"
+    ],
+    "slug": "passo-dello-stelvio"
   },
   {
     "id": "mont-ventoux",
@@ -123,7 +151,11 @@
       "longitude": 5.2783,
       "region": "Provence",
       "country": "France",
-      "nearbyTowns": ["Bédoin", "Malaucène", "Sault"]
+      "nearbyTowns": [
+        "Bédoin",
+        "Malaucène",
+        "Sault"
+      ]
     },
     "climbData": {
       "bedoinSide": {
@@ -131,7 +163,7 @@
         "length": 21.5,
         "elevation": 1610,
         "averageGradient": 7.5,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 10
       },
       "malauceneSide": {
@@ -139,15 +171,15 @@
         "length": 21.2,
         "elevation": 1570,
         "averageGradient": 7.4,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       },
       "saultSide": {
         "startLocation": "Sault",
-        "length": 26.0,
+        "length": 26,
         "elevation": 1210,
         "averageGradient": 4.7,
-        "maxGradient": 11.0,
+        "maxGradient": 11,
         "difficulty": 8
       }
     },
@@ -178,25 +210,37 @@
       {
         "name": "Mémorial Tom Simpson",
         "description": "Monument commémorant le cycliste britannique décédé sur les pentes du Ventoux en 1967.",
-        "coordinates": [44.1728, 5.2781],
+        "coordinates": [
+          44.1728,
+          5.2781
+        ],
         "type": "monument"
       },
       {
         "name": "Chalet Reynard",
         "description": "Restaurant situé à la jonction des routes de Bédoin et Sault, dernier point de ravitaillement avant le sommet.",
-        "coordinates": [44.1507, 5.2929],
+        "coordinates": [
+          44.1507,
+          5.2929
+        ],
         "type": "restaurant"
       },
       {
         "name": "Observatoire du Mont Ventoux",
         "description": "Station météorologique au sommet, reconnaissable à sa tour blanche visible de loin.",
-        "coordinates": [44.1741, 5.2783],
+        "coordinates": [
+          44.1741,
+          5.2783
+        ],
         "type": "landmark"
       },
       {
         "name": "Forêt de cèdres",
         "description": "Forêt traversée lors de l'ascension par Sault, offrant de l'ombre et une atmosphère unique.",
-        "coordinates": [44.1231, 5.3123],
+        "coordinates": [
+          44.1231,
+          5.3123
+        ],
         "type": "natural"
       }
     ],
@@ -205,9 +249,16 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré à élevé en été",
       "winterClosure": "Parfois fermé en hiver selon conditions météo",
-      "facilities": ["Boutique souvenirs au sommet", "Restaurants à Chalet Reynard", "Toilettes"],
+      "facilities": [
+        "Boutique souvenirs au sommet",
+        "Restaurants à Chalet Reynard",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Chalet Reynard", "Sommet"]
+      "waterPoints": [
+        "Chalet Reynard",
+        "Sommet"
+      ]
     },
     "images": {
       "main": "/images/cols/ventoux/main.jpg",
@@ -225,7 +276,9 @@
       "Le vent au sommet peut être extrêmement violent, parfois supérieur à 200 km/h.",
       "La section après Chalet Reynard est totalement exposée et ressemble à un paysage lunaire."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "passo-di-gavia",
@@ -236,7 +289,10 @@
       "longitude": 10.4927,
       "region": "Alpes lombardes",
       "country": "Italie",
-      "nearbyTowns": ["Bormio", "Ponte di Legno"]
+      "nearbyTowns": [
+        "Bormio",
+        "Ponte di Legno"
+      ]
     },
     "climbData": {
       "bormioSide": {
@@ -244,7 +300,7 @@
         "length": 25.6,
         "elevation": 1400,
         "averageGradient": 5.5,
-        "maxGradient": 16.0,
+        "maxGradient": 16,
         "difficulty": 9
       },
       "ponteSide": {
@@ -252,7 +308,7 @@
         "length": 17.3,
         "elevation": 1363,
         "averageGradient": 7.9,
-        "maxGradient": 16.0,
+        "maxGradient": 16,
         "difficulty": 10
       }
     },
@@ -277,25 +333,37 @@
       {
         "name": "Rifugio Bonetta",
         "description": "Refuge de montagne situé au sommet, offrant restauration et chambres.",
-        "coordinates": [46.3461, 10.4927],
+        "coordinates": [
+          46.3461,
+          10.4927
+        ],
         "type": "accommodation"
       },
       {
         "name": "Lac de Gavia",
         "description": "Petit lac près du sommet, souvent gelé jusqu'en juin.",
-        "coordinates": [46.3437, 10.4896],
+        "coordinates": [
+          46.3437,
+          10.4896
+        ],
         "type": "natural"
       },
       {
         "name": "Monument d'Andy Hampsten",
         "description": "Plaque commémorative rappelant l'exploit du cycliste américain en 1988.",
-        "coordinates": [46.3461, 10.4927],
+        "coordinates": [
+          46.3461,
+          10.4927
+        ],
         "type": "monument"
       },
       {
         "name": "Tunnels de Santa Caterina",
         "description": "Série de tunnels étroits sur le versant de Bormio, particulièrement impressionnants.",
-        "coordinates": [46.3902, 10.5033],
+        "coordinates": [
+          46.3902,
+          10.5033
+        ],
         "type": "landmark"
       }
     ],
@@ -304,9 +372,15 @@
       "roadCondition": "Moyenne à bonne, route étroite avec tunnels non éclairés",
       "trafficLevel": "Faible à modéré",
       "winterClosure": "Fermé d'octobre à mai/juin",
-      "facilities": ["Refuge au sommet avec restaurant", "Toilettes"],
+      "facilities": [
+        "Refuge au sommet avec restaurant",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Refuge au sommet", "Sources naturelles le long du parcours"]
+      "waterPoints": [
+        "Refuge au sommet",
+        "Sources naturelles le long du parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/gavia/main.jpg",
@@ -324,7 +398,10 @@
       "Les tunnels du côté Bormio sont non éclairés, un éclairage est recommandé.",
       "Le versant Ponte di Legno est plus régulier mais plus raide que celui de Bormio."
     ],
-    "recommendedBikeTypes": ["Vélo de route", "Gravel"]
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel"
+    ]
   },
   {
     "id": "col-du-galibier",
@@ -335,12 +412,16 @@
       "longitude": 6.4083,
       "region": "Alpes françaises",
       "country": "France",
-      "nearbyTowns": ["Saint-Michel-de-Maurienne", "Briançon", "Valloire"]
+      "nearbyTowns": [
+        "Saint-Michel-de-Maurienne",
+        "Briançon",
+        "Valloire"
+      ]
     },
     "climbData": {
       "northSide": {
         "startLocation": "Valloire",
-        "length": 18.0,
+        "length": 18,
         "elevation": 1245,
         "averageGradient": 6.9,
         "maxGradient": 12.1,
@@ -351,7 +432,7 @@
         "length": 8.5,
         "elevation": 585,
         "averageGradient": 6.9,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 8
       },
       "fullNorthSide": {
@@ -391,19 +472,28 @@
       {
         "name": "Monument Henri Desgrange",
         "description": "Mémorial dédié au fondateur du Tour de France, situé près du sommet.",
-        "coordinates": [45.0641, 6.4077],
+        "coordinates": [
+          45.0641,
+          6.4077
+        ],
         "type": "monument"
       },
       {
         "name": "Panorama sur la Meije",
         "description": "Vue exceptionnelle sur le massif de la Meije (3983m) depuis le col.",
-        "coordinates": [45.0633, 6.4083],
+        "coordinates": [
+          45.0633,
+          6.4083
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Tunnel du Galibier",
         "description": "Tunnel de 365m permettant de traverser sous le col en hiver.",
-        "coordinates": [45.0652, 6.4068],
+        "coordinates": [
+          45.0652,
+          6.4068
+        ],
         "type": "landmark"
       }
     ],
@@ -412,9 +502,15 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré à élevé en été",
       "winterClosure": "Col fermé d'octobre à juin, tunnel ouvert toute l'année",
-      "facilities": ["Boutique souvenirs au sommet en saison", "Restaurant au Col du Lautaret"],
+      "facilities": [
+        "Boutique souvenirs au sommet en saison",
+        "Restaurant au Col du Lautaret"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Source au sommet", "Restaurants à Valloire et au Col du Lautaret"]
+      "waterPoints": [
+        "Source au sommet",
+        "Restaurants à Valloire et au Col du Lautaret"
+      ]
     },
     "images": {
       "main": "/images/cols/galibier/main.jpg",
@@ -432,7 +528,9 @@
       "Les derniers kilomètres sont les plus difficiles, avec une pente qui augmente progressivement.",
       "L'altitude se fait sentir, prévoyez une gestion de l'effort adaptée."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "passo-dello-mortirolo",
@@ -443,7 +541,11 @@
       "longitude": 10.3018,
       "region": "Alpes lombardes",
       "country": "Italie",
-      "nearbyTowns": ["Mazzo di Valtellina", "Monno", "Grosio"]
+      "nearbyTowns": [
+        "Mazzo di Valtellina",
+        "Monno",
+        "Grosio"
+      ]
     },
     "climbData": {
       "mazzoSide": {
@@ -451,7 +553,7 @@
         "length": 12.4,
         "elevation": 1300,
         "averageGradient": 10.5,
-        "maxGradient": 18.0,
+        "maxGradient": 18,
         "difficulty": 10
       },
       "monnoSide": {
@@ -459,15 +561,15 @@
         "length": 12.6,
         "elevation": 850,
         "averageGradient": 6.7,
-        "maxGradient": 16.0,
+        "maxGradient": 16,
         "difficulty": 8
       },
       "grosioSide": {
         "startLocation": "Grosio",
         "length": 14.8,
         "elevation": 1190,
-        "averageGradient": 8.0,
-        "maxGradient": 16.0,
+        "averageGradient": 8,
+        "maxGradient": 16,
         "difficulty": 9
       }
     },
@@ -498,19 +600,28 @@
       {
         "name": "Monument Marco Pantani",
         "description": "Statue commémorative dédiée au 'Pirate', immortalisant son attaque légendaire de 1994.",
-        "coordinates": [46.2355, 10.2964],
+        "coordinates": [
+          46.2355,
+          10.2964
+        ],
         "type": "monument"
       },
       {
         "name": "Virage 11",
         "description": "L'un des virages les plus raides de l'ascension par Mazzo, avec une pente dépassant 18%.",
-        "coordinates": [46.2340, 10.2975],
+        "coordinates": [
+          46.234,
+          10.2975
+        ],
         "type": "landmark"
       },
       {
         "name": "Chapelle San Matteo",
         "description": "Petite chapelle près du sommet, lieu de recueillement pour nombreux cyclistes.",
-        "coordinates": [46.2207, 10.3018],
+        "coordinates": [
+          46.2207,
+          10.3018
+        ],
         "type": "cultural"
       }
     ],
@@ -519,9 +630,13 @@
       "roadCondition": "Moyenne à bonne, route étroite",
       "trafficLevel": "Faible",
       "winterClosure": "Généralement fermé de novembre à avril",
-      "facilities": ["Petite buvette occasionnelle au sommet en haute saison"],
+      "facilities": [
+        "Petite buvette occasionnelle au sommet en haute saison"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Fontaines à Mazzo et au sommet"]
+      "waterPoints": [
+        "Fontaines à Mazzo et au sommet"
+      ]
     },
     "images": {
       "main": "/images/cols/mortirolo/main.jpg",
@@ -539,6 +654,9 @@
       "Ne vous laissez pas piéger par le début relativement facile depuis Mazzo, les pentes s'accentuent rapidement.",
       "Le versant de Monno est nettement plus accessible et offre de beaux paysages."
     ],
-    "recommendedBikeTypes": ["Vélo de route avec triple plateau ou compact"]
+    "recommendedBikeTypes": [
+      "Vélo de route avec triple plateau ou compact"
+    ],
+    "slug": "passo-del-mortirolo"
   }
 ]

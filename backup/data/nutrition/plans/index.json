@@ -1,0 +1,53 @@
+[
+  {
+    "id": "mountain-nutrition-guide",
+    "slug": "mountain-nutrition-guide",
+    "name": {
+      "fr": "Guide Nutritionnel pour Défis en Montagne",
+      "en": "Mountain Challenge Nutrition Guide"
+    },
+    "category": "",
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-002",
+    "slug": "route-des-vins-dalsace-a-velo",
+    "name": "Route des Vins d'Alsace à Vélo",
+    "category": "",
+    "completeness": 33,
+    "status": "active"
+  },
+  {
+    "id": "route-003",
+    "slug": "tour-des-chateaux-de-la-loire",
+    "name": "Tour des Châteaux de la Loire",
+    "category": "",
+    "completeness": 33,
+    "status": "active"
+  },
+  {
+    "id": "route-001",
+    "slug": "tour-des-grands-cols-alpins",
+    "name": "Tour des Grands Cols Alpins",
+    "category": "",
+    "completeness": 33,
+    "status": "active"
+  },
+  {
+    "id": "route-005",
+    "slug": "tour-du-mont-blanc",
+    "name": "Tour du Mont Blanc",
+    "category": "",
+    "completeness": 33,
+    "status": "active"
+  },
+  {
+    "id": "route-004",
+    "slug": "traversee-des-pyrenees",
+    "name": "Traversée des Pyrénées",
+    "category": "",
+    "completeness": 33,
+    "status": "active"
+  }
+]

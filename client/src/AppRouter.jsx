@@ -4,7 +4,10 @@ import { useAuth } from './hooks/useAuth';
 
 // Pages publiques
 import HomePage from './pages/HomePage';
+import EnhancedHomePage from './pages/EnhancedHomePage';
 import ColsPage from './pages/ColsPage';
+import ColsCataloguePage from './pages/ColsCataloguePage';
+import MajorChallengePage from './pages/MajorChallengePage';
 import RoutesPage from './pages/RoutesPage';
 import TrainingPage from './pages/TrainingPage';
 import NutritionPage from './pages/NutritionPage';
@@ -66,8 +69,12 @@ const AppRouter = () => {
     <Router>
       <Routes>
         {/* Pages publiques */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<EnhancedHomePage />} />
+        <Route path="/home-classic" element={<HomePage />} />
         <Route path="/cols" element={<ColsPage />} />
+        <Route path="/cols/catalogue" element={<ColsCataloguePage />} />
+        <Route path="/challenges" element={<MajorChallengePage />} />
+        <Route path="/challenges/7-majeurs" element={<MajorChallengePage />} />
         <Route path="/routes" element={<RoutesPage />} />
         <Route path="/training" element={<TrainingPage />} />
         <Route path="/nutrition" element={<NutritionPage />} />

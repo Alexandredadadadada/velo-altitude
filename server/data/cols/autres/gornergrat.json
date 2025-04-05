@@ -1,0 +1,146 @@
+{
+  "id": "gornergrat",
+  "name": {
+    "fr": "Gornergrat",
+    "en": "Gornergrat",
+    "de": "Gornergrat",
+    "it": "Gornergrat",
+    "es": "Gornergrat"
+  },
+  "slug": "gornergrat",
+  "country": "",
+  "region": "",
+  "altitude": 3135,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 5,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/gornergrat/main.jpg",
+    "gallery": [
+      "/images/cols/gornergrat/matterhorn-view.jpg",
+      "/images/cols/gornergrat/glacier-view.jpg",
+      "/images/cols/gornergrat/steep-section.jpg",
+      "/images/cols/gornergrat/summit-hotel.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      {
+        "km": 0,
+        "description": "Fontaines à Zermatt"
+      },
+      {
+        "km": 8,
+        "description": "Riffelalp Resort"
+      },
+      {
+        "km": 15,
+        "description": "Riffelberg Hotel"
+      },
+      {
+        "km": 21,
+        "description": "Gornergrat Hotel"
+      }
+    ],
+    "food": [
+      {
+        "name": "Riffelalp Resort",
+        "km": 8,
+        "type": "restaurant",
+        "openingHours": "7h-22h"
+      },
+      {
+        "name": "Riffelberg Hotel",
+        "km": 15,
+        "type": "restaurant",
+        "openingHours": "8h-20h"
+      },
+      {
+        "name": "Gornergrat Hotel",
+        "km": 21,
+        "type": "restaurant",
+        "openingHours": "7h-19h"
+      }
+    ],
+    "shelter": [
+      {
+        "name": "Riffelalp Resort",
+        "km": 8,
+        "type": "hotel"
+      },
+      {
+        "name": "Riffelberg Hotel",
+        "km": 15,
+        "type": "hotel"
+      },
+      {
+        "name": "Gornergrat Hotel",
+        "km": 21,
+        "type": "hotel"
+      }
+    ],
+    "mechanics": [
+      {
+        "name": "Bike Service Zermatt",
+        "location": "Zermatt",
+        "distance": 0
+      },
+      {
+        "name": "Slalom Sport",
+        "location": "Zermatt",
+        "distance": 0
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "author": "Peter Müller",
+      "date": "2024-08-10",
+      "rating": 5,
+      "text": "Une ascension exceptionnelle avec des paysages à couper le souffle! La vue sur le Cervin et les glaciers tout au long de la montée est incroyable. J'ai utilisé un VTT avec des pneus de 2.1, parfait pour le revêtement mixte."
+    },
+    {
+      "author": "Claire Dubois",
+      "date": "2023-07-25",
+      "rating": 4.5,
+      "text": "J'ai réalisé cette ascension avec un vélo électrique et c'était une bonne décision. L'altitude se fait sentir après 2500m et le vent peut être très fort. La vue au sommet vaut tous les efforts, on se sent vraiment sur le toit de l'Europe!"
+    },
+    {
+      "author": "Andrea Bernasconi",
+      "date": "2022-09-05",
+      "rating": 5,
+      "text": "J'ai eu la chance de grimper le Gornergrat par une journée parfaitement claire. L'effort est considérable mais les points de ravitaillement sont nombreux. Conseil: réservez à l'avance si vous voulez dormir en altitude pour vous acclimater."
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 59,
+  "last_updated": "2025-04-05T20:42:26.986Z"
+}

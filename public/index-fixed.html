@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velo-Altitude - Explorez les plus beaux cols de montagne</title>
+    <meta name="description" content="Découvrez les plus beaux cols cyclistes avec Velo-Altitude, consultez la météo en temps réel, suivez vos entraînements et rejoignez notre communauté passionnée de cyclisme.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="modern-styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-link {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background-color: #f1f5fe;
+            color: #1a73e8;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #1a73e8;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #1557b0;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        .features {
+            padding: 80px 0;
+        }
+        .features h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            font-size: 40px;
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .community {
+            background-color: #1a73e8;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .community h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .community p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        .social-links a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #aaa;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Velo-Altitude</a>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">Accueil</a>
+                    <a href="#cols" class="nav-link">Cols</a>
+                    <a href="#meteo" class="nav-link">Météo</a>
+                    <a href="#entrainement" class="nav-link">Entraînement</a>
+                    <a href="#communaute" class="nav-link">Communauté</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Découvrez les plus beaux cols de montagne</h1>
+            <p>Planifiez vos sorties, suivez vos performances et rejoignez la communauté des cyclistes de Velo-Altitude.</p>
+            <div class="hero-buttons">
+                <a href="#cols" class="btn btn-primary">Explorer les cols</a>
+                <a href="#apropos" class="btn btn-secondary">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="apropos">
+        <div class="container">
+            <h2>Votre compagnon de cyclisme</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="feature-title">Cols Célèbres</h3>
+                    <p>Découvrez des informations détaillées sur les plus beaux cols des Alpes, des Pyrénées et des Vosges, avec des profils d'altitude et des recommandations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3 class="feature-title">Météo en Temps Réel</h3>
+                    <p>Consultez les prévisions météorologiques précises pour planifier vos sorties à vélo en toute sécurité et dans les meilleures conditions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Suivi d'Entraînement</h3>
+                    <p>Enregistrez et analysez vos performances, fixez-vous des objectifs et suivez votre progression au fil du temps.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Communauté</h3>
+                    <p>Rejoignez la communauté des cyclistes de Velo-Altitude, partagez vos expériences et participez à des événements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="community" id="communaute">
+        <div class="container">
+            <h2>Rejoignez la communauté Velo-Altitude</h2>
+            <p>Connectez-vous avec d'autres passionnés de cyclisme, partagez vos expériences, découvrez de nouveaux itinéraires et participez à des événements exclusifs.</p>
+            <a href="#" class="btn btn-secondary">Rejoindre maintenant</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">Velo-Altitude</h3>
+                    <p>Votre compagnon pour découvrir les plus beaux cols de montagne, suivre vos performances et rejoindre la communauté des cyclistes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-strava"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-title">Liens utiles</h3>
+                    <div class="footer-links">
+                        <a href="#">Accueil</a>
+                        <a href="#">Cols</a>
+                        <a href="#">Météo</a>
+                        <a href="#">Entraînement</a>
+                        <a href="#">Communauté</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-title">Support</h3>
+                    <div class="footer-links">
+                        <a href="#">Contact</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Assistance</a>
+                        <a href="#">Signaler un problème</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Velo-Altitude. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for the page
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Velo-Altitude site is loaded!');
+            
+            // Add smooth scrolling to all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

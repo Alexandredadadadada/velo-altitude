@@ -1,0 +1,69 @@
+{
+  "id": "col-de-la-furka",
+  "name": "Col de la Furka",
+  "region": "alpes-suisses",
+  "country": "Suisse",
+  "altitude": 2429,
+  "length": 12.8,
+  "avgGradient": 7.8,
+  "maxGradient": 14,
+  "difficulty": "hard",
+  "elevationGain": 1002,
+  "startLocation": "Realp",
+  "endLocation": "Col de la Furka",
+  "description": "Le col de la Furka est l'un des plus hauts cols des Alpes suisses, reliant les cantons d'Uri et du Valais. Son sommet offre une vue spectaculaire sur le glacier du Rhône et les Alpes bernoises. Cette ascension difficile mais régulière est une étape incontournable pour les amateurs de cyclisme alpin.",
+  "history": "Rendu célèbre par une scène du film \"Goldfinger\" de James Bond, le col a été franchi à plusieurs reprises par le Tour de Suisse. Hugo Koblet et Ferdi Kübler, les légendaires coureurs suisses, s'y sont illustrés dans les années 1950.",
+  "imageUrl": "/images/cols/furka/main.jpg",
+  "profileUrl": "/images/cols/furka/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Est (Realp)",
+      "startLocation": "Realp",
+      "length": 12.8,
+      "elevationGain": 1002,
+      "avgGradient": 7.8,
+      "maxGradient": 14,
+      "difficulty": "hard",
+      "description": "Montée constante avec plusieurs virages en épingle"
+    },
+    {
+      "name": "Versant Ouest (Gletsch)",
+      "startLocation": "Gletsch",
+      "length": 8.5,
+      "elevationGain": 727,
+      "avgGradient": 8.5,
+      "maxGradient": 10,
+      "difficulty": "hard",
+      "description": "Version plus courte mais plus raide, offrant des vues sur le glacier du Rhône"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Tiefenbach - Sommet",
+      "length": 5.3,
+      "gradient": 8.7,
+      "description": "Derniers kilomètres avec les meilleures vues"
+    }
+  ],
+  "touristicInfo": "Non loin du col se trouve l'Hôtel Belvédère, un hôtel historique avec vue sur le glacier du Rhône. La région offre de nombreuses possibilités de randonnée. Le train à vapeur de la Furka, une attraction touristique, traverse une partie de l'itinéraire.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Tiefenbach et sommet",
+      "description": "Points d'eau aux restaurants"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant avec terrasse panoramique"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col fermé en hiver, généralement de novembre à mai. L'altitude élevée peut entraîner des conditions météorologiques changeantes.",
+  "strava": {
+    "segmentId": "673764",
+    "komTime": "39:15",
+    "komName": "Richard Carapaz"
+  },
+  "slug": "col-de-la-furka"
+}

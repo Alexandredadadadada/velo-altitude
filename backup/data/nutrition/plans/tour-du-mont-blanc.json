@@ -1,0 +1,20 @@
+{
+  "id": "route-005",
+  "name": "Tour du Mont Blanc",
+  "slug": "tour-du-mont-blanc",
+  "category": "",
+  "description": {
+    "fr": "",
+    "en": ""
+  },
+  "days": [],
+  "recipes": [],
+  "supplements": [],
+  "hydration": {},
+  "variations": [],
+  "related_cols": [],
+  "related_training": [],
+  "status": "active",
+  "completeness": 33,
+  "last_updated": "2025-04-05T20:45:28.722Z"
+}

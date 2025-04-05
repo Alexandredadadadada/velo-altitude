@@ -1,0 +1,79 @@
+{
+  "id": "puy-mary",
+  "name": "Puy Mary",
+  "region": "massif-central",
+  "country": "France",
+  "altitude": 1589,
+  "length": 13.3,
+  "avgGradient": 7.1,
+  "maxGradient": 12,
+  "difficulty": "hard",
+  "elevationGain": 944,
+  "startLocation": "Murat",
+  "endLocation": "Pas de Peyrol (Puy Mary)",
+  "description": "Le Puy Mary est le point culminant du massif cantalien, situé au cœur du parc naturel régional des volcans d'Auvergne. Cette ascension offre des panoramas exceptionnels sur les monts du Cantal et ses vallées glaciaires.",
+  "history": "Le Tour de France est passé à plusieurs reprises par ce sommet. En 2020, une étape mémorable s'y est déroulée avec la victoire de Daniel Martinez, tandis que Primož Roglič consolidait son maillot jaune.",
+  "imageUrl": "/images/cols/puy-mary/main.jpg",
+  "profileUrl": "/images/cols/puy-mary/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Murat)",
+      "startLocation": "Murat",
+      "length": 13.3,
+      "elevationGain": 944,
+      "avgGradient": 7.1,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "L'ascension principale, passant par le Col de Serre et la Vallée de Mandailles"
+    },
+    {
+      "name": "Versant Sud (Salers)",
+      "startLocation": "Salers",
+      "length": 12.4,
+      "elevationGain": 830,
+      "avgGradient": 6.7,
+      "maxGradient": 10,
+      "difficulty": "medium",
+      "description": "Montée plus régulière traversant de beaux paysages pastoraux"
+    },
+    {
+      "name": "Versant Est (Saint-Jacques-des-Blats)",
+      "startLocation": "Saint-Jacques-des-Blats",
+      "length": 14.1,
+      "elevationGain": 1060,
+      "avgGradient": 7.5,
+      "maxGradient": 15,
+      "difficulty": "hard",
+      "description": "Version la plus exigeante avec des passages très raides"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Refuge de Peyre Gary - Sommet",
+      "length": 3.4,
+      "gradient": 9.2,
+      "description": "Section finale avec les pourcentages les plus élevés"
+    }
+  ],
+  "touristicInfo": "Le sommet offre une vue à 360° sur le massif cantalien. La région est célèbre pour sa nature préservée et ses fromages, notamment le Cantal et le Salers.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Refuge de Peyre Gary et sommet",
+      "description": "Points d'eau"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant et snack (en saison touristique)"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Conditions changeantes typiques de moyenne montagne. Le col est généralement fermé en hiver en raison de l'enneigement.",
+  "strava": {
+    "segmentId": "653481",
+    "komTime": "35:42",
+    "komName": "Romain Bardet"
+  },
+  "slug": "puy-mary"
+}

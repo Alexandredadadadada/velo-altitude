@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from './AuthContext';
+import sevenMajorsChallenges from '../data/sevenMajorsChallenges';
 
 // Création du contexte
 const ChallengeContext = createContext();
@@ -257,16 +258,19 @@ export const ChallengeProvider = ({ children }) => {
   
   // Charger les défis prédéfinis
   const fetchPredefinedChallenges = async () => {
+    dispatch({ type: ACTIONS.SET_LOADING, payload: true });
     try {
-      dispatch({ type: ACTIONS.SET_LOADING, payload: true });
-      
-      const response = await axios.get('/api/predefined-challenges');
-      dispatch({ type: ACTIONS.SET_PREDEFINED_CHALLENGES, payload: response.data });
+      // Utiliser les données statiques au lieu d'une API
+      // Dans un environnement de production, cela pourrait être un appel à une API
+      dispatch({ 
+        type: ACTIONS.SET_PREDEFINED_CHALLENGES, 
+        payload: sevenMajorsChallenges 
+      });
     } catch (err) {
       console.error('Erreur lors du chargement des défis prédéfinis:', err);
       dispatch({ 
         type: ACTIONS.SET_ERROR, 
-        payload: 'Impossible de charger les défis prédéfinis. Veuillez réessayer plus tard.' 
+        payload: 'Impossible de charger les défis prédéfinis' 
       });
     }
   };

@@ -1,0 +1,53 @@
+{
+  "id": "col-de-joux-plane",
+  "name": "Col de Joux Plane",
+  "slug": "col-de-joux-plane",
+  "country": "",
+  "region": "",
+  "altitude": 1691,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 4,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/joux-plane/main.jpg",
+    "gallery": [
+      "/images/cols/joux-plane/morzine-side.jpg",
+      "/images/cols/joux-plane/samoens-side.jpg",
+      "/images/cols/joux-plane/lake.jpg",
+      "/images/cols/joux-plane/mont-blanc-view.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.870Z"
+}

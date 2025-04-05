@@ -1,0 +1,69 @@
+{
+  "id": "passo-fedaia",
+  "name": "Passo Fedaia",
+  "region": "dolomites",
+  "country": "Italie",
+  "altitude": 2057,
+  "length": 14.1,
+  "avgGradient": 7.9,
+  "maxGradient": 18,
+  "difficulty": "extreme",
+  "elevationGain": 1113,
+  "startLocation": "Caprile",
+  "endLocation": "Passo Fedaia",
+  "description": "Le Passo Fedaia est l'un des cols les plus difficiles des Dolomites, culminant à plus de 2000m d'altitude et offrant des vues spectaculaires sur le glacier de la Marmolada, le point culminant des Dolomites. Son profil irrégulier avec des sections extrêmement pentues en fait un défi majeur pour tout cycliste.",
+  "history": "Ce col a marqué l'histoire du Giro d'Italia à plusieurs reprises, notamment en 2022 lorsque Jai Hindley a attaqué Richard Carapaz sur ses pentes, établissant les bases de sa victoire finale au classement général.",
+  "imageUrl": "/images/cols/fedaia/main.jpg",
+  "profileUrl": "/images/cols/fedaia/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Malga Ciapela - Sommet",
+      "length": 5.4,
+      "gradient": 11.8,
+      "description": "Section finale brutale avec plusieurs passages à plus de 15%"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Ouest (Caprile)",
+      "startLocation": "Caprile",
+      "length": 14.1,
+      "elevationGain": 1113,
+      "avgGradient": 7.9,
+      "maxGradient": 18,
+      "difficulty": "extreme",
+      "description": "L'ascension classique avec la célèbre section finale très raide après Malga Ciapela"
+    },
+    {
+      "name": "Versant Est (Canazei)",
+      "startLocation": "Canazei",
+      "length": 12.5,
+      "elevationGain": 649,
+      "avgGradient": 5.2,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Versant plus régulier et moins exigeant, idéal pour découvrir le col"
+    }
+  ],
+  "touristicInfo": "Le lac artificiel de Fedaia, situé au sommet, offre un panorama spectaculaire sur la Marmolada et ses glaciers. La région est célèbre pour ses sentiers de randonnée et ses stations de ski. En été, le téléphérique de la Marmolada permet d'accéder au point culminant des Dolomites.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Malga Ciapela et sommet",
+      "description": "Plusieurs fontaines et restaurant au sommet"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Rifugio Fedaia avec restauration complète"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col fermé en hiver. Même en été, les conditions peuvent changer rapidement en raison de l'altitude. Des chutes de neige sont possibles même en juillet et août.",
+  "strava": {
+    "segmentId": "872546",
+    "komTime": "49:15",
+    "komName": "Jai Hindley"
+  },
+  "slug": "passo-fedaia"
+}

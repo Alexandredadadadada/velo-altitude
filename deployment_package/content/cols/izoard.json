@@ -1,0 +1,135 @@
+{
+  "id": "izoard",
+  "name": {
+    "fr": "Col de l'Izoard",
+    "en": "Col de l'Izoard",
+    "de": "Col de l'Izoard",
+    "it": "Colle dell'Izoard",
+    "es": "Col de l'Izoard"
+  },
+  "altitude": 2360,
+  "location": {
+    "latitude": 44.8208,
+    "longitude": 6.7372,
+    "region": "Hautes-Alpes",
+    "country": "France",
+    "nearbyTowns": ["Briançon", "Arvieux", "Château-Ville-Vieille"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Briançon",
+      "length": 19.0,
+      "elevation": 1150,
+      "averageGradient": 6.0,
+      "maxGradient": 10.0,
+      "difficulty": 8
+    },
+    "alternateSide": {
+      "startLocation": "Château-Ville-Vieille",
+      "length": 15.9,
+      "elevation": 1095,
+      "averageGradient": 6.9,
+      "maxGradient": 10.0,
+      "difficulty": 8
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1922,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 36,
+    "giroAppearances": 1,
+    "famousStories": [
+      "Le paysage lunaire de la Casse Déserte, situé juste sous le col, est l'un des sites les plus impressionnants du Tour de France.",
+      "Fausto Coppi et Louison Bobet y ont écrit certaines de leurs plus belles pages de gloire, ce qui leur a valu un monument dédié dans la Casse Déserte.",
+      "En 2017, le col a été le théâtre d'une arrivée d'étape remportée par Warren Barguil, le jour de la fête nationale française.",
+      "Le col est souvent décrit comme 'le plus beau col des Alpes' par les cyclistes, en raison de ses paysages spectaculaires et variés.",
+      "Le col fait partie du Parc Naturel Régional du Queyras, l'une des zones les plus préservées des Alpes françaises."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Nairo Quintana",
+        "time": "39:55",
+        "year": 2017,
+        "side": "Briançon"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "La Casse Déserte",
+      "description": "Formation géologique spectaculaire de schistes gris, créant un paysage presque lunaire.",
+      "coordinates": {
+        "latitude": 44.8111,
+        "longitude": 6.7400
+      }
+    },
+    {
+      "name": "Monument Coppi-Bobet",
+      "description": "Stèle commémorant les exploits de Fausto Coppi et Louison Bobet dans l'Izoard.",
+      "coordinates": {
+        "latitude": 44.8167,
+        "longitude": 6.7383
+      }
+    },
+    {
+      "name": "Refuge Napoléon",
+      "description": "Refuge historique situé près du sommet, construit sous l'impulsion de Napoléon III.",
+      "coordinates": {
+        "latitude": 44.8194,
+        "longitude": 6.7378
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "De juin à octobre généralement",
+    "bestPeriod": "Juillet à septembre",
+    "notes": "Le col est totalement fermé en hiver et au printemps en raison de la neige."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.climbbybike.com/images/Col_de_Izoard_Casse_Desert.jpg",
+        "caption": "La Casse Déserte, paysage lunaire emblématique",
+        "credit": "ClimbByBike.com"
+      },
+      {
+        "url": "https://www.cyclingstage.com/wp-content/uploads/2017/04/monument-coppi-bobet-izoard-2.jpg",
+        "caption": "Monument Coppi-Bobet",
+        "credit": "CyclingStage.com"
+      },
+      {
+        "url": "https://www.cycling-challenge.com/wp-content/uploads/2009/07/p1070069-1.jpg",
+        "caption": "Sommet du Col de l'Izoard",
+        "credit": "Cycling-Challenge.com"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=JJgW5rlzjQU",
+        "title": "Col de l'Izoard - Ascension depuis Briançon",
+        "duration": "1:02:45"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.2 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 recommandée avec un compact 34-50",
+    "preparation": "Entraînement axé sur l'endurance et la capacité à maintenir un effort soutenu sur la durée",
+    "cautionPoints": [
+      "Changements climatiques rapides possibles en altitude",
+      "Descente technique côté Casse Déserte",
+      "Exposition au soleil importante, surtout l'après-midi"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Briançon", "Cervières", "Refuge Napoléon (sommet)"],
+    "restaurants": ["Refuge Napoléon au sommet"],
+    "accommodation": ["Briançon", "Arvieux", "Refuge Napoléon (places limitées)"],
+    "bikeMechanic": "Magasins de vélos à Briançon"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["route-des-grandes-alpes", "briancon-izoard-vars-circuit"]
+  }
+}

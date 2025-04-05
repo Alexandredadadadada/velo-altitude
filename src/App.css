@@ -16,9 +16,10 @@
 
 .app-footer {
   margin-top: auto;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   background-color: var(--dark-bg);
   color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {
@@ -26,12 +27,96 @@
   margin: 0 auto;
   padding: 0 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Styles pour le plan du site */
+.sitemap-section {
+  margin-bottom: 2rem;
+}
+
+.sitemap-title {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sitemap-list {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.sitemap-list li {
+  margin-bottom: 0.5rem;
+}
+
+.sitemap-list a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.sitemap-list a:hover {
+  color: var(--primary-color);
+}
+
+/* Styles pour les composants SEO */
+.seo-breadcrumbs {
+  padding: 1rem 0;
+  background-color: #f5f5f5;
+  margin-bottom: 2rem;
+}
+
+.seo-breadcrumbs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.seo-breadcrumbs a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.seo-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.seo-breadcrumbs .separator {
+  margin: 0 0.5rem;
+  color: #999;
 }
 
 /* Styles responsifs */
 @media (max-width: 768px) {
   .app-container {
     padding-bottom: 60px; /* Espace pour la navigation mobile */
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
@@ -54,4 +139,134 @@
 .page-transition-exit-active {
   opacity: 0;
   transition: opacity 300ms;
+}
+
+/* Styles pour les pages de recettes et programmes d'entraînement optimisées */
+.enhanced-detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.enhanced-detail-header {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.enhanced-detail-header-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.enhanced-detail-header-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+.enhanced-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.enhanced-detail-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.enhanced-detail-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
+.enhanced-detail-main {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.enhanced-detail-sidebar {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.enhanced-detail-section {
+  margin-bottom: 2rem;
+}
+
+.enhanced-detail-section-title {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.enhanced-detail-related {
+  margin-top: 3rem;
+}
+
+.enhanced-detail-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.enhanced-detail-related-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.enhanced-detail-related-card:hover {
+  transform: translateY(-5px);
+}
+
+.enhanced-detail-related-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.enhanced-detail-related-content {
+  padding: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .enhanced-detail-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .enhanced-detail-header-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .enhanced-detail-header-image {
+    height: 200px;
+  }
+  
+  .enhanced-detail-header-overlay {
+    padding: 1rem;
+  }
+  
+  .enhanced-detail-meta {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }

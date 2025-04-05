@@ -1,0 +1,127 @@
+{
+  "id": "transalpina",
+  "name": {
+    "fr": "Transalpina",
+    "en": "Transalpina",
+    "de": "Transalpina",
+    "it": "Transalpina",
+    "es": "Transalpina"
+  },
+  "slug": "transalpina",
+  "country": "",
+  "region": "",
+  "altitude": 2145,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 4,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/transalpina/main.jpg",
+    "gallery": [
+      "/images/cols/transalpina/urdele-pass.jpg",
+      "/images/cols/transalpina/ranca-view.jpg",
+      "/images/cols/transalpina/oasa-lake.jpg",
+      "/images/cols/transalpina/novaci-side.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      {
+        "km": 12,
+        "description": "Fontaine à l'entrée de Rânca"
+      },
+      {
+        "km": 24,
+        "description": "Source naturelle balisée"
+      },
+      {
+        "km": 33,
+        "description": "Restaurant au sommet (saisonnier)"
+      }
+    ],
+    "food": [
+      {
+        "name": "Restaurant Rânca",
+        "km": 12,
+        "type": "restaurant",
+        "openingHours": "9h-21h"
+      },
+      {
+        "name": "Cabane Pasul Urdele",
+        "km": 33,
+        "type": "refuge",
+        "openingHours": "10h-18h (juin-septembre)"
+      }
+    ],
+    "shelter": [
+      {
+        "name": "Hôtel Rânca",
+        "km": 12,
+        "type": "hotel"
+      },
+      {
+        "name": "Refuge Obârșia Lotrului",
+        "km": 23,
+        "type": "refuge"
+      }
+    ],
+    "mechanics": [
+      {
+        "name": "Service Auto Novaci",
+        "location": "Novaci",
+        "distance": 0,
+        "notes": "Réparations basiques uniquement"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "author": "Cristian Munteanu",
+      "date": "2024-08-05",
+      "rating": 5,
+      "text": "Une ascension épique et moins connue que la Transfăgărășan. J'ai grimpé les deux versants sur deux jours. Le côté Novaci est plus spectaculaire avec des vues incroyables sur les montagnes du Parâng."
+    },
+    {
+      "author": "Léa Bernard",
+      "date": "2023-07-12",
+      "rating": 4.5,
+      "text": "Route magnifique mais attention aux conditions météo qui changent très vite. J'ai commencé sous le soleil et terminé sous un orage. Heureusement, il y a un petit refuge au sommet."
+    },
+    {
+      "author": "Michael Wagner",
+      "date": "2024-06-30",
+      "rating": 5,
+      "text": "C'est l'un des secrets les mieux gardés des Carpates. Moins fréquentée que la Transfăgărășan, la route est en excellent état et les paysages sont stupéfiants. La montée depuis Novaci est longue mais régulière, parfaite pour trouver son rythme."
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 59,
+  "last_updated": "2025-04-05T20:42:26.741Z"
+}

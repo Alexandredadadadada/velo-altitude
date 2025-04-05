@@ -1,0 +1,347 @@
+{
+  "id": "plan-nutrition-recuperation",
+  "title": "Plan Nutritionnel de Récupération Optimale",
+  "subtitle": "Stratégies alimentaires scientifiques pour maximiser la récupération après l'effort",
+  "type": "recuperation",
+  "description": "Ce plan nutritionnel est spécifiquement conçu pour optimiser la récupération musculaire, énergétique et immunitaire après des efforts cyclistes intenses. Basé sur les dernières recherches en nutrition sportive, il propose des stratégies précises pour chaque fenêtre temporelle post-effort afin de maximiser l'adaptation à l'entraînement et préparer efficacement les séances suivantes.",
+  "author": "Dr. Emma Dubois, Nutritionniste du Sport",
+  "difficulty": 2,
+  "duration": "Application continue, avec périodisation selon l'intensité des efforts",
+  "targetAudience": [
+    "Cyclistes suivant un programme d'entraînement structuré",
+    "Compétiteurs cherchant à optimiser leurs performances",
+    "Cyclistes enchaînant des jours consécutifs d'effort intense",
+    "Cyclistes de plus de 40 ans avec récupération diminuée"
+  ],
+  "keyBenefits": [
+    "Réduction significative des douleurs musculaires post-effort",
+    "Reconstitution plus rapide des réserves de glycogène",
+    "Amélioration de la synthèse protéique musculaire",
+    "Soutien du système immunitaire après les efforts intenses",
+    "Meilleure qualité de sommeil favorisant la récupération",
+    "Diminution du risque de surentraînement"
+  ],
+  "recoveryScienceBasics": {
+    "recoveryWindows": {
+      "immediateWindow": "0-30 minutes après l'effort : Fenêtre anabolique primaire, réponse insulinique optimale",
+      "earlyRecovery": "30min-2h après l'effort : Période critique pour la resynthèse du glycogène",
+      "lateRecovery": "2h-24h après l'effort : Période prolongée de réparation tissulaire et adaptation",
+      "extendedRecovery": "24-48h après l'effort : Consolidation des adaptations et préparation aux efforts suivants"
+    },
+    "keyNutrients": {
+      "proteins": "Essentielles pour la réparation musculaire, avec focus sur les acides aminés essentiels et leucine",
+      "carbohydrates": "Critiques pour la reconstitution du glycogène, efficacité optimale dans les 30 premières minutes",
+      "fluids": "Fondamentaux pour restaurer l'équilibre hydroélectrolytique et faciliter les processus métaboliques",
+      "antioxidants": "Importants pour combattre le stress oxydatif généré par l'exercice intense",
+      "antiInflammatories": "Utiles pour modérer la réponse inflammatoire naturelle post-effort"
+    }
+  },
+  "recoveryStrategies": {
+    "immediatePostExercise": {
+      "timing": "0-30 minutes après l'effort",
+      "goals": [
+        "Débuter la resynthèse du glycogène",
+        "Amorcer la réparation musculaire",
+        "Restaurer l'équilibre hydrique"
+      ],
+      "recommendations": {
+        "intakeRatios": "Ratio glucides/protéines idéal : 3-4:1",
+        "carbohydrateIntake": "1-1.2g/kg de poids corporel",
+        "proteinIntake": "0.3-0.4g/kg de poids corporel",
+        "fluidReplacement": "150% du poids perdu pendant l'effort (pesée avant/après)",
+        "electrolytes": "400-700mg de sodium par litre de boisson de récupération"
+      },
+      "optimalFoods": [
+        {
+          "name": "Boisson de récupération maison",
+          "description": "500ml de lait d'amande ou de lait écrémé + 1 banane + 30g de protéine de whey + 1 cuillère à soupe de miel",
+          "benefits": "Ratio idéal glucides/protéines, hydratation, électrolytes naturels"
+        },
+        {
+          "name": "Smoothie antioxydant",
+          "description": "300ml de lait ou alternative végétale + myrtilles + 30g de protéine + 1 cuillère à café de curcuma",
+          "benefits": "Protéines complètes, antioxydants, composés anti-inflammatoires"
+        },
+        {
+          "name": "Riz au lait express",
+          "description": "30g de riz précuit + 200ml de lait + 1 cuillère à café de cannelle + 1 cuillère à soupe de sirop d'érable",
+          "benefits": "Glucides à IG modéré, protéines complètes, anti-inflammatoires naturels"
+        }
+      ],
+      "commercialOptions": [
+        "Boisson de récupération certifiée (ratio 3:1 ou 4:1)",
+        "Lait chocolaté (option économique et efficace)",
+        "Yaourt à boire + barre de céréales aux fruits"
+      ],
+      "supplements": {
+        "EAA": "10g d'acides aminés essentiels pour optimiser la synthèse protéique",
+        "betaAlanine": "3-5g pour soutenir la récupération musculaire",
+        "electrolyteTabs": "En cas de forte transpiration, surtout par temps chaud"
+      }
+    },
+    "earlyRecovery": {
+      "timing": "30min-2h après l'effort",
+      "goals": [
+        "Poursuivre la resynthèse du glycogène",
+        "Fournir des protéines de qualité pour la réparation",
+        "Maintenir l'hydratation optimale"
+      ],
+      "recommendations": {
+        "mealTiming": "Repas complet dans les 2h après l'exercice",
+        "carbohydrateIntake": "1g/kg de poids corporel",
+        "proteinIntake": "0.3-0.4g/kg de poids corporel",
+        "fatIntake": "Modérée, priorité aux oméga-3",
+        "hydration": "Continuer à boire régulièrement, viser urine claire"
+      },
+      "optimalFoods": [
+        {
+          "name": "Bowl de récupération",
+          "description": "Quinoa + patate douce + saumon + avocat + légumes colorés",
+          "benefits": "Glucides complexes, protéines complètes, acides gras essentiels"
+        },
+        {
+          "name": "Wrap poulet-légumes",
+          "description": "Tortilla complète + poulet + houmous + légumes rôtis + épinards",
+          "benefits": "Équilibre parfait protéines/glucides, antioxydants, fibres"
+        },
+        {
+          "name": "Buddha bowl végétarien",
+          "description": "Riz basmati + lentilles + tofu + légumes grillés + sauce tahini",
+          "benefits": "Option végétarienne complète, fer, calcium, protéines végétales"
+        }
+      ],
+      "avoidList": [
+        "Aliments très gras ralentissant la digestion",
+        "Alcool interférant avec la synthèse protéique et la récupération glycogénique",
+        "Excès de fibres pouvant causer inconfort digestif"
+      ]
+    },
+    "lateRecovery": {
+      "timing": "2h-24h après l'effort",
+      "goals": [
+        "Maintenir l'apport en protéines pour optimiser la synthèse protéique sur 24h",
+        "Poursuivre la réhydratation complète",
+        "Soutenir le système immunitaire",
+        "Favoriser un sommeil réparateur"
+      ],
+      "recommendations": {
+        "proteinTiming": "Répartir l'apport protéique (20-30g) toutes les 3-4h",
+        "carbohydrateIntake": "Adapter selon l'intensité du lendemain (5-8g/kg/jour)",
+        "nutrientFocus": "Antioxydants, zinc, vitamine D, magnésium",
+        "hydrationProtocol": "Boire régulièrement, surveiller la couleur des urines"
+      },
+      "sleepOptimization": {
+        "foods": [
+          "Cerises (source naturelle de mélatonine)",
+          "Kiwi (améliore la qualité et la durée du sommeil)",
+          "Yaourt ou lait tiède (tryptophane et calcium)"
+        ],
+        "timing": "Collation légère riche en tryptophane 1h avant le coucher",
+        "supplements": "Magnésium (200-400mg) et/ou 1g de tryptophane si nécessaire"
+      },
+      "immuneSupport": {
+        "nutrients": "Zinc, vitamines C et D, polyphénols",
+        "foods": [
+          "Agrumes et kiwis (vitamine C)",
+          "Champignons exposés au soleil (vitamine D)",
+          "Yaourt probiotique (soutien microbiote)"
+        ]
+      }
+    },
+    "extendedRecovery": {
+      "timing": "24-48h après l'effort intense",
+      "goals": [
+        "Compléter la resynthèse du glycogène",
+        "Finaliser la réparation tissulaire",
+        "Soutenir la récupération neuromusculaire"
+      ],
+      "antiInflammatory": {
+        "naturalSources": [
+          "Curcuma avec poivre noir (curcumine biodisponible)",
+          "Baies rouges et noires (anthocyanes)",
+          "Gingembre frais (gingérols)",
+          "Oméga-3 (poissons gras, graines de chia/lin)"
+        ],
+        "timing": "Intégrer ces aliments sur 48h post-effort intense"
+      },
+      "adaptations": {
+        "ageRelated": "Augmenter l'apport protéique de 20% après 40 ans",
+        "intensityBased": "Après effort très intense (course/montagne), prolonger phase anti-inflammatoire"
+      }
+    }
+  },
+  "mealPlans": {
+    "generalGuidelines": {
+      "macronutrientTiming": "Privilégier protéines à chaque repas (20-30g), glucides selon proximité de l'effort",
+      "micronutrientFocus": "Couleurs variées pour couvrir spectre anti-inflammatoire et antioxydant",
+      "hydrationReminders": "Boire 500ml au réveil, puis 500ml toutes les 2-3h minimum"
+    },
+    "exampleDay": {
+      "preworkout": {
+        "timing": "1-2h avant",
+        "meal": "Toast de pain complet + 2 œufs + avocat + jus de betterave",
+        "benefits": "Énergie soutenue, nitrates pour performance, protéines"
+      },
+      "immediateRecovery": {
+        "timing": "0-30min après",
+        "meal": "Smoothie banane-myrtilles-protéine de lactosérum + eau",
+        "benefits": "Ratio 3:1 optimal, début rapide de récupération"
+      },
+      "postworkoutMeal": {
+        "timing": "60-90min après",
+        "meal": "Patate douce + saumon + légumes verts + huile d'olive",
+        "benefits": "Protéines complètes, glucides complexes, antioxydants"
+      },
+      "afternoonSnack": {
+        "timing": "3-4h après déjeuner",
+        "meal": "Yaourt grec + myrtilles + noix + miel",
+        "benefits": "Protéines, antioxydants, soutien digestif"
+      },
+      "dinner": {
+        "timing": "19h-20h",
+        "meal": "Quinoa + poulet + ratatouille + huile de colza",
+        "benefits": "Protéines maigres, glucides complexes, anti-inflammatoires"
+      },
+      "beforeBed": {
+        "timing": "30-60min avant coucher",
+        "meal": "Fromage blanc + cannelle + 2 kiwis",
+        "benefits": "Caséine à digestion lente, amélioration du sommeil"
+      }
+    },
+    "specificScenarios": {
+      "multiDayEvent": {
+        "strategy": "Augmenter glucides (8-10g/kg/j), priorité à la récupération glycogénique",
+        "specialConsiderations": "Protéines avant coucher, collations toutes les 2h"
+      },
+      "weightManagement": {
+        "strategy": "Maintenir apport protéique élevé, moduler glucides selon objectifs",
+        "specialConsiderations": "Ne jamais descendre sous 5g/kg/j de glucides en période d'entraînement"
+      },
+      "vegetarianVegan": {
+        "proteinSources": [
+          "Tofu, tempeh, seitan",
+          "Légumineuses + céréales (complémentarité)",
+          "Protéines végétales isolées (pois, riz)"
+        ],
+        "supplements": "Considérer B12, fer, zinc, oméga-3 (algues)"
+      }
+    }
+  },
+  "hydrationProtocol": {
+    "basicFormula": "Minimum quotidien = Poids corporel (kg) x 35ml + volume perdu durant l'exercice",
+    "electrolytesRecommendations": {
+      "sodium": "500-700mg/L pour récupération, plus si forte chaleur/transpiration",
+      "potassium": "200-400mg/L via aliments ou boissons spécifiques",
+      "magnesium": "3-5mg/kg/jour, priorité aux sources alimentaires"
+    },
+    "hydrationTiming": [
+      "500ml au réveil avec citron pour réhydrater et activer le métabolisme",
+      "500ml 2h avant effort",
+      "250-300ml toutes les 15-20min pendant l'effort",
+      "1,5L durant les 2h suivant l'effort"
+    ],
+    "dehydrationSigns": [
+      "Urine foncée",
+      "Fatigue inhabituelle",
+      "Crampes musculaires",
+      "Récupération plus lente que normale"
+    ]
+  },
+  "supplementationGuide": {
+    "essentialSupplements": {
+      "proteinPowder": {
+        "recommendation": "Whey isolate pour récupération immédiate, caséine avant coucher",
+        "dosage": "20-30g post-effort, 20-30g avant coucher si nécessaire",
+        "qualityCriteria": "Sans sucres ajoutés, de qualité certifiée"
+      },
+      "BCAA_EAA": {
+        "recommendation": "Privilégier EAA complets, ratio leucine élevé",
+        "dosage": "5-10g en récupération, utile également pendant efforts longs",
+        "timing": "Pendant et immédiatement après l'effort"
+      },
+      "magnesium": {
+        "recommendation": "Bisglycinate ou citrate pour meilleure biodisponibilité",
+        "dosage": "200-400mg/jour, prioritairement le soir",
+        "benefits": "Récupération musculaire, qualité du sommeil, prévention crampes"
+      }
+    },
+    "optionalSupplements": {
+      "tart_cherry": {
+        "recommendation": "Concentré de cerise acide ou montmorency",
+        "dosage": "30ml 2x/jour pendant périodes intenses",
+        "benefits": "Puissant anti-inflammatoire naturel, amélioration du sommeil"
+      },
+      "curcumin": {
+        "recommendation": "Formulation avec pipérine pour absorption",
+        "dosage": "1000-1500mg/jour en 2-3 prises",
+        "benefits": "Modulation inflammation, soutien articulaire"
+      },
+      "beta_alanine": {
+        "recommendation": "Utile pour efforts répétés à haute intensité",
+        "dosage": "3-5g/jour",
+        "benefits": "Tamponne l'acidité musculaire, aide à la récupération"
+      },
+      "HMB": {
+        "recommendation": "Pour périodes d'entraînement très intenses ou cyclistes de +40 ans",
+        "dosage": "1,5-3g/jour",
+        "benefits": "Préservation musculaire, soutien anabolisme"
+      }
+    },
+    "cautionaryNote": "Les suppléments doivent compléter, non remplacer, une alimentation équilibrée. Privilégiez toujours les sources alimentaires naturelles et consultez un professionnel pour des recommandations personnalisées."
+  },
+  "periodizationStrategy": {
+    "trainingBlocks": {
+      "baseTraining": {
+        "nutritionalFocus": "Construire réserves, habitudes alimentaires fondamentales",
+        "carbohydrateIntake": "Modéré (5-7g/kg/jour)",
+        "supplementFocus": "Bases (protéines, peut-être magnésium)"
+      },
+      "intensiveTraining": {
+        "nutritionalFocus": "Soutien récupération optimale entre séances intenses",
+        "carbohydrateIntake": "Élevé (7-10g/kg/jour)",
+        "supplementFocus": "Complet (anti-inflammatoires, antioxydants, EAA)"
+      },
+      "competitionPeriod": {
+        "nutritionalFocus": "Performance et récupération ultra-rapide",
+        "carbohydrateIntake": "Très élevé (8-12g/kg/jour selon intensité)",
+        "supplementFocus": "Stratégique (tout ce qui accélère récupération)"
+      },
+      "transitionPeriod": {
+        "nutritionalFocus": "Régénération, réparation profonde, reset métabolique",
+        "carbohydrateIntake": "Modéré-faible, selon activité",
+        "supplementFocus": "Minimal, focus sur aliments entiers"
+      }
+    }
+  },
+  "trackingAndOptimization": {
+    "keySigns": {
+      "positiveRecovery": [
+        "Réveil naturel, énergique",
+        "Fréquence cardiaque au repos stable/basse",
+        "Absence de douleurs musculaires excessives",
+        "Motivation maintenue pour séances suivantes"
+      ],
+      "insufficientRecovery": [
+        "Fréquence cardiaque matinale élevée (+5-10 bpm)",
+        "Fatigue persistante, sommeil perturbé",
+        "Performances en baisse malgré effort perçu élevé",
+        "Système immunitaire affaibli (infections mineures fréquentes)"
+      ]
+    },
+    "adaptationGuidelines": {
+      "hydrationAdjustment": "Peser avant/après effort pour quantifier pertes exactes",
+      "proteinPersonalization": "Ajuster selon masse musculaire et âge (plus élevé après 40 ans)",
+      "carbohydrateTiming": "Manipuler selon proximité et intensité des séances"
+    }
+  },
+  "scientificReferences": [
+    "Kerksick CM, et al. (2018). ISSN exercise & sports nutrition review update: research & recommendations. Journal of the International Society of Sports Nutrition, 15(1), 38.",
+    "Impey SG, et al. (2018). Fuel for the work required: a practical approach to amalgamating train-low paradigms for endurance athletes. Physiological Reports, 6(10), e13692.",
+    "Heaton LE, et al. (2017). Selected In-Season Nutritional Strategies to Enhance Recovery for Team Sport Athletes: A Practical Overview. Sports Medicine, 47(11), 2201-2218.",
+    "Moore DR. (2019). Maximizing Post-exercise Anabolism: The Case for Relative Protein Intakes. Frontiers in Nutrition, 6, 147."
+  ],
+  "relatedContent": {
+    "nutrition": ["plan-nutrition-haute-montagne", "plan-nutrition-longue-distance"],
+    "training": ["plan-haute-montagne", "plan-ventoux"]
+  }
+}

@@ -6,6 +6,7 @@ import AlternativeRoutes from './visualization/AlternativeRoutes';
 import WeatherDashboard from './weather/WeatherDashboard';
 import TrainingModule from './training/TrainingModule';
 import SocialHub from './social/SocialHub';
+import WidgetManager from './dashboard/WidgetManager';
 import './Dashboard.css';
 
 // Mock API service for fetching cols data
@@ -41,7 +42,7 @@ const fetchRoutesList = async () => {
 
 const Dashboard = () => {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState('visualization');
+  const [activeTab, setActiveTab] = useState('dashboard'); 
   const [loading, setLoading] = useState(true);
   const [cols, setCols] = useState([]);
   const [routes, setRoutes] = useState([]);
@@ -141,6 +142,7 @@ const Dashboard = () => {
 
   // Prepare navigation tabs
   const navigationTabs = [
+    { id: 'dashboard', label: t('dashboard') }, 
     { id: 'visualization3D', label: t('3dVisualization') },
     { id: 'comparison', label: t('colsComparison') },
     { id: 'alternativeRoutes', label: t('alternativeRoutes') },
@@ -180,6 +182,12 @@ const Dashboard = () => {
       </div>
 
       <div className="dashboard-content">
+        {activeTab === 'dashboard' && (
+          <div className="dashboard-tab">
+            <WidgetManager />
+          </div>
+        )}
+      
         {activeTab === 'visualization3D' && (
           <div className="visualization-tab">
             <div className="visualization-selector">

@@ -1,0 +1,69 @@
+{
+  "id": "col-du-fau",
+  "name": "Col du Fau",
+  "region": "massif-central",
+  "country": "France",
+  "altitude": 892,
+  "length": 8.3,
+  "avgGradient": 5.5,
+  "maxGradient": 8.5,
+  "difficulty": "medium",
+  "elevationGain": 457,
+  "startLocation": "Saint-Maurice-en-Trièves",
+  "endLocation": "Col du Fau",
+  "description": "Le Col du Fau est situé dans la région du Trièves et offre un parcours varié avec de belles vues sur le Massif du Vercors et le plateau du Matheysine. Il est moins connu que d'autres cols de la région mais offre un challenge intéressant avec ses lacets bien dessinés.",
+  "history": "Ce col a été régulièrement emprunté par le Critérium du Dauphiné et a servi d'étape lors du Tour de France 2020. Le col a également joué un rôle stratégique pendant la Seconde Guerre mondiale, servant de passage pour la Résistance.",
+  "imageUrl": "/images/cols/fau/main.jpg",
+  "profileUrl": "/images/cols/fau/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Virage du Château - Sommet",
+      "length": 3.2,
+      "gradient": 7,
+      "description": "Section finale avec des vues dégagées sur les montagnes environnantes"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Sud (Saint-Maurice-en-Trièves)",
+      "startLocation": "Saint-Maurice-en-Trièves",
+      "length": 8.3,
+      "elevationGain": 457,
+      "avgGradient": 5.5,
+      "maxGradient": 8.5,
+      "difficulty": "medium",
+      "description": "Montée régulière avec quelques passages plus soutenus"
+    },
+    {
+      "name": "Versant Nord (Monestier-de-Clermont)",
+      "startLocation": "Monestier-de-Clermont",
+      "length": 5.9,
+      "elevationGain": 285,
+      "avgGradient": 4.8,
+      "maxGradient": 7,
+      "difficulty": "easy",
+      "description": "Ascension plus douce et relativement courte"
+    }
+  ],
+  "touristicInfo": "La région du Trièves, où se situe le Col du Fau, est connue pour ses paysages préservés et son agriculture biologique. Le col offre une vue panoramique sur le massif de l'Obiou et le Dévoluy.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Saint-Maurice-en-Trièves",
+      "description": "Fontaine publique dans le village"
+    },
+    {
+      "type": "food",
+      "location": "Monestier-de-Clermont",
+      "description": "Plusieurs restaurants et boulangeries"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Col généralement accessible toute l'année, mais attention aux vents violents qui peuvent souffler dans la région, notamment en automne et en hiver.",
+  "strava": {
+    "segmentId": "752468",
+    "komTime": "18:45",
+    "komName": "Romain Bardet"
+  },
+  "slug": "col-du-fau"
+}

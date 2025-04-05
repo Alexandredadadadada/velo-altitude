@@ -22,7 +22,12 @@ import {
   LinearProgress,
   Paper,
   Badge,
-  Container
+  Container,
+  Avatar,
+  SpeedDial,
+  SpeedDialAction,
+  SpeedDialIcon,
+  Alert
 } from '@mui/material';
 import { 
   EmojiEvents as TrophyIcon,
@@ -37,7 +42,16 @@ import {
   Terrain as TerrainIcon,
   EmojiPeople as PeopleIcon,
   AccessTime as TimeIcon,
-  Celebration as CelebrationIcon
+  Celebration as CelebrationIcon,
+  Group as GroupIcon,
+  PhotoCamera as PhotoCameraIcon,
+  EmojiFlags as EmojiFlagsIcon,
+  HowToReg as HowToRegIcon,
+  Chat as ChatIcon,
+  Leaderboard as LeaderboardIcon,
+  Diamond as DiamondIcon,
+  Forum as ForumIcon,
+  AddAPhoto as AddAPhotoIcon
 } from '@mui/icons-material';
 import { useTheme, alpha } from '@mui/material/styles';
 import axios from 'axios';
@@ -59,6 +73,7 @@ const ChallengesDashboard = () => {
   const [currentTab, setCurrentTab] = useState(0);
   const [colsData, setColsData] = useState({});
   const [userProgress, setUserProgress] = useState({});
+  const [communityView, setCommunityView] = useState('popular'); // 'popular', 'recent', 'friends'
   
   const theme = useTheme();
   const { isAuthenticated, user } = useAuth();
@@ -405,6 +420,308 @@ const ChallengesDashboard = () => {
     ));
   };
 
+  // Composant pour l'onglet Communauté des défis
+  const ChallengeCommunityTab = ({ onJoinChallenge, viewType, onChangeViewType }) => {
+    const [loading, setLoading] = useState(false);
+    const [communityDefis, setCommunityDefis] = useState([]);
+    
+    // Simuler le chargement des données
+    useEffect(() => {
+      setLoading(true);
+      const timer = setTimeout(() => {
+        setLoading(false);
+        setCommunityDefis([
+          {
+            id: 'comm-1',
+            title: 'Challenge des Grimpeurs - Alpes 2025',
+            author: {
+              name: 'Marie Dupont',
+              avatar: '/assets/avatars/user1.jpg'
+            },
+            participants: 27,
+            type: 'alpes-challenge',
+            completions: 8,
+            createdAt: '2025-02-15T12:00:00Z',
+            imageUrl: '/assets/challenges/alpes-challenge.jpg',
+            difficulty: 4
+          },
+          {
+            id: 'comm-2',
+            title: 'Tour des Pyrénées en 7 étapes',
+            author: {
+              name: 'Jean Cycliste',
+              avatar: '/assets/avatars/user2.jpg'
+            },
+            participants: 15,
+            type: 'pyrenees-challenge',
+            completions: 3,
+            createdAt: '2025-03-12T14:30:00Z',
+            imageUrl: '/assets/challenges/pyrenees-challenge.jpg',
+            difficulty: 3
+          },
+          {
+            id: 'comm-3',
+            title: 'Défi Club VTT Strasbourg - Edition 2025',
+            author: {
+              name: 'Club VTT Strasbourg',
+              avatar: '/assets/avatars/club1.jpg'
+            },
+            participants: 42,
+            type: 'vosges-jura-challenge',
+            completions: 15,
+            createdAt: '2025-03-28T09:15:00Z',
+            imageUrl: '/assets/challenges/vosges-jura-challenge.jpg',
+            difficulty: 2
+          },
+          {
+            id: 'comm-4',
+            title: 'Conquérants des Dolomites',
+            author: {
+              name: 'Paolo Bianchi',
+              avatar: '/assets/avatars/user3.jpg'
+            },
+            participants: 19,
+            type: 'dolomites-challenge',
+            completions: 4,
+            createdAt: '2025-04-01T16:45:00Z',
+            imageUrl: '/assets/challenges/dolomites-challenge.jpg',
+            difficulty: 5
+          }
+        ]);
+      }, 1500);
+      
+      return () => clearTimeout(timer);
+    }, [viewType]);
+    
+    // Filtrer les défis selon le type de vue
+    const filteredDefis = communityDefis.filter(defi => viewType === 'popular' ? defi.participants > 10 : viewType === 'recent' ? new Date(defi.createdAt) > new Date('2025-03-01T00:00:00Z') : true);
+    
+    // Rendu des actions rapides flottantes
+    const quickActions = [
+      { icon: <AddAPhotoIcon />, name: 'Créer un défi', action: () => console.log('Créer un défi') },
+      { icon: <ForumIcon />, name: 'Forum des défis', action: () => console.log('Ouvrir le forum') },
+      { icon: <LeaderboardIcon />, name: 'Classements', action: () => console.log('Voir classements') },
+    ];
+    
+    const getDifficultyColor = (level) => {
+      switch(level) {
+        case 1: return 'success';
+        case 2: return 'info';
+        case 3: return 'primary';
+        case 4: return 'warning';
+        case 5: return 'error';
+        default: return 'primary';
+      }
+    };
+    
+    // Conversion de timestamp en texte relatif
+    const getRelativeTime = (timestamp) => {
+      const date = new Date(timestamp);
+      const now = new Date();
+      const diffInDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+      
+      if (diffInDays === 0) return 'Aujourd\'hui';
+      if (diffInDays === 1) return 'Hier';
+      if (diffInDays < 7) return `Il y a ${diffInDays} jours`;
+      if (diffInDays < 30) {
+        const weeks = Math.floor(diffInDays / 7);
+        return `Il y a ${weeks} semaines`;
+      }
+      return date.toLocaleDateString();
+    };
+    
+    return (
+      <Box>
+        <Typography variant="h5" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
+          <GroupIcon color="primary" sx={{ mr: 1 }} />
+          Défis de la Communauté
+        </Typography>
+        
+        <Typography variant="body1" color="text.secondary" paragraph>
+          Rejoignez d'autres cyclistes, partagez vos aventures et découvrez de nouveaux défis créés par la communauté. Relevez le défi ensemble!
+        </Typography>
+        
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+          <Tabs 
+            value={viewType} 
+            onChange={(e, newValue) => onChangeViewType(newValue)}
+            aria-label="community view tabs"
+          >
+            <Tab 
+              value="popular" 
+              label="Populaires" 
+              icon={<DiamondIcon fontSize="small" />} 
+              iconPosition="start"
+            />
+            <Tab 
+              value="recent" 
+              label="Récents" 
+              icon={<TimelineIcon fontSize="small" />} 
+              iconPosition="start"
+            />
+            <Tab 
+              value="friends" 
+              label="Amis" 
+              icon={<HowToRegIcon fontSize="small" />} 
+              iconPosition="start"
+            />
+          </Tabs>
+          
+          <Button
+            variant="outlined"
+            startIcon={<ChatIcon />}
+            href="/community/forum/challenges"
+          >
+            Discussions
+          </Button>
+        </Box>
+        
+        {/* Liste des défis communautaires */}
+        {loading ? (
+          <Grid container spacing={3}>
+            {[1, 2, 3, 4].map(item => (
+              <Grid item key={item} xs={12} sm={6} md={4} lg={3}>
+                <Skeleton variant="rectangular" height={220} sx={{ borderRadius: 1 }} />
+                <Skeleton variant="text" height={30} sx={{ mt: 1 }} />
+                <Skeleton variant="text" height={20} width="60%" />
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 1 }}>
+                  <Skeleton variant="circular" width={40} height={40} />
+                  <Skeleton variant="rectangular" width={100} height={36} sx={{ borderRadius: 1 }} />
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        ) : viewType === 'friends' ? (
+          <Alert severity="info" sx={{ mt: 2 }}>
+            Aucun défi partagé par vos amis pour le moment. Suivez plus de cyclistes pour voir leurs défis ici.
+          </Alert>
+        ) : (
+          <Grid container spacing={3}>
+            {filteredDefis.map(defi => (
+              <Grid item key={defi.id} xs={12} sm={6} md={4} lg={3}>
+                <Card 
+                  elevation={2} 
+                  sx={{ 
+                    height: '100%', 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    transition: 'transform 0.2s, box-shadow 0.2s',
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                      boxShadow: 6
+                    }
+                  }}
+                >
+                  <Box sx={{ position: 'relative' }}>
+                    <CardMedia
+                      component="img"
+                      height={160}
+                      image={defi.imageUrl}
+                      alt={defi.title}
+                    />
+                    <Box 
+                      sx={{ 
+                        position: 'absolute', 
+                        top: 10, 
+                        right: 10, 
+                        bgcolor: 'rgba(0,0,0,0.6)', 
+                        borderRadius: 1,
+                        px: 1,
+                        py: 0.5,
+                        display: 'flex',
+                        alignItems: 'center'
+                      }}
+                    >
+                      <GroupIcon sx={{ color: 'white', fontSize: 16, mr: 0.5 }} />
+                      <Typography variant="caption" sx={{ color: 'white', fontWeight: 'bold' }}>
+                        {defi.participants}
+                      </Typography>
+                    </Box>
+                    
+                    <Box 
+                      sx={{ 
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                        p: 1.5,
+                        pt: 3
+                      }}
+                    >
+                      <Typography variant="subtitle1" sx={{ color: 'white', fontWeight: 'bold' }}>
+                        {defi.title}
+                      </Typography>
+                    </Box>
+                  </Box>
+                  
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                      <Avatar 
+                        src={defi.author.avatar} 
+                        alt={defi.author.name}
+                        sx={{ width: 28, height: 28, mr: 1 }}
+                      />
+                      <Typography variant="body2">
+                        {defi.author.name}
+                      </Typography>
+                    </Box>
+                    
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
+                      <Chip
+                        label={`Niveau ${defi.difficulty}`}
+                        size="small"
+                        color={getDifficultyColor(defi.difficulty)}
+                      />
+                      <Typography variant="caption" color="text.secondary">
+                        {getRelativeTime(defi.createdAt)}
+                      </Typography>
+                    </Box>
+                    
+                    <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
+                      <EmojiFlagsIcon color="success" sx={{ fontSize: 16, mr: 0.5 }} />
+                      <Typography variant="caption" color="text.secondary">
+                        {defi.completions} cyclistes ont terminé
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                  
+                  <CardActions>
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      onClick={() => onJoinChallenge(defi.id)}
+                      startIcon={<HowToRegIcon />}
+                    >
+                      Rejoindre
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        )}
+        
+        {/* Actions rapides flottantes */}
+        <SpeedDial
+          ariaLabel="Actions rapides pour les défis"
+          sx={{ position: 'fixed', bottom: 16, right: 16 }}
+          icon={<SpeedDialIcon />}
+        >
+          {quickActions.map((action) => (
+            <SpeedDialAction
+              key={action.name}
+              icon={action.icon}
+              tooltipTitle={action.name}
+              onClick={action.action}
+            />
+          ))}
+        </SpeedDial>
+      </Box>
+    );
+  };
+
   return (
     <Container maxWidth="xl" component="section" aria-labelledby="challenges-title">
       <Box 
@@ -628,6 +945,13 @@ const ChallengesDashboard = () => {
               aria-controls="challenge-tabpanel-4"
               iconPosition="start"
             />
+            <Tab 
+              icon={<GroupIcon />} 
+              label="Communauté"
+              id="challenge-tab-5"
+              aria-controls="challenge-tabpanel-5"
+              iconPosition="start"
+            />
           </Tabs>
         </Box>
         
@@ -778,6 +1102,15 @@ const ChallengesDashboard = () => {
             )}
           </DialogActions>
         </Dialog>
+        
+        {/* Onglet Communauté */}
+        {currentTab === 5 && (
+          <ChallengeCommunityTab 
+            onJoinChallenge={() => console.log('Rejoindre le défi')}
+            viewType={communityView}
+            onChangeViewType={(view) => setCommunityView(view)}
+          />
+        )}
       </Box>
     </Container>
   );

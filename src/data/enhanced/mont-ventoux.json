@@ -1,0 +1,85 @@
+{
+  "id": "mont-ventoux",
+  "name": "Mont Ventoux",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 1909,
+  "length": 21.8,
+  "avgGradient": 7.2,
+  "maxGradient": 12,
+  "difficulty": "extreme",
+  "elevationGain": 1572,
+  "startLocation": "Bédoin",
+  "endLocation": "Mont Ventoux",
+  "description": "Le Mont Ventoux, surnommé \"le Géant de Provence\", est l'une des ascensions les plus mythiques du cyclisme mondial. Son profil impitoyable et son paysage lunaire dans sa partie sommitale font de cette montée un défi redouté par tous les cyclistes. La transition entre la forêt dense et le paysage désertique de calcaire blanc crée une ambiance unique qui contribue à la légende de ce mont.",
+  "history": "Rendu tristement célèbre par la mort de Tom Simpson en 1967, le Ventoux est entré dans la légende du Tour de France dès 1951. Chaque ascension est devenue un événement marquant de l'histoire du cyclisme, avec des exploits mémorables de champions comme Eddy Merckx, Marco Pantani ou Chris Froome. Le mont est aujourd'hui un lieu de pèlerinage pour les cyclistes du monde entier.",
+  "imageUrl": "/images/cols/ventoux/main.jpg",
+  "profileUrl": "/images/cols/ventoux/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Chalet Reynard - Sommet",
+      "length": 6,
+      "gradient": 8.9,
+      "description": "Section finale emblématique dans le désert de pierres blanches"
+    },
+    {
+      "name": "Saint-Estève - Chalet Reynard",
+      "length": 10.1,
+      "gradient": 9.1,
+      "description": "La terrible section forestière avec des pentes constamment raides"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Sud (Bédoin)",
+      "startLocation": "Bédoin",
+      "length": 21.8,
+      "elevationGain": 1572,
+      "avgGradient": 7.2,
+      "maxGradient": 12,
+      "difficulty": "extreme",
+      "description": "L'ascension classique et la plus difficile, empruntée majoritairement par le Tour de France"
+    },
+    {
+      "name": "Versant Est (Sault)",
+      "startLocation": "Sault",
+      "length": 25.7,
+      "elevationGain": 1152,
+      "avgGradient": 4.5,
+      "maxGradient": 11,
+      "difficulty": "medium",
+      "description": "La plus longue mais la moins pentue, rejoignant l'itinéraire de Bédoin au Chalet Reynard"
+    },
+    {
+      "name": "Versant Nord (Malaucène)",
+      "startLocation": "Malaucène",
+      "length": 21.2,
+      "elevationGain": 1535,
+      "avgGradient": 7.2,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "Alternative aussi difficile que Bédoin mais moins connue, avec des passages en forêt plus ombragés"
+    }
+  ],
+  "touristicInfo": "Le sommet offre une vue panoramique exceptionnelle sur la Provence, les Alpes et parfois jusqu'à la Méditerranée. La région environnante est célèbre pour ses villages perchés, ses champs de lavande (particulièrement à Sault) et ses vignobles. Le site abrite également un observatoire météorologique caractéristique avec sa tour blanche et rouge.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Chalet Reynard et sommet",
+      "description": "Points d'eau disponibles au Chalet Reynard et au sommet (en saison)"
+    },
+    {
+      "type": "food",
+      "location": "Chalet Reynard et sommet",
+      "description": "Restaurant au Chalet Reynard ouvert en saison et boutique souvenirs/snacks au sommet"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Le sommet peut être fermé en cas de vent violent (mistral) dépassant 90 km/h, ce qui est fréquent. En été, les températures peuvent être extrêmement élevées sur les pentes exposées, rendant l'ascension dangereuse en milieu de journée. Le sommet peut connaître des conditions météorologiques très différentes de celles au pied de la montagne.",
+  "strava": {
+    "segmentId": "229377",
+    "komTime": "55:51",
+    "komName": "Egan Bernal"
+  },
+  "slug": "mont-ventoux"
+}

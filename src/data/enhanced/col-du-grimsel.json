@@ -1,0 +1,84 @@
+{
+  "id": "col-du-grimsel",
+  "name": "Col du Grimsel",
+  "region": "alpes-suisses",
+  "country": "Suisse",
+  "altitude": 2164,
+  "length": 26,
+  "avgGradient": 5.9,
+  "maxGradient": 11,
+  "difficulty": "hard",
+  "elevationGain": 1540,
+  "startLocation": "Meiringen",
+  "endLocation": "Col du Grimsel",
+  "description": "Le col du Grimsel relie la vallée de Hasli dans le canton de Berne à la vallée de Conches dans le canton du Valais. Ce col alpin est caractérisé par son paysage granitique aux teintes grises, ses nombreux lacs-réservoirs et ses centrales hydroélectriques.",
+  "history": "Emprunté régulièrement par le Tour de Suisse, le col a également vu passer le Tour de France lors de l'étape reliant Lausanne à Verbier en 2009, avec une victoire de Alberto Contador.",
+  "imageUrl": "/images/cols/grimsel/main.jpg",
+  "profileUrl": "/images/cols/grimsel/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Meiringen)",
+      "startLocation": "Meiringen",
+      "length": 26,
+      "elevationGain": 1540,
+      "avgGradient": 5.9,
+      "maxGradient": 11,
+      "difficulty": "hard",
+      "description": "Longue montée débutant dans la vallée et passant par plusieurs lacs"
+    },
+    {
+      "name": "Versant Ouest (Innertkirchen)",
+      "startLocation": "Innertkirchen",
+      "length": 20.5,
+      "elevationGain": 1370,
+      "avgGradient": 6.7,
+      "maxGradient": 11,
+      "difficulty": "hard",
+      "description": "Version légèrement plus courte et plus raide"
+    },
+    {
+      "name": "Versant Sud (Gletsch)",
+      "startLocation": "Gletsch",
+      "length": 6.1,
+      "elevationGain": 567,
+      "avgGradient": 9.3,
+      "maxGradient": 12,
+      "difficulty": "medium",
+      "description": "Montée courte mais intense depuis le carrefour du Furka"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Handegg - Sommet",
+      "length": 8.7,
+      "gradient": 8.2,
+      "description": "Section supérieure après le lac et le barrage"
+    }
+  ],
+  "touristicInfo": "La route passe près de plusieurs lacs artificiels et barrages impressionnants. L'Hospice du Grimsel, un hôtel historique, se trouve au sommet. La région est connue pour ses centrales hydroélectriques.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Guttannen, Handegg et sommet",
+      "description": "Fontaines et restaurants"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant de l'Hospice du Grimsel"
+    },
+    {
+      "type": "accommodation",
+      "location": "Sommet",
+      "description": "Grimsel Hospiz, hôtel historique"
+    }
+  ],
+  "bestTimeToVisit": "Juin à octobre",
+  "weatherInfo": "Col fermé en hiver, généralement de novembre à mai. Possibilité de vent fort et de brouillard.",
+  "strava": {
+    "segmentId": "672835",
+    "komTime": "1:12:15",
+    "komName": "Simon Spilak"
+  },
+  "slug": "col-du-grimsel"
+}

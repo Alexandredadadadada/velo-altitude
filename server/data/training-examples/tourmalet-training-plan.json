@@ -1,0 +1,232 @@
+{
+  "id": "plan-tourmalet",
+  "name": "Préparation Col du Tourmalet",
+  "objective": "préparation-col",
+  "level": "intermédiaire",
+  "duration_weeks": 8,
+  "weekly_structure": [
+    {
+      "week": 1,
+      "theme": "Construction de base",
+      "total_hours": 8,
+      "days": [
+        {
+          "day": "Lundi",
+          "type": "repos",
+          "title": "Récupération",
+          "description": "Repos complet ou étirements légers",
+          "duration": "0h",
+          "intensity": 0,
+          "metrics": []
+        },
+        {
+          "day": "Mardi",
+          "type": "endurance",
+          "title": "Endurance fondamentale",
+          "description": "Sortie à intensité modérée (zone 2), terrain plat à vallonné. Concentrez-vous sur un pédalage fluide et une cadence élevée (90-100 rpm).",
+          "duration": "1h30",
+          "intensity": 3,
+          "metrics": [
+            "Fréquence cardiaque: zone 2 (65-75% FCmax)",
+            "Cadence: 90-100 rpm"
+          ]
+        },
+        {
+          "day": "Mercredi",
+          "type": "force",
+          "title": "Force spécifique",
+          "description": "Échauffement 20 min, puis 6x3 min en force (cadence basse 50-60 rpm) sur une côte modérée, récupération 3 min entre les répétitions, retour au calme 15 min.",
+          "duration": "1h15",
+          "intensity": 6,
+          "metrics": [
+            "Cadence: 50-60 rpm en côte",
+            "Puissance: zone 3-4"
+          ]
+        },
+        {
+          "day": "Jeudi",
+          "type": "repos",
+          "title": "Récupération active",
+          "description": "Sortie très légère sur terrain plat, cadence élevée et résistance minimale. Alternative: natation ou marche.",
+          "duration": "45min",
+          "intensity": 1,
+          "metrics": [
+            "Fréquence cardiaque: zone 1 (<65% FCmax)"
+          ]
+        },
+        {
+          "day": "Vendredi",
+          "type": "intervalle",
+          "title": "Développement du seuil",
+          "description": "Échauffement 20 min, 2 séries de 3x5 min à 88-92% FTP, récupération 3 min entre intervalles et 5 min entre séries, retour au calme 15 min.",
+          "duration": "1h30",
+          "intensity": 7,
+          "metrics": [
+            "Puissance: 88-92% FTP",
+            "Fréquence cardiaque: zone 4"
+          ]
+        },
+        {
+          "day": "Samedi",
+          "type": "endurance",
+          "title": "Sortie longue progressive",
+          "description": "Sortie longue avec 2h en endurance fondamentale (zone 2) puis 30 min en sweet spot (zone 3-4). Travaillez la nutrition pendant l'effort.",
+          "duration": "2h30",
+          "intensity": 4,
+          "metrics": [
+            "Fréquence cardiaque: zone 2 puis zone 3-4",
+            "Nutrition: 60g glucides/heure"
+          ]
+        },
+        {
+          "day": "Dimanche",
+          "type": "technique",
+          "title": "Technique de pédalage en montée",
+          "description": "Sortie facile avec focus sur la position en montée et changements de position sur le vélo. Inclure quelques côtes modérées.",
+          "duration": "1h30",
+          "intensity": 2,
+          "metrics": [
+            "Cadence: variations 70-100 rpm",
+            "Position: assis/danseuse"
+          ]
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "theme": "Volume et endurance",
+      "total_hours": 9,
+      "days": [
+        {
+          "day": "Lundi",
+          "type": "repos",
+          "title": "Récupération",
+          "description": "Repos complet ou yoga doux",
+          "duration": "0h",
+          "intensity": 0,
+          "metrics": []
+        },
+        {
+          "day": "Mardi",
+          "type": "endurance",
+          "title": "Endurance avec montées modérées",
+          "description": "Échauffement 15 min, puis parcours incluant 3-4 montées de 5-8 min à intensité modérée (zone 3), récupération active entre les montées.",
+          "duration": "2h",
+          "intensity": 4,
+          "metrics": [
+            "Fréquence cardiaque: zone 3 (75-85% FCmax)",
+            "Cadence en montée: 75-85 rpm"
+          ]
+        },
+        {
+          "day": "Mercredi",
+          "type": "force",
+          "title": "Force-endurance",
+          "description": "Échauffement 20 min, puis 4 séries de 10 min en force-endurance sur terrain vallonné, cadence 70-80 rpm, récupération 5 min entre les séries.",
+          "duration": "1h30",
+          "intensity": 5,
+          "metrics": [
+            "Cadence: 70-80 rpm",
+            "Puissance: zone 3"
+          ]
+        },
+        {
+          "day": "Jeudi",
+          "type": "repos",
+          "title": "Récupération active",
+          "description": "Sortie très légère sur terrain plat, focus sur la fluidité du pédalage.",
+          "duration": "1h",
+          "intensity": 1,
+          "metrics": [
+            "Fréquence cardiaque: zone 1 (<65% FCmax)",
+            "Cadence: >90 rpm"
+          ]
+        },
+        {
+          "day": "Vendredi",
+          "type": "intervalle",
+          "title": "Intervalles en côte",
+          "description": "Échauffement 20 min, puis 5x3 min en côte à intensité élevée (90-100% FTP), récupération descente entre les intervalles, retour au calme 15 min.",
+          "duration": "1h30",
+          "intensity": 8,
+          "metrics": [
+            "Puissance: 90-100% FTP",
+            "Fréquence cardiaque: zone 4-5"
+          ]
+        },
+        {
+          "day": "Samedi",
+          "type": "endurance",
+          "title": "Sortie longue avec simulations",
+          "description": "Sortie longue incluant 3 simulations d'ascension de 15-20 min à intensité progressive (zone 2 à zone 3-4).",
+          "duration": "3h",
+          "intensity": 5,
+          "metrics": [
+            "Fréquence cardiaque: progressive",
+            "Nutrition: 60-80g glucides/heure"
+          ]
+        },
+        {
+          "day": "Dimanche",
+          "type": "technique",
+          "title": "Travail technique en groupe",
+          "description": "Sortie en groupe à intensité variable, travail des relais et placement dans le peloton.",
+          "duration": "1h30",
+          "intensity": 3,
+          "metrics": [
+            "Fréquence cardiaque: variable",
+            "Position: économie d'énergie"
+          ]
+        }
+      ]
+    }
+  ],
+  "equipment_needed": [
+    "Vélo avec développement adapté aux fortes pentes (compact ou triple plateau)",
+    "Capteur de puissance recommandé",
+    "Cardio-fréquencemètre",
+    "Vêtements adaptés aux conditions variables de montagne"
+  ],
+  "targetAudience": {
+    "fitnessLevel": "Cyclistes pratiquant régulièrement, capables de rouler 3-4h sans difficulté",
+    "timeCommitment": "8-12 heures par semaine",
+    "goals": [
+      "Gravir le Col du Tourmalet à un rythme régulier",
+      "Améliorer l'endurance en montée sur longue distance",
+      "Développer la capacité à maintenir un effort prolongé en haute altitude"
+    ]
+  },
+  "nutritionRecommendations": {
+    "beforeWorkout": "Repas riche en glucides complexes 2-3h avant les séances longues, collation légère 30min avant les séances courtes",
+    "duringWorkout": "60-80g de glucides par heure pour les séances >90min, hydratation 500-750ml/h",
+    "afterWorkout": "Récupération avec ratio glucides/protéines 4:1 dans les 30min post-effort",
+    "dailyIntake": "Alimentation équilibrée riche en glucides complexes, protéines maigres et graisses saines"
+  },
+  "progressionMetrics": [
+    "Puissance normalisée sur les montées de 20min",
+    "Rapport puissance/poids (w/kg)",
+    "Fréquence cardiaque à intensité donnée (indicateur de progression)",
+    "Capacité à maintenir une cadence élevée en montée"
+  ],
+  "complementaryExercises": [
+    {
+      "name": "Gainage dynamique",
+      "purpose": "Renforcement du core pour stabilité en montée",
+      "description": "Planches frontales et latérales avec variations dynamiques",
+      "frequency": "2-3 sessions de 15min par semaine"
+    },
+    {
+      "name": "Squats unijambistes",
+      "purpose": "Renforcement spécifique pour le pédalage en montée",
+      "description": "3 séries de 10-15 répétitions par jambe",
+      "frequency": "2 sessions par semaine"
+    }
+  ],
+  "expectedOutcomes": [
+    "Amélioration de 10-15% de la puissance maintenue sur 30-60min",
+    "Meilleure gestion de l'effort sur longue montée",
+    "Optimisation du rapport puissance/poids",
+    "Capacité à récupérer rapidement après des sections raides"
+  ],
+  "slug": "preparation-col-du-tourmalet"
+}

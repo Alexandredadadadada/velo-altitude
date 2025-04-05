@@ -19,7 +19,8 @@ import {
   Alert,
   Paper,
   IconButton,
-  Tooltip
+  Tooltip,
+  Stack
 } from '@mui/material';
 import {
   Search as SearchIcon,
@@ -27,7 +28,9 @@ import {
   Add as AddIcon,
   Visibility as VisibilityIcon,
   Public as GlobeIcon,
-  Terrain as TerrainIcon
+  Terrain as TerrainIcon,
+  RouteOutlined as RouteIcon,
+  Speed as SpeedIcon
 } from '@mui/icons-material';
 
 /**
@@ -48,12 +51,18 @@ const ColSearchTab = ({
   
   // Mémoriser les pays et régions uniques pour les filtres
   const uniqueCountries = useMemo(() => {
-    const countries = [...new Set(cols.map(col => col.country))];
+    // Vérifier que les cols ont la propriété location et country
+    const countries = [...new Set(cols
+      .filter(col => col.location && col.location.country)
+      .map(col => col.location.country))];
     return countries.sort();
   }, [cols]);
   
   const uniqueRegions = useMemo(() => {
-    const regions = [...new Set(cols.map(col => col.region))];
+    // Vérifier que les cols ont la propriété location et region
+    const regions = [...new Set(cols
+      .filter(col => col.location && col.location.region)
+      .map(col => col.location.region))];
     return regions.sort();
   }, [cols]);
   
@@ -63,22 +72,26 @@ const ColSearchTab = ({
     
     // Filtrer par région
     if (filters.region) {
-      results = results.filter(col => col.region === filters.region);
+      results = results.filter(col => 
+        col.location && col.location.region === filters.region
+      );
     }
     
     // Filtrer par pays
     if (filters.country) {
-      results = results.filter(col => col.country === filters.country);
+      results = results.filter(col => 
+        col.location && col.location.country === filters.country
+      );
     }
     
     // Filtrer par altitude minimale
     if (filters.minAltitude) {
-      results = results.filter(col => col.altitude >= parseInt(filters.minAltitude));
+      results = results.filter(col => col.elevation >= parseInt(filters.minAltitude));
     }
     
     // Filtrer par altitude maximale
     if (filters.maxAltitude) {
-      results = results.filter(col => col.altitude <= parseInt(filters.maxAltitude));
+      results = results.filter(col => col.elevation <= parseInt(filters.maxAltitude));
     }
     
     // Filtrer par difficulté
@@ -91,8 +104,8 @@ const ColSearchTab = ({
       const query = filters.searchQuery.toLowerCase();
       results = results.filter(col => 
         col.name.toLowerCase().includes(query) || 
-        col.region.toLowerCase().includes(query) ||
-        col.country.toLowerCase().includes(query)
+        (col.location && col.location.region && col.location.region.toLowerCase().includes(query)) ||
+        (col.location && col.location.country && col.location.country.toLowerCase().includes(query))
       );
     }
     
@@ -108,7 +121,7 @@ const ColSearchTab = ({
         <CardMedia
           component="img"
           height="140"
-          image={col.image || '/images/cols/placeholder.jpg'}
+          image={col.imageUrl || '/images/cols/default-col.jpg'}
           alt={col.name}
           sx={{ objectFit: 'cover' }}
         />
@@ -117,44 +130,62 @@ const ColSearchTab = ({
             {col.name}
           </Typography>
           
-          <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-            <GlobeIcon fontSize="small" sx={{ mr: 0.5, color: 'text.secondary' }} />
-            <Typography variant="body2" color="text.secondary">
-              {col.region}, {col.country}
-            </Typography>
-          </Box>
+          {col.location && (
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+              <GlobeIcon fontSize="small" sx={{ mr: 0.5, color: 'text.secondary' }} />
+              <Typography variant="body2" color="text.secondary" noWrap>
+                {col.location.region && col.location.country 
+                  ? `${col.location.region}, ${col.location.country}`
+                  : col.location.region || col.location.country || t('common.unknown', 'Inconnu')}
+              </Typography>
+            </Box>
+          )}
           
-          <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-            <TerrainIcon fontSize="small" sx={{ mr: 0.5, color: 'text.secondary' }} />
-            <Typography variant="body2" color="text.secondary">
-              {col.altitude}m • {col.length}km • {col.gradient}%
-            </Typography>
-          </Box>
+          <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <TerrainIcon fontSize="small" sx={{ mr: 0.5, color: 'text.secondary' }} />
+              <Typography variant="body2" color="text.secondary">
+                {col.elevation}m
+              </Typography>
+            </Box>
+            
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <RouteIcon fontSize="small" sx={{ mr: 0.5, color: 'text.secondary' }} />
+              <Typography variant="body2" color="text.secondary">
+                {col.distance}km
+              </Typography>
+            </Box>
+            
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <SpeedIcon fontSize="small" sx={{ mr: 0.5, color: 'text.secondary' }} />
+              <Typography variant="body2" color="text.secondary">
+                {col.avgGradient}%
+              </Typography>
+            </Box>
+          </Stack>
           
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
             <Chip 
               size="small" 
-              label={`${t('cols.difficulty')}: ${col.difficulty}`} 
+              label={`${t('cols.difficulty', 'Difficulté')}: ${col.difficulty}`} 
               color={
-                col.difficulty === 'HC' ? 'error' :
-                col.difficulty === '1' ? 'warning' :
-                col.difficulty === '2' ? 'success' :
-                col.difficulty === '3' ? 'info' : 'default'
+                col.difficulty === 'extreme' ? 'error' :
+                col.difficulty === 'hard' ? 'warning' :
+                col.difficulty === 'medium' ? 'info' :
+                'success'
               }
             />
             
-            {col.isPopular && (
-              <Chip 
-                size="small" 
-                label={t('cols.popular')} 
-                color="primary" 
-              />
-            )}
+            <Chip
+              size="small"
+              label={`${t('cols.elevation', 'Dénivelé')}: ${col.elevation}m`}
+              variant="outlined"
+            />
           </Box>
         </CardContent>
         
-        <CardActions sx={{ justifyContent: 'space-between', p: 2 }}>
-          <Tooltip title={t('common.view_details')}>
+        <CardActions>
+          <Tooltip title={t('challenges.seven_majors.view_details', 'Voir les détails')}>
             <IconButton 
               size="small" 
               color="primary"
@@ -164,15 +195,19 @@ const ColSearchTab = ({
             </IconButton>
           </Tooltip>
           
+          <Box sx={{ flexGrow: 1 }} />
+          
           <Button
             size="small"
-            variant={isSelected ? "outlined" : "contained"}
-            color={isSelected ? "secondary" : "primary"}
+            variant="contained"
+            color={isSelected ? "success" : "primary"}
             startIcon={<AddIcon />}
             onClick={() => onSelectCol(col)}
-            disabled={isSelected || selectedColsIds.length >= 7}
+            disabled={isSelected}
           >
-            {isSelected ? t('challenges.seven_majors.added') : t('challenges.seven_majors.add_to_challenge')}
+            {isSelected 
+              ? t('challenges.seven_majors.already_added', 'Déjà ajouté') 
+              : t('challenges.seven_majors.add_to_challenge', 'Ajouter au défi')}
           </Button>
         </CardActions>
       </Card>
@@ -182,33 +217,43 @@ const ColSearchTab = ({
   return (
     <Box>
       {/* Filtres de recherche */}
-      <Paper elevation={1} sx={{ p: 2, mb: 3 }}>
+      <Paper elevation={3} sx={{ p: 3, mb: 3 }}>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} sm={4} md={3}>
+          <Grid item xs={12}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <SearchIcon sx={{ mr: 1, color: 'primary.main' }} />
+              <Typography variant="h6">
+                {t('challenges.seven_majors.search_cols', 'Recherche de cols')}
+              </Typography>
+            </Box>
+          </Grid>
+          
+          <Grid item xs={12} md={3}>
             <TextField
               fullWidth
-              label={t('challenges.search')}
+              label={t('common.search', 'Rechercher')}
               name="searchQuery"
               value={filters.searchQuery}
               onChange={onFilterChange}
+              placeholder={t('challenges.seven_majors.search_cols_placeholder', 'Rechercher par nom, région...')}
               InputProps={{
-                startAdornment: <SearchIcon sx={{ color: 'action.active', mr: 1 }} />,
+                endAdornment: <SearchIcon color="action" />
               }}
             />
           </Grid>
           
           <Grid item xs={12} sm={4} md={3}>
             <FormControl fullWidth>
-              <InputLabel id="country-select-label">{t('cols.country')}</InputLabel>
+              <InputLabel id="country-select-label">{t('cols.country', 'Pays')}</InputLabel>
               <Select
                 labelId="country-select-label"
                 name="country"
                 value={filters.country}
-                label={t('cols.country')}
+                label={t('cols.country', 'Pays')}
                 onChange={onFilterChange}
               >
                 <MenuItem value="">
-                  <em>{t('common.all')}</em>
+                  <em>{t('common.all', 'Tous')}</em>
                 </MenuItem>
                 {uniqueCountries.map(country => (
                   <MenuItem key={country} value={country}>{country}</MenuItem>
@@ -219,16 +264,16 @@ const ColSearchTab = ({
           
           <Grid item xs={12} sm={4} md={3}>
             <FormControl fullWidth>
-              <InputLabel id="region-select-label">{t('cols.region')}</InputLabel>
+              <InputLabel id="region-select-label">{t('cols.region', 'Région')}</InputLabel>
               <Select
                 labelId="region-select-label"
                 name="region"
                 value={filters.region}
-                label={t('cols.region')}
+                label={t('cols.region', 'Région')}
                 onChange={onFilterChange}
               >
                 <MenuItem value="">
-                  <em>{t('common.all')}</em>
+                  <em>{t('common.all', 'Tous')}</em>
                 </MenuItem>
                 {uniqueRegions.map(region => (
                   <MenuItem key={region} value={region}>{region}</MenuItem>
@@ -239,22 +284,21 @@ const ColSearchTab = ({
           
           <Grid item xs={12} sm={4} md={3}>
             <FormControl fullWidth>
-              <InputLabel id="difficulty-select-label">{t('cols.difficulty')}</InputLabel>
+              <InputLabel id="difficulty-select-label">{t('cols.difficulty', 'Difficulté')}</InputLabel>
               <Select
                 labelId="difficulty-select-label"
                 name="difficulty"
                 value={filters.difficulty}
-                label={t('cols.difficulty')}
+                label={t('cols.difficulty', 'Difficulté')}
                 onChange={onFilterChange}
               >
                 <MenuItem value="">
-                  <em>{t('common.all')}</em>
+                  <em>{t('common.all', 'Tous')}</em>
                 </MenuItem>
-                <MenuItem value="HC">HC</MenuItem>
-                <MenuItem value="1">1</MenuItem>
-                <MenuItem value="2">2</MenuItem>
-                <MenuItem value="3">3</MenuItem>
-                <MenuItem value="4">4</MenuItem>
+                <MenuItem value="extreme">Extrême</MenuItem>
+                <MenuItem value="hard">Difficile</MenuItem>
+                <MenuItem value="medium">Moyen</MenuItem>
+                <MenuItem value="easy">Facile</MenuItem>
               </Select>
             </FormControl>
           </Grid>
@@ -263,7 +307,7 @@ const ColSearchTab = ({
             <TextField
               fullWidth
               type="number"
-              label={t('cols.min_altitude')}
+              label={t('cols.min_altitude', 'Altitude min')}
               name="minAltitude"
               value={filters.minAltitude}
               onChange={onFilterChange}
@@ -275,7 +319,7 @@ const ColSearchTab = ({
             <TextField
               fullWidth
               type="number"
-              label={t('cols.max_altitude')}
+              label={t('cols.max_altitude', 'Altitude max')}
               name="maxAltitude"
               value={filters.maxAltitude}
               onChange={onFilterChange}
@@ -291,7 +335,7 @@ const ColSearchTab = ({
               startIcon={<FilterIcon />}
               onClick={onResetFilters}
             >
-              {t('common.reset_filters')}
+              {t('common.reset_filters', 'Réinitialiser')}
             </Button>
           </Grid>
         </Grid>
@@ -312,7 +356,7 @@ const ColSearchTab = ({
         </Grid>
       ) : (
         <Alert severity="info" sx={{ mt: 2 }}>
-          {t('challenges.seven_majors.no_results')}
+          {t('challenges.seven_majors.no_results', 'Aucun résultat trouvé')}
         </Alert>
       )}
     </Box>

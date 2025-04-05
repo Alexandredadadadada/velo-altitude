@@ -1,0 +1,84 @@
+{
+  "id": "col-du-gothard",
+  "name": "Col du Gothard",
+  "region": "alpes-suisses",
+  "country": "Suisse",
+  "altitude": 2106,
+  "length": 13.4,
+  "avgGradient": 7.8,
+  "maxGradient": 12,
+  "difficulty": "hard",
+  "elevationGain": 1049,
+  "startLocation": "Airolo",
+  "endLocation": "Col du Gothard",
+  "description": "Le col du Gothard (ou San Gottardo) est un col emblématique des Alpes suisses. Son ancienne route avec des pavés historiques (la Tremola) est une expérience unique pour les cyclistes, offrant un voyage dans le temps tout en relevant un défi sportif considérable.",
+  "history": "Passage alpin historique utilisé depuis le Moyen Âge, le Gothard a joué un rôle crucial dans l'histoire suisse. Il a été inclus dans de nombreuses éditions du Tour de Suisse et occasionnellement dans le Giro d'Italia.",
+  "imageUrl": "/images/cols/gothard/main.jpg",
+  "profileUrl": "/images/cols/gothard/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Sud - Via Tremola (Airolo)",
+      "startLocation": "Airolo",
+      "length": 13.4,
+      "elevationGain": 1049,
+      "avgGradient": 7.8,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "L'ascension historique sur les pavés de la Tremola avec plus de 24 virages en épingle"
+    },
+    {
+      "name": "Versant Nord (Hospental)",
+      "startLocation": "Hospental",
+      "length": 8.5,
+      "elevationGain": 625,
+      "avgGradient": 7.4,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Version plus courte et moins célèbre depuis le canton d'Uri"
+    },
+    {
+      "name": "Versant Sud - Route Moderne (Airolo)",
+      "startLocation": "Airolo",
+      "length": 12.7,
+      "elevationGain": 1027,
+      "avgGradient": 8.1,
+      "maxGradient": 10,
+      "difficulty": "medium",
+      "description": "Alternative asphaltée à la Tremola"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Tremola - pavés",
+      "length": 8.2,
+      "gradient": 9.3,
+      "description": "Section pavée historique avec les nombreux virages en épingle"
+    }
+  ],
+  "touristicInfo": "Le col abrite un musée national, l'ancien hospice et la chapelle San Gottardo. La région est riche en histoire et traditions. Le col est également un lieu important pour les sports d'hiver.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Sommet",
+      "description": "Points d'eau aux restaurants"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Plusieurs restaurants et cafés"
+    },
+    {
+      "type": "museum",
+      "location": "Sommet",
+      "description": "Musée national du Gothard"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col généralement fermé de novembre à mai. Conditions changeantes possibles en raison de l'altitude.",
+  "strava": {
+    "segmentId": "674892",
+    "komTime": "42:05",
+    "komName": "Fabian Cancellara"
+  },
+  "slug": "col-du-gothard"
+}

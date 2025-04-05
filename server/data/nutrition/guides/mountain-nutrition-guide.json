@@ -1,0 +1,553 @@
+{
+  "id": "mountain-nutrition-guide",
+  "name": {
+    "fr": "Guide Nutritionnel pour Défis en Montagne",
+    "en": "Mountain Challenge Nutrition Guide"
+  },
+  "slug": "mountain-nutrition-guide",
+  "type": "nutrition-guide",
+  "description": {
+    "fr": "Guide nutritionnel complet pour optimiser vos performances lors de défis cyclistes en montagne. Stratégies adaptées aux différentes phases d'effort et aux conditions spécifiques d'altitude.",
+    "en": "Comprehensive nutrition guide to optimize your performance during mountain cycling challenges. Strategies adapted to different effort phases and specific altitude conditions."
+  },
+  "introduction": {
+    "fr": "La nutrition joue un rôle essentiel dans la réussite des défis cyclistes en montagne. Les longues ascensions, l'altitude et les conditions météorologiques changeantes imposent des exigences particulières sur le plan nutritionnel. Ce guide vous aidera à élaborer une stratégie adaptée à vos besoins spécifiques.",
+    "en": "Nutrition plays an essential role in the success of mountain cycling challenges. Long climbs, altitude, and changing weather conditions impose particular nutritional requirements. This guide will help you develop a strategy adapted to your specific needs."
+  },
+  "altitude_effects": {
+    "metabolic_changes": {
+      "fr": "En altitude, votre métabolisme s'accélère, augmentant vos besoins caloriques de 10 à 15% par rapport au niveau de la mer. La déshydratation survient plus rapidement, et l'absorption des nutriments peut être altérée.",
+      "en": "At altitude, your metabolism accelerates, increasing your caloric needs by 10 to 15% compared to sea level. Dehydration occurs more quickly, and nutrient absorption may be altered."
+    },
+    "appetite_suppression": {
+      "fr": "L'altitude peut diminuer l'appétit, rendant crucial de suivre un plan nutritionnel structuré plutôt que de se fier à la faim.",
+      "en": "Altitude can decrease appetite, making it crucial to follow a structured nutritional plan rather than relying on hunger."
+    }
+  },
+  "pre-event_nutrition": {
+    "carb_loading": {
+      "fr": "Pour les défis majeurs en montagne, un chargement en glucides sur 2-3 jours est recommandé, en augmentant progressivement la part des glucides jusqu'à 70-75% de l'apport calorique total.",
+      "en": "For major mountain challenges, carb loading over 2-3 days is recommended, gradually increasing the carbohydrate portion to 70-75% of total caloric intake."
+    },
+    "hydration": {
+      "fr": "Commencez à hyperhydrater 24-48h avant le défi. Visez une urine claire à jaune pâle. Intégrez des électrolytes pour optimiser la rétention d'eau.",
+      "en": "Start hyperhydrating 24-48h before the challenge. Aim for clear to pale yellow urine. Include electrolytes to optimize water retention."
+    },
+    "meal_timing": {
+      "last_dinner": {
+        "fr": "Riche en glucides complexes, modérée en protéines, faible en graisses et en fibres pour faciliter la digestion",
+        "en": "Rich in complex carbohydrates, moderate in protein, low in fat and fiber to facilitate digestion"
+      },
+      "breakfast": {
+        "fr": "3-4h avant le départ: 100-150g de glucides, faible en protéines (15-20g) et très faible en graisses",
+        "en": "3-4h before departure: 100-150g of carbohydrates, low in protein (15-20g) and very low in fat"
+      },
+      "pre-start": {
+        "fr": "30-60min avant: 30-50g de glucides rapidement assimilables avec très peu de fibres",
+        "en": "30-60min before: 30-50g of quickly assimilated carbohydrates with very little fiber"
+      }
+    },
+    "sample_menu": {
+      "dinner": [
+        {
+          "fr": "200-250g de pâtes ou riz avec sauce légère",
+          "en": "200-250g of pasta or rice with light sauce"
+        },
+        {
+          "fr": "Petite portion de protéine maigre (100g)",
+          "en": "Small portion of lean protein (100g)"
+        },
+        {
+          "fr": "Légumes cuits en petite quantité",
+          "en": "Small amount of cooked vegetables"
+        },
+        {
+          "fr": "Compote ou fruit bien mûr",
+          "en": "Applesauce or very ripe fruit"
+        }
+      ],
+      "breakfast": [
+        {
+          "fr": "Porridge (80-100g flocons d'avoine)",
+          "en": "Porridge (80-100g oatmeal)"
+        },
+        {
+          "fr": "Miel ou confiture (30-40g)",
+          "en": "Honey or jam (30-40g)"
+        },
+        {
+          "fr": "Banane mûre",
+          "en": "Ripe banana"
+        },
+        {
+          "fr": "Pain blanc grillé (40-60g) avec miel",
+          "en": "Toasted white bread (40-60g) with honey"
+        }
+      ],
+      "pre-start": [
+        {
+          "fr": "Gel énergétique ou barre facile à digérer",
+          "en": "Energy gel or easy-to-digest bar"
+        },
+        {
+          "fr": "Petite banane bien mûre",
+          "en": "Small very ripe banana"
+        },
+        {
+          "fr": "250ml de boisson d'effort légère",
+          "en": "250ml of light sports drink"
+        }
+      ]
+    }
+  },
+  "during_event": {
+    "fueling_strategy": {
+      "carb_requirements": {
+        "fr": "60-90g de glucides par heure pour les efforts dépassant 2-3h. En montagne, visez la limite haute de cet intervalle.",
+        "en": "60-90g of carbohydrates per hour for efforts exceeding 2-3h. In mountains, aim for the upper limit of this range."
+      },
+      "timing": {
+        "fr": "Commencez à vous alimenter dès les 30 premières minutes et continuez à intervalles réguliers (toutes les 15-20min) par petites portions.",
+        "en": "Start eating within the first 30 minutes and continue at regular intervals (every 15-20min) in small portions."
+      },
+      "types": {
+        "fr": "Mélangez différents types de glucides (glucose, fructose, maltodextrine) pour maximiser l'absorption: liquides, gels, barres et solides.",
+        "en": "Mix different types of carbohydrates (glucose, fructose, maltodextrin) to maximize absorption: liquids, gels, bars, and solids."
+      }
+    },
+    "hydration": {
+      "requirements": {
+        "fr": "500-800ml par heure, en fonction de la température et de l'humidité. En montagne, l'air plus sec augmente les besoins en eau même si les températures sont plus fraîches en altitude.",
+        "en": "500-800ml per hour, depending on temperature and humidity. In mountains, drier air increases water needs even if temperatures are cooler at altitude."
+      },
+      "electrolytes": {
+        "fr": "Essentiels en montagne: 500-700mg de sodium par litre de boisson. Augmentez la concentration par temps chaud.",
+        "en": "Essential in mountains: 500-700mg of sodium per liter of drink. Increase concentration in hot weather."
+      }
+    },
+    "solid_food_choices": [
+      {
+        "name": {
+          "fr": "Sandwich pain blanc/confiture",
+          "en": "White bread/jam sandwich"
+        },
+        "carbs": "30-40g",
+        "when": {
+          "fr": "Sections plus plates ou début d'ascension",
+          "en": "Flatter sections or beginning of climb"
+        }
+      },
+      {
+        "name": {
+          "fr": "Banane mûre",
+          "en": "Ripe banana"
+        },
+        "carbs": "20-25g",
+        "when": {
+          "fr": "Polyvalent, facile à digérer",
+          "en": "Versatile, easy to digest"
+        }
+      },
+      {
+        "name": {
+          "fr": "Riz gluant avec sucre/sel",
+          "en": "Sticky rice with sugar/salt"
+        },
+        "carbs": "25-30g par boulette",
+        "when": {
+          "fr": "Longues ascensions à intensité modérée",
+          "en": "Long climbs at moderate intensity"
+        }
+      },
+      {
+        "name": {
+          "fr": "Pâtes de fruits",
+          "en": "Fruit jellies"
+        },
+        "carbs": "5g par pièce",
+        "when": {
+          "fr": "Portions régulières, assimilation rapide",
+          "en": "Regular portions, quick assimilation"
+        }
+      }
+    ],
+    "liquid_nutrition": [
+      {
+        "name": {
+          "fr": "Boisson isotonique (60g carb/L)",
+          "en": "Isotonic drink (60g carb/L)"
+        },
+        "purpose": {
+          "fr": "Hydratation et énergie combinées",
+          "en": "Combined hydration and energy"
+        }
+      },
+      {
+        "name": {
+          "fr": "Eau + gels énergétiques",
+          "en": "Water + energy gels"
+        },
+        "purpose": {
+          "fr": "Contrôle précis des apports glucidiques",
+          "en": "Precise control of carbohydrate intake"
+        }
+      },
+      {
+        "name": {
+          "fr": "Boisson à base de maltodextrine",
+          "en": "Maltodextrin-based drink"
+        },
+        "purpose": {
+          "fr": "Forte concentration en énergie sans goût sucré excessif",
+          "en": "High energy concentration without excessive sweet taste"
+        }
+      }
+    ],
+    "altitude_specific": {
+      "fr": "À plus de 2000m, privilégiez les aliments et boissons faciles à digérer, augmentez légèrement la fréquence d'hydratation, et réduisez la taille des portions solides au profit des liquides.",
+      "en": "Above 2000m, favor easy-to-digest foods and drinks, slightly increase hydration frequency, and reduce the size of solid portions in favor of liquids."
+    },
+    "climbing_vs_descending": {
+      "climbing": {
+        "fr": "Pendant les ascensions intenses, privilégiez les gels et boissons. Réservez les aliments solides pour les moments où l'intensité diminue légèrement.",
+        "en": "During intense climbs, favor gels and drinks. Reserve solid foods for moments when intensity slightly decreases."
+      },
+      "descending": {
+        "fr": "Les descentes sont idéales pour consommer des aliments plus solides et recharger les bidons. Attention toutefois à ne pas négliger le pilotage du vélo.",
+        "en": "Descents are ideal for consuming more solid foods and refilling bottles. However, be careful not to neglect bike handling."
+      }
+    }
+  },
+  "col-specific_strategies": {
+    "multiple_cols": {
+      "fr": "Pour les sorties à plusieurs cols, ajustez votre stratégie nutritionnelle selon le profil: consommez davantage de solides dans les vallées, préparez-vous avant les ascensions avec des glucides rapides, hydratez-vous particulièrement pendant les descentes.",
+      "en": "For multi-pass rides, adjust your nutritional strategy according to the profile: consume more solids in valleys, prepare before climbs with fast carbohydrates, hydrate particularly during descents."
+    },
+    "timing_examples": [
+      {
+        "scenario": {
+          "fr": "Avant un col de catégorie 1",
+          "en": "Before a category 1 climb"
+        },
+        "strategy": {
+          "fr": "15-20min avant le pied: gel énergétique + eau ou 30-40g de glucides rapides",
+          "en": "15-20min before the foot: energy gel + water or 30-40g of fast carbohydrates"
+        }
+      },
+      {
+        "scenario": {
+          "fr": "Pendant un col HC long (>1h d'ascension)",
+          "en": "During a long HC climb (>1h ascent)"
+        },
+        "strategy": {
+          "fr": "Une prise de 20-30g de glucides toutes les 20min, principalement sous forme liquide ou gel",
+          "en": "An intake of 20-30g of carbohydrates every 20min, mainly in liquid or gel form"
+        }
+      },
+      {
+        "scenario": {
+          "fr": "Dans la descente avant un nouveau col",
+          "en": "In the descent before a new climb"
+        },
+        "strategy": {
+          "fr": "Aliment solide plus consistant pour préparer l'effort suivant, recharge en eau",
+          "en": "More substantial solid food to prepare for the next effort, water refill"
+        }
+      }
+    ]
+  },
+  "post-ride_recovery": {
+    "window": {
+      "fr": "La fenêtre d'opportunité nutritionnelle est essentielle: consommez 1-1.2g de glucides/kg et 0.3-0.4g de protéines/kg dans les 30-45min après l'effort.",
+      "en": "The nutritional opportunity window is essential: consume 1-1.2g of carbohydrates/kg and 0.3-0.4g of protein/kg within 30-45min after the effort."
+    },
+    "hydration_recovery": {
+      "fr": "Buvez 150% du poids perdu en eau, réparti sur les 4-6h suivant l'effort, en incluant des électrolytes.",
+      "en": "Drink 150% of weight lost in water, spread over the 4-6h following the effort, including electrolytes."
+    },
+    "optimal_foods": [
+      {
+        "name": {
+          "fr": "Boisson de récupération commerciale",
+          "en": "Commercial recovery drink"
+        },
+        "benefits": {
+          "fr": "Rapport glucides/protéines idéal, facile à consommer",
+          "en": "Ideal carbohydrate/protein ratio, easy to consume"
+        }
+      },
+      {
+        "name": {
+          "fr": "Lait chocolaté",
+          "en": "Chocolate milk"
+        },
+        "benefits": {
+          "fr": "Alternative naturelle avec bon rapport nutriments/prix",
+          "en": "Natural alternative with good nutrient/price ratio"
+        }
+      },
+      {
+        "name": {
+          "fr": "Smoothie banane-fromage blanc-miel",
+          "en": "Banana-quark-honey smoothie"
+        },
+        "benefits": {
+          "fr": "Homemade avec excellente valeur nutritive",
+          "en": "Homemade with excellent nutritional value"
+        }
+      }
+    ]
+  },
+  "multi-day_events": {
+    "strategy": {
+      "fr": "Les événements sur plusieurs jours en montagne exigent une attention particulière à la récupération et au remplissage des réserves de glycogène. Maximisez l'apport calorique lors des fenêtres post-effort.",
+      "en": "Multi-day events in mountains require special attention to recovery and glycogen store replenishment. Maximize caloric intake during post-effort windows."
+    },
+    "practical_tips": [
+      {
+        "fr": "Prenez un petit repas riche en glucides dans l'heure suivant l'arrivée, même sans appétit",
+        "en": "Have a small carbohydrate-rich meal within an hour of arrival, even without appetite"
+      },
+      {
+        "fr": "Hydratez-vous avec une boisson électrolytique tout l'après-midi/soirée",
+        "en": "Hydrate with an electrolyte drink all afternoon/evening"
+      },
+      {
+        "fr": "Dîner complet avec 2-3g glucides/kg, protéines de qualité, et légumes",
+        "en": "Complete dinner with 2-3g carbohydrates/kg, quality protein, and vegetables"
+      },
+      {
+        "fr": "Snack riche en caséine avant le coucher pour récupération nocturne",
+        "en": "Casein-rich snack before bedtime for overnight recovery"
+      }
+    ]
+  },
+  "special_considerations": {
+    "heat": {
+      "fr": "Par temps chaud, augmentez l'apport en sodium (800-1000mg/L), fractionnez davantage les prises alimentaires, privilégiez les formes liquides et réduisez la concentration des boissons.",
+      "en": "In hot weather, increase sodium intake (800-1000mg/L), further divide food intake, favor liquid forms, and reduce drink concentration."
+    },
+    "cold": {
+      "fr": "Par temps froid, optez pour des aliments plus solides et riches en calories, des boissons tièdes dans un thermos, et prévoyez des options faciles à consommer avec des gants.",
+      "en": "In cold weather, opt for more solid and calorie-rich foods, warm drinks in a thermos, and plan for options that are easy to consume with gloves."
+    },
+    "altitude_sickness": {
+      "fr": "Si vous présentez des symptômes du mal d'altitude, privilégiez l'hydratation, les glucides facilement digestibles et évitez l'alcool et la caféine qui aggravent la déshydratation.",
+      "en": "If you show symptoms of altitude sickness, prioritize hydration, easily digestible carbohydrates, and avoid alcohol and caffeine which worsen dehydration."
+    }
+  },
+  "practical_food_transport": {
+    "storage": [
+      {
+        "item": {
+          "fr": "Barres énergétiques coupées en deux",
+          "en": "Energy bars cut in half"
+        },
+        "where": {
+          "fr": "Pochettes de maillot facilement accessibles",
+          "en": "Easily accessible jersey pockets"
+        }
+      },
+      {
+        "item": {
+          "fr": "Gels énergétiques",
+          "en": "Energy gels"
+        },
+        "where": {
+          "fr": "Poche centrale du maillot ou sacoche de cadre",
+          "en": "Center pocket of jersey or frame bag"
+        }
+      },
+      {
+        "item": {
+          "fr": "Aliments solides (sandwichs, riz)",
+          "en": "Solid foods (sandwiches, rice)"
+        },
+        "where": {
+          "fr": "Emballés individuellement dans sacoche de selle",
+          "en": "Individually wrapped in saddle bag"
+        }
+      }
+    ],
+    "preparation": [
+      {
+        "fr": "Prédécoupez les barres pour faciliter la consommation",
+        "en": "Pre-cut bars to facilitate consumption"
+      },
+      {
+        "fr": "Inscrivez l'heure prévue de consommation sur chaque aliment",
+        "en": "Write the planned consumption time on each food item"
+      },
+      {
+        "fr": "Emballez les aliments solides individuellement dans du papier aluminium",
+        "en": "Wrap solid foods individually in aluminum foil"
+      }
+    ]
+  },
+  "recipes": {
+    "homemade_energy": [
+      {
+        "name": {
+          "fr": "Barres de riz gluant",
+          "en": "Sticky rice bars"
+        },
+        "ingredients": [
+          "200g riz à sushi",
+          "50g sucre",
+          "Pincée de sel",
+          "30g fruits secs hachés",
+          "15g miel"
+        ],
+        "macros": {
+          "carbs": "30g par barre",
+          "protein": "2g par barre",
+          "fat": "1g par barre"
+        },
+        "preparation": {
+          "fr": "Cuire le riz, mélanger avec les autres ingrédients chauds, former des barres, laisser refroidir, emballer individuellement.",
+          "en": "Cook rice, mix with other hot ingredients, form bars, let cool, wrap individually."
+        }
+      },
+      {
+        "name": {
+          "fr": "Boisson maltodextrine maison",
+          "en": "Homemade maltodextrin drink"
+        },
+        "ingredients": [
+          "70g maltodextrine",
+          "30g fructose",
+          "1/4 cc sel",
+          "Jus de citron",
+          "1L eau"
+        ],
+        "macros": {
+          "carbs": "100g/L",
+          "protein": "0g",
+          "fat": "0g"
+        },
+        "preparation": {
+          "fr": "Mélanger tous les ingrédients secs, ajouter progressivement l'eau en mélangeant, ajouter le citron pour le goût.",
+          "en": "Mix all dry ingredients, gradually add water while mixing, add lemon for taste."
+        }
+      }
+    ]
+  },
+  "customization": {
+    "body_weight": {
+      "fr": "Ajustez les quantités en fonction de votre poids: les recommandations sont basées sur un cycliste de 70kg. Pour les cyclistes plus légers ou plus lourds, ajustez proportionnellement.",
+      "en": "Adjust quantities according to your weight: recommendations are based on a 70kg cyclist. For lighter or heavier cyclists, adjust proportionally."
+    },
+    "intensity": {
+      "fr": "Pour des sorties à haute intensité, privilégiez les glucides rapides et les formes liquides. Pour des sorties longues à intensité modérée, intégrez davantage d'aliments solides.",
+      "en": "For high-intensity outings, favor fast carbohydrates and liquid forms. For long rides at moderate intensity, incorporate more solid foods."
+    },
+    "experience": {
+      "fr": "Les cyclistes expérimentés connaissent généralement mieux leurs besoins. Les débutants devraient commencer avec des apports plus modérés (50-60g/h) et progresser vers des apports plus élevés.",
+      "en": "Experienced cyclists generally know their needs better. Beginners should start with more moderate intakes (50-60g/h) and progress toward higher intakes."
+    }
+  },
+  "real_world_examples": {
+    "professional": {
+      "name": "Thomas Voeckler",
+      "strategy": {
+        "fr": "Sur une étape de montagne du Tour de France (5-6h): Petit-déjeuner 3-4h avant, apport pendant la course de 90g/h via mixture de riz liquide, gels et barres, hydratation de 750ml/h, récupération immédiate avec boisson protéinée.",
+        "en": "On a mountain stage of the Tour de France (5-6h): Breakfast 3-4h before, intake during the race of 90g/h via mixture of liquid rice, gels and bars, hydration of 750ml/h, immediate recovery with protein drink."
+      }
+    },
+    "amateur": {
+      "name": "Marie Dupont, cycliste randonneuse",
+      "strategy": {
+        "fr": "Pour une sortie de 7h avec 3 cols (3000m D+): Petit-déjeuner complet 2h avant, 60-70g/h pendant l'effort via barres maison, sandwichs et boisson isotonique, arrêts ravitaillement programmés dans les villages, récupération avec smoothie et repas complet le soir.",
+        "en": "For a 7h ride with 3 passes (3000m elevation gain): Complete breakfast 2h before, 60-70g/h during the effort via homemade bars, sandwiches and isotonic drink, scheduled refueling stops in villages, recovery with smoothie and complete meal in the evening."
+      }
+    }
+  },
+  "common_mistakes": [
+    {
+      "mistake": {
+        "fr": "Sous-alimentation pendant les premières heures",
+        "en": "Underfeeding during the first hours"
+      },
+      "correction": {
+        "fr": "Commencez à vous alimenter dès les 15-30 premières minutes, même sans sensation de faim.",
+        "en": "Start eating from the first 15-30 minutes, even without feeling hungry."
+      }
+    },
+    {
+      "mistake": {
+        "fr": "Suralimentation d'un coup avant une difficulté",
+        "en": "Sudden overfeeding before a difficulty"
+      },
+      "correction": {
+        "fr": "Fractionnez les apports en petites quantités régulières plutôt qu'une grande quantité à la fois.",
+        "en": "Divide intake into regular small quantities rather than a large amount at once."
+      }
+    },
+    {
+      "mistake": {
+        "fr": "Négliger l'hydratation par temps frais en altitude",
+        "en": "Neglecting hydration in cool weather at altitude"
+      },
+      "correction": {
+        "fr": "L'air sec en altitude déshydrate même par temps frais - programmez des rappels pour boire.",
+        "en": "Dry air at altitude dehydrates even in cool weather - schedule reminders to drink."
+      }
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Laurent Martin",
+      "experience": "Amateur, 3 ans d'expérience en montagne",
+      "text": {
+        "fr": "Pendant des années, j'ai souffert de fringales catastrophiques sur les longs cols. En suivant ce guide et en consommant 70g/h, j'ai pu enchaîner Galibier et Alpe d'Huez sans aucune défaillance.",
+        "en": "For years, I suffered from catastrophic hunger knocks on long climbs. By following this guide and consuming 70g/h, I was able to chain Galibier and Alpe d'Huez without any failure."
+      }
+    },
+    {
+      "name": "Sophie Durand",
+      "experience": "Cyclosportive, 5 ans d'expérience",
+      "text": {
+        "fr": "La découverte des barres de riz gluant a transformé mon expérience en montagne. Faciles à digérer même à haute intensité et en altitude, elles sont devenues mon carburant préféré pour les cols HC.",
+        "en": "The discovery of sticky rice bars transformed my mountain experience. Easy to digest even at high intensity and altitude, they have become my favorite fuel for HC climbs."
+      }
+    }
+  ],
+  "expert_advice": {
+    "dietitian": {
+      "name": "Dr. Claire Renaud",
+      "quote": {
+        "fr": "La nutrition en altitude doit être personnalisée et testée à l'entraînement. La règle d'or: commencez à manger avant d'avoir faim, buvez avant d'avoir soif, et préférez de petites quantités fréquentes à de gros apports espacés.",
+        "en": "Nutrition at altitude must be personalized and tested in training. The golden rule: start eating before you're hungry, drink before you're thirsty, and prefer frequent small quantities to large spaced intakes."
+      }
+    },
+    "coach": {
+      "name": "Antoine Vayer",
+      "quote": {
+        "fr": "Pour les cols enchainés, la récupération nutritionnelle entre les ascensions est aussi importante que l'alimentation pendant l'effort. Utilisez les descentes et les vallées pour recharger les batteries.",
+        "en": "For consecutive climbs, nutritional recovery between ascents is as important as feeding during the effort. Use descents and valleys to recharge the batteries."
+      }
+    }
+  },
+  "related_content": {
+    "preparation_guides": [
+      "guide-alpe-d-huez",
+      "guide-ventoux",
+      "guide-galibier"
+    ],
+    "training_programs": [
+      "T001",
+      "T010"
+    ],
+    "beginner_guides": [
+      "beginners-first-mountain"
+    ]
+  },
+  "downloadable_resources": {
+    "nutrition_plan_template": "/files/nutrition/mountain-nutrition-planner.pdf",
+    "recipe_book": "/files/nutrition/homemade-cycling-fuel.pdf",
+    "pocket_guide": "/files/nutrition/mountain-nutrition-pocket-guide.pdf"
+  },
+  "status": "active",
+  "completeness": 95,
+  "last_updated": "2025-04-06T02:40:00Z"
+}

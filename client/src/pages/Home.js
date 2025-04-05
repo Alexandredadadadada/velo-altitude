@@ -869,7 +869,7 @@ const Home = () => {
                 textShadow: '0 2px 10px rgba(0,0,0,0.3)'
               }}
             >
-              Rejoignez la communauté cycliste du Grand Est
+              Rejoignez la communauté cycliste de Velo-Altitude
             </Typography>
             <Typography 
               variant="h6" 

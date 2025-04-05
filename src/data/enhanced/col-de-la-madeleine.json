@@ -1,0 +1,75 @@
+{
+  "id": "col-de-la-madeleine",
+  "name": "Col de la Madeleine",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 1993,
+  "length": 19.2,
+  "avgGradient": 8,
+  "maxGradient": 12,
+  "difficulty": "hard",
+  "elevationGain": 1536,
+  "startLocation": "La Chambre",
+  "endLocation": "Col de la Madeleine",
+  "description": "Le Col de la Madeleine est une des ascensions les plus difficiles des Alpes françaises, reliant la vallée de la Maurienne à la vallée de la Tarentaise. Sa longueur et sa pente régulièrement exigeante en font un défi redouté des cyclistes.",
+  "history": "Ce col a été franchi pour la première fois par le Tour de France en 1969 et a été le théâtre d'exploits mémorables, comme l'attaque de Richard Virenque en 1995 ou celle de Nairo Quintana en 2013. Il est classé hors catégorie dans le Tour de France.",
+  "imageUrl": "/images/cols/madeleine/main.jpg",
+  "profileUrl": "/images/cols/madeleine/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Sud (La Chambre)",
+      "startLocation": "La Chambre",
+      "length": 19.2,
+      "elevationGain": 1536,
+      "avgGradient": 8,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "L'ascension classique, très régulière avec peu de répit"
+    },
+    {
+      "name": "Versant Nord (Aigueblanche)",
+      "startLocation": "Aigueblanche",
+      "length": 25.4,
+      "elevationGain": 1586,
+      "avgGradient": 6.2,
+      "maxGradient": 10.5,
+      "difficulty": "hard",
+      "description": "Montée plus longue et légèrement moins pentue en moyenne"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Le Villaret - Saint-François-Longchamp",
+      "length": 6.7,
+      "gradient": 8.5,
+      "description": "Section médiane avec peu de répit"
+    },
+    {
+      "name": "Montaimont - Sommet",
+      "length": 12.3,
+      "gradient": 7.9,
+      "description": "Partie haute de l'ascension après le premier village"
+    }
+  ],
+  "touristicInfo": "Au sommet, une statue de la Vierge et un panorama exceptionnel sur le Mont Blanc et les sommets environnants. La région est célèbre pour ses fromages, notamment le Beaufort.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Saint-François-Longchamp et sommet",
+      "description": "Fontaines et points d'eau"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Plusieurs restaurants et buvettes en saison"
+    }
+  ],
+  "bestTimeToVisit": "Mi-juin à septembre",
+  "weatherInfo": "Col généralement fermé de novembre à mai. Les vents peuvent être forts au sommet et les orages sont fréquents en fin d'après-midi en été.",
+  "strava": {
+    "segmentId": "987346",
+    "komTime": "1:05:20",
+    "komName": "Nairo Quintana"
+  },
+  "slug": "col-de-la-madeleine"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "col-de-joux-plane",
+  "name": "Col de Joux Plane",
+  "region": "jura",
+  "country": "France",
+  "altitude": 1691,
+  "length": 11.6,
+  "avgGradient": 8.5,
+  "maxGradient": 12.5,
+  "difficulty": "hard",
+  "elevationGain": 986,
+  "startLocation": "Samoëns",
+  "endLocation": "Col de Joux Plane",
+  "description": "Situé entre le massif du Chablais et la vallée du Giffre, le Col de Joux Plane est réputé pour sa pente régulièrement difficile sans répit. Il est considéré comme l'un des cols les plus exigeants du Tour de France.",
+  "history": "Le col est célèbre pour avoir mis en difficulté Lance Armstrong lors du Tour de France 2000, où il fut lâché par Marco Pantani. C'est aussi dans ce col que Richard Virenque a construit une de ses victoires d'étape les plus mémorables.",
+  "imageUrl": "/images/cols/joux-plane/main.jpg",
+  "profileUrl": "/images/cols/joux-plane/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Est (Samoëns)",
+      "startLocation": "Samoëns",
+      "length": 11.6,
+      "elevationGain": 986,
+      "avgGradient": 8.5,
+      "maxGradient": 12.5,
+      "difficulty": "hard",
+      "description": "L'ascension classique, régulièrement difficile"
+    },
+    {
+      "name": "Versant Ouest (Morzine)",
+      "startLocation": "Morzine",
+      "length": 5.7,
+      "elevationGain": 340,
+      "avgGradient": 6,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Montée plus courte et moins difficile"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Forêt des Frasses",
+      "length": 4.5,
+      "gradient": 9.4,
+      "description": "Section centrale à travers la forêt, particulièrement exigeante"
+    }
+  ],
+  "touristicInfo": "Au sommet se trouve un petit lac alpin et une vue magnifique sur le Mont Blanc. La descente vers Morzine est technique et rapide.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Les Frasses et sommet",
+      "description": "Fontaines"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant d'altitude (ouvert en saison)"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Conditions changeantes typiques de moyenne montagne. Le col est généralement fermé en hiver.",
+  "strava": {
+    "segmentId": "632581",
+    "komTime": "32:20",
+    "komName": "Miguel Angel Lopez"
+  },
+  "slug": "col-de-joux-plane"
+}

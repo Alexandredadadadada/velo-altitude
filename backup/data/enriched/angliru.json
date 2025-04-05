@@ -1,0 +1,117 @@
+{
+  "id": "angliru",
+  "name": {
+    "fr": "Alto de l'Angliru",
+    "en": "Alto de l'Angliru",
+    "de": "Alto de l'Angliru",
+    "it": "Alto de l'Angliru",
+    "es": "Alto de l'Angliru"
+  },
+  "slug": "angliru",
+  "country": "",
+  "region": "",
+  "altitude": 1573,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 5,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/angliru/main.jpg",
+    "gallery": [
+      "/images/cols/angliru/steep-section.jpg",
+      "/images/cols/angliru/summit.jpg",
+      "/images/cols/angliru/view.jpg",
+      "/images/cols/angliru/gradient-sign.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      {
+        "km": 0,
+        "description": "Fontaine à La Vega"
+      },
+      {
+        "km": 12,
+        "description": "Bar au sommet (saisonnier)"
+      }
+    ],
+    "food": [
+      {
+        "name": "Restaurant La Vega",
+        "km": 0,
+        "type": "restaurant",
+        "openingHours": "12h-22h"
+      },
+      {
+        "name": "Bar Angliru",
+        "km": 12,
+        "type": "café",
+        "openingHours": "11h-18h (mai-octobre)"
+      }
+    ],
+    "shelter": [
+      {
+        "name": "Abri au sommet",
+        "km": 12,
+        "type": "abri"
+      }
+    ],
+    "mechanics": [
+      {
+        "name": "Ciclos Fran",
+        "location": "Riosa",
+        "distance": 5
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "author": "Carlos Rodríguez",
+      "date": "2023-09-20",
+      "rating": 5,
+      "text": "Une ascension mythique et brutale! J'ai utilisé un 34x34 et j'étais à la limite dans les sections à 23%. Prévoyez de pouvoir vous arrêter et repartir dans les pentes raides, c'est un véritable défi."
+    },
+    {
+      "author": "Marie Lefort",
+      "date": "2024-07-15",
+      "rating": 4.5,
+      "text": "J'appréhendais énormément cette montée légendaire, mais finalement j'ai réussi à la grimper en prenant mon temps. Le secret: un bon braquet et surtout une bonne gestion de l'effort dès le début."
+    },
+    {
+      "author": "John Smith",
+      "date": "2022-06-10",
+      "rating": 5,
+      "text": "Une expérience inoubliable, probablement la montée la plus difficile que j'ai jamais faite. La section 'Cueña les Cabres' est surréaliste. Apportez suffisamment d'eau, il n'y a pas grand-chose en chemin."
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 59,
+  "last_updated": "2025-04-05T20:42:26.983Z"
+}

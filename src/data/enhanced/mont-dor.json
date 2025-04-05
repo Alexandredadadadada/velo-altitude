@@ -1,0 +1,85 @@
+{
+  "id": "mont-dor",
+  "name": "Mont d'Or",
+  "region": "jura",
+  "country": "France",
+  "altitude": 1461,
+  "length": 11.8,
+  "avgGradient": 6.8,
+  "maxGradient": 9.5,
+  "difficulty": "medium",
+  "elevationGain": 802,
+  "startLocation": "Métabief",
+  "endLocation": "Mont d'Or",
+  "description": "Le Mont d'Or est l'un des sommets emblématiques du Haut-Jura, offrant une ascension variée avec des passages en forêt et des sections en alpage. Son sommet, marqué par une tour d'observation, offre un panorama à 360° sur la chaîne du Jura, les Alpes et le lac Léman par temps clair.",
+  "history": "Bien qu'il ne soit pas aussi mythique que la montée vers la station de Métabief dans le Tour de France, le Mont d'Or est néanmoins une ascension appréciée des cyclistes locaux et figure régulièrement dans des cyclosportives régionales comme la Forestière ou le Tour du Doubs.",
+  "imageUrl": "/images/cols/mont-dor/main.jpg",
+  "profileUrl": "/images/cols/mont-dor/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Est (Métabief)",
+      "startLocation": "Métabief",
+      "length": 11.8,
+      "elevationGain": 802,
+      "avgGradient": 6.8,
+      "maxGradient": 9.5,
+      "difficulty": "medium",
+      "description": "L'ascension classique avec passages techniques dans la forêt"
+    },
+    {
+      "name": "Versant Nord (Rochejean)",
+      "startLocation": "Rochejean",
+      "length": 9.5,
+      "elevationGain": 780,
+      "avgGradient": 8.2,
+      "maxGradient": 11,
+      "difficulty": "hard",
+      "description": "Version plus courte mais significativement plus pentue"
+    },
+    {
+      "name": "Versant Ouest (Mouthe)",
+      "startLocation": "Mouthe",
+      "length": 14.2,
+      "elevationGain": 840,
+      "avgGradient": 5.9,
+      "maxGradient": 8.5,
+      "difficulty": "medium",
+      "description": "La plus longue ascension, mais avec des pentes plus régulières"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Station de Métabief - Sommet",
+      "length": 5.2,
+      "gradient": 7.4,
+      "description": "Section finale avec les plus beaux points de vue"
+    },
+    {
+      "name": "La Montée des Alpages",
+      "length": 3.8,
+      "gradient": 8.1,
+      "description": "Section médiane avec passages en alpage à découvert"
+    }
+  ],
+  "touristicInfo": "La région du Mont d'Or est célèbre pour son fromage éponyme, affiné dans des caves naturelles. L'architecture comtoise traditionnelle est visible dans les villages environnants. En hiver, la station de ski de Métabief attire de nombreux visiteurs.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Métabief et chalets d'alpage",
+      "description": "Fontaines dans le village et auprès de plusieurs chalets"
+    },
+    {
+      "type": "food",
+      "location": "Métabief et fermes d'altitude",
+      "description": "Restaurants à Métabief et fermes proposant des produits locaux en été"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Le sommet peut être très venteux. La neige est généralement présente de novembre à avril. Les matinées d'été offrent souvent les conditions les plus clémentes avant les orages d'après-midi.",
+  "strava": {
+    "segmentId": "754321",
+    "komTime": "36:15",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "mont-dor"
+}

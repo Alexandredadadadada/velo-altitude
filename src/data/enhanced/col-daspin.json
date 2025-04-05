@@ -1,0 +1,69 @@
+{
+  "id": "col-daspin",
+  "name": "Col d'Aspin",
+  "region": "pyrenees",
+  "country": "France",
+  "altitude": 1490,
+  "length": 12.8,
+  "avgGradient": 6.5,
+  "maxGradient": 9.5,
+  "difficulty": "medium",
+  "elevationGain": 832,
+  "startLocation": "Sainte-Marie-de-Campan",
+  "endLocation": "Col d'Aspin",
+  "description": "Le Col d'Aspin est un passage de moyenne montagne apprécié pour ses forêts et ses alpages. Il offre une vue magnifique sur le Pic du Midi de Bigorre.",
+  "history": "Apparu pour la première fois dans le Tour en 1910, c'est un passage régulier mais rarement décisif pour le classement général.",
+  "imageUrl": "/images/cols/aspin/main.jpg",
+  "profileUrl": "/images/cols/aspin/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Sainte-Marie-de-Campan)",
+      "startLocation": "Sainte-Marie-de-Campan",
+      "length": 12.8,
+      "elevationGain": 832,
+      "avgGradient": 6.5,
+      "maxGradient": 9.5,
+      "difficulty": "medium",
+      "description": "Montée régulière à travers forêts et pâturages"
+    },
+    {
+      "name": "Versant Sud (Arreau)",
+      "startLocation": "Arreau",
+      "length": 12,
+      "elevationGain": 779,
+      "avgGradient": 6.5,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Version un peu plus courte et régulière"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Payolle - Sommet",
+      "length": 5,
+      "gradient": 7.5,
+      "description": "Section finale après le lac de Payolle"
+    }
+  ],
+  "touristicInfo": "Le lac de Payolle est un site agréable pour une pause. Au sommet, une table d'orientation permet d'identifier les sommets environnants.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Lac de Payolle",
+      "description": "Fontaine et aire de pique-nique"
+    },
+    {
+      "type": "food",
+      "location": "Lac de Payolle",
+      "description": "Restaurant en saison"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Col généralement accessible de mai à octobre. Conditions généralement clémentes.",
+  "strava": {
+    "segmentId": "624781",
+    "komTime": "29:12",
+    "komName": "David Gaudu"
+  },
+  "slug": "col-daspin"
+}

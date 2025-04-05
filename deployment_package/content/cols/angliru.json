@@ -1,0 +1,128 @@
+{
+  "id": "angliru",
+  "name": {
+    "fr": "Alto de l'Angliru",
+    "en": "Alto de l'Angliru",
+    "de": "Alto de l'Angliru",
+    "it": "Alto de l'Angliru",
+    "es": "Alto de l'Angliru"
+  },
+  "altitude": 1570,
+  "location": {
+    "latitude": 43.2242,
+    "longitude": -5.8917,
+    "region": "Asturies",
+    "country": "Espagne",
+    "nearbyTowns": ["Oviedo", "Riosa", "Mieres"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "La Vega",
+      "length": 12.5,
+      "elevation": 1266,
+      "averageGradient": 10.1,
+      "maxGradient": 23.5,
+      "difficulty": 10
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1999,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 0,
+    "giroAppearances": 0,
+    "vuealtaAppearances": 8,
+    "famousStories": [
+      "L'Angliru a été introduit dans la Vuelta en 1999 pour concurrencer les cols mythiques du Tour de France et du Giro. José Maria Jiménez fut le premier vainqueur.",
+      "En 2002, lors d'une étape pluvieuse, David Millar s'est arrêté juste avant la ligne d'arrivée pour protester contre les conditions dangereuses, déchirant son dossard.",
+      "En 2013, Chris Horner, à 41 ans, a réalisé une performance exceptionnelle dans l'Angliru, consolidant sa victoire finale dans la Vuelta, devenant le plus vieux vainqueur d'un grand tour.",
+      "Les pourcentages sont si extrêmes que les voitures des directeurs sportifs ont parfois du mal à suivre les coureurs, obligeant certains à courir avec des braquets spéciaux.",
+      "Son surnom local est 'El Gamonal', mais il est aussi connu comme 'la montée bestiale' en raison de ses pentes inhumaines."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Alberto Contador",
+        "time": "41:55",
+        "year": 2008,
+        "side": "La Vega"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Cueña les Cabres",
+      "description": "Section la plus raide du col avec des pentes de 23.5%, surnommée 'la pente des chèvres'.",
+      "coordinates": {
+        "latitude": 43.2200,
+        "longitude": -5.8870
+      }
+    },
+    {
+      "name": "Virage d'Alberto Contador",
+      "description": "Virage où Contador a lancé son attaque décisive en 2017, lors de sa dernière Vuelta.",
+      "coordinates": {
+        "latitude": 43.2220,
+        "longitude": -5.8890
+      }
+    },
+    {
+      "name": "Mirador de l'Angliru",
+      "description": "Point d'observation panoramique situé près du sommet, offrant une vue spectaculaire sur les montagnes asturiennes.",
+      "coordinates": {
+        "latitude": 43.2242,
+        "longitude": -5.8917
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Accessible toute l'année, mais peut être fermé en cas de neige",
+    "bestPeriod": "Mai à octobre",
+    "notes": "Les conditions peuvent être traîtres, même en été, avec de la brume et des pluies fréquentes."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.climbbybike.com/profile_smoothed/Alto-Angliru_profile.gif",
+        "caption": "Profil de l'Angliru montrant ses pourcentages extrêmes",
+        "credit": "ClimbByBike.com"
+      },
+      {
+        "url": "https://www.cyclingweekly.com/app/uploads/2020/11/GettyImages-1229447856.jpg",
+        "caption": "Cycliste dans les pentes les plus raides de l'Angliru",
+        "credit": "Cycling Weekly"
+      },
+      {
+        "url": "https://cdn.cyclingstage.com/images/vuelta/2020/stage-12-angliru.jpg",
+        "caption": "Vue aérienne des lacets de l'Angliru",
+        "credit": "CyclingStage.com"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=WHRnvjCNzIQ",
+        "title": "Alto de l'Angliru - Ascension intégrale",
+        "duration": "1:10:45"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 4.2 W/kg pour une ascension sans souffrance excessive",
+    "gearing": "Cassette 11-34 ou même 11-36 indispensable avec un compact 34-50 ou même triple plateau",
+    "preparation": "Entraînement spécifique aux pentes très raides, travail en force et endurance musculaire",
+    "cautionPoints": [
+      "Sections à plus de 20% qui imposent une technique de pédalage particulière et une bonne position sur le vélo",
+      "Surface de route parfois glissante, particulièrement en cas de pluie",
+      "Gérer son effort sur les premières sections pour conserver des forces pour les passages les plus difficiles"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["La Vega", "Fontaines à mi-parcours", "Sommet"],
+    "restaurants": ["Bar La Cueña au pied", "Restaurant à Riosa"],
+    "accommodation": ["Hôtels à Mieres et Oviedo"],
+    "bikeMechanic": "Magasins de vélos à Oviedo"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["tour-des-asturies", "vuelta-classic-climbs"]
+  }
+}

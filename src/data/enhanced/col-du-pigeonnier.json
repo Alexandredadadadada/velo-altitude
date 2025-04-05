@@ -1,0 +1,69 @@
+{
+  "id": "col-du-pigeonnier",
+  "name": "Col du Pigeonnier",
+  "region": "vosges-nord",
+  "country": "France",
+  "altitude": 415,
+  "length": 4.2,
+  "avgGradient": 5.8,
+  "maxGradient": 8.5,
+  "difficulty": "easy",
+  "elevationGain": 243,
+  "startLocation": "Niederbronn-les-Bains",
+  "endLocation": "Col du Pigeonnier",
+  "description": "Le Col du Pigeonnier, niché dans les Vosges du Nord, est une ascension accessible offrant une belle immersion dans le Parc Naturel Régional des Vosges du Nord. Cette montée est idéale pour les cyclistes débutants ou comme échauffement pour les plus confirmés.",
+  "history": "Ce col a été rendu populaire par plusieurs courses régionales comme le Tour d'Alsace et figure régulièrement sur les parcours des cyclosportives locales. La route qui le traverse a été entièrement rénovée en 2018 pour faciliter la pratique du cyclisme.",
+  "imageUrl": "/images/cols/pigeonnier/main.jpg",
+  "profileUrl": "/images/cols/pigeonnier/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Est (Niederbronn-les-Bains)",
+      "startLocation": "Niederbronn-les-Bains",
+      "length": 4.2,
+      "elevationGain": 243,
+      "avgGradient": 5.8,
+      "maxGradient": 8.5,
+      "difficulty": "easy",
+      "description": "Ascension régulière et bien ombragée en été"
+    },
+    {
+      "name": "Versant Ouest (Philippsbourg)",
+      "startLocation": "Philippsbourg",
+      "length": 3.5,
+      "elevationGain": 180,
+      "avgGradient": 5.1,
+      "maxGradient": 7,
+      "difficulty": "easy",
+      "description": "Version plus douce avec une section finale agréable"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Forêt de Niederbronn - Sommet",
+      "length": 2.1,
+      "gradient": 6.5,
+      "description": "Section forestière avec les plus beaux points de vue"
+    }
+  ],
+  "touristicInfo": "La région offre de nombreuses attractions touristiques comme les ruines du château de Falkenstein, les thermes de Niederbronn-les-Bains et le musée de l'histoire du fer à Reichshoffen. Le col est situé dans le Parc Naturel Régional des Vosges du Nord, classé réserve mondiale de la biosphère par l'UNESCO.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Niederbronn-les-Bains",
+      "description": "Fontaines publiques dans la ville"
+    },
+    {
+      "type": "food",
+      "location": "Niederbronn-les-Bains",
+      "description": "Nombreux restaurants et cafés dans la ville thermale"
+    }
+  ],
+  "bestTimeToVisit": "Avril à octobre",
+  "weatherInfo": "Climat tempéré avec des étés doux et des hivers parfois rigoureux. La route est généralement dégagée toute l'année sauf en cas de fortes chutes de neige.",
+  "strava": {
+    "segmentId": "453287",
+    "komTime": "12:35",
+    "komName": "Thomas Welter"
+  },
+  "slug": "col-du-pigeonnier"
+}

@@ -1,0 +1,135 @@
+{
+  "id": "galibier",
+  "name": {
+    "fr": "Col du Galibier",
+    "en": "Galibier Pass",
+    "de": "Galibier-Pass",
+    "it": "Colle del Galibier",
+    "es": "Puerto de Galibier"
+  },
+  "altitude": 2642,
+  "location": {
+    "latitude": 45.0633,
+    "longitude": 6.4079,
+    "region": "Hautes-Alpes / Savoie",
+    "country": "France",
+    "nearbyTowns": ["Saint-Michel-de-Maurienne", "Valloire", "Briançon"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Saint-Michel-de-Maurienne (via Col du Télégraphe)",
+      "length": 34.8,
+      "elevation": 2120,
+      "averageGradient": 6.1,
+      "maxGradient": 12,
+      "difficulty": 9
+    },
+    "alternateSide": {
+      "startLocation": "Briançon (via Col du Lautaret)",
+      "length": 36.5,
+      "elevation": 1490,
+      "averageGradient": 4.1,
+      "maxGradient": 10.1,
+      "difficulty": 7
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1911,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 59,
+    "giroAppearances": 0,
+    "famousStories": [
+      "Le Galibier a été franchi pour la première fois par le Tour de France en 1911. Émile Georget fut le premier coureur à le franchir.",
+      "En 2011, pour célébrer le centenaire de son premier passage, le Tour de France a organisé une arrivée d'étape au sommet du Galibier, remportée par Andy Schleck après une échappée solitaire de 60 km.",
+      "La route actuelle a été construite entre 1880 et 1891 pour des raisons militaires, remplaçant un sentier muletier.",
+      "Le tunnel du Galibier, construit en 1890 à 2556m d'altitude, permettait d'éviter les 90 derniers mètres d'ascension. Depuis 1976, la route passe par le col à 2642m.",
+      "Marco Pantani détient l'un des records d'ascension les plus rapides du Galibier lors du Tour de France 1998, année où il réalisa le doublé Giro-Tour."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Marco Pantani",
+        "time": "1:00:21",
+        "year": 1998,
+        "side": "Valloire"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Monument Henri Desgrange",
+      "description": "Monument dédié au fondateur du Tour de France, situé près du sommet à 2642m d'altitude.",
+      "coordinates": {
+        "latitude": 45.064,
+        "longitude": 6.4085
+      }
+    },
+    {
+      "name": "Col du Télégraphe",
+      "description": "Col préliminaire à 1566m d'altitude, obligatoire lors de l'ascension depuis Saint-Michel-de-Maurienne.",
+      "coordinates": {
+        "latitude": 45.1966,
+        "longitude": 6.4431
+      }
+    },
+    {
+      "name": "Tunnel du Galibier",
+      "description": "Tunnel historique construit en 1890, autrefois unique passage avant la construction de la route jusqu'au sommet en 1976.",
+      "coordinates": {
+        "latitude": 45.0645,
+        "longitude": 6.4065
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de début juin à mi-octobre",
+    "bestPeriod": "Mi-juin à fin septembre",
+    "notes": "La neige peut persister tardivement en juin. Le col est généralement fermé d'octobre à mai."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.cols-cyclisme.com/images/cols/1200/France/alpes/galibier2.jpg",
+        "caption": "Vue sur les derniers lacets du Galibier depuis le versant Valloire",
+        "credit": "Cols-Cyclisme.com"
+      },
+      {
+        "url": "https://cycling-passion.com/wp-content/uploads/2019/06/Col-du-Galibier-2.jpg",
+        "caption": "Sommet du col avec le monument d'Henri Desgrange",
+        "credit": "Cycling-Passion.com"
+      },
+      {
+        "url": "https://cdn-s-www.ledauphine.com/images/0E0975AA-6F49-4DE2-8CB1-33D86EBBD98A/NW_raw/le-col-du-galibier-s-eleve-a-2-642-metres-d-altitude-photo-le-dl-christophe-agostinis-1572023307.jpg",
+        "caption": "Vue panoramique sur le versant Lautaret",
+        "credit": "Le Dauphiné Libéré"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=EdvhXMXQXO0",
+        "title": "Col du Galibier depuis Valloire - Montée intégrale",
+        "duration": "37:15"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.0 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 recommandée avec un compact 34-50",
+    "preparation": "Programme d'entraînement progressif de 8-12 semaines avec sorties longues incluant des ascensions consécutives",
+    "cautionPoints": [
+      "Doublez votre préparation si vous montez par le versant nord (Télégraphe + Galibier)",
+      "Variations météorologiques rapides et importantes, même en plein été",
+      "Descente technique et froide, prévoir des vêtements chauds"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Valloire", "Plan Lachat", "Col du Lautaret", "Sommet (fontaine saisonnière)"],
+    "restaurants": ["Restaurant du Col du Galibier (sommet)", "Plusieurs options à Valloire"],
+    "accommodation": ["Hôtels à Valloire", "Refuge du Col du Lautaret"],
+    "bikeMechanic": "Disponible à Valloire en saison"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["route-des-grandes-alpes", "croix-de-fer-galibier-loop"]
+  }
+}

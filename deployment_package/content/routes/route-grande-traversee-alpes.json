@@ -1,0 +1,380 @@
+{
+  "id": "grande-traversee-alpes",
+  "title": "Grande Traversée des Alpes",
+  "subtitle": "L'ultime défi alpin : de Genève à Nice à travers les plus grands cols",
+  "difficulty": 9,
+  "category": "multi-jours",
+  "type": "premium",
+  "duration": "7 jours",
+  "distance": 720,
+  "elevationGain": 17500,
+  "region": "Alpes",
+  "countries": ["France", "Suisse", "Italie"],
+  "seasonality": {
+    "ideal": ["Juillet", "Août", "Septembre"],
+    "possible": ["Juin", "Octobre"],
+    "notRecommended": ["Novembre", "Décembre", "Janvier", "Février", "Mars", "Avril", "Mai"]
+  },
+  "introduction": "La Grande Traversée des Alpes est l'un des itinéraires cyclistes les plus emblématiques d'Europe. Ce parcours exigeant traverse la chaîne des Alpes du nord au sud, reliant le lac Léman à la Méditerranée à travers des paysages spectaculaires et les cols les plus mythiques du cyclisme. Cette aventure de 720 km avec 17500m de dénivelé positif offre un condensé des plus belles routes des Alpes françaises, suisses et italiennes, permettant aux cyclistes de vivre une expérience complète en traversant différents écosystèmes alpins, du Chablais aux Alpes-Maritimes.",
+  "highlights": [
+    "Traversée complète des Alpes du nord au sud",
+    "15 cols mythiques dont 7 à plus de 2000m d'altitude",
+    "Diversité de paysages exceptionnelle (lacs, glaciers, vallées)",
+    "Défi d'endurance avec un dénivelé quotidien conséquent",
+    "Variété culturelle entre France, Suisse et Italie"
+  ],
+  "stages": [
+    {
+      "day": 1,
+      "title": "Genève - Megève",
+      "distance": 85,
+      "elevationGain": 2100,
+      "description": "Cette première étape vous emmène du lac Léman aux portes de la Haute-Savoie en traversant le massif des Aravis. Des rives douces du Léman, vous monterez progressivement vers les sommets alpins.",
+      "keyPoints": "Départ des bords du lac Léman, traversée du Chablais, ascension du Col de la Colombière (1613m), arrivée dans la station élégante de Megève.",
+      "majorClimbs": [
+        {
+          "name": "Col de Saxel",
+          "altitude": 943,
+          "length": 5.5,
+          "averageGradient": 5.2
+        },
+        {
+          "name": "Col de la Colombière",
+          "altitude": 1613,
+          "length": 16.3,
+          "averageGradient": 6.8
+        }
+      ],
+      "accommodation": {
+        "recommendations": [
+          "Hôtel Alpaga (haut de gamme)",
+          "Gîte Les Aravis (milieu de gamme)",
+          "Auberge du Mont Joly (budget)"
+        ],
+        "notes": "Réservation fortement conseillée en haute saison (juillet-août)"
+      },
+      "technical": {
+        "roadType": "Routes départementales bien entretenues",
+        "traffic": "Modéré, plus dense autour de Cluses",
+        "difficulty": "Moyenne, avec une ascension majeure"
+      }
+    },
+    {
+      "day": 2,
+      "title": "Megève - Bourg-Saint-Maurice",
+      "distance": 102,
+      "elevationGain": 2600,
+      "description": "Cette étape vous fait traverser le Beaufortain, région célèbre pour ses alpages et son fromage. Vous enchaînerez deux cols majeurs avant de descendre vers la vallée de la Tarentaise.",
+      "keyPoints": "Traversée du Beaufortain, ascension du célèbre Cormet de Roselend (1968m), panoramas exceptionnels sur le Mont Blanc, descente technique vers Bourg-Saint-Maurice.",
+      "majorClimbs": [
+        {
+          "name": "Col des Saisies",
+          "altitude": 1633,
+          "length": 15.1,
+          "averageGradient": 5.2
+        },
+        {
+          "name": "Cormet de Roselend",
+          "altitude": 1968,
+          "length": 19.9,
+          "averageGradient": 6.0
+        }
+      ],
+      "accommodation": {
+        "recommendations": [
+          "Hôtel Autantic (milieu de gamme)",
+          "Gîte du Petit Saint Bernard (budget)"
+        ],
+        "notes": "Bourg-Saint-Maurice dispose de nombreuses options d'hébergement comme base pour les stations des Arcs"
+      },
+      "technical": {
+        "roadType": "Routes alpines bien entretenues, quelques portions isolées",
+        "traffic": "Faible à modéré",
+        "difficulty": "Élevée, avec deux ascensions importantes et une descente technique depuis le Cormet de Roselend"
+      }
+    },
+    {
+      "day": 3,
+      "title": "Bourg-Saint-Maurice - Col de l'Iseran - Val Cenis",
+      "distance": 95,
+      "elevationGain": 2800,
+      "description": "Jour des grands cols avec l'ascension du plus haut col routier des Alpes, l'Iseran, suivi d'une descente magnifique vers la Haute-Maurienne.",
+      "keyPoints": "Ascension monumentale du Col de l'Iseran (2770m), vues spectaculaires sur les glaciers de la Vanoise, descente vers Bonneval-sur-Arc (plus beau village de France), arrivée à Val Cenis via le Col de la Madeleine (pas le célèbre, son homonyme).",
+      "majorClimbs": [
+        {
+          "name": "Col de l'Iseran",
+          "altitude": 2770,
+          "length": 47.5,
+          "averageGradient": 4.1,
+          "note": "Depuis Bourg-Saint-Maurice, longue ascension avec quelques replats"
+        },
+        {
+          "name": "Col de la Madeleine (Maurienne)",
+          "altitude": 1746,
+          "length": 6.9,
+          "averageGradient": 7.1
+        }
+      ],
+      "accommodation": {
+        "recommendations": [
+          "Hôtel l'Outa (milieu de gamme)",
+          "Gîte La Turra (budget)"
+        ],
+        "notes": "Val Cenis est une station familiale avec plusieurs options d'hébergement"
+      },
+      "technical": {
+        "roadType": "Routes de haute montagne, exposées par endroits",
+        "traffic": "Faible, sauf en haute saison touristique",
+        "difficulty": "Très élevée, avec l'altitude qui peut poser problème"
+      },
+      "specialConsiderations": "L'altitude de l'Iseran peut provoquer des symptômes de mal aigu des montagnes chez certains cyclistes. Prévoyez des vêtements chauds même en été."
+    },
+    {
+      "day": 4,
+      "title": "Val Cenis - Susa - Sestriere",
+      "distance": 97,
+      "elevationGain": 2550,
+      "description": "Cette étape transfrontalière vous fait quitter la France pour l'Italie via le Col du Mont-Cenis, avant de remonter vers Sestriere par la montée mythique de Susa.",
+      "keyPoints": "Traversée de la frontière franco-italienne par le Col du Mont-Cenis (2083m), descente vers la vallée de Susa, remontée spectaculaire vers Sestriere, lieu emblématique du cyclisme italien.",
+      "majorClimbs": [
+        {
+          "name": "Col du Mont-Cenis",
+          "altitude": 2083,
+          "length": 13.5,
+          "averageGradient": 6.9
+        },
+        {
+          "name": "Sestriere (depuis Susa)",
+          "altitude": 2035,
+          "length": 34.2,
+          "averageGradient": 3.8,
+          "note": "Ascension rendue célèbre par Marco Pantani au Giro 1999"
+        }
+      ],
+      "accommodation": {
+        "recommendations": [
+          "Grand Hotel Sestriere (haut de gamme)",
+          "Hotel Biancaneve (milieu de gamme)"
+        ],
+        "notes": "Sestriere est une station de ski avec de nombreuses options d'hébergement"
+      },
+      "technical": {
+        "roadType": "Routes bien entretenues, certaines portions avec tunnel (prévoir éclairage)",
+        "traffic": "Modéré, plus dense dans la vallée de Susa",
+        "difficulty": "Élevée, principalement en raison de la longueur de l'ascension de Sestriere"
+      },
+      "specialConsiderations": "Préparez vos documents d'identité pour le passage de frontière. La vallée de Susa peut être très chaude en été - hydratation cruciale."
+    },
+    {
+      "day": 5,
+      "title": "Sestriere - Col d'Izoard - Barcelonnette",
+      "distance": 122,
+      "elevationGain": 2750,
+      "description": "Retour en France via une étape spectaculaire qui emprunte le Col de Montgenèvre et le mythique Col d'Izoard avec sa célèbre Casse Déserte.",
+      "keyPoints": "Traversée de la frontière italo-française au Col de Montgenèvre, ascension du mythique Col d'Izoard avec la traversée de la lunaire Casse Déserte, descente vers Barcelonnette par la vallée de l'Ubaye.",
+      "majorClimbs": [
+        {
+          "name": "Col de Montgenèvre",
+          "altitude": 1854,
+          "length": 8.1,
+          "averageGradient": 5.8
+        },
+        {
+          "name": "Col d'Izoard",
+          "altitude": 2360,
+          "length": 19.2,
+          "averageGradient": 5.7,
+          "note": "Col mythique avec son paysage lunaire de la Casse Déserte"
+        }
+      ],
+      "accommodation": {
+        "recommendations": [
+          "Hôtel de la Placette (charme)",
+          "Gîte Les Séolanes (budget)"
+        ],
+        "notes": "Barcelonnette est une ville étape idéale avec une architecture mexicaine surprenante due à son histoire d'émigration"
+      },
+      "technical": {
+        "roadType": "Routes alpines classiques, bien entretenues",
+        "traffic": "Modéré, plus dense autour de Briançon",
+        "difficulty": "Élevée, notamment pour l'ascension de l'Izoard"
+      }
+    },
+    {
+      "day": 6,
+      "title": "Barcelonnette - Col de la Bonette - Valberg",
+      "distance": 104,
+      "elevationGain": 2900,
+      "description": "L'étape reine avec l'ascension du Col de la Bonette, point culminant de l'itinéraire à 2802m d'altitude, offrant des panoramas à 360° sur les Alpes du Sud.",
+      "keyPoints": "Ascension monumentale du Col de la Bonette-Restefond (2802m), le plus haut col routier d'Europe, traversée du Parc National du Mercantour, descente vers la station de Valberg.",
+      "majorClimbs": [
+        {
+          "name": "Col de la Bonette",
+          "altitude": 2802,
+          "length": 24.1,
+          "averageGradient": 6.6,
+          "note": "Le point culminant de tout l'itinéraire"
+        },
+        {
+          "name": "Col de la Couillole",
+          "altitude": 1678,
+          "length": 15.7,
+          "averageGradient": 5.8
+        }
+      ],
+      "accommodation": {
+        "recommendations": [
+          "Hôtel Le Chalet Suisse (milieu de gamme)",
+          "Résidence Adonis Valberg (appartements)"
+        ],
+        "notes": "Valberg est une station familiale avec des hébergements variés"
+      },
+      "technical": {
+        "roadType": "Routes de haute montagne, exposées aux éléments",
+        "traffic": "Faible, mais présence de motos en été",
+        "difficulty": "Très élevée, avec l'altitude qui peut poser problème"
+      },
+      "specialConsiderations": "Même en été, les conditions météo peuvent changer rapidement sur la Bonette. Prévoyez des vêtements chauds et imperméables."
+    },
+    {
+      "day": 7,
+      "title": "Valberg - Col de Turini - Nice",
+      "distance": 115,
+      "elevationGain": 1800,
+      "description": "La dernière étape vous mène des montagnes à la mer, avec l'ascension du célèbre Col de Turini avant la descente finale vers la Promenade des Anglais à Nice.",
+      "keyPoints": "Traversée des spectaculaires Gorges de Daluis, ascension du Col de Turini rendu célèbre par le Rallye Monte-Carlo, descente vertigineuse vers la Méditerranée, arrivée triomphale sur la Promenade des Anglais à Nice.",
+      "majorClimbs": [
+        {
+          "name": "Col Saint-Martin",
+          "altitude": 1500,
+          "length": 16.2,
+          "averageGradient": 5.4
+        },
+        {
+          "name": "Col de Turini",
+          "altitude": 1607,
+          "length": 14.9,
+          "averageGradient": 7.2,
+          "note": "Col rendu célèbre par le Rallye Monte-Carlo"
+        }
+      ],
+      "accommodation": {
+        "recommendations": [
+          "Hôtel Negresco (luxe historique)",
+          "Hôtel Aston La Scala (milieu de gamme)",
+          "Hôtel Ozz (budget)"
+        ],
+        "notes": "Nice offre une gamme complète d'hébergements. Réservation indispensable en haute saison."
+      },
+      "technical": {
+        "roadType": "Routes de montagne puis côtières, généralement bien entretenues",
+        "traffic": "Faible en montagne, très dense à l'approche de Nice",
+        "difficulty": "Moyenne à élevée, avec une vigilance particulière pour la circulation dense à l'approche de Nice"
+      }
+    }
+  ],
+  "logisticalInfo": {
+    "transportation": {
+      "start": "Genève est accessible par avion (aéroport international), train (TGV depuis Paris) ou voiture.",
+      "end": "Nice dispose d'un aéroport international et d'une gare TGV. Services de transport de vélos disponibles.",
+      "shuttleService": "Service de transfert de bagages disponible auprès de plusieurs prestataires spécialisés (Luggage Forward, AlpsCycling)."
+    },
+    "bestPeriod": "Mi-juin à mi-septembre, lorsque tous les cols sont ouverts. Juillet-août offrent les meilleures conditions mais plus de tourisme.",
+    "equipment": {
+      "bikeRecommendations": "Vélo de route avec triple plateau ou compact et cassette 32 dents minimum. Pneus 25-28mm recommandés.",
+      "essentialGear": [
+        "Vêtements pour toutes conditions (chaleur en vallée, froid en altitude)",
+        "Coupe-vent et imperméable même en été",
+        "Éclairage avant/arrière pour les tunnels",
+        "Trousse de réparation complète"
+      ]
+    },
+    "waterpoints": [
+      "Fontaines publiques fréquentes dans les villages alpins",
+      "Cols majeurs: généralement un point d'eau ou un refuge/restaurant",
+      "Vallées: supermarchés et stations-service régulièrement"
+    ],
+    "foodstops": "Chaque étape traverse plusieurs villages avec ravitaillement possible. Certains cols isolés peuvent présenter des sections de 20-30km sans services."
+  },
+  "planning": {
+    "preparation": {
+      "physical": "Préparation minimum de 3 mois avec sorties longues régulières incluant au moins 1500-2000m de dénivelé.",
+      "equipmentChecks": "Révision complète du vélo avant le départ, pneus neufs recommandés."
+    },
+    "alternatives": {
+      "shorterVersion": "Version en 10 jours possible avec des étapes plus courtes et des jours de repos.",
+      "easierVersion": "Itinéraire alternatif évitant certains cols (Bonette, Iseran) disponible pour cyclistes intermédiaires."
+    },
+    "emergencyInfo": {
+      "escapeRoutes": "Chaque étape traverse des villes avec gares SNCF permettant une évacuation si nécessaire.",
+      "medicalFacilities": "Hôpitaux dans les principales villes traversées (Cluses, Bourg-Saint-Maurice, Briançon, Nice)."
+    }
+  },
+  "expertTips": [
+    "Acclimatez-vous à l'altitude avant d'affronter l'Iseran et la Bonette",
+    "Gérez votre effort avec un capteur de puissance pour survivre aux 7 jours",
+    "Prévoyez des développements très faciles (34x32 minimum)",
+    "La météo peut changer radicalement entre le départ et l'arrivée d'une étape",
+    "Les matinées offrent généralement les meilleures conditions météo en montagne"
+  ],
+  "testimonials": [
+    {
+      "name": "Laurent D.",
+      "level": "Cycliste expérimenté, 45 ans",
+      "quote": "Une traversée qui restera gravée dans ma mémoire. La diversité des paysages est incroyable, chaque jour apporte son lot de défis et d'émerveillement. L'organisation logistique est cruciale pour profiter pleinement de l'expérience."
+    },
+    {
+      "name": "Sophie M.",
+      "level": "Cycliste amateur, 38 ans",
+      "quote": "J'ai opté pour la version en 10 jours avec transport de bagages et je ne regrette pas. Les étapes restent exigeantes mais réalisables. La Bonette était mon objectif ultime, quelle fierté d'y être parvenue!"
+    }
+  ],
+  "challengeRating": {
+    "physicalDemand": 9,
+    "technicalDifficulty": 7,
+    "scenicBeauty": 10,
+    "trafficSafety": 7,
+    "accommodationAccess": 8
+  },
+  "relatedContent": {
+    "cols": [
+      "bonette",
+      "izoard",
+      "iseran",
+      "mont-cenis"
+    ],
+    "training": [
+      "plan-haute-montagne"
+    ],
+    "nutrition": [
+      "plan-nutrition-longue-distance",
+      "plan-nutrition-recuperation"
+    ]
+  },
+  "mediaContent": {
+    "routeGpx": "routes/gpx/grande-traversee-alpes.gpx",
+    "elevationProfile": "routes/profiles/grande-traversee-alpes.png",
+    "photoGallery": [
+      {
+        "url": "routes/photos/bonette-summit.jpg",
+        "caption": "Sommet de la Bonette à 2802m"
+      },
+      {
+        "url": "routes/photos/casse-deserte-izoard.jpg",
+        "caption": "La Casse Déserte du Col d'Izoard"
+      },
+      {
+        "url": "routes/photos/mont-cenis-lake.jpg",
+        "caption": "Le lac du Mont-Cenis à la frontière franco-italienne"
+      },
+      {
+        "url": "routes/photos/nice-arrival.jpg",
+        "caption": "Arrivée sur la Promenade des Anglais à Nice"
+      }
+    ],
+    "interactiveMap": "routes/interactive/grande-traversee-alpes.html"
+  },
+  "creationDate": "2025-04-06",
+  "lastUpdated": "2025-04-06",
+  "author": "Équipe Contenu Velo-Altitude"
+}

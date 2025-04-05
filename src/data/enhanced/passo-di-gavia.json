@@ -1,0 +1,75 @@
+{
+  "id": "passo-di-gavia",
+  "name": "Passo di Gavia",
+  "region": "dolomites",
+  "country": "Italie",
+  "altitude": 2621,
+  "length": 17.3,
+  "avgGradient": 7.9,
+  "maxGradient": 16,
+  "difficulty": "extreme",
+  "elevationGain": 1363,
+  "startLocation": "Ponte di Legno",
+  "endLocation": "Passo di Gavia",
+  "description": "Le Passo di Gavia est l'un des cols les plus difficiles et spectaculaires des Alpes italiennes. Sa route étroite, parfois sans garde-corps, ses tunnels non éclairés et ses pentes sévères en font un véritable défi pour les cyclistes.",
+  "history": "Ce col est entré dans la légende du Giro d'Italia en 1988 lorsque les coureurs ont dû l'affronter sous une tempête de neige. Andy Hampsten prit le maillot rose ce jour-là et remporta finalement le Giro. En 2019, une étape du Giro passant par le Gavia dut être annulée en raison d'un risque d'avalanches.",
+  "imageUrl": "/images/cols/gavia/main.jpg",
+  "profileUrl": "/images/cols/gavia/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Ponte di Legno)",
+      "startLocation": "Ponte di Legno",
+      "length": 17.3,
+      "elevationGain": 1363,
+      "avgGradient": 7.9,
+      "maxGradient": 16,
+      "difficulty": "extreme",
+      "description": "La montée nord est plus régulière mais plus longue"
+    },
+    {
+      "name": "Versant Sud (Bormio)",
+      "startLocation": "Bormio",
+      "length": 25.6,
+      "elevationGain": 1404,
+      "avgGradient": 5.5,
+      "maxGradient": 14,
+      "difficulty": "hard",
+      "description": "La montée sud est plus longue avec des tunnels étroits"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Galleria dei Sforzellina",
+      "length": 5.2,
+      "gradient": 9.3,
+      "description": "Section avec les tunnels non éclairés depuis Bormio"
+    },
+    {
+      "name": "Santa Caterina - Sommet",
+      "length": 13.4,
+      "gradient": 7.8,
+      "description": "Dernière partie de l'ascension depuis Bormio"
+    }
+  ],
+  "touristicInfo": "Au sommet se trouve le refuge Bonetta, un petit lac alpin et une vue imprenable sur le massif de l'Ortles et l'Adamello. Le col est généralement fermé d'octobre à mai en raison de la neige.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Santa Caterina Valfurva et sommet",
+      "description": "Fontaines et refuge"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Rifugio Bonetta, ouvert en saison"
+    }
+  ],
+  "bestTimeToVisit": "Mi-juin à septembre",
+  "weatherInfo": "Conditions météorologiques imprévisibles en haute montagne. Neige possible même en été.",
+  "strava": {
+    "segmentId": "664287",
+    "komTime": "42:40",
+    "komName": "Ivan Basso"
+  },
+  "slug": "passo-di-gavia"
+}

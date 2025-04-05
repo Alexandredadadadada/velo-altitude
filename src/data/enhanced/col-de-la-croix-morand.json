@@ -1,0 +1,69 @@
+{
+  "id": "col-de-la-croix-morand",
+  "name": "Col de la Croix Morand",
+  "region": "massif-central",
+  "country": "France",
+  "altitude": 1401,
+  "length": 9.7,
+  "avgGradient": 7,
+  "maxGradient": 9,
+  "difficulty": "medium",
+  "elevationGain": 679,
+  "startLocation": "Le Mont-Dore",
+  "endLocation": "Col de la Croix Morand",
+  "description": "Situé dans les monts Dore en Auvergne, ce col relie les stations thermales de La Bourboule et du Mont-Dore à Clermont-Ferrand. Il offre de magnifiques vues sur la chaîne des Puys et le massif du Sancy.",
+  "history": "Le col apparaît régulièrement dans le Tour de France, le Critérium du Dauphiné et le Tour du Limousin. C'est un terrain d'entraînement privilégié pour les cyclistes auvergnats comme Romain Bardet.",
+  "imageUrl": "/images/cols/croix-morand/main.jpg",
+  "profileUrl": "/images/cols/croix-morand/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Ouest (Le Mont-Dore)",
+      "startLocation": "Le Mont-Dore",
+      "length": 9.7,
+      "elevationGain": 679,
+      "avgGradient": 7,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Montée régulière depuis la station thermale"
+    },
+    {
+      "name": "Versant Est (Chambon-sur-Lac)",
+      "startLocation": "Chambon-sur-Lac",
+      "length": 8.2,
+      "elevationGain": 455,
+      "avgGradient": 5.5,
+      "maxGradient": 7.5,
+      "difficulty": "easy",
+      "description": "Version plus facile depuis le lac Chambon"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Forêt du Mont-Dore",
+      "length": 5.5,
+      "gradient": 7.5,
+      "description": "Section à travers la forêt de hêtres et de sapins"
+    }
+  ],
+  "touristicInfo": "Le col est un passage important pour les randonneurs du GR4 et offre des panoramas exceptionnels sur les volcans d'Auvergne. Proche du Puy de Sancy, point culminant du Massif central.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Le Mont-Dore",
+      "description": "Dernières fontaines avant le col"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant en saison estivale"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Col généralement fermé en hiver. Conditions changeantes avec possibilité de brouillard matinal.",
+  "strava": {
+    "segmentId": "656471",
+    "komTime": "22:45",
+    "komName": "Romain Bardet"
+  },
+  "slug": "col-de-la-croix-morand"
+}

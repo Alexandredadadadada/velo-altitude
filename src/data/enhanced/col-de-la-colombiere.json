@@ -1,0 +1,69 @@
+{
+  "id": "col-de-la-colombiere",
+  "name": "Col de la Colombière",
+  "region": "jura",
+  "country": "France",
+  "altitude": 1613,
+  "length": 11.7,
+  "avgGradient": 8.5,
+  "maxGradient": 12,
+  "difficulty": "hard",
+  "elevationGain": 995,
+  "startLocation": "Scionzier",
+  "endLocation": "Col de la Colombière",
+  "description": "Situé entre la vallée de l'Arve et le Grand-Bornand, le Col de la Colombière est une ascension classique du Tour de France. Il offre un panorama splendide sur les Aravis et le Mont-Blanc.",
+  "history": "Apparu pour la première fois dans le Tour en 1960, il a été franchi à de nombreuses reprises depuis. En 2018, Julian Alaphilippe y a remporté une victoire d'étape mémorable après une attaque dans la descente.",
+  "imageUrl": "/images/cols/colombiere/main.jpg",
+  "profileUrl": "/images/cols/colombiere/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Scionzier)",
+      "startLocation": "Scionzier",
+      "length": 11.7,
+      "elevationGain": 995,
+      "avgGradient": 8.5,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "Montée la plus difficile, avec des sections raides après Reposoir"
+    },
+    {
+      "name": "Versant Sud (Le Grand-Bornand)",
+      "startLocation": "Le Grand-Bornand",
+      "length": 7.5,
+      "elevationGain": 629,
+      "avgGradient": 8.4,
+      "maxGradient": 10.2,
+      "difficulty": "medium",
+      "description": "Version plus courte mais également exigeante"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Le Reposoir - Sommet",
+      "length": 7.5,
+      "gradient": 8.9,
+      "description": "Section finale, la plus difficile de l'ascension"
+    }
+  ],
+  "touristicInfo": "Le col traverse la réserve naturelle du massif des Bornes et offre des vues superbes sur les Aravis et le Bargy.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Le Reposoir et sommet",
+      "description": "Fontaines"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant Col de la Colombière"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Le col est généralement fermé de novembre à mai. Conditions alpines avec changements météorologiques rapides.",
+  "strava": {
+    "segmentId": "630482",
+    "komTime": "33:15",
+    "komName": "Primož Roglič"
+  },
+  "slug": "col-de-la-colombiere"
+}

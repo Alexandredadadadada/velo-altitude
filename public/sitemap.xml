@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Pages principales -->
+  <url>
+    <loc>https://www.velo-altitude.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/cols</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/cols"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/cols"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/training</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/training"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/training"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/seven-majors</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/seven-majors"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/seven-majors"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/coach</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/coach"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/coach"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/routes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/routes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/routes"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/social</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/social"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/social"/>
+  </url>
+
+  <!-- Cols emblématiques (échantillon) -->
+  <url>
+    <loc>https://www.velo-altitude.com/cols/bonette</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/cols/bonette"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/cols/bonette"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/cols/galibier</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/cols/galibier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/cols/galibier"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/cols/stelvio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/cols/stelvio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/cols/stelvio"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/cols/tourmalet</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/cols/tourmalet"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/cols/tourmalet"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/cols/izoard</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/cols/izoard"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/cols/izoard"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/cols/angliru</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/cols/angliru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/cols/angliru"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/cols/mortirolo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/cols/mortirolo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/cols/mortirolo"/>
+  </url>
+
+  <!-- Programmes d'entraînement (échantillon) -->
+  <url>
+    <loc>https://www.velo-altitude.com/training/plan-haute-montagne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/training/plan-haute-montagne"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/training/plan-haute-montagne"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/training/prep-montagne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/training/prep-montagne"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/training/prep-montagne"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/training/haute-altitude</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/training/haute-altitude"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/training/haute-altitude"/>
+  </url>
+
+  <!-- Plans nutritionnels (échantillon) -->
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition/nutrition-plan-endurance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition/nutrition-plan-endurance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition/nutrition-plan-endurance"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition/nutrition-plan-gran-fondo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition/nutrition-plan-gran-fondo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition/nutrition-plan-gran-fondo"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition/nutrition-plan-mountain</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition/nutrition-plan-mountain"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition/nutrition-plan-mountain"/>
+  </url>
+
+  <!-- Recettes optimisées pour cyclistes -->
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition/recipes/energy-oatmeal</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition/recipes/energy-oatmeal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition/recipes/energy-oatmeal"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition/recipes/recovery-smoothie</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition/recipes/recovery-smoothie"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition/recipes/recovery-smoothie"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition/recipes/protein-pasta</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition/recipes/protein-pasta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition/recipes/protein-pasta"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition/recipes/homemade-energy-bars</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition/recipes/homemade-energy-bars"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition/recipes/homemade-energy-bars"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/nutrition/recipes/hydration-drink</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/nutrition/recipes/hydration-drink"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/nutrition/recipes/hydration-drink"/>
+  </url>
+
+  <!-- Programmes d'entraînement détaillés -->
+  <url>
+    <loc>https://www.velo-altitude.com/training/programs/col-crusher</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/training/programs/col-crusher"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/training/programs/col-crusher"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/training/programs/endurance-builder</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/training/programs/endurance-builder"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/training/programs/endurance-builder"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/training/programs/alpine-climber</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/training/programs/alpine-climber"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/training/programs/alpine-climber"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/training/programs/power-intervals</loc>
+    <lastmod>2025-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/training/programs/power-intervals"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/training/programs/power-intervals"/>
+  </url>
+
+  <!-- Défis communautaires (échantillon) -->
+  <url>
+    <loc>https://www.velo-altitude.com/challenges/above-2500-challenge</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/challenges/above-2500-challenge"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/challenges/above-2500-challenge"/>
+  </url>
+  <url>
+    <loc>https://www.velo-altitude.com/challenges/alpes-giants-challenge</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.velo-altitude.com/challenges/alpes-giants-challenge"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velo-altitude.com/en/challenges/alpes-giants-challenge"/>
+  </url>
+</urlset>

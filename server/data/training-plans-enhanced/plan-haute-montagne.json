@@ -1,0 +1,398 @@
+{
+  "id": "plan-haute-montagne",
+  "name": "Programme Spécial Haute Montagne - Objectif Bonette",
+  "objective": "endurance-montagne",
+  "level": "intermédiaire-avancé",
+  "duration_weeks": 12,
+  "weekly_structure": [
+    {
+      "week": 1,
+      "theme": "Adaptation et fondation",
+      "total_hours": 8,
+      "days": [
+        {
+          "day": "Lundi",
+          "type": "repos",
+          "title": "Récupération",
+          "description": "Repos complet ou stretching léger.",
+          "duration": "0h",
+          "intensity": 0,
+          "details": "Profitez de cette journée pour planifier votre semaine et vérifier votre équipement."
+        },
+        {
+          "day": "Mardi",
+          "type": "endurance",
+          "title": "Endurance fondamentale",
+          "description": "Sortie à plat ou légèrement vallonnée à intensité modérée (zone 2).",
+          "duration": "1h30",
+          "intensity": 3,
+          "details": "Concentrez-vous sur une cadence élevée (90-95 rpm) et une respiration contrôlée. Cherchez à établir votre rythme de base."
+        },
+        {
+          "day": "Mercredi",
+          "type": "force",
+          "title": "Développement force-endurance",
+          "description": "Recherche de côtes modérées (4-6%), travail en force à basse cadence.",
+          "duration": "1h15",
+          "intensity": 4,
+          "details": "4 à 6 répétitions de 4-5 minutes à cadence réduite (60-70 rpm), récupération active de 3 minutes entre les répétitions."
+        },
+        {
+          "day": "Jeudi",
+          "type": "récupération",
+          "title": "Sortie de récupération",
+          "description": "Sortie légère à faible intensité (zone 1).",
+          "duration": "1h",
+          "intensity": 2,
+          "details": "Évitez toute montée significative, restez en plaine. Focus sur la fluidité du pédalage et la récupération active."
+        },
+        {
+          "day": "Vendredi",
+          "type": "intervalle",
+          "title": "Développement du seuil aérobie",
+          "description": "Intervalles au seuil (zone 4).",
+          "duration": "1h30",
+          "intensity": 7,
+          "details": "Échauffement 20 min, puis 3x8 min au seuil (85-90% FCM), récupération 4 min entre chaque effort, retour au calme 20 min."
+        },
+        {
+          "day": "Samedi",
+          "type": "endurance",
+          "title": "Sortie longue",
+          "description": "Développement de l'endurance de base sur parcours vallonné.",
+          "duration": "2h30",
+          "intensity": 3,
+          "details": "Intégrez quelques montées modérées (5-8 min) à allure régulière. Ne cherchez pas la performance mais l'accumulation de temps en selle."
+        },
+        {
+          "day": "Dimanche",
+          "type": "technique",
+          "title": "Technique en montée",
+          "description": "Travail spécifique sur la technique de grimpe sur une montée locale.",
+          "duration": "1h45",
+          "intensity": 4,
+          "details": "Trouvez une montée de 3-5 km et réalisez 3 ascensions en alternant position assise et danseuse. Travaillez les changements de rythme."
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "theme": "Augmentation progressive",
+      "total_hours": 9,
+      "days": [
+        {
+          "day": "Lundi",
+          "type": "repos",
+          "title": "Récupération",
+          "description": "Repos complet ou yoga adapté au cyclisme.",
+          "duration": "0h",
+          "intensity": 0,
+          "details": "15-20 minutes d'étirements ou de yoga peuvent favoriser la récupération et prévenir les blessures."
+        },
+        {
+          "day": "Mardi",
+          "type": "endurance",
+          "title": "Endurance fondamentale",
+          "description": "Sortie vallonnée à intensité modérée (zone 2) avec quelques accélérations.",
+          "duration": "1h45",
+          "intensity": 3,
+          "details": "Intégrez 4-5 accélérations de 30 secondes au cours de la sortie pour stimuler le système cardiovasculaire."
+        },
+        {
+          "day": "Mercredi",
+          "type": "force",
+          "title": "Développement de la force spécifique",
+          "description": "Côtes plus longues avec travail en force.",
+          "duration": "1h30",
+          "intensity": 5,
+          "details": "3-4 répétitions de 6-8 minutes sur une côte à 6-8%, cadence 65-75 rpm, récupération 4 minutes entre les efforts."
+        },
+        {
+          "day": "Jeudi",
+          "type": "récupération",
+          "title": "Récupération active",
+          "description": "Sortie très légère (zone 1) sur terrain plat.",
+          "duration": "1h",
+          "intensity": 2,
+          "details": "Privilégiez une cadence élevée (>95 rpm) pour favoriser la circulation sanguine et l'élimination des toxines."
+        },
+        {
+          "day": "Vendredi",
+          "type": "intervalle",
+          "title": "Sweet spot",
+          "description": "Travail à haute intensité contrôlée (88-93% FTP).",
+          "duration": "1h45",
+          "intensity": 6,
+          "details": "Échauffement 20 min, puis 2 séries de 15 min en sweet spot, récupération 8 min entre les séries, retour au calme 15 min."
+        },
+        {
+          "day": "Samedi",
+          "type": "endurance",
+          "title": "Sortie longue progressive",
+          "description": "Augmentation du volume avec sections à intensité modérée.",
+          "duration": "3h",
+          "intensity": 4,
+          "details": "2h en endurance de base (zone 2) puis 3 sections de 10 min en zone 3 dans la dernière heure. Travaillez votre alimentation pendant l'effort."
+        },
+        {
+          "day": "Dimanche",
+          "type": "spécifique",
+          "title": "Simulation d'ascension",
+          "description": "Travail spécifique sur la montée la plus longue de votre région.",
+          "duration": "2h",
+          "intensity": 5,
+          "details": "Trouvez la montée la plus longue disponible et réalisez 2-3 ascensions à allure constante, en essayant de maintenir le même rythme à chaque répétition."
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "theme": "Semaine clé - bloc montagne",
+      "total_hours": 14,
+      "days": [
+        {
+          "day": "Lundi",
+          "type": "repos",
+          "title": "Récupération anticipée",
+          "description": "Repos complet pour préparer le bloc de montagne.",
+          "duration": "0h",
+          "intensity": 0,
+          "details": "Hydratation optimale et alimentation riche en glucides pour préparer les journées intensives à venir."
+        },
+        {
+          "day": "Mardi",
+          "type": "endurance",
+          "title": "Montée longue à intensité modérée",
+          "description": "Première ascension significative de la semaine.",
+          "duration": "3h",
+          "intensity": 5,
+          "details": "Cherchez une montée de 10-15 km et réalisez l'ascension à rythme constant (zone 3). Travaillez sur la gestion de l'effort et la position."
+        },
+        {
+          "day": "Mercredi",
+          "type": "spécifique",
+          "title": "Répétitions en altitude",
+          "description": "Ascensions multiples pour accumuler du dénivelé.",
+          "duration": "3h30",
+          "intensity": 6,
+          "details": "3-4 ascensions d'une montée de 5-8 km. Variez l'intensité: 1ère en zone 2-3, 2ème en force (basse cadence), 3ème au seuil, 4ème en endurance."
+        },
+        {
+          "day": "Jeudi",
+          "type": "récupération",
+          "title": "Récupération active en vallée",
+          "description": "Sortie facile après deux jours exigeants.",
+          "duration": "1h30",
+          "intensity": 2,
+          "details": "Restez en plaine, évitez tout dénivelé significatif. Focus sur la récupération, l'hydratation et l'alimentation."
+        },
+        {
+          "day": "Vendredi",
+          "type": "spécifique",
+          "title": "Jour de col",
+          "description": "Ascension d'un col significatif à allure progressive.",
+          "duration": "3h",
+          "intensity": 6,
+          "details": "Sélectionnez un col important (>1000m dénivelé si possible) et travaillez une montée progressive: départ en zone 2, milieu en zone 3, derniers km en zone 4."
+        },
+        {
+          "day": "Samedi",
+          "type": "endurance",
+          "title": "Double ascension",
+          "description": "Travail d'enchaînement pour simuler les exigences de la Bonette.",
+          "duration": "4h",
+          "intensity": 5,
+          "details": "Enchaînez deux cols différents avec une courte récupération en vallée. Premier col en endurance, deuxième col à rythme soutenu."
+        },
+        {
+          "day": "Dimanche",
+          "type": "récupération",
+          "title": "Sortie de récupération post-bloc",
+          "description": "Sortie légère pour assimiler le travail de la semaine.",
+          "duration": "1h30",
+          "intensity": 2,
+          "details": "Sortie à plat, cadence élevée, intensité très modérée. Hydratation et nutrition optimales pour favoriser la récupération."
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "theme": "Semaine d'affûtage et défi Bonette",
+      "total_hours": 10,
+      "days": [
+        {
+          "day": "Lundi",
+          "type": "repos",
+          "title": "Repos pré-challenge",
+          "description": "Repos complet pour maximiser la fraîcheur.",
+          "duration": "0h",
+          "intensity": 0,
+          "details": "Concentrez-vous sur l'hydratation, l'alimentation équilibrée et un sommeil optimal."
+        },
+        {
+          "day": "Mardi",
+          "type": "activation",
+          "title": "Activation neurale",
+          "description": "Sortie courte avec accélérations pour maintenir le système actif.",
+          "duration": "1h",
+          "intensity": 3,
+          "details": "45 min de pédalage léger (zone 1-2) avec 5-6 accélérations de 30 secondes en puissance."
+        },
+        {
+          "day": "Mercredi",
+          "type": "spécifique",
+          "title": "Simulation finale",
+          "description": "Dernière préparation spécifique avec travail d'intensité contrôlée.",
+          "duration": "2h",
+          "intensity": 5,
+          "details": "Trouvez une montée régulière et réalisez 2-3 segments de 10 min au rythme prévu pour la Bonette, avec récupération complète."
+        },
+        {
+          "day": "Jeudi",
+          "type": "repos",
+          "title": "Repos pré-départ",
+          "description": "Récupération et préparation matérielle.",
+          "duration": "0h",
+          "intensity": 0,
+          "details": "Vérifiez méticuleusement votre vélo et préparez tout votre équipement pour l'ascension."
+        },
+        {
+          "day": "Vendredi",
+          "type": "voyage",
+          "title": "Voyage et repérage",
+          "description": "Déplacement vers la zone de la Bonette et reconnaissance légère.",
+          "duration": "1h",
+          "intensity": 2,
+          "details": "Après le voyage, faites une sortie très légère de 30-45 min pour dégourdir les jambes et reconnaître les premiers kilomètres de l'ascension."
+        },
+        {
+          "day": "Samedi",
+          "type": "objectif",
+          "title": "Ascension du Col de la Bonette",
+          "description": "Jour J - Défi Bonette!",
+          "duration": "5h",
+          "intensity": 7,
+          "details": "Départ tôt pour éviter la chaleur. Gestion progressive de l'effort: démarrage très contrôlé, accélération graduelle. Nutrition et hydratation planifiées: 60-80g glucides/heure, 500-750ml eau/heure."
+        },
+        {
+          "day": "Dimanche",
+          "type": "récupération",
+          "title": "Récupération post-challenge",
+          "description": "Sortie très légère pour favoriser la récupération.",
+          "duration": "1h",
+          "intensity": 1,
+          "details": "Sortie à plat, rythme conversationnel, cadence élevée. La régénération active accélère le processus de récupération."
+        }
+      ]
+    }
+  ],
+  "material": [
+    "Vélo avec développement adapté à la haute montagne (compact 34-50 avec cassette 11-32 ou 11-34)",
+    "Cardiofréquencemètre ou capteur de puissance fortement recommandé",
+    "Vêtements adaptés aux conditions variables de haute montagne (manches longues, coupe-vent, gants légers)",
+    "Alimentation spécifique pour l'effort prolongé en altitude"
+  ],
+  "nutrition": {
+    "during_training": {
+      "hydration": "500-750ml/heure selon température, augmenter en altitude",
+      "energy": "60-90g de glucides/heure pour sessions >2h",
+      "recommended_products": [
+        "Barres énergétiques à index glycémique mixte",
+        "Gels avec caféine pour les moments difficiles",
+        "Boisson isotonique avec électrolytes"
+      ]
+    },
+    "recovery": {
+      "timing": "Fenêtre de 30min post-effort cruciale",
+      "protein_carbs_ratio": "1:4 (20-25g protéines, 80-100g glucides)",
+      "recommended_products": [
+        "Boisson de récupération protéinée",
+        "Yaourt grec + fruits + miel",
+        "Omelette + pain complet + avocat"
+      ]
+    },
+    "daily_priorities": [
+      "Hydratation constante tout au long de la journée",
+      "Priorité aux glucides complexes les jours d'entraînement intensif",
+      "Protéines de qualité réparties sur les repas principaux",
+      "Antioxydants (fruits, légumes) pour contrer le stress oxydatif lié à l'altitude"
+    ]
+  },
+  "progressionMarkers": [
+    {
+      "name": "Test de seuil bimensuel",
+      "description": "Effectuez un test de 20 minutes en montée toutes les 2 semaines pour mesurer votre progression",
+      "expectedImprovement": "Augmentation de 5-10% sur 12 semaines"
+    },
+    {
+      "name": "Capacité de montée",
+      "description": "Notez le temps sur votre montée de référence locale",
+      "expectedImprovement": "Réduction de 5-8% du temps d'ascension"
+    },
+    {
+      "name": "Rapport puissance/poids",
+      "description": "Mesure clé pour la performance en montée",
+      "expectedImprovement": "Augmentation de 0.2-0.4 W/kg sur la période"
+    },
+    {
+      "name": "Dénivelé hebdomadaire",
+      "description": "Progression du dénivelé total accumulé par semaine",
+      "expectedImprovement": "Augmentation progressive de 1000m à 4000-5000m/semaine"
+    }
+  ],
+  "complementaryExercises": [
+    {
+      "name": "Renforcement musculaire du core",
+      "frequency": "2-3 fois par semaine",
+      "exercises": [
+        "Planches frontales et latérales 3x30-60s",
+        "Superman 3x15",
+        "Bird-dog 3x10 de chaque côté"
+      ],
+      "benefits": "Améliore la stabilité sur le vélo et l'efficacité du pédalage"
+    },
+    {
+      "name": "Travail de la stabilité sur une jambe",
+      "frequency": "2 fois par semaine",
+      "exercises": [
+        "Squats unijambistes 3x10 par jambe",
+        "Fentes avant 3x12 par jambe",
+        "Proprioception sur coussin instable 2x30s par pied"
+      ],
+      "benefits": "Corrige les asymétries et renforce les muscles stabilisateurs"
+    },
+    {
+      "name": "Travail respiratoire",
+      "frequency": "3-5 fois par semaine",
+      "exercises": [
+        "Respirations diaphragmatiques 4-2-6 (4s inspiration, 2s pause, 6s expiration) 5 min",
+        "Inspirations nasales profondes contre résistance 3x10"
+      ],
+      "benefits": "Prépare le système respiratoire au travail en altitude"
+    }
+  ],
+  "adaptationAltitude": {
+    "recommendations": [
+      "Arrivez 2-3 jours avant pour une acclimatation minimale si possible",
+      "Hydratation supplémentaire (25-30% de plus qu'en plaine)",
+      "Allure réduite de 10-15% les premiers jours en altitude",
+      "Surveillance des symptômes de mal aigu des montagnes (maux de tête, nausées)",
+      "Alimentation riche en glucides (65-70% de l'apport calorique)"
+    ],
+    "considerations": [
+      "La déshydratation est accélérée en altitude",
+      "La digestion peut être ralentie - privilégiez des aliments facilement assimilables",
+      "La dépense énergétique augmente de 10-15% à >2500m d'altitude"
+    ]
+  },
+  "tips": [
+    "Privilégiez la constance plutôt que l'intensité excessive dans votre entraînement",
+    "La récupération est aussi importante que le travail, surtout après les semaines intensives",
+    "Pour la Bonette, partez très progressivement et réservez des ressources pour les 5 derniers kilomètres",
+    "Adaptez votre position sur le vélo: légèrement plus redressée en haute altitude favorise la ventilation",
+    "Surveillez votre fréquence cardiaque, qui sera naturellement plus élevée en altitude pour un même effort"
+  ],
+  "author": "Pierre Rolland, ancien professionnel spécialiste de la montagne",
+  "lastUpdated": "2025-04-05T23:35:00Z",
+  "slug": "programme-special-haute-montagne-objectif-bonette"
+}

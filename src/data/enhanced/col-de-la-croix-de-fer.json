@@ -1,0 +1,95 @@
+{
+  "id": "col-de-la-croix-de-fer",
+  "name": "Col de la Croix de Fer",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 2067,
+  "length": 29.5,
+  "avgGradient": 5.2,
+  "maxGradient": 11,
+  "difficulty": "hard",
+  "elevationGain": 1522,
+  "startLocation": "Saint-Jean-de-Maurienne",
+  "endLocation": "Col de la Croix de Fer",
+  "description": "Le Col de la Croix de Fer est l'un des cols mythiques des Alpes françaises, offrant des paysages spectaculaires et des vues imprenables sur les sommets environnants. Cette ascension exigeante traverse plusieurs villages pittoresques et permet d'admirer les lacs d'altitude et les alpages verdoyants. Le sommet est marqué par une grande croix métallique qui lui donne son nom et offre un panorama à 360° sur le massif des Grandes Rousses et les Aiguilles d'Arves.",
+  "history": "Apparu pour la première fois dans le Tour de France en 1947, le Col de la Croix de Fer est devenu un lieu emblématique de la Grande Boucle avec plus de 20 passages. En 1986, il a été témoin d'un moment historique lorsque Bernard Hinault et Greg LeMond ont franchi son sommet ensemble, symbolisant leur rivalité et camaraderie. Plus récemment, des champions comme Thibaut Pinot et Warren Barguil y ont réalisé des exploits mémorables. Le col est aussi régulièrement emprunté par les cyclosportives comme la Marmotte.",
+  "imageUrl": "/images/cols/col-de-la-croix-de-fer/main.jpg",
+  "profileUrl": "/images/cols/col-de-la-croix-de-fer/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Les 7 derniers kilomètres",
+      "length": 7,
+      "gradient": 7.5,
+      "description": "Cette section finale est particulièrement redoutée avec plusieurs passages à plus de 10%. L'environnement devient plus minéral et les vues se dégagent progressivement."
+    },
+    {
+      "name": "Montée depuis le barrage de Grand Maison",
+      "length": 5.2,
+      "gradient": 6.8,
+      "description": "Après une courte descente depuis le Col du Glandon, cette portion offre une ascension régulière avec un beau panorama sur le lac artificiel."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Saint-Jean-de-Maurienne",
+      "startLocation": "Saint-Jean-de-Maurienne",
+      "length": 29.5,
+      "elevationGain": 1522,
+      "avgGradient": 5.2,
+      "maxGradient": 11,
+      "difficulty": "hard",
+      "description": "La plus longue et classique montée, empruntée par le Tour de France. L'ascension débute doucement avant d'affronter plusieurs sections difficiles, notamment après Saint-Sorlin-d'Arves. Le parcours traverse plusieurs villages charmants, offrant des possibilités de ravitaillement."
+    },
+    {
+      "name": "Versant Allemont (via Barrage de Grand Maison)",
+      "startLocation": "Allemont",
+      "length": 19.7,
+      "elevationGain": 1174,
+      "avgGradient": 6,
+      "maxGradient": 9.5,
+      "difficulty": "hard",
+      "description": "Une ascension plus courte mais régulièrement pentue. Cette route permet d'apprécier le magnifique lac artificiel de Grand Maison et passe par le Col du Glandon avant de rejoindre la Croix de Fer. Les paysages sont plus sauvages et la route souvent moins fréquentée."
+    },
+    {
+      "name": "Versant Saint-Colomban-des-Villards",
+      "startLocation": "Saint-Colomban-des-Villards",
+      "length": 12.8,
+      "elevationGain": 873,
+      "avgGradient": 6.8,
+      "maxGradient": 11,
+      "difficulty": "hard",
+      "description": "Ce versant moins connu offre une belle alternative avec des pentes régulièrement soutenues. La route serpente à travers forêts et alpages avant de rejoindre l'itinéraire principal dans les derniers kilomètres."
+    }
+  ],
+  "touristicInfo": "Outre la spectaculaire croix métallique au sommet, les environs du col offrent de nombreux sentiers de randonnée et des lacs d'altitude. Le Lac de Grand Maison en contrebas est un site impressionnant, tout comme les villages typiques de montagne comme Saint-Sorlin-d'Arves. La région est connue pour ses fromages savoyards, notamment la Tomme et le Beaufort que l'on peut découvrir dans les fromageries locales.",
+  "facilities": [
+    {
+      "type": "food",
+      "location": "Sommet du col",
+      "description": "Restaurant-refuge \"La Croix de Fer\" proposant des plats savoyards et boissons chaudes. Terrasse avec vue panoramique."
+    },
+    {
+      "type": "water",
+      "location": "Saint-Sorlin-d'Arves",
+      "description": "Fontaines publiques dans le village, à environ 10 km du sommet."
+    },
+    {
+      "type": "bike-shop",
+      "location": "Saint-Jean-de-Maurienne",
+      "description": "Plusieurs magasins de vélo offrant réparations et équipements au pied de l'ascension."
+    },
+    {
+      "type": "shelter",
+      "location": "Sommet du col",
+      "description": "Abri simple disponible même hors saison en cas de mauvais temps."
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre, avec juillet et août comme période optimale. Le col est généralement fermé de novembre à mai en raison de la neige.",
+  "weatherInfo": "Les conditions météorologiques peuvent changer rapidement même en été. Les orages sont fréquents en après-midi, et les matinées offrent souvent les meilleures conditions. Le col est exposé au vent, particulièrement au sommet. La température peut chuter de 10-15°C entre la vallée et le sommet, même en plein été.",
+  "strava": {
+    "segmentId": "667871",
+    "komTime": "1:19:42",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "col-de-la-croix-de-fer"
+}

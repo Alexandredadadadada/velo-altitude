@@ -1,0 +1,636 @@
+{
+  "id": "gran-fondo-training-program",
+  "name": "Programme Gran Fondo",
+  "description": "Programme d'entraînement de 16 semaines pour préparer les cyclistes aux événements de longue distance comme les Gran Fondo, les cyclosportives et les randonnées exigeantes. Axé sur l'endurance, la gestion de l'effort et la nutrition.",
+  "duration": 16,
+  "level": [
+    "débutant",
+    "intermédiaire",
+    "avancé"
+  ],
+  "goals": [
+    "Développer l'endurance fondamentale pour les longues distances",
+    "Améliorer l'efficacité énergétique et la gestion de l'effort",
+    "Renforcer les capacités de grimpe pour les événements vallonnés ou montagneux",
+    "Optimiser les stratégies nutritionnelles pour les efforts prolongés"
+  ],
+  "requirements": {
+    "minFTP": 180,
+    "minTrainingHours": 6,
+    "equipment": [
+      "Vélo route/gravel",
+      "Heart rate monitor",
+      "Optional: capteur de puissance"
+    ]
+  },
+  "phases": [
+    {
+      "id": "foundation",
+      "name": "Fondation",
+      "weeks": 4,
+      "focus": "Développement de l'endurance de base",
+      "description": "Établir une base d'endurance solide et renforcer le corps pour supporter les charges d'entraînement futures."
+    },
+    {
+      "id": "build1",
+      "name": "Construction 1",
+      "weeks": 4,
+      "focus": "Augmentation du volume et introduction des côtes",
+      "description": "Augmentation progressive du volume hebdomadaire et introduction d'entraînements spécifiques en côte."
+    },
+    {
+      "id": "build2",
+      "name": "Construction 2",
+      "weeks": 4,
+      "focus": "Spécificité et endurance musculaire",
+      "description": "Entraînements plus spécifiques aux exigences du parcours cible avec un focus sur l'endurance musculaire."
+    },
+    {
+      "id": "peak",
+      "name": "Affûtage",
+      "weeks": 3,
+      "focus": "Affûtage et préparation spécifique",
+      "description": "Réduction du volume tout en maintenant quelques séances d'intensité pour arriver frais mais affûté le jour J."
+    },
+    {
+      "id": "event",
+      "name": "Événement",
+      "weeks": 1,
+      "focus": "Gran Fondo et récupération",
+      "description": "Derniers préparatifs, stratégie de course et récupération post-événement."
+    }
+  ],
+  "weeklyPlans": [
+    {
+      "week": 1,
+      "theme": "Introduction endurance progressive",
+      "workouts": [
+        {
+          "day": 1,
+          "name": "Endurance de base",
+          "type": "Endurance",
+          "duration": 90,
+          "intensityType": "Zone 2",
+          "description": "Sortie d'endurance douce à intensité constante, focus sur la position et la respiration",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 10,
+              "zone": 1
+            },
+            {
+              "name": "Endurance constante",
+              "duration": 70,
+              "zone": 2
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 10,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 3,
+          "name": "Technique et cadence",
+          "type": "Technique",
+          "duration": 60,
+          "intensityType": "Zone 1-2",
+          "description": "Travail de la technique de pédalage et exercices de cadence variée",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 10,
+              "zone": 1
+            },
+            {
+              "name": "Blocs alternés haute cadence (90-100) et basse cadence (60-70)",
+              "duration": 40,
+              "zone": 2
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 10,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "name": "Force de base",
+          "type": "Force",
+          "duration": 75,
+          "intensityType": "Zone 2-3",
+          "description": "Développement de la force fondamentale avec exercices en basse cadence",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Intervalles basse cadence (60-70 rpm) en légère côte",
+              "duration": 45,
+              "zone": "2-3"
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 7,
+          "name": "Sortie longue introductive",
+          "type": "Endurance",
+          "duration": 120,
+          "intensityType": "Zone 1-2",
+          "description": "Première sortie longue à intensité modérée",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 10,
+              "zone": 1
+            },
+            {
+              "name": "Endurance constante",
+              "duration": 100,
+              "zone": "1-2"
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 10,
+              "zone": 1
+            }
+          ],
+          "nutrition": "Emporter 1 bidon par heure et une collation toutes les 45-60 minutes"
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "theme": "Développement volume et terrain varié",
+      "workouts": [
+        {
+          "day": 1,
+          "name": "Récupération active",
+          "type": "Récupération",
+          "duration": 45,
+          "intensityType": "Zone 1",
+          "description": "Sortie légère de récupération"
+        },
+        {
+          "day": 2,
+          "name": "Endurance vallonnée",
+          "type": "Endurance",
+          "duration": 120,
+          "intensityType": "Zone 2",
+          "description": "Sortie sur parcours vallonné en restant en endurance sur les montées",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Parcours vallonné",
+              "duration": 90,
+              "zone": 2
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "name": "Sweet Spot Introduction",
+          "type": "Seuil",
+          "duration": 75,
+          "intensityType": "Zone 3",
+          "description": "Introduction aux intervalles en Sweet Spot pour développer l'endurance au seuil",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Intervalles 3x10min Zone 3 (88-93% FTP)",
+              "duration": 45,
+              "zone": 3,
+              "intervals": true
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "name": "Technique et mobilité",
+          "type": "Technique",
+          "duration": 60,
+          "intensityType": "Zone 1-2",
+          "description": "Travail technique et exercices de mobilité pour prévenir les douleurs sur longue distance"
+        },
+        {
+          "day": 7,
+          "name": "Sortie longue progressive",
+          "type": "Endurance",
+          "duration": 180,
+          "intensityType": "Zone 1-3",
+          "description": "Sortie longue avec dernière heure légèrement plus soutenue",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Endurance base",
+              "duration": 105,
+              "zone": 2
+            },
+            {
+              "name": "Progression finale",
+              "duration": 45,
+              "zone": "2-3"
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ],
+          "nutrition": "Tester la stratégie nutritionnelle: 60-90g glucides/heure et hydratation régulière"
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "theme": "Développement endurance spécifique",
+      "workouts": [
+        {
+          "day": 1,
+          "name": "Récupération active",
+          "type": "Récupération",
+          "duration": 45,
+          "intensityType": "Zone 1",
+          "description": "Sortie légère de récupération"
+        },
+        {
+          "day": 2,
+          "name": "Travail de côtes",
+          "type": "Grimper",
+          "duration": 90,
+          "intensityType": "Zone 3-4",
+          "description": "Entraînement sur côtes pour développer la force en montée",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 20,
+              "zone": 1
+            },
+            {
+              "name": "Intervalles en côte 5-8min x4-5",
+              "duration": 50,
+              "zone": "3-4",
+              "intervals": true
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 20,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "name": "Endurance tempo",
+          "type": "Tempo",
+          "duration": 100,
+          "intensityType": "Zone 2-3",
+          "description": "Entraînement en tempo pour améliorer l'endurance au seuil",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Tempo 2x20min",
+              "duration": 70,
+              "zone": "2-3"
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "name": "Endurance technique",
+          "type": "Technique",
+          "duration": 60,
+          "intensityType": "Zone 2",
+          "description": "Sortie d'endurance avec focus sur la technique de pédalage et l'économie d'énergie"
+        },
+        {
+          "day": 7,
+          "name": "Sortie longue spécifique",
+          "type": "Endurance",
+          "duration": 210,
+          "intensityType": "Zone 2",
+          "description": "Sortie longue sur terrain similaire à l'événement cible",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Endurance sur parcours similaire",
+              "duration": 180,
+              "zone": 2
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ],
+          "nutrition": "Stratégie nutritionnelle complète: 60-90g glucides/heure et diversifier les sources"
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "theme": "Spécificité terrain et intensité",
+      "workouts": [
+        {
+          "day": 1,
+          "name": "Récupération active",
+          "type": "Récupération",
+          "duration": 45,
+          "intensityType": "Zone 1",
+          "description": "Sortie légère de récupération"
+        },
+        {
+          "day": 2,
+          "name": "Simulation Gran Fondo - Première moitié",
+          "type": "Spécifique",
+          "duration": 150,
+          "intensityType": "Zone 2-3",
+          "description": "Simulation de la première moitié de l'événement avec intensité contrôlée",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Simulation parcours",
+              "duration": 120,
+              "zone": "2-3"
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 4,
+          "name": "Force-endurance montée",
+          "type": "Grimper",
+          "duration": 100,
+          "intensityType": "Zone 3-4",
+          "description": "Développement de la force-endurance sur longues montées",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Intervalles en montée longue 3x15min",
+              "duration": 70,
+              "zone": "3-4",
+              "intervals": true
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 6,
+          "name": "Endurance active",
+          "type": "Endurance",
+          "duration": 90,
+          "intensityType": "Zone 2",
+          "description": "Sortie d'endurance avec courtes accélérations pour maintenir la vivacité"
+        },
+        {
+          "day": 7,
+          "name": "Sortie longue avec finales",
+          "type": "Endurance",
+          "duration": 240,
+          "intensityType": "Zone 2-4",
+          "description": "Sortie très longue avec simulations de finales de Gran Fondo",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Endurance longue",
+              "duration": 180,
+              "zone": 2
+            },
+            {
+              "name": "Simulations finales",
+              "duration": 30,
+              "zone": "3-4"
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ],
+          "nutrition": "Test complet de la stratégie de nutrition course: objectif 80-90g glucides/heure"
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "theme": "Affûtage progressif",
+      "workouts": [
+        {
+          "day": 1,
+          "name": "Récupération active",
+          "type": "Récupération",
+          "duration": 45,
+          "intensityType": "Zone 1",
+          "description": "Sortie légère de récupération"
+        },
+        {
+          "day": 3,
+          "name": "Intensité maintenue",
+          "type": "Seuil",
+          "duration": 75,
+          "intensityType": "Zone 3-4",
+          "description": "Maintien de l'intensité avec volume réduit",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Intervalles 3x8min Zone 4",
+              "duration": 45,
+              "zone": 4,
+              "intervals": true
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "name": "Endurance technique",
+          "type": "Technique",
+          "duration": 60,
+          "intensityType": "Zone 2",
+          "description": "Sortie d'endurance avec focus sur l'efficacité et l'économie d'énergie"
+        },
+        {
+          "day": 7,
+          "name": "Dernière sortie longue réduite",
+          "type": "Endurance",
+          "duration": 150,
+          "intensityType": "Zone 2",
+          "description": "Dernière sortie longue à volume réduit",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Endurance modérée",
+              "duration": 120,
+              "zone": 2
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ],
+          "nutrition": "Dernière validation de la stratégie nutritionnelle pour l'événement"
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "theme": "Semaine de l'événement",
+      "workouts": [
+        {
+          "day": 1,
+          "name": "Récupération active",
+          "type": "Récupération",
+          "duration": 30,
+          "intensityType": "Zone 1",
+          "description": "Sortie très légère pour maintenir l'activation"
+        },
+        {
+          "day": 3,
+          "name": "Activation pré-événement",
+          "type": "Activation",
+          "duration": 45,
+          "intensityType": "Zone 1-4",
+          "description": "Sortie courte avec activations pour maintenir la fraîcheur",
+          "structure": [
+            {
+              "name": "Échauffement",
+              "duration": 15,
+              "zone": 1
+            },
+            {
+              "name": "Activations 4x1min",
+              "duration": 15,
+              "zone": 4,
+              "intervals": true
+            },
+            {
+              "name": "Retour au calme",
+              "duration": 15,
+              "zone": 1
+            }
+          ]
+        },
+        {
+          "day": 5,
+          "name": "Sortie très légère",
+          "type": "Récupération",
+          "duration": 30,
+          "intensityType": "Zone 1",
+          "description": "Dernière sortie légère avant l'événement"
+        },
+        {
+          "day": 6,
+          "name": "GRAN FONDO",
+          "type": "Événement",
+          "duration": "Variable (4-8h)",
+          "intensityType": "Événement",
+          "description": "Jour de l'événement - appliquer la stratégie préparée",
+          "nutrition": "Suivre plan nutritionnel: petit-déjeuner 3h avant, 80-90g glucides/heure pendant l'épreuve"
+        },
+        {
+          "day": 7,
+          "name": "Récupération post-événement",
+          "type": "Récupération",
+          "duration": 30,
+          "intensityType": "Zone 1",
+          "description": "Sortie très légère pour favoriser la récupération"
+        }
+      ]
+    }
+  ],
+  "adaptations": {
+    "beginners": "Réduire le volume des sorties longues de 25-30% et augmenter progressivement",
+    "advanced": "Ajouter une séance supplémentaire de force-endurance par semaine",
+    "limitedTime": "Concentrer l'entraînement sur 4 jours/semaine avec focus sur les sorties clés",
+    "indoor": "Remplacer les sorties longues par des sessions fractionnées en 2-3 blocs sur home trainer"
+  },
+  "nutrition": {
+    "training": "Consommer 5-7g de glucides/kg de poids corporel par jour pendant la phase de construction",
+    "preEvent": "Charger en glucides les 2-3 jours avant l'événement (8-10g/kg)",
+    "duringEvent": "Viser 80-90g de glucides/heure avec multiples sources (maltodextrine, fructose, glucose)",
+    "hydration": "Maintenir 500-750ml/heure selon conditions, avec électrolytes (400-800mg sodium/litre)"
+  },
+  "equipment": {
+    "bike": "Optimiser la position pour le confort sur longue distance, pas uniquement pour l'aérodynamisme",
+    "gearing": "S'assurer d'avoir des développements adaptés aux dénivelés (compact ou cassette étendue)",
+    "nutrition": "Prévoir des solutions de stockage supplémentaires (sacoche, top tube bag, etc.)"
+  },
+  "slug": "programme-gran-fondo"
+}

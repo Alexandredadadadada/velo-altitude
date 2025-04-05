@@ -1,0 +1,135 @@
+{
+  "id": "passo-giau",
+  "name": {
+    "fr": "Passo Giau",
+    "en": "Passo Giau",
+    "de": "Giau-Pass",
+    "it": "Passo Giau",
+    "es": "Paso Giau"
+  },
+  "altitude": 2236,
+  "location": {
+    "latitude": 46.4772,
+    "longitude": 12.0659,
+    "region": "Vénétie",
+    "country": "Italie",
+    "nearbyTowns": ["Cortina d'Ampezzo", "Selva di Cadore", "Colle Santa Lucia"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Cortina d'Ampezzo",
+      "length": 15.9,
+      "elevation": 922,
+      "averageGradient": 5.8,
+      "maxGradient": 14.0,
+      "difficulty": 7
+    },
+    "alternateSide": {
+      "startLocation": "Selva di Cadore",
+      "length": 10.1,
+      "elevation": 922,
+      "averageGradient": 9.1,
+      "maxGradient": 14.0,
+      "difficulty": 9
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1973,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 0,
+    "giroAppearances": 15,
+    "famousStories": [
+      "Le Passo Giau est connu comme l'un des cols les plus exigeants des Dolomites, particulièrement redouté pour sa pente constante et sévère depuis Selva di Cadore.",
+      "En 2021, Egan Bernal a consolidé son maillot rose lors d'une étape mémorable sous la neige et dans le brouillard, gravissant le Giau en solitaire.",
+      "C'est l'un des cols principaux de la célèbre cyclosportive Maratona dles Dolomites, l'une des plus prestigieuses au monde.",
+      "Les paysages spectaculaires du col, avec les pics déchiquetés des Dolomites et les alpages verdoyants, en font un lieu de prédilection pour les photographes.",
+      "Le col est situé au cœur des Dolomites, classées au patrimoine mondial de l'UNESCO pour leur beauté exceptionnelle."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Egan Bernal",
+        "time": "44:03",
+        "year": 2021,
+        "side": "Selva di Cadore"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Panorama sur les Dolomites",
+      "description": "Vue à 360° sur les sommets spectaculaires des Dolomites, notamment les Cinque Torri et la Marmolada.",
+      "coordinates": {
+        "latitude": 46.4772,
+        "longitude": 12.0659
+      }
+    },
+    {
+      "name": "Rifugio Giau",
+      "description": "Refuge de montagne historique situé au sommet, offrant restauration et hébergement.",
+      "coordinates": {
+        "latitude": 46.4770,
+        "longitude": 12.0660
+      }
+    },
+    {
+      "name": "Cappella del Passo Giau",
+      "description": "Petite chapelle alpine traditionnelle située près du sommet.",
+      "coordinates": {
+        "latitude": 46.4775,
+        "longitude": 12.0662
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de juin à octobre",
+    "bestPeriod": "Juillet à septembre",
+    "notes": "En hiver, le col devient une station de ski de fond. Vérifez l'état de la route au printemps car la fonte des neiges peut causer des éboulements."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.cyclingdolomites.com/wp-content/uploads/2018/10/Passo-Giau-1.jpg",
+        "caption": "Les lacets spectaculaires du versant de Selva di Cadore",
+        "credit": "CyclingDolomites.com"
+      },
+      {
+        "url": "https://www.altinoitinerari.com/wp-content/uploads/2021/05/passo-giau-cortina-selva-di-cadore-cover-1.jpg",
+        "caption": "Vue panoramique depuis le sommet sur les Dolomites",
+        "credit": "AltinoItinerari.com"
+      },
+      {
+        "url": "https://bikeitalia.it/wp-content/uploads/2020/06/passo-giau-dolomiti-veneto.jpg",
+        "caption": "Le Rifugio Giau au sommet",
+        "credit": "BikeItalia.it"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=YKPLt_GXP0U",
+        "title": "Passo Giau - Ascension depuis Selva di Cadore",
+        "duration": "52:18"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.5 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 ou 11-34 fortement recommandée, même pour les cyclistes expérimentés",
+    "preparation": "Entraînement spécifique aux pentes soutenues avec peu de répit, travail sur le seuil",
+    "cautionPoints": [
+      "Pente particulièrement exigeante et constante du côté de Selva di Cadore",
+      "Changements météorologiques rapides et imprévisibles",
+      "Altitude élevée pouvant causer des difficultés respiratoires pour les non-acclimatés"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Cortina d'Ampezzo", "Colle Santa Lucia", "Rifugio Giau (sommet)"],
+    "restaurants": ["Rifugio Giau au sommet"],
+    "accommodation": ["Refuges en altitude", "Hôtels à Cortina d'Ampezzo et Selva di Cadore"],
+    "bikeMechanic": "Magasins de vélos à Cortina d'Ampezzo"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["sella-ronda", "dolomites-haute-route"]
+  }
+}

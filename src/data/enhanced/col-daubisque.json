@@ -1,0 +1,69 @@
+{
+  "id": "col-daubisque",
+  "name": "Col d'Aubisque",
+  "region": "pyrenees",
+  "country": "France",
+  "altitude": 1709,
+  "length": 16.6,
+  "avgGradient": 7.2,
+  "maxGradient": 13,
+  "difficulty": "hard",
+  "elevationGain": 1190,
+  "startLocation": "Laruns",
+  "endLocation": "Col d'Aubisque",
+  "description": "Célèbre pour ses paysages spectaculaires et sa route en corniche, le Col d'Aubisque est l'un des plus beaux cols des Pyrénées. Il est souvent enchaîné avec le Col du Soulor.",
+  "history": "Premier passage du Tour en 1910. En 1951, Wim van Est chute dans un ravin et survit miraculeusement. Le col est reconnaissable pour ses vélos colorés qui décorent ses abords en période du Tour.",
+  "imageUrl": "/images/cols/aubisque/main.jpg",
+  "profileUrl": "/images/cols/aubisque/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Ouest (Laruns)",
+      "startLocation": "Laruns",
+      "length": 16.6,
+      "elevationGain": 1190,
+      "avgGradient": 7.2,
+      "maxGradient": 13,
+      "difficulty": "hard",
+      "description": "Montée classique depuis Laruns, avec des sections à 13%"
+    },
+    {
+      "name": "Versant Est (Argelès-Gazost)",
+      "startLocation": "Argelès-Gazost",
+      "length": 30.2,
+      "elevationGain": 1525,
+      "avgGradient": 5,
+      "maxGradient": 10,
+      "difficulty": "hard",
+      "description": "Passe d'abord par le Col du Soulor avant de rejoindre l'Aubisque par la Corniche"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Corniche du Soulor à l'Aubisque",
+      "length": 7.5,
+      "gradient": 4.5,
+      "description": "Route spectaculaire taillée dans la falaise entre le Soulor et l'Aubisque"
+    }
+  ],
+  "touristicInfo": "La Corniche entre le Col du Soulor et l'Aubisque offre des vues à couper le souffle. Au sommet, un restaurant et des statues de cyclistes colorées.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Gourette et sommet",
+      "description": "Fontaines et restaurant"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant Col d'Aubisque"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Brouillard fréquent, surtout le matin. Orages possibles l'après-midi en été.",
+  "strava": {
+    "segmentId": "649394",
+    "komTime": "43:15",
+    "komName": "Pierre Latour"
+  },
+  "slug": "col-daubisque"
+}

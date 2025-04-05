@@ -1,0 +1,76 @@
+{
+  "id": "transfagarasan",
+  "name": "Transfăgărășan",
+  "slug": "transfagarasan",
+  "country": "Roumanie",
+  "region": "Carpates méridionales",
+  "altitude": 2042,
+  "length": 27.4,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": "1",
+  "description": {
+    "fr": "Surnommée 'la plus belle route du monde' par l'émission Top Gear, la Transfăgărășan est l'une des routes les plus spectaculaires d'Europe. Construite entre 1970 et 1974 comme route militaire, elle traverse la partie la plus haute des Carpates roumaines. Son tracé sinueux, ses tunnels et ses vues panoramiques en font un paradis pour les cyclistes en quête d'aventure dans l'Est européen.",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": [
+    "/assets/images/cols/transfagarasan/main.jpg",
+    "/assets/images/cols/transfagarasan/view1.jpg",
+    "/assets/images/cols/transfagarasan/view2.jpg"
+  ],
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      "Barrage Vidraru",
+      "Cabana Bâlea"
+    ],
+    "food": [
+      "Restaurant Vidraru",
+      "Cabana Bâlea Lac"
+    ],
+    "shelter": [
+      "Tunnel sommital",
+      "Cabana Bâlea"
+    ],
+    "mechanics": [
+      "Căpățânenii Ungureni (village de départ)"
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Sophie Martin",
+      "date": "2023-07-15",
+      "text": "Une route incroyable! Les paysages sont à couper le souffle et l'ascension est un vrai défi. Attention au vent et aux changements de température en altitude."
+    },
+    {
+      "name": "Adrian Popescu",
+      "date": "2022-08-20",
+      "text": "En tant que cycliste roumain, je conseille de partir tôt le matin pour éviter le trafic touristique en saison. Les derniers kilomètres sont magiques."
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 73,
+  "last_updated": "2025-04-05T20:42:26.979Z"
+}

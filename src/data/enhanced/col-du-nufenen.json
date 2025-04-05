@@ -1,0 +1,69 @@
+{
+  "id": "col-du-nufenen",
+  "name": "Col du Nufenen",
+  "region": "alpes-suisses",
+  "country": "Suisse",
+  "altitude": 2478,
+  "length": 13.7,
+  "avgGradient": 8.5,
+  "maxGradient": 13,
+  "difficulty": "hard",
+  "elevationGain": 1165,
+  "startLocation": "Ulrichen",
+  "endLocation": "Col du Nufenen",
+  "description": "Le Nufenen (Nufenenpass en allemand) est le deuxième plus haut col routier de Suisse. Reliant le Valais au Tessin, cette ascension difficile offre des panoramas exceptionnels sur les Alpes valaisannes et les glaciers environnants.",
+  "history": "La route du col a été construite relativement tard, entre 1964 et 1969. Elle a depuis été régulièrement utilisée dans le Tour de Suisse et occasionnellement dans le Tour de Romandie.",
+  "imageUrl": "/images/cols/nufenen/main.jpg",
+  "profileUrl": "/images/cols/nufenen/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Ulrichen)",
+      "startLocation": "Ulrichen",
+      "length": 13.7,
+      "elevationGain": 1165,
+      "avgGradient": 8.5,
+      "maxGradient": 13,
+      "difficulty": "hard",
+      "description": "Montée régulière et exigeante depuis la vallée du Rhône"
+    },
+    {
+      "name": "Versant Sud (Airolo)",
+      "startLocation": "Airolo",
+      "length": 18.9,
+      "elevationGain": 1402,
+      "avgGradient": 7.4,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "Version plus longue et légèrement moins pentue depuis le Tessin"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Station Nufenenpass - Sommet",
+      "length": 4.5,
+      "gradient": 9.7,
+      "description": "Section finale où la pente se redresse"
+    }
+  ],
+  "touristicInfo": "Le col marque la frontière linguistique entre la partie germanophone et italophone de la Suisse. Des sentiers de randonnée permettent d'explorer les montagnes avoisinantes, notamment le Grieshorn.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Sommet",
+      "description": "Points d'eau au restaurant"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant ouvert en saison"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col fermé en hiver, généralement de novembre à mai. L'altitude élevée peut entraîner des conditions météorologiques changeantes et fraîches même en été.",
+  "strava": {
+    "segmentId": "671928",
+    "komTime": "45:30",
+    "komName": "Nairo Quintana"
+  },
+  "slug": "col-du-nufenen"
+}

@@ -5,13 +5,17 @@ import {
   Card,
   CardContent,
   Tooltip,
-  useTheme
+  useTheme,
+  Divider,
+  Avatar
 } from '@mui/material';
 import { 
-  TrendingUp,
-  TrendingDown,
-  TrendingFlat
+  ArrowUpward,
+  ArrowDownward,
 } from '@mui/icons-material';
+import TrendingUpIcon from '../icons/TrendingIcon';
+import TrendingDownIcon from '../icons/TrendingDownIcon';
+import TrendingFlatIcon from '../icons/TrendingFlatIcon';
 
 /**
  * Composant pour afficher la comparaison d'une métrique entre deux périodes
@@ -55,9 +59,9 @@ const MetricComparisonCard = ({
   
   // Obtenir l'icône de tendance
   const getTrendIcon = () => {
-    if (difference > 2) return <TrendingUp color="success" fontSize="small" />;
-    if (difference < -2) return <TrendingDown color="error" fontSize="small" />;
-    return <TrendingFlat color="action" fontSize="small" />;
+    if (difference > 2) return <TrendingUpIcon color="success" fontSize="small" />;
+    if (difference < -2) return <TrendingDownIcon color="error" fontSize="small" />;
+    return <TrendingFlatIcon color="action" fontSize="small" />;
   };
   
   // Déterminer si l'évolution est positive ou négative en fonction de la métrique

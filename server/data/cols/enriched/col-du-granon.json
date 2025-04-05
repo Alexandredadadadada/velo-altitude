@@ -1,0 +1,53 @@
+{
+  "id": "col-du-granon",
+  "name": "Col du Granon",
+  "slug": "col-du-granon",
+  "country": "",
+  "region": "",
+  "altitude": 2413,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 5,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/granon/main.jpg",
+    "gallery": [
+      "/images/cols/granon/climb.jpg",
+      "/images/cols/granon/fort.jpg",
+      "/images/cols/granon/view.jpg",
+      "/images/cols/granon/tour.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.847Z"
+}

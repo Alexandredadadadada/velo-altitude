@@ -29,7 +29,8 @@
       "currency": "EUR"
     },
     "rating": 4.8,
-    "description": "Un hôtel conçu par des cyclistes pour des cyclistes, situé au pied des plus beaux cols alpins."
+    "description": "Un hôtel conçu par des cyclistes pour des cyclistes, situé au pied des plus beaux cols alpins.",
+    "slug": "hotel-du-cycliste"
   },
   {
     "id": "accom-002",
@@ -59,7 +60,8 @@
       "currency": "EUR"
     },
     "rating": 4.6,
-    "description": "Gîte familial idéalement situé pour les amateurs de cols pyrénéens. Point de départ idéal pour le Tourmalet."
+    "description": "Gîte familial idéalement situé pour les amateurs de cols pyrénéens. Point de départ idéal pour le Tourmalet.",
+    "slug": "gite-des-pyrenees"
   },
   {
     "id": "accom-003",
@@ -69,7 +71,7 @@
     "location": {
       "address": "5 avenue de Provence, 84410 Bédoin",
       "latitude": 44.124422,
-      "longitude": 5.178520
+      "longitude": 5.17852
     },
     "contact": {
       "phone": "+33 4 90 65 61 09",
@@ -90,7 +92,8 @@
       "currency": "EUR"
     },
     "rating": 4.9,
-    "description": "L'hébergement de référence au pied du géant de Provence. Notre établissement accueille des cyclistes du monde entier."
+    "description": "L'hébergement de référence au pied du géant de Provence. Notre établissement accueille des cyclistes du monde entier.",
+    "slug": "relais-du-mont-ventoux"
   },
   {
     "id": "accom-004",
@@ -100,7 +103,7 @@
     "location": {
       "address": "Via Roma 28, 23032 Bormio, Italie",
       "latitude": 46.466511,
-      "longitude": 10.365640
+      "longitude": 10.36564
     },
     "contact": {
       "phone": "+39 0342 901398",
@@ -121,7 +124,8 @@
       "currency": "EUR"
     },
     "rating": 4.5,
-    "description": "Auberge économique et conviviale idéale pour les cyclistes voulant conquérir le Stelvio et les autres cols de la région."
+    "description": "Auberge économique et conviviale idéale pour les cyclistes voulant conquérir le Stelvio et les autres cols de la région.",
+    "slug": "ostello-stelvio"
   },
   {
     "id": "accom-005",
@@ -130,7 +134,7 @@
     "cyclistFriendly": true,
     "location": {
       "address": "17 route des crêtes, 68140 Soultzeren",
-      "latitude": 48.057060,
+      "latitude": 48.05706,
       "longitude": 7.021742
     },
     "contact": {
@@ -152,7 +156,8 @@
       "currency": "EUR"
     },
     "rating": 4.7,
-    "description": "Chalet authentique situé sur la route des crêtes des Vosges, parfait pour découvrir le massif vosgien à vélo."
+    "description": "Chalet authentique situé sur la route des crêtes des Vosges, parfait pour découvrir le massif vosgien à vélo.",
+    "slug": "chalet-des-vosges"
   },
   {
     "id": "accom-006",
@@ -183,7 +188,8 @@
       "currency": "EUR"
     },
     "rating": 4.6,
-    "description": "Hébergement spécialisé pour cyclistes au pied des cols pyrénéens espagnols. Ambiance internationale garantie."
+    "description": "Hébergement spécialisé pour cyclistes au pied des cols pyrénéens espagnols. Ambiance internationale garantie.",
+    "slug": "albergue-de-ciclistas"
   },
   {
     "id": "accom-007",
@@ -214,6 +220,7 @@
       "currency": "EUR"
     },
     "rating": 4.8,
-    "description": "Hôtel autrichien traditionnel avec une attention particulière pour les cyclistes. Parfait pour explorer les Alpes tyroliennes."
+    "description": "Hôtel autrichien traditionnel avec une attention particulière pour les cyclistes. Parfait pour explorer les Alpes tyroliennes.",
+    "slug": "gasthof-alpenrose"
   }
 ]

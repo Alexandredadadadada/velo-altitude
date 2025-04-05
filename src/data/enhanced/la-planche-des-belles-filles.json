@@ -1,0 +1,69 @@
+{
+  "id": "la-planche-des-belles-filles",
+  "name": "La Planche des Belles Filles",
+  "region": "vosges",
+  "country": "France",
+  "altitude": 1148,
+  "length": 5.9,
+  "avgGradient": 8.5,
+  "maxGradient": 20,
+  "difficulty": "hard",
+  "elevationGain": 503,
+  "startLocation": "Plancher-les-Mines",
+  "endLocation": "La Planche des Belles Filles",
+  "description": "Cette montée récemment rendue célèbre par le Tour de France est courte mais extrêmement raide, avec un final redoutable. La station de ski est située aux confins des Vosges, à la limite de la Haute-Saône et du Territoire de Belfort.",
+  "history": "Apparue pour la première fois dans le Tour de France en 2012, La Planche des Belles Filles s'est rapidement imposée comme une arrivée au sommet spectaculaire. Son nom viendrait d'une légende locale où des jeunes femmes se seraient jetées dans un étang pour échapper à des mercenaires suédois.",
+  "imageUrl": "/images/summits/planche/main.jpg",
+  "profileUrl": "/images/summits/planche/profile.jpg",
+  "routes": [
+    {
+      "name": "Route classique",
+      "startLocation": "Plancher-les-Mines",
+      "length": 5.9,
+      "elevationGain": 503,
+      "avgGradient": 8.5,
+      "maxGradient": 20,
+      "difficulty": "hard",
+      "description": "L'ascension classique avec son terrible final"
+    },
+    {
+      "name": "Super Planche (version gravel)",
+      "startLocation": "Plancher-les-Mines",
+      "length": 7,
+      "elevationGain": 585,
+      "avgGradient": 8.4,
+      "maxGradient": 24,
+      "difficulty": "extreme",
+      "description": "Version prolongée avec section finale non asphaltée atteignant 24%"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Rampe finale",
+      "length": 0.8,
+      "gradient": 14,
+      "description": "Section finale avec passage à 20%"
+    }
+  ],
+  "touristicInfo": "La station offre une vue panoramique sur les Vosges et le Jura. En hiver, c'est une petite station de ski familiale.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Plancher-les-Mines",
+      "description": "Fontaine dans le village"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant de la station (horaires variables selon saison)"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Conditions généralement accessibles mais attention au risque d'orage en été.",
+  "strava": {
+    "segmentId": "646283",
+    "komTime": "16:05",
+    "komName": "Tadej Pogačar"
+  },
+  "slug": "la-planche-des-belles-filles"
+}

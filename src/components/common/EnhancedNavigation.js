@@ -1,21 +1,59 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { 
+  KeyboardArrowDown as ArrowDownIcon,
+  KeyboardArrowUp as ArrowUpIcon
+} from '@mui/icons-material';
 import './EnhancedNavigation.css';
 
 const EnhancedNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState('home');
+  const [openSubmenu, setOpenSubmenu] = React.useState(null);
+  const location = useLocation();
+  
+  React.useEffect(() => {
+    // Déterminer la section active basée sur l'URL
+    const path = location.pathname;
+    if (path === '/') setActiveSection('home');
+    else if (path.startsWith('/cols')) setActiveSection('cols');
+    else if (path.startsWith('/training')) setActiveSection('training');
+    else if (path.startsWith('/nutrition')) setActiveSection('nutrition');
+    else if (path.startsWith('/coach')) setActiveSection('coach');
+    else if (path.startsWith('/routes')) setActiveSection('routes');
+    else if (path.startsWith('/social')) setActiveSection('social');
+    else if (path.startsWith('/dashboard')) setActiveSection('dashboard');
+  }, [location]);
   
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+  
+  const toggleSubmenu = (submenu) => {
+    if (openSubmenu === submenu) {
+      setOpenSubmenu(null);
+    } else {
+      setOpenSubmenu(submenu);
+    }
+  };
+  
+  const submenus = {
+    nutrition: [
+      { label: 'Dashboard Nutrition', path: '/nutrition/dashboard', new: true },
+      { label: 'Galerie de Recettes HD', path: '/nutrition/recipes', new: true },
+      { label: 'Calculateur de Macros', path: '/nutrition/macro-calculator' },
+      { label: 'Planificateur de Repas', path: '/nutrition/meal-planner' },
+      { label: 'Suivi Nutritionnel', path: '/nutrition/tracker' }
+    ]
   };
   
   return (
     <nav className={`enhanced-navigation ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <a href="/">
-            <img src="/images/logo-small.svg" alt="Grand Est Cyclisme" />
-          </a>
+          <Link to="/">
+            <img src="/images/logo-small.svg" alt="Velo-Altitude" />
+          </Link>
         </div>
         
         <button className="menu-toggle" onClick={toggleMenu}>
@@ -24,35 +62,51 @@ const EnhancedNavigation = () => {
         
         <ul className="nav-links">
           <li className={activeSection === 'home' ? 'active' : ''}>
-            <a href="/" onClick={() => setActiveSection('home')}>Accueil</a>
+            <Link to="/" onClick={() => setActiveSection('home')}>Accueil</Link>
           </li>
           <li className={activeSection === 'cols' ? 'active' : ''}>
-            <a href="/cols" onClick={() => setActiveSection('cols')}>Cols</a>
+            <Link to="/cols" onClick={() => setActiveSection('cols')}>Cols</Link>
           </li>
           <li className={activeSection === 'training' ? 'active' : ''}>
-            <a href="/training" onClick={() => setActiveSection('training')}>Entraînement</a>
+            <Link to="/training" onClick={() => setActiveSection('training')}>Entraînement</Link>
           </li>
-          <li className={activeSection === 'nutrition' ? 'active' : ''}>
-            <a href="/nutrition" onClick={() => setActiveSection('nutrition')}>Nutrition</a>
+          <li 
+            className={`has-submenu ${activeSection === 'nutrition' ? 'active' : ''} ${openSubmenu === 'nutrition' ? 'submenu-open' : ''}`}
+            onClick={() => toggleSubmenu('nutrition')}
+          >
+            <span className="submenu-toggle">
+              Nutrition
+              {openSubmenu === 'nutrition' ? <ArrowUpIcon fontSize="small" /> : <ArrowDownIcon fontSize="small" />}
+            </span>
+            <ul className="submenu">
+              {submenus.nutrition.map((item, index) => (
+                <li key={index}>
+                  <Link to={item.path}>
+                    {item.label}
+                    {item.new && <span className="new-badge">Nouveau</span>}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </li>
           <li className={activeSection === 'coach' ? 'active' : ''}>
-            <a href="/coach" onClick={() => setActiveSection('coach')}>Coach</a>
+            <Link to="/coach" onClick={() => setActiveSection('coach')}>Coach</Link>
           </li>
           <li className={activeSection === 'routes' ? 'active' : ''}>
-            <a href="/routes" onClick={() => setActiveSection('routes')}>Itinéraires</a>
+            <Link to="/routes" onClick={() => setActiveSection('routes')}>Itinéraires</Link>
           </li>
           <li className={activeSection === 'social' ? 'active' : ''}>
-            <a href="/social" onClick={() => setActiveSection('social')}>Communauté</a>
+            <Link to="/social" onClick={() => setActiveSection('social')}>Communauté</Link>
           </li>
           <li className={activeSection === 'dashboard' ? 'active' : ''}>
-            <a href="/dashboard" onClick={() => setActiveSection('dashboard')}>Dashboard</a>
+            <Link to="/dashboard" onClick={() => setActiveSection('dashboard')}>Dashboard</Link>
           </li>
         </ul>
         
         <div className="nav-actions">
-          <a href="/profile" className="profile-link">
+          <Link to="/profile" className="profile-link">
             <span className="profile-icon"></span>
-          </a>
+          </Link>
           <select className="language-selector">
             <option value="fr">FR</option>
             <option value="en">EN</option>

@@ -233,7 +233,7 @@ const AnimatedNavbar = () => {
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2, mb: 2 }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <BikeIcon color="primary" fontSize="large" />
-          <LogoText variant="h6">Dashboard-Velo</LogoText>
+          <LogoText variant="h6">Velo-Altitude</LogoText>
         </Box>
         <IconButton onClick={toggleDrawer(false)}>
           <CloseIcon />
@@ -373,7 +373,7 @@ const AnimatedNavbar = () => {
                 >
                   <RouterLink to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                     <BikeIcon color="primary" fontSize="large" />
-                    <LogoText variant="h6">Dashboard-Velo</LogoText>
+                    <LogoText variant="h6">Velo-Altitude</LogoText>
                   </RouterLink>
                 </motion.div>
               </Box>

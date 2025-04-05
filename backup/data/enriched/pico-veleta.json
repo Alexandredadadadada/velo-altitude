@@ -1,0 +1,131 @@
+{
+  "id": "pico-veleta",
+  "name": {
+    "fr": "Pico Veleta",
+    "en": "Pico Veleta",
+    "de": "Pico Veleta",
+    "it": "Pico Veleta",
+    "es": "Pico Veleta"
+  },
+  "slug": "pico-veleta",
+  "country": "",
+  "region": "",
+  "altitude": 3398,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 5,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/pico-veleta/main.jpg",
+    "gallery": [
+      "/images/cols/pico-veleta/summit-road.jpg",
+      "/images/cols/pico-veleta/ski-resort.jpg",
+      "/images/cols/pico-veleta/high-altitude.jpg",
+      "/images/cols/pico-veleta/granada-view.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      {
+        "km": 0,
+        "description": "Fontaines à Granada"
+      },
+      {
+        "km": 30,
+        "description": "Station de ski"
+      },
+      {
+        "km": 40,
+        "description": "Albergue Universitario (saisonnier)"
+      }
+    ],
+    "food": [
+      {
+        "name": "Restaurants à la station",
+        "km": 30,
+        "type": "restaurant",
+        "openingHours": "9h-22h"
+      },
+      {
+        "name": "Café Albergue",
+        "km": 40,
+        "type": "café",
+        "openingHours": "10h-18h (juin-septembre)"
+      }
+    ],
+    "shelter": [
+      {
+        "name": "Hôtels à la station",
+        "km": 30,
+        "type": "hotel"
+      },
+      {
+        "name": "Albergue Universitario",
+        "km": 40,
+        "type": "refuge"
+      }
+    ],
+    "mechanics": [
+      {
+        "name": "Bike Shop Granada",
+        "location": "Granada",
+        "distance": 0
+      },
+      {
+        "name": "Service vélo à la station",
+        "location": "Pradollano",
+        "distance": 30
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "author": "Alejandro Valverde",
+      "date": "2023-07-08",
+      "rating": 5,
+      "text": "L'ascension la plus haute d'Europe! J'ai senti les effets de l'altitude à partir de 2800m. L'effort devient vraiment difficile dans les derniers kilomètres. La vue depuis le sommet est incroyable, on peut voir jusqu'à l'Afrique par temps clair."
+    },
+    {
+      "author": "Sophie Durand",
+      "date": "2024-08-15",
+      "rating": 4.5,
+      "text": "Une expérience unique! J'ai dû m'arrêter plusieurs fois dans les derniers kilomètres à cause du manque d'oxygène. Conseil: restez quelques jours à Granada avant pour vous acclimater et partez très tôt pour éviter la chaleur."
+    },
+    {
+      "author": "Hans Weber",
+      "date": "2022-09-01",
+      "rating": 5,
+      "text": "J'ai grimpé le Veleta après une semaine d'acclimatation dans la Sierra Nevada. La route est excellente jusqu'à la station, puis correcte jusqu'au sommet. Les paysages lunaires au-dessus de 3000m sont à couper le souffle."
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 59,
+  "last_updated": "2025-04-05T20:42:26.984Z"
+}

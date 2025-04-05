@@ -1,0 +1,192 @@
+{
+  "id": "bonette",
+  "name": {
+    "fr": "Col de la Bonette",
+    "en": "Col de la Bonette",
+    "de": "Col de la Bonette",
+    "it": "Colle della Bonette",
+    "es": "Col de la Bonette"
+  },
+  "altitude": 2802,
+  "location": {
+    "latitude": 44.3417,
+    "longitude": 6.8064,
+    "region": "Alpes-Maritimes",
+    "country": "France",
+    "nearbyTowns": ["Jausiers", "Saint-Étienne-de-Tinée", "Barcelonnette"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Jausiers",
+      "length": 24.1,
+      "elevation": 1652,
+      "averageGradient": 6.9,
+      "maxGradient": 10.5,
+      "difficulty": 9
+    },
+    "alternateSide": {
+      "startLocation": "Saint-Étienne-de-Tinée",
+      "length": 26.0,
+      "elevation": 1652,
+      "averageGradient": 6.4,
+      "maxGradient": 10.0,
+      "difficulty": 8
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1962,
+    "vuealtaAppearances": 5,
+    "tourDeFranceAppearances": 4,
+    "famousStories": [
+      "Souvent présenté à tort comme 'la plus haute route d'Europe', le Col de la Bonette est en réalité le deuxième plus haut col routier des Alpes après le Col de l'Iseran.",
+      "La Cime de la Bonette, une boucle supplémentaire construite autour du col, culmine à 2802 mètres et est effectivement la plus haute route asphaltée de France.",
+      "Lors du Tour de France 1993, Robert Millar a réalisé une ascension mémorable pour consolider son maillot à pois de meilleur grimpeur.",
+      "Fermé environ 7 mois par an en raison de la neige, le col offre un paysage lunaire unique qui attire des cyclistes du monde entier.",
+      "En 2008, John-Lee Augustyn est passé en tête au sommet avant de chuter dans la descente, glissant plusieurs dizaines de mètres sur une pente rocailleuse."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Charly Mottet",
+        "time": "1:12:45",
+        "year": 1987,
+        "side": "mainSide"
+      },
+      "modern": {
+        "holder": "Thibaut Pinot",
+        "time": "1:13:21",
+        "year": 2019,
+        "side": "mainSide"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Cime de la Bonette",
+      "description": "Boucle routière culminant à 2802m offrant une vue à 360° sur les Alpes et parfois jusqu'à la Méditerranée par temps clair.",
+      "coordinates": [44.3432, 6.8045],
+      "type": "viewpoint"
+    },
+    {
+      "name": "Blockhaus du Col de Restefond",
+      "description": "Ancienne fortification militaire de la ligne Maginot des Alpes située à 2680m.",
+      "coordinates": [44.3408, 6.8125],
+      "type": "monument"
+    },
+    {
+      "name": "Lacs de Vens",
+      "description": "Ensemble de lacs alpins accessibles par randonnée depuis le col (5 km).",
+      "coordinates": [44.3100, 6.8200],
+      "type": "nature"
+    },
+    {
+      "name": "Stèle du Tour de France",
+      "description": "Monument commémoratif des passages du Tour de France au sommet.",
+      "coordinates": [44.3417, 6.8064],
+      "type": "monument"
+    }
+  ],
+  "practicalInfo": {
+    "bestTimeToVisit": "Mi-juin à mi-octobre",
+    "roadCondition": "Excellent état d'ensemble, revêtement refait régulièrement",
+    "trafficLevel": "Modéré en été, faible en intersaison",
+    "winterClosure": "Généralement fermé de novembre à mai",
+    "facilities": ["Table d'orientation au sommet", "Parking à la Cime de la Bonette", "Pas de commerce au sommet"],
+    "parkingAvailable": true,
+    "waterPoints": ["Source au km 10 depuis Jausiers", "Fontaine à Bousiéyas (versant sud)"]
+  },
+  "images": {
+    "main": "/images/cols/bonette/main.jpg",
+    "gallery": [
+      "/images/cols/bonette/cime-viewpoint.jpg",
+      "/images/cols/bonette/aerial-view.jpg",
+      "/images/cols/bonette/north-side.jpg",
+      "/images/cols/bonette/south-side.jpg",
+      "/images/cols/bonette/stone-marker.jpg"
+    ]
+  },
+  "difficulty": 9,
+  "surfaceType": "Asphalte",
+  "trainingTips": [
+    "Préparez-vous à l'altitude: l'oxygène se raréfie considérablement au-dessus de 2500m.",
+    "Emportez des vêtements chauds pour la descente, même en été (différence de température de 10-15°C entre vallée et sommet).",
+    "La pente est régulière mais longue, adoptez un rythme modéré et constant pour éviter l'épuisement.",
+    "Restez vigilant face aux changements météorologiques rapides, typiques en haute montagne."
+  ],
+  "recommendedBikeTypes": ["Vélo de route avec compact et cassette 11-32 minimum"],
+  "weatherInfo": {
+    "bestSeason": "Juillet à septembre",
+    "closedPeriod": "Novembre à mai (neige)",
+    "windExposure": "Forte, particulièrement exposé au vent sur les derniers kilomètres",
+    "temperatureDelta": "Différence de 10-15°C entre la base et le sommet",
+    "mistRisk": "Modéré à élevé, brouillard possible même en été"
+  },
+  "services": {
+    "water": [
+      {"km": 10, "description": "Source naturelle aménagée"},
+      {"km": 15, "description": "Fontaine à Bousiéyas (versant sud uniquement)"}
+    ],
+    "food": [
+      {"name": "Auberge de Bousiéyas", "km": 15, "type": "restaurant", "openingHours": "10h-18h (juin-septembre)"},
+      {"name": "Bar des Alpins", "km": 0, "type": "café", "openingHours": "7h-22h"}
+    ],
+    "shelter": [
+      {"name": "Abri du col", "km": 24, "type": "refuge non gardé"}
+    ],
+    "mechanics": [
+      {"name": "Cycles Alpes Aventure", "location": "Jausiers", "distance": 0},
+      {"name": "Sport 2000", "location": "Barcelonnette", "distance": 13}
+    ]
+  },
+  "testimonials": [
+    {
+      "author": "François Lemaire",
+      "date": "2024-08-12",
+      "rating": 5,
+      "text": "Une ascension mythique! J'ai grimpé par Jausiers sous un soleil éclatant. La dernière partie au-delà de 2500m est impressionnante, on se croirait sur la Lune. N'oubliez pas de faire la boucle de la Cime pour atteindre le point culminant à 2802m, cela vaut vraiment le détour."
+    },
+    {
+      "author": "Emma Wilson",
+      "date": "2023-07-20",
+      "rating": 4.5,
+      "text": "Incroyable montée! J'ai commencé depuis Saint-Étienne-de-Tinée et les paysages changent constamment. La pente est plutôt régulière mais c'est long. J'ai eu un léger mal de tête vers 2600m, probablement dû à l'altitude. Prévoyez beaucoup d'eau et de la crème solaire."
+    },
+    {
+      "author": "Hendrik Müller",
+      "date": "2024-09-05",
+      "rating": 5,
+      "text": "Der Bonette ist einer der beeindruckendsten Pässe, die ich je gefahren bin. Die Landschaft ist spektakulär, besonders die letzten Kilometer. Es fühlte sich an wie auf einem anderen Planeten. Nehmen Sie unbedingt eine Windjacke mit, da es am Gipfel sehr kalt werden kann."
+    },
+    {
+      "author": "Sophie Martin",
+      "date": "2023-06-25",
+      "rating": 4,
+      "text": "Premier 'plus de 2000' de ma carrière cycliste, quelle fierté! La montée est longue mais jamais vraiment difficile. Les paysages sont à couper le souffle. J'ai fait les deux versants dans la journée et je recommande celui de Jausiers pour l'ambiance haute montagne plus rapidement présente."
+    }
+  ],
+  "lastUpdated": "2025-04-05T23:30:00Z",
+  "segmentDetails": [
+    {"km": 0, "altitude": 1150, "gradient": 0, "description": "Départ de Jausiers"},
+    {"km": 1, "altitude": 1210, "gradient": 6.0, "description": "Début régulier par la D900"},
+    {"km": 3, "altitude": 1330, "gradient": 6.0, "description": "Vue sur la vallée de l'Ubaye"},
+    {"km": 5, "altitude": 1460, "gradient": 6.5, "description": "Entrée dans le Parc du Mercantour"},
+    {"km": 7, "altitude": 1590, "gradient": 6.5, "description": "Premier virage en épingle"},
+    {"km": 9, "altitude": 1720, "gradient": 6.5, "description": "Source d'eau potable"},
+    {"km": 11, "altitude": 1860, "gradient": 7.0, "description": "Zone forestière, ombre bienvenue"},
+    {"km": 13, "altitude": 2000, "gradient": 7.0, "description": "Sortie de la forêt, paysage qui s'ouvre"},
+    {"km": 15, "altitude": 2150, "gradient": 7.5, "description": "Début du paysage minéral"},
+    {"km": 17, "altitude": 2300, "gradient": 7.5, "description": "Premières vues panoramiques"},
+    {"km": 19, "altitude": 2450, "gradient": 7.5, "description": "Derniers virages en épingle"},
+    {"km": 21, "altitude": 2600, "gradient": 7.5, "description": "Entrée dans la zone lunaire"},
+    {"km": 23, "altitude": 2750, "gradient": 7.5, "description": "Vue sur la Cime de la Bonette"},
+    {"km": 24.1, "altitude": 2802, "gradient": 4.2, "description": "Sommet de la Cime de la Bonette"}
+  ],
+  "trainingPlanId": "plan-haute-montagne",
+  "relatedChallenges": ["above-2500-challenge", "alpes-giants-challenge"],
+  "multimediaContent": {
+    "panorama360": "/virtual-tours/bonette-360.html",
+    "videos": [
+      {"title": "Ascension intégrale côté Jausiers", "url": "/videos/bonette-ascent.mp4", "duration": "24:30"},
+      {"title": "Descente vers Saint-Étienne-de-Tinée", "url": "/videos/bonette-descent.mp4", "duration": "18:45"}
+    ]
+  }
+}

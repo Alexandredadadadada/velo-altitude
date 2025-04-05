@@ -8,7 +8,11 @@
       "longitude": 6.3986,
       "region": "Alpes françaises",
       "country": "France",
-      "nearbyTowns": ["La Chambre", "Notre-Dame-du-Cruet", "La Léchère"]
+      "nearbyTowns": [
+        "La Chambre",
+        "Notre-Dame-du-Cruet",
+        "La Léchère"
+      ]
     },
     "climbData": {
       "northSide": {
@@ -16,7 +20,7 @@
         "length": 19.5,
         "elevation": 1520,
         "averageGradient": 7.8,
-        "maxGradient": 10.0,
+        "maxGradient": 10,
         "difficulty": 9
       },
       "southSide": {
@@ -24,7 +28,7 @@
         "length": 19.2,
         "elevation": 1515,
         "averageGradient": 7.9,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       }
     },
@@ -49,19 +53,28 @@
       {
         "name": "Chapelle de la Madeleine",
         "description": "Petite chapelle historique située près du sommet.",
-        "coordinates": [45.4308, 6.3986],
+        "coordinates": [
+          45.4308,
+          6.3986
+        ],
         "type": "cultural"
       },
       {
         "name": "Panorama sur Mont Blanc",
         "description": "Vue exceptionnelle sur le Mont Blanc et la chaîne des Alpes par temps clair.",
-        "coordinates": [45.4308, 6.3986],
+        "coordinates": [
+          45.4308,
+          6.3986
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Alpage de la Madeleine",
         "description": "Zone pastorale traditionnelle avec fabrication de fromage Beaufort en été.",
-        "coordinates": [45.4236, 6.3899],
+        "coordinates": [
+          45.4236,
+          6.3899
+        ],
         "type": "cultural"
       }
     ],
@@ -70,9 +83,16 @@
       "roadCondition": "Bonne",
       "trafficLevel": "Modéré",
       "winterClosure": "Fermé de novembre à mai",
-      "facilities": ["Refuge au sommet", "Restaurant", "Toilettes"],
+      "facilities": [
+        "Refuge au sommet",
+        "Restaurant",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Refuge au sommet", "Sources naturelles sur le parcours"]
+      "waterPoints": [
+        "Refuge au sommet",
+        "Sources naturelles sur le parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/madeleine/main.jpg",
@@ -90,7 +110,9 @@
       "Le col est long, prévoyez suffisamment d'eau et de nourriture.",
       "Les 5 derniers kilomètres sont les plus difficiles, gardez des forces."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "alpe-d-huez",
@@ -101,7 +123,10 @@
       "longitude": 6.0705,
       "region": "Alpes françaises",
       "country": "France",
-      "nearbyTowns": ["Bourg d'Oisans", "Le Freney-d'Oisans"]
+      "nearbyTowns": [
+        "Bourg d'Oisans",
+        "Le Freney-d'Oisans"
+      ]
     },
     "climbData": {
       "bourgDOisansSide": {
@@ -109,7 +134,7 @@
         "length": 13.8,
         "elevation": 1120,
         "averageGradient": 8.1,
-        "maxGradient": 13.0,
+        "maxGradient": 13,
         "difficulty": 9
       }
     },
@@ -141,25 +166,37 @@
       {
         "name": "Virage 21",
         "description": "Premier virage en bas de l'ascension, souvent décoré aux couleurs néerlandaises.",
-        "coordinates": [45.0732, 6.0452],
+        "coordinates": [
+          45.0732,
+          6.0452
+        ],
         "type": "landmark"
       },
       {
         "name": "Virage 7 - Pantani",
         "description": "Virage dédié à Marco Pantani, souvent décoré aux couleurs italiennes.",
-        "coordinates": [45.0886, 6.0643],
+        "coordinates": [
+          45.0886,
+          6.0643
+        ],
         "type": "landmark"
       },
       {
         "name": "Place de l'Église",
         "description": "Centre du village d'Huez en altitude, avec une église typique.",
-        "coordinates": [45.0885, 6.0667],
+        "coordinates": [
+          45.0885,
+          6.0667
+        ],
         "type": "cultural"
       },
       {
         "name": "Station de l'Alpe d'Huez",
         "description": "Célèbre station de ski et lieu d'arrivée du Tour de France.",
-        "coordinates": [45.0909, 6.0705],
+        "coordinates": [
+          45.0909,
+          6.0705
+        ],
         "type": "tourism"
       }
     ],
@@ -168,9 +205,17 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré à élevé en été",
       "winterClosure": "Accessible toute l'année, mais conditions potentiellement difficiles en hiver",
-      "facilities": ["Restaurants", "Cafés", "Hôtels", "Boutiques", "Toilettes"],
+      "facilities": [
+        "Restaurants",
+        "Cafés",
+        "Hôtels",
+        "Boutiques",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Nombreuses fontaines et cafés tout au long de l'ascension"]
+      "waterPoints": [
+        "Nombreuses fontaines et cafés tout au long de l'ascension"
+      ]
     },
     "images": {
       "main": "/images/cols/alpe-d-huez/main.jpg",
@@ -188,7 +233,10 @@
       "L'ascension est relativement courte mais intense, dosez votre effort.",
       "En été, partez tôt pour éviter la chaleur et le trafic."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "alpe-dhuez"
   },
   {
     "id": "pico-de-veleta",
@@ -199,28 +247,35 @@
       "longitude": -3.3657,
       "region": "Sierra Nevada",
       "country": "Espagne",
-      "nearbyTowns": ["Granada", "Monachil", "Pradollano"]
+      "nearbyTowns": [
+        "Granada",
+        "Monachil",
+        "Pradollano"
+      ]
     },
     "climbData": {
       "granadaSide": {
         "startLocation": "Granada",
-        "length": 45.0,
+        "length": 45,
         "elevation": 2750,
         "averageGradient": 6.1,
-        "maxGradient": 15.0,
+        "maxGradient": 15,
         "difficulty": 10
       },
       "monachilSide": {
         "startLocation": "Monachil",
-        "length": 31.0,
+        "length": 31,
         "elevation": 2500,
-        "averageGradient": 8.0,
-        "maxGradient": 15.0,
+        "averageGradient": 8,
+        "maxGradient": 15,
         "difficulty": 10
       }
     },
     "history": {
-      "notableRaces": ["Vuelta a Andalucía", "Subida al Veleta"],
+      "notableRaces": [
+        "Vuelta a Andalucía",
+        "Subida al Veleta"
+      ],
       "famousStories": [
         "C'est la route cyclable la plus haute d'Europe, culminant à 3398m.",
         "La route au-delà de la station de ski est interdite aux véhicules motorisés, offrant un paradis pour les cyclistes.",
@@ -240,25 +295,37 @@
       {
         "name": "Station de ski de Sierra Nevada",
         "description": "Station de ski la plus méridionale d'Europe, située à environ 2100m d'altitude.",
-        "coordinates": [37.0944, -3.3987],
+        "coordinates": [
+          37.0944,
+          -3.3987
+        ],
         "type": "attraction"
       },
       {
         "name": "Observatoire de Sierra Nevada",
         "description": "Centre d'observation astronomique situé à haute altitude, bénéficiant de conditions exceptionnelles.",
-        "coordinates": [37.0639, -3.3847],
+        "coordinates": [
+          37.0639,
+          -3.3847
+        ],
         "type": "scientific"
       },
       {
         "name": "Mirador du Veleta",
         "description": "Point de vue spectaculaire, d'où l'on peut apercevoir la côte méditerranéenne et l'Afrique par temps clair.",
-        "coordinates": [37.0553, -3.3657],
+        "coordinates": [
+          37.0553,
+          -3.3657
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Barranco de San Juan",
         "description": "Gorge impressionnante traversée pendant l'ascension depuis Monachil.",
-        "coordinates": [37.1208, -3.4211],
+        "coordinates": [
+          37.1208,
+          -3.4211
+        ],
         "type": "natural"
       }
     ],
@@ -267,9 +334,14 @@
       "roadCondition": "Bonne jusqu'à la station, moyenne au-delà (surface irrégulière)",
       "trafficLevel": "Modéré jusqu'à la station, quasi nul au-delà",
       "winterClosure": "Fermé au-delà de la station d'octobre à juin",
-      "facilities": ["Restaurants et cafés à la station", "Aucune installation au-delà"],
+      "facilities": [
+        "Restaurants et cafés à la station",
+        "Aucune installation au-delà"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Dernière source à la station de ski"]
+      "waterPoints": [
+        "Dernière source à la station de ski"
+      ]
     },
     "images": {
       "main": "/images/cols/veleta/main.jpg",
@@ -287,7 +359,10 @@
       "Emportez des vêtements chauds même en été, la température peut descendre sous 0°C au sommet.",
       "Partez tôt pour éviter les orages fréquents en après-midi."
     ],
-    "recommendedBikeTypes": ["Vélo de route jusqu'à la station", "Gravel ou VTT pour la partie supérieure"]
+    "recommendedBikeTypes": [
+      "Vélo de route jusqu'à la station",
+      "Gravel ou VTT pour la partie supérieure"
+    ]
   },
   {
     "id": "cime-de-la-bonette",
@@ -298,7 +373,10 @@
       "longitude": 6.8057,
       "region": "Alpes-Maritimes",
       "country": "France",
-      "nearbyTowns": ["Jausiers", "Saint-Étienne-de-Tinée"]
+      "nearbyTowns": [
+        "Jausiers",
+        "Saint-Étienne-de-Tinée"
+      ]
     },
     "climbData": {
       "jausiersSide": {
@@ -306,15 +384,15 @@
         "length": 24.1,
         "elevation": 1652,
         "averageGradient": 6.9,
-        "maxGradient": 10.0,
+        "maxGradient": 10,
         "difficulty": 9
       },
       "saintEtienneSide": {
         "startLocation": "Saint-Étienne-de-Tinée",
-        "length": 26.0,
+        "length": 26,
         "elevation": 1652,
         "averageGradient": 6.4,
-        "maxGradient": 11.0,
+        "maxGradient": 11,
         "difficulty": 8
       }
     },
@@ -339,19 +417,28 @@
       {
         "name": "Boucle sommitale",
         "description": "Route circulaire autour du sommet qui permet d'atteindre le point culminant à 2802m.",
-        "coordinates": [44.3235, 6.8057],
+        "coordinates": [
+          44.3235,
+          6.8057
+        ],
         "type": "landmark"
       },
       {
         "name": "Monument commémoratif",
         "description": "Mémorial dédié aux soldats des Chasseurs Alpins.",
-        "coordinates": [44.3228, 6.8069],
+        "coordinates": [
+          44.3228,
+          6.8069
+        ],
         "type": "monument"
       },
       {
         "name": "Panorama du Mercantour",
         "description": "Vue spectaculaire sur le Parc National du Mercantour et les Alpes italiennes.",
-        "coordinates": [44.3235, 6.8057],
+        "coordinates": [
+          44.3235,
+          6.8057
+        ],
         "type": "viewpoint"
       }
     ],
@@ -360,9 +447,14 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré, plus élevé les weekends",
       "winterClosure": "Fermé d'octobre à juin",
-      "facilities": ["Aucune au sommet, derniers services à Jausiers ou Saint-Étienne"],
+      "facilities": [
+        "Aucune au sommet, derniers services à Jausiers ou Saint-Étienne"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Fontaines le long du parcours côté Jausiers", "Aucun point d'eau fiable côté Saint-Étienne"]
+      "waterPoints": [
+        "Fontaines le long du parcours côté Jausiers",
+        "Aucun point d'eau fiable côté Saint-Étienne"
+      ]
     },
     "images": {
       "main": "/images/cols/bonette/main.jpg",
@@ -380,7 +472,9 @@
       "Le versant de Jausiers est légèrement plus régulier que celui de Saint-Étienne.",
       "Attention aux changements météorologiques rapides, même en été."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "col-d-aubisque",
@@ -391,7 +485,11 @@
       "longitude": -0.3384,
       "region": "Pyrénées",
       "country": "France",
-      "nearbyTowns": ["Laruns", "Argelès-Gazost", "Gourette"]
+      "nearbyTowns": [
+        "Laruns",
+        "Argelès-Gazost",
+        "Gourette"
+      ]
     },
     "climbData": {
       "larunsSide": {
@@ -399,16 +497,16 @@
         "length": 16.6,
         "elevation": 1190,
         "averageGradient": 7.2,
-        "maxGradient": 13.0,
+        "maxGradient": 13,
         "difficulty": 9,
         "note": "Passe par le Col du Soulor"
       },
       "argelesGazostSide": {
         "startLocation": "Argelès-Gazost",
-        "length": 30.0,
+        "length": 30,
         "elevation": 1240,
         "averageGradient": 4.1,
-        "maxGradient": 13.0,
+        "maxGradient": 13,
         "difficulty": 7,
         "note": "Passe par le Col du Soulor"
       }
@@ -440,25 +538,37 @@
       {
         "name": "Corniche du Cirque du Litor",
         "description": "Route spectaculaire taillée dans la falaise reliant le Col du Soulor à l'Aubisque.",
-        "coordinates": [42.9692, -0.2651],
+        "coordinates": [
+          42.9692,
+          -0.2651
+        ],
         "type": "landmark"
       },
       {
         "name": "Vélos géants",
         "description": "Sculptures colorées de vélos géants installées au sommet, devenues emblématiques du col.",
-        "coordinates": [42.9767, -0.3384],
+        "coordinates": [
+          42.9767,
+          -0.3384
+        ],
         "type": "attraction"
       },
       {
         "name": "Station de ski de Gourette",
         "description": "Station familiale située sur le versant ouest du col.",
-        "coordinates": [42.9589, -0.3267],
+        "coordinates": [
+          42.9589,
+          -0.3267
+        ],
         "type": "tourism"
       },
       {
         "name": "Vue sur le Pic du Midi d'Ossau",
         "description": "Panorama exceptionnel sur ce sommet pyramidal emblématique des Pyrénées.",
-        "coordinates": [42.9767, -0.3384],
+        "coordinates": [
+          42.9767,
+          -0.3384
+        ],
         "type": "viewpoint"
       }
     ],
@@ -467,9 +577,16 @@
       "roadCondition": "Bonne, mais la Corniche peut être étroite",
       "trafficLevel": "Modéré, plus élevé en juillet-août",
       "winterClosure": "Généralement fermé de novembre à mai",
-      "facilities": ["Auberge et restaurant au sommet", "Café au Col du Soulor", "Toilettes"],
+      "facilities": [
+        "Auberge et restaurant au sommet",
+        "Café au Col du Soulor",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Source au sommet", "Fontaine au Col du Soulor"]
+      "waterPoints": [
+        "Source au sommet",
+        "Fontaine au Col du Soulor"
+      ]
     },
     "images": {
       "main": "/images/cols/aubisque/main.jpg",
@@ -487,6 +604,9 @@
       "La Corniche du Litor exige de l'attention en descente, surtout par temps humide.",
       "Le col est souvent venté, prévoyez un coupe-vent même par beau temps."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "col-daubisque"
   }
 ]

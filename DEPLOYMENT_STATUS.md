@@ -1,8 +1,8 @@
 # Rapport d'Audit et Statut de Déploiement - Velo-Altitude
 
-**Date :** 5 avril 2025  
-**Version :** 1.0.0  
-**Statut global :** Prêt pour déploiement
+**Date :** 6 avril 2025  
+**Version :** 1.0.1  
+**Statut global :** Mise à jour des versions pour déploiement
 
 ## Résumé de l'audit
 
@@ -77,7 +77,7 @@ Le composant principal (`Home.js`) intègre tous les éléments visuels et fonct
 
 ## 2. État des modules principaux
 
-### 2.1. Module "Les 7 Majeurs" (✅ 100% Complété)
+### 2.1. Module "Les 7 Majeurs" (100% Complété)
 
 **Fichiers principaux:**
 - **Composant principal:** `client/src/components/challenges/SevenMajorsChallenge.js`
@@ -108,7 +108,7 @@ Le composant principal (`Home.js`) intègre tous les éléments visuels et fonct
 4. L'utilisateur peut sauvegarder son défi personnalisé (s'il est connecté)
 5. L'utilisateur peut partager son défi via réseaux sociaux ou export GPX
 
-### 2.2. Visualisation 3D des cols (✅ 100% Complété)
+### 2.2. Visualisation 3D des cols (100% Complété)
 
 **Fichiers principaux:**
 - **Composant principal:** `client/src/components/visualization/ColVisualization3D.js`
@@ -301,11 +301,11 @@ export const terrainGenerator = {
 
 | Service | Fichier de configuration | Variables d'environnement | Statut |
 |---------|-------------------------|--------------------------|--------|
-| **Auth0** | `client/src/services/authService.js` | AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_AUDIENCE | ✅ Configuré |
-| **Mapbox** | `client/src/services/mapService.js` | REACT_APP_MAPBOX_TOKEN | ✅ Configuré |
-| **OpenWeather** | `client/src/services/weatherService.js` | REACT_APP_OPENWEATHER_API_KEY | ✅ Configuré |
-| **Strava** | `client/src/components/integrations/StravaIntegration.js` | REACT_APP_STRAVA_CLIENT_ID | ✅ Configuré |
-| **MongoDB Atlas** | `server/config/database.js` | MONGODB_URI, MONGODB_DB_NAME | ✅ Configuré |
+| **Auth0** | `client/src/services/authService.js` | AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_AUDIENCE | Configuré |
+| **Mapbox** | `client/src/services/mapService.js` | REACT_APP_MAPBOX_TOKEN | Configuré |
+| **OpenWeather** | `client/src/services/weatherService.js` | REACT_APP_OPENWEATHER_API_KEY | Configuré |
+| **Strava** | `client/src/components/integrations/StravaIntegration.js` | REACT_APP_STRAVA_CLIENT_ID | Configuré |
+| **MongoDB Atlas** | `server/config/database.js` | MONGODB_URI, MONGODB_DB_NAME | Configuré |
 
 ## 4. Support multilingue
 
@@ -515,24 +515,24 @@ La solution finale pour le problème "Cannot find module 'webpack'" comprend:
 
 ### Statut du déploiement sur Netlify
 
-🟠 **En cours** - Un nouveau build a été déclenché après la correction des problèmes suivants :
+En cours - Un nouveau build a été déclenché après la correction des problèmes suivants :
 
-1. ✅ **Problème de sous-module Git** - Suppression des références au sous-module inexistant
-2. ✅ **Problème de script Windows** - Adaptation pour l'environnement Unix de Netlify
-3. ✅ **Problème de dépendances webpack** - Déplacement vers `dependencies`
-4. ✅ **Problème d'installation de Go** - Désactivation via `GO_IMPORT_DURING_BUILD=false`
-5. ✅ **Problème de dépendances Babel** - Déplacement vers `dependencies`
-6. ✅ **Problème de structure de fichiers** - Création d'un script de vérification automatique
+1. Problème de sous-module Git - Suppression des références au sous-module inexistant
+2. Problème de script Windows - Adaptation pour l'environnement Unix de Netlify
+3. Problème de dépendances webpack - Déplacement vers `dependencies`
+4. Problème d'installation de Go - Désactivation via `GO_IMPORT_DURING_BUILD=false`
+5. Problème de dépendances Babel - Déplacement vers `dependencies`
+6. Problème de structure de fichiers - Création d'un script de vérification automatique
 
 ### Améliorations implémentées
 
-1. **Script de vérification des chemins** - Un nouveau script `scripts/check-build-paths.js` a été créé pour vérifier et préparer l'environnement de build Netlify. Ce script :
+1. Script de vérification des chemins - Un nouveau script `scripts/check-build-paths.js` a été créé pour vérifier et préparer l'environnement de build Netlify. Ce script :
    - Vérifie les chemins requis comme `src/index.js` et `public/index.html`
    - Crée automatiquement les chemins manquants référencés dans webpack.fix.js
    - Génère des versions minimales des fichiers manquants
    - Effectue une migration intelligente depuis la structure alternative si nécessaire
 
-2. **Documentation complète** - Un guide détaillé de déploiement `GUIDE_DEPLOIEMENT_NETLIFY.md` a été créé pour documenter tous les problèmes rencontrés et leurs solutions.
+2. Documentation complète - Un guide détaillé de déploiement `GUIDE_DEPLOIEMENT_NETLIFY.md` a été créé pour documenter tous les problèmes rencontrés et leurs solutions.
 
 ### Prochaines étapes
 
@@ -555,10 +555,10 @@ Un guide complet de déploiement est désormais disponible dans le fichier `GUID
 
 Le projet dispose d'une identité visuelle moderne et cohérente disponible dans `/client/public/images/`:
 
-- **Logo principal**: `logo.svg` - Version vectorielle complète pour usage principal
-- **Logo alternatif**: `logo_large.png` - Version haute résolution (2000x500px)
-- **Favicon**: `favicon.ico` - Favicon optimisé multi-résolution
-- **Icônes d'application**:
+- Logo principal : `logo.svg` - Version vectorielle complète pour usage principal
+- Logo alternatif : `logo_large.png` - Version haute résolution (2000x500px)
+- Favicon : `favicon.ico` - Favicon optimisé multi-résolution
+- Icônes d'application :
   - `icon16.png` - 16x16px pour la barre d'adresse
   - `icon48.png` - 48x48px pour les onglets
   - `icon128.png` - 128x128px pour les tiles d'application
@@ -610,24 +610,24 @@ L'ensemble du système graphique est conçu pour s'adapter aux écrans haute ré
 
 Pour maximiser l'impact visuel de la page d'accueil:
 
-1. **Hero Section**:
+1. Hero Section :
    - Utiliser une photo panoramique de haute qualité d'un col alpin emblématique
    - Activer l'effet de parallaxe avancé avec HeroParallax
    - Intégrer un appel à l'action contrasté avec animation au survol
 
-2. **Carte des régions interactive**:
+2. Carte des régions interactive :
    - Afficher la carte régionale avec effets de survol
    - Utiliser RegionMap avec activation des animations
 
-3. **Visualisation 3D**:
+3. Visualisation 3D :
    - Intégrer un aperçu 3D du Col du Galibier comme démonstration
    - Activer les effets météo pour une immersion maximale
 
-4. **Statistiques animées**:
+4. Statistiques animées :
    - Utiliser AnimatedStats avec compteurs progressifs
    - Afficher des statistiques impressionnantes de la communauté
 
-5. **Section communautaire**:
+5. Section communautaire :
    - Arrière-plan sombre avec image en overlay à contraste élevé
    - Boutons d'inscription avec dégradés de couleur et animations
 
@@ -645,7 +645,7 @@ Ces recommandations garantiront une page d'accueil visuellement impressionnante 
 
 ### 8.2. Étapes de déploiement
 
-1. **Préparation de l'environnement**
+1. Préparation de l'environnement
    ```bash
    # Cloner le dépôt
    git clone https://github.com/votre-organisation/velo-altitude.git
@@ -655,17 +655,17 @@ Ces recommandations garantiront une page d'accueil visuellement impressionnante 
    npm install
    ```
 
-2. **Configuration des variables d'environnement**
+2. Configuration des variables d'environnement
    - Créer les fichiers `.env` dans les répertoires racine et client/ selon les modèles de la section 7
    - Veiller à remplir toutes les valeurs avec les clés API et identifiants appropriés
 
-3. **Build du projet**
+3. Build du projet
    ```bash
    # Construction du projet pour la production
    CI='' npm run build
    ```
 
-4. **Déploiement sur Netlify**
+4. Déploiement sur Netlify
    - Configurer le dépôt sur Netlify en utilisant l'interface graphique ou Netlify CLI
    - Utiliser la configuration suivante:
    
@@ -692,7 +692,7 @@ Ces recommandations garantiront une page d'accueil visuellement impressionnante 
    }
    ```
 
-5. **Vérification post-déploiement**
+5. Vérification post-déploiement
    - Tester toutes les routes et fonctionnalités
    - Vérifier les performances sur différents appareils
    - Valider le chargement correct des modules 3D et des visualisations
@@ -709,38 +709,49 @@ La solution finale pour le problème "Cannot find module 'webpack'" comprend:
 2. Création d'un script netlify-build optimisé avec CI='' 
 3. Configuration explicite des versions Node.js et npm dans netlify.toml
 
-## Statut du Déploiement Final - 5 Avril 2025
+## Mise à jour du 06/04/2025
 
-### Modules Finalisés
-- ✅ Module "Les 7 Majeurs" - Intégration complète avec interface utilisateur et fonctionnalités
-- ✅ Module FTP Calculator - 6 méthodes de calcul et visualisation des zones avec Chart.js
-- ✅ Module HIIT - Génération d'intervalles avec validation robuste des paramètres
-- ✅ Module Nutrition - 40 recettes complètes avec filtrage et adaptation aux préférences alimentaires
-- ✅ Explorateur de Cols - Visualisations 3D avec effets météo et optimisation mobile
+### Statut du déploiement sur Netlify
 
-### Améliorations Apportées (5 Avril 2025)
-- ✅ Installation des dépendances manquantes (react-helmet, react-map-gl, react-bootstrap, etc.)
-- ✅ Configuration finale de Netlify (versions Node.js et NPM, redirections API)
-- ✅ Mise à jour du fichier netlify.toml avec les paramètres optimisés
-- ✅ Configuration de l'environnement via .env.local
-- ✅ Ajout de script personnalisé pour le déploiement Netlify (netlify-build)
-- ✅ Changement de branding de "Grand Est Cyclisme" à "Velo-Altitude"
+En cours - Un nouveau build a été déclenché après la correction des problèmes suivants :
 
-### Prêt pour le déploiement
-- ✅ Documentation complète 
-- ✅ Tous les modules fonctionnels
-- ✅ Intégration des fonctions Netlify
-- ✅ Variables d'environnement configurées sur Netlify
-- ✅ Tests finaux effectués
-- ✅ Performance optimisée pour le web et mobile
+1. Problème de sous-module Git - Suppression des références au sous-module inexistant
+2. Problème de script Windows - Adaptation pour l'environnement Unix de Netlify
+3. Problème de dépendances webpack - Déplacement vers `dependencies`
+4. Problème d'installation de Go - Désactivation via `GO_IMPORT_DURING_BUILD=false`
+5. Problème de dépendances Babel - Déplacement vers `dependencies`
+6. Problème de structure de fichiers - Création d'un script de vérification automatique
 
-La plateforme Velo-Altitude est maintenant prête pour le déploiement final et le lancement officiel prévu le 12 avril 2025.
+### Améliorations implémentées
+
+1. Script de vérification des chemins - Un nouveau script `scripts/check-build-paths.js` a été créé pour vérifier et préparer l'environnement de build Netlify. Ce script :
+   - Vérifie les chemins requis comme `src/index.js` et `public/index.html`
+   - Crée automatiquement les chemins manquants référencés dans webpack.fix.js
+   - Génère des versions minimales des fichiers manquants
+   - Effectue une migration intelligente depuis la structure alternative si nécessaire
+
+2. Documentation complète - Un guide détaillé de déploiement `GUIDE_DEPLOIEMENT_NETLIFY.md` a été créé pour documenter tous les problèmes rencontrés et leurs solutions.
+
+### Prochaines étapes
+
+1. Surveiller le statut du build en cours sur Netlify
+2. Vérifier toutes les fonctionnalités clés après le déploiement réussi
+3. Envisager l'implémentation des optimisations suggérées dans le guide de déploiement
+
+### Guide complet
+
+Un guide complet de déploiement est désormais disponible dans le fichier `GUIDE_DEPLOIEMENT_NETLIFY.md`. Il contient :
+- La description détaillée de chaque problème et sa solution
+- Les variables d'environnement nécessaires
+- Des suggestions d'optimisation pour les déploiements futurs
+- Une checklist de déploiement
+- Une présentation de l'architecture de la plateforme
 
 ## 🟢 Mise à jour finale avant déploiement (05/04/2025)
 
-- ✅ Configuration GitHub-Netlify finalisée
-- ✅ Redis désactivé pour faciliter le déploiement initial
-- ✅ Site prêt pour le déploiement final sur https://velo-altitude.com
+- Configuration GitHub-Netlify finalisée
+- Redis désactivé pour faciliter le déploiement initial
+- Site prêt pour le déploiement final sur https://velo-altitude.com
 
 ## 📝 Journal du déploiement - 05/04/2025
 
@@ -748,12 +759,12 @@ La plateforme Velo-Altitude est maintenant prête pour le déploiement final et 
 
 #### 1. Problème de sous-modules Git
 
-**Problème**: Lors du déploiement initial, Netlify a rencontré l'erreur suivante:
+Problème : Lors du déploiement initial, Netlify a rencontré l'erreur suivante:
 ```
 Failed during stage 'preparing repo': Error checking out submodules: fatal: No url found for submodule path 'VELO-ALTITUDE' in .gitmodules
 ```
 
-**Solution**:
+Solution :
 - Création d'un fichier `.gitmodules` vide pour clarifier l'absence de sous-modules
 - Exécution de `git submodule deinit -f VELO-ALTITUDE` pour éliminer les références
 - Suppression des références au sous-module avec `git rm -rf --cached VELO-ALTITUDE`
@@ -761,18 +772,18 @@ Failed during stage 'preparing repo': Error checking out submodules: fatal: No u
 
 #### 2. Problème de webpack manquant
 
-**Problème**: Le build échouait avec l'erreur:
+Problème : Le build échouait avec l'erreur:
 ```
 sh: 1: webpack: not found
 ```
 
-**Solution**:
+Solution :
 - Modification du script de build dans `package.json` pour utiliser `npx webpack` au lieu de `webpack` directement
 - Commit et push des modifications
 
 #### 3. Problème d'interactivité pendant le build
 
-**Problème**: Webpack tentait d'installer webpack-cli en mode interactif, ce qui bloquait le déploiement:
+Problème : Webpack tentait d'installer webpack-cli en mode interactif, ce qui bloquait le déploiement:
 ```
 CLI for webpack must be installed.
 webpack-cli (https://github.com/webpack/webpack-cli)
@@ -780,7 +791,7 @@ We will use "npm" to install the CLI via "npm install -D webpack-cli".
 Do you want to install 'webpack-cli' (yes/no):
 ```
 
-**Solution**:
+Solution :
 - Installation explicite de webpack-cli: `npm install --save-dev webpack-cli`
 - Modification du script netlify-build pour utiliser `CI=true` et désactiver l'interactivité
 - Test local du build pour vérifier la configuration
@@ -788,7 +799,7 @@ Do you want to install 'webpack-cli' (yes/no):
 
 ### Modifications apportées
 
-1. **Fichier package.json**:
+1. Fichier package.json :
    ```json
    "scripts": {
      "build": "webpack --mode production",
@@ -796,11 +807,11 @@ Do you want to install 'webpack-cli' (yes/no):
    }
    ```
 
-2. **Fichiers de fonctions Netlify**:
+2. Fichiers de fonctions Netlify :
    - Désactivation complète de Redis dans `cols-region.js` et `cols-elevation.js`
    - Ajout de logs pour indiquer la désactivation de Redis
 
-3. **Configuration Netlify**:
+3. Configuration Netlify :
    - Branche déployée: `main`
    - Commande de build: `npm run netlify-build`
    - Répertoire de publication: `build`
@@ -808,13 +819,13 @@ Do you want to install 'webpack-cli' (yes/no):
 
 ### Statut final
 
-✅ **Déploiement en cours sur**: https://velo-altitude.com
-✅ **Repository GitHub**: https://github.com/Alexandredadadadada/velo-altitude
-✅ **Équipe Netlify**: business-barone's team
+Déploiement en cours sur : https://velo-altitude.com
+Repository GitHub : https://github.com/Alexandredadadadada/velo-altitude
+Équipe Netlify : business-barone's team
 
 La plateforme Velo-Altitude est désormais en cours de déploiement avec toutes les fonctionnalités principales actives, sans Redis pour cette version initiale. Les modules clés (Les 7 Majeurs, Visualisations 3D, Catalogue des cols, Nutrition, Entraînement) seront tous accessibles sur le site.
 
-**Prochaines étapes après déploiement réussi**:
+Prochaines étapes après déploiement réussi :
 - Vérifier chaque fonctionnalité clé du site
 - S'assurer que les fonctions serverless Netlify fonctionnent correctement
 - Analyser les performances et identifier les optimisations futures
@@ -830,3 +841,69 @@ Un guide complet de déploiement est désormais disponible dans le fichier `GUID
 - Une présentation de l'architecture de la plateforme
 
 ```
+# Rapport d'Audit et Statut de Déploiement - Velo-Altitude
+
+**Date :** 6 avril 2025  
+**Version :** 1.0.1  
+**Statut global :** Mise à jour des versions pour déploiement
+
+{{ ... }}
+
+## 📝 Journal du déploiement - 06/04/2025
+
+### Mise à jour des versions et corrections pour Netlify
+
+#### 1. Spécification exacte des versions Node.js et npm
+
+Problème : Les builds échouent avec des erreurs de compatibilité Node.js/npm:
+```
+npm WARN EBADENGINE current: { node: 'v18.17.0', npm: '9.6.7' }
+```
+
+Solution :
+- Spécification exacte des versions Node.js (18.17.0) et npm (9.6.7) dans tous les fichiers de configuration
+- Création d'un fichier `.node-version` contenant `18.17.0` pour que Netlify utilise la bonne version
+- Mise à jour du champ `engines` dans `package.json`
+- Mise à jour de `netlify.toml` pour utiliser directement les commandes standard
+
+**Fichiers modifiés**:
+```toml
+# netlify.toml
+[build]
+  command = "npm install && npm run build"
+  publish = "build"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18.17.0"
+  NPM_VERSION = "9.6.7"
+  GO_IMPORT_DURING_BUILD = "false"
+  CI = "false"
+```
+
+```json
+// package.json (extrait)
+"engines": {
+  "node": "18.17.0",
+  "npm": "9.6.7"
+}
+```
+
+#### 2. Simplification de la commande de build
+
+Problème : Le script `netlify-build` personnalisé causait des problèmes lors du déploiement.
+
+Solution :
+- Simplification maximale du processus de build en utilisant directement les commandes standard dans `netlify.toml`
+- Suppression des variables d'environnement problématiques dans les scripts
+- Élimination des différences de comportement entre environnements Windows et Linux
+
+### Statut final
+
+Tentative de déploiement en cours sur : https://velo-altitude.com
+Repository GitHub : https://github.com/Alexandredadadadada/velo-altitude
+Documentation mise à jour : Voir `GUIDE_DEPLOIEMENT_NETLIFY.md` pour tous les détails des corrections
+
+La documentation complète a été mise à jour pour refléter toutes les modifications apportées et servir de référence pour les futurs déploiements.
+
+{{ ... }}

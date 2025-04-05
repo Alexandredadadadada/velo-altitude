@@ -1,0 +1,53 @@
+{
+  "id": "alpe-d-huez",
+  "name": "Alpe d'Huez",
+  "slug": "alpe-dhuez",
+  "country": "",
+  "region": "",
+  "altitude": 1860,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 4,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/alpe-d-huez/main.jpg",
+    "gallery": [
+      "/images/cols/alpe-d-huez/hairpins.jpg",
+      "/images/cols/alpe-d-huez/turn21.jpg",
+      "/images/cols/alpe-d-huez/village.jpg",
+      "/images/cols/alpe-d-huez/tour.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T19:23:25.232Z"
+}

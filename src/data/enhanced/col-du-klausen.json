@@ -1,0 +1,80 @@
+{
+  "id": "col-du-klausen",
+  "name": "Col du Klausen",
+  "region": "alpes-suisses",
+  "country": "Suisse",
+  "altitude": 1948,
+  "length": 21.6,
+  "avgGradient": 6,
+  "maxGradient": 12,
+  "difficulty": "hard",
+  "elevationGain": 1290,
+  "startLocation": "Altdorf",
+  "endLocation": "Col du Klausen",
+  "description": "Le Col du Klausen (Klausenpass en allemand) est l'un des cols les plus impressionnants de Suisse centrale, reliant le canton d'Uri à celui de Glaris. Cette longue ascension traverse des paysages alpins spectaculaires, alternant entre forêts denses, prairies verdoyantes et falaises rocheuses. La route bien entretenue offre des vues imprenables sur les Alpes glaronaises et uranaises.",
+  "history": "Construit au début du 20ème siècle, le Klausenpass a une riche histoire cycliste. Il a été régulièrement inclus dans le Tour de Suisse, notamment lors d'une étape mémorable en 2012 remportée par Rui Costa. La \"Klausenrundfart\", une course cycliste populaire, emprunte également ce col. Historiquement, la route servait de liaison importante entre les vallées de la Reuss et de la Linth.",
+  "imageUrl": "/images/cols/klausen/main.jpg",
+  "profileUrl": "/images/cols/klausen/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Bürglen - Urnerboden",
+      "length": 16.4,
+      "gradient": 5.6,
+      "description": "Première partie de l'ascension depuis Altdorf, montant régulièrement à travers bois et alpages"
+    },
+    {
+      "name": "Urnerboden - Sommet",
+      "length": 5.2,
+      "gradient": 7.8,
+      "description": "Section finale plus pentue avec les meilleures vues sur les Alpes uranaises"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Nord (Altdorf/Bürglen)",
+      "startLocation": "Altdorf",
+      "length": 21.6,
+      "elevationGain": 1290,
+      "avgGradient": 6,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "L'ascension classique depuis la vallée de la Reuss, longue mais régulière avec un final plus difficile"
+    },
+    {
+      "name": "Versant Sud (Linthal)",
+      "startLocation": "Linthal",
+      "length": 13.4,
+      "elevationGain": 970,
+      "avgGradient": 7.2,
+      "maxGradient": 11,
+      "difficulty": "hard",
+      "description": "Montée plus directe et légèrement plus pentue depuis le canton de Glaris"
+    }
+  ],
+  "touristicInfo": "Le col traverse des régions de grande beauté naturelle et d'intérêt culturel. À Urnerboden, le plus grand alpage de Suisse, on trouve des fermes traditionnelles et des fromageries artisanales. Le parcours est ponctué de restaurants et d'auberges de montagne proposant des spécialités locales comme le fromage d'alpage et la viande séchée.",
+  "facilities": [
+    {
+      "type": "food",
+      "location": "Urnerboden et sommet",
+      "description": "Restaurants et auberges servant cuisine traditionnelle suisse"
+    },
+    {
+      "type": "water",
+      "location": "Plusieurs points sur l'ascension",
+      "description": "Fontaines d'eau potable typiques des villages alpins suisses"
+    },
+    {
+      "type": "bike-shop",
+      "location": "Altdorf",
+      "description": "Magasins de cycles proposant réparations et matériel"
+    }
+  ],
+  "bestTimeToVisit": "Mi-mai à octobre",
+  "weatherInfo": "Le col est généralement ouvert de fin mai à octobre, selon les conditions d'enneigement. Les matinées offrent souvent les meilleures conditions. Attention aux orages fréquents en été, particulièrement en fin d'après-midi.",
+  "strava": {
+    "segmentId": "667823",
+    "komTime": "1:09:45",
+    "komName": "Stefan Küng"
+  },
+  "slug": "col-du-klausen"
+}

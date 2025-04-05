@@ -1,0 +1,81 @@
+{
+  "id": "alto-de-langliru",
+  "name": "Alto de l'Angliru",
+  "region": "asturies",
+  "country": "Espagne",
+  "altitude": 1573,
+  "length": 12.5,
+  "avgGradient": 10.1,
+  "maxGradient": 23.5,
+  "difficulty": "extreme",
+  "elevationGain": 1266,
+  "startLocation": "La Vega",
+  "endLocation": "Alto de l'Angliru",
+  "description": "L'Alto de l'Angliru est considéré comme l'une des ascensions les plus redoutables du cyclisme professionnel. Surnommé \"le monstre asturien\", ce col situé dans les montagnes Cantabriques est connu pour ses pentes inhumaines et son profil cauchemardesque. L'ascension devient particulièrement brutale à partir du sixième kilomètre, enchaînant des passages à plus de 20% avec peu de répit. La section connue sous le nom de \"Cueña les Cabres\" présente un mur à 23.5%, défiant les lois de la gravité et poussant les cyclistes dans leurs derniers retranchements. C'est sans doute l'ascension la plus difficile incluse régulièrement dans un grand tour cycliste.",
+  "history": "Introduit dans la Vuelta a España en 1999, l'Angliru a rapidement acquis le statut de col mythique. José María Jiménez fut le premier vainqueur dans cette ascension. En 2002, l'étape fut marquée par des conditions météorologiques catastrophiques (pluie et brouillard), poussant certaines équipes à abandonner en protestation, tandis que Roberto Heras s'imposait. Alberto Contador y remporta sa dernière victoire professionnelle en 2017, lors d'une étape émouvante. Le record d'ascension est détenu par Hugh Carthy, vainqueur en solitaire en 2020. Même des champions comme Lance Armstrong l'ont qualifié de \"montée inhumaine qui n'a pas sa place dans le cyclisme\".",
+  "imageUrl": "/images/cols/angliru/main.jpg",
+  "profileUrl": "/images/cols/angliru/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Cueña les Cabres",
+      "length": 1.2,
+      "gradient": 21.5,
+      "description": "La section la plus infernale, avec des passages à 23.5%. Certains coureurs professionnels sont contraints de zigzaguer ou même de mettre pied à terre."
+    },
+    {
+      "name": "El Aviru",
+      "length": 1.6,
+      "gradient": 13,
+      "description": "Section qui précède les pentes les plus difficiles, servant de prélude au calvaire qui suit."
+    },
+    {
+      "name": "Los Picones",
+      "length": 1.5,
+      "gradient": 17.5,
+      "description": "L'avant-dernière section, toujours extrêmement difficile, où beaucoup de coureurs craquent après l'effort intense de Cueña les Cabres."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Parcours classique (La Vega)",
+      "startLocation": "La Vega",
+      "length": 12.5,
+      "elevationGain": 1266,
+      "avgGradient": 10.1,
+      "maxGradient": 23.5,
+      "difficulty": "extreme",
+      "description": "L'unique route d'ascension de ce monstre. Les 5 premiers kilomètres sont relativement abordables (5-6%), mais ne servent qu'à préparer le terrain pour l'enfer qui suit à partir du virage de Viapará."
+    }
+  ],
+  "touristicInfo": "Situé dans les montagnes des Asturies, l'Angliru offre des vues spectaculaires sur la région environnante lorsque le brouillard ne l'enveloppe pas. Cette région du nord de l'Espagne est connue pour sa nature préservée, sa gastronomie avec les fameux fromages asturiens, et son cidre traditionnel. Les villages avoisinants comme Riosa et La Vega conservent un caractère rural authentique. L'économie locale était traditionnellement basée sur les mines, mais le tourisme cycliste a pris une importance croissante depuis que l'Angliru est devenu célèbre dans le monde du cyclisme.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "La Vega et Grandiella",
+      "description": "Fontaines dans les villages au début de l'ascension. Aucun point d'eau dans les derniers 8 km."
+    },
+    {
+      "type": "food",
+      "location": "La Vega",
+      "description": "Quelques restaurants et bars au pied de l'ascension. Aucun service de restauration au sommet."
+    },
+    {
+      "type": "bike-shop",
+      "location": "Oviedo",
+      "description": "Les magasins de vélo les plus proches se trouvent à Oviedo, à environ 25 km."
+    },
+    {
+      "type": "parking",
+      "location": "La Vega et sommet",
+      "description": "Parking disponible au village de départ et une petite zone de stationnement au sommet pour les véhicules d'assistance."
+    }
+  ],
+  "bestTimeToVisit": "De mai à octobre, avec une préférence pour juin et septembre qui offrent des conditions plus clémentes. Évitez si possible les jours de pluie, car les pentes deviennent extrêmement dangereuses sur route mouillée.",
+  "weatherInfo": "Le climat des Asturies est caractérisé par une forte humidité et des précipitations fréquentes. Le brouillard matinal est courant, même en été. Les températures sont généralement modérées, mais le sommet peut être nettement plus frais que la vallée. Le vent peut être un facteur significatif dans les sections les plus exposées.",
+  "strava": {
+    "segmentId": "697121",
+    "komTime": "41:42",
+    "komName": "Hugh Carthy"
+  },
+  "slug": "alto-de-langliru"
+}

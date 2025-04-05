@@ -1,0 +1,121 @@
+{
+  "id": "babia-gora",
+  "name": {
+    "fr": "Babia Góra",
+    "en": "Babia Mountain",
+    "de": "Babia Góra",
+    "it": "Monte Babia",
+    "es": "Montaña Babia"
+  },
+  "slug": "babia-gora",
+  "country": "",
+  "region": "",
+  "altitude": 1725,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 4,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/babia-gora/main.jpg",
+    "gallery": [
+      "/images/cols/babia-gora/polish-side.jpg",
+      "/images/cols/babia-gora/slovak-side.jpg",
+      "/images/cols/babia-gora/summit-view.jpg",
+      "/images/cols/babia-gora/forest-section.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      {
+        "km": 5,
+        "description": "Fontaine à Zawoja"
+      },
+      {
+        "km": 10,
+        "description": "Source marquée près du sentier principal"
+      },
+      {
+        "km": 15,
+        "description": "Refuge Markowe Szczawiny"
+      }
+    ],
+    "food": [
+      {
+        "name": "Karczma Zawojska",
+        "km": 0,
+        "type": "restaurant",
+        "openingHours": "10h-21h"
+      },
+      {
+        "name": "Refuge Markowe Szczawiny",
+        "km": 15,
+        "type": "refuge",
+        "openingHours": "8h-20h"
+      }
+    ],
+    "shelter": [
+      {
+        "name": "Refuge Markowe Szczawiny",
+        "km": 15,
+        "type": "refuge"
+      }
+    ],
+    "mechanics": [
+      {
+        "name": "Bike Service Zawoja",
+        "location": "Zawoja",
+        "distance": 0
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "author": "Piotr Kowalski",
+      "date": "2023-08-10",
+      "rating": 4,
+      "text": "Une montée exigeante mais très satisfaisante. J'ai dû utiliser mon VTT car certaines sections ne sont pas adaptées aux vélos de route. Les vues depuis le sommet sont spectaculaires."
+    },
+    {
+      "author": "Eva Novakova",
+      "date": "2022-07-22",
+      "rating": 5,
+      "text": "J'ai grimpé depuis le côté slovaque, c'est moins fréquenté et plus sauvage. Attention aux orages qui peuvent se former très rapidement, même par beau temps."
+    },
+    {
+      "author": "Thomas Schmidt",
+      "date": "2024-06-18",
+      "rating": 4.5,
+      "text": "Un défi pour les cyclistes qui cherchent à sortir des sentiers battus. J'ai particulièrement apprécié la diversité des paysages, depuis les forêts denses jusqu'aux prairies alpines."
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 59,
+  "last_updated": "2025-04-05T20:42:26.739Z"
+}

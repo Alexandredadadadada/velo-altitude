@@ -1,0 +1,135 @@
+{
+  "id": "grand-saint-bernard",
+  "name": {
+    "fr": "Col du Grand-Saint-Bernard",
+    "en": "Great St Bernard Pass",
+    "de": "Grosser Sankt Bernhard-Pass",
+    "it": "Colle del Gran San Bernardo",
+    "es": "Puerto del Gran San Bernardo"
+  },
+  "altitude": 2469,
+  "location": {
+    "latitude": 45.8694,
+    "longitude": 7.1702,
+    "region": "Valais/Vallée d'Aoste",
+    "country": "Suisse/Italie",
+    "nearbyTowns": ["Martigny", "Aoste", "Bourg-Saint-Pierre"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Martigny (Suisse)",
+      "length": 44.0,
+      "elevation": 1991,
+      "averageGradient": 4.5,
+      "maxGradient": 12.0,
+      "difficulty": 7
+    },
+    "alternateSide": {
+      "startLocation": "Aoste (Italie)",
+      "length": 33.1,
+      "elevation": 1896,
+      "averageGradient": 5.7,
+      "maxGradient": 10.0,
+      "difficulty": 7
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1949,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 5,
+    "giroAppearances": 5,
+    "famousStories": [
+      "Le Col du Grand-Saint-Bernard est l'un des plus anciens cols alpins, emprunté depuis l'Antiquité. Hannibal y serait peut-être passé avec ses éléphants en 218 av. J.-C.",
+      "L'hospice du Grand-Saint-Bernard, fondé en 1050, est célèbre pour ses chiens de sauvetage, la race Saint-Bernard, qui ont sauvé plus de 2000 personnes au fil des siècles.",
+      "En 1800, Napoléon Bonaparte traversa le col avec son armée de 40 000 hommes pour surprendre les Autrichiens en Italie.",
+      "Lors du Tour de France 1949, Fausto Coppi franchit le col en tête et remporta l'étape à Aoste avec plus de 4 minutes d'avance sur ses poursuivants.",
+      "Avant l'ouverture du tunnel routier en 1964, le col était la principale voie de passage entre la Suisse et l'Italie dans cette région des Alpes."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Marco Pantani",
+        "time": "1:42:00",
+        "year": 1999,
+        "side": "Aoste"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Hospice du Grand-Saint-Bernard",
+      "description": "Monastère fondé au 11ème siècle, toujours en activité, offrant l'hospitalité aux voyageurs et abritant un musée sur l'histoire du col.",
+      "coordinates": {
+        "latitude": 45.8694,
+        "longitude": 7.1702
+      }
+    },
+    {
+      "name": "Lac du Grand-Saint-Bernard",
+      "description": "Lac alpin situé à proximité immédiate du col, offrant un paysage spectaculaire.",
+      "coordinates": {
+        "latitude": 45.8683,
+        "longitude": 7.1722
+      }
+    },
+    {
+      "name": "Frontière italo-suisse",
+      "description": "Point de passage entre deux pays avec une vue imprenable sur les Alpes environnantes.",
+      "coordinates": {
+        "latitude": 45.8700,
+        "longitude": 7.1705
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de juin à octobre",
+    "bestPeriod": "Juillet à septembre",
+    "notes": "Fermé en hiver en raison de la neige. Le tunnel reste ouvert toute l'année pour le trafic routier."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.climbbybike.com/images/col/Grande_San_Bernardo_profile.jpg",
+        "caption": "Profil d'ascension du Grand-Saint-Bernard",
+        "credit": "ClimbByBike.com"
+      },
+      {
+        "url": "https://www.grand-saint-bernard.ch/images/contenu/hospice.jpg",
+        "caption": "L'hospice historique au sommet du col",
+        "credit": "Grand-Saint-Bernard.ch"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Colle_del_Gran_San_Bernardo_-_panoramio_%281%29.jpg/1280px-Colle_del_Gran_San_Bernardo_-_panoramio_%281%29.jpg",
+        "caption": "Le lac alpin du Grand-Saint-Bernard",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=xIzJPgANXQ8",
+        "title": "Col du Grand-Saint-Bernard - Ascension depuis Martigny",
+        "duration": "2:15:40"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.0 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-32 recommandée avec un compact 34-50",
+    "preparation": "Entraînement d'endurance spécifique pour la longueur exceptionnelle de l'ascension",
+    "cautionPoints": [
+      "Longueur considérable de l'ascension nécessitant une bonne gestion de l'effort",
+      "Météo alpine changeante, même en été",
+      "Trafic possible sur certaines sections, particulièrement en haute saison touristique"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Martigny", "Bourg-Saint-Pierre", "Hospice au sommet"],
+    "restaurants": ["Restaurant à l'Hospice", "Café du Col"],
+    "accommodation": ["Hospice du Grand-Saint-Bernard (réservation recommandée)", "Hôtels à Bourg-Saint-Pierre"],
+    "bikeMechanic": "Magasins de vélos à Martigny et Aoste"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["tour-du-mont-blanc", "route-des-grandes-alpes"]
+  }
+}

@@ -23,6 +23,22 @@ const Profile = lazy(() => import('./pages/Profile'));
 const SevenMajorsChallenge = lazy(() => import('./components/challenges/SevenMajorsChallenge'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+// Nouveaux composants optimisés pour le SEO
+const SiteMap = lazy(() => import('./components/common/SiteMap'));
+const EnhancedTrainingDetail = lazy(() => import('./components/training/EnhancedTrainingDetail'));
+const EnhancedRecipeDetail = lazy(() => import('./components/nutrition/EnhancedRecipeDetail'));
+const RecipeGalleryEnhanced = lazy(() => import('./components/nutrition/recipes/RecipeGalleryEnhanced'));
+const EnhancedRecipePage = lazy(() => import('./pages/nutrition/EnhancedRecipePage'));
+const NutritionDashboard = lazy(() => import('./pages/nutrition/NutritionDashboard'));
+const MacroCalculator = lazy(() => import('./pages/nutrition/MacroCalculator'));
+const NutritionTracker = lazy(() => import('./pages/nutrition/NutritionTracker'));
+
+// Nouveaux composants de catégorie optimisés pour le SEO
+const CategoryPage = lazy(() => import('./components/category/CategoryPage'));
+const ChallengeDetail = lazy(() => import('./components/challenges/ChallengeDetail'));
+const Breadcrumbs = lazy(() => import('./components/common/Breadcrumbs'));
+const RelatedContent = lazy(() => import('./components/common/RelatedContent'));
+
 function App() {
   useEffect(() => {
     // Initialisation de l'optimiseur de performance
@@ -47,15 +63,47 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/seven-majors" element={<SevenMajorsChallenge />} />
-                  <Route path="/cols" element={<ColsExplorer />} />
+                  
+                  {/* Routes optimisées pour les cols */}
+                  <Route path="/cols" element={<CategoryPage />} />
+                  <Route path="/cols/:subcategory" element={<CategoryPage />} />
                   <Route path="/cols/:id" element={<EnhancedColDetail />} />
+                  
+                  {/* Routes optimisées pour les programmes d'entraînement */}
+                  <Route path="/programs" element={<CategoryPage />} />
+                  <Route path="/programs/:subcategory" element={<CategoryPage />} />
+                  <Route path="/programs/:id" element={<EnhancedTrainingDetail />} />
+                  
+                  {/* Compatibilité avec les anciennes routes */}
                   <Route path="/training" element={<TrainingModule />} />
-                  <Route path="/nutrition" element={<NutritionPlanner />} />
+                  <Route path="/training/programs/:programId" element={<EnhancedTrainingDetail />} />
+                  <Route path="/training/:planId" element={<EnhancedTrainingDetail />} />
+                  
+                  {/* Routes optimisées pour la nutrition */}
+                  <Route path="/nutrition" element={<NutritionDashboard />} />
+                  <Route path="/nutrition/dashboard" element={<NutritionDashboard />} />
+                  <Route path="/nutrition/:subcategory" element={<CategoryPage />} />
+                  <Route path="/nutrition/recipes" element={<RecipeGalleryEnhanced />} />
+                  <Route path="/nutrition/recipes/:id" element={<EnhancedRecipePage />} />
+                  <Route path="/nutrition/recipes/:recipeId" element={<EnhancedRecipeDetail />} />
+                  <Route path="/nutrition/macro-calculator" element={<MacroCalculator />} />
+                  <Route path="/nutrition/meal-planner" element={<NutritionPlanner />} />
+                  <Route path="/nutrition/tracker" element={<NutritionTracker />} />
+                  <Route path="/nutrition/:id" element={<EnhancedRecipeDetail />} />
+                  <Route path="/nutrition/:planId" element={<NutritionPlanner />} />
+                  
+                  {/* Routes optimisées pour les défis */}
+                  <Route path="/challenges" element={<CategoryPage />} />
+                  <Route path="/challenges/:subcategory" element={<CategoryPage />} />
+                  <Route path="/challenges/:id" element={<ChallengeDetail />} />
+                  
+                  {/* Autres routes existantes */}
                   <Route path="/coach" element={<EnhancedCyclingCoach />} />
                   <Route path="/routes" element={<EnhancedRouteAlternatives />} />
                   <Route path="/social" element={<EnhancedSocialHub />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/profile" element={<Profile />} />
+                  <Route path="/sitemap" element={<SiteMap />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
@@ -64,6 +112,11 @@ function App() {
             <footer className="app-footer">
               <div className="footer-content">
                 <p>&copy; {new Date().getFullYear()} Velo-Altitude - Tous droits réservés</p>
+                <div className="footer-links">
+                  <a href="/sitemap">Plan du site</a>
+                  <a href="/about/privacy">Confidentialité</a>
+                  <a href="/about/terms">Conditions d'utilisation</a>
+                </div>
               </div>
             </footer>
           </div>

@@ -1,0 +1,85 @@
+{
+  "id": "col-de-la-madone",
+  "name": "Col de la Madone",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 925,
+  "length": 12.5,
+  "avgGradient": 6.7,
+  "maxGradient": 10,
+  "difficulty": "medium",
+  "elevationGain": 838,
+  "startLocation": "Menton",
+  "endLocation": "Col de la Madone",
+  "description": "Le Col de la Madone est devenu célèbre grâce aux coureurs professionnels qui s'entraînent sur la Côte d'Azur. Cette ascension offre une combinaison parfaite entre difficulté technique et beauté des paysages. Partant du niveau de la mer à Menton, elle s'élève progressivement à travers les oliviers et maquis méditerranéens, puis la forêt de pins, avant d'atteindre les crêtes offrant des vues spectaculaires sur la Méditerranée. Sa pente régulière et sa route bien entretenue en font un test idéal pour évaluer sa condition physique.",
+  "history": "Rendu célèbre par Lance Armstrong qui l'utilisait comme test avant le Tour de France, le Col de la Madone est devenu un lieu d'entraînement prisé des coureurs professionnels basés à Monaco, comme Chris Froome, Richie Porte et Geraint Thomas. Bien qu'il n'ait jamais figuré dans le Tour de France, son statut est presque mythique dans le milieu du cyclisme professionnel. Il est considéré comme un \"col de référence\" permettant aux coureurs d'évaluer leur forme avant les grandes compétitions.",
+  "imageUrl": "/images/cols/col-de-la-madone/main.jpg",
+  "profileUrl": "/images/cols/col-de-la-madone/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Sainte-Agnès - Madone",
+      "length": 4.5,
+      "gradient": 7.2,
+      "description": "Section finale après le village perché de Sainte-Agnès, avec des vues imprenables sur la Méditerranée."
+    },
+    {
+      "name": "Montée initiale",
+      "length": 6,
+      "gradient": 6.5,
+      "description": "Première partie de l'ascension depuis Menton, avec de nombreux virages en épingle et passage à travers les oliveraies."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Sud (Menton)",
+      "startLocation": "Menton",
+      "length": 12.5,
+      "elevationGain": 838,
+      "avgGradient": 6.7,
+      "maxGradient": 10,
+      "difficulty": "medium",
+      "description": "L'ascension classique depuis la côte méditerranéenne. Une montée régulière avec vue sur la mer, passant par le village de Sainte-Agnès."
+    },
+    {
+      "name": "Versant Est (Castillon)",
+      "startLocation": "Castillon",
+      "length": 6.2,
+      "elevationGain": 480,
+      "avgGradient": 7.8,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Version plus courte mais légèrement plus pentue, offrant également de belles vues sur l'arrière-pays."
+    }
+  ],
+  "touristicInfo": "Outre les vues spectaculaires sur la Côte d'Azur et la Riviera italienne, l'ascension du Col de la Madone permet de découvrir le village médiéval perché de Sainte-Agnès, classé parmi les plus beaux villages de France. Une fois au sommet, vous pourrez apercevoir Monaco, Menton, et par temps clair, la Corse. La région est riche en patrimoine historique, avec des fortifications datant de la ligne Maginot. En redescendant, ne manquez pas de visiter le vieux Menton avec ses façades colorées.",
+  "facilities": [
+    {
+      "type": "food",
+      "location": "Sainte-Agnès",
+      "description": "Plusieurs restaurants et cafés dans ce village pittoresque situé à mi-parcours."
+    },
+    {
+      "type": "water",
+      "location": "Sainte-Agnès et Castillon",
+      "description": "Fontaines publiques dans les deux villages, mais aucune source au sommet."
+    },
+    {
+      "type": "bike-shop",
+      "location": "Menton",
+      "description": "Plusieurs magasins de cycles dans la ville, proposant réparation et location."
+    },
+    {
+      "type": "parking",
+      "location": "Menton et Sainte-Agnès",
+      "description": "Parkings disponibles pour ceux qui souhaitent commencer l'ascension à mi-parcours."
+    }
+  ],
+  "bestTimeToVisit": "Mars à novembre, avec avril-juin et septembre-octobre comme périodes optimales pour éviter la chaleur estivale et profiter de températures clémentes.",
+  "weatherInfo": "Climat méditerranéen avec des étés chauds et des hivers doux. En été, il est recommandé de partir tôt le matin pour éviter les fortes chaleurs. En hiver, le col reste généralement accessible mais peut être frais, surtout au sommet exposé aux vents. Les orages peuvent être violents en fin d'été et début d'automne.",
+  "strava": {
+    "segmentId": "658924",
+    "komTime": "36:55",
+    "komName": "Tadej Pogacar"
+  },
+  "slug": "col-de-la-madone"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "col-du-susten",
+  "name": "Col du Susten",
+  "region": "alpes-suisses",
+  "country": "Suisse",
+  "altitude": 2224,
+  "length": 17.4,
+  "avgGradient": 7.5,
+  "maxGradient": 9,
+  "difficulty": "hard",
+  "elevationGain": 1308,
+  "startLocation": "Wassen",
+  "endLocation": "Col du Susten",
+  "description": "Le Col du Susten (Sustenpass) est l'un des plus beaux cols suisses, offrant des vues spectaculaires sur les glaciers environnants et d'impressionnants ouvrages d'art tout au long de l'ascension. Avec ses nombreux virages bien dessinés et son revêtement impeccable, c'est un régal pour les cyclistes.",
+  "history": "Achevée en 1946, la route du Susten a été construite principalement pour des raisons stratégiques et militaires. Contrairement à d'autres cols suisses, le Susten n'a jamais accueilli le Tour de Suisse, ce qui en fait un joyau préservé du cyclisme.",
+  "imageUrl": "/images/cols/susten/main.jpg",
+  "profileUrl": "/images/cols/susten/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Steingletscher - Sommet",
+      "length": 4.1,
+      "gradient": 8.4,
+      "description": "Section finale avec vue panoramique sur le glacier de Stein"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Ouest (Wassen)",
+      "startLocation": "Wassen",
+      "length": 17.4,
+      "elevationGain": 1308,
+      "avgGradient": 7.5,
+      "maxGradient": 9,
+      "difficulty": "hard",
+      "description": "La montée classique avec ses nombreux virages en épingle et ouvrages d'art"
+    },
+    {
+      "name": "Versant Est (Innertkirchen)",
+      "startLocation": "Innertkirchen",
+      "length": 21.1,
+      "elevationGain": 1451,
+      "avgGradient": 6.9,
+      "maxGradient": 10,
+      "difficulty": "hard",
+      "description": "Ascension plus longue traversant la forêt puis les pâturages alpins"
+    }
+  ],
+  "touristicInfo": "Le Col du Susten est célèbre pour ses paysages alpins intacts et son glacier de Stein visible depuis la route. La région offre de nombreuses possibilités de randonnée et d'observation de la faune alpine. Le haut plateau du col abrite un petit lac de montagne.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Steingletscher et sommet",
+      "description": "Points d'eau au restaurant du glacier et au sommet"
+    },
+    {
+      "type": "food",
+      "location": "Sommet et Steingletscher",
+      "description": "Restaurant au sommet proposant des spécialités suisses"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col fermé en hiver (généralement de novembre à mai). Les conditions météorologiques peuvent changer rapidement en raison de l'altitude.",
+  "strava": {
+    "segmentId": "852649",
+    "komTime": "54:15",
+    "komName": "Stefan Küng"
+  },
+  "slug": "col-du-susten"
+}

@@ -1,0 +1,589 @@
+[
+  {
+    "id": "snack-1",
+    "name": "Barres énergétiques aux dattes et noix",
+    "description": "Ces barres sans cuisson sont parfaites pour emporter lors de vos sorties ou comme collation entre les repas. Riches en glucides naturels et en bons lipides.",
+    "image": "/images/recipes/barres-dattes-noix.jpg",
+    "mealType": "snack",
+    "difficulty": "easy",
+    "prepTimeMinutes": 20,
+    "cookTimeMinutes": 0,
+    "servings": 8,
+    "ingredients": [
+      "200g de dattes dénoyautées",
+      "100g d'amandes",
+      "50g de noix de cajou",
+      "30g de graines de chia",
+      "2 c. à soupe de cacao en poudre non sucré",
+      "1 c. à café d'extrait de vanille",
+      "1 pincée de sel de mer"
+    ],
+    "instructions": [
+      "Si les dattes sont sèches, les faire tremper 10 minutes dans l'eau chaude puis les égoutter.",
+      "Mixer les amandes et les noix de cajou grossièrement dans un robot culinaire.",
+      "Ajouter les dattes, le cacao, la vanille et le sel. Mixer jusqu'à obtenir une pâte collante.",
+      "Incorporer les graines de chia et mélanger brièvement.",
+      "Transférer le mélange dans un moule carré tapissé de papier cuisson et bien presser.",
+      "Réfrigérer au moins 2 heures avant de couper en barres.",
+      "Conserver dans un contenant hermétique au réfrigérateur jusqu'à 1 semaine."
+    ],
+    "nutritionalInfo": {
+      "calories": 210,
+      "protein": 5,
+      "carbs": 24,
+      "fat": 12,
+      "fiber": 5,
+      "sugar": 18
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ],
+    "nutrientFocus": "energy-dense",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "long-ride",
+        "moderate-intensity"
+      ],
+      "timeOfDay": "anytime"
+    },
+    "tips": "Ces barres sont un excellent substitut aux barres commerciales souvent riches en sucres ajoutés. Les dattes fournissent des sucres naturels et les noix apportent des acides gras essentiels.",
+    "variations": [
+      "Ajoutez des pépites de chocolat noir pour plus d'antioxydants",
+      "Incorporez des baies séchées (cranberries, myrtilles) pour des saveurs et nutriments différents"
+    ],
+    "slug": "barres-energetiques-aux-dattes-et-noix"
+  },
+  {
+    "id": "snack-2",
+    "name": "Muffins protéinés banane-avoine",
+    "description": "Des muffins équilibrés en protéines et glucides, parfaits comme collation ou petit-déjeuner rapide pour les cyclistes pressés.",
+    "image": "/images/recipes/muffins-proteines-banane.jpg",
+    "mealType": "snack",
+    "difficulty": "medium",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 22,
+    "servings": 12,
+    "ingredients": [
+      "250g de flocons d'avoine (ou 200g de farine d'avoine)",
+      "2 bananes bien mûres",
+      "2 œufs",
+      "60g de protéine en poudre (vanille)",
+      "200ml de lait (vache ou végétal)",
+      "60ml de sirop d'érable ou miel",
+      "1 c. à café de levure chimique",
+      "1 c. à café de cannelle",
+      "1 pincée de sel",
+      "50g de noix hachées (optionnel)"
+    ],
+    "instructions": [
+      "Préchauffer le four à 180°C et préparer un moule à muffins avec des caissettes en papier.",
+      "Si vous utilisez des flocons d'avoine, les mixer en farine dans un blender.",
+      "Dans un grand bol, écraser les bananes à la fourchette.",
+      "Ajouter les œufs, le lait et le sirop d'érable, bien mélanger.",
+      "Incorporer la farine d'avoine, la protéine en poudre, la levure, la cannelle et le sel.",
+      "Ajouter les noix hachées si désirées et mélanger juste assez pour incorporer.",
+      "Répartir la pâte dans les caissettes et cuire 20-22 minutes à 180°C.",
+      "Laisser refroidir dans le moule pendant 5 minutes, puis sur une grille."
+    ],
+    "nutritionalInfo": {
+      "calories": 180,
+      "protein": 10,
+      "carbs": 25,
+      "fat": 5,
+      "fiber": 3,
+      "sugar": 10
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "high-protein"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build"
+      ],
+      "effortTypes": [
+        "morning-ride",
+        "moderate-intensity"
+      ],
+      "timeOfDay": "morning-snack"
+    },
+    "tips": "Ces muffins se conservent 3 jours à température ambiante ou peuvent être congelés jusqu'à 3 mois. Parfaits pour les matins où le temps manque avant une sortie.",
+    "variations": [
+      "Ajoutez des myrtilles ou des pépites de chocolat noir pour plus de saveurs",
+      "Remplacez la banane par de la compote de pommes non sucrée et ajoutez des raisins secs"
+    ],
+    "slug": "muffins-proteines-banane-avoine"
+  },
+  {
+    "id": "snack-3",
+    "name": "Smoothie vert récupération et énergie",
+    "description": "Un smoothie vert riche en nutriments, antioxydants et protéines pour soutenir la récupération musculaire et booster l'énergie entre les entraînements.",
+    "image": "/images/recipes/smoothie-vert-recuperation.jpg",
+    "mealType": "snack",
+    "difficulty": "easy",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "1 banane",
+      "100g d'épinards frais",
+      "1/2 avocat",
+      "1 kiwi",
+      "200ml de lait d'amande non sucré",
+      "1 c. à soupe de graines de lin moulues",
+      "1 c. à soupe de miel",
+      "20g de protéine en poudre (optionnel)",
+      "Glaçons"
+    ],
+    "instructions": [
+      "Placer tous les ingrédients dans un blender puissant.",
+      "Mixer à haute vitesse jusqu'à obtenir une consistance lisse.",
+      "Ajouter plus de lait si le mélange est trop épais.",
+      "Servir immédiatement pour préserver au maximum les nutriments."
+    ],
+    "nutritionalInfo": {
+      "calories": 350,
+      "protein": 15,
+      "carbs": 45,
+      "fat": 14,
+      "fiber": 11,
+      "sugar": 25
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "high-protein"
+    ],
+    "nutrientFocus": "recovery",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "recovery"
+      ],
+      "effortTypes": [
+        "recovery-day",
+        "moderate-intensity"
+      ],
+      "timeOfDay": "afternoon-snack"
+    },
+    "tips": "Ce smoothie est particulièrement riche en potassium (banane) et magnésium (épinards), des minéraux essentiels pour prévenir les crampes musculaires. L'avocat apporte des graisses saines qui favorisent l'absorption des vitamines liposolubles.",
+    "variations": [
+      "Ajoutez du gingembre frais pour ses propriétés anti-inflammatoires",
+      "Incorporez une poignée de myrtilles pour augmenter la teneur en antioxydants"
+    ],
+    "slug": "smoothie-vert-recuperation-et-energie"
+  },
+  {
+    "id": "snack-4",
+    "name": "Toasts à l'avocat et œuf poché",
+    "description": "Une collation protéinée et énergétique, parfaite avant ou après une sortie modérée, combinant glucides complexes, protéines et bonnes graisses.",
+    "image": "/images/recipes/toast-avocat-oeuf.jpg",
+    "mealType": "snack",
+    "difficulty": "medium",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 5,
+    "servings": 1,
+    "ingredients": [
+      "1 tranche de pain complet ou au levain",
+      "1/2 avocat mûr",
+      "1 œuf",
+      "Quelques feuilles d'épinard",
+      "Jus de citron",
+      "Sel, poivre",
+      "Piment d'Espelette ou flocons de piment (optionnel)"
+    ],
+    "instructions": [
+      "Faire griller la tranche de pain.",
+      "Écraser l'avocat à la fourchette et l'assaisonner avec du jus de citron, du sel et du poivre.",
+      "Porter à ébullition une casserole d'eau, réduire à frémissement et ajouter une goutte de vinaigre.",
+      "Casser l'œuf dans un petit bol puis le faire glisser délicatement dans l'eau frémissante.",
+      "Pocher l'œuf pendant 3 minutes pour un jaune coulant.",
+      "Étaler l'avocat écrasé sur le toast, ajouter les feuilles d'épinard, puis déposer l'œuf poché.",
+      "Assaisonner avec sel, poivre et piment si désiré."
+    ],
+    "nutritionalInfo": {
+      "calories": 280,
+      "protein": 12,
+      "carbs": 20,
+      "fat": 18,
+      "fiber": 6,
+      "sugar": 2
+    },
+    "dietaryPreferences": [
+      "vegetarian"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build"
+      ],
+      "effortTypes": [
+        "morning-ride",
+        "recovery-day"
+      ],
+      "timeOfDay": "anytime"
+    },
+    "tips": "Cette collation apporte un excellent équilibre de macronutriments et est particulièrement riche en vitamine K (épinards) qui favorise la santé osseuse, important pour les cyclistes.",
+    "variations": [
+      "Remplacez l'œuf poché par un œuf brouillé pour une préparation plus simple",
+      "Ajoutez des graines de sésame ou de tournesol pour plus de micronutriments"
+    ],
+    "slug": "toasts-a-lavocat-et-oeuf-poche"
+  },
+  {
+    "id": "snack-5",
+    "name": "Energy balls aux dattes et cacao",
+    "description": "Des petites bouchées énergétiques sans cuisson, idéales pour un boost rapide avant ou pendant l'entraînement.",
+    "image": "/images/recipes/energy-balls-dattes-cacao.jpg",
+    "mealType": "snack",
+    "difficulty": "easy",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 0,
+    "servings": 15,
+    "ingredients": [
+      "200g de dattes Medjool dénoyautées",
+      "100g d'amandes (ou noix au choix)",
+      "2 c. à soupe de cacao en poudre non sucré",
+      "1 c. à soupe d'huile de coco",
+      "1 c. à café d'extrait de vanille",
+      "1 pincée de sel",
+      "Noix de coco râpée pour l'enrobage (optionnel)"
+    ],
+    "instructions": [
+      "Si les dattes ne sont pas très molles, les faire tremper dans l'eau chaude pendant 10 minutes puis les égoutter.",
+      "Placer les amandes dans un robot culinaire et mixer jusqu'à obtenir des morceaux grossiers.",
+      "Ajouter les dattes, le cacao, l'huile de coco, la vanille et le sel.",
+      "Mixer jusqu'à obtenir une pâte homogène et collante.",
+      "Former des boules de la taille d'une noix avec les mains légèrement humides.",
+      "Rouler dans la noix de coco râpée si désiré.",
+      "Placer au réfrigérateur pendant au moins 30 minutes avant de déguster."
+    ],
+    "nutritionalInfo": {
+      "calories": 110,
+      "protein": 2,
+      "carbs": 15,
+      "fat": 5,
+      "fiber": 2,
+      "sugar": 12
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ],
+    "nutrientFocus": "energy-dense",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "moderate-intensity",
+        "long-ride"
+      ],
+      "timeOfDay": "anytime"
+    },
+    "tips": "Ces energy balls se conservent jusqu'à 2 semaines au réfrigérateur ou 3 mois au congélateur. L'huile de coco et les dattes fournissent une énergie facilement utilisable par l'organisme.",
+    "variations": [
+      "Ajoutez 1 c. à soupe de protéine en poudre pour augmenter l'apport protéique",
+      "Incorporez des graines de chia pour plus d'oméga-3 et de fibres"
+    ],
+    "slug": "energy-balls-aux-dattes-et-cacao"
+  },
+  {
+    "id": "snack-6",
+    "name": "Yaourt grec aux myrtilles et granola",
+    "description": "Une collation équilibrée associant protéines, glucides complexes et antioxydants, parfaite pour la récupération ou comme en-cas nutritif.",
+    "image": "/images/recipes/yaourt-myrtilles-granola.jpg",
+    "mealType": "snack",
+    "difficulty": "easy",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "200g de yaourt grec nature",
+      "100g de myrtilles fraîches",
+      "30g de granola maison ou faible en sucre",
+      "1 c. à café de miel ou sirop d'érable",
+      "1 c. à soupe de graines de lin moulues"
+    ],
+    "instructions": [
+      "Dans un bol, verser le yaourt grec.",
+      "Ajouter les myrtilles lavées.",
+      "Saupoudrer de granola et de graines de lin.",
+      "Arroser d'un filet de miel ou de sirop d'érable."
+    ],
+    "nutritionalInfo": {
+      "calories": 320,
+      "protein": 20,
+      "carbs": 35,
+      "fat": 12,
+      "fiber": 6,
+      "sugar": 20
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "high-protein",
+      "gluten-free"
+    ],
+    "nutrientFocus": "recovery",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build",
+        "peak",
+        "recovery"
+      ],
+      "effortTypes": [
+        "recovery-day",
+        "moderate-intensity"
+      ],
+      "timeOfDay": "anytime"
+    },
+    "tips": "Les myrtilles sont parmi les fruits les plus riches en antioxydants, essentiels pour combattre le stress oxydatif lié à l'exercice. Le yaourt grec apporte des protéines facilement assimilables et du calcium pour la santé osseuse.",
+    "variations": [
+      "Utilisez différents fruits de saison: fraises, framboises, pêches, etc.",
+      "Ajoutez une cuillère de beurre d'amande pour plus de graisses saines et de protéines"
+    ],
+    "slug": "yaourt-grec-aux-myrtilles-et-granola"
+  },
+  {
+    "id": "snack-7",
+    "name": "Wrap de thon et légumes",
+    "description": "Un wrap protéiné et léger, parfait comme collation substantielle entre les entraînements ou comme repas rapide après une sortie.",
+    "image": "/images/recipes/wrap-thon-legumes.jpg",
+    "mealType": "snack",
+    "difficulty": "easy",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "1 tortilla de blé complet",
+      "80g de thon au naturel égoutté",
+      "2 c. à soupe de fromage frais allégé",
+      "1/4 d'avocat tranché",
+      "Quelques feuilles de salade",
+      "1/4 de poivron rouge émincé",
+      "1/4 de concombre en bâtonnets",
+      "Jus de citron",
+      "Poivre"
+    ],
+    "instructions": [
+      "Mélanger le thon égoutté avec le fromage frais, assaisonner avec du jus de citron et du poivre.",
+      "Étaler ce mélange sur la tortilla.",
+      "Ajouter les tranches d'avocat, les feuilles de salade, le poivron et le concombre.",
+      "Rouler fermement la tortilla et couper en deux en diagonale."
+    ],
+    "nutritionalInfo": {
+      "calories": 350,
+      "protein": 25,
+      "carbs": 30,
+      "fat": 15,
+      "fiber": 6,
+      "sugar": 3
+    },
+    "dietaryPreferences": [
+      "high-protein"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build"
+      ],
+      "effortTypes": [
+        "moderate-intensity",
+        "recovery-day"
+      ],
+      "timeOfDay": "afternoon-snack"
+    },
+    "tips": "Ce wrap est une excellente source de protéines maigres et d'acides gras oméga-3 grâce au thon. Ajoutez une pincée de sel si vous transpirez beaucoup pendant vos entraînements pour reconstituer les électrolytes.",
+    "variations": [
+      "Remplacez le thon par du poulet émincé ou du tofu émietté",
+      "Ajoutez des herbes fraîches comme le basilic ou la coriandre pour plus de saveurs"
+    ],
+    "slug": "wrap-de-thon-et-legumes"
+  },
+  {
+    "id": "snack-8",
+    "name": "Pudding de chia aux fruits rouges",
+    "description": "Un en-cas riche en fibres, oméga-3 et antioxydants, idéal pour une digestion saine et une récupération optimale.",
+    "image": "/images/recipes/pudding-chia-fruits-rouges.jpg",
+    "mealType": "snack",
+    "difficulty": "easy",
+    "prepTimeMinutes": 10,
+    "cookTimeMinutes": 0,
+    "servings": 2,
+    "ingredients": [
+      "4 c. à soupe de graines de chia",
+      "250ml de lait d'amande non sucré",
+      "1 c. à soupe de sirop d'érable",
+      "1/2 c. à café d'extrait de vanille",
+      "150g de fruits rouges (fraises, framboises, myrtilles)",
+      "1 c. à soupe de yaourt grec (optionnel)"
+    ],
+    "instructions": [
+      "Dans un bol, mélanger les graines de chia, le lait d'amande, le sirop d'érable et la vanille.",
+      "Bien remuer et laisser reposer 5 minutes, puis remuer à nouveau pour éviter les grumeaux.",
+      "Couvrir et réfrigérer au moins 4 heures ou toute la nuit.",
+      "Au moment de servir, ajouter les fruits rouges et éventuellement une cuillère de yaourt grec."
+    ],
+    "nutritionalInfo": {
+      "calories": 180,
+      "protein": 6,
+      "carbs": 20,
+      "fat": 10,
+      "fiber": 12,
+      "sugar": 8
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "vegan",
+      "gluten-free",
+      "high-fiber"
+    ],
+    "nutrientFocus": "recovery",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build",
+        "recovery"
+      ],
+      "effortTypes": [
+        "recovery-day",
+        "moderate-intensity"
+      ],
+      "timeOfDay": "evening-snack"
+    },
+    "tips": "Les graines de chia sont exceptionnellement riches en fibres et en oméga-3, essentiels pour réduire l'inflammation et améliorer la récupération. Préparez plusieurs portions à l'avance pour avoir une collation prête toute la semaine.",
+    "variations": [
+      "Utilisez du lait de coco pour une version plus crémeuse et riche en calories",
+      "Incorporez 1/2 c. à café de curcuma et une pincée de poivre noir pour leurs propriétés anti-inflammatoires"
+    ],
+    "slug": "pudding-de-chia-aux-fruits-rouges"
+  },
+  {
+    "id": "snack-9",
+    "name": "Tartine de ricotta, miel et noix",
+    "description": "Une collation simple et nutritive alliant glucides complexes, protéines et graisses saines pour une énergie durable.",
+    "image": "/images/recipes/tartine-ricotta-miel-noix.jpg",
+    "mealType": "snack",
+    "difficulty": "easy",
+    "prepTimeMinutes": 5,
+    "cookTimeMinutes": 0,
+    "servings": 1,
+    "ingredients": [
+      "1 tranche de pain complet ou de seigle",
+      "60g de ricotta",
+      "1 c. à café de miel",
+      "10g de noix concassées",
+      "1/2 pomme en fines tranches",
+      "1 pincée de cannelle"
+    ],
+    "instructions": [
+      "Toaster légèrement la tranche de pain.",
+      "Étaler la ricotta sur le pain.",
+      "Disposer les tranches de pomme.",
+      "Arroser de miel et saupoudrer de noix concassées et de cannelle."
+    ],
+    "nutritionalInfo": {
+      "calories": 270,
+      "protein": 10,
+      "carbs": 30,
+      "fat": 13,
+      "fiber": 4,
+      "sugar": 15
+    },
+    "dietaryPreferences": [
+      "vegetarian"
+    ],
+    "nutrientFocus": "balanced",
+    "recommendedFor": {
+      "trainingPhases": [
+        "base",
+        "build"
+      ],
+      "effortTypes": [
+        "recovery-day",
+        "technique-session"
+      ],
+      "timeOfDay": "afternoon-snack"
+    },
+    "tips": "La ricotta est une excellente source de protéines à digestion lente, idéale pour soutenir la récupération musculaire. Le pain complet fournit des glucides complexes pour une énergie durable.",
+    "variations": [
+      "Remplacez le miel par du tahini et une pincée de sel pour une version salée",
+      "Utilisez des fraises ou des figues fraîches à la place de la pomme selon la saison"
+    ],
+    "slug": "tartine-de-ricotta-miel-et-noix"
+  },
+  {
+    "id": "snack-10",
+    "name": "Mini frittatas aux légumes",
+    "description": "Des petites frittatas riches en protéines et légumes, parfaites comme collation protéinée ou petit-déjeuner rapide à emporter.",
+    "image": "/images/recipes/mini-frittatas-legumes.jpg",
+    "mealType": "snack",
+    "difficulty": "medium",
+    "prepTimeMinutes": 15,
+    "cookTimeMinutes": 20,
+    "servings": 6,
+    "ingredients": [
+      "6 gros œufs",
+      "60ml de lait",
+      "80g de fromage râpé (cheddar, emmental ou autre)",
+      "1 petit poivron rouge émincé",
+      "1 petite courgette râpée",
+      "50g de petits pois (frais ou surgelés)",
+      "1 oignon vert émincé",
+      "Sel, poivre, herbes de Provence"
+    ],
+    "instructions": [
+      "Préchauffer le four à 180°C et graisser un moule à muffins.",
+      "Dans un bol, battre les œufs avec le lait, le sel, le poivre et les herbes.",
+      "Répartir les légumes et le fromage dans les cavités du moule à muffins.",
+      "Verser le mélange d'œufs sur les légumes, en remplissant à environ 3/4.",
+      "Enfourner pour 18-20 minutes, jusqu'à ce que les frittatas soient gonflées et dorées.",
+      "Laisser refroidir 5 minutes avant de démouler."
+    ],
+    "nutritionalInfo": {
+      "calories": 160,
+      "protein": 12,
+      "carbs": 5,
+      "fat": 10,
+      "fiber": 1,
+      "sugar": 2
+    },
+    "dietaryPreferences": [
+      "vegetarian",
+      "gluten-free",
+      "high-protein"
+    ],
+    "nutrientFocus": "high-protein",
+    "recommendedFor": {
+      "trainingPhases": [
+        "build",
+        "peak"
+      ],
+      "effortTypes": [
+        "strength-session",
+        "high-intensity"
+      ],
+      "timeOfDay": "morning-snack"
+    },
+    "tips": "Ces mini frittatas se conservent jusqu'à 4 jours au réfrigérateur et peuvent être congelées. Elles sont parfaites pour préparer vos collations à l'avance lorsque vous avez un programme d'entraînement chargé.",
+    "variations": [
+      "Ajoutez des épinards et du fromage feta pour une version méditerranéenne",
+      "Incorporez des champignons et du thym pour plus de saveurs et de nutriments"
+    ],
+    "slug": "mini-frittatas-aux-legumes"
+  }
+]

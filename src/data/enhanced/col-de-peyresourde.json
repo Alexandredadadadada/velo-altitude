@@ -1,0 +1,69 @@
+{
+  "id": "col-de-peyresourde",
+  "name": "Col de Peyresourde",
+  "region": "pyrenees",
+  "country": "France",
+  "altitude": 1569,
+  "length": 13.2,
+  "avgGradient": 7.1,
+  "maxGradient": 9.8,
+  "difficulty": "medium",
+  "elevationGain": 939,
+  "startLocation": "Bagnères-de-Luchon",
+  "endLocation": "Col de Peyresourde",
+  "description": "Le col de Peyresourde relie les vallées du Louron et du Larboust. C'est un col régulier offrant de beaux panoramas sur la chaîne des Pyrénées.",
+  "history": "Premier passage du Tour en 1910. En 2016, Chris Froome y crée la surprise en attaquant dans la descente vers Bagnères-de-Luchon, prenant le maillot jaune qu'il gardera jusqu'à Paris.",
+  "imageUrl": "/images/cols/peyresourde/main.jpg",
+  "profileUrl": "/images/cols/peyresourde/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Ouest (Bagnères-de-Luchon)",
+      "startLocation": "Bagnères-de-Luchon",
+      "length": 13.2,
+      "elevationGain": 939,
+      "avgGradient": 7.1,
+      "maxGradient": 9.8,
+      "difficulty": "medium",
+      "description": "Montée constante et régulière depuis Luchon"
+    },
+    {
+      "name": "Versant Est (Armenteule)",
+      "startLocation": "Armenteule",
+      "length": 8.3,
+      "elevationGain": 629,
+      "avgGradient": 7.6,
+      "maxGradient": 10.5,
+      "difficulty": "medium",
+      "description": "Plus courte mais légèrement plus pentue"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Montée intégrale depuis Luchon",
+      "length": 13.2,
+      "gradient": 7.1,
+      "description": "La montée classique du versant ouest"
+    }
+  ],
+  "touristicInfo": "Au sommet, vous trouverez une crêperie et une table d'orientation. La vue s'étend sur les sommets environnants comme le Pic d'Aneto.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Sommet",
+      "description": "Point d'eau à la crêperie"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Crêperie du col"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Généralement praticable du printemps à l'automne. Conditions souvent plus clémentes que sur les cols plus hauts.",
+  "strava": {
+    "segmentId": "640167",
+    "komTime": "32:45",
+    "komName": "Romain Bardet"
+  },
+  "slug": "col-de-peyresourde"
+}

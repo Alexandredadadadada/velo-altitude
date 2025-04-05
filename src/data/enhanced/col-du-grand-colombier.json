@@ -1,0 +1,79 @@
+{
+  "id": "col-du-grand-colombier",
+  "name": "Col du Grand Colombier",
+  "region": "jura",
+  "country": "France",
+  "altitude": 1501,
+  "length": 18.3,
+  "avgGradient": 7.6,
+  "maxGradient": 14,
+  "difficulty": "extreme",
+  "elevationGain": 1391,
+  "startLocation": "Culoz",
+  "endLocation": "Col du Grand Colombier",
+  "description": "Le Grand Colombier est l'ascension la plus redoutable du Jura, avec des pentes parfois terribles qui ont fait souffrir les meilleurs coureurs du Tour de France. Culminant à plus de 1500m d'altitude, il offre des panoramas exceptionnels sur le lac du Bourget, le massif de la Chartreuse et les Alpes.",
+  "history": "Longtemps méconnu des organisateurs du Tour de France, le Grand Colombier a fait son entrée dans la Grande Boucle en 2012. Depuis, il s'est imposé comme l'un des cols les plus sélectifs du cyclisme moderne, notamment lors de l'étape de 2020 où Tadej Pogacar a distancé Primoz Roglic dans l'ascension finale.",
+  "imageUrl": "/images/cols/grand-colombier/main.jpg",
+  "profileUrl": "/images/cols/grand-colombier/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Virieu-le-Petit - Sommet",
+      "length": 8.7,
+      "gradient": 9.2,
+      "description": "Section très exigeante avec plusieurs passages à plus de 12%"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Sud (Culoz)",
+      "startLocation": "Culoz",
+      "length": 18.3,
+      "elevationGain": 1391,
+      "avgGradient": 7.6,
+      "maxGradient": 14,
+      "difficulty": "extreme",
+      "description": "L'ascension mythique, considérée comme l'une des plus difficiles de France"
+    },
+    {
+      "name": "Versant Est (Artemare)",
+      "startLocation": "Artemare",
+      "length": 15.9,
+      "elevationGain": 1255,
+      "avgGradient": 7.9,
+      "maxGradient": 14,
+      "difficulty": "extreme",
+      "description": "Montée par Virieu-le-Petit, extrêmement exigeante"
+    },
+    {
+      "name": "Versant Ouest (Anglefort)",
+      "startLocation": "Anglefort",
+      "length": 15.5,
+      "elevationGain": 1187,
+      "avgGradient": 7.7,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "Ascension par la route de la Sapette, également très difficile"
+    }
+  ],
+  "touristicInfo": "Du sommet, la vue panoramique s'étend sur le lac du Bourget, la vallée du Rhône, le mont Blanc et les Alpes. Le site, classé Espace Naturel Sensible, abrite une flore et une faune exceptionnelles, notamment des rapaces comme le circaète Jean-le-Blanc.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Virieu-le-Petit",
+      "description": "Fontaine dans le village"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant au sommet (ouvert en saison)"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Col généralement ouvert d'avril à novembre. En cas de forte chaleur, l'ascension peut être particulièrement éprouvante car certaines sections sont très exposées au soleil.",
+  "strava": {
+    "segmentId": "615473",
+    "komTime": "48:15",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "col-du-grand-colombier"
+}

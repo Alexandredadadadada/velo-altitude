@@ -1,0 +1,392 @@
+{
+  "id": "plan-nutrition-competition",
+  "title": "Plan Nutritionnel Spécial Compétition",
+  "subtitle": "Stratégies nutritionnelles avancées pour optimiser vos performances en événements cyclistes",
+  "duration": "14 jours",
+  "author": "Dr. Martine Dupont, PhD en Nutrition Sportive",
+  "difficulty": "Avancé",
+  "category": "Nutrition",
+  "tags": ["compétition", "performance", "cyclisme", "événement", "glycogène", "hydratation"],
+  "thumbnail": "/assets/images/nutrition/competition-nutrition-thumbnail.jpg",
+  "premium": true,
+  "relatedContent": [
+    "plan-nutrition-recuperation",
+    "plan-nutrition-longue-distance",
+    "plan-haute-montagne",
+    "plan-angliru"
+  ],
+  "description": "Ce plan nutritionnel scientifiquement conçu maximise vos performances lors d'événements compétitifs cyclistes. Couvrant les 14 jours précédant la compétition, il inclut des stratégies de chargement glycogénique, d'hydratation optimale et d'alimentation périodisée pour vous assurer d'atteindre la ligne de départ dans un état métabolique optimal et de maintenir vos performances tout au long de l'événement.",
+  "overview": "La nutrition de compétition requiert une approche méthodique et précise, surtout durant les deux semaines précédant l'événement. Ce plan couvre quatre phases critiques: préparation (J-14 à J-7), chargement (J-6 à J-3), affinage (J-2 à J-1) et le jour J. Chaque phase est conçue pour optimiser votre état physiologique et maximiser votre capacité à générer et maintenir la puissance nécessaire tout au long de l'effort. Les recommandations sont basées sur les dernières recherches en nutrition sportive et sur l'expérience d'athlètes professionnels.",
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "Phase de Préparation",
+      "duration": "7 jours (J-14 à J-8)",
+      "description": "Cette phase initiale vise à optimiser votre statut nutritionnel global et à éliminer tout déficit potentiel. L'accent est mis sur une alimentation équilibrée mais légèrement hypercalorique pour assurer des réserves optimales.",
+      "objectives": [
+        "Optimiser le statut nutritionnel global",
+        "Corriger tout déficit micronutritionnel",
+        "Assurer une hydratation optimale",
+        "Maintenir un apport modéré en glucides (5-6g/kg/jour)",
+        "Continuer l'entraînement à volume normal mais intensité réduite"
+      ],
+      "nutritionalStrategy": {
+        "macronutriments": {
+          "glucides": "5-6g/kg/jour",
+          "protéines": "1.6-1.8g/kg/jour",
+          "lipides": "1-1.2g/kg/jour"
+        },
+        "micronutriments": {
+          "fer": "Accent particulier sur les sources alimentaires riches en fer",
+          "magnésium": "400-500mg/jour via alimentation et éventuellement supplémentation",
+          "vitamine D": "Exposition solaire + alimentation enrichie",
+          "antioxydants": "Augmentation des fruits et légumes colorés"
+        },
+        "hydratation": "3-4L/jour dont 1L de boissons d'électrolytes",
+        "timing": "5-6 repas bien répartis sur la journée",
+        "compléments": [
+          "Multivitamines haute qualité",
+          "Fer (si niveau bas confirmé par analyse)",
+          "Magnésium citrate (200mg/jour)"
+        ]
+      },
+      "mealPlan": {
+        "example": {
+          "petitDejeuner": "Porridge d'avoine (80g) avec fruits rouges, graines de chia, noix et miel + 2 œufs brouillés + thé vert",
+          "collationMatin": "Smoothie protéiné (lait, banane, myrtilles, protéine whey, amandes)",
+          "dejeuner": "Quinoa (100g cuit) avec saumon grillé (150g), légumes variés rôtis et vinaigrette à l'huile d'olive",
+          "collationAprem": "Yaourt grec + granola maison + fruits secs",
+          "diner": "Poulet (150g) avec patate douce (150g), épinards, huile de colza",
+          "collationSoir": "Fromage blanc 0% + miel + noix du Brésil"
+        }
+      },
+      "keyPoints": [
+        "Privilégier les aliments à haute densité nutritionnelle",
+        "Maintenir une bonne régularité des repas",
+        "Éviter tout aliment nouveau ou potentiellement problématique",
+        "Commencer à réduire les fibres alimentaires vers la fin de cette phase",
+        "Monitorer son poids et ajuster les calories si nécessaire",
+        "S'assurer d'une récupération optimale après chaque séance d'entraînement"
+      ]
+    },
+    {
+      "id": "phase-2",
+      "name": "Phase de Chargement",
+      "duration": "4 jours (J-7 à J-4)",
+      "description": "Cette phase cruciale vise à maximiser les réserves glycogéniques musculaires et hépatiques tout en réduisant la charge d'entraînement. Un protocole de chargement glucidique moderne est implémenté avec une attention particulière à la qualité des glucides et au timing.",
+      "objectives": [
+        "Maximiser les réserves de glycogène musculaire et hépatique",
+        "Maintenir l'hydratation et le statut électrolytique optimal",
+        "Réduire progressivement le volume d'entraînement",
+        "Augmenter progressivement l'apport en glucides",
+        "Préserver la sensibilité à l'insuline"
+      ],
+      "nutritionalStrategy": {
+        "macronutriments": {
+          "glucides": "8-10g/kg/jour, augmentation progressive",
+          "protéines": "1.5g/kg/jour",
+          "lipides": "0.8-1g/kg/jour, réduction progressive"
+        },
+        "hydratation": "3-4L/jour avec électrolytes",
+        "timing": "Repas fréquents (6-7 par jour) avec concentration des glucides autour des séances d'entraînement",
+        "compléments": [
+          "Créatine monohydrate (20g/jour si non saturé, 3g/jour si déjà saturé)",
+          "Bêta-alanine (si déjà en cours de protocole)",
+          "Électrolytes"
+        ]
+      },
+      "dailyProgression": {
+        "jour1": {
+          "glucides": "7g/kg",
+          "entraînement": "Séance modérée (60% du volume habituel)"
+        },
+        "jour2": {
+          "glucides": "8g/kg",
+          "entraînement": "Séance légère avec quelques accélérations"
+        },
+        "jour3": {
+          "glucides": "9g/kg",
+          "entraînement": "Repos actif"
+        },
+        "jour4": {
+          "glucides": "10g/kg",
+          "entraînement": "Repos complet"
+        }
+      },
+      "mealPlan": {
+        "example": {
+          "petitDejeuner": "Pancakes à la farine de riz (4) avec sirop d'érable, banane + yaourt grec",
+          "collationMatin": "Pain blanc (2 tranches) avec miel + jus de fruits",
+          "dejeuner": "Pâtes blanches (130g) avec sauce tomate légère et blanc de poulet (100g)",
+          "collationPreEntrainement": "Barre énergétique commerciale + banane",
+          "collationPostEntrainement": "Boisson de récupération glucido-protéinée + amandes",
+          "diner": "Riz blanc (120g) avec légumes cuits sans fibres (carottes, courgettes pelées) et poisson blanc (150g)",
+          "collationSoir": "Riz au lait maison ou semoule au lait"
+        }
+      },
+      "keyPoints": [
+        "Réduire progressivement l'apport en fibres et en graisses",
+        "Privilégier les glucides à index glycémique modéré à élevé",
+        "Assurer une répartition optimale des repas",
+        "Maintenir une hydratation avec électrolytes constante",
+        "Éviter tout excès de fructose pour ne pas perturber le système digestif",
+        "Monitorer la sensation de \"remplissage musculaire\" et le poids"
+      ]
+    },
+    {
+      "id": "phase-3",
+      "name": "Phase d'Affinage Pré-Compétition",
+      "duration": "2 jours (J-2 à J-1)",
+      "description": "Les deux derniers jours avant la compétition sont consacrés à l'affinage nutritionnel final. L'objectif est de maintenir les réserves glycogéniques pleines tout en réduisant au maximum la charge digestive et en optimisant l'hydratation et les électrolytes.",
+      "objectives": [
+        "Maintenir les réserves glycogéniques optimales",
+        "Réduire au maximum la charge digestive",
+        "Optimiser l'hydratation et le statut électrolytique",
+        "Éliminer tout risque de perturbation gastro-intestinale",
+        "Préparation mentale nutritionnelle"
+      ],
+      "nutritionalStrategy": {
+        "macronutriments": {
+          "glucides": "8g/kg/jour, faible en fibres, IG moyen à élevé",
+          "protéines": "1.4g/kg/jour, sources facilement digestibles",
+          "lipides": "0.6-0.8g/kg/jour, minimum nécessaire"
+        },
+        "hydratation": {
+          "quantité": "3-4L/jour",
+          "sodium": "3000-4000mg/jour",
+          "potassium": "3000-4000mg/jour",
+          "approche": "Hydratation progressive et constante, urine claire mais pas incolore"
+        },
+        "compléments": [
+          "Électrolytes",
+          "Créatine monohydrate (3g/jour)",
+          "Caféine (test de sensibilité si non habitué)"
+        ]
+      },
+      "journalJ-2": {
+        "hydratation": "Commencer protocole d'hyperhydratation avec 3-4L d'eau enrichie en électrolytes",
+        "alimentation": "Repas fréquents et légers, riches en glucides",
+        "éviter": "Aliments riches en fibres, aliments gras, tout nouvel aliment",
+        "objectif": "Charger les réserves d'eau et d'électrolytes"
+      },
+      "journalJ-1": {
+        "hydratation": "Continuer l'hyperhydratation contrôlée",
+        "alimentation": "Repas très légers et digestibles, prédominance de glucides liquides ou semi-liquides",
+        "éviter": "Alcool, caféine excessive, aliments fermentescibles",
+        "objectif": "Repos digestif partiel tout en maintenant l'apport énergétique et l'hydratation",
+        "dernierRepas": "Dîner léger, tôt dans la soirée, à base de riz blanc, viande blanche et légumes très cuits. Éviter tout nouvel aliment."
+      },
+      "keyPoints": [
+        "Choisir des aliments \"sûrs\" et testés pendant l'entraînement",
+        "Éviter tout nouvel aliment, boisson ou supplément",
+        "Maintenir une hyperhydratation contrôlée",
+        "Réduire progressivement le volume alimentaire mais pas l'apport calorique",
+        "Organiser et préparer toute la nutrition pour le jour J",
+        "Se concentrer sur le sommeil et la récupération optimale"
+      ]
+    },
+    {
+      "id": "phase-4",
+      "name": "Jour de Compétition",
+      "duration": "1 jour (Jour J)",
+      "description": "Le jour de la compétition représente l'aboutissement de toute la préparation nutritionnelle. Chaque apport est stratégiquement planifié pour maximiser les performances sans risque de troubles digestifs.",
+      "timings": {
+        "reveil": {
+          "timing": "3-4h avant le départ",
+          "hydratation": "500ml d'eau avec électrolytes",
+          "alimentation": "Petit déjeuner riche en glucides, faible en fibres et en graisses"
+        },
+        "petitDejeuner": {
+          "timing": "2-3h avant le départ",
+          "composition": "1-2g de glucides/kg, 15-20g de protéines, très peu de lipides",
+          "exemples": [
+            "Porridge de riz blanc avec miel et banane écrasée",
+            "Pain blanc grillé avec confiture et un peu de beurre",
+            "Gaufre ou crêpe nature avec sirop d'érable",
+            "30g de protéine de whey dans une boisson"
+          ]
+        },
+        "preDepart": {
+          "timing": "30-60min avant le départ",
+          "composition": "30-40g de glucides rapidement assimilables",
+          "exemples": [
+            "Gel énergétique + eau",
+            "Boisson énergétique isotonique (500ml)",
+            "Banane très mûre + petit cube de pâte de fruit"
+          ],
+          "caféine": "3-6mg/kg selon tolérance et habitude, 45-60min avant le départ"
+        }
+      },
+      "pendantEffort": {
+        "courteDistance": {
+          "durée": "<2h",
+          "glucides": "30-60g/heure",
+          "hydratation": "500-750ml/heure selon conditions",
+          "sources": "Principalement boissons énergétiques, éventuellement gel toutes les 45min"
+        },
+        "moyenneDistance": {
+          "durée": "2-4h",
+          "glucides": "60-90g/heure",
+          "hydratation": "500-800ml/heure selon conditions",
+          "sources": "Alternance boissons énergétiques, gels, barres facilement digestibles"
+        },
+        "longueDistance": {
+          "durée": ">4h",
+          "glucides": "90-120g/heure (avec entraînement préalable du système digestif)",
+          "hydratation": "800-1000ml/heure selon conditions",
+          "sources": "Stratégie de rotation entre multiples types: liquides, gels, solides faciles",
+          "électrolytes": "600-800mg sodium/heure en conditions chaudes",
+          "caféine": "Considérer dose supplémentaire aux 2/3 de l'épreuve"
+        }
+      },
+      "strategies": {
+        "chaleur": {
+          "hydratation": "Augmenter de 20-30%, privilégier boissons avec électrolytes",
+          "sodium": "800-1000mg/L de boisson",
+          "glucides": "Maintenir l'apport mais augmenter la proportion de liquides",
+          "refroidissement": "Stratégies externes (eau sur tête, nuque, avant-bras)"
+        },
+        "froid": {
+          "hydratation": "Ne pas négliger, même si sensation de soif réduite",
+          "glucides": "Formes liquides tièdes, éviter les gels (risque de cristallisation)",
+          "sources": "Privilégier barres moelleuses et boissons tièdes en thermos"
+        },
+        "altitude": {
+          "hydratation": "Augmenter de 15-20% pour compenser la déshydratation accrue",
+          "glucides": "Légère augmentation (+10g/h) pour compenser la demande énergétique accrue",
+          "sodium": "600-800mg/L de boisson",
+          "éviter": "Caféine en très haute altitude (>2500m)"
+        }
+      },
+      "recuperationImmediate": {
+        "timing": "30min après l'arrivée",
+        "glucides": "1-1.2g/kg dans les 30 premières minutes",
+        "protéines": "0.3-0.4g/kg (soit 20-30g)",
+        "hydratation": "150% du poids perdu, avec électrolytes",
+        "exemples": [
+          "Boisson de récupération commerciale + banane",
+          "Yaourt à boire + barre énergétique + eau avec électrolytes",
+          "Sandwich jambon fromage + boisson isotonique"
+        ]
+      },
+      "keyPoints": [
+        "Suivre un protocole strictement chronométré et testé à l'entraînement",
+        "S'adapter aux conditions mais maintenir l'apport glucidique minimal",
+        "Favoriser l'alternance des sources et des saveurs sur longue distance",
+        "Prévoir des solutions de secours en cas d'intolérance ou de refus",
+        "Placer stratégiquement la caféine selon le profil de l'épreuve",
+        "Anticiper les problèmes digestifs avec solutions adaptées (anti-nausées naturels)",
+        "Initier la récupération immédiatement après l'arrivée"
+      ]
+    }
+  ],
+  "equipementNutritionnel": {
+    "indispensable": [
+      "Bidons adaptés au vélo (2-3 selon la compétition)",
+      "Porte-gels fixé au cadre ou au guidon",
+      "Pochettes de stockage pour barres et aliments solides",
+      "Sacoche étanche pour protéger la nutrition en cas de pluie",
+      "Thermos pour boissons chaudes (épreuves par temps froid)",
+      "Mini shaker pour préparations d'urgence"
+    ],
+    "recommandé": [
+      "Bidon aérodynamique pour contre-la-montre",
+      "Système d'hydratation type CamelBak pour ultra-endurance",
+      "Marque-bidons pour distinguer eau pure et boisson énergétique",
+      "Support de smartphone étanche avec application de rappels nutritionnels"
+    ]
+  },
+  "complementsRecommandés": [
+    {
+      "nom": "Caféine",
+      "dosage": "3-6mg/kg de poids corporel",
+      "timing": "45-60min avant effort + éventuellement aux 2/3 de l'épreuve",
+      "bénéfices": "Amélioration de l'endurance, réduction de la perception de l'effort, augmentation de la vigilance",
+      "précautions": "Tester à l'entraînement, éviter chez les personnes sensibles ou en fin de journée"
+    },
+    {
+      "nom": "Créatine",
+      "protocole": "3g/jour pendant les deux semaines précédant l'événement",
+      "bénéfices": "Amélioration de la puissance, efficacité accrue sur les accélérations courtes",
+      "précautions": "Possibilité de légère prise de poids due à la rétention d'eau intramusculaire"
+    },
+    {
+      "nom": "Bêta-Alanine",
+      "protocole": "3-5g/jour pendant 4-6 semaines avant l'événement",
+      "bénéfices": "Amélioration de l'endurance à haute intensité, retardement de l'acidose musculaire",
+      "précautions": "Sensation de picotements possible, diviser les doses si nécessaire"
+    },
+    {
+      "nom": "Nitrates (jus de betterave)",
+      "protocole": "400-500mg de nitrates (environ 500ml de jus) 2-3h avant l'effort",
+      "bénéfices": "Amélioration de l'efficacité énergétique, potentiellement plus efficace à haute intensité ou en altitude",
+      "précautions": "Coloration urinaire possible, intolérance digestive chez certaines personnes"
+    },
+    {
+      "nom": "Bicarbonate de Sodium",
+      "protocole": "0.2-0.3g/kg dilué dans 500ml minimum, 1-2h avant l'effort",
+      "bénéfices": "Augmentation de la capacité tampon extracellulaire, retardement de l'acidose",
+      "précautions": "Risque élevé de troubles gastro-intestinaux, tester impérativement à l'entraînement"
+    }
+  ],
+  "troubleshootingStrategies": {
+    "problèmesDigestifs": {
+      "nausées": [
+        "Réduire la concentration des boissons énergétiques",
+        "Passer à des sources liquides uniquement",
+        "Utiliser du gingembre en gélule ou bonbon (250mg)",
+        "Alterner eau pure et petites quantités de nutrition"
+      ],
+      "douleurAbdominale": [
+        "Passer à des maltodextrines pures (moins osmotiques)",
+        "Réduire temporairement l'apport calorique",
+        "Adopter une respiration diaphragmatique rythmée"
+      ],
+      "diarrhée": [
+        "Éviter complètement le fructose et les polyols",
+        "Réduire la concentration des solutions",
+        "Utiliser de la poudre de guar ou psyllium en prévention (veille)"
+      ]
+    },
+    "crampes": [
+      "Augmenter immédiatement l'apport en sodium (comprimés d'électrolytes)",
+      "Consommer 250ml de boisson à haute teneur en électrolytes",
+      "Technique d'étirement spécifique en position optimal",
+      "Prévention: 500mg de magnésium citrate 1h avant départ"
+    ],
+    "hypoglycémie": [
+      "Gel d'urgence à glucose+fructose (30g) + eau",
+      "Ralentir temporairement l'intensité pendant 5-10min",
+      "Signe précurseur: surveiller la confusion mentale et la coordination"
+    ],
+    "déshydratation": {
+      "signes": ["Urine foncée", "Fatigue excessive", "Maux de tête", "Performance en baisse"],
+      "action": [
+        "Solution d'électrolytes concentrée (500ml)",
+        "Réduction temporaire de l'intensité",
+        "Refroidissement externe si possible",
+        "Alimentation plus liquide temporairement"
+      ]
+    },
+    "hyperhydratation": {
+      "signes": ["Ballonnements", "Nausées", "Maux de tête", "Urine très claire constamment"],
+      "action": [
+        "Réduire temporairement l'apport hydrique",
+        "Augmenter l'apport en sodium",
+        "Consommer des aliments solides si possible"
+      ]
+    }
+  },
+  "personnalisation": {
+    "instructions": "Ce plan est conçu comme un cadre de référence scientifique. Pour une efficacité maximale, il doit être personnalisé selon:",
+    "facteurs": [
+      "Votre tolérance digestive individuelle (testée à l'entraînement)",
+      "Vos préférences gustatives qui influencent l'adhérence au plan",
+      "Le profil spécifique de votre événement",
+      "Les conditions météorologiques anticipées",
+      "Votre expérience préalable en compétition"
+    ],
+    "testStrategy": "Utilisez vos séances d'entraînement longues ou intensives pour tester tous les éléments de ce protocole en situation réelle avant la compétition."
+  },
+  "conclusion": "L'alimentation optimale de compétition est le résultat d'une préparation méticuleuse et d'une exécution précise. Ce plan représente une approche scientifique complète pour maximiser vos performances et minimiser les risques de problèmes nutritionnels ou digestifs le jour J. En suivant cette méthodologie et en l'adaptant à vos besoins spécifiques, vous disposerez d'un avantage concurrentiel significatif qui complétera parfaitement votre préparation physique et mentale."
+}

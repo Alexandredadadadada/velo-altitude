@@ -1,0 +1,69 @@
+{
+  "id": "col-dizoard",
+  "name": "Col d'Izoard",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 2360,
+  "length": 14.1,
+  "avgGradient": 7.3,
+  "maxGradient": 10,
+  "difficulty": "hard",
+  "elevationGain": 1030,
+  "startLocation": "Briançon",
+  "endLocation": "Col d'Izoard",
+  "description": "Célèbre pour sa \"Casse Déserte\", un paysage lunaire unique, le Col d'Izoard est l'un des cols les plus esthétiques des Alpes. Il a été le théâtre de nombreux exploits dans le Tour de France.",
+  "history": "Lieu d'exploits de Fausto Coppi et Louison Bobet, dont un monument honore la mémoire près du sommet. La première apparition dans le Tour date de 1922.",
+  "imageUrl": "/images/cols/izoard/main.jpg",
+  "profileUrl": "/images/cols/izoard/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Briançon)",
+      "startLocation": "Briançon",
+      "length": 19.2,
+      "elevationGain": 1030,
+      "avgGradient": 5.4,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Montée plus régulière et moins spectaculaire"
+    },
+    {
+      "name": "Versant Sud (Guillestre)",
+      "startLocation": "Guillestre",
+      "length": 31.5,
+      "elevationGain": 1515,
+      "avgGradient": 4.8,
+      "maxGradient": 10,
+      "difficulty": "hard",
+      "description": "Long itinéraire traversant la spectaculaire Casse Déserte"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Casse Déserte",
+      "length": 3.2,
+      "gradient": 8.2,
+      "description": "Section emblématique avec paysages lunaires"
+    }
+  ],
+  "touristicInfo": "Visitez le monument Coppi-Bobet et admirez la Casse Déserte, paysage unique fait de roches calcaires érodées.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Refuge Napoléon (sommet)",
+      "description": "Fontaine et restaurant"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Refuge Napoléon, ouvert en saison"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col exposé aux vents et aux orages d'été. Amplitude thermique importante.",
+  "strava": {
+    "segmentId": "776169",
+    "komTime": "43:45",
+    "komName": "Warren Barguil"
+  },
+  "slug": "col-dizoard"
+}

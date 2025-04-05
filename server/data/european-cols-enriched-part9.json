@@ -8,7 +8,10 @@
       "longitude": 10.4926,
       "region": "Alpes lombardes",
       "country": "Italie",
-      "nearbyTowns": ["Bormio", "Ponte di Legno"]
+      "nearbyTowns": [
+        "Bormio",
+        "Ponte di Legno"
+      ]
     },
     "climbData": {
       "bormioSide": {
@@ -16,7 +19,7 @@
         "length": 25.6,
         "elevation": 1404,
         "averageGradient": 5.5,
-        "maxGradient": 16.0,
+        "maxGradient": 16,
         "difficulty": 9
       },
       "ponteSide": {
@@ -24,7 +27,7 @@
         "length": 17.3,
         "elevation": 1363,
         "averageGradient": 7.9,
-        "maxGradient": 16.0,
+        "maxGradient": 16,
         "difficulty": 10
       }
     },
@@ -55,25 +58,37 @@
       {
         "name": "Rifugio Bonetta",
         "description": "Refuge historique situé au sommet, lieu de halte traditionnel pour les cyclistes.",
-        "coordinates": [46.3448, 10.4926],
+        "coordinates": [
+          46.3448,
+          10.4926
+        ],
         "type": "accommodation"
       },
       {
         "name": "Lac de Gavia",
         "description": "Petit lac alpin situé juste en dessous du col.",
-        "coordinates": [46.3410, 10.4930],
+        "coordinates": [
+          46.341,
+          10.493
+        ],
         "type": "natural"
       },
       {
         "name": "Monument Andy Hampsten",
         "description": "Petite plaque commémorant l'exploit d'Andy Hampsten lors du Giro 1988.",
-        "coordinates": [46.3448, 10.4926],
+        "coordinates": [
+          46.3448,
+          10.4926
+        ],
         "type": "monument"
       },
       {
         "name": "Virage de la Santa",
         "description": "Virage sévère sur le versant de Ponte di Legno avec une petite chapelle, souvent photographié.",
-        "coordinates": [46.3260, 10.5020],
+        "coordinates": [
+          46.326,
+          10.502
+        ],
         "type": "landmark"
       }
     ],
@@ -82,9 +97,14 @@
       "roadCondition": "Moyenne, route étroite et rugueuse par endroits",
       "trafficLevel": "Faible",
       "winterClosure": "Fermé d'octobre à juin",
-      "facilities": ["Rifugio Bonetta (restaurant-refuge au sommet)"],
+      "facilities": [
+        "Rifugio Bonetta (restaurant-refuge au sommet)"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Rifugio Bonetta", "Sources naturelles le long du parcours"]
+      "waterPoints": [
+        "Rifugio Bonetta",
+        "Sources naturelles le long du parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/gavia/main.jpg",
@@ -102,7 +122,9 @@
       "La route est étroite et sans barrière à de nombreux endroits, restez vigilant.",
       "Même en été, les conditions météo peuvent changer brusquement, emportez toujours un coupe-vent."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "col-du-grand-colombier",
@@ -113,7 +135,11 @@
       "longitude": 5.6145,
       "region": "Ain",
       "country": "France",
-      "nearbyTowns": ["Culoz", "Artemare", "Virieu-le-Petit"]
+      "nearbyTowns": [
+        "Culoz",
+        "Artemare",
+        "Virieu-le-Petit"
+      ]
     },
     "climbData": {
       "culozSide": {
@@ -121,7 +147,7 @@
         "length": 18.3,
         "elevation": 1250,
         "averageGradient": 6.8,
-        "maxGradient": 14.0,
+        "maxGradient": 14,
         "difficulty": 8
       },
       "artemareSide": {
@@ -129,7 +155,7 @@
         "length": 15.9,
         "elevation": 1255,
         "averageGradient": 7.9,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       },
       "vireuSide": {
@@ -137,7 +163,7 @@
         "length": 11.9,
         "elevation": 920,
         "averageGradient": 7.7,
-        "maxGradient": 14.0,
+        "maxGradient": 14,
         "difficulty": 9
       }
     },
@@ -162,19 +188,28 @@
       {
         "name": "Panorama sur le lac du Bourget",
         "description": "Vue exceptionnelle sur le plus grand lac naturel de France depuis le sommet.",
-        "coordinates": [45.8967, 5.6145],
+        "coordinates": [
+          45.8967,
+          5.6145
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Table d'orientation",
         "description": "Table panoramique indiquant les sommets visibles, notamment le Mont Blanc par temps clair.",
-        "coordinates": [45.8967, 5.6145],
+        "coordinates": [
+          45.8967,
+          5.6145
+        ],
         "type": "landmark"
       },
       {
         "name": "Réserve naturelle du Grand Colombier",
         "description": "Espace protégé abritant une flore et une faune rare, dont des rapaces et des chamois.",
-        "coordinates": [45.8900, 5.6100],
+        "coordinates": [
+          45.89,
+          5.61
+        ],
         "type": "natural"
       }
     ],
@@ -183,9 +218,14 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré",
       "winterClosure": "Parfois fermé en hiver en fonction des chutes de neige",
-      "facilities": ["Table de pique-nique", "Abri sommaire au sommet"],
+      "facilities": [
+        "Table de pique-nique",
+        "Abri sommaire au sommet"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Aucun au sommet, derniers points d'eau dans les villages traversés"]
+      "waterPoints": [
+        "Aucun au sommet, derniers points d'eau dans les villages traversés"
+      ]
     },
     "images": {
       "main": "/images/cols/grand-colombier/main.jpg",
@@ -203,7 +243,9 @@
       "Le versant d'Artemare est le plus régulier des trois.",
       "Le col est souvent exposé au soleil, pensez à bien vous hydrater et à vous protéger."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "passo-fedaia",
@@ -211,18 +253,21 @@
     "altitude": 2057,
     "location": {
       "latitude": 46.4594,
-      "longitude": 11.8700,
+      "longitude": 11.87,
       "region": "Dolomites",
       "country": "Italie",
-      "nearbyTowns": ["Canazei", "Caprile"]
+      "nearbyTowns": [
+        "Canazei",
+        "Caprile"
+      ]
     },
     "climbData": {
       "canazeiSide": {
         "startLocation": "Canazei",
-        "length": 14.0,
+        "length": 14,
         "elevation": 640,
         "averageGradient": 4.6,
-        "maxGradient": 18.0,
+        "maxGradient": 18,
         "difficulty": 7,
         "note": "Début facile, fin extrêmement difficile"
       },
@@ -231,7 +276,7 @@
         "length": 13.3,
         "elevation": 645,
         "averageGradient": 4.8,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 7,
         "note": "Plus régulier mais quelques passages raides"
       }
@@ -264,25 +309,37 @@
       {
         "name": "Glacier de la Marmolada",
         "description": "Vue imprenable sur le glacier de la Marmolada, le plus grand des Dolomites.",
-        "coordinates": [46.4333, 11.8616],
+        "coordinates": [
+          46.4333,
+          11.8616
+        ],
         "type": "natural"
       },
       {
         "name": "Lac de Fedaia",
         "description": "Lac artificiel aux eaux turquoise situé au sommet du col.",
-        "coordinates": [46.4594, 11.8700],
+        "coordinates": [
+          46.4594,
+          11.87
+        ],
         "type": "natural"
       },
       {
         "name": "Téléphérique de la Marmolada",
         "description": "Station de téléphérique permettant d'accéder au sommet de la Marmolada (3343m).",
-        "coordinates": [46.4594, 11.8700],
+        "coordinates": [
+          46.4594,
+          11.87
+        ],
         "type": "tourism"
       },
       {
         "name": "Mur de Malga Ciapela",
         "description": "Section finale redoutable depuis Malga Ciapela, avec 2,5 km à 12% de moyenne et des passages à 18%.",
-        "coordinates": [46.4512, 11.8880],
+        "coordinates": [
+          46.4512,
+          11.888
+        ],
         "type": "landmark"
       }
     ],
@@ -291,9 +348,16 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré à élevé en saison touristique",
       "winterClosure": "Généralement ouvert toute l'année (accès aux stations de ski)",
-      "facilities": ["Restaurants", "Hôtels", "Boutiques", "Station service"],
+      "facilities": [
+        "Restaurants",
+        "Hôtels",
+        "Boutiques",
+        "Station service"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Restaurants et commerces au sommet"]
+      "waterPoints": [
+        "Restaurants et commerces au sommet"
+      ]
     },
     "images": {
       "main": "/images/cols/fedaia/main.jpg",
@@ -311,7 +375,9 @@
       "Le versant de Caprile est plus régulier et peut être préférable pour une première expérience.",
       "En plein été, partez tôt pour éviter la chaleur et le trafic touristique."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "col-d-eze",
@@ -319,10 +385,14 @@
     "altitude": 507,
     "location": {
       "latitude": 43.7268,
-      "longitude": 7.3650,
+      "longitude": 7.365,
       "region": "Alpes-Maritimes",
       "country": "France",
-      "nearbyTowns": ["Nice", "Èze", "La Turbie"]
+      "nearbyTowns": [
+        "Nice",
+        "Èze",
+        "La Turbie"
+      ]
     },
     "climbData": {
       "niceSide": {
@@ -330,7 +400,7 @@
         "length": 9.4,
         "elevation": 480,
         "averageGradient": 5.1,
-        "maxGradient": 9.0,
+        "maxGradient": 9,
         "difficulty": 6
       },
       "turbieSide": {
@@ -338,7 +408,7 @@
         "length": 5.8,
         "elevation": 120,
         "averageGradient": 2.1,
-        "maxGradient": 5.0,
+        "maxGradient": 5,
         "difficulty": 2
       }
     },
@@ -365,19 +435,28 @@
       {
         "name": "Vue panoramique sur la Méditerranée",
         "description": "Perspective exceptionnelle sur la baie de Nice et la Côte d'Azur.",
-        "coordinates": [43.7268, 7.3650],
+        "coordinates": [
+          43.7268,
+          7.365
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Village médiéval d'Èze",
         "description": "Village perché pittoresque à proximité du col, avec ruelles étroites et jardin exotique.",
-        "coordinates": [43.7300, 7.3616],
+        "coordinates": [
+          43.73,
+          7.3616
+        ],
         "type": "cultural"
       },
       {
         "name": "Observatoire de Nice",
         "description": "Institution astronomique historique située sur la route du col.",
-        "coordinates": [43.7250, 7.3000],
+        "coordinates": [
+          43.725,
+          7.3
+        ],
         "type": "cultural"
       }
     ],
@@ -386,9 +465,14 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré à élevé",
       "winterClosure": "Ouvert toute l'année",
-      "facilities": ["Restaurants à proximité", "Points d'eau"],
+      "facilities": [
+        "Restaurants à proximité",
+        "Points d'eau"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Fontaines publiques dans le village d'Èze"]
+      "waterPoints": [
+        "Fontaines publiques dans le village d'Èze"
+      ]
     },
     "images": {
       "main": "/images/cols/eze/main.jpg",
@@ -406,7 +490,10 @@
       "Souvent inclus dans des boucles autour de Nice combinant plusieurs cols comme la Madone, Turini ou Braus.",
       "Attention à la circulation, particulièrement dense en saison touristique."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "col-deze"
   },
   {
     "id": "grosse-scheidegg",
@@ -417,7 +504,10 @@
       "longitude": 8.0992,
       "region": "Oberland bernois",
       "country": "Suisse",
-      "nearbyTowns": ["Grindelwald", "Meiringen"]
+      "nearbyTowns": [
+        "Grindelwald",
+        "Meiringen"
+      ]
     },
     "climbData": {
       "grindelwaldSide": {
@@ -425,15 +515,15 @@
         "length": 8.7,
         "elevation": 885,
         "averageGradient": 10.2,
-        "maxGradient": 14.0,
+        "maxGradient": 14,
         "difficulty": 9
       },
       "meiringenSide": {
         "startLocation": "Meiringen",
-        "length": 20.0,
+        "length": 20,
         "elevation": 1340,
         "averageGradient": 6.7,
-        "maxGradient": 11.0,
+        "maxGradient": 11,
         "difficulty": 8
       }
     },
@@ -458,25 +548,37 @@
       {
         "name": "Vue sur l'Eiger",
         "description": "Panorama exceptionnel sur la face nord de l'Eiger, l'une des parois les plus célèbres des Alpes.",
-        "coordinates": [46.6428, 8.0992],
+        "coordinates": [
+          46.6428,
+          8.0992
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Berghotel Grosse Scheidegg",
         "description": "Hôtel de montagne historique situé au sommet du col.",
-        "coordinates": [46.6428, 8.0992],
+        "coordinates": [
+          46.6428,
+          8.0992
+        ],
         "type": "accommodation"
       },
       {
         "name": "Gorges de Rosenlaui",
         "description": "Impressionnantes gorges glaciaires sur le versant de Meiringen.",
-        "coordinates": [46.6560, 8.1720],
+        "coordinates": [
+          46.656,
+          8.172
+        ],
         "type": "natural"
       },
       {
         "name": "Glacier de Rosenlaui",
         "description": "Petit glacier visible depuis la route sur le versant de Meiringen.",
-        "coordinates": [46.6500, 8.1500],
+        "coordinates": [
+          46.65,
+          8.15
+        ],
         "type": "natural"
       }
     ],
@@ -485,9 +587,15 @@
       "roadCondition": "Bonne mais étroite",
       "trafficLevel": "Faible (fermé à la circulation automobile publique, uniquement bus postaux)",
       "winterClosure": "Fermé d'octobre à mai",
-      "facilities": ["Hôtel-restaurant au sommet", "Toilettes"],
+      "facilities": [
+        "Hôtel-restaurant au sommet",
+        "Toilettes"
+      ],
       "parkingAvailable": false,
-      "waterPoints": ["Hôtel au sommet", "Fontaines à Rosenlaui"]
+      "waterPoints": [
+        "Hôtel au sommet",
+        "Fontaines à Rosenlaui"
+      ]
     },
     "images": {
       "main": "/images/cols/grosse-scheidegg/main.jpg",
@@ -505,6 +613,9 @@
       "L'absence de circulation automobile rend l'ascension particulièrement agréable et sécuritaire.",
       "Attention aux bus postaux qui circulent à horaires réguliers sur la route étroite."
     ],
-    "recommendedBikeTypes": ["Vélo de route", "Gravel avec cassette adaptée"]
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel avec cassette adaptée"
+    ]
   }
 ]

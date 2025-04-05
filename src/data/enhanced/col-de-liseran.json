@@ -1,0 +1,69 @@
+{
+  "id": "col-de-liseran",
+  "name": "Col de l'Iseran",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 2770,
+  "length": 13.4,
+  "avgGradient": 7.3,
+  "maxGradient": 12,
+  "difficulty": "extreme",
+  "elevationGain": 977,
+  "startLocation": "Val d'Isère",
+  "endLocation": "Col de l'Iseran",
+  "description": "Le Col de l'Iseran est le plus haut col routier des Alpes françaises et le deuxième plus haut d'Europe. Situé dans le parc national de la Vanoise, il offre des paysages à couper le souffle et constitue un défi extrême pour les cyclistes en raison de son altitude élevée.",
+  "history": "Il a été utilisé pour la première fois dans le Tour de France en 1938. En 2019, une étape mémorable se terminant à Tignes a dû être neutralisée en raison d'une coulée de boue sur le col, alors qu'Egan Bernal était en tête et prenait virtuellement le maillot jaune.",
+  "imageUrl": "/images/cols/iseran/main.jpg",
+  "profileUrl": "/images/cols/iseran/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Val d'Isère)",
+      "startLocation": "Val d'Isère",
+      "length": 13.4,
+      "elevationGain": 977,
+      "avgGradient": 7.3,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "La montée classique, plus courte mais très exigeante en raison de l'altitude"
+    },
+    {
+      "name": "Versant Sud (Bonneval-sur-Arc)",
+      "startLocation": "Bonneval-sur-Arc",
+      "length": 31.7,
+      "elevationGain": 1955,
+      "avgGradient": 6.2,
+      "maxGradient": 12,
+      "difficulty": "extreme",
+      "description": "L'ascension intégrale, très longue et à haute altitude"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Pont Saint-Charles - Sommet",
+      "length": 7.3,
+      "gradient": 8.4,
+      "description": "Section finale au-dessus de 2400m d'altitude"
+    }
+  ],
+  "touristicInfo": "Le col marque la frontière entre la vallée de la Tarentaise et la vallée de la Maurienne. Il offre une vue exceptionnelle sur les glaciers environnants. Une chapelle et des bâtiments historiques se trouvent au sommet.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Refuge du Col de l'Iseran",
+      "description": "Point d'eau au sommet"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant et café au refuge (en saison estivale uniquement)"
+    }
+  ],
+  "bestTimeToVisit": "Mi-juillet à fin août",
+  "weatherInfo": "Col ouvert seulement l'été (généralement de mi-juin à mi-octobre). La neige est possible même en plein été et les températures au sommet sont souvent très fraîches.",
+  "strava": {
+    "segmentId": "1092347",
+    "komTime": "47:30",
+    "komName": "Egan Bernal"
+  },
+  "slug": "col-de-liseran"
+}

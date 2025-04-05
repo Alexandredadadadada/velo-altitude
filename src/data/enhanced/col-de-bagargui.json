@@ -1,0 +1,69 @@
+{
+  "id": "col-de-bagargui",
+  "name": "Col de Bagargui",
+  "region": "pyrenees",
+  "country": "France",
+  "altitude": 1327,
+  "length": 14.7,
+  "avgGradient": 7.3,
+  "maxGradient": 12,
+  "difficulty": "hard",
+  "elevationGain": 1050,
+  "startLocation": "Tardets-Sorholus",
+  "endLocation": "Col de Bagargui",
+  "description": "Situé dans le Pays Basque, le Col de Bagargui (Burdinkurutzeta en basque) est l'un des cols les plus difficiles des Pyrénées occidentales. Son ascension est caractérisée par des pentes irrégulières et quelques passages très raides, notamment dans sa partie finale.",
+  "history": "Ce col a été rendu célèbre par l'Étape du Tour qui l'a emprunté en 1996 et 2007. La particularité de ce col est qu'il se situe dans une région rarement visitée par les grandes courses cyclistes, ce qui en fait un joyau caché pour les amateurs de vélo.",
+  "imageUrl": "/images/cols/bagargui/main.jpg",
+  "profileUrl": "/images/cols/bagargui/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Virage de Bascacou - Sommet",
+      "length": 4.2,
+      "gradient": 9.5,
+      "description": "Dernier tronçon avec les pentes les plus sévères, culminant à 12%"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Nord (Tardets-Sorholus)",
+      "startLocation": "Tardets-Sorholus",
+      "length": 14.7,
+      "elevationGain": 1050,
+      "avgGradient": 7.3,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "Ascension principale avec des pentes constamment raides et quelques passages très difficiles"
+    },
+    {
+      "name": "Versant Sud (Larrau)",
+      "startLocation": "Larrau",
+      "length": 7.6,
+      "elevationGain": 488,
+      "avgGradient": 6.4,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Montée plus courte mais avec des passages également exigeants"
+    }
+  ],
+  "touristicInfo": "Le Col de Bagargui se situe au cœur de la forêt d'Iraty, la plus grande hêtraie d'Europe. La région est connue pour ses paysages spectaculaires, ses fromages de brebis et sa culture basque authentique.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Chalets d'Iraty",
+      "description": "Point d'eau et toilettes (à 5km du sommet)"
+    },
+    {
+      "type": "food",
+      "location": "Chalets d'Iraty",
+      "description": "Restaurant traditionnel basque (à 5km du sommet)"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Col souvent soumis aux influences atlantiques, avec possibilité de brouillard et de pluie même en été. Le vent peut être violent au sommet.",
+  "strava": {
+    "segmentId": "653147",
+    "komTime": "46:25",
+    "komName": "Romain Bardet"
+  },
+  "slug": "col-de-bagargui"
+}

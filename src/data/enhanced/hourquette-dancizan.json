@@ -1,0 +1,69 @@
+{
+  "id": "hourquette-dancizan",
+  "name": "Hourquette d'Ancizan",
+  "region": "pyrenees",
+  "country": "France",
+  "altitude": 1564,
+  "length": 8.2,
+  "avgGradient": 8.2,
+  "maxGradient": 9.5,
+  "difficulty": "hard",
+  "elevationGain": 673,
+  "startLocation": "Saint-Lary-Soulan",
+  "endLocation": "Hourquette d'Ancizan",
+  "description": "Moins connue que ses voisins comme le Tourmalet ou Aspin, la Hourquette d'Ancizan est une ascension difficile mais très appréciée des connaisseurs. Son parcours tortueux à travers les alpages offre des vues spectaculaires sur les sommets environnants.",
+  "history": "Apparue tardivement dans le Tour de France (2011), cette ascension est rapidement devenue un terrain de jeu apprécié des grimpeurs. En 2019, elle a été le théâtre d'une belle bataille lors de l'étape remportée par Simon Yates à Bagnères-de-Bigorre.",
+  "imageUrl": "/images/cols/hourquette-ancizan/main.jpg",
+  "profileUrl": "/images/cols/hourquette-ancizan/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Virage du Pla d'Artigou - Sommet",
+      "length": 3.1,
+      "gradient": 8.5,
+      "description": "Section finale avec vue panoramique sur la vallée d'Aure"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Est (Saint-Lary-Soulan)",
+      "startLocation": "Saint-Lary-Soulan",
+      "length": 8.2,
+      "elevationGain": 673,
+      "avgGradient": 8.2,
+      "maxGradient": 9.5,
+      "difficulty": "hard",
+      "description": "Ascension directe et régulière à travers la forêt puis les alpages"
+    },
+    {
+      "name": "Versant Ouest (Ancizan)",
+      "startLocation": "Ancizan",
+      "length": 10.5,
+      "elevationGain": 719,
+      "avgGradient": 6.9,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Montée plus irrégulière avec quelques replats offrant un peu de récupération"
+    }
+  ],
+  "touristicInfo": "La Hourquette d'Ancizan sert de liaison entre la vallée d'Aure et la vallée du Campan. Au sommet, vous pourrez admirer une vue imprenable sur le massif de l'Arbizon et le pic du Midi de Bigorre.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Auberge d'Espiadet (versant ouest)",
+      "description": "Point d'eau accessible aux cyclistes"
+    },
+    {
+      "type": "food",
+      "location": "Village d'Ancizan",
+      "description": "Quelques restaurants et épiceries"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col généralement ouvert de mai à octobre. Les conditions peuvent changer rapidement, prévoyez des vêtements adaptés même en été.",
+  "strava": {
+    "segmentId": "872649",
+    "komTime": "25:42",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "hourquette-dancizan"
+}

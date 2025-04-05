@@ -62,7 +62,8 @@ Velo-Altitude.com est conçu pour répondre aux besoins des cyclistes passionné
 ## Installation et développement
 
 ### Prérequis
-- Node.js (v14+)
+- Node.js (v18.17.0)
+- npm (v9.6.7)
 - MongoDB (v4.4+)
 - API keys pour : Mapbox, Strava, OpenWeatherMap
 

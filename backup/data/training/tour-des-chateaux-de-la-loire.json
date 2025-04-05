@@ -1,0 +1,20 @@
+{
+  "id": "route-003",
+  "name": "Tour des Châteaux de la Loire",
+  "slug": "tour-des-chateaux-de-la-loire",
+  "type": "",
+  "level": "",
+  "duration": 6,
+  "description": {
+    "fr": "",
+    "en": ""
+  },
+  "weeks": [],
+  "variations": [],
+  "target_cols": [],
+  "related_nutrition": [],
+  "videos": [],
+  "status": "active",
+  "completeness": 40,
+  "last_updated": "2025-04-05T19:23:36.321Z"
+}

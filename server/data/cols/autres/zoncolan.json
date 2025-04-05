@@ -1,0 +1,126 @@
+{
+  "id": "zoncolan",
+  "name": {
+    "fr": "Monte Zoncolan",
+    "en": "Monte Zoncolan",
+    "de": "Monte Zoncolan",
+    "it": "Monte Zoncolan",
+    "es": "Monte Zoncolan"
+  },
+  "slug": "zoncolan",
+  "country": "",
+  "region": "",
+  "altitude": 1735,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 5,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/zoncolan/main.jpg",
+    "gallery": [
+      "/images/cols/zoncolan/ovaro-side.jpg",
+      "/images/cols/zoncolan/sutrio-side.jpg",
+      "/images/cols/zoncolan/steep-gradient.jpg",
+      "/images/cols/zoncolan/summit-view.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      {
+        "km": 0,
+        "description": "Fontaines à Ovaro"
+      },
+      {
+        "km": 5,
+        "description": "Source à San Pietro"
+      },
+      {
+        "km": 10,
+        "description": "Rifugio Zoncolan au sommet"
+      }
+    ],
+    "food": [
+      {
+        "name": "Rifugio Zoncolan",
+        "km": 10,
+        "type": "refuge",
+        "openingHours": "9h-18h"
+      },
+      {
+        "name": "Bar Funivia",
+        "km": 10,
+        "type": "café",
+        "openingHours": "9h-17h"
+      }
+    ],
+    "shelter": [
+      {
+        "name": "Chapelle San Pietro",
+        "km": 5,
+        "type": "abri"
+      },
+      {
+        "name": "Rifugio Zoncolan",
+        "km": 10,
+        "type": "refuge"
+      }
+    ],
+    "mechanics": [
+      {
+        "name": "Bike Shop Tolmezzo",
+        "location": "Tolmezzo",
+        "distance": 15
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "author": "Marco Rossi",
+      "date": "2023-07-22",
+      "rating": 5,
+      "text": "Le Zoncolan depuis Ovaro est probablement la montée la plus difficile d'Europe. J'ai utilisé un 34x36 et j'ai dû m'arrêter deux fois dans la section à 20%. Une expérience incroyable mais épuisante!"
+    },
+    {
+      "author": "Emma Laurent",
+      "date": "2024-06-15",
+      "rating": 4.5,
+      "text": "J'ai grimpé par Sutrio, c'est plus long mais plus régulier et plus agréable. Les vues sont magnifiques sur les Alpes Carniques. Le rifugio au sommet propose d'excellentes pâtes pour récupérer."
+    },
+    {
+      "author": "Thomas Wagner",
+      "date": "2022-09-08",
+      "rating": 5,
+      "text": "Une ascension emblématique! Le côté Ovaro est brutal, avec des sections où l'on doit zigzaguer pour ne pas s'arrêter. Conseil: enlevez tout poids inutile du vélo et de vos poches avant de commencer."
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 59,
+  "last_updated": "2025-04-05T20:42:26.985Z"
+}

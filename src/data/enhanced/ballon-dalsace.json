@@ -1,0 +1,79 @@
+{
+  "id": "ballon-dalsace",
+  "name": "Ballon d'Alsace",
+  "region": "vosges",
+  "country": "France",
+  "altitude": 1178,
+  "length": 9.3,
+  "avgGradient": 6.8,
+  "maxGradient": 9,
+  "difficulty": "medium",
+  "elevationGain": 632,
+  "startLocation": "Saint-Maurice-sur-Moselle",
+  "endLocation": "Ballon d'Alsace",
+  "description": "Le Ballon d'Alsace est historiquement le premier col de montagne gravi par le Tour de France en 1905. Cette ascension offre une belle vue sur le massif vosgien et marque la frontière entre l'Alsace, la Lorraine et la Franche-Comté.",
+  "history": "En 1905, René Pottier fut le premier à franchir ce col lors du Tour de France. À l'époque, les routes n'étaient pas goudronnées et les vélos n'avaient pas de dérailleur, ce qui rendait l'ascension particulièrement difficile.",
+  "imageUrl": "/images/cols/ballon-alsace/main.jpg",
+  "profileUrl": "/images/cols/ballon-alsace/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Sud (Saint-Maurice-sur-Moselle)",
+      "startLocation": "Saint-Maurice-sur-Moselle",
+      "length": 9.3,
+      "elevationGain": 632,
+      "avgGradient": 6.8,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "L'ascension historique du Tour de France, relativement régulière"
+    },
+    {
+      "name": "Versant Est (Sewen)",
+      "startLocation": "Sewen",
+      "length": 9.7,
+      "elevationGain": 581,
+      "avgGradient": 6,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Version un peu moins pentue depuis l'Alsace"
+    },
+    {
+      "name": "Versant Nord (Giromagny)",
+      "startLocation": "Giromagny",
+      "length": 10.9,
+      "elevationGain": 635,
+      "avgGradient": 5.8,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Approche depuis le Territoire de Belfort"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Forêt du Ballon",
+      "length": 5.6,
+      "gradient": 7.5,
+      "description": "Section boisée dans la partie médiane de l'ascension"
+    }
+  ],
+  "touristicInfo": "La statue de la Vierge au sommet et une table d'orientation offrent un panorama sur les Vosges, le Jura et parfois les Alpes. En hiver, c'est une petite station de ski.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Sommet",
+      "description": "Point d'eau près du monument commémoratif"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Auberge du Ballon d'Alsace"
+    }
+  ],
+  "bestTimeToVisit": "Avril à octobre",
+  "weatherInfo": "Col généralement accessible toute l'année, mais attention au risque de verglas en hiver.",
+  "strava": {
+    "segmentId": "636284",
+    "komTime": "25:10",
+    "komName": "Julian Alaphilippe"
+  },
+  "slug": "ballon-dalsace"
+}

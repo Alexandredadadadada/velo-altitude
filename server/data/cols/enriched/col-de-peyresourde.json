@@ -1,0 +1,53 @@
+{
+  "id": "col-de-peyresourde",
+  "name": "Col de Peyresourde",
+  "slug": "col-de-peyresourde",
+  "country": "",
+  "region": "",
+  "altitude": 1569,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 3,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/peyresourde/main.jpg",
+    "gallery": [
+      "/images/cols/peyresourde/luchon-side.jpg",
+      "/images/cols/peyresourde/arreau-side.jpg",
+      "/images/cols/peyresourde/crepes.jpg",
+      "/images/cols/peyresourde/valley-view.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.856Z"
+}

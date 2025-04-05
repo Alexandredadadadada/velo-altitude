@@ -1,0 +1,95 @@
+{
+  "id": "passo-del-mortirolo",
+  "name": "Passo del Mortirolo",
+  "region": "dolomites",
+  "country": "Italie",
+  "altitude": 1852,
+  "length": 12.4,
+  "avgGradient": 10.5,
+  "maxGradient": 18,
+  "difficulty": "extreme",
+  "elevationGain": 1300,
+  "startLocation": "Mazzo di Valtellina",
+  "endLocation": "Passo del Mortirolo",
+  "description": "Le Passo del Mortirolo est considéré comme l'une des ascensions les plus difficiles d'Europe et redouté par les professionnels pour sa pente impitoyable. Ce col n'est pas particulièrement élevé mais sa difficulté réside dans ses pourcentages extrêmes, avec une moyenne de plus de 10% sur 12km et plusieurs passages à 18%. La route étroite serpente à travers les forêts denses, offrant peu de répit aux cyclistes. Marco Pantani y a forgé sa légende et une stèle commémorative lui est dédiée sur le parcours.",
+  "history": "Le Mortirolo est devenu célèbre après son introduction au Giro d'Italia en 1990. En 1994, Marco Pantani a réalisé une ascension mythique, distançant tous ses rivaux et entrant définitivement dans la légende. En 2006, Ivan Basso y a construit sa victoire au Giro. En 2015, une stèle à la mémoire de Pantani a été inaugurée au virage 11. Lance Armstrong a qualifié cette montée comme \"la plus dure que j'ai jamais grimpée\".",
+  "imageUrl": "/images/cols/mortirolo/main.jpg",
+  "profileUrl": "/images/cols/mortirolo/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Les 5 premiers kilomètres",
+      "length": 5,
+      "gradient": 11.4,
+      "description": "La partie initiale est immédiatement brutale, avec des pentes constamment supérieures à 10% et plusieurs passages à 18%."
+    },
+    {
+      "name": "Section Pantani (virages 11-15)",
+      "length": 3.2,
+      "gradient": 12.1,
+      "description": "La section où se trouve le monument dédié à Marco Pantani, comprenant les passages les plus difficiles de l'ascension."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Ouest (Mazzo di Valtellina)",
+      "startLocation": "Mazzo di Valtellina",
+      "length": 12.4,
+      "elevationGain": 1300,
+      "avgGradient": 10.5,
+      "maxGradient": 18,
+      "difficulty": "extreme",
+      "description": "L'ascension classique et la plus difficile, empruntée par le Giro d'Italia. Une montée brutale sans répit avec de nombreux virages en épingle."
+    },
+    {
+      "name": "Versant Est (Monno)",
+      "startLocation": "Monno",
+      "length": 8.9,
+      "elevationGain": 450,
+      "avgGradient": 5.1,
+      "maxGradient": 10,
+      "difficulty": "medium",
+      "description": "Le versant le plus facile, mais toujours exigeant avec plusieurs passages à 9-10%."
+    },
+    {
+      "name": "Versant Sud (Edolo via Trivigno)",
+      "startLocation": "Edolo",
+      "length": 14.4,
+      "elevationGain": 940,
+      "avgGradient": 6.5,
+      "maxGradient": 14,
+      "difficulty": "hard",
+      "description": "Un itinéraire alternatif moins connu mais offrant des vues magnifiques sur la vallée de Camonica."
+    }
+  ],
+  "touristicInfo": "Le Passo del Mortirolo est situé dans les Alpes lombardes, entre les provinces de Sondrio et Brescia. Ce col relativement isolé est surtout fréquenté par les cyclistes ambitieux venus se mesurer à sa réputation. Au sommet, se trouve une petite chapelle et un panorama sur les Alpes environnantes. La région environnante est connue pour sa nature préservée, ses vallées pittoresques et sa gastronomie alpine.",
+  "facilities": [
+    {
+      "type": "food",
+      "location": "Tovo di Sant'Agata",
+      "description": "Derniers restaurants avant l'ascension, à environ 3 km du départ à Mazzo."
+    },
+    {
+      "type": "water",
+      "location": "Mazzo di Valtellina",
+      "description": "Fontaines dans le village avant de commencer l'ascension. Peu de points d'eau sur la montée."
+    },
+    {
+      "type": "bike-shop",
+      "location": "Tirano",
+      "description": "Plusieurs magasins de vélo avec service de réparation dans la vallée à environ 15 km."
+    },
+    {
+      "type": "shelter",
+      "location": "Sommet",
+      "description": "Abri basique au col en cas de mauvais temps, mais pas de services permanents."
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre, avec juin à septembre comme période optimale. Le col peut être fermé en hiver en raison de la neige.",
+  "weatherInfo": "Les conditions météorologiques peuvent changer rapidement. Les orages sont fréquents en été, particulièrement en après-midi. Le col étant boisé, il offre de l'ombre durant la majeure partie de l'ascension, ce qui peut être appréciable par temps chaud.",
+  "strava": {
+    "segmentId": "697412",
+    "komTime": "39:30",
+    "komName": "Ivan Basso"
+  },
+  "slug": "passo-del-mortirolo"
+}

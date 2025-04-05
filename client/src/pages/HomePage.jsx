@@ -24,7 +24,7 @@ import { motion } from 'framer-motion';
 
 import MainLayout from '../layouts/MainLayout';
 import RouteRecommendations from '../components/recommendations/RouteRecommendations';
-import HeroCarousel from '../components/common/HeroCarousel';
+import AnimatedHeroSection from '../components/home/AnimatedHeroSection';
 import { useAuth } from '../hooks/useAuth';
 
 const MotionBox = motion(Box);
@@ -35,25 +35,6 @@ const HomePage = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
   const { user } = useAuth();
-  
-  // Images pour le carousel
-  const heroImages = [
-    {
-      url: '/images/hero/hero1.jpg',
-      title: 'Découvrez les plus beaux itinéraires cyclistes du Grand Est',
-      subtitle: 'Des parcours adaptés à tous les niveaux'
-    },
-    {
-      url: '/images/hero/hero2.jpg',
-      title: 'Explorez les cols mythiques de la région',
-      subtitle: 'Relevez le défi des montées les plus exigeantes'
-    },
-    {
-      url: '/images/hero/hero3.jpg',
-      title: 'Partagez vos expériences avec la communauté',
-      subtitle: 'Évaluez et commentez les itinéraires que vous avez parcourus'
-    }
-  ];
   
   // Fonctionnalités mises en avant
   const features = [
@@ -100,19 +81,16 @@ const HomePage = () => {
   
   return (
     <MainLayout>
-      {/* Hero section avec carousel */}
-      <Box sx={{ position: 'relative', mb: 6 }}>
-        <HeroCarousel images={heroImages} />
-        
+      {/* Animated Hero Section */}
+      <AnimatedHeroSection />
+      
+      {/* Features section */}
+      <Container maxWidth="lg" sx={{ mt: { xs: 8, md: 12 }, mb: 6 }}>
         <Box
           sx={{
-            position: 'absolute',
-            bottom: isMobile ? -40 : -30,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: isMobile ? '90%' : '80%',
+            width: '100%',
             maxWidth: 1200,
-            zIndex: 2
+            mx: 'auto'
           }}
         >
           <MotionPaper
@@ -146,9 +124,7 @@ const HomePage = () => {
             </Grid>
           </MotionPaper>
         </Box>
-      </Box>
-      
-      <Container maxWidth="lg" sx={{ mt: isMobile ? 8 : 6, mb: 6 }}>
+        
         {/* Section de recommandations */}
         <Box sx={{ mb: 6 }}>
           <Box sx={{ 

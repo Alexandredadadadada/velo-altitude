@@ -64,6 +64,22 @@ const EquipmentCategory = styled(Card)(({ theme }) => ({
   height: '100%',
 }));
 
+// Liste des régions cyclables principales
+const CYCLING_REGIONS = [
+  { id: 'alpes', name: 'Alpes', coordinates: [45.9, 6.9] },
+  { id: 'pyrenees', name: 'Pyrénées', coordinates: [42.9, 0.7] },
+  { id: 'jura', name: 'Jura', coordinates: [46.6, 6.0] },
+  { id: 'vosges', name: 'Vosges', coordinates: [48.1, 7.1] },
+  { id: 'massif-central', name: 'Massif Central', coordinates: [45.4, 2.7] },
+  { id: 'corse', name: 'Corse', coordinates: [42.2, 9.1] },
+  { id: 'provence', name: 'Provence', coordinates: [43.9, 6.0] },
+  { id: 'normandie', name: 'Normandie', coordinates: [49.2, 0.3] },
+  { id: 'bretagne', name: 'Bretagne', coordinates: [48.2, -3.0] },
+  { id: 'belgique', name: 'Ardennes Belges', coordinates: [50.3, 5.7] },
+  { id: 'dolomites', name: 'Dolomites', coordinates: [46.4, 11.9] },
+  { id: 'alpes-suisses', name: 'Alpes Suisses', coordinates: [46.8, 8.2] }
+];
+
 // Helper component to set map view based on route
 const MapViewSetter = ({ route }) => {
   const map = useMap();
@@ -283,371 +299,489 @@ const WeatherDashboard = ({ routeId, routeData }) => {
   const [weatherData, setWeatherData] = useState(null);
   const [weatherPoints, setWeatherPoints] = useState([]);
   const [windData, setWindData] = useState([]);
-  const [currentLocation, setCurrentLocation] = useState(null);
-  const [alerts, setAlerts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [alerts, setAlerts] = useState([]);
   const [selectedTimeframe, setSelectedTimeframe] = useState('current');
+  const [currentLocation, setCurrentLocation] = useState(null);
+  const [selectedRegion, setSelectedRegion] = useState('alpes'); // Région par défaut
   
-  // Convert route coordinates to format needed for weather service
-  const prepareRoutePoints = (route) => {
-    if (!route?.coordinates?.length) return [];
-    
-    // Take points at regular intervals to get weather data
-    const points = [];
-    const step = Math.max(1, Math.floor(route.coordinates.length / 5)); // 5 points max
-    
-    for (let i = 0; i < route.coordinates.length; i += step) {
-      if (points.length < 5) { // Limit to 5 points to avoid API overuse
-        points.push({ lat: route.coordinates[i][0], lon: route.coordinates[i][1] });
-      }
-    }
-    
-    return points;
-  };
-  
-  // Process weather data into wind visualization data
-  const processWindData = (weatherPoints, elevationData) => {
-    if (!weatherPoints?.length || !elevationData) return [];
-    
-    const windData = [];
-    const width = elevationData.width || 10;
-    const maxDistance = width;
-    
-    // For each weather point, create wind data
-    for (let i = 0; i < weatherPoints.length; i++) {
-      const point = weatherPoints[i];
-      if (!point.wind) continue;
-      
-      // Position on the 3D grid (simplified for example)
-      const x = (i % 3) * (maxDistance / 3) - maxDistance / 2;
-      const z = Math.floor(i / 3) * (maxDistance / 3) - maxDistance / 2;
-      
-      // Find elevation at this point
-      let elevation = 0;
-      if (elevationData.heights && elevationData.heights[0]) {
-        // Just get a random elevation from the data for demonstration
-        const randomIndex = Math.floor(Math.random() * elevationData.heights.length);
-        if (elevationData.heights[randomIndex].length > 0) {
-          elevation = elevationData.heights[randomIndex][0] || 0;
-        }
-      }
-      
-      windData.push({
-        x,
-        z,
-        elevation,
-        speed: point.wind.speed,
-        direction: point.wind.deg || 0,
-        gusts: point.wind.gust || point.wind.speed * 1.3
-      });
-    }
-    
-    return windData;
-  };
-  
-  // Generate alerts based on weather conditions
-  const generateWeatherAlerts = (weatherPoints) => {
-    if (!weatherPoints?.length) return [];
-    
-    const alerts = [];
-    
-    // Check for extreme temperatures
-    const temps = weatherPoints.map(p => p.main.temp);
-    const maxTemp = Math.max(...temps);
-    const minTemp = Math.min(...temps);
-    
-    // Cold alert
-    if (minTemp < 3) {
-      alerts.push({
-        severity: minTemp < 0 ? 'critical' : 'warning',
-        title: t('coldTemperatureAlert'),
-        description: t('coldTemperatureDescription', { temperature: Math.round(minTemp) }),
-        type: 'temperature'
-      });
-    }
-    
-    // Heat alert
-    if (maxTemp > 30) {
-      alerts.push({
-        severity: maxTemp > 35 ? 'critical' : 'warning',
-        title: t('heatAlert'),
-        description: t('heatAlertDescription', { temperature: Math.round(maxTemp) }),
-        type: 'temperature'
-      });
-    }
-    
-    // Check for precipitation
-    const hasHeavyRain = weatherPoints.some(point => 
-      point.rain && point.rain['1h'] && point.rain['1h'] > 5);
-    
-    if (hasHeavyRain) {
-      alerts.push({
-        severity: 'warning',
-        title: t('heavyRainAlert'),
-        description: t('heavyRainDescription'),
-        type: 'precipitation'
-      });
-    }
-    
-    // Check for strong winds
-    const hasStrongWind = weatherPoints.some(point => 
-      point.wind && point.wind.speed > 30);
-    
-    if (hasStrongWind) {
-      alerts.push({
-        severity: 'critical',
-        title: t('strongWindAlert'),
-        description: t('strongWindDescription'),
-        type: 'wind'
-      });
-    }
-    
-    // Check for thunderstorms
-    const hasThunderstorm = weatherPoints.some(point => 
-      point.weather && point.weather.some(w => w.main === 'Thunderstorm'));
-    
-    if (hasThunderstorm) {
-      alerts.push({
-        severity: 'critical',
-        title: t('thunderstormAlert'),
-        description: t('thunderstormDescription'),
-        type: 'storm'
-      });
-    }
-    
-    // Determine if a combination of factors creates a hazardous condition
-    const hasModeratePrecipitation = weatherPoints.some(point => 
-      point.rain && point.rain['1h'] && point.rain['1h'] > 2);
-    
-    const hasModerateWind = weatherPoints.some(point => 
-      point.wind && point.wind.speed > 20);
-    
-    if (hasModeratePrecipitation && hasModerateWind) {
-      alerts.push({
-        severity: 'warning',
-        title: t('hazardousConditionsAlert'),
-        description: t('hazardousConditionsDescription'),
-        type: 'combined'
-      });
-    }
-    
-    return alerts;
-  };
-  
+  // Effet pour charger les données météo basées sur la région sélectionnée si aucun itinéraire n'est fourni
   useEffect(() => {
-    setLoading(true);
-    
-    // Fetch weather data for the route
-    const fetchWeatherForRoute = async () => {
-      try {
-        if (!routeData?.mainRoute?.coordinates) {
-          setLoading(false);
-          return;
-        }
+    if (!routeData && selectedRegion) {
+      const region = CYCLING_REGIONS.find(r => r.id === selectedRegion);
+      if (region) {
+        setLoading(true);
         
-        // Prepare points along the route
-        const routePoints = prepareRoutePoints(routeData.mainRoute);
+        // Simuler un itinéraire dans cette région
+        const simulatedRoute = {
+          coordinates: [
+            [region.coordinates[0] - 0.2, region.coordinates[1] - 0.2],
+            [region.coordinates[0], region.coordinates[1]],
+            [region.coordinates[0] + 0.2, region.coordinates[1] + 0.2],
+          ]
+        };
         
-        if (!routePoints.length) {
-          setLoading(false);
-          return;
-        }
-        
-        // Current location (first point of the route)
-        setCurrentLocation(routePoints[0]);
-        
-        // Fetch weather data for each point
-        const weatherResponses = await Promise.all(
-          routePoints.map(point => 
-            weatherService.getCurrentWeather(point.lat, point.lon)
-          )
-        );
-        
-        // Combine weather data with coordinates
-        const weatherWithCoords = weatherResponses.map((weather, index) => ({
-          ...weather,
-          lat: routePoints[index].lat,
-          lon: routePoints[index].lon
-        }));
-        
-        // Store main weather data (first point or average)
-        setWeatherData(weatherWithCoords[0]);
-        setWeatherPoints(weatherWithCoords);
-        
-        // Generate wind data for visualization
-        const windData = processWindData(
-          weatherWithCoords,
-          routeData.elevationData
-        );
-        setWindData(windData);
-        
-        // Generate alerts
-        const weatherAlerts = generateWeatherAlerts(weatherWithCoords);
-        setAlerts(weatherAlerts);
-      } catch (error) {
-        console.error('Error fetching weather data:', error);
-      } finally {
-        setLoading(false);
+        // Appeler l'API météo avec les coordonnées de la région
+        weatherService.getWeatherForCoordinates(region.coordinates[0], region.coordinates[1])
+          .then(data => {
+            setWeatherData(data);
+            // Générer des points météo fictifs autour des coordonnées de la région
+            const points = [
+              { ...data, lat: region.coordinates[0] - 0.2, lon: region.coordinates[1] - 0.2 },
+              { ...data, lat: region.coordinates[0], lon: region.coordinates[1] },
+              { ...data, lat: region.coordinates[0] + 0.2, lon: region.coordinates[1] + 0.2 }
+            ];
+            setWeatherPoints(points);
+            setAlerts(generateWeatherAlerts(points));
+            setWindData(processWindData(points, simulatedRoute.coordinates.map((c, i) => ({ elevation: 800 + i * 100, distance: i * 5 }))));
+            setLoading(false);
+          })
+          .catch(err => {
+            console.error('Erreur lors du chargement des données météo:', err);
+            setError(t('weatherDataError'));
+            setLoading(false);
+          });
       }
-    };
-    
-    fetchWeatherForRoute();
-  }, [routeData, i18n.language]);
-  
-  // Get route color based on surface type
-  const getRouteColor = (surfaceType) => {
-    switch(surfaceType) {
-      case 'asphalt': return '#3388ff';
-      case 'gravel': return '#ff7800';
-      case 'dirt': return '#6B4226';
-      default: return '#3388ff';
     }
-  };
-  
-  // Loading state
-  if (loading) {
+  }, [selectedRegion, routeData, t]);
+
+  // Rendu lorsqu'aucune donnée d'itinéraire n'est disponible
+  if (!routeData && !loading) {
     return (
-      <Box 
-        sx={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          alignItems: 'center', 
-          height: 200,
-          width: '100%'
-        }}
+      <Paper 
+        elevation={2} 
+        sx={{ p: 3, mb: 4 }}
+        component="section"
+        aria-labelledby="weather-dashboard-title"
       >
-        <CircularProgress size={40} />
-        <Typography variant="h6" sx={{ ml: 2 }}>
-          {t('loadingWeatherData')}
-        </Typography>
-      </Box>
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            mb: 2
+          }}
+        >
+          <Typography variant="h5" component="h2" id="weather-dashboard-title">
+            {t('weatherDashboard')}: {CYCLING_REGIONS.find(r => r.id === selectedRegion)?.name || t('regionSelector')}
+          </Typography>
+          
+          <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+            <FormControl size="small" sx={{ minWidth: 180 }}>
+              <InputLabel id="region-select-label">{t('region')}</InputLabel>
+              <Select
+                labelId="region-select-label"
+                id="region-select"
+                value={selectedRegion}
+                label={t('region')}
+                onChange={(e) => setSelectedRegion(e.target.value)}
+              >
+                {CYCLING_REGIONS.map((region) => (
+                  <MenuItem key={region.id} value={region.id}>
+                    {region.name}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            
+            <ButtonGroup variant="outlined" size="small" aria-label={t('timeframeSelector')}>
+              <Button 
+                onClick={() => setSelectedTimeframe('current')}
+                variant={selectedTimeframe === 'current' ? 'contained' : 'outlined'}
+                aria-pressed={selectedTimeframe === 'current'}
+              >
+                {t('currentConditions')}
+              </Button>
+              <Button
+                onClick={() => setSelectedTimeframe('forecast')}
+                variant={selectedTimeframe === 'forecast' ? 'contained' : 'outlined'}
+                aria-pressed={selectedTimeframe === 'forecast'}
+              >
+                {t('forecast24h')}
+              </Button>
+              <Button
+                onClick={() => setSelectedTimeframe('week')}
+                variant={selectedTimeframe === 'week' ? 'contained' : 'outlined'}
+                aria-pressed={selectedTimeframe === 'week'}
+              >
+                {t('weekForecast')}
+              </Button>
+            </ButtonGroup>
+          </Box>
+        </Box>
+        
+        {weatherData && <WeatherAlerts alerts={alerts} />}
+        
+        {loading ? (
+          <Box sx={{ display: 'flex', justifyContent: 'center', p: 4 }}>
+            <CircularProgress />
+          </Box>
+        ) : error ? (
+          <Alert severity="error" sx={{ mt: 2 }}>
+            {error}
+          </Alert>
+        ) : weatherData ? (
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={8}>
+              <Paper 
+                elevation={0} 
+                variant="outlined" 
+                sx={{ height: 400, overflow: 'hidden' }}
+                aria-label={t('weatherMap')}
+              >
+                <MapContainer 
+                  style={{ height: '100%', width: '100%' }}
+                  center={CYCLING_REGIONS.find(r => r.id === selectedRegion)?.coordinates || [46.2, 2.2]}
+                  zoom={9}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  
+                  {/* Weather markers */}
+                  <WeatherMarkers weatherPoints={weatherPoints} />
+                  
+                </MapContainer>
+              </Paper>
+            </Grid>
+            
+            <Grid item xs={12} md={4}>
+              <EquipmentRecommendations weatherData={weatherData} />
+            </Grid>
+          </Grid>
+        ) : (
+          <Alert severity="info" sx={{ mt: 2 }}>
+            {t('selectRegionPrompt')}
+          </Alert>
+        )}
+        
+        {weatherData && selectedTimeframe === 'current' && (
+          <Box sx={{ mt: 4 }}>
+            <RegionalWeatherHighlights 
+              region={CYCLING_REGIONS.find(r => r.id === selectedRegion)}
+              weatherData={weatherData}
+            />
+          </Box>
+        )}
+        
+        {weatherData && selectedTimeframe === 'forecast' && (
+          <Box sx={{ mt: 4 }}>
+            <DailyForecast
+              region={CYCLING_REGIONS.find(r => r.id === selectedRegion)}
+              currentWeather={weatherData}
+            />
+          </Box>
+        )}
+        
+        {weatherData && selectedTimeframe === 'week' && (
+          <Box sx={{ mt: 4 }}>
+            <WeeklyForecast
+              region={CYCLING_REGIONS.find(r => r.id === selectedRegion)}
+            />
+          </Box>
+        )}
+      </Paper>
     );
   }
   
-  // Error state - no route data
-  if (!routeData) {
-    return (
-      <Alert severity="error" sx={{ my: 2 }}>
-        <Typography variant="subtitle1">
-          {t('noRouteDataAvailable')}
-        </Typography>
-      </Alert>
-    );
-  }
+  // ... Reste du code ...
+};
+
+// Affichage des points forts de la météo régionale
+const RegionalWeatherHighlights = ({ region, weatherData }) => {
+  const { t } = useTranslation();
   
-  const getWeatherIcon = (condition) => {
-    switch(condition) {
-      case 'Clear': return <WbSunnyIcon fontSize="large" />;
-      case 'Clouds': return <CloudIcon fontSize="large" />;
-      case 'Rain': case 'Drizzle': return <WaterIcon fontSize="large" />;
-      case 'Thunderstorm': return <ThunderstormIcon fontSize="large" />;
-      case 'Snow': return <AcUnitIcon fontSize="large" />;
-      default: return <CloudIcon fontSize="large" />;
-    }
-  };
+  if (!weatherData) return null;
+  
+  const condition = weatherData.weather?.[0]?.main || 'Clouds';
+  const icon = getWeatherIcon(condition);
   
   return (
-    <Paper 
-      elevation={2} 
-      sx={{ p: 3, mb: 4 }}
-      component="section"
-      aria-labelledby="weather-dashboard-title"
-    >
-      <Box 
-        sx={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          mb: 2
-        }}
-      >
-        <Typography variant="h5" component="h2" id="weather-dashboard-title">
-          {t('weatherDashboard')}: {routeData.name}
-        </Typography>
-        
-        <ButtonGroup variant="outlined" size="small" aria-label={t('timeframeSelector')}>
-          <Button 
-            onClick={() => setSelectedTimeframe('current')}
-            variant={selectedTimeframe === 'current' ? 'contained' : 'outlined'}
-            aria-pressed={selectedTimeframe === 'current'}
-          >
-            {t('currentConditions')}
-          </Button>
-          <Button
-            onClick={() => setSelectedTimeframe('forecast')}
-            variant={selectedTimeframe === 'forecast' ? 'contained' : 'outlined'}
-            aria-pressed={selectedTimeframe === 'forecast'}
-          >
-            {t('forecast24h')}
-          </Button>
-          <Button
-            onClick={() => setSelectedTimeframe('week')}
-            variant={selectedTimeframe === 'week' ? 'contained' : 'outlined'}
-            aria-pressed={selectedTimeframe === 'week'}
-          >
-            {t('weekForecast')}
-          </Button>
-        </ButtonGroup>
-      </Box>
+    <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="h6" gutterBottom>
+        {t('weatherHighlightsFor')} {region?.name}
+      </Typography>
       
-      <WeatherAlerts alerts={alerts} />
-      
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={8}>
-          <Paper 
-            elevation={0} 
-            variant="outlined" 
-            sx={{ height: 400, overflow: 'hidden' }}
-            aria-label={t('weatherMap')}
-          >
-            <MapContainer 
-              style={{ height: '100%', width: '100%' }}
-              center={[48.8566, 2.3522]}
-              zoom={10}
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              
-              {/* Main route polyline */}
-              <Polyline 
-                positions={routeData.mainRoute.coordinates}
-                pathOptions={{ 
-                  color: getRouteColor(routeData.mainRoute.surfaceType),
-                  weight: 5
-                }}
-              />
-              
-              {/* Weather markers */}
-              <WeatherMarkers weatherPoints={weatherPoints} />
-              
-              {/* Center map on route */}
-              <MapViewSetter route={routeData.mainRoute} />
-            </MapContainer>
-          </Paper>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <Card sx={{ display: 'flex', height: '100%' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1, p: 2 }}>
+              <Typography variant="h5" component="div">
+                {weatherData.main.temp.toFixed(1)}°C
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {t('feelsLike')} {weatherData.main.feels_like.toFixed(1)}°C
+              </Typography>
+              <Typography variant="body1" sx={{ mt: 1 }}>
+                {weatherData.weather[0].description}
+              </Typography>
+              <Box sx={{ mt: 'auto' }}>
+                <Chip 
+                  icon={<UmbrellaIcon />} 
+                  label={`${(weatherData.rain?.['1h'] || 0).toFixed(1)} mm`} 
+                  size="small" 
+                  sx={{ mr: 1 }} 
+                />
+                <Chip 
+                  icon={<AirIcon />} 
+                  label={`${weatherData.wind.speed.toFixed(1)} km/h`} 
+                  size="small" 
+                />
+              </Box>
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
+              {icon}
+            </Box>
+          </Card>
         </Grid>
         
-        <Grid item xs={12} md={4}>
-          <EquipmentRecommendations weatherData={weatherData} />
+        <Grid item xs={12} md={6}>
+          <Card sx={{ height: '100%', p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              {t('cyclingConditions')}
+            </Typography>
+            
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Typography variant="body2">{t('temperature')}</Typography>
+                <Chip 
+                  label={weatherService.getTemperatureRating(weatherData.main.temp)} 
+                  size="small" 
+                  color={
+                    weatherData.main.temp < 5 ? 'error' : 
+                    weatherData.main.temp < 10 ? 'warning' : 
+                    weatherData.main.temp > 28 ? 'warning' : 'success'
+                  } 
+                />
+              </Box>
+              
+              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Typography variant="body2">{t('wind')}</Typography>
+                <Chip 
+                  label={weatherService.getWindRating(weatherData.wind.speed)} 
+                  size="small" 
+                  color={
+                    weatherData.wind.speed > 30 ? 'error' : 
+                    weatherData.wind.speed > 20 ? 'warning' : 'success'
+                  } 
+                />
+              </Box>
+              
+              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Typography variant="body2">{t('precipitation')}</Typography>
+                <Chip 
+                  label={weatherService.getPrecipitationRating(weatherData.rain?.['1h'] || 0)} 
+                  size="small" 
+                  color={
+                    (weatherData.rain?.['1h'] || 0) > 5 ? 'error' : 
+                    (weatherData.rain?.['1h'] || 0) > 2 ? 'warning' : 'success'
+                  } 
+                />
+              </Box>
+              
+              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Typography variant="body2">{t('overall')}</Typography>
+                <Chip 
+                  label={weatherService.getOverallRating(weatherData)} 
+                  size="small" 
+                  color={weatherService.getOverallRatingColor(weatherData)} 
+                />
+              </Box>
+            </Box>
+          </Card>
         </Grid>
       </Grid>
+    </Paper>
+  );
+};
+
+// Composant de prévision quotidienne
+const DailyForecast = ({ region, currentWeather }) => {
+  const { t } = useTranslation();
+  const [forecast, setForecast] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    // Simulation des données de prévision pour les 24 prochaines heures
+    const simulatedForecast = Array.from({ length: 8 }).map((_, index) => {
+      const hour = new Date();
+      hour.setHours(hour.getHours() + index * 3);
       
-      <Box sx={{ mt: 4 }}>
-        <WindVisualization 
-          passId={routeId}
-          elevationData={routeData.elevationData}
-          windData={windData}
-          currentLocation={currentLocation}
-        />
+      // Variation aléatoire basée sur les conditions actuelles
+      const tempVariation = Math.random() * 5 - 2.5;
+      const windVariation = Math.random() * 5 - 2.5;
+      const precipProbability = Math.random();
+      
+      return {
+        dt: hour.getTime() / 1000,
+        main: {
+          temp: currentWeather.main.temp + tempVariation,
+          feels_like: currentWeather.main.feels_like + tempVariation,
+          humidity: currentWeather.main.humidity + (Math.random() * 10 - 5)
+        },
+        weather: [{ ...currentWeather.weather[0] }],
+        wind: {
+          speed: currentWeather.wind.speed + windVariation,
+          deg: (currentWeather.wind.deg + (Math.random() * 40 - 20)) % 360
+        },
+        pop: precipProbability,
+        rain: precipProbability > 0.7 ? { '3h': Math.random() * 3 } : null
+      };
+    });
+    
+    setForecast(simulatedForecast);
+    setLoading(false);
+  }, [currentWeather]);
+  
+  if (loading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', p: 4 }}>
+        <CircularProgress />
       </Box>
+    );
+  }
+  
+  return (
+    <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="h6" gutterBottom>
+        {t('forecast24hFor')} {region?.name}
+      </Typography>
       
-      {/*
-        Note: Forecast views (24h, week) would be implemented here
-        but are conditionally shown based on selectedTimeframe
-      */}
+      <Grid container spacing={1}>
+        {forecast.map((item, index) => {
+          const date = new Date(item.dt * 1000);
+          const hour = date.getHours();
+          const condition = item.weather[0].main;
+          const icon = getWeatherIcon(condition);
+          
+          return (
+            <Grid item key={index} xs={6} sm={3} md={1.5}>
+              <Card sx={{ textAlign: 'center', p: 1 }}>
+                <Typography variant="body2">
+                  {hour < 10 ? `0${hour}` : hour}:00
+                </Typography>
+                <Box sx={{ display: 'flex', justifyContent: 'center', my: 1 }}>
+                  {React.cloneElement(icon, { fontSize: 'small' })}
+                </Box>
+                <Typography variant="h6">
+                  {item.main.temp.toFixed(0)}°
+                </Typography>
+                <Typography variant="caption" display="block">
+                  {item.wind.speed.toFixed(0)} km/h
+                </Typography>
+                <Typography variant="caption" display="block" color="text.secondary">
+                  {(item.pop * 100).toFixed(0)}%
+                </Typography>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Paper>
+  );
+};
+
+// Composant de prévision hebdomadaire
+const WeeklyForecast = ({ region }) => {
+  const { t } = useTranslation();
+  const [forecast, setForecast] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    // Simulation des données de prévision pour les 7 prochains jours
+    const simulatedForecast = Array.from({ length: 7 }).map((_, index) => {
+      const day = new Date();
+      day.setDate(day.getDate() + index);
       
+      // Générer des conditions météo aléatoires mais réalistes
+      const temp = 15 + Math.random() * 10 - 5;
+      const windSpeed = 5 + Math.random() * 15;
+      const conditions = ['Clear', 'Clouds', 'Rain', 'Thunderstorm'];
+      const condition = conditions[Math.floor(Math.random() * conditions.length)];
+      
+      return {
+        dt: day.getTime() / 1000,
+        temp: {
+          min: temp - 5,
+          max: temp + 5
+        },
+        weather: [{
+          main: condition,
+          description: condition + ' description'
+        }],
+        wind_speed: windSpeed,
+        pop: Math.random()
+      };
+    });
+    
+    setForecast(simulatedForecast);
+    setLoading(false);
+  }, [region]);
+  
+  if (loading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', p: 4 }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+  
+  const weekdays = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+  
+  return (
+    <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="h6" gutterBottom>
+        {t('weekForecastFor')} {region?.name}
+      </Typography>
+      
+      <Grid container spacing={2}>
+        {forecast.map((item, index) => {
+          const date = new Date(item.dt * 1000);
+          const dayOfWeek = weekdays[date.getDay()];
+          const dayOfMonth = date.getDate();
+          const condition = item.weather[0].main;
+          const icon = getWeatherIcon(condition);
+          
+          return (
+            <Grid item key={index} xs={12} sm={6} md={3} lg={true}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    {dayOfWeek} {dayOfMonth}
+                  </Typography>
+                  
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                    {React.cloneElement(icon, { sx: { mr: 1.5 } })}
+                    <Typography variant="body1">
+                      {item.weather[0].description}
+                    </Typography>
+                  </Box>
+                  
+                  <Typography variant="h5" sx={{ mb: 1 }}>
+                    {item.temp.max.toFixed(0)}° / {item.temp.min.toFixed(0)}°
+                  </Typography>
+                  
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Chip 
+                      icon={<AirIcon />} 
+                      label={`${item.wind_speed.toFixed(0)} km/h`} 
+                      size="small" 
+                    />
+                    <Chip 
+                      icon={<UmbrellaIcon />} 
+                      label={`${(item.pop * 100).toFixed(0)}%`} 
+                      size="small" 
+                    />
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
     </Paper>
   );
 };

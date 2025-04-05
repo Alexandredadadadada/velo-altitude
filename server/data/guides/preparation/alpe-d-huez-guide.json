@@ -1,0 +1,225 @@
+{
+  "id": "guide-alpe-d-huez",
+  "col_id": "alpe-d-huez",
+  "name": {
+    "fr": "Guide de préparation - Alpe d'Huez",
+    "en": "Preparation Guide - Alpe d'Huez"
+  },
+  "slug": "guide-alpe-d-huez",
+  "type": "preparation",
+  "description": {
+    "fr": "Guide complet pour préparer et réussir l'ascension de l'Alpe d'Huez, avec conseils spécifiques sur l'équipement, les stratégies d'ascension et la gestion de l'effort.",
+    "en": "Comprehensive guide to prepare for and successfully climb Alpe d'Huez, with specific advice on equipment, climbing strategies, and effort management."
+  },
+  "difficulty_adaptation": {
+    "novice": {
+      "fr": "Pour les cyclistes débutants en montagne, prévoyez une préparation d'au moins 12 semaines avec un focus sur le développement de l'endurance de base et la gestion de l'effort sur les longues montées.",
+      "en": "For mountain cycling beginners, plan for at least 12 weeks of preparation focusing on developing base endurance and managing effort on long climbs."
+    },
+    "intermediate": {
+      "fr": "Les cyclistes intermédiaires devraient se concentrer sur des séances spécifiques de puissance et d'endurance, en incluant des ascensions de 30-45 minutes à un rythme soutenu dans leur préparation.",
+      "en": "Intermediate cyclists should focus on specific power and endurance sessions, including 30-45 minute climbs at a sustained pace in their preparation."
+    },
+    "advanced": {
+      "fr": "Les cyclistes expérimentés peuvent optimiser leur performance en travaillant sur les changements de rythme pour les 21 virages et en simulant l'effort complet avec des séances spécifiques.",
+      "en": "Experienced cyclists can optimize performance by working on pace changes for the 21 hairpins and simulating the complete effort with specific training sessions."
+    }
+  },
+  "seasonal_recommendations": {
+    "best_months": ["juin", "juillet", "août", "septembre"],
+    "weather_warnings": {
+      "fr": "Méfiez-vous des changements météorologiques rapides, particulièrement en début et fin de saison. La partie supérieure peut être jusqu'à 10°C plus froide que la vallée.",
+      "en": "Be wary of rapid weather changes, particularly in early and late season. The upper section can be up to 10°C colder than the valley."
+    },
+    "specific_advice": {
+      "early_season": {
+        "fr": "En juin, prévoyez des vêtements chauds pour la descente car la neige peut encore être présente sur les sommets environnants, refroidissant l'air.",
+        "en": "In June, bring warm clothing for the descent as snow may still be present on surrounding peaks, cooling the air."
+      },
+      "peak_season": {
+        "fr": "En juillet-août, partez tôt le matin pour éviter la chaleur qui peut être intense dans les premiers virages exposés au soleil.",
+        "en": "In July-August, start early in the morning to avoid the heat which can be intense in the first sun-exposed hairpins."
+      },
+      "late_season": {
+        "fr": "En septembre-octobre, prévoyez des vêtements imperméables car les précipitations sont plus fréquentes.",
+        "en": "In September-October, pack waterproof clothing as precipitation is more frequent."
+      }
+    }
+  },
+  "equipment_recommendations": {
+    "bike_setup": {
+      "cassette": "11-32 ou 11-34 recommandé",
+      "gearing": "Compact (50/34) fortement conseillé",
+      "tires": "25-28mm, pression légèrement réduite pour le confort"
+    },
+    "essential_gear": [
+      {
+        "fr": "Vêtements adaptables en couches pour les variations de température",
+        "en": "Layered clothing for temperature variations"
+      },
+      {
+        "fr": "Deux bidons d'eau (possibilité de ravitaillement à mi-parcours)",
+        "en": "Two water bottles (refill possibility at mid-course)"
+      },
+      {
+        "fr": "Nourriture énergétique pour 1h30-2h d'effort",
+        "en": "Energy food for 1h30-2h of effort"
+      },
+      {
+        "fr": "Protection solaire (crème et lunettes)",
+        "en": "Sun protection (cream and glasses)"
+      },
+      {
+        "fr": "Coupe-vent léger pour la descente",
+        "en": "Light windbreaker for the descent"
+      }
+    ]
+  },
+  "pacing_strategy": {
+    "sections": [
+      {
+        "name": "Départ à virage 21",
+        "distance": "0-1.5km",
+        "gradient": "10-11%",
+        "strategy": {
+          "fr": "C'est la section la plus raide. Commencez prudemment, en gardant une réserve pour la suite.",
+          "en": "This is the steepest section. Start cautiously, keeping a reserve for later."
+        }
+      },
+      {
+        "name": "Virages 21 à 16",
+        "distance": "1.5-4km",
+        "gradient": "8-9%",
+        "strategy": {
+          "fr": "Trouvez votre rythme, en maintenant une cadence élevée (80-90 rpm).",
+          "en": "Find your rhythm, maintaining a high cadence (80-90 rpm)."
+        }
+      },
+      {
+        "name": "Virages 15 à 8",
+        "distance": "4-8km",
+        "gradient": "7-8%",
+        "strategy": {
+          "fr": "Section légèrement plus facile, possibilité de ravitaillement à La Garde.",
+          "en": "Slightly easier section, possibility to refill water at La Garde."
+        }
+      },
+      {
+        "name": "Virages 7 à 1",
+        "distance": "8-13.8km",
+        "gradient": "8-9%",
+        "strategy": {
+          "fr": "La fatigue se fait sentir, mais la fin approche. Gérez l'effort en visualisant chaque virage comme une étape.",
+          "en": "Fatigue sets in, but the end is approaching. Manage effort by visualizing each hairpin as a stage."
+        }
+      }
+    ],
+    "power_targets": {
+      "novice": "60-70% de FTP",
+      "intermediate": "70-80% de FTP",
+      "advanced": "75-85% de FTP"
+    },
+    "time_targets": {
+      "novice": "90-120 minutes",
+      "intermediate": "60-90 minutes",
+      "advanced": "45-60 minutes",
+      "pro": "< 40 minutes"
+    }
+  },
+  "nutrition_plan": {
+    "before": {
+      "fr": "Repas riche en glucides 3h avant (pâtes, riz). Petit en-cas 1h avant (barre énergétique, banane).",
+      "en": "Carb-rich meal 3h before (pasta, rice). Small snack 1h before (energy bar, banana)."
+    },
+    "during": {
+      "fr": "60-90g de glucides/heure. Boire 500-750ml/heure selon la température.",
+      "en": "60-90g of carbs/hour. Drink 500-750ml/hour depending on temperature."
+    },
+    "recommended_recipes": ["pre-1", "during-1", "col-1"]
+  },
+  "testimonials": [
+    {
+      "name": "Thomas Voeckler",
+      "text": {
+        "fr": "L'Alpe d'Huez est un mythe, mais avec une bonne préparation, tout cycliste peut la vaincre. Le secret est de respecter son rythme dans les premiers virages.",
+        "en": "Alpe d'Huez is legendary, but with good preparation, any cyclist can conquer it. The secret is to respect your pace in the first hairpins."
+      }
+    },
+    {
+      "name": "Marion Rousse",
+      "text": {
+        "fr": "J'ai sous-estimé l'importance des premiers virages la première fois. Maintenant je sais qu'il faut les aborder avec prudence pour profiter des sections plus roulantes ensuite.",
+        "en": "I underestimated the importance of the first hairpins the first time. Now I know you need to approach them cautiously to enjoy the more rolling sections afterwards."
+      }
+    }
+  ],
+  "local_tips": [
+    {
+      "fr": "Il y a une fontaine à La Garde (virage 16) pour remplir vos bidons.",
+      "en": "There's a fountain at La Garde (hairpin 16) to refill your bottles."
+    },
+    {
+      "fr": "Les plaques commémoratives dans chaque virage sont une bonne excuse pour faire une micro-pause.",
+      "en": "The commemorative plaques at each hairpin are a good excuse for a micro-break."
+    },
+    {
+      "fr": "Le restaurant à mi-parcours propose des remplissages de bidon gratuits pour les cyclistes.",
+      "en": "The restaurant halfway up offers free bottle refills for cyclists."
+    }
+  ],
+  "medical_advice": {
+    "altitude": {
+      "fr": "L'altitude reste modérée (1850m) mais peut affecter certaines personnes sensibles.",
+      "en": "The altitude remains moderate (1850m) but may affect some sensitive individuals."
+    },
+    "precautions": {
+      "fr": "Écoutez votre corps, particulièrement en cas de maux de tête ou de nausées, signes potentiels de déshydratation ou de coup de chaleur.",
+      "en": "Listen to your body, particularly in case of headaches or nausea, potential signs of dehydration or heat stroke."
+    }
+  },
+  "related_content": {
+    "cols": ["col-du-galibier", "col-du-glandon", "col-de-la-croix-de-fer"],
+    "training_programs": ["T003", "T013"],
+    "nutrition_recipes": ["pre-1", "during-1", "col-1"]
+  },
+  "history": {
+    "first_tour": 1952,
+    "famous_battles": [
+      {
+        "year": 1986,
+        "description": {
+          "fr": "Duel légendaire entre Greg LeMond et Bernard Hinault",
+          "en": "Legendary duel between Greg LeMond and Bernard Hinault"
+        }
+      },
+      {
+        "year": 2001,
+        "description": {
+          "fr": "La célèbre 'défaillance' de Lance Armstrong face à Jan Ullrich",
+          "en": "Lance Armstrong's famous 'bonk' against Jan Ullrich"
+        }
+      },
+      {
+        "year": 2018,
+        "description": {
+          "fr": "Victoire spectaculaire de Geraint Thomas en route vers son titre au Tour",
+          "en": "Spectacular victory by Geraint Thomas on his way to Tour victory"
+        }
+      }
+    ],
+    "record": {
+      "name": "Marco Pantani",
+      "year": 1997,
+      "time": "37:35"
+    }
+  },
+  "video_guide": "/videos/guides/alpe-d-huez-guide.mp4",
+  "images": [
+    "/images/guides/alpe-d-huez/profile.jpg",
+    "/images/guides/alpe-d-huez/hairpins.jpg",
+    "/images/guides/alpe-d-huez/view_from_top.jpg"
+  ],
+  "status": "active",
+  "completeness": 95,
+  "last_updated": "2025-04-06T02:00:00Z"
+}

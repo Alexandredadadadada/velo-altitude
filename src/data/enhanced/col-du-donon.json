@@ -1,0 +1,79 @@
+{
+  "id": "col-du-donon",
+  "name": "Col du Donon",
+  "region": "vosges-nord",
+  "country": "France",
+  "altitude": 718,
+  "length": 7.6,
+  "avgGradient": 6.8,
+  "maxGradient": 10,
+  "difficulty": "medium",
+  "elevationGain": 517,
+  "startLocation": "Schirmeck",
+  "endLocation": "Col du Donon",
+  "description": "Le Col du Donon, situé à proximité du sommet du même nom qui est le point culminant des Vosges du Nord, offre une ascension agréable à travers les forêts denses de sapins et d'épicéas. Ce col à l'atmosphère mystérieuse traverse l'un des massifs forestiers les plus importants de la région, réputé pour sa richesse en légendes celtiques et gallo-romaines.",
+  "history": "Le Donon a une forte valeur historique et archéologique, ayant été un lieu de culte important pour les Celtes et les Gallo-romains qui y avaient érigé un temple dédié à Mercure. Le col a également joué un rôle stratégique pendant les deux guerres mondiales, marquant la frontière entre la France et l'Allemagne après 1871.",
+  "imageUrl": "/images/cols/donon/main.jpg",
+  "profileUrl": "/images/cols/donon/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Forêt du Donon",
+      "length": 5.2,
+      "gradient": 7.5,
+      "description": "Section forestière avec plusieurs lacets serrés"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Ouest (Schirmeck)",
+      "startLocation": "Schirmeck",
+      "length": 7.6,
+      "elevationGain": 517,
+      "avgGradient": 6.8,
+      "maxGradient": 10,
+      "difficulty": "medium",
+      "description": "L'ascension principale, offrant des vues splendides sur la vallée de la Bruche"
+    },
+    {
+      "name": "Versant Est (Raon-sur-Plaine)",
+      "startLocation": "Raon-sur-Plaine",
+      "length": 8.9,
+      "elevationGain": 489,
+      "avgGradient": 5.5,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Montée plus régulière traversant d'épaisses forêts de sapins"
+    },
+    {
+      "name": "Versant Nord (Wangenbourg)",
+      "startLocation": "Wangenbourg",
+      "length": 15.3,
+      "elevationGain": 650,
+      "avgGradient": 4.2,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Parcours plus long mais moins pentu, idéal pour découvrir les paysages variés des Vosges du Nord"
+    }
+  ],
+  "touristicInfo": "À proximité du col se trouve le sommet du Donon (1009m) accessible par un sentier, surmonté d'un temple gallo-romain reconstitué et offrant une vue panoramique sur les Vosges et la plaine d'Alsace. La région est parsemée de vestiges archéologiques et de rochers aux formes étranges qui ont inspiré de nombreuses légendes.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Grandfontaine",
+      "description": "Source à mi-chemin sur le versant ouest"
+    },
+    {
+      "type": "food",
+      "location": "Col",
+      "description": "Auberge du Donon proposant des spécialités vosgiennes (en saison)"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Col généralement accessible toute l'année mais les conditions hivernales peuvent être difficiles de décembre à mars. Attention au brouillard fréquent en automne et au début du printemps.",
+  "strava": {
+    "segmentId": "739654",
+    "komTime": "19:42",
+    "komName": "Alexis Vuillermoz"
+  },
+  "slug": "col-du-donon"
+}

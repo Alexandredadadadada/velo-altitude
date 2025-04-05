@@ -122,7 +122,7 @@ const nutritionService = {
       return response.data;
     } catch (error) {
       console.error('Erreur lors de l\'ajout aux favoris:', error);
-      return { success: false, message: 'Erreur lors de l\'ajout aux favoris' };
+      throw error;
     }
   },
 
@@ -134,7 +134,7 @@ const nutritionService = {
    */
   removeFromFavorites: async (userId, recipeId) => {
     try {
-      // En mode développement ou test, simuler la suppression
+      // En mode développement ou test, simuler le retrait
       if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
         return { success: true, message: 'Recette retirée des favoris' };
       }
@@ -142,8 +142,138 @@ const nutritionService = {
       const response = await api.delete(`/users/${userId}/favorite-recipes/${recipeId}`);
       return response.data;
     } catch (error) {
-      console.error('Erreur lors de la suppression des favoris:', error);
-      return { success: false, message: 'Erreur lors de la suppression des favoris' };
+      console.error('Erreur lors du retrait des favoris:', error);
+      throw error;
+    }
+  },
+  
+  /**
+   * Récupère les IDs des recettes favorites de l'utilisateur connecté
+   * @returns {Promise<Array>} - Liste des IDs des recettes favorites
+   */
+  getUserFavorites: async () => {
+    try {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+      if (!currentUser || !currentUser.id) {
+        return [];
+      }
+      
+      // En mode développement ou test, utiliser les favoris mockés
+      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+        return getMockUserFavorites(currentUser.id);
+      }
+      
+      const response = await api.get(`/users/${currentUser.id}/favorite-recipes`);
+      return response.data;
+    } catch (error) {
+      console.error('Erreur lors de la récupération des favoris:', error);
+      return [];
+    }
+  },
+  
+  /**
+   * Ajoute une recette aux recettes sauvegardées de l'utilisateur connecté
+   * @param {string} recipeId - ID de la recette
+   * @returns {Promise<object>} - Résultat de l'opération
+   */
+  addToSaved: async (recipeId) => {
+    try {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+      if (!currentUser || !currentUser.id) {
+        throw new Error('Utilisateur non connecté');
+      }
+      
+      // En mode développement ou test, simuler l'ajout
+      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+        const savedRecipes = JSON.parse(localStorage.getItem(`savedRecipes_${currentUser.id}`) || '[]');
+        if (!savedRecipes.includes(recipeId)) {
+          savedRecipes.push(recipeId);
+          localStorage.setItem(`savedRecipes_${currentUser.id}`, JSON.stringify(savedRecipes));
+        }
+        return { success: true, message: 'Recette sauvegardée' };
+      }
+      
+      const response = await api.post(`/users/${currentUser.id}/saved-recipes`, { recipeId });
+      return response.data;
+    } catch (error) {
+      console.error('Erreur lors de la sauvegarde de la recette:', error);
+      throw error;
+    }
+  },
+  
+  /**
+   * Retire une recette des recettes sauvegardées de l'utilisateur connecté
+   * @param {string} recipeId - ID de la recette
+   * @returns {Promise<object>} - Résultat de l'opération
+   */
+  removeFromSaved: async (recipeId) => {
+    try {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+      if (!currentUser || !currentUser.id) {
+        throw new Error('Utilisateur non connecté');
+      }
+      
+      // En mode développement ou test, simuler le retrait
+      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+        const savedRecipes = JSON.parse(localStorage.getItem(`savedRecipes_${currentUser.id}`) || '[]');
+        const updatedSaved = savedRecipes.filter(id => id !== recipeId);
+        localStorage.setItem(`savedRecipes_${currentUser.id}`, JSON.stringify(updatedSaved));
+        return { success: true, message: 'Recette retirée des sauvegardes' };
+      }
+      
+      const response = await api.delete(`/users/${currentUser.id}/saved-recipes/${recipeId}`);
+      return response.data;
+    } catch (error) {
+      console.error('Erreur lors du retrait de la sauvegarde:', error);
+      throw error;
+    }
+  },
+  
+  /**
+   * Récupère les IDs des recettes sauvegardées de l'utilisateur connecté
+   * @returns {Promise<Array>} - Liste des IDs des recettes sauvegardées
+   */
+  getUserSaved: async () => {
+    try {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+      if (!currentUser || !currentUser.id) {
+        return [];
+      }
+      
+      // En mode développement ou test, utiliser les sauvegardes mockées
+      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+        const savedRecipes = JSON.parse(localStorage.getItem(`savedRecipes_${currentUser.id}`) || '[]');
+        return savedRecipes;
+      }
+      
+      const response = await api.get(`/users/${currentUser.id}/saved-recipes`);
+      return response.data;
+    } catch (error) {
+      console.error('Erreur lors de la récupération des recettes sauvegardées:', error);
+      return [];
+    }
+  },
+  
+  /**
+   * Récupère les détails d'une recette par son ID
+   * @param {string} recipeId - ID de la recette
+   * @returns {Promise<object>} - Détails de la recette
+   */
+  getRecipeById: async (recipeId) => {
+    try {
+      // En mode développement ou test, utiliser les recettes mockées
+      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+        const recipe = mockRecipes.find(r => r.id === recipeId);
+        return recipe || null;
+      }
+      
+      const response = await api.get(`/recipes/${recipeId}`);
+      return response.data;
+    } catch (error) {
+      console.error(`Erreur lors de la récupération de la recette ${recipeId}:`, error);
+      // Utiliser les recettes mockées en fallback
+      const recipe = mockRecipes.find(r => r.id === recipeId);
+      return recipe || null;
     }
   },
 

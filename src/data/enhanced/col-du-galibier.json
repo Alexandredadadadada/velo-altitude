@@ -1,0 +1,69 @@
+{
+  "id": "col-du-galibier",
+  "name": "Col du Galibier",
+  "region": "alpes",
+  "country": "France",
+  "altitude": 2642,
+  "length": 18.1,
+  "avgGradient": 6.9,
+  "maxGradient": 12.1,
+  "difficulty": "hard",
+  "elevationGain": 1245,
+  "startLocation": "Col du Lautaret",
+  "endLocation": "Col du Galibier",
+  "description": "Avec son sommet à 2642m, le Galibier est l'un des géants des Alpes. Souvent couplé avec le Col du Télégraphe, il offre des panoramas grandioses sur les massifs environnants.",
+  "history": "Première apparition dans le Tour de France en 1911. Henri Desgrange, fondateur du Tour, y fit ériger un monument en son honneur. Marco Pantani y réalisa une attaque mémorable en 1998.",
+  "imageUrl": "/images/cols/galibier/main.jpg",
+  "profileUrl": "/images/cols/galibier/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Nord (Valloire)",
+      "startLocation": "Valloire",
+      "length": 18.1,
+      "elevationGain": 1245,
+      "avgGradient": 6.9,
+      "maxGradient": 12.1,
+      "difficulty": "hard",
+      "description": "Depuis Valloire, après avoir déjà grimpé le Col du Télégraphe"
+    },
+    {
+      "name": "Versant Sud (Lautaret)",
+      "startLocation": "Col du Lautaret",
+      "length": 8.5,
+      "elevationGain": 585,
+      "avgGradient": 6.9,
+      "maxGradient": 12.1,
+      "difficulty": "medium",
+      "description": "La montée depuis le Col du Lautaret, plus courte mais avec les mêmes pourcentages raides"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Plan Lachat - Sommet",
+      "length": 4.8,
+      "gradient": 8.4,
+      "description": "Section finale avec les pourcentages les plus raides"
+    }
+  ],
+  "touristicInfo": "Le col est généralement ouvert de juin à octobre. Au sommet, une petite buvette et une boutique de souvenirs.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Plan Lachat et sommet",
+      "description": "Points d'eau"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Buvette et snacks"
+    }
+  ],
+  "bestTimeToVisit": "Juillet à septembre",
+  "weatherInfo": "Conditions alpines, changements météo rapides, neige possible même en été",
+  "strava": {
+    "segmentId": "618514",
+    "komTime": "26:40",
+    "komName": "Egan Bernal"
+  },
+  "slug": "col-du-galibier"
+}

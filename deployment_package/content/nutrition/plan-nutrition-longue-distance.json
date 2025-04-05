@@ -1,0 +1,369 @@
+{
+  "id": "plan-nutrition-longue-distance",
+  "name": "Plan Nutrition Longue Distance",
+  "type": "endurance",
+  "description": "Plan nutritionnel spécifiquement conçu pour les cyclistes préparant des événements de longue distance (200km+) ou des cyclosportives sur plusieurs jours.",
+  "objectifs": [
+    "Optimiser les réserves de glycogène pour maintenir l'effort sur de longues périodes",
+    "Prévenir les crampes et la déshydratation lors d'efforts prolongés",
+    "Adapter la nutrition aux différentes phases d'une épreuve longue distance",
+    "Accélérer la récupération entre les journées d'effort consécutives"
+  ],
+  "recommandationsGenerales": {
+    "hydrateQuotidienne": "Minimum 2.5L à 3L par jour, augmentant à 3-4L les jours précédant l'événement",
+    "repartitionMacros": {
+      "glucides": "60-65% de l'apport calorique total",
+      "proteines": "15-20% de l'apport calorique total",
+      "lipides": "20-25% de l'apport calorique total"
+    },
+    "supplementation": [
+      {
+        "nom": "BCAA (Acides aminés à chaîne ramifiée)",
+        "posologie": "5-10g avant et après l'effort",
+        "benefices": "Réduction de la fatigue mentale et musculaire, prévention du catabolisme"
+      },
+      {
+        "nom": "Béta-Alanine",
+        "posologie": "3-5g par jour en phase de préparation",
+        "benefices": "Amélioration de la capacité tampon musculaire, retarde l'apparition de l'acidose"
+      },
+      {
+        "nom": "Électrolytes",
+        "posologie": "1 comprimé dans 500ml d'eau toutes les 1-2 heures pendant l'effort",
+        "benefices": "Prévention des crampes et maintien de l'équilibre hydro-électrolytique"
+      }
+    ]
+  },
+  "phases": [
+    {
+      "nom": "Pré-événement (J-7 à J-3)",
+      "description": "Phase de préparation nutritionnelle pour optimiser les réserves de glycogène et l'hydratation",
+      "repas": [
+        {
+          "moment": "Petit-déjeuner",
+          "aliments": [
+            "Porridge d'avoine (80-100g) avec fruits secs et miel",
+            "Yaourt grec protéiné",
+            "Fruit frais de saison",
+            "Thé vert ou café (modéré)"
+          ],
+          "objectif": "Apport en glucides complexes et protéines de qualité pour stabiliser l'énergie"
+        },
+        {
+          "moment": "Collation matinale",
+          "aliments": [
+            "Fruits secs (abricots, figues) - 30g",
+            "Amandes ou noix - 20g",
+            "1 banane"
+          ],
+          "objectif": "Maintenir l'apport énergétique et favoriser le stockage de glycogène"
+        },
+        {
+          "moment": "Déjeuner",
+          "aliments": [
+            "Pâtes complètes (100-120g poids sec) avec sauce légère",
+            "Protéine maigre (poulet, poisson) - 120-150g",
+            "Légumes variés cuits à la vapeur",
+            "Huile d'olive en assaisonnement (1-2 cuillères à soupe)"
+          ],
+          "objectif": "Apport principal de glucides complexes pour charger les muscles en glycogène"
+        },
+        {
+          "moment": "Collation après-midi",
+          "aliments": [
+            "Pain complet avec beurre d'amande (1-2 cuillères à café)",
+            "Compote de fruits sans sucres ajoutés",
+            "Eau enrichie en électrolytes"
+          ],
+          "objectif": "Maintenir l'hydratation et l'apport en nutriments essentiels"
+        },
+        {
+          "moment": "Dîner",
+          "aliments": [
+            "Riz basmati ou quinoa (80-100g poids sec)",
+            "Légumineuses (lentilles, pois chiches) - 60-80g",
+            "Légumes rôtis assaisonnés aux herbes",
+            "Poisson gras riche en oméga-3 (saumon, maquereau) - 120g"
+          ],
+          "objectif": "Compléter les réserves de glycogène tout en apportant des acides gras essentiels"
+        }
+      ],
+      "conseilsSpecifiques": [
+        "Augmenter progressivement l'apport en glucides tout en réduisant les fibres les 2-3 derniers jours",
+        "Éviter l'alcool et limiter la caféine",
+        "Surveiller la couleur des urines pour assurer une hydratation optimale (jaune pâle)"
+      ]
+    },
+    {
+      "nom": "Chargement glycogénique (J-2 à J-1)",
+      "description": "Phase d'optimisation maximale des réserves de glycogène musculaire et hépatique",
+      "repas": [
+        {
+          "moment": "Petit-déjeuner",
+          "aliments": [
+            "Pancakes à la farine d'avoine avec sirop d'érable ou miel",
+            "Yaourt grec avec granola et fruits rouges",
+            "Jus de fruit pressé (200ml)",
+            "Boisson d'hydratation avec électrolytes"
+          ],
+          "objectif": "Commencer la journée avec un apport glucidique important facilement digestible"
+        },
+        {
+          "moment": "Collation matinale",
+          "aliments": [
+            "Barre énergétique maison à base de dattes et flocons d'avoine",
+            "Banane mûre",
+            "Thé ou eau enrichie en électrolytes"
+          ],
+          "objectif": "Maintenir un apport régulier en glucides tout au long de la journée"
+        },
+        {
+          "moment": "Déjeuner",
+          "aliments": [
+            "Pâtes blanches (portion généreuse de 150g poids sec)",
+            "Sauce tomate légère avec un peu d'huile d'olive",
+            "Blanc de poulet grillé (petite portion de 100g)",
+            "Légumes cuits pauvres en fibres"
+          ],
+          "objectif": "Maximiser le stockage de glycogène avec des glucides à index glycémique modéré à élevé"
+        },
+        {
+          "moment": "Collation après-midi",
+          "aliments": [
+            "Riz au lait à la cannelle",
+            "Compote de pomme",
+            "Eau avec électrolytes (500ml minimum)"
+          ],
+          "objectif": "Poursuivre le chargement en glycogène tout en maintenant l'hydratation"
+        },
+        {
+          "moment": "Dîner",
+          "aliments": [
+            "Risotto au parmesan (portion généreuse)",
+            "Petite portion de poisson blanc cuit simplement",
+            "Légumes cuits à la vapeur en petite quantité",
+            "Pain blanc avec un peu de beurre"
+          ],
+          "objectif": "Dernière prise majeure de glucides avant l'événement, facile à digérer"
+        }
+      ],
+      "conseilsSpecifiques": [
+        "Augmenter l'apport en glucides à 8-10g/kg de poids corporel",
+        "Réduire l'apport en fibres pour éviter l'inconfort digestif",
+        "Éviter les aliments nouveaux ou potentiellement irritants pour le système digestif",
+        "Limiter les aliments gras qui ralentissent la vidange gastrique"
+      ]
+    },
+    {
+      "nom": "Jour de l'événement",
+      "description": "Stratégie nutritionnelle pour maintenir l'énergie pendant un effort de longue durée",
+      "repas": [
+        {
+          "moment": "Petit-déjeuner (3-4h avant)",
+          "aliments": [
+            "Porridge à l'avoine avec miel et banane",
+            "Pain blanc avec confiture ou miel",
+            "Thé ou café léger (optionnel)",
+            "Eau avec électrolytes (500ml)"
+          ],
+          "objectif": "Compléter les réserves de glycogène et assurer une bonne hydratation initiale"
+        },
+        {
+          "moment": "Pré-départ (30-60min avant)",
+          "aliments": [
+            "Gel énergétique (25-30g de glucides)",
+            "Eau minérale (250-300ml)",
+            "Éventuellement 1 banane mûre si bien tolérée"
+          ],
+          "objectif": "Donner un coup de boost au taux de glucose sanguin juste avant l'effort"
+        },
+        {
+          "moment": "Pendant l'effort",
+          "aliments": [
+            "60-90g de glucides par heure selon l'intensité (utiliser une combinaison de glucose et fructose)",
+            "Gels énergétiques (1 toutes les 45-60 minutes)",
+            "Barres énergétiques pour les moments moins intenses",
+            "Boisson isotonique (500-750ml par heure selon température)",
+            "Bananes, dattes ou abricots secs pour varier les sources de glucides"
+          ],
+          "objectif": "Maintenir un apport constant en glucides pour alimenter les muscles et le cerveau"
+        },
+        {
+          "moment": "Ravitaillements majeurs",
+          "aliments": [
+            "Sandwich à la confiture ou au miel",
+            "Riz gluant avec un peu de sel",
+            "Cake salé léger ou pain d'épices",
+            "Fruits secs et frais"
+          ],
+          "objectif": "Apporter des nutriments plus complets lors des pauses plus longues"
+        },
+        {
+          "moment": "Après l'effort (30min)",
+          "aliments": [
+            "Boisson de récupération (ratio glucides/protéines de 3:1 ou 4:1)",
+            "Banane ou compote",
+            "Eau avec électrolytes"
+          ],
+          "objectif": "Débuter rapidement la phase de récupération et restaurer l'hydratation"
+        },
+        {
+          "moment": "Repas de récupération (2h après)",
+          "aliments": [
+            "Pâtes ou riz avec sauce légère",
+            "Protéine maigre (poulet, poisson ou légumineuses)",
+            "Légumes cuits riches en antioxydants",
+            "Fruit frais ou compote"
+          ],
+          "objectif": "Restaurer complètement les réserves énergétiques et favoriser la réparation musculaire"
+        }
+      ],
+      "conseilsSpecifiques": [
+        "Tester toute cette stratégie à l'entraînement, ne rien essayer de nouveau le jour J",
+        "Ajuster les apports en fonction de la température (augmenter l'hydratation par temps chaud)",
+        "Ne jamais attendre d'avoir soif pour boire ou faim pour manger",
+        "Prévoir un plan B en cas d'intolérance digestive (aliments de secours bien tolérés)"
+      ]
+    },
+    {
+      "nom": "Récupération post-événement",
+      "description": "Stratégie pour maximiser la récupération, particulièrement pour les événements sur plusieurs jours",
+      "repas": [
+        {
+          "moment": "Immédiatement après (30min)",
+          "aliments": [
+            "Boisson de récupération avec ratio glucides/protéines optimal (20-25g de protéines, 60-80g de glucides)",
+            "Eau enrichie en électrolytes (500ml minimum)",
+            "Fruit frais riche en potassium comme la banane"
+          ],
+          "objectif": "Initier rapidement la restauration du glycogène et la réparation musculaire"
+        },
+        {
+          "moment": "Repas complet (2h après)",
+          "aliments": [
+            "Glucides à index glycémique élevé (pâtes blanches, riz blanc, pommes de terre)",
+            "Protéines complètes (120-150g de poulet, poisson ou alternatives végétales)",
+            "Légumes riches en antioxydants",
+            "Un peu de matières grasses de qualité (avocat, huile d'olive)",
+            "Dessert à base de fruits ou yaourt avec miel"
+          ],
+          "objectif": "Apporter tous les nutriments nécessaires à une récupération optimale"
+        },
+        {
+          "moment": "Collation du soir",
+          "aliments": [
+            "Yaourt grec avec miel et fruits",
+            "Infusion de plantes anti-inflammatoires (curcuma, gingembre)",
+            "Poignée d'amandes ou noix du Brésil (riches en sélénium)"
+          ],
+          "objectif": "Prolonger l'apport en nutriments de récupération avant le sommeil"
+        }
+      ],
+      "conseilsSpecifiques": [
+        "Maintenir une hydratation optimale avec 125-150% du poids perdu pendant l'effort",
+        "Privilégier des aliments riches en antioxydants pour réduire l'inflammation (baies, cerises, légumes colorés)",
+        "Envisager un bain d'eau froide ou de cryothérapie pour favoriser la récupération musculaire",
+        "Prioriser un sommeil de qualité pour maximiser la récupération hormonale"
+      ]
+    }
+  ],
+  "recettesRecommandées": [
+    {
+      "nom": "Barres énergétiques maison",
+      "ingredients": [
+        "200g de dattes dénoyautées",
+        "100g de flocons d'avoine",
+        "50g d'amandes",
+        "30g de graines de chia",
+        "2 cuillères à soupe de miel",
+        "1 pincée de sel"
+      ],
+      "preparation": "Mixer les dattes, ajouter les autres ingrédients, former des barres et réfrigérer 2 heures minimum.",
+      "valeurNutritionnelle": {
+        "glucides": "25g par barre",
+        "proteines": "4g par barre",
+        "lipides": "5g par barre",
+        "calories": "160 par barre"
+      }
+    },
+    {
+      "nom": "Boisson isotonique maison",
+      "ingredients": [
+        "750ml d'eau",
+        "250ml de jus d'orange frais",
+        "1/4 cuillère à café de sel",
+        "2 cuillères à soupe de miel ou sirop d'agave",
+        "1 pincée de bicarbonate de soude (optionnel)"
+      ],
+      "preparation": "Mélanger tous les ingrédients jusqu'à dissolution complète, conserver au frais.",
+      "valeurNutritionnelle": {
+        "glucides": "15g par 250ml",
+        "sodium": "250mg par 250ml",
+        "calories": "60 par 250ml"
+      }
+    },
+    {
+      "nom": "Riz gluant pour ravitaillement",
+      "ingredients": [
+        "200g de riz à sushi",
+        "1 cuillère à café de sel",
+        "2 cuillères à soupe de sirop d'érable",
+        "Zeste de citron (optionnel)"
+      ],
+      "preparation": "Cuire le riz, ajouter les autres ingrédients en fin de cuisson, former des boulettes faciles à manger.",
+      "valeurNutritionnelle": {
+        "glucides": "30g par portion",
+        "proteines": "2g par portion",
+        "sodium": "200mg par portion",
+        "calories": "140 par portion"
+      }
+    }
+  ],
+  "conseilsHydratation": {
+    "avantEffort": {
+      "strategie": "Hyperhydratation modérée",
+      "recommandations": [
+        "500-750ml d'eau avec électrolytes 3-4 heures avant",
+        "250-300ml d'eau 15-30 minutes avant le départ",
+        "Surveiller la couleur des urines (jaune très pâle)"
+      ]
+    },
+    "pendantEffort": {
+      "strategie": "Hydratation programmée",
+      "recommandations": [
+        "500-1000ml par heure selon conditions climatiques et taux de transpiration",
+        "Alterner eau pure et boisson isotonique",
+        "Consommer sodium (200-500mg/h) pour maintenir l'équilibre électrolytique",
+        "Ne pas attendre la sensation de soif, boire de manière proactive"
+      ]
+    },
+    "recuperation": {
+      "strategie": "Réhydratation ciblée",
+      "recommandations": [
+        "Consommer 125-150% du poids perdu pendant l'effort dans les 4-6 heures suivantes",
+        "Inclure sodium (500-700mg/L) et potassium dans les boissons de récupération",
+        "Limiter l'alcool qui nuit à la réhydratation optimale"
+      ]
+    }
+  },
+  "adaptationsClimatiques": {
+    "chaleur": [
+      "Augmenter l'apport en sodium (jusqu'à 700-1000mg/L de boisson)",
+      "Boire davantage et plus fréquemment (jusqu'à 1.5L/heure si toléré)",
+      "Privilégier les aliments liquides et semi-liquides plus faciles à digérer",
+      "Pré-refroidir le corps avec boissons froides avant l'effort"
+    ],
+    "froid": [
+      "Privilégier les boissons tièdes dans les bidons isothermes",
+      "Augmenter légèrement l'apport calorique global (+10-15%)",
+      "Consommer des aliments plus denses énergétiquement",
+      "Ne pas négliger l'hydratation malgré l'absence de sensation de soif"
+    ],
+    "altitude": [
+      "Augmenter l'hydratation de 25% minimum",
+      "Accroître la fréquence des collations riches en glucides",
+      "Éviter l'alcool et limiter la caféine qui accentuent la déshydratation",
+      "Supplémenter en fer dans les semaines précédant l'événement en altitude"
+    ]
+  }
+}

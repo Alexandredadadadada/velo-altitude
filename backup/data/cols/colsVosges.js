@@ -1,0 +1,640 @@
+/**
+ * Cols des Vosges
+ * Données des cols cyclistes des Vosges
+ */
+
+const colsVosges = [
+  {
+    id: 'grand-ballon',
+    name: 'Grand Ballon',
+    region: 'vosges',
+    country: 'France',
+    altitude: 1424,
+    length: 13.2,
+    avgGradient: 6.7,
+    maxGradient: 11,
+    difficulty: 'medium',
+    elevationGain: 885,
+    startLocation: 'Willer-sur-Thur',
+    endLocation: 'Grand Ballon',
+    description: 'Le Grand Ballon, aussi connu sous le nom de Ballon de Guebwiller, est le point culminant du massif des Vosges. Cette ascension offre des panoramas exceptionnels sur la plaine d\'Alsace, la Forêt Noire et parfois même les Alpes par temps clair.',
+    history: 'Le Grand Ballon a été le théâtre de nombreuses batailles lors des courses cyclistes régionales. Il a également figuré au programme du Tour de France à plusieurs reprises.',
+    imageUrl: '/images/summits/grand-ballon.jpg',
+    profileUrl: '/images/cols/grand-ballon/profile.jpg',
+    routes: [
+      {
+        name: 'Versant Sud (Willer-sur-Thur)',
+        startLocation: 'Willer-sur-Thur',
+        length: 13.2,
+        elevationGain: 885,
+        avgGradient: 6.7,
+        maxGradient: 11,
+        difficulty: 'medium',
+        description: 'Ascension classique par la vallée de Thur'
+      },
+      {
+        name: 'Versant Est (Guebwiller)',
+        startLocation: 'Guebwiller',
+        length: 21.6,
+        elevationGain: 1205,
+        avgGradient: 5.6,
+        maxGradient: 10,
+        difficulty: 'medium',
+        description: 'Montée plus longue mais légèrement moins pentue en moyenne'
+      },
+      {
+        name: 'Versant Nord (Markstein)',
+        startLocation: 'Col du Markstein',
+        length: 4.7,
+        elevationGain: 220,
+        avgGradient: 4.7,
+        maxGradient: 8,
+        difficulty: 'easy',
+        description: 'Version courte depuis le col du Markstein'
+      }
+    ],
+    popularSegments: [
+      {
+        name: 'Goldbach - Sommet',
+        length: 6.8,
+        gradient: 8.2,
+        description: 'Section finale depuis le hameau de Goldbach-Altenbach'
+      }
+    ],
+    touristicInfo: 'Au sommet se trouve une table d\'orientation, un hôtel-restaurant et un radar météorologique reconnaissable à sa forme sphérique. La vue s\'étend jusqu\'aux Alpes par temps clair.',
+    facilities: [
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Restaurant Le Grand Ballon'
+      },
+      {
+        type: 'water',
+        location: 'Goldbach-Altenbach',
+        description: 'Fontaine dans le village'
+      }
+    ],
+    bestTimeToVisit: 'Mai à octobre',
+    weatherInfo: 'Souvent venteux au sommet. Conditions météorologiques changeantes typiques des moyennes montagnes.',
+    strava: {
+      segmentId: '633781',
+      komTime: '34:20',
+      komName: 'Thibaut Pinot'
+    }
+  },
+  {
+    id: 'ballon-alsace',
+    name: 'Ballon d\'Alsace',
+    region: 'vosges',
+    country: 'France',
+    altitude: 1178,
+    length: 9.3,
+    avgGradient: 6.8,
+    maxGradient: 9,
+    difficulty: 'medium',
+    elevationGain: 632,
+    startLocation: 'Saint-Maurice-sur-Moselle',
+    endLocation: 'Ballon d\'Alsace',
+    description: 'Le Ballon d\'Alsace est historiquement le premier col de montagne gravi par le Tour de France en 1905. Cette ascension offre une belle vue sur le massif vosgien et marque la frontière entre l\'Alsace, la Lorraine et la Franche-Comté.',
+    history: 'En 1905, René Pottier fut le premier à franchir ce col lors du Tour de France. À l\'époque, les routes n\'étaient pas goudronnées et les vélos n\'avaient pas de dérailleur, ce qui rendait l\'ascension particulièrement difficile.',
+    imageUrl: '/images/cols/ballon-alsace/main.jpg',
+    profileUrl: '/images/cols/ballon-alsace/profile.jpg',
+    routes: [
+      {
+        name: 'Versant Sud (Saint-Maurice-sur-Moselle)',
+        startLocation: 'Saint-Maurice-sur-Moselle',
+        length: 9.3,
+        elevationGain: 632,
+        avgGradient: 6.8,
+        maxGradient: 9,
+        difficulty: 'medium',
+        description: 'L\'ascension historique du Tour de France, relativement régulière'
+      },
+      {
+        name: 'Versant Est (Sewen)',
+        startLocation: 'Sewen',
+        length: 9.7,
+        elevationGain: 581,
+        avgGradient: 6,
+        maxGradient: 8,
+        difficulty: 'medium',
+        description: 'Version un peu moins pentue depuis l\'Alsace'
+      },
+      {
+        name: 'Versant Nord (Giromagny)',
+        startLocation: 'Giromagny',
+        length: 10.9,
+        elevationGain: 635,
+        avgGradient: 5.8,
+        maxGradient: 9,
+        difficulty: 'medium',
+        description: 'Approche depuis le Territoire de Belfort'
+      }
+    ],
+    popularSegments: [
+      {
+        name: 'Forêt du Ballon',
+        length: 5.6,
+        gradient: 7.5,
+        description: 'Section boisée dans la partie médiane de l\'ascension'
+      }
+    ],
+    touristicInfo: 'La statue de la Vierge au sommet et une table d\'orientation offrent un panorama sur les Vosges, le Jura et parfois les Alpes. En hiver, c\'est une petite station de ski.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Sommet',
+        description: 'Point d\'eau près du monument commémoratif'
+      },
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Auberge du Ballon d\'Alsace'
+      }
+    ],
+    bestTimeToVisit: 'Avril à octobre',
+    weatherInfo: 'Col généralement accessible toute l\'année, mais attention au risque de verglas en hiver.',
+    strava: {
+      segmentId: '636284',
+      komTime: '25:10',
+      komName: 'Julian Alaphilippe'
+    }
+  },
+  {
+    id: 'col-schlucht',
+    name: 'Col de la Schlucht',
+    region: 'vosges',
+    country: 'France',
+    altitude: 1139,
+    length: 9.3,
+    avgGradient: 6.9,
+    maxGradient: 10,
+    difficulty: 'medium',
+    elevationGain: 642,
+    startLocation: 'Munster',
+    endLocation: 'Col de la Schlucht',
+    description: 'Le Col de la Schlucht est l\'un des cols mythiques des Vosges, reliant l\'Alsace à la Lorraine. Cette ascension pittoresque traverse la forêt vosgienne et offre de superbes panoramas sur la vallée de Munster. Étape incontournable des cyclosportives locales, il alterne passages raides et sections plus roulantes.',
+    history: 'Construit à la fin du XIXe siècle, le Col de la Schlucht était autrefois une frontière entre la France et l\'Allemagne. Il a été emprunté par le Tour de France à plusieurs reprises, notamment en 2014 lors d\'une étape entre Mulhouse et La Planche des Belles Filles remportée par Vincenzo Nibali.',
+    imageUrl: '/images/cols/schlucht/main.jpg',
+    profileUrl: '/images/cols/schlucht/profile.jpg',
+    popularSegments: [
+      {
+        name: 'Les Trois Fours',
+        length: 2.5,
+        gradient: 8.2,
+        description: 'Section en forêt après Munster, l\'une des parties les plus pentues'
+      }
+    ],
+    routes: [
+      {
+        name: 'Versant Est (Munster)',
+        startLocation: 'Munster',
+        length: 9.3,
+        elevationGain: 642,
+        avgGradient: 6.9,
+        maxGradient: 10,
+        difficulty: 'medium',
+        description: 'L\'ascension classique depuis Munster, offrant de beaux points de vue sur la vallée'
+      },
+      {
+        name: 'Versant Ouest (Gérardmer)',
+        startLocation: 'Gérardmer',
+        length: 10.8,
+        elevationGain: 389,
+        avgGradient: 3.6,
+        maxGradient: 7,
+        difficulty: 'easy',
+        description: 'Montée plus douce depuis le lac de Gérardmer, parfaite pour les débutants'
+      },
+      {
+        name: 'Le Collet',
+        startLocation: 'Plainfaing',
+        length: 8.1,
+        elevationGain: 521,
+        avgGradient: 6.4,
+        maxGradient: 9,
+        difficulty: 'medium',
+        description: 'Un itinéraire alternatif et moins fréquenté'
+      }
+    ],
+    touristicInfo: 'Le Col de la Schlucht est un haut lieu touristique des Vosges avec son complexe hôtelier récemment rénové. Il constitue un point de départ idéal pour des randonnées vers le Hohneck, le Lac Blanc ou la Route des Crêtes. En hiver, c\'est une station de ski familiale.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Au col',
+        description: 'Points d\'eau disponibles au col et dans les établissements'
+      },
+      {
+        type: 'food',
+        location: 'Col de la Schlucht',
+        description: 'Plusieurs restaurants et fermes-auberges aux alentours proposant des spécialités vosgiennes (marcaire, munster, tarte aux myrtilles)'
+      }
+    ],
+    bestTimeToVisit: 'Mai à octobre',
+    weatherInfo: 'Accessible toute l\'année mais la neige peut être présente de décembre à mars. Les conditions en altitude peuvent changer rapidement, même en été.',
+    strava: {
+      segmentId: '654821',
+      komTime: '25:37',
+      komName: 'Thibaut Pinot'
+    }
+  },
+  {
+    id: 'grand-ballon',
+    name: 'Grand Ballon',
+    region: 'vosges',
+    country: 'France',
+    altitude: 1424,
+    length: 13.2,
+    avgGradient: 6.7,
+    maxGradient: 12,
+    difficulty: 'hard',
+    elevationGain: 883,
+    startLocation: 'Willer-sur-Thur',
+    endLocation: 'Grand Ballon',
+    description: 'Le Grand Ballon, point culminant du massif des Vosges, offre une ascension exigeante et majestueuse. Cette montée régulière mais sans répit traverse les paysages caractéristiques des Hautes-Vosges, entre forêts denses de sapins, chaumes d\'altitude et panoramas spectaculaires sur la plaine d\'Alsace, la Forêt Noire et parfois même les Alpes par temps clair.',
+    history: 'Autrefois appelé Ballon de Guebwiller, le Grand Ballon a été fréquemment emprunté par le Tour de France et le Tour d\'Alsace. Il a notamment été le théâtre d\'exploits de grimpeurs comme Lucien Van Impe dans les années 1970-80. La route actuelle a été construite à des fins militaires pendant la Première Guerre mondiale.',
+    imageUrl: '/images/cols/grand-ballon/main.jpg',
+    profileUrl: '/images/cols/grand-ballon/profile.jpg',
+    popularSegments: [
+      {
+        name: 'Markstein - Grand Ballon',
+        length: 5.1,
+        gradient: 5.2,
+        description: 'Section finale après le col du Markstein, avec vue sur le radar et le sommet'
+      }
+    ],
+    routes: [
+      {
+        name: 'Versant Ouest (Saint-Amarin)',
+        startLocation: 'Saint-Amarin',
+        length: 13.2,
+        elevationGain: 884,
+        avgGradient: 6.7,
+        maxGradient: 12,
+        difficulty: 'hard',
+        description: 'L\'ascension classique et la plus directe, empruntée par le Tour de France'
+      },
+      {
+        name: 'Versant Est (Guebwiller)',
+        startLocation: 'Guebwiller',
+        length: 22.1,
+        elevationGain: 1185,
+        avgGradient: 5.4,
+        maxGradient: 11,
+        difficulty: 'hard',
+        description: 'La plus longue ascension, partant de plus bas en altitude, traversant les vignobles puis la forêt'
+      },
+      {
+        name: 'Via Markstein (Fellering)',
+        startLocation: 'Fellering',
+        length: 18.8,
+        elevationGain: 1070,
+        avgGradient: 5.7,
+        maxGradient: 9,
+        difficulty: 'medium',
+        description: 'Un itinéraire plus progressif passant par le col du Markstein avant l\'ascension finale'
+      }
+    ],
+    touristicInfo: 'Au sommet se trouvent le radar météorologique caractéristique (surnommé "la boule"), un hôtel historique, le monument aux Diables Bleus (chasseurs alpins) et un magnifique panorama à 360° sur l\'Alsace, les Vosges, la Forêt-Noire et parfois les Alpes. La Route des Crêtes permet de prolonger l\'expérience vers d\'autres cols vosgiens.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Sommet et Markstein',
+        description: 'Points d\'eau disponibles à l\'hôtel du Grand Ballon et au col du Markstein'
+      },
+      {
+        type: 'food',
+        location: 'Sommet et en chemin',
+        description: 'Hôtel-restaurant au sommet, ferme-auberge du Haag sur le versant est, et plusieurs établissements au col du Markstein'
+      }
+    ],
+    bestTimeToVisit: 'Mai à octobre',
+    weatherInfo: 'Col généralement accessible d\'avril à novembre. La neige peut bloquer l\'accès en hiver. Les conditions météorologiques peuvent changer rapidement et le sommet est souvent dans les nuages. Le vent peut être très fort au sommet.',
+    strava: {
+      segmentId: '782634',
+      komTime: '39:45',
+      komName: 'Julian Alaphilippe'
+    }
+  },
+  {
+    id: 'col-donon',
+    name: 'Col du Donon',
+    region: 'vosges',
+    country: 'France',
+    altitude: 727,
+    length: 9.5,
+    avgGradient: 4.5,
+    maxGradient: 7,
+    difficulty: 'easy',
+    elevationGain: 428,
+    startLocation: 'Schirmeck',
+    endLocation: 'Col du Donon',
+    description: 'Situé dans la partie nord du massif des Vosges, le Col du Donon est dominé par le sommet du même nom qui culmine à 1009m. C\'est une ascension accessible qui traverse de belles forêts vosgiennes.',
+    history: 'Le site du Donon était un lieu sacré pour les Celtes et les Gallo-Romains. Des vestiges archéologiques et un temple dédié à Mercure témoignent de ce riche passé.',
+    imageUrl: '/images/summits/col-donon.jpg',
+    profileUrl: '/images/cols/donon/profile.jpg',
+    routes: [
+      {
+        name: 'Versant Ouest (Schirmeck)',
+        startLocation: 'Schirmeck',
+        length: 9.5,
+        elevationGain: 428,
+        avgGradient: 4.5,
+        maxGradient: 7,
+        difficulty: 'easy',
+        description: 'Montée progressive à travers les forêts'
+      },
+      {
+        name: 'Versant Est (Grandfontaine)',
+        startLocation: 'Grandfontaine',
+        length: 5.4,
+        elevationGain: 325,
+        avgGradient: 6,
+        maxGradient: 9,
+        difficulty: 'easy',
+        description: 'Version plus courte et un peu plus pentue'
+      }
+    ],
+    popularSegments: [
+      {
+        name: 'Wackenbach - Col',
+        length: 6.5,
+        gradient: 5.2,
+        description: 'Portion forestière depuis le village de Wackenbach'
+      }
+    ],
+    touristicInfo: 'Depuis le col, un sentier pédestre mène au sommet du Donon où se trouve une reproduction d\'un temple gallo-romain et un point de vue panoramique.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Wackenbach',
+        description: 'Dernière fontaine avant le col'
+      },
+      {
+        type: 'food',
+        location: 'Col',
+        description: 'Auberge du Donon'
+      }
+    ],
+    bestTimeToVisit: 'Avril à novembre',
+    weatherInfo: 'Col généralement accessible toute l\'année. Conditions clémentes comparées aux cols plus élevés des Vosges.',
+    strava: {
+      segmentId: '642187',
+      komTime: '22:15',
+      komName: 'Julien Bernard'
+    }
+  },
+  {
+    id: 'planche-belles-filles',
+    name: 'La Planche des Belles Filles',
+    region: 'vosges',
+    country: 'France',
+    altitude: 1148,
+    length: 5.9,
+    avgGradient: 8.5,
+    maxGradient: 20,
+    difficulty: 'hard',
+    elevationGain: 503,
+    startLocation: 'Plancher-les-Mines',
+    endLocation: 'La Planche des Belles Filles',
+    description: 'Cette montée récemment rendue célèbre par le Tour de France est courte mais extrêmement raide, avec un final redoutable. La station de ski est située aux confins des Vosges, à la limite de la Haute-Saône et du Territoire de Belfort.',
+    history: 'Apparue pour la première fois dans le Tour de France en 2012, La Planche des Belles Filles s\'est rapidement imposée comme une arrivée au sommet spectaculaire. Son nom viendrait d\'une légende locale où des jeunes femmes se seraient jetées dans un étang pour échapper à des mercenaires suédois.',
+    imageUrl: '/images/summits/planche/main.jpg',
+    profileUrl: '/images/summits/planche/profile.jpg',
+    routes: [
+      {
+        name: 'Route classique',
+        startLocation: 'Plancher-les-Mines',
+        length: 5.9,
+        elevationGain: 503,
+        avgGradient: 8.5,
+        maxGradient: 20,
+        difficulty: 'hard',
+        description: 'L\'ascension classique avec son terrible final'
+      },
+      {
+        name: 'Super Planche (version gravel)',
+        startLocation: 'Plancher-les-Mines',
+        length: 7,
+        elevationGain: 585,
+        avgGradient: 8.4,
+        maxGradient: 24,
+        difficulty: 'extreme',
+        description: 'Version prolongée avec section finale non asphaltée atteignant 24%'
+      }
+    ],
+    popularSegments: [
+      {
+        name: 'Rampe finale',
+        length: 0.8,
+        gradient: 14,
+        description: 'Section finale avec passage à 20%'
+      }
+    ],
+    touristicInfo: 'La station offre une vue panoramique sur les Vosges et le Jura. En hiver, c\'est une petite station de ski familiale.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Plancher-les-Mines',
+        description: 'Fontaine dans le village'
+      },
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Restaurant de la station (horaires variables selon saison)'
+      }
+    ],
+    bestTimeToVisit: 'Mai à octobre',
+    weatherInfo: 'Conditions généralement accessibles mais attention au risque d\'orage en été.',
+    strava: {
+      segmentId: '646283',
+      komTime: '16:05',
+      komName: 'Tadej Pogačar'
+    }
+  },
+  {
+    id: 'grand-ballon',
+    name: 'Grand Ballon',
+    region: 'vosges',
+    country: 'France',
+    altitude: 1424,
+    length: 13.2,
+    avgGradient: 6.7,
+    maxGradient: 12,
+    difficulty: 'hard',
+    elevationGain: 883,
+    startLocation: 'Willer-sur-Thur',
+    endLocation: 'Grand Ballon',
+    description: 'Le Grand Ballon, aussi connu sous le nom de Ballon de Guebwiller, est le point culminant du massif des Vosges. Cette ascension emblématique offre un panorama exceptionnel sur la plaine d\'Alsace, la Forêt-Noire, et par temps clair, jusqu\'aux Alpes suisses. La route serpente à travers les forêts de hêtres et de sapins avant d\'émerger sur les chaumes d\'altitude, créant une expérience cycliste variée et pittoresque.',
+    history: 'Le Grand Ballon a souvent été inclus dans le Tour de France, notamment en 2014 lors de l\'étape Mulhouse-La Planche des Belles Filles. Il a également été le théâtre de nombreuses batailles décisives dans le Tour d\'Alsace et le Circuit des Vosges. Historiquement, ses pentes ont vu passer des champions comme Bernard Hinault, Laurent Jalabert et plus récemment Julian Alaphilippe et Thibaut Pinot.',
+    imageUrl: '/images/cols/grand-ballon/main.jpg',
+    profileUrl: '/images/cols/grand-ballon/profile.jpg',
+    popularSegments: [
+      {
+        name: 'Goldbach - Grand Ballon',
+        length: 9.7,
+        gradient: 7.2,
+        description: 'Segment principal de l\'ascension, avec les passages les plus difficiles'
+      },
+      {
+        name: 'Derniers kilomètres',
+        length: 3.0,
+        gradient: 8.5,
+        description: 'Section finale exposée offrant des vues panoramiques'
+      }
+    ],
+    routes: [
+      {
+        name: 'Versant Sud (Willer-sur-Thur)',
+        startLocation: 'Willer-sur-Thur',
+        length: 13.2,
+        elevationGain: 883,
+        avgGradient: 6.7,
+        maxGradient: 12,
+        difficulty: 'hard',
+        description: 'L\'ascension classique empruntée par le Tour de France, offrant de belles vues sur la vallée de la Thur'
+      },
+      {
+        name: 'Versant Est (Guebwiller)',
+        startLocation: 'Guebwiller',
+        length: 15.5,
+        elevationGain: 970,
+        avgGradient: 6.3,
+        maxGradient: 10,
+        difficulty: 'hard',
+        description: 'Montée plus longue traversant les vignobles alsaciens avant d\'atteindre la forêt'
+      },
+      {
+        name: 'Versant Nord (Markstein)',
+        startLocation: 'Col du Markstein',
+        length: 5.1,
+        elevationGain: 285,
+        avgGradient: 5.6,
+        maxGradient: 8,
+        difficulty: 'medium',
+        description: 'Version plus courte depuis le Col du Markstein, idéale pour compléter une journée dans les Vosges'
+      }
+    ],
+    touristicInfo: 'Au sommet du Grand Ballon se trouve le radar météorologique dans sa bulle caractéristique, ainsi qu\'un hôtel-restaurant et un monument aux Diables Bleus (chasseurs alpins). Le site est classé Grand Site du Massif des Vosges. Les amateurs d\'histoire apprécieront les vestiges des tranchées de la Première Guerre mondiale visibles à proximité.',
+    facilities: [
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Hôtel-restaurant proposant cuisine traditionnelle alsacienne'
+      },
+      {
+        type: 'water',
+        location: 'Goldbach et sommet',
+        description: 'Points d\'eau au village de Goldbach et près du restaurant au sommet'
+      },
+      {
+        type: 'bike-shop',
+        location: 'Thann (vallée)',
+        description: 'Magasins de vélo avec service de réparation et location'
+      }
+    ],
+    bestTimeToVisit: 'Mai à octobre',
+    weatherInfo: 'Le col est généralement accessible de mai à octobre. Attention aux vents forts au sommet et aux brouillards qui peuvent se former rapidement. En été, préférez les matinées pour éviter les orages fréquents en après-midi.',
+    strava: {
+      segmentId: '629404',
+      komTime: '39:22',
+      komName: 'Thibaut Pinot'
+    }
+  },
+  {
+    id: 'col-croix-des-moinats',
+    name: 'Col de la Croix des Moinats',
+    region: 'vosges',
+    country: 'France',
+    altitude: 891,
+    length: 7.6,
+    avgGradient: 6.3,
+    maxGradient: 9.0,
+    difficulty: 'medium',
+    elevationGain: 480,
+    startLocation: 'Cornimont',
+    endLocation: 'Col de la Croix des Moinats',
+    description: 'Le Col de la Croix des Moinats est une ascension soutenue des Hautes-Vosges, souvent décrite comme un "petit col alpin" en raison de ses pentes régulières et de son profil exigeant. Cette montée parcourt la Route des Crêtes, offrant des panoramas superbes sur les ballons vosgiens et la vallée de la Moselotte. L\'ascension traverse d\'épaisses forêts de hêtres et de sapins avant d\'émerger sur les chaumes d\'altitude, où les paysages s\'ouvrent progressivement en approchant du sommet. Malgré son altitude modeste, ce col constitue un défi significatif pour les cyclistes en raison de sa pente constante.',
+    history: 'Le Col de la Croix des Moinats a été rendu célèbre par le Tour de France, qui l\'a emprunté à plusieurs reprises. Son nom fait référence à une croix érigée à la mémoire de moines qui auraient traversé ces montagnes. Pendant la Seconde Guerre mondiale, ce col a joué un rôle stratégique comme point de passage pour la Résistance entre les vallées vosgiennes. Plus récemment, en 2014, le col a été le théâtre d\'une échappée mémorable de Blel Kadri, qui a remporté l\'étape à Gérardmer après avoir franchi ce sommet en tête.',
+    imageUrl: '/images/cols/col-croix-des-moinats/main.jpg',
+    profileUrl: '/images/cols/col-croix-des-moinats/profile.jpg',
+    popularSegments: [
+      {
+        name: 'Derniers 3 kilomètres',
+        length: 3.0,
+        gradient: 7.2,
+        description: 'La partie finale, plus exposée, offre une vue dégagée sur les vallées environnantes. La pente y reste soutenue sans être excessive.'
+      },
+      {
+        name: 'Épingle de La Bresse',
+        length: 1.8,
+        gradient: 8.0,
+        description: 'Section comprenant des virages en épingle caractéristiques, avec une pente qui s\'accentue à travers la forêt dense.'
+      }
+    ],
+    routes: [
+      {
+        name: 'Versant Ouest (Cornimont)',
+        startLocation: 'Cornimont',
+        length: 7.6,
+        elevationGain: 480,
+        avgGradient: 6.3,
+        maxGradient: 9.0,
+        difficulty: 'medium',
+        description: 'L\'ascension classique depuis Cornimont. Une montée régulière avec une pente constante qui serpente à travers les forêts. Les 3 derniers kilomètres offrent de belles vues sur la vallée.'
+      },
+      {
+        name: 'Versant Est (La Bresse)',
+        startLocation: 'La Bresse',
+        length: 5.9,
+        elevationGain: 306,
+        avgGradient: 5.2,
+        maxGradient: 8.0,
+        difficulty: 'medium',
+        description: 'Une montée plus courte et légèrement moins pentue, offrant une alternative plus douce pour accéder au col. Les premiers kilomètres traversent les hameaux pittoresques de La Bresse.'
+      },
+      {
+        name: 'Versant Nord (Route des Crêtes)',
+        startLocation: 'Col de Bramont',
+        length: 4.8,
+        elevationGain: 220,
+        avgGradient: 4.6,
+        maxGradient: 7.0,
+        difficulty: 'easy',
+        description: 'Cette approche par la Route des Crêtes est la plus facile mais offre les panoramas les plus spectaculaires, avec des vues dégagées sur les crêtes vosgiennes.'
+      }
+    ],
+    touristicInfo: 'Le Col de la Croix des Moinats est situé sur la célèbre Route des Crêtes, itinéraire panoramique qui traverse les plus hauts sommets des Vosges. À proximité se trouvent plusieurs sentiers de randonnée menant aux Ballons des Vosges et des fermes-auberges traditionnelles proposant des spécialités vosgiennes comme la tarte aux myrtilles, le munster fermier et la tourte vosgienne. Ce col est également un lieu de mémoire avec plusieurs monuments commémorant les combats de la Seconde Guerre mondiale.',
+    facilities: [
+      {
+        type: 'food',
+        location: 'Col',
+        description: 'Auberge du Col de la Croix des Moinats, proposant des spécialités vosgiennes et une terrasse avec vue panoramique.'
+      },
+      {
+        type: 'water',
+        location: 'La Bresse',
+        description: 'Fontaines publiques dans le village, à environ 6 km du sommet.'
+      },
+      {
+        type: 'bike-shop',
+        location: 'Cornimont et La Bresse',
+        description: 'Magasins de cycles dans les deux villages au pied du col, proposant réparations et accessoires.'
+      },
+      {
+        type: 'shelter',
+        location: 'Col',
+        description: 'Abri couvert près de l\'auberge, utile en cas d\'intempéries.'
+      }
+    ],
+    bestTimeToVisit: 'Mai à octobre, avec les mois de juin à septembre comme période optimale. Les week-ends d\'automne offrent des couleurs spectaculaires dans les forêts.',
+    weatherInfo: 'Le climat vosgien est caractérisé par des changements rapides. Les brouillards matinaux sont fréquents mais se dissipent généralement en cours de journée. En été, attention aux orages qui peuvent se développer rapidement l\'après-midi. Le col est généralement fermé de décembre à mars en raison de la neige.',
+    strava: {
+      segmentId: '628441',
+      komTime: '19:15',
+      komName: 'Thibaut Pinot'
+    }
+  }
+];
+
+export default colsVosges;

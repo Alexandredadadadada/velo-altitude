@@ -21,13 +21,13 @@ import {
   Timeline, 
   Info, 
   CalendarToday,
-  TrendingUp,
-  TrendingDown,
   Speed,
   MonitorWeight,
   Add,
   Refresh
 } from '@mui/icons-material';
+import TrendingUpIcon from '../icons/TrendingIcon';
+import TrendingDownIcon from '../icons/TrendingDownIcon';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, registerables } from 'chart.js';
 import nutritionService from '../../services/nutritionService';
@@ -493,9 +493,9 @@ const NutritionDashboard = ({ nutritionData, userId, onRefresh }) => {
               {dashboardData.activityLog && dashboardData.activityLog.length > 0 && (
                 <Typography variant="caption" color="text.secondary" sx={{ display: 'flex', alignItems: 'center' }}>
                   {dashboardData.activityLog[dashboardData.activityLog.length-1].calories.balance > 0 ? (
-                    <>+{dashboardData.activityLog[dashboardData.activityLog.length-1].calories.balance} <TrendingUp fontSize="small" color="success" sx={{ ml: 0.5 }} /></>
+                    <>+{dashboardData.activityLog[dashboardData.activityLog.length-1].calories.balance} <TrendingUpIcon fontSize="small" color="success" sx={{ ml: 0.5 }} /></>
                   ) : (
-                    <>{dashboardData.activityLog[dashboardData.activityLog.length-1].calories.balance} <TrendingDown fontSize="small" color="error" sx={{ ml: 0.5 }} /></>
+                    <>{dashboardData.activityLog[dashboardData.activityLog.length-1].calories.balance} <TrendingDownIcon fontSize="small" color="error" sx={{ ml: 0.5 }} /></>
                   )}
                 </Typography>
               )}

@@ -1,0 +1,53 @@
+{
+  "id": "col-du-lautaret",
+  "name": "Col du Lautaret",
+  "slug": "col-du-lautaret",
+  "country": "",
+  "region": "",
+  "altitude": 2058,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 3,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/lautaret/main.jpg",
+    "gallery": [
+      "/images/cols/lautaret/briancon-side.jpg",
+      "/images/cols/lautaret/bourg-oisans-side.jpg",
+      "/images/cols/lautaret/meije-view.jpg",
+      "/images/cols/lautaret/garden.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.806Z"
+}

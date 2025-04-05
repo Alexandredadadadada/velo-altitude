@@ -1,0 +1,59 @@
+{
+  "id": "mont-faron",
+  "name": "Mont Faron",
+  "region": "jura",
+  "country": "France",
+  "altitude": 584,
+  "length": 5.5,
+  "avgGradient": 9.8,
+  "maxGradient": 14,
+  "difficulty": "medium",
+  "elevationGain": 539,
+  "startLocation": "Toulon",
+  "endLocation": "Mont Faron",
+  "description": "Bien que peu élevé, le Mont Faron est une ascension courte mais très raide qui surplombe la ville de Toulon et la Méditerranée. C'est un classique du Tour du Haut Var et du Tour Méditerranéen.",
+  "history": "Cette montée a servi d'arrivée pour plusieurs courses professionnelles, notamment lors du Tour Méditerranéen. Elle a souvent été le théâtre d'attaques décisives pour le classement général.",
+  "imageUrl": "/images/cols/mont-faron/main.jpg",
+  "profileUrl": "/images/cols/mont-faron/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Sud (Toulon)",
+      "startLocation": "Toulon",
+      "length": 5.5,
+      "elevationGain": 539,
+      "avgGradient": 9.8,
+      "maxGradient": 14,
+      "difficulty": "medium",
+      "description": "L'ascension classique, courte mais intense"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Virage en épingle - Sommet",
+      "length": 3.2,
+      "gradient": 10.5,
+      "description": "Section la plus difficile après le premier virage en épingle"
+    }
+  ],
+  "touristicInfo": "Au sommet, on trouve un mémorial, un zoo et un téléphérique. La vue sur la rade de Toulon et la Méditerranée est spectaculaire.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Sommet",
+      "description": "Point d'eau près du mémorial"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Restaurant panoramique"
+    }
+  ],
+  "bestTimeToVisit": "Toute l'année, mais éviter l'été en raison de la chaleur",
+  "weatherInfo": "Climat méditerranéen, très chaud en été. Montée exposée au soleil.",
+  "strava": {
+    "segmentId": "650173",
+    "komTime": "14:28",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "mont-faron"
+}

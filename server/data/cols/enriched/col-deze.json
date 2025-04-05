@@ -1,0 +1,53 @@
+{
+  "id": "col-d-eze",
+  "name": "Col d'Èze",
+  "slug": "col-deze",
+  "country": "",
+  "region": "",
+  "altitude": 507,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 3,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/eze/main.jpg",
+    "gallery": [
+      "/images/cols/eze/nice-side.jpg",
+      "/images/cols/eze/turbie-side.jpg",
+      "/images/cols/eze/view.jpg",
+      "/images/cols/eze/village.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.945Z"
+}

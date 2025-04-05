@@ -1,0 +1,74 @@
+{
+  "id": "passo-giau",
+  "name": "Passo Giau",
+  "slug": "passo-giau",
+  "country": "Italie",
+  "region": "Dolomites",
+  "altitude": 2236,
+  "length": 9.9,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": "HC",
+  "description": {
+    "fr": "Le Passo Giau est considéré comme l'une des ascensions les plus difficiles des Dolomites. Avec sa pente constamment raide et ses paysages spectaculaires sur les sommets environnants, il est devenu un passage emblématique du Giro d'Italia. C'est un col qui ne laisse aucun répit aux cyclistes mais qui récompense l'effort par des vues inoubliables.",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": [
+    "/assets/images/cols/passo-giau/main.jpg",
+    "/assets/images/cols/passo-giau/view1.jpg",
+    "/assets/images/cols/passo-giau/view2.jpg"
+  ],
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      "Selva di Cadore",
+      "Rifugio Passo Giau"
+    ],
+    "food": [
+      "Rifugio Passo Giau"
+    ],
+    "shelter": [
+      "Rifugio Passo Giau"
+    ],
+    "mechanics": [
+      "Cortina d'Ampezzo (15km)"
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Marc Dubois",
+      "date": "2024-07-10",
+      "text": "Ce col est un monstre! 10% de moyenne pendant 10km, c'est brutal. Mais les paysages des Dolomites valent chaque goutte de sueur."
+    },
+    {
+      "name": "Elena Rossi",
+      "date": "2023-08-25",
+      "text": "J'ai grimpé le Giau après une journée de pluie. La route était parfaite et les nuages bas créaient une ambiance mystique. Un conseil: gardez des forces pour les 3 derniers kilomètres!"
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 73,
+  "last_updated": "2025-04-05T20:42:26.980Z"
+}

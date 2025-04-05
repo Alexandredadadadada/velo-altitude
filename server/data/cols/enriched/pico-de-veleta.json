@@ -1,0 +1,53 @@
+{
+  "id": "pico-de-veleta",
+  "name": "Pico de Veleta",
+  "slug": "pico-de-veleta",
+  "country": "",
+  "region": "",
+  "altitude": 3398,
+  "length": 0,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 5,
+  "description": {
+    "fr": "",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/veleta/main.jpg",
+    "gallery": [
+      "/images/cols/veleta/upper-section.jpg",
+      "/images/cols/veleta/ski-resort.jpg",
+      "/images/cols/veleta/summit.jpg",
+      "/images/cols/veleta/view.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": [],
+  "testimonials": [],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 50,
+  "last_updated": "2025-04-05T20:42:26.837Z"
+}

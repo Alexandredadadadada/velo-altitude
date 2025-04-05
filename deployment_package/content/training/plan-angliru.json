@@ -1,0 +1,208 @@
+{
+  "id": "programme-angliru",
+  "title": "Programme Spécial Angliru",
+  "subtitle": "Préparation spécifique pour affronter les pentes extrêmes de l'enfer espagnol",
+  "difficulty": 9,
+  "duration": "8 semaines",
+  "targetAudience": "Cyclistes avancés avec expérience de la haute montagne",
+  "description": "Ce programme intensif de 8 semaines est spécialement conçu pour préparer les cyclistes à l'ascension de l'Alto de l'Angliru, considéré comme l'un des cols les plus difficiles d'Europe. Avec des pentes atteignant 23.5%, l'Angliru nécessite une préparation spécifique qui développe non seulement l'endurance mais aussi la force musculaire et la capacité à soutenir un effort de très haute intensité sur des pentes extrêmes.",
+  "objectives": [
+    "Développer la force spécifique nécessaire pour les sections à plus de 20% de pente",
+    "Améliorer la technique de pédalage sur pentes extrêmes",
+    "Optimiser le ratio poids/puissance pour maximiser les performances en pente raide",
+    "Préparer mentalement à l'effort soutenu sur des gradients intimidants",
+    "Renforcer les muscles stabilisateurs pour maintenir l'équilibre à faible cadence"
+  ],
+  "prerequisites": [
+    "Minimum 2 ans d'expérience cycliste incluant de la haute montagne",
+    "Avoir déjà réalisé des ascensions d'au moins 10km à 8-10% de moyenne",
+    "FTP minimale recommandée: 3.2 W/kg",
+    "Absence de problèmes de dos ou genoux préexistants"
+  ],
+  "recommendedEquipment": [
+    "Vélo avec triple plateau ou compact avec cassette minimum 34 dents (idéalement 36 ou 39)",
+    "Capteur de puissance pour suivre précisément l'intensité",
+    "Home trainer pour les séances spécifiques à haute résistance",
+    "Roues légères privilégiant la grimpe aux performances aérodynamiques"
+  ],
+  "phases": [
+    {
+      "name": "Phase 1: Fondation Force-Endurance",
+      "duration": "Semaines 1-2",
+      "focus": "Développer la base de force musculaire et d'endurance nécessaire",
+      "keyWorkouts": [
+        {
+          "name": "Force en côte - Basse cadence",
+          "type": "Force",
+          "description": "Trouver une côte de 6-8% régulière. Réaliser 6-8 répétitions de 4 minutes en restant assis avec une cadence très basse (50-55 rpm), récupération de 3 minutes en descente.",
+          "intensity": "90-95% FTP / Z4",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Intervalles de seuil en côte",
+          "type": "Seuil",
+          "description": "Sur une côte de 5-8%: 3 séries de 10 minutes au seuil, récupération de 5 minutes entre les séries. Maintenir une cadence modérée (70-80 rpm).",
+          "intensity": "95-100% FTP / Z4",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Sortie longue avec dénivelé cumulé",
+          "type": "Endurance",
+          "description": "Sortie de 3-4h incluant au moins 2000m de dénivelé positif. Inclure au moins une ascension longue (10km+) réalisée à intensité modérée.",
+          "intensity": "70-80% FTP / Z2-Z3",
+          "frequency": "1x par semaine"
+        }
+      ],
+      "weeklyVolume": "9-11 heures",
+      "tips": [
+        "Concentrez-vous sur la technique en côte: position assise stable avec mains sur le haut du guidon",
+        "Travaillez le gainage central pour stabiliser le haut du corps",
+        "Renforcez les muscles du bas du dos, souvent sollicités sur les pentes raides"
+      ]
+    },
+    {
+      "name": "Phase 2: Développement Force-Puissance",
+      "duration": "Semaines 3-4",
+      "focus": "Augmenter la capacité à produire de la puissance à haute résistance",
+      "keyWorkouts": [
+        {
+          "name": "Répétitions en surrégime",
+          "type": "Force-Puissance",
+          "description": "Sur une côte de 10-15%: 6-8 répétitions de 90 secondes en danseuse à intensité très élevée, récupération complète de 3-4 minutes entre les répétitions.",
+          "intensity": "130-150% FTP / Z6",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Pyramide de force",
+          "type": "Force-Endurance",
+          "description": "Sur home trainer à résistance maximale ou côte très raide: Série pyramidale de 1/2/3/4/3/2/1 minutes à très basse cadence (45-55 rpm), récupération égale à la durée de l'intervalle.",
+          "intensity": "90-105% FTP / Z4-Z5",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Simulation Angliru - Sections Initiales",
+          "type": "Spécifique",
+          "description": "Trouver la montée la plus raide disponible. Réaliser une ascension continue de 20-30 minutes en alternant 3 minutes à cadence normale puis 2 minutes à cadence très basse (simulation des passages raides).",
+          "intensity": "85-95% FTP / Z3-Z4",
+          "frequency": "1x par semaine"
+        }
+      ],
+      "weeklyVolume": "10-12 heures",
+      "tips": [
+        "Adoptez un léger déficit calorique contrôlé pour optimiser le rapport poids/puissance",
+        "Travaillez spécifiquement le renforcement des quadriceps et ischio-jambiers hors vélo",
+        "Pratiquez la technique de pédalage en danseuse pour les sections à 20%+"
+      ]
+    },
+    {
+      "name": "Phase 3: Spécifique Haute Pente",
+      "duration": "Semaines 5-6",
+      "focus": "Simulation spécifique des conditions extrêmes de l'Angliru",
+      "keyWorkouts": [
+        {
+          "name": "Blocs de sur-seuil en pente",
+          "type": "VO2max",
+          "description": "Sur la pente la plus raide disponible: 5 blocs de 5 minutes à intensité très élevée, récupération de 5 minutes. Alterner position assise et danseuse pendant les intervalles.",
+          "intensity": "105-115% FTP / Z5",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Simulation Cueña les Cabres",
+          "type": "Spécifique",
+          "description": "Sur home trainer avec résistance maximale: 5 répétitions de 3 minutes simulant le segment le plus raide de l'Angliru (23.5%). Alterner 30s en danseuse / 30s assis. Récupération de 5 minutes.",
+          "intensity": "120-130% FTP / Z5-Z6",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Test d'ascension continue",
+          "type": "Endurance-Puissance",
+          "description": "Trouver l'ascension la plus longue et la plus raide disponible. Réaliser l'ascension complète à intensité constante et soutenue, en restant juste sous le seuil.",
+          "intensity": "90-95% FTP / Z4",
+          "frequency": "1x par semaine"
+        }
+      ],
+      "weeklyVolume": "11-13 heures",
+      "tips": [
+        "Pratiquez les changements de position (assis/danseuse) sur les pentes raides",
+        "Travaillez la respiration profonde pour optimiser l'oxygénation sur l'effort intense",
+        "Visualisez mentalement les segments les plus difficiles de l'Angliru"
+      ]
+    },
+    {
+      "name": "Phase 4: Adaptation et Affinage",
+      "duration": "Semaines 7-8",
+      "focus": "Affiner la préparation et simuler l'ascension complète",
+      "keyWorkouts": [
+        {
+          "name": "Simulation Angliru complète",
+          "type": "Spécifique",
+          "description": "Sur home trainer, suivre le profil exact de l'Angliru en modulant l'intensité selon les pourcentages réels. Alternativement, enchaîner plusieurs montées avec des sections à pourcentages variés pour simuler le profil.",
+          "intensity": "Variable selon sections (70-120% FTP)",
+          "frequency": "1x par semaine (semaine 7)"
+        },
+        {
+          "name": "Micro-blocs explosifs",
+          "type": "Anaérobie",
+          "description": "6-8 séries de: 30s effort maximal (130-150% FTP) sur résistance très élevée + 30s récupération minimale (50% FTP) + 30s effort très élevé (120-130% FTP) + 3min récupération complète entre séries.",
+          "intensity": "120-150% FTP / Z6",
+          "frequency": "1x (semaine 7)"
+        },
+        {
+          "name": "Sorties d'activation",
+          "type": "Récupération",
+          "description": "Sorties courtes (1h-1h30) avec 2-3 accélérations de 2-3 minutes à intensité modérée.",
+          "intensity": "65-75% FTP / Z2 avec pointes en Z3",
+          "frequency": "2-3x (semaine 8)"
+        }
+      ],
+      "weeklyVolume": "S7: 10-12h, S8: 5-6h",
+      "tips": [
+        "Optimisez le poids de l'équipement pour le jour J (bidons, ravitaillement, etc.)",
+        "Finalisez votre stratégie de développements pour chaque section de l'ascension",
+        "Privilégiez le repos et la récupération la semaine précédant l'ascension"
+      ]
+    }
+  ],
+  "angliru_strategy": {
+    "pacing": {
+      "initialSection": "La Legua à Viapará (km 0-5.5): Pente modérée (5-6%). Restez très conservateur, économisez au maximum l'énergie. Intensité cible: 65-75% FTP.",
+      "midSection": "Viapará à La Vega (km 5.5-9.5): La pente s'accentue (9-10%). Maintenez un rythme régulier, sans forcer. Intensité cible: 75-80% FTP.",
+      "criticalSection": "La Vega à El Aviru (km 9.5-11.5): Début des secteurs extrêmes (+13%). Rythme très contrôlé, respirez profondément, préparez-vous mentalement. Intensité cible: 80-85% FTP.",
+      "extremeSection": "Cueña les Cabres (km 11.5-12.5): Le secteur le plus difficile (23.5% par endroits). Utilisez toute la largeur de la route pour réduire le pourcentage. Alternez position assise/danseuse. Intensité cible: 90-100% FTP (ou la puissance maximale soutenable).",
+      "finalSection": "À partir de km 12.5 jusqu'au sommet: La pente diminue légèrement mais reste sévère (13-18%). Maintenez un effort régulier, le sommet est proche. Intensité cible: 85-90% FTP."
+    },
+    "gearing": {
+      "recommendation": "Plateau avant idéal: 34 dents. Cassette arrière: minimum 32 dents, idéalement 36 ou 39 dents pour les sections les plus raides.",
+      "ultraLow": "Pour les cyclistes moins expérimentés ou à faible ratio poids/puissance, considérer une configuration avec un plateau de 30 ou 32 dents à l'avant."
+    },
+    "nutrition": {
+      "avant": "Repas riche en glucides complexes 3h avant. 20-30g de glucides simples 15-30 minutes avant le début de l'ascension.",
+      "pendant": "Gel énergétique dès le début de l'ascension et un autre à mi-parcours. 500ml d'eau + électrolytes pendant l'ascension.",
+      "consideration": "L'intensité très élevée limite la capacité digestive - privilégiez les glucides très facilement assimilables (gels) et hydratez-vous avant les sections les plus raides."
+    },
+    "technique": {
+      "positionAssise": "Sur les pentes >15%, avancez-vous sur la selle, coudes fléchis, dos droit mais incliné vers l'avant, mains sur le haut du guidon.",
+      "danseuse": "Sur les passages >20%, adoptez une danseuse économique: corps bas sur le vélo, mouvements latéraux minimaux, traction alternée sur le guidon synchronisée avec le pédalage.",
+      "trajectoire": "Sur les virages en pente extrême, prenez l'extérieur pour réduire le pourcentage effectif. Utilisez toute la largeur de route disponible sur les lignes droites."
+    }
+  },
+  "mentalPreparation": {
+    "segmentation": "Divisez mentalement l'ascension en 5 segments distincts. Ne pensez qu'au segment en cours.",
+    "mantras": [
+      "\"Chaque coup de pédale me rapproche du sommet\"",
+      "\"La douleur est temporaire, l'accomplissement est permanent\"",
+      "\"Je suis préparé pour ce défi\""
+    ],
+    "visualization": "Avant l'ascension, visualisez-vous complétant avec succès chaque segment difficile, particulièrement Cueña les Cabres.",
+    "milestones": "Fixez des micro-objectifs: le prochain virage, la prochaine borne kilométrique, une section moins pentue à atteindre."
+  },
+  "complementaryTraining": {
+    "core": "3 séances hebdomadaires de renforcement du gainage et du bas du dos, essentiels pour maintenir la position sur les pentes extrêmes.",
+    "upperbody": "Renforcement des bras et des épaules pour soutenir le poids du corps en danseuse sur les sections les plus raides.",
+    "stretching": "Étirements quotidiens des fléchisseurs de hanches, des quadriceps et du bas du dos pour prévenir les tensions liées à la position spécifique de grimpe raide."
+  },
+  "relatedContent": {
+    "nutrition": "plan-nutrition-recuperation",
+    "cols": "angliru"
+  }
+}

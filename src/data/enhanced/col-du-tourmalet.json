@@ -1,0 +1,69 @@
+{
+  "id": "col-du-tourmalet",
+  "name": "Col du Tourmalet",
+  "region": "pyrenees",
+  "country": "France",
+  "altitude": 2115,
+  "length": 19,
+  "avgGradient": 7.4,
+  "maxGradient": 10.2,
+  "difficulty": "hard",
+  "elevationGain": 1404,
+  "startLocation": "Luz-Saint-Sauveur",
+  "endLocation": "Col du Tourmalet",
+  "description": "Considéré comme le col le plus difficile des Pyrénées, le Tourmalet est le col le plus emprunté par le Tour de France. Son ascension est un véritable test d'endurance avec une pente régulièrement difficile.",
+  "history": "Premier passage du Tour en 1910, le Tourmalet a vu les exploits de nombreux champions. En 1969, Eddy Merckx y attaque à 140 km de l'arrivée pour remporter une victoire légendaire. En 2010, Andy Schleck et Alberto Contador s'y livrent un duel mémorable.",
+  "imageUrl": "/images/cols/tourmalet/main.jpg",
+  "profileUrl": "/images/cols/tourmalet/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Est (Sainte-Marie-de-Campan)",
+      "startLocation": "Sainte-Marie-de-Campan",
+      "length": 17.2,
+      "elevationGain": 1268,
+      "avgGradient": 7.4,
+      "maxGradient": 10,
+      "difficulty": "hard",
+      "description": "Montée régulière qui s'accentue dans les derniers kilomètres"
+    },
+    {
+      "name": "Versant Ouest (Luz-Saint-Sauveur)",
+      "startLocation": "Luz-Saint-Sauveur",
+      "length": 19,
+      "elevationGain": 1404,
+      "avgGradient": 7.4,
+      "maxGradient": 10.2,
+      "difficulty": "hard",
+      "description": "Version légèrement plus longue et difficile avec une pente constante"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "La Mongie - Sommet",
+      "length": 4.5,
+      "gradient": 8.5,
+      "description": "Section finale après la station de ski"
+    }
+  ],
+  "touristicInfo": "Au sommet se trouve la statue du Géant du Tourmalet, représentant un cycliste en plein effort. La station de ski de La Mongie est située sur le versant est.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "La Mongie et sommet",
+      "description": "Fontaines et restaurants"
+    },
+    {
+      "type": "food",
+      "location": "La Mongie et sommet",
+      "description": "Restaurants et cafés"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Col souvent ouvert de mai à octobre. Conditions météorologiques changeantes, possibilité de brouillard et vent fort au sommet.",
+  "strava": {
+    "segmentId": "632642",
+    "komTime": "48:30",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "col-du-tourmalet"
+}

@@ -8,15 +8,19 @@
       "longitude": 6.7347,
       "region": "Alpes françaises",
       "country": "France",
-      "nearbyTowns": ["Briançon", "Arvieux", "Château-Queyras"]
+      "nearbyTowns": [
+        "Briançon",
+        "Arvieux",
+        "Château-Queyras"
+      ]
     },
     "climbData": {
       "brianconSide": {
         "startLocation": "Briançon",
-        "length": 19.0,
+        "length": 19,
         "elevation": 1150,
-        "averageGradient": 6.0,
-        "maxGradient": 10.0,
+        "averageGradient": 6,
+        "maxGradient": 10,
         "difficulty": 8
       },
       "arvieuxSide": {
@@ -24,7 +28,7 @@
         "length": 15.9,
         "elevation": 1095,
         "averageGradient": 6.9,
-        "maxGradient": 10.0,
+        "maxGradient": 10,
         "difficulty": 8
       }
     },
@@ -55,19 +59,28 @@
       {
         "name": "La Casse Déserte",
         "description": "Paysage unique de roches érodées par le vent et l'eau, formant un décor presque lunaire.",
-        "coordinates": [44.8333, 6.7405],
+        "coordinates": [
+          44.8333,
+          6.7405
+        ],
         "type": "natural"
       },
       {
         "name": "Monuments Coppi-Bobet",
         "description": "Monuments dédiés aux deux champions qui ont marqué l'histoire du col.",
-        "coordinates": [44.8236, 6.7358],
+        "coordinates": [
+          44.8236,
+          6.7358
+        ],
         "type": "monument"
       },
       {
         "name": "Refuge Napoléon",
         "description": "Refuge historique au sommet, nommé d'après l'empereur qui fit construire la route.",
-        "coordinates": [44.8203, 6.7347],
+        "coordinates": [
+          44.8203,
+          6.7347
+        ],
         "type": "accommodation"
       }
     ],
@@ -76,9 +89,16 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Modéré",
       "winterClosure": "Fermé d'octobre à mai",
-      "facilities": ["Refuge avec restaurant au sommet", "Toilettes", "Boutique souvenirs"],
+      "facilities": [
+        "Refuge avec restaurant au sommet",
+        "Toilettes",
+        "Boutique souvenirs"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Refuge au sommet", "Plusieurs sources en montant"]
+      "waterPoints": [
+        "Refuge au sommet",
+        "Plusieurs sources en montant"
+      ]
     },
     "images": {
       "main": "/images/cols/izoard/main.jpg",
@@ -96,7 +116,10 @@
       "Depuis Arvieux, les passages les plus difficiles se trouvent dans les premiers kilomètres.",
       "Prévoyez des vêtements coupe-vent pour la descente, même en été."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "col-dizoard"
   },
   {
     "id": "angliru",
@@ -107,7 +130,11 @@
       "longitude": -5.9289,
       "region": "Asturies",
       "country": "Espagne",
-      "nearbyTowns": ["Oviedo", "La Vega", "Riosa"]
+      "nearbyTowns": [
+        "Oviedo",
+        "La Vega",
+        "Riosa"
+      ]
     },
     "climbData": {
       "riosaSide": {
@@ -146,19 +173,28 @@
       {
         "name": "Virage de la Cueña les Cabres",
         "description": "L'un des virages les plus raides au monde avec une pente de 23.5%, véritable cauchemar des cyclistes.",
-        "coordinates": [43.2223, -5.9252],
+        "coordinates": [
+          43.2223,
+          -5.9252
+        ],
         "type": "landmark"
       },
       {
         "name": "Panneau des 21.5%",
         "description": "Signal indiquant le passage à 21.5% de pente, souvent photographié par les cyclistes.",
-        "coordinates": [43.2234, -5.9277],
+        "coordinates": [
+          43.2234,
+          -5.9277
+        ],
         "type": "landmark"
       },
       {
         "name": "Mirador de l'Angliru",
         "description": "Point de vue panoramique sur les montagnes asturiennes.",
-        "coordinates": [43.2249, -5.9289],
+        "coordinates": [
+          43.2249,
+          -5.9289
+        ],
         "type": "viewpoint"
       }
     ],
@@ -167,9 +203,13 @@
       "roadCondition": "Bonne mais très étroite par endroits",
       "trafficLevel": "Faible, route fermée certains weekends pour les cyclistes",
       "winterClosure": "Accessibilité réduite en hiver, risque de neige et verglas",
-      "facilities": ["Aucune installation permanente au sommet"],
+      "facilities": [
+        "Aucune installation permanente au sommet"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Apportez vos réserves d'eau, aucun point d'eau fiable sur le parcours"]
+      "waterPoints": [
+        "Apportez vos réserves d'eau, aucun point d'eau fiable sur le parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/angliru/main.jpg",
@@ -187,7 +227,10 @@
       "Le premier tiers est relativement facile, ne vous laissez pas berner.",
       "Sur les pentes à plus de 20%, restez assis pour maintenir l'adhérence de la roue arrière."
     ],
-    "recommendedBikeTypes": ["Vélo de route avec triple plateau ou compact avec grande cassette"]
+    "recommendedBikeTypes": [
+      "Vélo de route avec triple plateau ou compact avec grande cassette"
+    ],
+    "slug": "alto-de-langliru"
   },
   {
     "id": "grossglockner",
@@ -198,7 +241,11 @@
       "longitude": 12.8307,
       "region": "Alpes autrichiennes",
       "country": "Autriche",
-      "nearbyTowns": ["Bruck", "Heiligenblut", "Fusch"]
+      "nearbyTowns": [
+        "Bruck",
+        "Heiligenblut",
+        "Fusch"
+      ]
     },
     "climbData": {
       "bruckSide": {
@@ -206,7 +253,7 @@
         "length": 25.3,
         "elevation": 1694,
         "averageGradient": 6.7,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       },
       "heiligenblutSide": {
@@ -214,7 +261,7 @@
         "length": 20.4,
         "elevation": 1324,
         "averageGradient": 6.5,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 8
       }
     },
@@ -239,25 +286,37 @@
       {
         "name": "Edelweissspitze",
         "description": "Sommet secondaire offrant une vue à 360° sur plus de 30 sommets alpins à plus de 3000m.",
-        "coordinates": [47.0789, 12.8325],
+        "coordinates": [
+          47.0789,
+          12.8325
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Fuscher Törl",
         "description": "Col à 2428m d'altitude, intersection principale de la Hochalpenstrasse.",
-        "coordinates": [47.0742, 12.8307],
+        "coordinates": [
+          47.0742,
+          12.8307
+        ],
         "type": "landmark"
       },
       {
         "name": "Franz-Josefs-Höhe",
         "description": "Point de vue panoramique à 2369m d'altitude offrant une vue imprenable sur le glacier Pasterze.",
-        "coordinates": [47.0742, 12.7511],
+        "coordinates": [
+          47.0742,
+          12.7511
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Musée de la Hochalpenstrasse",
         "description": "Musée relatant l'histoire de la construction de cette route extraordinaire.",
-        "coordinates": [47.0760, 12.8300],
+        "coordinates": [
+          47.076,
+          12.83
+        ],
         "type": "cultural"
       }
     ],
@@ -266,9 +325,16 @@
       "roadCondition": "Excellente, route à péage (excepté pour les cyclistes)",
       "trafficLevel": "Élevé en été, plus calme tôt le matin",
       "winterClosure": "Fermé de novembre à mai",
-      "facilities": ["Restaurants et cafés", "Boutiques souvenirs", "Musée", "Toilettes"],
+      "facilities": [
+        "Restaurants et cafés",
+        "Boutiques souvenirs",
+        "Musée",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Nombreux points de ravitaillement le long du parcours"]
+      "waterPoints": [
+        "Nombreux points de ravitaillement le long du parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/grossglockner/main.jpg",
@@ -286,7 +352,10 @@
       "Prévoyez différentes couches de vêtements, la température peut chuter rapidement en altitude.",
       "L'ascension est longue mais régulière, gérez votre effort sur la durée."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "grossglockner-hochalpenstrasse"
   },
   {
     "id": "sa-calobra",
@@ -297,7 +366,10 @@
       "longitude": 2.8075,
       "region": "Îles Baléares",
       "country": "Espagne",
-      "nearbyTowns": ["Port de sa Calobra", "Escorca"]
+      "nearbyTowns": [
+        "Port de sa Calobra",
+        "Escorca"
+      ]
     },
     "climbData": {
       "portSide": {
@@ -305,12 +377,15 @@
         "length": 9.9,
         "elevation": 668,
         "averageGradient": 6.7,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 8
       }
     },
     "history": {
-      "notableRaces": ["Challenge Mallorca", "Tours d'entraînement professionnels"],
+      "notableRaces": [
+        "Challenge Mallorca",
+        "Tours d'entraînement professionnels"
+      ],
       "famousStories": [
         "Contrairement à la plupart des cols, Sa Calobra est généralement grimpé depuis le port, pour redescendre après.",
         "La route a été conçue par l'ingénieur Antonio Parietti en 1932 et est considérée comme un chef-d'œuvre d'ingénierie.",
@@ -335,19 +410,28 @@
       {
         "name": "Nus de sa Corbata",
         "description": "Célèbre virage en 'nœud de cravate' où la route passe sous elle-même.",
-        "coordinates": [39.8387, 2.8029],
+        "coordinates": [
+          39.8387,
+          2.8029
+        ],
         "type": "landmark"
       },
       {
         "name": "Mirador des Barques",
         "description": "Point de vue spectaculaire sur la mer Méditerranée.",
-        "coordinates": [39.8464, 2.8063],
+        "coordinates": [
+          39.8464,
+          2.8063
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Torrent de Pareis",
         "description": "Gorge impressionnante à proximité du port de Sa Calobra.",
-        "coordinates": [39.8513, 2.8090],
+        "coordinates": [
+          39.8513,
+          2.809
+        ],
         "type": "natural"
       }
     ],
@@ -356,9 +440,16 @@
       "roadCondition": "Excellent",
       "trafficLevel": "Faible hors saison, très élevé en été",
       "winterClosure": "Ouvert toute l'année sauf conditions exceptionnelles",
-      "facilities": ["Restaurants au port", "Toilettes", "Boutiques"],
+      "facilities": [
+        "Restaurants au port",
+        "Toilettes",
+        "Boutiques"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Port de sa Calobra", "Coll dels Reis (sommet)"]
+      "waterPoints": [
+        "Port de sa Calobra",
+        "Coll dels Reis (sommet)"
+      ]
     },
     "images": {
       "main": "/images/cols/sa-calobra/main.jpg",
@@ -376,7 +467,9 @@
       "Il n'y a pas d'échappatoire une fois engagé sur la route, prévoyez bien vos réserves d'eau.",
       "Pour éviter les bus touristiques, partez tôt le matin ou en fin d'après-midi."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "hautacam",
@@ -387,15 +480,18 @@
       "longitude": -0.0145,
       "region": "Pyrénées",
       "country": "France",
-      "nearbyTowns": ["Argelès-Gazost", "Lourdes"]
+      "nearbyTowns": [
+        "Argelès-Gazost",
+        "Lourdes"
+      ]
     },
     "climbData": {
       "argelesGazostSide": {
         "startLocation": "Argelès-Gazost",
         "length": 14.5,
         "elevation": 1170,
-        "averageGradient": 8.0,
-        "maxGradient": 13.0,
+        "averageGradient": 8,
+        "maxGradient": 13,
         "difficulty": 9
       }
     },
@@ -426,19 +522,28 @@
       {
         "name": "Station de ski Hautacam",
         "description": "Petite station de ski familiale au sommet, transformée en base de loisirs l'été.",
-        "coordinates": [42.9758, -0.0145],
+        "coordinates": [
+          42.9758,
+          -0.0145
+        ],
         "type": "attraction"
       },
       {
         "name": "Virage de la Ferme",
         "description": "Virage serré à mi-parcours où se rassemblent souvent les spectateurs lors du Tour.",
-        "coordinates": [42.9653, -0.0078],
+        "coordinates": [
+          42.9653,
+          -0.0078
+        ],
         "type": "landmark"
       },
       {
         "name": "Panorama sur la vallée d'Argelès",
         "description": "Vue spectaculaire sur la vallée et les sommets environnants.",
-        "coordinates": [42.9758, -0.0145],
+        "coordinates": [
+          42.9758,
+          -0.0145
+        ],
         "type": "viewpoint"
       }
     ],
@@ -447,9 +552,15 @@
       "roadCondition": "Bonne",
       "trafficLevel": "Faible à modéré",
       "winterClosure": "Accessible toute l'année sauf neige importante",
-      "facilities": ["Restaurant et installations de la station au sommet", "Toilettes"],
+      "facilities": [
+        "Restaurant et installations de la station au sommet",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Station au sommet", "Fontaine à mi-parcours"]
+      "waterPoints": [
+        "Station au sommet",
+        "Fontaine à mi-parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/hautacam/main.jpg",
@@ -467,6 +578,8 @@
       "L'ombre est rare sur le parcours, prévoyez une bonne protection solaire.",
       "À combiner avec le Col de Spandelles voisin pour un circuit exigeant."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   }
 ]

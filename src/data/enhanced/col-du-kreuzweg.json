@@ -1,0 +1,75 @@
+{
+  "id": "col-du-kreuzweg",
+  "name": "Col du Kreuzweg",
+  "region": "vosges-nord",
+  "country": "France",
+  "altitude": 583,
+  "length": 7.8,
+  "avgGradient": 6.4,
+  "maxGradient": 9,
+  "difficulty": "medium",
+  "elevationGain": 499,
+  "startLocation": "Lembach",
+  "endLocation": "Col du Kreuzweg",
+  "description": "Le Col du Kreuzweg (littéralement \"chemin de croix\" en allemand) est une belle ascension forestière qui traverse le cœur du massif des Vosges du Nord. Cette montée offre une succession de virages en épingle au milieu des conifères et des hêtraies, avec quelques belles échappées visuelles sur la plaine d'Alsace.",
+  "history": "Historiquement, ce col faisait partie des routes stratégiques utilisées pendant les conflits franco-allemands. Il a été entièrement reconstruit après la Seconde Guerre mondiale, et est devenu un lieu apprécié des cyclistes depuis les années 1970.",
+  "imageUrl": "/images/cols/kreuzweg/main.jpg",
+  "profileUrl": "/images/cols/kreuzweg/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Sud (Lembach)",
+      "startLocation": "Lembach",
+      "length": 7.8,
+      "elevationGain": 499,
+      "avgGradient": 6.4,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "Montée principale avec ses célèbres épingles en forêt"
+    },
+    {
+      "name": "Versant Nord (Bitche)",
+      "startLocation": "Bitche",
+      "length": 8.5,
+      "elevationGain": 470,
+      "avgGradient": 5.5,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Version alternative plus longue mais légèrement moins pentue"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Les Épingles de Kreuzweg",
+      "length": 3.2,
+      "gradient": 7.5,
+      "description": "Section centrale avec 7 virages en épingle à cheveux"
+    },
+    {
+      "name": "Chemin des Bornes - Sommet",
+      "length": 2.5,
+      "gradient": 8.2,
+      "description": "Derniers kilomètres plus pentus avant le sommet"
+    }
+  ],
+  "touristicInfo": "La région offre de nombreux attraits touristiques, notamment le château fort de Fleckenstein, la ligne Maginot avec l'ouvrage du Four-à-Chaux et les nombreux sentiers de randonnée du Parc Naturel Régional des Vosges du Nord. La gastronomie locale propose des spécialités alsaciennes comme le presskopf et le baeckeoffe.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Refuge du Kreuzweg",
+      "description": "Point d'eau potable près du sommet"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Auberge du Kreuzweg, ouverte d'avril à octobre"
+    }
+  ],
+  "bestTimeToVisit": "Mai à septembre",
+  "weatherInfo": "Climat semi-continental avec des possibilités d'orages en été. La route peut être impactée par des chutes d'arbres lors de forts vents.",
+  "strava": {
+    "segmentId": "567234",
+    "komTime": "23:15",
+    "komName": "Bruno Armirail"
+  },
+  "slug": "col-du-kreuzweg"
+}

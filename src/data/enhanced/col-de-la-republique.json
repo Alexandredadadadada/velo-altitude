@@ -1,0 +1,69 @@
+{
+  "id": "col-de-la-republique",
+  "name": "Col de la République",
+  "region": "massif-central",
+  "country": "France",
+  "altitude": 1161,
+  "length": 13.5,
+  "avgGradient": 5.7,
+  "maxGradient": 9,
+  "difficulty": "medium",
+  "elevationGain": 770,
+  "startLocation": "Saint-Étienne",
+  "endLocation": "Col de la République",
+  "description": "Également connu sous le nom de Col du Grand Bois, c'est le premier col de plus de 1000 mètres franchi par le Tour de France en 1903. Il relie la vallée du Gier à celle de la Loire.",
+  "history": "En 1904, lors du deuxième Tour de France, une embuscade fut tendue aux coureurs par des supporters locaux mécontents que leur favori ait été disqualifié l'année précédente. Le vainqueur du Tour, Henri Cornet, fut frappé par des spectateurs.",
+  "imageUrl": "/images/cols/col-republique/main.jpg",
+  "profileUrl": "/images/cols/col-republique/profile.jpg",
+  "routes": [
+    {
+      "name": "Versant Ouest (Saint-Étienne)",
+      "startLocation": "Saint-Étienne",
+      "length": 13.5,
+      "elevationGain": 770,
+      "avgGradient": 5.7,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "L'ascension historique depuis Saint-Étienne"
+    },
+    {
+      "name": "Versant Est (Bourg-Argental)",
+      "startLocation": "Bourg-Argental",
+      "length": 9.2,
+      "elevationGain": 541,
+      "avgGradient": 5.9,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Version plus courte mais similaire en difficulté"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "La Digonnière - Sommet",
+      "length": 5.8,
+      "gradient": 6.5,
+      "description": "Partie supérieure de l'ascension dans la forêt"
+    }
+  ],
+  "touristicInfo": "Au sommet se trouve une stèle commémorant Paul de Vivie (dit Vélocio), pionnier du cyclotourisme en France. La région est connue pour ses forêts de résineux et son patrimoine industriel.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "La Digonnière",
+      "description": "Fontaine au hameau"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Auberge du col (horaires variables)"
+    }
+  ],
+  "bestTimeToVisit": "Avril à octobre",
+  "weatherInfo": "Col généralement accessible toute l'année, mais risque de neige en hiver.",
+  "strava": {
+    "segmentId": "655293",
+    "komTime": "26:35",
+    "komName": "Pierre Latour"
+  },
+  "slug": "col-de-la-republique"
+}

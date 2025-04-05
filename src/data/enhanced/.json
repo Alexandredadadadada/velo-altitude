@@ -1,0 +1,619 @@
+{
+  "__esModule": true,
+  "default": {
+    "before": [
+      {
+        "id": "before-1",
+        "title": "Porridge énergétique aux fruits rouges",
+        "description": "Un petit-déjeuner riche en glucides complexes pour fournir de l'énergie durable avant une sortie longue.",
+        "imageUrl": "/images/nutrition/porridge-fruits-rouges.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/porridge-fruits-rouges.jpg",
+        "prepTime": 15,
+        "calories": 450,
+        "macros": {
+          "carbs": 75,
+          "protein": 15,
+          "fat": 10
+        },
+        "ingredients": [
+          {
+            "name": "flocons d'avoine",
+            "quantity": 60,
+            "unit": "g"
+          },
+          {
+            "name": "lait d'amande",
+            "quantity": 250,
+            "unit": "ml"
+          },
+          {
+            "name": "banane mûre",
+            "quantity": 1,
+            "unit": ""
+          },
+          {
+            "name": "fruits rouges (fraises, myrtilles, framboises)",
+            "quantity": 100,
+            "unit": "g"
+          },
+          {
+            "name": "miel",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "graines de chia",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "amandes effilées",
+            "quantity": 10,
+            "unit": "g"
+          }
+        ],
+        "instructions": [
+          "Dans une casserole, mélangez les flocons d'avoine et le lait d'amande.",
+          "Portez à ébullition puis réduisez le feu et laissez mijoter 5 minutes en remuant régulièrement.",
+          "Écrasez la moitié de la banane et incorporez-la au porridge pour le sucrer naturellement.",
+          "Ajoutez le miel et les graines de chia, mélangez bien.",
+          "Versez dans un bol et disposez par-dessus le reste de la banane coupée en rondelles, les fruits rouges et les amandes effilées."
+        ],
+        "tips": "Consommez ce porridge 2 à 3 heures avant l'effort pour une digestion optimale. Les glucides complexes des flocons d'avoine fourniront une énergie progressive, tandis que les fruits apporteront des glucides rapides et des antioxydants.",
+        "variations": [
+          "Version salée: remplacez les fruits par un œuf poché et des épinards pour plus de protéines.",
+          "Version express: préparez la veille et conservez au réfrigérateur (porridge overnight).",
+          "Pour plus d'énergie: ajoutez une cuillère à café de beurre d'amande."
+        ]
+      },
+      {
+        "id": "before-2",
+        "title": "Wrap au poulet et avocat",
+        "description": "Un repas équilibré riche en protéines et bons lipides, idéal 3-4h avant une sortie d'intensité moyenne.",
+        "imageUrl": "/images/nutrition/wrap-poulet-avocat.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/wrap-poulet-avocat.jpg",
+        "prepTime": 20,
+        "calories": 520,
+        "macros": {
+          "carbs": 45,
+          "protein": 35,
+          "fat": 22
+        },
+        "ingredients": [
+          {
+            "name": "tortilla de blé complète",
+            "quantity": 1,
+            "unit": "grande"
+          },
+          {
+            "name": "blanc de poulet grillé",
+            "quantity": 120,
+            "unit": "g"
+          },
+          {
+            "name": "avocat mûr",
+            "quantity": "1/2",
+            "unit": ""
+          },
+          {
+            "name": "tomate",
+            "quantity": 1,
+            "unit": "petite"
+          },
+          {
+            "name": "feuilles d'épinards frais",
+            "quantity": 30,
+            "unit": "g"
+          },
+          {
+            "name": "fromage frais allégé",
+            "quantity": 2,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "jus de citron",
+            "quantity": "1/2",
+            "unit": "c. à café"
+          },
+          {
+            "name": "sel et poivre",
+            "quantity": "",
+            "unit": "au goût"
+          }
+        ],
+        "instructions": [
+          "Coupez le poulet grillé en lanières.",
+          "Écrasez l'avocat dans un bol avec le jus de citron, le sel et le poivre.",
+          "Étalez le fromage frais sur la tortilla.",
+          "Répartissez la purée d'avocat sur le fromage.",
+          "Ajoutez les épinards, les tranches de tomate et les lanières de poulet.",
+          "Roulez fermement la tortilla et coupez-la en deux."
+        ],
+        "tips": "Ce wrap fournit un bon équilibre entre glucides, protéines et lipides. Les glucides de la tortilla complète sont à libération lente, tandis que les protéines du poulet et les bons lipides de l'avocat favorisent la satiété sans alourdir la digestion.",
+        "variations": [
+          "Version végétarienne: remplacez le poulet par du tofu ferme mariné.",
+          "Pour plus d'énergie: ajoutez une cuillère à soupe de graines de tournesol.",
+          "Version plus légère: utilisez une demi-tortilla et formez un rouleau ouvert."
+        ]
+      },
+      {
+        "id": "before-3",
+        "title": "Smoothie bowl aux fruits et granola",
+        "description": "Un petit-déjeuner rafraîchissant et énergétique, parfait 1-2h avant une sortie matinale.",
+        "imageUrl": "/images/nutrition/smoothie-bowl.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/smoothie-bowl.jpg",
+        "prepTime": 10,
+        "calories": 380,
+        "macros": {
+          "carbs": 70,
+          "protein": 12,
+          "fat": 8
+        },
+        "ingredients": [
+          {
+            "name": "banane congelée",
+            "quantity": 1,
+            "unit": "grande"
+          },
+          {
+            "name": "fruits rouges congelés",
+            "quantity": 100,
+            "unit": "g"
+          },
+          {
+            "name": "yaourt grec nature",
+            "quantity": 100,
+            "unit": "g"
+          },
+          {
+            "name": "lait d'amande",
+            "quantity": 50,
+            "unit": "ml"
+          },
+          {
+            "name": "granola maison",
+            "quantity": 30,
+            "unit": "g"
+          },
+          {
+            "name": "fruits frais (kiwi, fraises)",
+            "quantity": 50,
+            "unit": "g"
+          },
+          {
+            "name": "miel",
+            "quantity": 1,
+            "unit": "c. à café"
+          }
+        ],
+        "instructions": [
+          "Mixez la banane congelée, les fruits rouges, le yaourt grec et le lait d'amande jusqu'à obtenir une consistance épaisse.",
+          "Versez dans un bol.",
+          "Disposez harmonieusement le granola et les fruits frais sur le dessus.",
+          "Ajoutez un filet de miel."
+        ],
+        "tips": "Ce smoothie bowl est riche en glucides rapidement disponibles grâce aux fruits, ce qui en fait un excellent choix avant un effort matinal. Le yaourt grec apporte des protéines pour limiter le catabolisme musculaire pendant l'effort.",
+        "variations": [
+          "Version protéinée: ajoutez une demi-mesure de protéine en poudre (whey ou végétale).",
+          "Version plus énergétique: ajoutez une cuillère à café de beurre d'amande.",
+          "Pour plus de fibres: ajoutez une cuillère à soupe de graines de lin moulues."
+        ]
+      }
+    ],
+    "during": [
+      {
+        "id": "during-1",
+        "title": "Barres énergétiques maison aux dattes et noix",
+        "description": "Des barres énergétiques naturelles faciles à transporter et à digérer pendant l'effort.",
+        "imageUrl": "/images/nutrition/barres-energetiques-dattes.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/barres-energetiques-dattes.jpg",
+        "prepTime": 25,
+        "calories": 220,
+        "macros": {
+          "carbs": 35,
+          "protein": 5,
+          "fat": 8
+        },
+        "ingredients": [
+          {
+            "name": "dattes dénoyautées",
+            "quantity": 200,
+            "unit": "g"
+          },
+          {
+            "name": "flocons d'avoine",
+            "quantity": 100,
+            "unit": "g"
+          },
+          {
+            "name": "amandes",
+            "quantity": 50,
+            "unit": "g"
+          },
+          {
+            "name": "noix de cajou",
+            "quantity": 50,
+            "unit": "g"
+          },
+          {
+            "name": "miel",
+            "quantity": 2,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "sel",
+            "quantity": "1/4",
+            "unit": "c. à café"
+          },
+          {
+            "name": "cannelle",
+            "quantity": "1/2",
+            "unit": "c. à café"
+          },
+          {
+            "name": "huile de coco",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          }
+        ],
+        "instructions": [
+          "Préchauffez le four à 180°C.",
+          "Mixez les dattes jusqu'à obtenir une pâte.",
+          "Concassez grossièrement les amandes et les noix de cajou.",
+          "Dans un saladier, mélangez tous les ingrédients jusqu'à obtenir une préparation homogène.",
+          "Étalez la préparation sur une plaque de cuisson recouverte de papier sulfurisé, sur environ 1 cm d'épaisseur.",
+          "Enfournez pour 15 minutes jusqu'à ce que les bords soient légèrement dorés.",
+          "Laissez refroidir puis coupez en 8-10 barres.",
+          "Emballez individuellement dans du papier sulfurisé pour faciliter le transport."
+        ],
+        "tips": "Ces barres fournissent des glucides rapidement assimilables grâce aux dattes et au miel, parfaits pour maintenir l'énergie pendant l'effort. Les noix apportent des acides gras essentiels qui favorisent l'endurance.",
+        "variations": [
+          "Version plus protéinée: ajoutez 30g de protéine en poudre à la préparation.",
+          "Pour plus d'énergie: incorporez 2 cuillères à soupe de beurre d'amande.",
+          "Version fruitée: ajoutez 50g de cranberries ou d'abricots secs."
+        ]
+      },
+      {
+        "id": "during-2",
+        "title": "Boisson isotonique maison",
+        "description": "Une boisson d'effort économique et personnalisable pour maintenir hydratation et énergie.",
+        "imageUrl": "/images/nutrition/boisson-isotonique.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/boisson-isotonique.jpg",
+        "prepTime": 5,
+        "calories": 120,
+        "macros": {
+          "carbs": 30,
+          "protein": 0,
+          "fat": 0
+        },
+        "ingredients": [
+          {
+            "name": "eau",
+            "quantity": 750,
+            "unit": "ml"
+          },
+          {
+            "name": "jus d'orange frais",
+            "quantity": 250,
+            "unit": "ml"
+          },
+          {
+            "name": "miel ou sirop d'agave",
+            "quantity": 2,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "sel",
+            "quantity": "1/4",
+            "unit": "c. à café"
+          },
+          {
+            "name": "jus de citron",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          }
+        ],
+        "instructions": [
+          "Mélangez tous les ingrédients dans une bouteille ou un bidon.",
+          "Secouez vigoureusement jusqu'à dissolution complète du miel et du sel.",
+          "Réfrigérez avant utilisation ou ajoutez quelques glaçons si la température extérieure est élevée."
+        ],
+        "tips": "Cette boisson isotonique contient le bon équilibre d'électrolytes (sodium) et de glucides pour favoriser l'hydratation et maintenir l'énergie. Consommez environ 500-750ml par heure d'effort, en fonction de la température et de l'intensité.",
+        "variations": [
+          "Version électrolytes renforcée: ajoutez une pincée de bicarbonate de sodium et de chlorure de potassium.",
+          "Pour les efforts longs: augmentez légèrement la concentration en glucides (3 c. à soupe de miel).",
+          "Version thé vert: remplacez 250ml d'eau par du thé vert refroidi pour un léger effet stimulant."
+        ]
+      },
+      {
+        "id": "during-3",
+        "title": "Bouchées énergétiques aux abricots et amandes",
+        "description": "Des energy balls compactes et nutritives, parfaites pour les ravitaillements rapides.",
+        "imageUrl": "/images/nutrition/energy-balls.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/energy-balls.jpg",
+        "prepTime": 15,
+        "calories": 90,
+        "macros": {
+          "carbs": 15,
+          "protein": 3,
+          "fat": 3
+        },
+        "ingredients": [
+          {
+            "name": "abricots secs",
+            "quantity": 150,
+            "unit": "g"
+          },
+          {
+            "name": "poudre d'amande",
+            "quantity": 50,
+            "unit": "g"
+          },
+          {
+            "name": "flocons d'avoine",
+            "quantity": 30,
+            "unit": "g"
+          },
+          {
+            "name": "miel",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "jus d'orange",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "cannelle",
+            "quantity": "1/4",
+            "unit": "c. à café"
+          },
+          {
+            "name": "noix de coco râpée",
+            "quantity": 2,
+            "unit": "c. à soupe"
+          }
+        ],
+        "instructions": [
+          "Mixez les abricots secs jusqu'à obtenir une pâte collante.",
+          "Ajoutez la poudre d'amande, les flocons d'avoine, le miel, le jus d'orange et la cannelle.",
+          "Mixez à nouveau jusqu'à obtenir une pâte homogène.",
+          "Formez des petites boules d'environ 20g chacune.",
+          "Roulez les boules dans la noix de coco râpée.",
+          "Conservez au réfrigérateur dans une boîte hermétique ou emballez individuellement pour les sorties."
+        ],
+        "tips": "Ces bouchées fournissent un apport rapide en glucides grâce aux abricots et au miel. Leur petit format les rend faciles à consommer pendant l'effort sans perturber la respiration. Consommez une bouchée toutes les 30-45 minutes pendant l'effort.",
+        "variations": [
+          "Version stimulante: ajoutez 1 c. à café de café soluble à la préparation.",
+          "Pour plus d'énergie: incorporez 1 c. à soupe de beurre d'amande.",
+          "Version salée: ajoutez une pincée de sel et remplacez les abricots par des dattes."
+        ]
+      }
+    ],
+    "after": [
+      {
+        "id": "after-1",
+        "title": "Smoothie récupération banane-chocolat",
+        "description": "Un smoothie riche en protéines et glucides pour optimiser la récupération après l'effort.",
+        "imageUrl": "/images/nutrition/smoothie-recuperation.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/smoothie-recuperation.jpg",
+        "prepTime": 5,
+        "calories": 350,
+        "macros": {
+          "carbs": 45,
+          "protein": 25,
+          "fat": 8
+        },
+        "ingredients": [
+          {
+            "name": "banane",
+            "quantity": 1,
+            "unit": "grande"
+          },
+          {
+            "name": "lait d'amande",
+            "quantity": 250,
+            "unit": "ml"
+          },
+          {
+            "name": "yaourt grec",
+            "quantity": 100,
+            "unit": "g"
+          },
+          {
+            "name": "protéine en poudre (whey ou végétale)",
+            "quantity": 25,
+            "unit": "g"
+          },
+          {
+            "name": "cacao non sucré",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "miel",
+            "quantity": 1,
+            "unit": "c. à café"
+          },
+          {
+            "name": "glaçons",
+            "quantity": 4,
+            "unit": ""
+          }
+        ],
+        "instructions": [
+          "Placez tous les ingrédients dans un blender.",
+          "Mixez jusqu'à obtenir une consistance lisse et homogène.",
+          "Servez immédiatement dans un grand verre."
+        ],
+        "tips": "Ce smoothie fournit le ratio idéal de 3:1 entre glucides et protéines pour optimiser la récupération musculaire et la reconstitution des réserves de glycogène. Consommez dans les 30 minutes suivant l'effort pour maximiser son efficacité.",
+        "variations": [
+          "Version vegan: utilisez une protéine végétale et un yaourt végétal.",
+          "Pour plus d'antioxydants: ajoutez une poignée de baies (myrtilles, framboises).",
+          "Version plus calorique: ajoutez 1 c. à soupe de beurre d'amande."
+        ]
+      },
+      {
+        "id": "after-2",
+        "title": "Bowl de quinoa, patate douce et œuf",
+        "description": "Un repas complet riche en glucides complexes et protéines pour une récupération optimale.",
+        "imageUrl": "/images/nutrition/bowl-quinoa-patate-douce.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/bowl-quinoa-patate-douce.jpg",
+        "prepTime": 30,
+        "calories": 550,
+        "macros": {
+          "carbs": 65,
+          "protein": 28,
+          "fat": 18
+        },
+        "ingredients": [
+          {
+            "name": "quinoa",
+            "quantity": 80,
+            "unit": "g"
+          },
+          {
+            "name": "patate douce",
+            "quantity": 150,
+            "unit": "g"
+          },
+          {
+            "name": "œufs",
+            "quantity": 2,
+            "unit": ""
+          },
+          {
+            "name": "épinards frais",
+            "quantity": 50,
+            "unit": "g"
+          },
+          {
+            "name": "avocat",
+            "quantity": "1/2",
+            "unit": ""
+          },
+          {
+            "name": "huile d'olive",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "jus de citron",
+            "quantity": 1,
+            "unit": "c. à café"
+          },
+          {
+            "name": "graines de courge",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          },
+          {
+            "name": "sel et poivre",
+            "quantity": "",
+            "unit": "au goût"
+          }
+        ],
+        "instructions": [
+          "Rincez le quinoa et cuisez-le dans 2 fois son volume d'eau pendant 15 minutes.",
+          "Épluchez et coupez la patate douce en cubes. Faites-la rôtir au four à 200°C pendant 20 minutes avec un filet d'huile d'olive.",
+          "Faites cuire les œufs à la coque (6 minutes dans l'eau bouillante) puis rafraîchissez-les sous l'eau froide et écalez-les.",
+          "Dans un bol, disposez le quinoa, les cubes de patate douce, les épinards frais et l'avocat en tranches.",
+          "Coupez les œufs en deux et placez-les sur le dessus.",
+          "Arrosez d'un filet d'huile d'olive et de jus de citron.",
+          "Parsemez de graines de courge et assaisonnez."
+        ],
+        "tips": "Ce bowl est parfait pour la récupération après un effort intense. Le quinoa et la patate douce reconstituent les réserves de glycogène, tandis que les œufs fournissent des protéines de haute qualité pour la réparation musculaire. L'avocat apporte des acides gras essentiels anti-inflammatoires.",
+        "variations": [
+          "Version vegan: remplacez les œufs par du tofu ferme mariné ou des pois chiches rôtis.",
+          "Pour plus de protéines: ajoutez 80g de poulet grillé ou de saumon.",
+          "Version plus légère: réduisez la quantité de quinoa et augmentez les légumes verts."
+        ]
+      },
+      {
+        "id": "after-3",
+        "title": "Pancakes protéinés aux myrtilles",
+        "description": "Des pancakes gourmands et nutritifs pour une récupération efficace et savoureuse.",
+        "imageUrl": "/images/nutrition/pancakes-proteines.jpg",
+        "thumbnailUrl": "/images/nutrition/thumbnails/pancakes-proteines.jpg",
+        "prepTime": 20,
+        "calories": 420,
+        "macros": {
+          "carbs": 50,
+          "protein": 30,
+          "fat": 12
+        },
+        "ingredients": [
+          {
+            "name": "flocons d'avoine",
+            "quantity": 60,
+            "unit": "g"
+          },
+          {
+            "name": "protéine en poudre (whey ou végétale)",
+            "quantity": 30,
+            "unit": "g"
+          },
+          {
+            "name": "banane mûre",
+            "quantity": 1,
+            "unit": ""
+          },
+          {
+            "name": "œufs",
+            "quantity": 2,
+            "unit": ""
+          },
+          {
+            "name": "lait écrémé ou végétal",
+            "quantity": 100,
+            "unit": "ml"
+          },
+          {
+            "name": "levure chimique",
+            "quantity": "1/2",
+            "unit": "c. à café"
+          },
+          {
+            "name": "myrtilles fraîches",
+            "quantity": 80,
+            "unit": "g"
+          },
+          {
+            "name": "yaourt grec",
+            "quantity": 100,
+            "unit": "g"
+          },
+          {
+            "name": "miel",
+            "quantity": 1,
+            "unit": "c. à soupe"
+          }
+        ],
+        "instructions": [
+          "Mixez les flocons d'avoine pour obtenir une farine.",
+          "Dans un bol, écrasez la banane puis ajoutez les œufs et le lait. Mélangez bien.",
+          "Incorporez la farine d'avoine, la protéine en poudre et la levure. Mélangez jusqu'à obtenir une pâte homogène.",
+          "Ajoutez délicatement la moitié des myrtilles.",
+          "Chauffez une poêle antiadhésive à feu moyen et versez des petites louches de pâte.",
+          "Cuisez 2-3 minutes de chaque côté jusqu'à ce que les pancakes soient dorés.",
+          "Servez avec le yaourt grec, le reste des myrtilles et un filet de miel."
+        ],
+        "tips": "Ces pancakes offrent un excellent ratio glucides-protéines pour la récupération. Les myrtilles sont riches en antioxydants qui aident à réduire l'inflammation post-effort. Idéal pour un brunch de récupération après une sortie matinale.",
+        "variations": [
+          "Version sans lactose: utilisez une protéine végétale et un yaourt végétal.",
+          "Pour plus d'oméga-3: ajoutez 1 c. à soupe de graines de chia à la pâte.",
+          "Version gourmande: ajoutez 1 c. à soupe de pépites de chocolat noir à la pâte."
+        ]
+      }
+    ]
+  },
+  "id": "item-1743883999375",
+  "name": "",
+  "slug": "",
+  "altitude": "",
+  "length": "",
+  "avgGradient": "",
+  "difficulty": "",
+  "imageUrl": "/images/placeholder.jpg"
+}

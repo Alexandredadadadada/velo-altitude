@@ -22,6 +22,7 @@ import ColFlyThrough from './ColFlyThrough';
 import ColService from '../../services/colService';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import ColWeatherForecast from './ColWeatherForecast';
 
 // Composant d'information et visualisation de cols cyclistes
 const ColDetail = ({ colId }) => {
@@ -213,6 +214,19 @@ const ColDetail = ({ colId }) => {
             </Paper>
           </Grid>
         </Grid>
+        
+        {/* Météo */}
+        <Typography 
+          variant={isMobile ? "h6" : "h5"} 
+          component="h2" 
+          sx={{ mb: isMobile ? 1 : 2, mt: 3 }}
+        >
+          Météo et conditions
+        </Typography>
+        
+        <Box sx={{ mb: 3 }}>
+          <ColWeatherForecast col={col} />
+        </Box>
         
         <Divider sx={{ mb: 2 }} />
         

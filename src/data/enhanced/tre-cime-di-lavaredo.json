@@ -1,0 +1,69 @@
+{
+  "id": "tre-cime-di-lavaredo",
+  "name": "Tre Cime di Lavaredo",
+  "region": "dolomites",
+  "country": "Italie",
+  "altitude": 2320,
+  "length": 7.5,
+  "avgGradient": 12,
+  "maxGradient": 18,
+  "difficulty": "extreme",
+  "elevationGain": 900,
+  "startLocation": "Misurina",
+  "endLocation": "Rifugio Auronzo",
+  "description": "Cette ascension courte mais extrêmement difficile mène aux pieds des emblématiques Tre Cime di Lavaredo, trois pics rocheux qui font partie des panoramas les plus célèbres des Dolomites. La route est si raide qu'elle repousse les limites de ce qu'on peut grimper à vélo.",
+  "history": "Le Giro d'Italia a franchi cette ascension plusieurs fois. Notamment en 2013, Vincenzo Nibali y remporta une étape mythique sous la neige pour consolider son maillot rose. En 1974, Eddy Merckx y a également triomphé dans des conditions difficiles.",
+  "imageUrl": "/images/cols/tre-cime/main.jpg",
+  "profileUrl": "/images/cols/tre-cime/profile.jpg",
+  "routes": [
+    {
+      "name": "Depuis Misurina",
+      "startLocation": "Misurina",
+      "length": 7.5,
+      "elevationGain": 900,
+      "avgGradient": 12,
+      "maxGradient": 18,
+      "difficulty": "extreme",
+      "description": "L'ascension principale avec des pentes effrayantes"
+    },
+    {
+      "name": "Depuis Cortina d'Ampezzo",
+      "startLocation": "Cortina d'Ampezzo",
+      "length": 22,
+      "elevationGain": 1350,
+      "avgGradient": 6.1,
+      "maxGradient": 18,
+      "difficulty": "hard",
+      "description": "Version plus longue passant par le Passo Tre Croci"
+    }
+  ],
+  "popularSegments": [
+    {
+      "name": "Derniers 4 km",
+      "length": 4,
+      "gradient": 14.5,
+      "description": "Section finale avec des passages à 18%"
+    }
+  ],
+  "touristicInfo": "Le refuge Auronzo au sommet offre une vue spectaculaire sur les trois pics. C'est le point de départ de randonnées populaires dans les Dolomites. Une route à péage, fermée de novembre à mai.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Lac de Misurina et sommet",
+      "description": "Points d'eau et restaurants"
+    },
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Rifugio Auronzo, ouvert de juin à septembre"
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre",
+  "weatherInfo": "Conditions changeantes en montagne. La neige peut rester tard au printemps et arriver tôt à l'automne.",
+  "strava": {
+    "segmentId": "666391",
+    "komTime": "22:35",
+    "komName": "Vincenzo Nibali"
+  },
+  "slug": "tre-cime-di-lavaredo"
+}

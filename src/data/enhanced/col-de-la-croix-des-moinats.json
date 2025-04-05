@@ -1,0 +1,95 @@
+{
+  "id": "col-de-la-croix-des-moinats",
+  "name": "Col de la Croix des Moinats",
+  "region": "vosges",
+  "country": "France",
+  "altitude": 891,
+  "length": 7.6,
+  "avgGradient": 6.3,
+  "maxGradient": 9,
+  "difficulty": "medium",
+  "elevationGain": 480,
+  "startLocation": "Cornimont",
+  "endLocation": "Col de la Croix des Moinats",
+  "description": "Le Col de la Croix des Moinats est une ascension soutenue des Hautes-Vosges, souvent décrite comme un \"petit col alpin\" en raison de ses pentes régulières et de son profil exigeant. Cette montée parcourt la Route des Crêtes, offrant des panoramas superbes sur les ballons vosgiens et la vallée de la Moselotte. L'ascension traverse d'épaisses forêts de hêtres et de sapins avant d'émerger sur les chaumes d'altitude, où les paysages s'ouvrent progressivement en approchant du sommet. Malgré son altitude modeste, ce col constitue un défi significatif pour les cyclistes en raison de sa pente constante.",
+  "history": "Le Col de la Croix des Moinats a été rendu célèbre par le Tour de France, qui l'a emprunté à plusieurs reprises. Son nom fait référence à une croix érigée à la mémoire de moines qui auraient traversé ces montagnes. Pendant la Seconde Guerre mondiale, ce col a joué un rôle stratégique comme point de passage pour la Résistance entre les vallées vosgiennes. Plus récemment, en 2014, le col a été le théâtre d'une échappée mémorable de Blel Kadri, qui a remporté l'étape à Gérardmer après avoir franchi ce sommet en tête.",
+  "imageUrl": "/images/cols/col-croix-des-moinats/main.jpg",
+  "profileUrl": "/images/cols/col-croix-des-moinats/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Derniers 3 kilomètres",
+      "length": 3,
+      "gradient": 7.2,
+      "description": "La partie finale, plus exposée, offre une vue dégagée sur les vallées environnantes. La pente y reste soutenue sans être excessive."
+    },
+    {
+      "name": "Épingle de La Bresse",
+      "length": 1.8,
+      "gradient": 8,
+      "description": "Section comprenant des virages en épingle caractéristiques, avec une pente qui s'accentue à travers la forêt dense."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Ouest (Cornimont)",
+      "startLocation": "Cornimont",
+      "length": 7.6,
+      "elevationGain": 480,
+      "avgGradient": 6.3,
+      "maxGradient": 9,
+      "difficulty": "medium",
+      "description": "L'ascension classique depuis Cornimont. Une montée régulière avec une pente constante qui serpente à travers les forêts. Les 3 derniers kilomètres offrent de belles vues sur la vallée."
+    },
+    {
+      "name": "Versant Est (La Bresse)",
+      "startLocation": "La Bresse",
+      "length": 5.9,
+      "elevationGain": 306,
+      "avgGradient": 5.2,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Une montée plus courte et légèrement moins pentue, offrant une alternative plus douce pour accéder au col. Les premiers kilomètres traversent les hameaux pittoresques de La Bresse."
+    },
+    {
+      "name": "Versant Nord (Route des Crêtes)",
+      "startLocation": "Col de Bramont",
+      "length": 4.8,
+      "elevationGain": 220,
+      "avgGradient": 4.6,
+      "maxGradient": 7,
+      "difficulty": "easy",
+      "description": "Cette approche par la Route des Crêtes est la plus facile mais offre les panoramas les plus spectaculaires, avec des vues dégagées sur les crêtes vosgiennes."
+    }
+  ],
+  "touristicInfo": "Le Col de la Croix des Moinats est situé sur la célèbre Route des Crêtes, itinéraire panoramique qui traverse les plus hauts sommets des Vosges. À proximité se trouvent plusieurs sentiers de randonnée menant aux Ballons des Vosges et des fermes-auberges traditionnelles proposant des spécialités vosgiennes comme la tarte aux myrtilles, le munster fermier et la tourte vosgienne. Ce col est également un lieu de mémoire avec plusieurs monuments commémorant les combats de la Seconde Guerre mondiale.",
+  "facilities": [
+    {
+      "type": "food",
+      "location": "Col",
+      "description": "Auberge du Col de la Croix des Moinats, proposant des spécialités vosgiennes et une terrasse avec vue panoramique."
+    },
+    {
+      "type": "water",
+      "location": "La Bresse",
+      "description": "Fontaines publiques dans le village, à environ 6 km du sommet."
+    },
+    {
+      "type": "bike-shop",
+      "location": "Cornimont et La Bresse",
+      "description": "Magasins de cycles dans les deux villages au pied du col, proposant réparations et accessoires."
+    },
+    {
+      "type": "shelter",
+      "location": "Col",
+      "description": "Abri couvert près de l'auberge, utile en cas d'intempéries."
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre, avec les mois de juin à septembre comme période optimale. Les week-ends d'automne offrent des couleurs spectaculaires dans les forêts.",
+  "weatherInfo": "Le climat vosgien est caractérisé par des changements rapides. Les brouillards matinaux sont fréquents mais se dissipent généralement en cours de journée. En été, attention aux orages qui peuvent se développer rapidement l'après-midi. Le col est généralement fermé de décembre à mars en raison de la neige.",
+  "strava": {
+    "segmentId": "628441",
+    "komTime": "19:15",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "col-de-la-croix-des-moinats"
+}

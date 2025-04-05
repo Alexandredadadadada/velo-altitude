@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velo-Altitude - Explorez les plus beaux cols de montagne</title>
+    <meta name="description" content="Découvrez les plus beaux cols cyclistes avec Velo-Altitude, consultez la météo en temps réel, suivez vos entraînements et rejoignez notre communauté passionnée de cyclisme.">
+    
+    <!-- Balises SEO -->
+    <meta name="keywords" content="cyclisme, cols, montagne, vélo, entraînement, nutrition, météo, Alpes, Pyrénées">
+    <meta name="author" content="Velo-Altitude">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.velo-altitude.com/fr/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Velo-Altitude - Explorez les plus beaux cols de montagne">
+    <meta property="og:description" content="Découvrez les plus beaux cols cyclistes avec Velo-Altitude, consultez la météo en temps réel, suivez vos entraînements et rejoignez notre communauté passionnée de cyclisme.">
+    <meta property="og:image" content="https://www.velo-altitude.com/images/og-image.jpg">
+    <meta property="og:url" content="https://www.velo-altitude.com/fr/">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #1557b0;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .features {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .feature-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .feature-card:hover .feature-image img {
+            transform: scale(1.1);
+        }
+        
+        .feature-content {
+            padding: 25px;
+        }
+        
+        .feature-content h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #1a73e8;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1a73e8;
+        }
+        
+        .cols-section {
+            padding: 80px 0;
+        }
+        
+        .cols-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .col-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .col-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .col-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .col-card:hover .col-image img {
+            transform: scale(1.1);
+        }
+        
+        .col-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+        }
+        
+        .col-overlay h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        
+        .col-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .col-detail {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cta-section {
+            background-color: #1a73e8;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #1a73e8;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #1a73e8;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #1a73e8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cols-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Icônes factices */
+        .icon {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-color: currentColor;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Velo-Altitude</a>
+                <ul class="nav-links">
+                    <li><a href="cols.html">Cols</a></li>
+                    <li><a href="entrainement.html">Entraînement</a></li>
+                    <li><a href="nutrition.html">Nutrition</a></li>
+                    <li><a href="meteo.html">Météo</a></li>
+                    <li><a href="communaute.html">Communauté</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Explorez les plus beaux cols de montagne</h1>
+                <p>Découvrez des itinéraires détaillés, consultez la météo en temps réel et suivez votre progression dans votre passion du cyclisme.</p>
+                <div class="hero-buttons">
+                    <a href="cols.html" class="btn">Explorer les cols</a>
+                    <a href="inscription.html" class="btn btn-outline">Rejoindre la communauté</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Votre compagnon de cyclisme</h2>
+                <p>Velo-Altitude vous offre tous les outils nécessaires pour préparer et réussir vos ascensions.</p>
+            </div>
+            
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Cols Détaillés</h3>
+                        <p>Accédez à une base de données complète de plus de 100 cols avec profils d'élévation, difficulté, conseils et témoignages.</p>
+                        <a href="cols.html" class="btn">Découvrir</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Météo en Temps Réel</h3>
+                        <p>Consultez les prévisions météorologiques précises pour chaque col afin de planifier vos sorties dans les meilleures conditions.</p>
+                        <a href="meteo.html" class="btn">Consulter</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Programmes d'Entraînement</h3>
+                        <p>Suivez des programmes d'entraînement adaptés à votre niveau et à vos objectifs, conçus par des experts en cyclisme de montagne.</p>
+                        <a href="entrainement.html" class="btn">S'entraîner</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cols-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cols Populaires</h2>
+                <p>Découvrez les cols les plus appréciés par notre communauté de cyclistes.</p>
+            </div>
+            
+            <div class="cols-gallery">
+                <div class="col-card">
+                    <a href="col-galibier.html">
+                        <div class="col-image">
+                            <img src="images/placeholder.jpg" alt="Col du Galibier">
+                        </div>
+                        <div class="col-overlay">
+                            <h3>Col du Galibier</h3>
+                            <p>2642m • Alpes</p>
+                            <div class="col-details">
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    8/10
+                                </span>
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    18km
+                                </span>
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    7%
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-card">
+                    <a href="col-tourmalet.html">
+                        <div class="col-image">
+                            <img src="images/placeholder.jpg" alt="Col du Tourmalet">
+                        </div>
+                        <div class="col-overlay">
+                            <h3>Col du Tourmalet</h3>
+                            <p>2115m • Pyrénées</p>
+                            <div class="col-details">
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    9/10
+                                </span>
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    19km
+                                </span>
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    7.5%
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-card">
+                    <a href="col-izoard.html">
+                        <div class="col-image">
+                            <img src="images/placeholder.jpg" alt="Col d'Izoard">
+                        </div>
+                        <div class="col-overlay">
+                            <h3>Col d'Izoard</h3>
+                            <p>2360m • Alpes</p>
+                            <div class="col-details">
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    7/10
+                                </span>
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    15km
+                                </span>
+                                <span class="col-detail">
+                                    <span class="icon"></span>
+                                    6.9%
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Rejoignez la communauté Velo-Altitude</h2>
+            <p>Partagez vos expériences, découvrez de nouveaux itinéraires et connectez-vous avec d'autres passionnés de cyclisme.</p>
+            <a href="inscription.html" class="btn btn-outline">S'inscrire maintenant</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Velo-Altitude</h3>
+                    <p>La plateforme de référence pour les cyclistes passionnés de montagne et de grands cols.</p>
+                    <div class="social-links">
+                        <a href="#"><span class="icon-facebook"></span></a>
+                        <a href="#"><span class="icon-twitter"></span></a>
+                        <a href="#"><span class="icon-instagram"></span></a>
+                        <a href="#"><span class="icon-strava"></span></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="cols.html">Cols</a></li>
+                        <li><a href="entrainement.html">Entraînement</a></li>
+                        <li><a href="nutrition.html">Nutrition</a></li>
+                        <li><a href="meteo.html">Météo</a></li>
+                        <li><a href="communaute.html">Communauté</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Informations</h3>
+                    <ul class="footer-links">
+                        <li><a href="a-propos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Abonnez-vous pour recevoir nos actualités et conseils cyclistes.</p>
+                    <form action="newsletter.html" method="get">
+                        <input type="email" name="email" placeholder="Votre email" required style="padding: 10px; width: 100%; margin-bottom: 10px; border-radius: 5px; border: none;">
+                        <button type="submit" class="btn" style="width: 100%;">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Velo-Altitude. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

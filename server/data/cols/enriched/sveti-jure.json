@@ -1,0 +1,126 @@
+{
+  "id": "sveti-jure",
+  "name": {
+    "fr": "Sveti Jure",
+    "en": "Saint George",
+    "de": "Sankt Georg",
+    "it": "San Giorgio",
+    "es": "San Jorge"
+  },
+  "slug": "sveti-jure",
+  "country": "Croatie",
+  "region": "Montagnes Biokovo",
+  "altitude": 1762,
+  "length": 23,
+  "gradient": {
+    "avg": 0,
+    "max": 0
+  },
+  "difficulty": 5,
+  "description": {
+    "fr": "Le mont Sveti Jure est le point culminant des montagnes Biokovo en Croatie et l'une des ascensions les plus spectaculaires des Balkans. Partant de la ville côtière de Makarska, cette montée offre un contraste saisissant: on passe de la Méditerranée à un paysage alpin en quelques heures de vélo. Le sommet offre une vue panoramique sur la côte dalmate et ses îles, ainsi que sur la Bosnie-Herzégovine à l'intérieur des terres.",
+    "en": "",
+    "de": "",
+    "it": "",
+    "es": ""
+  },
+  "coordinates": {
+    "start": {
+      "lat": 0,
+      "lng": 0
+    },
+    "summit": {
+      "lat": 0,
+      "lng": 0
+    }
+  },
+  "elevation_profile": "",
+  "images": {
+    "main": "/images/cols/sveti-jure/main.jpg",
+    "gallery": [
+      "/images/cols/sveti-jure/coast-view.jpg",
+      "/images/cols/sveti-jure/skywalk.jpg",
+      "/images/cols/sveti-jure/hairpins.jpg",
+      "/images/cols/sveti-jure/summit.jpg"
+    ]
+  },
+  "videos": [],
+  "three_d_model": "",
+  "weather": {
+    "best_season": [],
+    "historical_data": {}
+  },
+  "services": {
+    "water": [
+      {
+        "km": 0,
+        "description": "Fontaines à Makarska"
+      },
+      {
+        "km": 15,
+        "description": "Centre d'information du parc"
+      },
+      {
+        "km": 23,
+        "description": "Refuge du sommet (saisonnier)"
+      }
+    ],
+    "food": [
+      {
+        "name": "Restaurant à l'entrée du parc",
+        "km": 5,
+        "type": "restaurant",
+        "openingHours": "9h-19h"
+      },
+      {
+        "name": "Café Skywalk",
+        "km": 15,
+        "type": "café",
+        "openingHours": "10h-18h (avril-octobre)"
+      }
+    ],
+    "shelter": [
+      {
+        "name": "Centre d'information",
+        "km": 15,
+        "type": "bâtiment"
+      },
+      {
+        "name": "Refuge du sommet",
+        "km": 23,
+        "type": "refuge"
+      }
+    ],
+    "mechanics": [
+      {
+        "name": "Bike Shop Makarska",
+        "location": "Makarska",
+        "distance": 0
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "author": "Pierre Lambert",
+      "date": "2024-06-05",
+      "rating": 5,
+      "text": "Une ascension extraordinaire! En partant de la mer Adriatique, on grimpe jusqu'à presque 1800m avec des vues incroyables tout le long. Le contraste entre le bleu de la mer et les montagnes rocheuses est saisissant."
+    },
+    {
+      "author": "Ana Kovačić",
+      "date": "2023-09-12",
+      "rating": 4,
+      "text": "Attention au vent qui peut être très fort. J'ai dû abandonner ma première tentative à cause des rafales. La deuxième fois, par temps calme, c'était une expérience magique avec la vue sur les îles croates."
+    },
+    {
+      "author": "Marco Bianchi",
+      "date": "2024-05-20",
+      "rating": 5,
+      "text": "J'ai grimpé depuis Podgora, c'est plus court mais nettement plus raide. Le trafic est modéré jusqu'au Skywalk puis presque inexistant jusqu'au sommet. Prévoyez de vous arrêter au Skywalk, la vue est spectaculaire!"
+    }
+  ],
+  "related_cols": [],
+  "status": "active",
+  "completeness": 73,
+  "last_updated": "2025-04-05T20:42:26.982Z"
+}

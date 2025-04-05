@@ -26,7 +26,8 @@ Avant de commencer le déploiement, assurez-vous de disposer des éléments suiv
 - Connexion Internet stable
 
 ### Logiciels et dépendances
-- Node.js v14.x ou supérieur
+- Node.js v18.17.0 (version exacte requise)
+- npm v9.6.7 (version exacte requise)
 - MongoDB v4.4 ou supérieur
 - Nginx (pour le serveur web)
 - PM2 (gestionnaire de processus Node.js)

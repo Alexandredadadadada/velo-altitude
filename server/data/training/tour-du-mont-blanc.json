@@ -1,0 +1,20 @@
+{
+  "id": "route-005",
+  "name": "Tour du Mont Blanc",
+  "slug": "tour-du-mont-blanc",
+  "type": "",
+  "level": "",
+  "duration": 4,
+  "description": {
+    "fr": "",
+    "en": ""
+  },
+  "weeks": [],
+  "variations": [],
+  "target_cols": [],
+  "related_nutrition": [],
+  "videos": [],
+  "status": "active",
+  "completeness": 40,
+  "last_updated": "2025-04-05T19:23:36.331Z"
+}

@@ -17,7 +17,8 @@ import {
   ListItemText,
   ToggleButtonGroup,
   ToggleButton,
-  Tooltip
+  Tooltip,
+  Stack
 } from '@mui/material';
 import {
   Close as CloseIcon,
@@ -27,7 +28,10 @@ import {
   Public as GlobeIcon,
   WbSunny as SunnyIcon,
   Cloud as CloudIcon,
-  Timeline as TimelineIcon
+  Timeline as TimelineIcon,
+  RouteOutlined as RouteIcon,
+  Speed as SpeedIcon,
+  StraightenOutlined as ElevationIcon
 } from '@mui/icons-material';
 import ColVisualization3D from '../../cols/ColVisualization3D';
 
@@ -77,7 +81,7 @@ const ColDetailsDialog = ({
           <Grid item xs={12} md={6}>
             <Box sx={{ mb: 3 }}>
               <img 
-                src={col.image || '/images/cols/placeholder.jpg'} 
+                src={col.imageUrl || '/images/cols/default-col.jpg'} 
                 alt={col.name}
                 style={{ 
                   width: '100%', 
@@ -89,27 +93,53 @@ const ColDetailsDialog = ({
             </Box>
             
             <Typography variant="h6" gutterBottom>
-              {t('cols.details')}
+              {t('cols.details', 'Détails du col')}
             </Typography>
             
+            <Box sx={{ mb: 3 }}>
+              <Chip 
+                label={col.difficulty === 'extreme' ? 'Extrême' :
+                      col.difficulty === 'hard' ? 'Difficile' :
+                      col.difficulty === 'medium' ? 'Moyen' : 'Facile'}
+                color={col.difficulty === 'extreme' ? 'error' :
+                       col.difficulty === 'hard' ? 'warning' :
+                       col.difficulty === 'medium' ? 'info' : 'success'}
+                sx={{ mr: 1, mb: 1 }}
+              />
+              
+              {col.tags && col.tags.map(tag => (
+                <Chip 
+                  key={tag}
+                  label={tag}
+                  variant="outlined"
+                  size="small"
+                  sx={{ mr: 1, mb: 1 }}
+                />
+              ))}
+            </Box>
+            
             <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <GlobeIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
-                  <Typography variant="body2" color="text.secondary">
-                    {t('cols.location')}:
+              {col.location && (
+                <Grid item xs={12}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                    <GlobeIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
+                    <Typography variant="body2" color="text.secondary">
+                      {t('cols.location', 'Localisation')}:
+                    </Typography>
+                  </Box>
+                  <Typography variant="body1">
+                    {col.location.region && col.location.country 
+                      ? `${col.location.region}, ${col.location.country}`
+                      : col.location.region || col.location.country || t('common.unknown', 'Inconnu')}
                   </Typography>
-                </Box>
-                <Typography variant="body1">
-                  {col.region}, {col.country}
-                </Typography>
-              </Grid>
+                </Grid>
+              )}
               
               <Grid item xs={6}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                   <TerrainIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
                   <Typography variant="body2" color="text.secondary">
-                    {t('cols.altitude')}:
+                    {t('cols.altitude', 'Altitude')}:
                   </Typography>
                 </Box>
                 <Typography variant="body1">
@@ -119,67 +149,78 @@ const ColDetailsDialog = ({
               
               <Grid item xs={6}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <TimelineIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
+                  <ElevationIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
                   <Typography variant="body2" color="text.secondary">
-                    {t('cols.length')}:
+                    {t('cols.elevation', 'Dénivelé')}:
                   </Typography>
                 </Box>
                 <Typography variant="body1">
-                  {col.length} km
+                  {col.elevation} m
                 </Typography>
               </Grid>
               
               <Grid item xs={6}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <TimelineIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
+                  <RouteIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
                   <Typography variant="body2" color="text.secondary">
-                    {t('cols.avg_gradient')}:
+                    {t('cols.distance', 'Distance')}:
                   </Typography>
                 </Box>
                 <Typography variant="body1">
-                  {col.gradient}%
+                  {col.distance} km
                 </Typography>
               </Grid>
               
               <Grid item xs={6}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <TimelineIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
+                  <SpeedIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
                   <Typography variant="body2" color="text.secondary">
-                    {t('cols.max_gradient')}:
+                    {t('cols.gradient', 'Pente moyenne')}:
                   </Typography>
                 </Box>
                 <Typography variant="body1">
-                  {col.maxGradient || '-'}%
+                  {col.avgGradient}%
                 </Typography>
               </Grid>
               
-              <Grid item xs={6}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                  <TimelineIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
-                  <Typography variant="body2" color="text.secondary">
-                    {t('cols.difficulty')}:
+              {col.maxGradient && (
+                <Grid item xs={6}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                    <SpeedIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
+                    <Typography variant="body2" color="text.secondary">
+                      {t('cols.max_gradient', 'Pente maximale')}:
+                    </Typography>
+                  </Box>
+                  <Typography variant="body1">
+                    {col.maxGradient}%
                   </Typography>
-                </Box>
-                <Chip 
-                  label={col.difficulty} 
-                  size="small"
-                  color={
-                    col.difficulty === 'HC' ? 'error' :
-                    col.difficulty === '1' ? 'warning' :
-                    col.difficulty === '2' ? 'success' :
-                    col.difficulty === '3' ? 'info' : 'default'
-                  }
-                />
-              </Grid>
+                </Grid>
+              )}
+              
+              {col.startElevation && (
+                <Grid item xs={6}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                    <TerrainIcon fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
+                    <Typography variant="body2" color="text.secondary">
+                      {t('cols.start_elevation', 'Altitude de départ')}:
+                    </Typography>
+                  </Box>
+                  <Typography variant="body1">
+                    {col.startElevation} m
+                  </Typography>
+                </Grid>
+              )}
             </Grid>
+            
+            <Divider sx={{ my: 3 }} />
             
             {/* Description */}
             {col.description && (
               <Box sx={{ mt: 3 }}>
                 <Typography variant="h6" gutterBottom>
-                  {t('cols.description')}
+                  {t('cols.description', 'Description')}
                 </Typography>
-                <Typography variant="body2" paragraph>
+                <Typography variant="body2">
                   {col.description}
                 </Typography>
               </Box>
@@ -189,38 +230,36 @@ const ColDetailsDialog = ({
             {weatherData && (
               <Box sx={{ mt: 3 }}>
                 <Typography variant="h6" gutterBottom>
-                  {t('cols.current_weather')}
+                  {t('cols.weather', 'Météo')}
                 </Typography>
-                
                 <Grid container spacing={2}>
                   <Grid item xs={6}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      {weatherData.isGoodWeather ? (
-                        <SunnyIcon sx={{ mr: 1, color: 'warning.main' }} />
-                      ) : (
-                        <CloudIcon sx={{ mr: 1, color: 'info.main' }} />
-                      )}
+                      <SunnyIcon sx={{ mr: 1, color: 'text.secondary' }} />
                       <Typography variant="body2">
-                        {weatherData.condition}
+                        {t('cols.temperature', 'Température')}: {weatherData.temperature}°C
+                      </Typography>
+                    </Box>
+                  </Grid>
+                  
+                  <Grid item xs={6}>
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                      <CloudIcon sx={{ mr: 1, color: 'text.secondary' }} />
+                      <Typography variant="body2">
+                        {t('cols.conditions', 'Conditions')}: {weatherData.conditions}
                       </Typography>
                     </Box>
                   </Grid>
                   
                   <Grid item xs={6}>
                     <Typography variant="body2">
-                      {t('cols.temperature')}: {weatherData.temperature}°C
+                      {t('cols.wind', 'Vent')}: {weatherData.windSpeed} km/h
                     </Typography>
                   </Grid>
                   
                   <Grid item xs={6}>
                     <Typography variant="body2">
-                      {t('cols.wind')}: {weatherData.wind} km/h
-                    </Typography>
-                  </Grid>
-                  
-                  <Grid item xs={6}>
-                    <Typography variant="body2">
-                      {t('cols.humidity')}: {weatherData.humidity}%
+                      {t('cols.humidity', 'Humidité')}: {weatherData.humidity}%
                     </Typography>
                   </Grid>
                 </Grid>
@@ -231,7 +270,7 @@ const ColDetailsDialog = ({
             {col.stories && col.stories.length > 0 && (
               <Box sx={{ mt: 3 }}>
                 <Typography variant="h6" gutterBottom>
-                  {t('cols.stories')}
+                  {t('cols.stories', 'Histoire et anecdotes')}
                 </Typography>
                 <ul>
                   {col.stories.map((story, index) => (
@@ -247,7 +286,7 @@ const ColDetailsDialog = ({
             {col.pointsOfInterest && col.pointsOfInterest.length > 0 && (
               <Box sx={{ mt: 3 }}>
                 <Typography variant="h6" gutterBottom>
-                  {t('cols.points_of_interest')}
+                  {t('cols.points_of_interest', 'Points d\'intérêt')}
                 </Typography>
                 <List dense>
                   {col.pointsOfInterest.map((poi, index) => (
@@ -267,13 +306,13 @@ const ColDetailsDialog = ({
           <Grid item xs={12} md={6}>
             <Box sx={{ height: '100%', minHeight: '400px' }}>
               <Typography variant="h6" gutterBottom>
-                {t('cols.profile_visualization')}
+                {t('cols.profile_visualization', 'Profil d\'altitude')}
               </Typography>
               
               {/* Utilisation du composant de visualisation 3D existant */}
               <ColVisualization3D 
                 colId={col.id} 
-                colData={col.elevationData || []} 
+                colData={col.elevationProfile || []} 
                 pointsOfInterest={col.pointsOfInterest || []}
               />
             </Box>
@@ -283,7 +322,7 @@ const ColDetailsDialog = ({
       
       <DialogActions sx={{ justifyContent: 'space-between', p: 2 }}>
         <Button onClick={onClose} color="inherit">
-          {t('common.close')}
+          {t('common.close', 'Fermer')}
         </Button>
         
         {/* Bouton d'exportation */}
@@ -306,7 +345,7 @@ const ColDetailsDialog = ({
             variant="outlined"
             size="small"
           >
-            {t('common.export')}
+            {t('common.export', 'Exporter')}
           </Button>
         </Box>
         
@@ -319,8 +358,8 @@ const ColDetailsDialog = ({
             startIcon={isCompleted ? <CheckCircleIcon /> : null}
           >
             {isCompleted 
-              ? t('challenges.seven_majors.completed') 
-              : t('challenges.seven_majors.mark_as_completed')}
+              ? t('challenges.seven_majors.completed', 'Terminé') 
+              : t('challenges.seven_majors.mark_as_completed', 'Marquer comme terminé')}
           </Button>
         )}
         
@@ -330,7 +369,7 @@ const ColDetailsDialog = ({
           variant="contained"
           disabled={isSelected || maxColsReached}
         >
-          {t('challenges.seven_majors.add_to_challenge')}
+          {t('challenges.seven_majors.add_to_challenge', 'Ajouter au défi')}
         </Button>
       </DialogActions>
     </Dialog>

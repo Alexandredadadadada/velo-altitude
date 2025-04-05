@@ -1,0 +1,102 @@
+[
+  {
+    "id": "route-001",
+    "slug": "tour-des-grands-cols-alpins",
+    "name": "Tour des Grands Cols Alpins",
+    "type": "",
+    "level": "",
+    "duration": 7,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-002",
+    "slug": "route-des-vins-dalsace-a-velo",
+    "name": "Route des Vins d'Alsace à Vélo",
+    "type": "",
+    "level": "",
+    "duration": 5,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-003",
+    "slug": "tour-des-chateaux-de-la-loire",
+    "name": "Tour des Châteaux de la Loire",
+    "type": "",
+    "level": "",
+    "duration": 6,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-004",
+    "slug": "traversee-des-pyrenees",
+    "name": "Traversée des Pyrénées",
+    "type": "",
+    "level": "",
+    "duration": 8,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-005",
+    "slug": "tour-du-mont-blanc",
+    "name": "Tour du Mont Blanc",
+    "type": "",
+    "level": "",
+    "duration": 4,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-002",
+    "slug": "route-des-vins-dalsace-a-velo",
+    "name": "Route des Vins d'Alsace à Vélo",
+    "type": "",
+    "level": "",
+    "duration": 5,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-003",
+    "slug": "tour-des-chateaux-de-la-loire",
+    "name": "Tour des Châteaux de la Loire",
+    "type": "",
+    "level": "",
+    "duration": 6,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-001",
+    "slug": "tour-des-grands-cols-alpins",
+    "name": "Tour des Grands Cols Alpins",
+    "type": "",
+    "level": "",
+    "duration": 7,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-005",
+    "slug": "tour-du-mont-blanc",
+    "name": "Tour du Mont Blanc",
+    "type": "",
+    "level": "",
+    "duration": 4,
+    "completeness": 40,
+    "status": "active"
+  },
+  {
+    "id": "route-004",
+    "slug": "traversee-des-pyrenees",
+    "name": "Traversée des Pyrénées",
+    "type": "",
+    "level": "",
+    "duration": 8,
+    "completeness": 40,
+    "status": "active"
+  }
+]

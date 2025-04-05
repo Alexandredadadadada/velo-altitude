@@ -1,0 +1,127 @@
+{
+  "id": "alpe-dhuez",
+  "name": {
+    "fr": "Alpe d'Huez",
+    "en": "Alpe d'Huez",
+    "de": "Alpe d'Huez",
+    "it": "Alpe d'Huez",
+    "es": "Alpe d'Huez"
+  },
+  "altitude": 1860,
+  "location": {
+    "latitude": 45.0909,
+    "longitude": 6.0639,
+    "region": "Isère",
+    "country": "France",
+    "nearbyTowns": ["Bourg-d'Oisans", "Allemont", "Le Freney-d'Oisans"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Bourg-d'Oisans",
+      "length": 13.8,
+      "elevation": 1071,
+      "averageGradient": 7.9,
+      "maxGradient": 13.0,
+      "difficulty": 8
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1952,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 31,
+    "giroAppearances": 0,
+    "famousStories": [
+      "L'Alpe d'Huez a été introduite pour la première fois dans le Tour de France en 1952, remportée par Fausto Coppi.",
+      "Ses 21 virages en épingle, numérotés à rebours depuis le sommet, sont devenus iconiques et portent chacun le nom d'un vainqueur d'étape.",
+      "Durant les années 1980, la montée était surnommée 'le jardin des Hollandais' en raison des 8 victoires néerlandaises consécutives entre 1976 et 1989.",
+      "Marco Pantani détient le record officiel d'ascension en 36:50 établi en 1997, bien que des temps plus rapides auraient été réalisés en dehors du cadre officiel.",
+      "L'étape de l'Alpe d'Huez est souvent considérée comme l'une des plus prestigieuses à remporter dans le Tour de France, comparable à un championnat du monde pour certains coureurs."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Marco Pantani",
+        "time": "36:50",
+        "year": 1997,
+        "side": "Bourg-d'Oisans"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Les 21 virages",
+      "description": "Les célèbres 21 virages en épingle numérotés et dédiés aux vainqueurs d'étape historiques.",
+      "coordinates": {
+        "latitude": 45.0909,
+        "longitude": 6.0639
+      }
+    },
+    {
+      "name": "Virage 7 - Lance Armstrong",
+      "description": "Ancien virage dédié à Lance Armstrong, particulièrement animé les jours de course.",
+      "coordinates": {
+        "latitude": 45.0880,
+        "longitude": 6.0690
+      }
+    },
+    {
+      "name": "Dutch Corner (Virage 7)",
+      "description": "Le virage 7 est devenu le 'Dutch Corner', célèbre pour son ambiance festive lors du passage du Tour de France.",
+      "coordinates": {
+        "latitude": 45.0880,
+        "longitude": 6.0690
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Ouvert toute l'année sauf conditions exceptionnelles",
+    "bestPeriod": "Mai à octobre",
+    "notes": "L'hiver, la route est déneigée pour accéder à la station de ski."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.cyclingcols.com/sites/default/files/col/Alpe%20dHuez%20%2862%29.JPG",
+        "caption": "Vue sur les virages en épingle depuis la route montante",
+        "credit": "CyclingCols.com"
+      },
+      {
+        "url": "https://www.climbbybike.com/profile/Alpe_d_Huez_profile.jpg",
+        "caption": "Profil d'ascension avec les 21 virages numérotés",
+        "credit": "ClimbByBike.com"
+      },
+      {
+        "url": "https://cdn-s-www.ledauphine.com/images/9C3FB6E4-C9FC-4E62-B9B6-96F80666AF6C/NW_raw/le-peloton-du-tour-de-france-dans-l-ascension-de-l-alpe-d-huez-photo-le-dl-christophe-agostinis-1532088570.jpg",
+        "caption": "Le peloton du Tour de France dans l'ascension",
+        "credit": "Le Dauphiné Libéré"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=oNRhhb7jigM",
+        "title": "Alpe d'Huez - Ascension intégrale",
+        "duration": "57:10"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 3.2 W/kg pour une ascension confortable",
+    "gearing": "Cassette 11-28 ou 11-32 recommandée selon votre niveau",
+    "preparation": "Focus sur les intervalles courts et intenses pour gérer les passages raides entre les virages",
+    "cautionPoints": [
+      "Chaleur intense possible en été en raison de l'orientation sud-est",
+      "Trafic routier important en haute saison et pendant les événements",
+      "Départ très raide (>10%) sur les premiers kilomètres"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Bourg-d'Oisans", "Huez Village (mi-parcours)", "Sommet"],
+    "restaurants": ["Nombreux cafés et restaurants au sommet (station de ski)"],
+    "accommodation": ["Hôtels et appartements à l'Alpe d'Huez", "Options à Bourg-d'Oisans"],
+    "bikeMechanic": "Plusieurs magasins de vélos à l'Alpe d'Huez et Bourg-d'Oisans"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["marmotte-granfondo", "route-des-grandes-alpes"]
+  }
+}

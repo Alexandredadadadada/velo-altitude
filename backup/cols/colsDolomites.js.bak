@@ -1,0 +1,543 @@
+/**
+ * Cols des Dolomites
+ * Données des cols cyclistes des Dolomites italiennes
+ */
+
+const colsDolomites = [
+  {
+    id: 'passo-di-gavia',
+    name: 'Passo di Gavia',
+    region: 'dolomites',
+    country: 'Italie',
+    altitude: 2621,
+    length: 17.3,
+    avgGradient: 7.9,
+    maxGradient: 16,
+    difficulty: 'extreme',
+    elevationGain: 1363,
+    startLocation: 'Ponte di Legno',
+    endLocation: 'Passo di Gavia',
+    description: 'Le Passo di Gavia est l\'un des cols les plus difficiles et spectaculaires des Alpes italiennes. Sa route étroite, parfois sans garde-corps, ses tunnels non éclairés et ses pentes sévères en font un véritable défi pour les cyclistes.',
+    history: 'Ce col est entré dans la légende du Giro d\'Italia en 1988 lorsque les coureurs ont dû l\'affronter sous une tempête de neige. Andy Hampsten prit le maillot rose ce jour-là et remporta finalement le Giro. En 2019, une étape du Giro passant par le Gavia dut être annulée en raison d\'un risque d\'avalanches.',
+    imageUrl: '/images/cols/gavia/main.jpg',
+    profileUrl: '/images/cols/gavia/profile.jpg',
+    routes: [
+      {
+        name: 'Versant Nord (Ponte di Legno)',
+        startLocation: 'Ponte di Legno',
+        length: 17.3,
+        elevationGain: 1363,
+        avgGradient: 7.9,
+        maxGradient: 16,
+        difficulty: 'extreme',
+        description: 'La montée nord est plus régulière mais plus longue'
+      },
+      {
+        name: 'Versant Sud (Bormio)',
+        startLocation: 'Bormio',
+        length: 25.6,
+        elevationGain: 1404,
+        avgGradient: 5.5,
+        maxGradient: 14,
+        difficulty: 'hard',
+        description: 'La montée sud est plus longue avec des tunnels étroits'
+      }
+    ],
+    popularSegments: [
+      {
+        name: 'Galleria dei Sforzellina',
+        length: 5.2,
+        gradient: 9.3,
+        description: 'Section avec les tunnels non éclairés depuis Bormio'
+      },
+      {
+        name: 'Santa Caterina - Sommet',
+        length: 13.4,
+        gradient: 7.8,
+        description: 'Dernière partie de l\'ascension depuis Bormio'
+      }
+    ],
+    touristicInfo: 'Au sommet se trouve le refuge Bonetta, un petit lac alpin et une vue imprenable sur le massif de l\'Ortles et l\'Adamello. Le col est généralement fermé d\'octobre à mai en raison de la neige.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Santa Caterina Valfurva et sommet',
+        description: 'Fontaines et refuge'
+      },
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Rifugio Bonetta, ouvert en saison'
+      }
+    ],
+    bestTimeToVisit: 'Mi-juin à septembre',
+    weatherInfo: 'Conditions météorologiques imprévisibles en haute montagne. Neige possible même en été.',
+    strava: {
+      segmentId: '664287',
+      komTime: '42:40',
+      komName: 'Ivan Basso'
+    }
+  },
+  {
+    id: 'passo-dello-stelvio',
+    name: 'Passo dello Stelvio',
+    region: 'dolomites',
+    country: 'Italie',
+    altitude: 2758,
+    length: 24.3,
+    avgGradient: 7.4,
+    maxGradient: 14,
+    difficulty: 'extreme',
+    elevationGain: 1808,
+    startLocation: 'Prato allo Stelvio',
+    endLocation: 'Passo dello Stelvio',
+    description: 'Le Stelvio est l\'un des cols les plus emblématiques du cyclisme mondial. Avec ses 48 virages en épingle soigneusement numérotés, c\'est l\'ascension la plus spectaculaire des Alpes italiennes et l\'une des plus hautes routes pavées d\'Europe.',
+    history: 'Premier passage au Giro en 1953 avec une victoire de Fausto Coppi. Le col est régulièrement inclus dans le Giro d\'Italia et a souvent été décisif pour le classement général. Marco Pantani y détient le record d\'ascension.',
+    imageUrl: '/images/cols/stelvio/main.jpg',
+    profileUrl: '/images/cols/stelvio/profile.jpg',
+    routes: [
+      {
+        name: 'Versant Est (Prato allo Stelvio)',
+        startLocation: 'Prato allo Stelvio',
+        length: 24.3,
+        elevationGain: 1808,
+        avgGradient: 7.4,
+        maxGradient: 14,
+        difficulty: 'extreme',
+        description: 'L\'ascension classique avec les 48 virages numérotés'
+      },
+      {
+        name: 'Versant Ouest (Bormio)',
+        startLocation: 'Bormio',
+        length: 21.5,
+        elevationGain: 1533,
+        avgGradient: 7.1,
+        maxGradient: 14,
+        difficulty: 'extreme',
+        description: 'Version sans les célèbres virages en épingle mais tout aussi difficile'
+      },
+      {
+        name: 'Versant Suisse (Santa Maria)',
+        startLocation: 'Santa Maria Val Müstair',
+        length: 19,
+        elevationGain: 1492,
+        avgGradient: 7.9,
+        maxGradient: 12,
+        difficulty: 'hard',
+        description: 'Version moins connue depuis la Suisse'
+      }
+    ],
+    popularSegments: [
+      {
+        name: '48 Tornanti (les 48 virages)',
+        length: 14.3,
+        gradient: 8.2,
+        description: 'Section emblématique des virages numérotés'
+      }
+    ],
+    touristicInfo: 'Le col marque la frontière historique entre l\'Italie et l\'Empire austro-hongrois. En été, l\'affluence de cyclistes et de touristes est considérable. Le panorama sur l\'Ortles et les Alpes est exceptionnel.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Trafoi, Franzenhöhe et sommet',
+        description: 'Fontaines et restaurants'
+      },
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Plusieurs restaurants et hôtels'
+      },
+      {
+        type: 'bike-shop',
+        location: 'Sommet',
+        description: 'Boutique de souvenirs cyclistes'
+      }
+    ],
+    bestTimeToVisit: 'Mi-juin à septembre',
+    weatherInfo: 'Route fermée en hiver. Différence de température importante entre le départ et le sommet.',
+    strava: {
+      segmentId: '665183',
+      komTime: '1:03:00',
+      komName: 'Marco Pantani'
+    }
+  },
+  {
+    id: 'tre-cime-lavaredo',
+    name: 'Tre Cime di Lavaredo',
+    region: 'dolomites',
+    country: 'Italie',
+    altitude: 2320,
+    length: 7.5,
+    avgGradient: 12,
+    maxGradient: 18,
+    difficulty: 'extreme',
+    elevationGain: 900,
+    startLocation: 'Misurina',
+    endLocation: 'Rifugio Auronzo',
+    description: 'Cette ascension courte mais extrêmement difficile mène aux pieds des emblématiques Tre Cime di Lavaredo, trois pics rocheux qui font partie des panoramas les plus célèbres des Dolomites. La route est si raide qu\'elle repousse les limites de ce qu\'on peut grimper à vélo.',
+    history: 'Le Giro d\'Italia a franchi cette ascension plusieurs fois. Notamment en 2013, Vincenzo Nibali y remporta une étape mythique sous la neige pour consolider son maillot rose. En 1974, Eddy Merckx y a également triomphé dans des conditions difficiles.',
+    imageUrl: '/images/cols/tre-cime/main.jpg',
+    profileUrl: '/images/cols/tre-cime/profile.jpg',
+    routes: [
+      {
+        name: 'Depuis Misurina',
+        startLocation: 'Misurina',
+        length: 7.5,
+        elevationGain: 900,
+        avgGradient: 12,
+        maxGradient: 18,
+        difficulty: 'extreme',
+        description: 'L\'ascension principale avec des pentes effrayantes'
+      },
+      {
+        name: 'Depuis Cortina d\'Ampezzo',
+        startLocation: 'Cortina d\'Ampezzo',
+        length: 22,
+        elevationGain: 1350,
+        avgGradient: 6.1,
+        maxGradient: 18,
+        difficulty: 'hard',
+        description: 'Version plus longue passant par le Passo Tre Croci'
+      }
+    ],
+    popularSegments: [
+      {
+        name: 'Derniers 4 km',
+        length: 4,
+        gradient: 14.5,
+        description: 'Section finale avec des passages à 18%'
+      }
+    ],
+    touristicInfo: 'Le refuge Auronzo au sommet offre une vue spectaculaire sur les trois pics. C\'est le point de départ de randonnées populaires dans les Dolomites. Une route à péage, fermée de novembre à mai.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Lac de Misurina et sommet',
+        description: 'Points d\'eau et restaurants'
+      },
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Rifugio Auronzo, ouvert de juin à septembre'
+      }
+    ],
+    bestTimeToVisit: 'Juin à septembre',
+    weatherInfo: 'Conditions changeantes en montagne. La neige peut rester tard au printemps et arriver tôt à l\'automne.',
+    strava: {
+      segmentId: '666391',
+      komTime: '22:35',
+      komName: 'Vincenzo Nibali'
+    }
+  },
+  {
+    id: 'passo-pordoi',
+    name: 'Passo Pordoi',
+    region: 'dolomites',
+    country: 'Italie',
+    altitude: 2239,
+    length: 9.2,
+    avgGradient: 6.9,
+    maxGradient: 9,
+    difficulty: 'medium',
+    elevationGain: 635,
+    startLocation: 'Arabba',
+    endLocation: 'Passo Pordoi',
+    description: 'Le Passo Pordoi est l\'un des cols les plus emblématiques des Dolomites et fait partie du célèbre circuit Sella Ronda. Ses virages réguliers et ses vues spectaculaires en font une ascension populaire parmi les cyclistes.',
+    history: 'Ce col a été franchi plus de 40 fois par le Giro d\'Italia, ce qui en fait l\'un des plus visités. Il est surnommé la "Cima Coppi" en hommage au champion Fausto Coppi qui y a triomphé à plusieurs reprises.',
+    imageUrl: '/images/cols/pordoi/main.jpg',
+    profileUrl: '/images/cols/pordoi/profile.jpg',
+    routes: [
+      {
+        name: 'Versant Est (Arabba)',
+        startLocation: 'Arabba',
+        length: 9.2,
+        elevationGain: 635,
+        avgGradient: 6.9,
+        maxGradient: 9,
+        difficulty: 'medium',
+        description: 'Ascension régulière avec de beaux virages en épingle'
+      },
+      {
+        name: 'Versant Ouest (Canazei)',
+        startLocation: 'Canazei',
+        length: 11.8,
+        elevationGain: 704,
+        avgGradient: 6,
+        maxGradient: 9,
+        difficulty: 'medium',
+        description: 'Version légèrement plus longue et douce'
+      }
+    ],
+    popularSegments: [
+      {
+        name: 'Plan de Salesei - Sommet',
+        length: 6.8,
+        gradient: 7.2,
+        description: 'Partie supérieure avec les meilleurs panoramas'
+      }
+    ],
+    touristicInfo: 'Au sommet se trouve le monument à Fausto Coppi et un téléphérique qui mène au Sass Pordoi (2950m). Le col fait partie de la route des Dolomites et de la Sella Ronda, un circuit touristique populaire.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Sommet',
+        description: 'Fontaines et restaurants'
+      },
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Plusieurs hôtels et restaurants'
+      }
+    ],
+    bestTimeToVisit: 'Juin à septembre',
+    weatherInfo: 'Col généralement fermé de novembre à mai. Les matinées offrent souvent les meilleures conditions.',
+    strava: {
+      segmentId: '667542',
+      komTime: '24:10',
+      komName: 'Egan Bernal'
+    }
+  },
+  {
+    id: 'passo-fedaia',
+    name: 'Passo Fedaia',
+    region: 'dolomites',
+    country: 'Italie',
+    altitude: 2057,
+    length: 14.1,
+    avgGradient: 7.9,
+    maxGradient: 18,
+    difficulty: 'extreme',
+    elevationGain: 1113,
+    startLocation: 'Caprile',
+    endLocation: 'Passo Fedaia',
+    description: 'Le Passo Fedaia est l\'un des cols les plus difficiles des Dolomites, culminant à plus de 2000m d\'altitude et offrant des vues spectaculaires sur le glacier de la Marmolada, le point culminant des Dolomites. Son profil irrégulier avec des sections extrêmement pentues en fait un défi majeur pour tout cycliste.',
+    history: 'Ce col a marqué l\'histoire du Giro d\'Italia à plusieurs reprises, notamment en 2022 lorsque Jai Hindley a attaqué Richard Carapaz sur ses pentes, établissant les bases de sa victoire finale au classement général.',
+    imageUrl: '/images/cols/fedaia/main.jpg',
+    profileUrl: '/images/cols/fedaia/profile.jpg',
+    popularSegments: [
+      {
+        name: 'Malga Ciapela - Sommet',
+        length: 5.4,
+        gradient: 11.8,
+        description: 'Section finale brutale avec plusieurs passages à plus de 15%'
+      }
+    ],
+    routes: [
+      {
+        name: 'Versant Ouest (Caprile)',
+        startLocation: 'Caprile',
+        length: 14.1,
+        elevationGain: 1113,
+        avgGradient: 7.9,
+        maxGradient: 18,
+        difficulty: 'extreme',
+        description: 'L\'ascension classique avec la célèbre section finale très raide après Malga Ciapela'
+      },
+      {
+        name: 'Versant Est (Canazei)',
+        startLocation: 'Canazei',
+        length: 12.5,
+        elevationGain: 649,
+        avgGradient: 5.2,
+        maxGradient: 9,
+        difficulty: 'medium',
+        description: 'Versant plus régulier et moins exigeant, idéal pour découvrir le col'
+      }
+    ],
+    touristicInfo: 'Le lac artificiel de Fedaia, situé au sommet, offre un panorama spectaculaire sur la Marmolada et ses glaciers. La région est célèbre pour ses sentiers de randonnée et ses stations de ski. En été, le téléphérique de la Marmolada permet d\'accéder au point culminant des Dolomites.',
+    facilities: [
+      {
+        type: 'water',
+        location: 'Malga Ciapela et sommet',
+        description: 'Plusieurs fontaines et restaurant au sommet'
+      },
+      {
+        type: 'food',
+        location: 'Sommet',
+        description: 'Rifugio Fedaia avec restauration complète'
+      }
+    ],
+    bestTimeToVisit: 'Juin à septembre',
+    weatherInfo: 'Col fermé en hiver. Même en été, les conditions peuvent changer rapidement en raison de l\'altitude. Des chutes de neige sont possibles même en juillet et août.',
+    strava: {
+      segmentId: '872546',
+      komTime: '49:15',
+      komName: 'Jai Hindley'
+    }
+  },
+  {
+    id: 'passo-sella',
+    name: 'Passo Sella',
+    region: 'dolomites',
+    country: 'Italie',
+    altitude: 2244,
+    length: 11.8,
+    avgGradient: 7.1,
+    maxGradient: 12,
+    difficulty: 'hard',
+    elevationGain: 835,
+    startLocation: 'Canazei',
+    endLocation: 'Passo Sella',
+    description: 'Le Passo Sella est un col mythique des Dolomites, offrant une vue spectaculaire sur les massifs du Sella et du Sassolungo. Situé dans un cadre naturel classé au patrimoine mondial de l\'UNESCO, il est considéré comme l\'un des plus beaux cols cyclistes d\'Europe pour ses paysages de falaises calcaires impressionnantes et ses panoramas à 360°.',
+    history: 'Le Passo Sella fait partie du célèbre Sella Ronda, un circuit traversant quatre cols des Dolomites. Il a été régulièrement inclus dans le Giro d\'Italia depuis les années 1950, souvent dans des étapes de montagne décisives. En 1990, l\'ascension fut le théâtre d\'une attaque mémorable de Gianni Bugno qui consolida son maillot rose.',
+    imageUrl: '/images/cols/passo-sella/main.jpg',
+    profileUrl: '/images/cols/passo-sella/profile.jpg',
+    popularSegments: [
+      {
+        name: 'Canazei - Passo Sella',
+        length: 11.8,
+        gradient: 7.1,
+        description: 'L\'ascension classique depuis Canazei, empruntée régulièrement par le Giro'
+      },
+      {
+        name: 'Derniers 5 km',
+        length: 5.0,
+        gradient: 8.2,
+        description: 'La section finale plus pentue avec les vues les plus spectaculaires sur les Dolomites'
+      }
+    ],
+    routes: [
+      {
+        name: 'Versant Nord (Canazei)',
+        startLocation: 'Canazei',
+        length: 11.8,
+        elevationGain: 835,
+        avgGradient: 7.1,
+        maxGradient: 12,
+        difficulty: 'hard',
+        description: 'L\'ascension traditionnelle depuis Val di Fassa, offrant des vues imprenables sur les massifs du Sella et du Sassolungo'
+      },
+      {
+        name: 'Versant Sud (Selva di Val Gardena)',
+        startLocation: 'Selva di Val Gardena',
+        length: 5.5,
+        elevationGain: 450,
+        avgGradient: 8.2,
+        maxGradient: 10,
+        difficulty: 'medium',
+        description: 'Version plus courte mais plus pentue depuis Val Gardena, souvent combinée avec d\'autres cols dans le circuit Sella Ronda'
+      }
+    ],
+    touristicInfo: 'Le Passo Sella est situé au cœur des Dolomites, une région désignée patrimoine mondial de l\'UNESCO. En été, de nombreux refuges de montagne sont ouverts. La région est connue pour ses activités de randonnée et d\'alpinisme. En hiver, le col fait partie du célèbre domaine skiable Sella Ronda.',
+    facilities: [
+      {
+        type: 'food',
+        location: 'Sommet du col',
+        description: 'Plusieurs refuges et restaurants offrant des spécialités tyroliennes'
+      },
+      {
+        type: 'water',
+        location: 'Sommet et mi-parcours',
+        description: 'Points d\'eau disponibles au sommet et à mi-ascension'
+      },
+      {
+        type: 'bike-shop',
+        location: 'Canazei',
+        description: 'Plusieurs magasins de vélo proposant location, réparation et accessoires'
+      }
+    ],
+    bestTimeToVisit: 'Juin à septembre',
+    weatherInfo: 'Les conditions sont généralement bonnes de juin à septembre. Le col peut être fermé en cas de chutes de neige précoces ou tardives. Les orages d\'été sont fréquents en fin d\'après-midi.',
+    strava: {
+      segmentId: '638795',
+      komTime: '34:22',
+      komName: 'Filippo Ganna'
+    }
+  },
+  {
+    id: 'passo-mortirolo',
+    name: 'Passo del Mortirolo',
+    region: 'dolomites',
+    country: 'Italie',
+    altitude: 1852,
+    length: 12.4,
+    avgGradient: 10.5,
+    maxGradient: 18.0,
+    difficulty: 'extreme',
+    elevationGain: 1300,
+    startLocation: 'Mazzo di Valtellina',
+    endLocation: 'Passo del Mortirolo',
+    description: 'Le Passo del Mortirolo est considéré comme l\'une des ascensions les plus difficiles d\'Europe et redouté par les professionnels pour sa pente impitoyable. Ce col n\'est pas particulièrement élevé mais sa difficulté réside dans ses pourcentages extrêmes, avec une moyenne de plus de 10% sur 12km et plusieurs passages à 18%. La route étroite serpente à travers les forêts denses, offrant peu de répit aux cyclistes. Marco Pantani y a forgé sa légende et une stèle commémorative lui est dédiée sur le parcours.',
+    history: 'Le Mortirolo est devenu célèbre après son introduction au Giro d\'Italia en 1990. En 1994, Marco Pantani a réalisé une ascension mythique, distançant tous ses rivaux et entrant définitivement dans la légende. En 2006, Ivan Basso y a construit sa victoire au Giro. En 2015, une stèle à la mémoire de Pantani a été inaugurée au virage 11. Lance Armstrong a qualifié cette montée comme "la plus dure que j\'ai jamais grimpée".',
+    imageUrl: '/images/cols/mortirolo/main.jpg',
+    profileUrl: '/images/cols/mortirolo/profile.jpg',
+    popularSegments: [
+      {
+        name: 'Les 5 premiers kilomètres',
+        length: 5.0,
+        gradient: 11.4,
+        description: 'La partie initiale est immédiatement brutale, avec des pentes constamment supérieures à 10% et plusieurs passages à 18%.'
+      },
+      {
+        name: 'Section Pantani (virages 11-15)',
+        length: 3.2,
+        gradient: 12.1,
+        description: 'La section où se trouve le monument dédié à Marco Pantani, comprenant les passages les plus difficiles de l\'ascension.'
+      }
+    ],
+    routes: [
+      {
+        name: 'Versant Ouest (Mazzo di Valtellina)',
+        startLocation: 'Mazzo di Valtellina',
+        length: 12.4,
+        elevationGain: 1300,
+        avgGradient: 10.5,
+        maxGradient: 18.0,
+        difficulty: 'extreme',
+        description: 'L\'ascension classique et la plus difficile, empruntée par le Giro d\'Italia. Une montée brutale sans répit avec de nombreux virages en épingle.'
+      },
+      {
+        name: 'Versant Est (Monno)',
+        startLocation: 'Monno',
+        length: 8.9,
+        elevationGain: 450,
+        avgGradient: 5.1,
+        maxGradient: 10.0,
+        difficulty: 'medium',
+        description: 'Le versant le plus facile, mais toujours exigeant avec plusieurs passages à 9-10%.'
+      },
+      {
+        name: 'Versant Sud (Edolo via Trivigno)',
+        startLocation: 'Edolo',
+        length: 14.4,
+        elevationGain: 940,
+        avgGradient: 6.5,
+        maxGradient: 14.0,
+        difficulty: 'hard',
+        description: 'Un itinéraire alternatif moins connu mais offrant des vues magnifiques sur la vallée de Camonica.'
+      }
+    ],
+    touristicInfo: 'Le Passo del Mortirolo est situé dans les Alpes lombardes, entre les provinces de Sondrio et Brescia. Ce col relativement isolé est surtout fréquenté par les cyclistes ambitieux venus se mesurer à sa réputation. Au sommet, se trouve une petite chapelle et un panorama sur les Alpes environnantes. La région environnante est connue pour sa nature préservée, ses vallées pittoresques et sa gastronomie alpine.',
+    facilities: [
+      {
+        type: 'food',
+        location: 'Tovo di Sant\'Agata',
+        description: 'Derniers restaurants avant l\'ascension, à environ 3 km du départ à Mazzo.'
+      },
+      {
+        type: 'water',
+        location: 'Mazzo di Valtellina',
+        description: 'Fontaines dans le village avant de commencer l\'ascension. Peu de points d\'eau sur la montée.'
+      },
+      {
+        type: 'bike-shop',
+        location: 'Tirano',
+        description: 'Plusieurs magasins de vélo avec service de réparation dans la vallée à environ 15 km.'
+      },
+      {
+        type: 'shelter',
+        location: 'Sommet',
+        description: 'Abri basique au col en cas de mauvais temps, mais pas de services permanents.'
+      }
+    ],
+    bestTimeToVisit: 'Mai à octobre, avec juin à septembre comme période optimale. Le col peut être fermé en hiver en raison de la neige.',
+    weatherInfo: 'Les conditions météorologiques peuvent changer rapidement. Les orages sont fréquents en été, particulièrement en après-midi. Le col étant boisé, il offre de l\'ombre durant la majeure partie de l\'ascension, ce qui peut être appréciable par temps chaud.',
+    strava: {
+      segmentId: '697412',
+      komTime: '39:30',
+      komName: 'Ivan Basso'
+    }
+  }
+];
+
+export default colsDolomites;

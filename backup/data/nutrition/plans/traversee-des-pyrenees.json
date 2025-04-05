@@ -1,0 +1,20 @@
+{
+  "id": "route-004",
+  "name": "Traversée des Pyrénées",
+  "slug": "traversee-des-pyrenees",
+  "category": "",
+  "description": {
+    "fr": "",
+    "en": ""
+  },
+  "days": [],
+  "recipes": [],
+  "supplements": [],
+  "hydration": {},
+  "variations": [],
+  "related_cols": [],
+  "related_training": [],
+  "status": "active",
+  "completeness": 33,
+  "last_updated": "2025-04-05T20:45:28.721Z"
+}

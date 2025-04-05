@@ -1,0 +1,59 @@
+{
+  "id": "col-du-portet",
+  "name": "Col du Portet",
+  "region": "pyrenees",
+  "country": "France",
+  "altitude": 2215,
+  "length": 16,
+  "avgGradient": 8.6,
+  "maxGradient": 18,
+  "difficulty": "extreme",
+  "elevationGain": 1376,
+  "startLocation": "Saint-Lary-Soulan",
+  "endLocation": "Col du Portet",
+  "description": "Le Col du Portet, parfois surnommé le \"Tourmalet du XXIe siècle\", est l'une des ascensions les plus difficiles d'Europe. Inauguré par le Tour de France en 2018, ce géant pyrénéen se caractérise par des pentes impitoyables et des pourcentages rarement inférieurs à 8%. Ce col d'altitude offre des panoramas exceptionnels sur toute la chaîne des Pyrénées et se distingue par son côté sauvage et préservé.",
+  "history": "Bien que récent dans l'histoire du cyclisme professionnel, le Col du Portet a immédiatement marqué les esprits lors de sa première apparition dans le Tour de France en 2018, avec une victoire mémorable de Nairo Quintana. En 2021, c'est Tadej Pogačar qui y a consolidé son maillot jaune avec une victoire impressionnante, confirmant le statut de \"juge de paix\" de ce col.",
+  "imageUrl": "/images/cols/portet/main.jpg",
+  "profileUrl": "/images/cols/portet/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Espiaube - Sommet",
+      "length": 8.4,
+      "gradient": 9.3,
+      "description": "Section finale après la bifurcation d'Espiaube, particulièrement redoutable avec des passages à plus de 12%"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Saint-Lary-Soulan - Col du Portet",
+      "startLocation": "Saint-Lary-Soulan",
+      "length": 16,
+      "elevationGain": 1376,
+      "avgGradient": 8.6,
+      "maxGradient": 18,
+      "difficulty": "extreme",
+      "description": "L'unique ascension, commençant par le Pla d'Adet puis bifurquant vers Espiaube pour les 8 derniers kilomètres extrêmement difficiles"
+    }
+  ],
+  "touristicInfo": "Le Col du Portet se situe dans un environnement sauvage, aux portes du Parc National des Pyrénées. Le panorama au sommet offre une vue imprenable sur les plus hauts sommets pyrénéens comme le Néouvielle, le Pic du Midi de Bigorre et parfois même le Mont Perdu côté espagnol.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Pla d'Adet",
+      "description": "Points d'eau à la station de ski"
+    },
+    {
+      "type": "food",
+      "location": "Pla d'Adet",
+      "description": "Restaurants à la station de ski du Pla d'Adet, aucun service au sommet"
+    }
+  ],
+  "bestTimeToVisit": "Juillet à septembre",
+  "weatherInfo": "Col fermé en hiver et généralement praticable de juin à octobre. Étant l'un des plus hauts cols routiers des Pyrénées, les conditions météorologiques peuvent y être extrêmes, avec des changements soudains même en plein été.",
+  "strava": {
+    "segmentId": "865219",
+    "komTime": "43:15",
+    "komName": "Tadej Pogačar"
+  },
+  "slug": "col-du-portet"
+}

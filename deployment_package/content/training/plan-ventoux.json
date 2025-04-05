@@ -1,0 +1,185 @@
+{
+  "id": "programme-ventoux",
+  "title": "Programme Spécial Mont Ventoux",
+  "subtitle": "Préparation complète pour conquérir le Géant de Provence",
+  "difficulty": 8,
+  "duration": "10 semaines",
+  "targetAudience": "Cyclistes intermédiaires à avancés",
+  "description": "Ce programme d'entraînement de 10 semaines est spécialement conçu pour préparer les cyclistes à l'ascension du Mont Ventoux. Avec son profil unique combinant forêt dense et désert lunaire, le Ventoux nécessite une préparation spécifique qui mêle endurance, force en côte et adaptation physiologique à la chaleur.",
+  "objectives": [
+    "Développer l'endurance spécifique nécessaire pour l'ascension de 21km",
+    "Renforcer la capacité à maintenir un effort intense sur les sections à 10%+",
+    "Préparer le corps et l'esprit aux conditions potentiellement extrêmes (chaleur, vent)",
+    "Optimiser le rapport poids/puissance pour maximiser les performances en montée",
+    "Améliorer la technique de pédalage en montée soutenue"
+  ],
+  "prerequisites": [
+    "Minimum 6 mois de pratique régulière du vélo",
+    "Capacité à rouler 2-3h sans difficulté majeure",
+    "FTP minimale recommandée : 2.8 W/kg"
+  ],
+  "recommendedEquipment": [
+    "Vélo avec rapport de transmission adapté à la montagne (compact 34-50 ou 36-52)",
+    "Cassette avec grand pignon de 32 dents minimum (idéalement 34 ou 36)",
+    "Capteur de puissance ou cardiofréquencemètre pour suivre l'intensité",
+    "Équipement adapté aux conditions variables (chaleur/fraîcheur)"
+  ],
+  "phases": [
+    {
+      "name": "Phase 1 : Fondation",
+      "duration": "Semaines 1-3",
+      "focus": "Développement de l'endurance de base et introduction du travail en côte",
+      "keyWorkouts": [
+        {
+          "name": "Sortie longue progressive",
+          "type": "Endurance",
+          "description": "Augmenter progressivement la durée des sorties longues hebdomadaires: S1: 2h, S2: 2h30, S3: 3h. Inclure systématiquement une section de 20-30 minutes en côte à intensité modérée (Z2-Z3).",
+          "intensity": "70-75% FTP / Z2-Z3",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Travail de force",
+          "type": "Force",
+          "description": "Sur terrain vallonné ou montée régulière : 3-4 intervalles de 8-10 minutes à basse cadence (50-60 rpm), récupération de 5 minutes entre chaque.",
+          "intensity": "80-85% FTP / Z3",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Sweet spot",
+          "type": "Mixte",
+          "description": "2 séries de 15-20 minutes juste sous le seuil, récupération de 10 minutes entre les séries.",
+          "intensity": "88-93% FTP / Z3-Z4",
+          "frequency": "1x par semaine"
+        }
+      ],
+      "weeklyVolume": "8-10 heures",
+      "tips": [
+        "Concentrez-vous sur la régularité et la qualité des entraînements",
+        "Utilisez les sorties faciles pour développer l'efficacité du pédalage",
+        "Commencez à pratiquer la nutrition pendant l'effort sur les sorties longues"
+      ]
+    },
+    {
+      "name": "Phase 2 : Développement",
+      "duration": "Semaines 4-6",
+      "focus": "Amélioration du rapport poids/puissance et travail spécifique en côte",
+      "keyWorkouts": [
+        {
+          "name": "Sortie longue avec blocs d'intensité",
+          "type": "Endurance",
+          "description": "Sorties de 3-3h30 incluant 3 blocs de 15 minutes en montée à intensité modérée-élevée, espacés d'au moins 15 minutes de récupération active.",
+          "intensity": "80-90% FTP / Z3-Z4",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Simulation Ventoux - Section St-Estève",
+          "type": "Spécifique",
+          "description": "Rechercher une montée de 5-8% sur 4-5km et réaliser 3 répétitions à intensité progressive : 1ère à 75-80% FTP, 2ème à 80-85% FTP, 3ème à 85-90% FTP. Récupération en descente.",
+          "intensity": "75-90% FTP / Z3-Z4",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Intervalles supra-seuil",
+          "type": "VO2max",
+          "description": "5-6 intervalles de 3 minutes à intensité élevée, récupération de 3 minutes entre chaque.",
+          "intensity": "110-120% FTP / Z5",
+          "frequency": "1x par semaine"
+        }
+      ],
+      "weeklyVolume": "10-12 heures",
+      "tips": [
+        "Introduisez un léger déficit calorique contrôlé si nécessaire pour optimiser le rapport poids/puissance",
+        "Pratiquez les changements de position sur le vélo pour soulager le dos et les épaules",
+        "Commencez à envisager votre stratégie de ravitaillement pour le jour J"
+      ]
+    },
+    {
+      "name": "Phase 3 : Spécialisation",
+      "duration": "Semaines 7-9",
+      "focus": "Simulation des conditions spécifiques du Mont Ventoux",
+      "keyWorkouts": [
+        {
+          "name": "Sortie longue avec dénivelé cumulé",
+          "type": "Endurance",
+          "description": "Sortie de 4-5h visant 1500-2000m de dénivelé positif cumulé, en maintenant une intensité modérée sur les montées.",
+          "intensity": "70-85% FTP / Z2-Z3",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Simulation Ventoux - Chalet Reynard",
+          "type": "Spécifique",
+          "description": "Trouver la montée la plus longue disponible (idéalement 8-12km) et la gravir à intensité constante, puis enchaîner avec 10-15 minutes d'effort plus intense simulant la section découverte après Chalet Reynard.",
+          "intensity": "80-90% FTP puis 90-95% FTP / Z3-Z4",
+          "frequency": "1x par semaine"
+        },
+        {
+          "name": "Intervalles en escalier",
+          "type": "Mixte",
+          "description": "Série d'intervalles progressifs : 1min@120% FTP, 2min@110% FTP, 3min@105% FTP, 4min@100% FTP, 5min@95% FTP, sans récupération entre les paliers. Récupération de 10min, puis répéter une seconde fois.",
+          "intensity": "95-120% FTP / Z4-Z5",
+          "frequency": "1x par semaine"
+        }
+      ],
+      "weeklyVolume": "12-14 heures",
+      "tips": [
+        "Habituez-vous à rouler par temps chaud pour préparer l'adaptation physiologique",
+        "Pratiquez votre stratégie de ravitaillement et d'hydratation en conditions réelles",
+        "Testez précisément votre matériel (développements, position) pour le jour J"
+      ]
+    },
+    {
+      "name": "Phase 4 : Affinage et Tapering",
+      "duration": "Semaine 10",
+      "focus": "Récupération et préparation finale",
+      "keyWorkouts": [
+        {
+          "name": "Sortie d'activation",
+          "type": "Récupération",
+          "description": "1-2h de pédalage léger avec 2-3 accélérations de 2-3 minutes à intensité modérée.",
+          "intensity": "65-75% FTP / Z2 avec pointes en Z3",
+          "frequency": "2x durant la semaine"
+        },
+        {
+          "name": "Test final",
+          "type": "Confiance",
+          "description": "1h30 incluant une montée continue de 20-30 minutes à l'intensité prévue pour l'ascension du Ventoux.",
+          "intensity": "75-85% FTP / Z3",
+          "frequency": "1x, 3-4 jours avant l'ascension"
+        }
+      ],
+      "weeklyVolume": "5-6 heures",
+      "tips": [
+        "Privilégiez le repos et la récupération, même si vous vous sentez frais",
+        "Finalisez votre plan de nutrition et d'hydratation pour le jour J",
+        "Préparez votre matériel et vérifiez l'état mécanique de votre vélo",
+        "Consultez les prévisions météo et préparez-vous à différents scénarios"
+      ]
+    }
+  ],
+  "ventoux_strategy": {
+    "pacing": {
+      "bedoin": "Commencez très modérément dans les premiers kilomètres (70-75% FTP). Gérez votre effort dans la forêt (km 6-15) en maintenant une intensité constante malgré les variations de pente. N'accélérez pas avant Chalet Reynard.",
+      "malaucene": "Gérez prudemment les sections raides des 6 premiers kilomètres. Établissez un rythme régulier dans la section médiane et conservez de l'énergie pour les 5 derniers kilomètres après Saint-Estève.",
+      "sault": "Maintenez une intensité plus élevée sur la première partie moins pentue. Après la jonction avec la route de Bédoin, adoptez la même stratégie que pour la fin de la montée de Bédoin."
+    },
+    "nutrition": {
+      "avant": "Repas riche en glucides complexes 3h avant le départ. Petit en-cas de glucides simples (30-50g) 30 minutes avant l'ascension.",
+      "pendant": "60-90g de glucides par heure. Boire 500-750ml par heure (plus par temps chaud). Apport électrolytique indispensable.",
+      "points_cles": "Ravitaillement possible à Bédoin/Malaucène/Sault avant le départ, à Chalet Reynard depuis Bédoin, et au sommet."
+    },
+    "equipment": {
+      "developpement": "Minimum 34x32 recommandé, idéalement 34x34 pour la plupart des cyclistes.",
+      "pneus": "25-28mm, pression adaptée au poids et au revêtement.",
+      "autres": "Prévoir des vêtements pour le sommet où les conditions peuvent être très différentes (vent, fraîcheur)."
+    }
+  },
+  "complementaryTraining": {
+    "core": "2 séances hebdomadaires de renforcement du gainage pour préserver une position efficace sur le vélo.",
+    "stretching": "Étirements réguliers des fléchisseurs de hanches, quadriceps et ischio-jambiers pour améliorer le confort en position de grimpe.",
+    "mental": "Pratique de la visualisation positive de l'ascension, anticipation des moments difficiles et des stratégies pour les surmonter."
+  },
+  "relatedContent": {
+    "nutrition": "plan-nutrition-haute-montagne",
+    "cols": "mont-ventoux"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "grossglockner-hochalpenstrasse",
+  "name": "Grossglockner Hochalpenstrasse",
+  "region": "alpes-autrichiennes",
+  "country": "Autriche",
+  "altitude": 2504,
+  "length": 12.8,
+  "avgGradient": 8.3,
+  "maxGradient": 14,
+  "difficulty": "extreme",
+  "elevationGain": 1072,
+  "startLocation": "Heiligenblut",
+  "endLocation": "Hochtor Pass",
+  "description": "La Grossglockner Hochalpenstrasse est considérée comme l'une des plus belles routes alpines d'Europe. Cette route à péage spectaculaire traverse le Parc National des Hohe Tauern, offrant des vues imprenables sur le Grossglockner, point culminant de l'Autriche à 3798m. Le parcours, parfaitement entretenu et doté de nombreux virages en épingle, s'élève progressivement à travers différents écosystèmes alpins avant d'atteindre le col de Hochtor à 2504m, le point le plus élevé de la route. Cette ascension est un véritable chef-d'œuvre d'ingénierie routière et un défi exigeant pour les cyclistes.",
+  "history": "Construite entre 1930 et 1935, la Grossglockner Hochalpenstrasse fut conçue comme un projet de relance économique pendant la Grande Dépression. Sur le plan cycliste, cette ascension a été utilisée dans le Tour d'Autriche et a accueilli plusieurs courses de montagne prestigieuses. En 2022, le champion colombien Egan Bernal a établi un nouveau record d'ascension lors d'un entraînement. Ce col symbolise la renaissance de l'Autriche après les années difficiles et reste un monument du patrimoine alpin autrichien.",
+  "imageUrl": "/images/cols/grossglockner/main.jpg",
+  "profileUrl": "/images/cols/grossglockner/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Hochtor - Derniers 5 km",
+      "length": 5,
+      "gradient": 9.6,
+      "description": "Section finale aux nombreux virages en épingle, offrant des vues spectaculaires sur le Parc National."
+    },
+    {
+      "name": "Heiligenblut - Kasereck",
+      "length": 4.2,
+      "gradient": 8.7,
+      "description": "Première partie de l'ascension avec de nombreux virages en épingle et des forêts denses."
+    },
+    {
+      "name": "Franz-Josefs-Höhe",
+      "length": 2.3,
+      "gradient": 7.5,
+      "description": "Détour facultatif depuis la route principale, menant à un point de vue spectaculaire sur le glacier Pasterze."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Sud (Heiligenblut)",
+      "startLocation": "Heiligenblut",
+      "length": 12.8,
+      "elevationGain": 1072,
+      "avgGradient": 8.3,
+      "maxGradient": 14,
+      "difficulty": "extreme",
+      "description": "L'ascension classique depuis le village pittoresque de Heiligenblut. Un parcours exigeant avec 30 virages en épingle à travers les forêts alpines et les paysages rocailleux."
+    },
+    {
+      "name": "Versant Nord (Fusch/Ferleiten)",
+      "startLocation": "Ferleiten",
+      "length": 15.3,
+      "elevationGain": 1258,
+      "avgGradient": 8.2,
+      "maxGradient": 12,
+      "difficulty": "extreme",
+      "description": "L'approche nord, légèrement plus longue, qui traverse les magnifiques prairies alpines avant d'atteindre les zones plus rocheuses en altitude."
+    },
+    {
+      "name": "Versant Est (Bruck)",
+      "startLocation": "Bruck",
+      "length": 28.7,
+      "elevationGain": 1759,
+      "avgGradient": 6.1,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "La version intégrale depuis la vallée de Salzach. Une ascension épique mais légèrement moins raide en moyenne, traversant la zone de péage à Ferleiten."
+    }
+  ],
+  "touristicInfo": "La Grossglockner Hochalpenstrasse est bien plus qu'une simple route de montagne - c'est une destination touristique complète. Le long du parcours, on trouve plusieurs centres d'information sur la faune et la flore alpines, des expositions sur l'histoire de la construction de la route, et des points de vue aménagés. La zone du glacier Pasterze, accessible par un court détour vers Franz-Josefs-Höhe, permet d'observer le plus grand glacier d'Autriche. Au sommet, le musée Alpin offre un aperçu fascinant de la vie en haute montagne. La région abrite également une faune exceptionnelle incluant marmottes, chamois et gypaètes barbus.",
+  "facilities": [
+    {
+      "type": "food",
+      "location": "Plusieurs points le long de l'ascension",
+      "description": "Restaurants à Kasereck, à Hochtor (sommet) et à Franz-Josefs-Höhe, proposant des spécialités autrichiennes."
+    },
+    {
+      "type": "water",
+      "location": "Tous les 5km environ",
+      "description": "Points d'eau disponibles aux restaurants et centres d'information."
+    },
+    {
+      "type": "bike-shop",
+      "location": "Heiligenblut",
+      "description": "Location et réparation de vélos dans le village au pied de l'ascension."
+    },
+    {
+      "type": "shelter",
+      "location": "Tout au long du parcours",
+      "description": "Abris en cas de changement soudain de météo, particulièrement aux centres d'information."
+    },
+    {
+      "type": "toilets",
+      "location": "Plusieurs points sur l'ascension",
+      "description": "Toilettes publiques propres et bien entretenues aux différents points d'arrêt."
+    }
+  ],
+  "bestTimeToVisit": "De mi-mai à mi-octobre, la période d'ouverture de la route. Juin et septembre offrent des conditions idéales avec moins de trafic touristique. Les matinées sont généralement moins fréquentées et offrent les meilleures conditions pour le cyclisme.",
+  "weatherInfo": "Les conditions météorologiques peuvent changer très rapidement en raison de l'altitude. Même en été, les températures au sommet peuvent descendre sous 10°C. Des chutes de neige sont possibles à tout moment de l'année. La route est généralement fermée de novembre à avril en raison de l'enneigement. Consultez toujours les prévisions météo avant de partir, et soyez prêt à faire face à des conditions diverses.",
+  "strava": {
+    "segmentId": "677519",
+    "komTime": "41:25",
+    "komName": "Egan Bernal"
+  },
+  "slug": "grossglockner-hochalpenstrasse"
+}

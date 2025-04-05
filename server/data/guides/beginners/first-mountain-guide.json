@@ -1,0 +1,378 @@
+{
+  "id": "beginners-first-mountain",
+  "name": {
+    "fr": "Guide du Premier Col - Pour Débutants",
+    "en": "First Mountain Pass Guide - For Beginners"
+  },
+  "slug": "beginners-first-mountain",
+  "type": "beginner-guide",
+  "audience": "novice",
+  "description": {
+    "fr": "Guide complet pour préparer et réussir votre première ascension en montagne. Conçu spécifiquement pour les cyclistes novices souhaitant se lancer dans l'aventure des cols sans appréhension.",
+    "en": "Comprehensive guide to prepare for and successfully complete your first mountain climb. Specifically designed for novice cyclists wishing to embark on the mountain pass adventure without apprehension."
+  },
+  "introduction": {
+    "fr": "Gravir son premier col à vélo est une expérience inoubliable, un véritable rite de passage pour tout cycliste. Ce guide vous accompagnera pas à pas dans cette aventure, de la préparation jusqu'au sommet, en passant par l'équipement nécessaire et les techniques de gestion de l'effort.",
+    "en": "Climbing your first mountain pass by bike is an unforgettable experience, a true rite of passage for any cyclist. This guide will accompany you step by step in this adventure, from preparation to the summit, including necessary equipment and effort management techniques."
+  },
+  "preparation": {
+    "physical": {
+      "fr": "Même pour un premier col accessible, une préparation minimale de 8-12 semaines est recommandée. Commencez par des sorties régulières de 1-2h, puis augmentez progressivement la durée et intégrez des côtes de plus en plus longues.",
+      "en": "Even for a first accessible pass, minimal preparation of 8-12 weeks is recommended. Start with regular 1-2h rides, then gradually increase duration and incorporate longer and longer hills."
+    },
+    "training_plan": {
+      "8_weeks": {
+        "week1_2": {
+          "fr": "2-3 sorties par semaine de 60-90 minutes sur terrain plat à vallonné",
+          "en": "2-3 rides per week of 60-90 minutes on flat to rolling terrain"
+        },
+        "week3_4": {
+          "fr": "2-3 sorties par semaine dont une avec des côtes de 5-10 minutes",
+          "en": "2-3 rides per week including one with 5-10 minute hills"
+        },
+        "week5_6": {
+          "fr": "2-3 sorties par semaine dont une longue (2-3h) incluant plusieurs côtes",
+          "en": "2-3 rides per week including one long ride (2-3h) with several hills"
+        },
+        "week7_8": {
+          "fr": "2-3 sorties par semaine dont une simulation d'ascension (30-45min en continu en montée)",
+          "en": "2-3 rides per week including one ascent simulation (30-45min continuous climbing)"
+        }
+      }
+    },
+    "mental": {
+      "fr": "L'aspect mental est crucial pour votre premier col. Fixez-vous un objectif réaliste : terminer l'ascension, peu importe le temps. Divisez mentalement l'ascension en sections pour la rendre plus abordable.",
+      "en": "The mental aspect is crucial for your first pass. Set a realistic goal: complete the climb, regardless of time. Mentally divide the ascent into sections to make it more manageable."
+    }
+  },
+  "equipment": {
+    "bike_setup": {
+      "gearing": {
+        "fr": "Pour un premier col, privilégiez absolument un vélo avec des développements adaptés. Un compact (50/34) avec une cassette 11-32 ou même 11-34 est idéal.",
+        "en": "For a first pass, absolutely favor a bike with adapted gearing. A compact (50/34) with an 11-32 or even 11-34 cassette is ideal."
+      },
+      "weight": {
+        "fr": "Ne vous préoccupez pas trop du poids de votre vélo pour commencer. Un vélo confortable avec de bons développements est bien plus important qu'un vélo léger mais mal adapté.",
+        "en": "Don't worry too much about your bike's weight to start. A comfortable bike with good gearing is much more important than a light but poorly adapted bike."
+      },
+      "tires": {
+        "fr": "Optez pour des pneus de 25-28mm, légèrement dégonflés par rapport à vos habitudes pour plus de confort et d'adhérence.",
+        "en": "Opt for 25-28mm tires, slightly deflated compared to your habits for more comfort and grip."
+      }
+    },
+    "essential_gear": [
+      {
+        "fr": "Deux bidons d'eau (500-750ml chacun)",
+        "en": "Two water bottles (500-750ml each)"
+      },
+      {
+        "fr": "Vêtements adaptables (maillot, coupe-vent léger, manchettes)",
+        "en": "Adaptable clothing (jersey, light windbreaker, arm warmers)"
+      },
+      {
+        "fr": "Nourriture énergétique facile à digérer (barres, gels, bananes)",
+        "en": "Easy-to-digest energy food (bars, gels, bananas)"
+      },
+      {
+        "fr": "Protection solaire (crème, lunettes)",
+        "en": "Sun protection (cream, glasses)"
+      },
+      {
+        "fr": "Téléphone portable et argent liquide",
+        "en": "Mobile phone and cash"
+      }
+    ],
+    "beginner_specific": [
+      {
+        "fr": "Optez pour des pédales automatiques seulement si vous êtes déjà très à l'aise avec",
+        "en": "Opt for clipless pedals only if you are already very comfortable with them"
+      },
+      {
+        "fr": "Privilégiez un compteur avec altimètre pour suivre votre progression",
+        "en": "Favor a computer with altimeter to track your progress"
+      },
+      {
+        "fr": "Emportez une carte du col ou ayez le tracé GPS sur votre téléphone",
+        "en": "Bring a map of the pass or have the GPS track on your phone"
+      }
+    ]
+  },
+  "recommended_first_cols": [
+    {
+      "id": "col-de-vence",
+      "name": "Col de Vence",
+      "region": "Alpes-Maritimes",
+      "altitude": 963,
+      "length": 9.7,
+      "gradient_avg": 6.6,
+      "difficulty": 2,
+      "why_recommended": {
+        "fr": "Relativement court avec une pente régulière et peu de circulation. Proche de Nice avec de beaux panoramas.",
+        "en": "Relatively short with a regular slope and little traffic. Close to Nice with beautiful panoramas."
+      }
+    },
+    {
+      "id": "col-du-soulor",
+      "name": "Col du Soulor (depuis Argelès-Gazost)",
+      "region": "Pyrénées",
+      "altitude": 1474,
+      "length": 19.5,
+      "gradient_avg": 5.2,
+      "difficulty": 2,
+      "why_recommended": {
+        "fr": "Montée progressive avec quelques replats pour récupérer. Panoramas magnifiques sur les Pyrénées.",
+        "en": "Progressive climb with some flat sections to recover. Magnificent panoramas of the Pyrenees."
+      }
+    },
+    {
+      "id": "col-de-la-faucille",
+      "name": "Col de la Faucille",
+      "region": "Jura",
+      "altitude": 1323,
+      "length": 11.1,
+      "gradient_avg": 5.8,
+      "difficulty": 2,
+      "why_recommended": {
+        "fr": "Pente régulière sans sections extrêmes. Vue spectaculaire sur le lac Léman et le Mont Blanc.",
+        "en": "Regular slope without extreme sections. Spectacular view of Lake Geneva and Mont Blanc."
+      }
+    },
+    {
+      "id": "col-de-la-croix-de-fer",
+      "name": "Col de la Croix de Fer (depuis Saint-Jean-de-Maurienne)",
+      "region": "Alpes",
+      "altitude": 2067,
+      "length": 30,
+      "gradient_avg": 5.1,
+      "difficulty": 3,
+      "why_recommended": {
+        "fr": "Long mais avec de nombreux replats et même quelques descentes pour récupérer. Pour débutants ambitieux.",
+        "en": "Long but with many flat sections and even some descents to recover. For ambitious beginners."
+      }
+    }
+  ],
+  "climbing_techniques": {
+    "pacing": {
+      "fr": "La gestion du rythme est la clé pour un premier col réussi. Commencez très lentement, plus lentement que ce que vous pensez pouvoir tenir. Utilisez des petits développements (plateaux et pignons) pour maintenir une cadence élevée (idéalement 70-90 rpm).",
+      "en": "Pace management is the key to a successful first pass. Start very slowly, slower than what you think you can maintain. Use small gears (chainrings and sprockets) to maintain a high cadence (ideally 70-90 rpm)."
+    },
+    "position": {
+      "fr": "Restez assis le plus possible, c'est plus économique sur la durée. Si nécessaire, alternez brièvement avec des passages en danseuse pour soulager la musculature, mais sans accélérer.",
+      "en": "Stay seated as much as possible, it's more economical over time. If necessary, alternate briefly with standing positions to relieve muscles, but without accelerating."
+    },
+    "breathing": {
+      "fr": "Maintenez une respiration régulière et profonde. Vous devriez pouvoir parler en phrases courtes. Si vous êtes trop essoufflé pour parler, ralentissez.",
+      "en": "Maintain regular and deep breathing. You should be able to speak in short sentences. If you're too out of breath to talk, slow down."
+    },
+    "common_mistakes": [
+      {
+        "fr": "Partir trop vite et s'épuiser rapidement",
+        "en": "Starting too fast and exhausting yourself quickly"
+      },
+      {
+        "fr": "Rester sur un développement trop grand, forçant à une cadence trop basse",
+        "en": "Staying on too big a gear, forcing a cadence that's too low"
+      },
+      {
+        "fr": "Ne pas s'alimenter ou s'hydrater régulièrement",
+        "en": "Not eating or hydrating regularly"
+      },
+      {
+        "fr": "Se fixer des objectifs de temps irréalistes pour une première fois",
+        "en": "Setting unrealistic time goals for a first attempt"
+      },
+      {
+        "fr": "S'habiller trop chaudement et souffrir de la chaleur",
+        "en": "Dressing too warmly and suffering from heat"
+      }
+    ]
+  },
+  "nutrition_hydration": {
+    "before": {
+      "fr": "Prenez un repas riche en glucides 3h avant le départ (pâtes, riz, pain). 1h avant, un petit en-cas facilement digestible (barre énergétique, banane).",
+      "en": "Have a carbohydrate-rich meal 3h before departure (pasta, rice, bread). 1h before, a small easily digestible snack (energy bar, banana)."
+    },
+    "during": {
+      "fr": "Hydratez-vous régulièrement, avant d'avoir soif (une gorgée toutes les 10-15 minutes). Mangez un peu toutes les 30-45 minutes, par petites quantités pour faciliter la digestion.",
+      "en": "Hydrate regularly, before you're thirsty (a sip every 10-15 minutes). Eat a little every 30-45 minutes, in small quantities to facilitate digestion."
+    },
+    "beginner_friendly_foods": [
+      {
+        "fr": "Barres énergétiques commerciales (testées à l'avance)",
+        "en": "Commercial energy bars (tested in advance)"
+      },
+      {
+        "fr": "Bananes (source naturelle et facile à digérer)",
+        "en": "Bananas (natural and easy to digest source)"
+      },
+      {
+        "fr": "Pâtes de fruits ou fruits secs",
+        "en": "Fruit jellies or dried fruits"
+      },
+      {
+        "fr": "Petits sandwichs au pain blanc avec confiture ou miel",
+        "en": "Small white bread sandwiches with jam or honey"
+      },
+      {
+        "fr": "Boisson isotonique légère (moins concentrée que recommandée pour faciliter l'absorption)",
+        "en": "Light isotonic drink (less concentrated than recommended for easy absorption)"
+      }
+    ]
+  },
+  "mental_strategies": {
+    "goals": {
+      "fr": "Fixez-vous un objectif principal (atteindre le sommet) et des objectifs secondaires (atteindre certains points intermédiaires). Célébrez chaque petit succès en route.",
+      "en": "Set a main goal (reaching the summit) and secondary goals (reaching certain intermediate points). Celebrate each small success along the way."
+    },
+    "segmentation": {
+      "fr": "Divisez l'ascension en segments plus courts et ne pensez qu'au segment en cours. Sur les cols avec virages numérotés comme l'Alpe d'Huez, chaque virage devient un mini-objectif.",
+      "en": "Divide the climb into shorter segments and think only about the current segment. On passes with numbered hairpins like Alpe d'Huez, each turn becomes a mini-goal."
+    },
+    "mantras": {
+      "fr": "Préparez quelques phrases positives à vous répéter quand ça devient difficile: 'Je peux le faire', 'Un coup de pédale après l'autre', 'Plus lent mais constant'.",
+      "en": "Prepare some positive phrases to repeat to yourself when it gets difficult: 'I can do this', 'One pedal stroke at a time', 'Slower but steady'."
+    },
+    "visualization": {
+      "fr": "Avant même de commencer l'ascension, visualisez-vous réussir, imaginez la satisfaction au sommet, les panoramas, la fierté d'avoir accompli ce défi.",
+      "en": "Even before starting the climb, visualize yourself succeeding, imagine the satisfaction at the summit, the panoramas, the pride of having accomplished this challenge."
+    }
+  },
+  "safety_considerations": {
+    "conditions": {
+      "fr": "Pour un premier col, choisissez une journée avec une météo favorable: temps clair, températures modérées, peu ou pas de vent. Vérifiez la météo la veille et au matin du départ.",
+      "en": "For a first pass, choose a day with favorable weather: clear skies, moderate temperatures, little or no wind. Check the weather the day before and the morning of departure."
+    },
+    "traffic": {
+      "fr": "Renseignez-vous sur la circulation du col choisi. Certains cols sont très fréquentés en haute saison. Préférez les jours de semaine et les départs matinaux pour éviter le trafic.",
+      "en": "Inquire about the traffic of the chosen pass. Some passes are very busy in high season. Prefer weekdays and early morning departures to avoid traffic."
+    },
+    "descent": {
+      "fr": "La descente peut être aussi exigeante que la montée pour les débutants. Descendez à votre rythme, utilisez régulièrement les deux freins et anticipez les virages. N'hésitez pas à faire des pauses.",
+      "en": "The descent can be as demanding as the climb for beginners. Descend at your own pace, regularly use both brakes and anticipate turns. Don't hesitate to take breaks."
+    },
+    "emergency": {
+      "fr": "Emportez toujours un téléphone portable chargé et de l'argent. Informez quelqu'un de votre itinéraire et de l'heure prévue de retour. Notez les numéros d'urgence locaux.",
+      "en": "Always carry a charged mobile phone and money. Inform someone of your itinerary and expected time of return. Note local emergency numbers."
+    }
+  },
+  "after_the_climb": {
+    "recovery": {
+      "fr": "Après l'effort, une récupération adaptée est essentielle: hydratez-vous bien, mangez un repas équilibré avec protéines et glucides, et accordez-vous un ou deux jours de repos actif.",
+      "en": "After the effort, proper recovery is essential: hydrate well, eat a balanced meal with protein and carbohydrates, and give yourself one or two days of active rest."
+    },
+    "reflection": {
+      "fr": "Notez votre expérience: ce qui a fonctionné, ce qui pourrait être amélioré, vos sensations. Ces notes seront précieuses pour vos prochains défis en montagne.",
+      "en": "Note your experience: what worked, what could be improved, your sensations. These notes will be valuable for your next mountain challenges."
+    },
+    "progression": {
+      "fr": "Après votre premier col réussi, construisez progressivement. N'augmentez pas trop vite la difficulté; essayez d'abord d'améliorer votre aisance sur des cols similaires avant de viser plus haut ou plus difficile.",
+      "en": "After your first successful pass, build progressively. Don't increase difficulty too quickly; first try to improve your ease on similar passes before aiming higher or more difficult."
+    },
+    "sharing": {
+      "fr": "Partagez votre expérience avec la communauté Velo-Altitude! Vos conseils et impressions de débutant sont précieux pour d'autres qui hésitent encore à se lancer dans l'aventure des cols.",
+      "en": "Share your experience with the Velo-Altitude community! Your beginner advice and impressions are valuable for others who are still hesitant to embark on the mountain pass adventure."
+    }
+  },
+  "testimonials": [
+    {
+      "name": "Sophie Durand",
+      "age": 42,
+      "experience": "Débutante, 1 an de vélo",
+      "text": {
+        "fr": "J'étais terrifiée à l'idée de tenter un col, mais en suivant les conseils de ce guide, j'ai réussi le Col de Vence! La clé a été de diviser l'ascension en petites sections et de ne jamais regarder combien il restait à grimper.",
+        "en": "I was terrified at the idea of attempting a pass, but following the advice in this guide, I succeeded on Col de Vence! The key was dividing the climb into small sections and never looking at how much was left to climb."
+      }
+    },
+    {
+      "name": "Marc Dupuis",
+      "age": 55,
+      "experience": "Reprise du vélo après 20 ans d'arrêt",
+      "text": {
+        "fr": "À mon âge, je pensais que les cols n'étaient plus pour moi. Avec 3 mois de préparation suivant ce programme pour débutants, j'ai gravi mon premier col et c'était une révélation! Maintenant j'en fais un par mois.",
+        "en": "At my age, I thought passes were no longer for me. With 3 months of preparation following this beginner program, I climbed my first pass and it was a revelation! Now I do one per month."
+      }
+    }
+  ],
+  "faq": [
+    {
+      "question": {
+        "fr": "Ai-je besoin d'un vélo haut de gamme pour mon premier col?",
+        "en": "Do I need a high-end bike for my first pass?"
+      },
+      "answer": {
+        "fr": "Absolument pas. N'importe quel vélo de route ou même VTC en bon état mécanique conviendra, à condition qu'il dispose de développements adaptés (petits plateaux et grands pignons).",
+        "en": "Absolutely not. Any road bike or even hybrid bike in good mechanical condition will do, provided it has adapted gearing (small chainrings and large sprockets)."
+      }
+    },
+    {
+      "question": {
+        "fr": "Comment savoir si je suis prêt pour tenter mon premier col?",
+        "en": "How do I know if I'm ready to attempt my first pass?"
+      },
+      "answer": {
+        "fr": "Si vous pouvez rouler confortablement pendant 2-3 heures sur terrain vallonné et que vous avez déjà grimpé des côtes plus courtes (10-15 minutes) sans difficulté excessive, vous êtes probablement prêt.",
+        "en": "If you can ride comfortably for 2-3 hours on rolling terrain and you've already climbed shorter hills (10-15 minutes) without excessive difficulty, you're probably ready."
+      }
+    },
+    {
+      "question": {
+        "fr": "Vaut-il mieux tenter un col seul ou en groupe pour la première fois?",
+        "en": "Is it better to attempt a pass alone or in a group for the first time?"
+      },
+      "answer": {
+        "fr": "Les deux approches ont leurs avantages. Seul, vous pouvez aller à votre rythme sans pression. En groupe (surtout avec des cyclistes expérimentés), vous bénéficiez de soutien moral et de conseils. L'idéal est peut-être de choisir un ou deux compagnons de route compréhensifs.",
+        "en": "Both approaches have their advantages. Alone, you can go at your own pace without pressure. In a group (especially with experienced cyclists), you benefit from moral support and advice. The ideal may be to choose one or two understanding road companions."
+      }
+    },
+    {
+      "question": {
+        "fr": "Est-il normal de devoir mettre pied à terre pendant l'ascension?",
+        "en": "Is it normal to have to get off the bike during the climb?"
+      },
+      "answer": {
+        "fr": "Parfaitement normal! Il n'y a aucune honte à faire une pause si nécessaire. Certains cols sont longs et exigeants, même pour des cyclistes expérimentés. L'important est d'atteindre le sommet, peu importe comment.",
+        "en": "Perfectly normal! There's no shame in taking a break if needed. Some passes are long and demanding, even for experienced cyclists. The important thing is to reach the summit, no matter how."
+      }
+    }
+  ],
+  "multimedia_content": {
+    "tutorial_videos": [
+      {
+        "title": "Technique de pédalage en montée",
+        "url": "/videos/beginners/climbing-pedaling-technique.mp4"
+      },
+      {
+        "title": "Comment bien régler son vélo pour la montagne",
+        "url": "/videos/beginners/mountain-bike-setup.mp4"
+      },
+      {
+        "title": "Gestion de l'effort sur un col",
+        "url": "/videos/beginners/effort-management.mp4"
+      }
+    ],
+    "podcasts": [
+      {
+        "title": "Témoignages de premiers cols",
+        "url": "/audio/beginners/first-climb-testimonials.mp3"
+      },
+      {
+        "title": "Interview d'un coach spécialiste des débutants en montagne",
+        "url": "/audio/beginners/coach-interview-beginners.mp3"
+      }
+    ]
+  },
+  "related_content": {
+    "training_programs": ["T001", "T010"],
+    "nutrition_guides": ["NP001"],
+    "preparation_guides": ["guide-vence", "guide-soulor"],
+    "equipment_articles": ["beginner-bike-guide", "essential-climbing-gear"]
+  },
+  "downloadable_resources": {
+    "training_plan": "/files/beginners/8-week-first-pass-plan.pdf",
+    "checklists": "/files/beginners/first-pass-checklist.pdf",
+    "nutrition_guide": "/files/beginners/nutrition-beginners-guide.pdf"
+  },
+  "status": "active",
+  "completeness": 95,
+  "last_updated": "2025-04-06T02:35:00Z"
+}

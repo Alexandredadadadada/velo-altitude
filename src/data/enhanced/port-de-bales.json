@@ -1,0 +1,80 @@
+{
+  "id": "port-de-bales",
+  "name": "Port de Balès",
+  "region": "pyrenees",
+  "country": "France",
+  "altitude": 1755,
+  "length": 18.8,
+  "avgGradient": 6.1,
+  "maxGradient": 11,
+  "difficulty": "hard",
+  "elevationGain": 1185,
+  "startLocation": "Luchon",
+  "endLocation": "Port de Balès",
+  "description": "Le Port de Balès est une ascension relativement récente dans l'histoire du cyclisme professionnel, devenue célèbre grâce au Tour de France. Ce col offre un contraste saisissant entre sa partie inférieure boisée et agréable, et sa section finale plus sauvage et exposée. L'ascension traverse divers paysages de moyenne montagne, avec des passages à travers forêts de hêtres, prairies d'altitude et pâturages où broutent parfois des chevaux sauvages. Au sommet, le panorama s'ouvre sur la chaîne des Pyrénées avec des vues imprenables sur les sommets environnants.",
+  "history": "Bien que la route ne fut goudronnée qu'en 2006, le Port de Balès s'est rapidement imposé dans la légende du Tour de France. En 2010, il fut le théâtre d'un incident marquant lorsque Andy Schleck, alors en maillot jaune, subit un saut de chaîne dans l'ascension, permettant à Alberto Contador de s'emparer de la tête du classement général, provoquant une controverse majeure sur l'éthique sportive. Depuis, le col a été régulièrement inclus dans le parcours du Tour, devenant un terrain de prédilection pour les attaques décisives des grimpeurs.",
+  "imageUrl": "/images/cols/port-de-bales/main.jpg",
+  "profileUrl": "/images/cols/port-de-bales/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Derniers 5 kilomètres",
+      "length": 5,
+      "gradient": 8.2,
+      "description": "La section finale, plus raide et plus exposée, où la route s'élève au-dessus de la limite des arbres et offre des vues spectaculaires."
+    },
+    {
+      "name": "Murs de Case de Jouèou",
+      "length": 3.2,
+      "gradient": 9.5,
+      "description": "Passage comprenant les pentes les plus raides du col, avec plusieurs virages serrés et des pourcentages atteignant 11%."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Sud (Luchon)",
+      "startLocation": "Luchon",
+      "length": 18.8,
+      "elevationGain": 1185,
+      "avgGradient": 6.1,
+      "maxGradient": 11,
+      "difficulty": "hard",
+      "description": "L'ascension classique empruntée par le Tour de France. Une longue montée qui commence tranquillement avant de se durcir considérablement dans sa section finale, après le village de Case de Jouèou."
+    },
+    {
+      "name": "Versant Nord (Mauléon-Barousse)",
+      "startLocation": "Mauléon-Barousse",
+      "length": 13.2,
+      "elevationGain": 982,
+      "avgGradient": 7.4,
+      "maxGradient": 11.5,
+      "difficulty": "hard",
+      "description": "Montée plus régulièrement difficile avec une pente moyenne plus élevée et des passages techniques. Cette face est moins connue mais offre un défi plus constant pour les cyclistes expérimentés."
+    }
+  ],
+  "touristicInfo": "La région autour du Port de Balès est connue pour sa nature préservée et ses traditions pastorales. En descendant vers la vallée du Louron, on peut découvrir de charmants villages montagnards comme Loudenvielle avec son lac et ses thermes. La vallée de Luchon, point de départ habituel, est célèbre pour son thermalisme et ses sentiers de randonnée. Cette région des Pyrénées centrales reste relativement préservée du tourisme de masse, offrant une expérience authentique de la montagne.",
+  "facilities": [
+    {
+      "type": "water",
+      "location": "Case de Jouèou",
+      "description": "Fontaine dans ce petit hameau, situé environ à 7 km du sommet. Dernière source d'eau potable avant le col."
+    },
+    {
+      "type": "food",
+      "location": "Luchon",
+      "description": "Nombreux restaurants et cafés au pied de l'ascension. Aucune restauration au sommet."
+    },
+    {
+      "type": "bike-shop",
+      "location": "Luchon",
+      "description": "Plusieurs magasins de vélo proposant réparations et location d'équipement."
+    }
+  ],
+  "bestTimeToVisit": "Juin à septembre, avec juillet et août comme période optimale. Le col peut être fermé de novembre à mai en raison de la neige.",
+  "weatherInfo": "Les conditions météorologiques peuvent être instables, typiques des Pyrénées centrales. L'après-midi, les orages se développent fréquemment et le brouillard peut s'installer rapidement au sommet. La partie supérieure du col est exposée au vent. Prévoyez une couche supplémentaire pour la descente, même en été.",
+  "strava": {
+    "segmentId": "758649",
+    "komTime": "54:23",
+    "komName": "Nairo Quintana"
+  },
+  "slug": "port-de-bales"
+}

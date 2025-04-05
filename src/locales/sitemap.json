@@ -1,0 +1,130 @@
+{
+  "fr": {
+    "sitemap": {
+      "home": "Accueil",
+      "description": "Bienvenue sur le plan du site Velo-Altitude. Cette page vous permet de naviguer facilement à travers tout notre contenu dédié au cyclisme de montagne. Vous trouverez ci-dessous toutes les sections principales du site avec leurs sous-pages.",
+      "last_updated": "Dernière mise à jour",
+      "cols": {
+        "title": "Cols",
+        "all": "Tous les cols",
+        "bonette": "Col de la Bonette",
+        "galibier": "Col du Galibier",
+        "stelvio": "Passo dello Stelvio",
+        "tourmalet": "Col du Tourmalet",
+        "izoard": "Col d'Izoard",
+        "angliru": "Alto de l'Angliru",
+        "mortirolo": "Passo del Mortirolo"
+      },
+      "training": {
+        "title": "Entraînement",
+        "all": "Tous les programmes",
+        "plan_haute_montagne": "Plan Haute Montagne",
+        "prep_montagne": "Préparation Montagne",
+        "haute_altitude": "Haute Altitude",
+        "col_crusher": "Programme Col Crusher",
+        "endurance_builder": "Programme Endurance Builder",
+        "alpine_climber": "Programme Alpine Climber",
+        "power_intervals": "Programme Power Intervals"
+      },
+      "nutrition": {
+        "title": "Nutrition",
+        "all": "Tous les plans nutritionnels",
+        "plan_endurance": "Plan Nutrition Endurance",
+        "plan_gran_fondo": "Plan Nutrition Gran Fondo",
+        "plan_mountain": "Plan Nutrition Montagne",
+        "energy_oatmeal": "Porridge Énergétique",
+        "recovery_smoothie": "Smoothie de Récupération",
+        "protein_pasta": "Pâtes Protéinées",
+        "energy_bars": "Barres Énergétiques Maison",
+        "hydration_drink": "Boisson d'Hydratation"
+      },
+      "seven_majors": {
+        "title": "Les 7 Majeurs",
+        "create": "Créer votre défi",
+        "explore": "Explorer les défis",
+        "community": "Défis communautaires"
+      },
+      "community": {
+        "title": "Communauté",
+        "challenges": "Tous les challenges",
+        "above_2500": "Challenge Above 2500",
+        "alpes_giants": "Challenge Géants des Alpes"
+      },
+      "about": {
+        "title": "À propos",
+        "team": "Notre équipe",
+        "contact": "Contact",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation"
+      }
+    },
+    "breadcrumbs": {
+      "home": "Accueil",
+      "sitemap": "Plan du site"
+    }
+  },
+  "en": {
+    "sitemap": {
+      "home": "Home",
+      "description": "Welcome to the Velo-Altitude site map. This page allows you to easily navigate through all our content dedicated to mountain cycling. Below you will find all the main sections of the site with their sub-pages.",
+      "last_updated": "Last updated",
+      "cols": {
+        "title": "Mountain Passes",
+        "all": "All passes",
+        "bonette": "Col de la Bonette",
+        "galibier": "Col du Galibier",
+        "stelvio": "Passo dello Stelvio",
+        "tourmalet": "Col du Tourmalet",
+        "izoard": "Col d'Izoard",
+        "angliru": "Alto de l'Angliru",
+        "mortirolo": "Passo del Mortirolo"
+      },
+      "training": {
+        "title": "Training",
+        "all": "All programs",
+        "plan_haute_montagne": "High Mountain Plan",
+        "prep_montagne": "Mountain Preparation",
+        "haute_altitude": "High Altitude",
+        "col_crusher": "Col Crusher Program",
+        "endurance_builder": "Endurance Builder Program",
+        "alpine_climber": "Alpine Climber Program",
+        "power_intervals": "Power Intervals Program"
+      },
+      "nutrition": {
+        "title": "Nutrition",
+        "all": "All nutrition plans",
+        "plan_endurance": "Endurance Nutrition Plan",
+        "plan_gran_fondo": "Gran Fondo Nutrition Plan",
+        "plan_mountain": "Mountain Nutrition Plan",
+        "energy_oatmeal": "Energy Oatmeal",
+        "recovery_smoothie": "Recovery Smoothie",
+        "protein_pasta": "Protein Pasta",
+        "energy_bars": "Homemade Energy Bars",
+        "hydration_drink": "Hydration Drink"
+      },
+      "seven_majors": {
+        "title": "The 7 Majors",
+        "create": "Create your challenge",
+        "explore": "Explore challenges",
+        "community": "Community challenges"
+      },
+      "community": {
+        "title": "Community",
+        "challenges": "All challenges",
+        "above_2500": "Above 2500 Challenge",
+        "alpes_giants": "Alps Giants Challenge"
+      },
+      "about": {
+        "title": "About",
+        "team": "Our team",
+        "contact": "Contact",
+        "privacy": "Privacy policy",
+        "terms": "Terms of use"
+      }
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "sitemap": "Site map"
+    }
+  }
+}

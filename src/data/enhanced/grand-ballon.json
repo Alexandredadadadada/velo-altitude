@@ -1,0 +1,90 @@
+{
+  "id": "grand-ballon",
+  "name": "Grand Ballon",
+  "region": "vosges",
+  "country": "France",
+  "altitude": 1424,
+  "length": 13.2,
+  "avgGradient": 6.7,
+  "maxGradient": 12,
+  "difficulty": "hard",
+  "elevationGain": 883,
+  "startLocation": "Willer-sur-Thur",
+  "endLocation": "Grand Ballon",
+  "description": "Le Grand Ballon, aussi connu sous le nom de Ballon de Guebwiller, est le point culminant du massif des Vosges. Cette ascension emblématique offre un panorama exceptionnel sur la plaine d'Alsace, la Forêt-Noire, et par temps clair, jusqu'aux Alpes suisses. La route serpente à travers les forêts de hêtres et de sapins avant d'émerger sur les chaumes d'altitude, créant une expérience cycliste variée et pittoresque.",
+  "history": "Le Grand Ballon a souvent été inclus dans le Tour de France, notamment en 2014 lors de l'étape Mulhouse-La Planche des Belles Filles. Il a également été le théâtre de nombreuses batailles décisives dans le Tour d'Alsace et le Circuit des Vosges. Historiquement, ses pentes ont vu passer des champions comme Bernard Hinault, Laurent Jalabert et plus récemment Julian Alaphilippe et Thibaut Pinot.",
+  "imageUrl": "/images/cols/grand-ballon/main.jpg",
+  "profileUrl": "/images/cols/grand-ballon/profile.jpg",
+  "popularSegments": [
+    {
+      "name": "Goldbach - Grand Ballon",
+      "length": 9.7,
+      "gradient": 7.2,
+      "description": "Segment principal de l'ascension, avec les passages les plus difficiles"
+    },
+    {
+      "name": "Derniers kilomètres",
+      "length": 3,
+      "gradient": 8.5,
+      "description": "Section finale exposée offrant des vues panoramiques"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Versant Sud (Willer-sur-Thur)",
+      "startLocation": "Willer-sur-Thur",
+      "length": 13.2,
+      "elevationGain": 883,
+      "avgGradient": 6.7,
+      "maxGradient": 12,
+      "difficulty": "hard",
+      "description": "L'ascension classique empruntée par le Tour de France, offrant de belles vues sur la vallée de la Thur"
+    },
+    {
+      "name": "Versant Est (Guebwiller)",
+      "startLocation": "Guebwiller",
+      "length": 15.5,
+      "elevationGain": 970,
+      "avgGradient": 6.3,
+      "maxGradient": 10,
+      "difficulty": "hard",
+      "description": "Montée plus longue traversant les vignobles alsaciens avant d'atteindre la forêt"
+    },
+    {
+      "name": "Versant Nord (Markstein)",
+      "startLocation": "Col du Markstein",
+      "length": 5.1,
+      "elevationGain": 285,
+      "avgGradient": 5.6,
+      "maxGradient": 8,
+      "difficulty": "medium",
+      "description": "Version plus courte depuis le Col du Markstein, idéale pour compléter une journée dans les Vosges"
+    }
+  ],
+  "touristicInfo": "Au sommet du Grand Ballon se trouve le radar météorologique dans sa bulle caractéristique, ainsi qu'un hôtel-restaurant et un monument aux Diables Bleus (chasseurs alpins). Le site est classé Grand Site du Massif des Vosges. Les amateurs d'histoire apprécieront les vestiges des tranchées de la Première Guerre mondiale visibles à proximité.",
+  "facilities": [
+    {
+      "type": "food",
+      "location": "Sommet",
+      "description": "Hôtel-restaurant proposant cuisine traditionnelle alsacienne"
+    },
+    {
+      "type": "water",
+      "location": "Goldbach et sommet",
+      "description": "Points d'eau au village de Goldbach et près du restaurant au sommet"
+    },
+    {
+      "type": "bike-shop",
+      "location": "Thann (vallée)",
+      "description": "Magasins de vélo avec service de réparation et location"
+    }
+  ],
+  "bestTimeToVisit": "Mai à octobre",
+  "weatherInfo": "Le col est généralement accessible de mai à octobre. Attention aux vents forts au sommet et aux brouillards qui peuvent se former rapidement. En été, préférez les matinées pour éviter les orages fréquents en après-midi.",
+  "strava": {
+    "segmentId": "629404",
+    "komTime": "39:22",
+    "komName": "Thibaut Pinot"
+  },
+  "slug": "grand-ballon"
+}

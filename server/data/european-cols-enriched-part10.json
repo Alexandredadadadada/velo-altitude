@@ -8,7 +8,11 @@
       "longitude": 5.2786,
       "region": "Provence",
       "country": "France",
-      "nearbyTowns": ["Bédoin", "Malaucène", "Sault"]
+      "nearbyTowns": [
+        "Bédoin",
+        "Malaucène",
+        "Sault"
+      ]
     },
     "climbData": {
       "bedoinSide": {
@@ -16,7 +20,7 @@
         "length": 21.4,
         "elevation": 1610,
         "averageGradient": 7.5,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 10
       },
       "malauceneSide": {
@@ -24,15 +28,15 @@
         "length": 21.2,
         "elevation": 1570,
         "averageGradient": 7.4,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       },
       "saultSide": {
         "startLocation": "Sault",
-        "length": 26.0,
+        "length": 26,
         "elevation": 1210,
         "averageGradient": 4.7,
-        "maxGradient": 11.0,
+        "maxGradient": 11,
         "difficulty": 8
       }
     },
@@ -65,25 +69,37 @@
       {
         "name": "Mémorial Tom Simpson",
         "description": "Monument commémoratif à 1.5 km du sommet, où les cyclistes déposent traditionnellement bidons ou casquettes en hommage.",
-        "coordinates": [44.1723, 5.2777],
+        "coordinates": [
+          44.1723,
+          5.2777
+        ],
         "type": "monument"
       },
       {
         "name": "Observatoire météorologique",
         "description": "Station météorologique caractéristique au sommet, avec son architecture unique et sa tour blanche.",
-        "coordinates": [44.1741, 5.2786],
+        "coordinates": [
+          44.1741,
+          5.2786
+        ],
         "type": "landmark"
       },
       {
         "name": "Forêt de cèdres",
         "description": "Magnifique forêt sur le versant de Sault, offrant une ombre bienvenue avant la partie dénudée.",
-        "coordinates": [44.1500, 5.3000],
+        "coordinates": [
+          44.15,
+          5.3
+        ],
         "type": "natural"
       },
       {
         "name": "Chalet Reynard",
         "description": "Restaurant-refuge à la sortie de la forêt, dernier point de ravitaillement avant le sommet.",
-        "coordinates": [44.1589, 5.2921],
+        "coordinates": [
+          44.1589,
+          5.2921
+        ],
         "type": "accommodation"
       }
     ],
@@ -92,9 +108,16 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Élevé en été (restriction certains jours)",
       "winterClosure": "Généralement fermé de novembre à avril",
-      "facilities": ["Boutique souvenirs", "Snack", "Toilettes"],
+      "facilities": [
+        "Boutique souvenirs",
+        "Snack",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Chalet Reynard", "Sommet (en été)"]
+      "waterPoints": [
+        "Chalet Reynard",
+        "Sommet (en été)"
+      ]
     },
     "images": {
       "main": "/images/cols/ventoux/main.jpg",
@@ -112,7 +135,9 @@
       "Évitez de gravir le col entre 12h et 16h en été, les températures peuvent dépasser 35°C sur les pentes exposées.",
       "Le mistral peut être violent au sommet, prévoyez toujours un coupe-vent même par beau temps."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "grossglockner",
@@ -123,7 +148,11 @@
       "longitude": 12.8407,
       "region": "Alpes autrichiennes",
       "country": "Autriche",
-      "nearbyTowns": ["Heiligenblut", "Bruck", "Fusch"]
+      "nearbyTowns": [
+        "Heiligenblut",
+        "Bruck",
+        "Fusch"
+      ]
     },
     "climbData": {
       "heiligenblutSide": {
@@ -131,7 +160,7 @@
         "length": 15.3,
         "elevation": 1122,
         "averageGradient": 7.3,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 8
       },
       "fuschSide": {
@@ -139,7 +168,7 @@
         "length": 25.1,
         "elevation": 1738,
         "averageGradient": 6.9,
-        "maxGradient": 12.0,
+        "maxGradient": 12,
         "difficulty": 9
       }
     },
@@ -165,25 +194,37 @@
       {
         "name": "Franz-Josefs-Höhe",
         "description": "Point de vue panoramique à 2369m offrant une vue spectaculaire sur le glacier Pasterze et le sommet du Grossglockner.",
-        "coordinates": [47.0748, 12.7507],
+        "coordinates": [
+          47.0748,
+          12.7507
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Edelweißspitze",
         "description": "Sommet accessible par une courte route annexe, culminant à 2571m, point le plus élevé de la route.",
-        "coordinates": [47.1145, 12.8134],
+        "coordinates": [
+          47.1145,
+          12.8134
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Glacier Pasterze",
         "description": "Le plus long glacier d'Autriche, visible depuis la Franz-Josefs-Höhe.",
-        "coordinates": [47.0748, 12.7507],
+        "coordinates": [
+          47.0748,
+          12.7507
+        ],
         "type": "natural"
       },
       {
         "name": "Musée alpin",
         "description": "Musée au col de Fuscher Törl présentant l'histoire de la construction de la route et de l'alpinisme dans la région.",
-        "coordinates": [47.0553, 12.8407],
+        "coordinates": [
+          47.0553,
+          12.8407
+        ],
         "type": "cultural"
       }
     ],
@@ -192,9 +233,16 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Élevé en été",
       "winterClosure": "Fermé de novembre à mi-mai",
-      "facilities": ["Restaurants", "Musées", "Boutiques", "Toilettes"],
+      "facilities": [
+        "Restaurants",
+        "Musées",
+        "Boutiques",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Nombreux points d'eau et restaurants le long du parcours"]
+      "waterPoints": [
+        "Nombreux points d'eau et restaurants le long du parcours"
+      ]
     },
     "images": {
       "main": "/images/cols/grossglockner/main.jpg",
@@ -212,7 +260,10 @@
       "L'altitude se fait sentir au-dessus de 2000m, adaptez votre effort en conséquence.",
       "Malgré la période estivale, prévoyez des vêtements chauds pour la descente."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ],
+    "slug": "grossglockner-hochalpenstrasse"
   },
   {
     "id": "passo-pordoi",
@@ -223,7 +274,10 @@
       "longitude": 11.8182,
       "region": "Dolomites",
       "country": "Italie",
-      "nearbyTowns": ["Arabba", "Canazei"]
+      "nearbyTowns": [
+        "Arabba",
+        "Canazei"
+      ]
     },
     "climbData": {
       "arabbaSide": {
@@ -231,7 +285,7 @@
         "length": 9.4,
         "elevation": 637,
         "averageGradient": 6.8,
-        "maxGradient": 9.0,
+        "maxGradient": 9,
         "difficulty": 7
       },
       "canazeiSide": {
@@ -239,7 +293,7 @@
         "length": 11.8,
         "elevation": 642,
         "averageGradient": 5.4,
-        "maxGradient": 8.0,
+        "maxGradient": 8,
         "difficulty": 6
       }
     },
@@ -272,25 +326,37 @@
       {
         "name": "Monument Fausto Coppi",
         "description": "Statue commémorative au sommet, lieu de pèlerinage pour les amateurs de cyclisme.",
-        "coordinates": [46.4882, 11.8182],
+        "coordinates": [
+          46.4882,
+          11.8182
+        ],
         "type": "monument"
       },
       {
         "name": "Vue sur la Marmolada",
         "description": "Panorama sur le plus haut sommet des Dolomites (3343m).",
-        "coordinates": [46.4882, 11.8182],
+        "coordinates": [
+          46.4882,
+          11.8182
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Téléphérique du Sass Pordoi",
         "description": "Remontée mécanique menant au plateau du Sass Pordoi à 2950m en quelques minutes.",
-        "coordinates": [46.4882, 11.8182],
+        "coordinates": [
+          46.4882,
+          11.8182
+        ],
         "type": "tourism"
       },
       {
         "name": "Virages numérotés",
         "description": "Les 33 virages en épingle du versant de Canazei sont numérotés, comme l'Alpe d'Huez.",
-        "coordinates": [46.4760, 11.8200],
+        "coordinates": [
+          46.476,
+          11.82
+        ],
         "type": "landmark"
       }
     ],
@@ -299,9 +365,16 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Élevé en haute saison touristique",
       "winterClosure": "Généralement ouvert toute l'année (accès aux stations de ski)",
-      "facilities": ["Restaurants", "Hôtels", "Boutiques souvenirs", "Toilettes"],
+      "facilities": [
+        "Restaurants",
+        "Hôtels",
+        "Boutiques souvenirs",
+        "Toilettes"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Plusieurs restaurants et buvettes au sommet"]
+      "waterPoints": [
+        "Plusieurs restaurants et buvettes au sommet"
+      ]
     },
     "images": {
       "main": "/images/cols/pordoi/main.jpg",
@@ -319,7 +392,9 @@
       "Idéal dans le cadre du circuit Sella Ronda, qui peut être parcouru dans les deux sens.",
       "Le Sella Ronda Day (journée sans circulation motorisée) est parfait pour gravir ce col."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "col-du-lautaret",
@@ -330,7 +405,11 @@
       "longitude": 6.4109,
       "region": "Hautes-Alpes",
       "country": "France",
-      "nearbyTowns": ["Le Monêtier-les-Bains", "La Grave", "Briançon"]
+      "nearbyTowns": [
+        "Le Monêtier-les-Bains",
+        "La Grave",
+        "Briançon"
+      ]
     },
     "climbData": {
       "brianconSide": {
@@ -338,15 +417,15 @@
         "length": 27.5,
         "elevation": 840,
         "averageGradient": 3.1,
-        "maxGradient": 7.0,
+        "maxGradient": 7,
         "difficulty": 5
       },
       "bourgetsSide": {
         "startLocation": "Le Bourg-d'Oisans",
-        "length": 38.0,
+        "length": 38,
         "elevation": 1140,
-        "averageGradient": 3.0,
-        "maxGradient": 8.0,
+        "averageGradient": 3,
+        "maxGradient": 8,
         "difficulty": 6
       }
     },
@@ -372,25 +451,37 @@
       {
         "name": "Jardin alpin du Lautaret",
         "description": "Jardin botanique à 2100m d'altitude, présentant plus de 2000 espèces de plantes alpines du monde entier.",
-        "coordinates": [45.0375, 6.4109],
+        "coordinates": [
+          45.0375,
+          6.4109
+        ],
         "type": "natural"
       },
       {
         "name": "Vue sur La Meije",
         "description": "Panorama exceptionnel sur le massif de La Meije (3983m) et ses glaciers.",
-        "coordinates": [45.0375, 6.4109],
+        "coordinates": [
+          45.0375,
+          6.4109
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Route du Galibier",
         "description": "Bifurcation vers le Col du Galibier qui monte à 2642m, pour les cyclistes souhaitant poursuivre l'ascension.",
-        "coordinates": [45.0375, 6.4109],
+        "coordinates": [
+          45.0375,
+          6.4109
+        ],
         "type": "landmark"
       },
       {
         "name": "Station de ski de La Grave",
         "description": "Aperçu sur cette station de ski freeride légendaire sans pistes balisées.",
-        "coordinates": [45.0500, 6.3065],
+        "coordinates": [
+          45.05,
+          6.3065
+        ],
         "type": "tourism"
       }
     ],
@@ -399,9 +490,16 @@
       "roadCondition": "Excellente",
       "trafficLevel": "Élevé (axe routier majeur)",
       "winterClosure": "Généralement ouvert toute l'année sauf conditions exceptionnelles",
-      "facilities": ["Restaurants", "Boutiques", "Toilettes", "Stations-service"],
+      "facilities": [
+        "Restaurants",
+        "Boutiques",
+        "Toilettes",
+        "Stations-service"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Plusieurs restaurants et fontaines au sommet"]
+      "waterPoints": [
+        "Plusieurs restaurants et fontaines au sommet"
+      ]
     },
     "images": {
       "main": "/images/cols/lautaret/main.jpg",
@@ -419,18 +517,24 @@
       "Souvent combiné avec le Galibier ou d'autres cols comme le Col d'Izoard ou le Col du Granon.",
       "La circulation peut être dense, restez vigilant et maintenez-vous sur le côté droit."
     ],
-    "recommendedBikeTypes": ["Vélo de route"]
+    "recommendedBikeTypes": [
+      "Vélo de route"
+    ]
   },
   {
     "id": "puerto-de-ancares",
     "name": "Puerto de Ancares",
     "altitude": 1670,
     "location": {
-      "latitude": 42.8250,
+      "latitude": 42.825,
       "longitude": -6.8336,
       "region": "Galice/Castille-et-León",
       "country": "Espagne",
-      "nearbyTowns": ["Vega de Espinareda", "Candín", "Pereda de Ancares"]
+      "nearbyTowns": [
+        "Vega de Espinareda",
+        "Candín",
+        "Pereda de Ancares"
+      ]
     },
     "climbData": {
       "vegaSide": {
@@ -438,7 +542,7 @@
         "length": 18.6,
         "elevation": 1240,
         "averageGradient": 6.7,
-        "maxGradient": 15.0,
+        "maxGradient": 15,
         "difficulty": 8
       },
       "peredaSide": {
@@ -446,7 +550,7 @@
         "length": 8.2,
         "elevation": 710,
         "averageGradient": 8.7,
-        "maxGradient": 14.0,
+        "maxGradient": 14,
         "difficulty": 9
       }
     },
@@ -472,25 +576,37 @@
       {
         "name": "Réserve de biosphère des Ancares",
         "description": "Zone protégée abritant une biodiversité exceptionnelle, incluant des ours bruns et des loups ibériques.",
-        "coordinates": [42.8100, -6.8200],
+        "coordinates": [
+          42.81,
+          -6.82
+        ],
         "type": "natural"
       },
       {
         "name": "Pallozas traditionnelles",
         "description": "Maisons traditionnelles avec toits de chaume visibles dans les villages traversés.",
-        "coordinates": [42.8302, -6.8275],
+        "coordinates": [
+          42.8302,
+          -6.8275
+        ],
         "type": "cultural"
       },
       {
         "name": "Vue panoramique au sommet",
         "description": "Paysage à 360° sur les montagnes galiciennes et castillanes.",
-        "coordinates": [42.8250, -6.8336],
+        "coordinates": [
+          42.825,
+          -6.8336
+        ],
         "type": "viewpoint"
       },
       {
         "name": "Forêts de châtaigniers centenaires",
         "description": "Bosquets ancestraux bordant certaines portions de la route.",
-        "coordinates": [42.8200, -6.8400],
+        "coordinates": [
+          42.82,
+          -6.84
+        ],
         "type": "natural"
       }
     ],
@@ -499,9 +615,13 @@
       "roadCondition": "Moyenne à bonne",
       "trafficLevel": "Très faible",
       "winterClosure": "Parfois fermé en hiver selon les chutes de neige",
-      "facilities": ["Aucune installation permanente au sommet"],
+      "facilities": [
+        "Aucune installation permanente au sommet"
+      ],
       "parkingAvailable": true,
-      "waterPoints": ["Villages traversés, aucun au sommet"]
+      "waterPoints": [
+        "Villages traversés, aucun au sommet"
+      ]
     },
     "images": {
       "main": "/images/cols/ancares/main.jpg",
@@ -519,6 +639,9 @@
       "Zone très isolée, prévoyez suffisamment d'eau et de nourriture car il n'y a aucun commerce.",
       "Col idéal pour découvrir l'Espagne rurale et authentique, loin des circuits touristiques."
     ],
-    "recommendedBikeTypes": ["Vélo de route", "Gravel"]
+    "recommendedBikeTypes": [
+      "Vélo de route",
+      "Gravel"
+    ]
   }
 ]

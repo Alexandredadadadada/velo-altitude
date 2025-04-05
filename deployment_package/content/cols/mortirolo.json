@@ -1,0 +1,143 @@
+{
+  "id": "mortirolo",
+  "name": {
+    "fr": "Passo del Mortirolo",
+    "en": "Mortirolo Pass",
+    "de": "Mortirolo-Pass",
+    "it": "Passo del Mortirolo",
+    "es": "Puerto de Mortirolo"
+  },
+  "altitude": 1852,
+  "location": {
+    "latitude": 46.2341,
+    "longitude": 10.2997,
+    "region": "Lombardie",
+    "country": "Italie",
+    "nearbyTowns": ["Mazzo di Valtellina", "Monno", "Grosio"]
+  },
+  "climbData": {
+    "mainSide": {
+      "startLocation": "Mazzo di Valtellina",
+      "length": 12.4,
+      "elevation": 1300,
+      "averageGradient": 10.5,
+      "maxGradient": 18.0,
+      "difficulty": 10
+    },
+    "alternateSide": {
+      "startLocation": "Monno",
+      "length": 14.8,
+      "elevation": 441,
+      "averageGradient": 3.0,
+      "maxGradient": 16.0,
+      "difficulty": 6
+    },
+    "thirdSide": {
+      "startLocation": "Grosio",
+      "length": 17.7,
+      "elevation": 1186,
+      "averageGradient": 6.7,
+      "maxGradient": 16.0,
+      "difficulty": 8
+    }
+  },
+  "history": {
+    "firstCompetitionYear": 1990,
+    "vuealtaAppearances": 0,
+    "tourDeFranceAppearances": 0,
+    "giroAppearances": 12,
+    "famousStories": [
+      "Le Mortirolo est considéré comme l'un des cols les plus difficiles du cyclisme mondial, surnommé 'le Calvaire' par les cyclistes professionnels.",
+      "Le col est devenu légendaire en 1994 lorsque Marco Pantani y a lancé une attaque dévastatrice pour reprendre plus de 4 minutes à Miguel Indurain, établissant un record qui n'a jamais été battu.",
+      "Un monument dédié à Marco Pantani a été érigé au kilomètre 8 de l'ascension depuis Mazzo, commémorant ses exploits sur cette montagne.",
+      "Lance Armstrong a déclaré que le Mortirolo était le col le plus dur qu'il ait jamais grimpé, plus difficile que l'Angliru ou le Mont Ventoux.",
+      "En 2012, une étape du Giro a dû passer par le Mortirolo sous une tempête de neige, créant des images épiques de coureurs luttant contre les éléments."
+    ],
+    "records": {
+      "ascent": {
+        "holder": "Ivan Gotti",
+        "time": "42:40",
+        "year": 1996,
+        "side": "Mazzo di Valtellina"
+      }
+    }
+  },
+  "pointsOfInterest": [
+    {
+      "name": "Monument Marco Pantani",
+      "description": "Statue commémorative dédiée au 'Pirate', située au kilomètre 8 de l'ascension depuis Mazzo.",
+      "coordinates": {
+        "latitude": 46.2230,
+        "longitude": 10.2792
+      }
+    },
+    {
+      "name": "Tornante della Pirata",
+      "description": "Virage emblématique où Pantani a lancé son attaque en 1994, avec une fresque murale.",
+      "coordinates": {
+        "latitude": 46.2235,
+        "longitude": 10.2810
+      }
+    },
+    {
+      "name": "Vue sur la Vallée de l'Adda",
+      "description": "Panorama spectaculaire sur la vallée en contrebas, visible dans les derniers kilomètres.",
+      "coordinates": {
+        "latitude": 46.2300,
+        "longitude": 10.2900
+      }
+    }
+  ],
+  "seasonality": {
+    "openingDates": "Généralement de mai à octobre",
+    "bestPeriod": "Juin à septembre",
+    "notes": "Le col est fermé l'hiver en raison de la neige. Même en été, les conditions peuvent changer rapidement."
+  },
+  "multimedia": {
+    "images": [
+      {
+        "url": "https://www.cyclingcols.com/sites/default/files/col/mortirolo/mortirolo_profile.jpg",
+        "caption": "Profil du col du Mortirolo depuis Mazzo di Valtellina",
+        "credit": "CyclingCols.com"
+      },
+      {
+        "url": "https://bicyclesojourn.files.wordpress.com/2016/01/pantani-mortirolo-monument.jpg",
+        "caption": "Monument Marco Pantani sur les pentes du Mortirolo",
+        "credit": "BicycleSojourn.com"
+      },
+      {
+        "url": "https://www.ciclismo-espresso.com/wp-content/uploads/2020/04/mortirolo-monumento-pantani.jpg",
+        "caption": "Peinture murale de Pantani dans un des virages",
+        "credit": "Ciclismo-Espresso.com"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=xbF_SxKU2xA",
+        "title": "Mortirolo - Ascension depuis Mazzo di Valtellina",
+        "duration": "1:24:15"
+      }
+    ]
+  },
+  "trainingTips": {
+    "recommendedFTP": "Minimum 4.0 W/kg pour une ascension sans souffrance excessive",
+    "gearing": "Cassette 11-34 ou même 11-36 vivement recommandée avec un compact 34-50",
+    "preparation": "Entraînement spécifique aux pentes très raides, travail en force et résistance musculaire",
+    "cautionPoints": [
+      "L'ascension est brutale dès le départ, avec des pourcentages constamment élevés",
+      "Peu d'ombre sur le parcours, ce qui peut être problématique par forte chaleur",
+      "Sections à 18% qui nécessitent une très bonne technique de pédalage en danseuse"
+    ]
+  },
+  "amenities": {
+    "waterPoints": ["Mazzo di Valtellina", "Fontaine au monument Pantani", "Sommet"],
+    "restaurants": ["Restaurant alpin au sommet (ouvert en saison)"],
+    "accommodation": ["Hôtels à Mazzo di Valtellina et Monno"],
+    "bikeMechanic": "Magasins de vélos à Grosio et Tirano"
+  },
+  "relatedContent": {
+    "trainingPlan": "programme-haute-montagne-bonette",
+    "nutritionPlan": "plan-nutrition-haute-montagne",
+    "nearbyRoutes": ["circuit-gavia-mortirolo", "giro-lombardia-route"]
+  }
+}
