@@ -893,9 +893,9 @@ export const TrainingHub = () => {
     if (userProfile?.connectedAccounts?.strava) {
       stravaIntegration.syncActivities(user.id)
         .then(activities => {
-          // Mise à jour des performances avec les données Strava
-          trainingService.updatePerformanceMetrics(user.id, activities);
-        });
+        // Mise à jour des performances avec les données Strava
+        trainingService.updatePerformanceMetrics(user.id, activities);
+      });
     }
   }, [userProfile, user]);
   
@@ -2080,3 +2080,81 @@ La plateforme Velo-Altitude est maintenant prête pour le déploiement final et 
 - ✅ Configuration GitHub-Netlify finalisée
 - ✅ Redis désactivé pour faciliter le déploiement initial
 - ✅ Site prêt pour le déploiement final sur https://velo-altitude.com
+
+## 📝 Journal du déploiement - 05/04/2025
+
+### Problèmes rencontrés et solutions
+
+#### 1. Problème de sous-modules Git
+
+**Problème**: Lors du déploiement initial, Netlify a rencontré l'erreur suivante:
+```
+Failed during stage 'preparing repo': Error checking out submodules: fatal: No url found for submodule path 'VELO-ALTITUDE' in .gitmodules
+```
+
+**Solution**:
+- Création d'un fichier `.gitmodules` vide pour clarifier l'absence de sous-modules
+- Exécution de `git submodule deinit -f VELO-ALTITUDE` pour éliminer les références
+- Suppression des références au sous-module avec `git rm -rf --cached VELO-ALTITUDE`
+- Commit et push des modifications
+
+#### 2. Problème de webpack manquant
+
+**Problème**: Le build échouait avec l'erreur:
+```
+sh: 1: webpack: not found
+```
+
+**Solution**:
+- Modification du script de build dans `package.json` pour utiliser `npx webpack` au lieu de `webpack` directement
+- Commit et push des modifications
+
+#### 3. Problème d'interactivité pendant le build
+
+**Problème**: Webpack tentait d'installer webpack-cli en mode interactif, ce qui bloquait le déploiement:
+```
+CLI for webpack must be installed.
+webpack-cli (https://github.com/webpack/webpack-cli)
+We will use "npm" to install the CLI via "npm install -D webpack-cli".
+Do you want to install 'webpack-cli' (yes/no):
+```
+
+**Solution**:
+- Installation explicite de webpack-cli: `npm install --save-dev webpack-cli`
+- Modification du script netlify-build pour utiliser `CI=true` et désactiver l'interactivité
+- Test local du build pour vérifier la configuration
+- Commit et push des modifications
+
+### Modifications apportées
+
+1. **Fichier package.json**:
+   ```json
+   "scripts": {
+     "build": "webpack --mode production",
+     "netlify-build": "CI=true npm run build"
+   }
+   ```
+
+2. **Fichiers de fonctions Netlify**:
+   - Désactivation complète de Redis dans `cols-region.js` et `cols-elevation.js`
+   - Ajout de logs pour indiquer la désactivation de Redis
+
+3. **Configuration Netlify**:
+   - Branche déployée: `main`
+   - Commande de build: `npm run netlify-build`
+   - Répertoire de publication: `build`
+   - Répertoire des fonctions: `netlify/functions`
+
+### Statut final
+
+✅ **Déploiement en cours sur**: https://velo-altitude.com
+✅ **Repository GitHub**: https://github.com/Alexandredadadadada/velo-altitude
+✅ **Équipe Netlify**: business-barone's team
+
+La plateforme Velo-Altitude est désormais en cours de déploiement avec toutes les fonctionnalités principales actives, sans Redis pour cette version initiale. Les modules clés (Les 7 Majeurs, Visualisations 3D, Catalogue des cols, Nutrition, Entraînement) seront tous accessibles sur le site.
+
+**Prochaines étapes après déploiement réussi**:
+- Vérifier chaque fonctionnalité clé du site
+- S'assurer que les fonctions serverless Netlify fonctionnent correctement
+- Analyser les performances et identifier les optimisations futures
+- Planifier la réintégration de Redis si nécessaire pour améliorer les performances
