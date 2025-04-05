@@ -1,138 +1,53 @@
 [build]
-  base = ""
-  publish = "build/"
-  command = "npm run build"
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ./src/ ./public/"
+  command = "npm run netlify-build"
+  publish = "build"
+  functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
-  NETLIFY_USE_YARN = "false"
-  CI = "true"
-  GENERATE_SOURCEMAP = "false"
+  NODE_VERSION = "18.17.0"
+  NPM_VERSION = "9.6.7"
 
-# Redirections pour les SPA React
+# Règle de redirection pour les API
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Règle de redirection pour le routage SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Redirection API pour les fonctions Netlify
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-  force = true
-
-# Configuration pour le sous-domaine API
-[[redirects]]
-  from = "https://api.velo-altitude.com/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-  force = true
-
-# Configuration spécifique pour le composant Les 7 Majeurs
-[[redirects]]
-  from = "/defis/7-majeurs/*"
-  to = "/index.html"
-  status = 200
-
-# Configuration pour le développement local
-[dev]
-  command = "npm start"
-  port = 3000
-  publish = "build"
-  targetPort = 3000
-  framework = "#custom"
-
-# Configuration des fonctions Netlify
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
-# Configuration pour optimiser les performances
-[headers]
-  # En-têtes par défaut pour tous les fichiers
+# En-têtes de sécurité
+[[headers]]
   for = "/*"
-    [headers.values]
+  [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.gstatic.com api.velo-altitude.com; style-src 'self' 'unsafe-inline' *.googleapis.com; img-src 'self' data: blob: *.googleapis.com *.gstatic.com; font-src 'self' data: *.googleapis.com *.gstatic.com; connect-src 'self' *.velo-altitude.com *.openrouteservice.org *.openweathermap.org api.velo-altitude.com; frame-src 'self'; object-src 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://api.mapbox.com; style-src 'self' 'unsafe-inline' https://api.mapbox.com; img-src 'self' data: https://api.mapbox.com https://openweathermap.org; connect-src 'self' https://api.mapbox.com https://openweathermap.org https://*.auth0.com https://api.openrouteservice.org https://api.strava.com; frame-src 'self' https://*.auth0.com;"
 
-  # Fichiers statiques avec cache longue durée
-  for = "/static/*"
-    [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-  # JavaScript
+# Configuration du cache pour les ressources statiques
+[[headers]]
   for = "/*.js"
-    [headers.values]
+  [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-  # CSS
+[[headers]]
   for = "/*.css"
-    [headers.values]
+  [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-  # Images
-  for = "/*.jpg"
-    [headers.values]
+[[headers]]
+  for = "/static/**/*"
+  [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-  for = "/*.webp"
-    [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-  for = "/*.png"
-    [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-  for = "/*.svg"
-    [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-  for = "/*.ico"
-    [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-  # Fonts
-  for = "/*.woff"
-    [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-  for = "/*.woff2"
-    [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-  # HTML et manifeste avec cache court
-  for = "/*.html"
-    [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-  for = "/manifest.json"
-    [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-# Configuration simplifiée des plugins
+# Configuration des plugins Netlify
 [[plugins]]
-  package = "netlify-plugin-inline-critical-css"
+  package = "@netlify/plugin-lighthouse"
 
 [[plugins]]
-  package = "netlify-plugin-cache"
-  [plugins.inputs]
-    paths = [
-      "node_modules/.cache",
-      "build/static"
-    ]
-
-# Configuration des variables d'environnement
-[context.production.environment]
-  REACT_APP_API_URL = "https://api.velo-altitude.com"
-  REACT_APP_ENVIRONMENT = "production"
-  REACT_APP_BRAND_NAME = "Velo-Altitude"
-  REACT_APP_BASE_URL = "https://velo-altitude.com"
-  REACT_APP_OPENROUTE_API_KEY = "from-netlify-env"
-  REACT_APP_OPENWEATHER_API_KEY = "from-netlify-env"
+  package = "netlify-plugin-hashfiles"
