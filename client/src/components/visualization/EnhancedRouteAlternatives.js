@@ -31,7 +31,7 @@ import AuthService from '../../services/authService';
 Chart.register(...registerables);
 
 // Récupérer le token Mapbox depuis les variables d'environnement
-const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN || 'pk.eyJ1IjoiZ3JhbmRlc3RjeWNsaXNtZSIsImEiOiJjbGc2ZnZjZXIwMGRtM2VvYXB5eHUyOXZqIn0.7eL5k6rDlG_KBwE_XTjafQ';
+const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN || 'YOUR_MAPBOX_TOKEN';
 const mapStyle = 'mapbox://styles/mapbox/outdoors-v11';
 
 // Icônes pour les conditions météo
@@ -499,5 +499,297 @@ const EnhancedRouteAlternatives = ({ routeId, userId }) => {
     <name>${route.name}</name>
     <trkseg>
       ${route.points.map(point => `
-      <trkpt lat="${point.latitud
-(Content truncated due to size limit. Use line ranges to read in chunks)
+      <trkpt lat="${point.latitude}" lon="${point.longitude}">
+        <ele>${point.elevation}</ele>
+        <time>${new Date(point.timestamp).toISOString()}</time>
+      </trkpt>
+      `).join('')}
+    </trkseg>
+  </trk>
+</gpx>
+`;
+    
+    // Télécharger le fichier GPX
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(new Blob([gpxContent], { type: 'application/gpx+xml' }));
+    link.download = `${route.name}.gpx`;
+    link.click();
+  };
+
+  // Gérer l'ouverture du dialogue de sauvegarde
+  const handleOpenSaveDialog = () => {
+    setShowSaveDialog(true);
+  };
+
+  // Gérer la sauvegarde de l'itinéraire
+  const handleSaveRoute = async () => {
+    if (!userId) {
+      notify.warning(t('loginRequired'), { title: t('warning') });
+      return;
+    }
+    
+    try {
+      const routeData = {
+        name: routeName,
+        description: routeDescription,
+        points: selectedRoute.points
+      };
+      
+      const response = await RouteService.saveRoute(userId, routeData);
+      
+      if (response.data.status === 'success') {
+        notify.success(t('routeSaved'), { title: t('success') });
+        setShowSaveDialog(false);
+      } else {
+        console.error('Erreur lors de la sauvegarde:', response.data);
+        notify.error(t('saveError'), { title: t('error') });
+      }
+    } catch (error) {
+      console.error('Erreur lors de la sauvegarde:', error);
+      notify.error(t('saveError'), { title: t('error') });
+    }
+  };
+
+  return (
+    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ flex: 1, overflow: 'auto' }}>
+        <Map
+          ref={mapRef}
+          mapStyle={mapStyle}
+          mapboxApiAccessToken={MAPBOX_TOKEN}
+          initialViewState={viewState}
+          style={{ width: '100%', height: '100%' }}
+          onViewportChange={nextViewState => setViewState(nextViewState)}
+          onClick={handleMapClick}
+        >
+          {selectedRoute && (
+            <Source id="route" type="geojson" data={selectedRoute.geojson}>
+              <Layer
+                id="route"
+                type="line"
+                paint={{
+                  'line-color': '#007bff',
+                  'line-width': 4
+                }}
+              />
+            </Source>
+          )}
+          {popupInfo && (
+            <Popup
+              longitude={popupInfo.longitude}
+              latitude={popupInfo.latitude}
+              closeButton={false}
+              closeOnClick={false}
+            >
+              <Box sx={{ p: 2, bgcolor: 'white', borderRadius: 2, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)' }}>
+                <Typography variant="body2">
+                  {t('elevation')}: {popupInfo.elevation} m
+                </Typography>
+                <Typography variant="body2">
+                  {t('distance')}: {popupInfo.distance} km
+                </Typography>
+              </Box>
+            </Popup>
+          )}
+          <NavigationControl position="top-left" />
+          <GeolocateControl position="top-left" />
+          <FullscreenControl position="top-left" />
+          <ScaleControl position="bottom-left" />
+        </Map>
+      </Box>
+      <Box sx={{ p: 2, flex: 0 }}>
+        <Tabs
+          value={activeTab}
+          onChange={(event, newTab) => setActiveTab(newTab)}
+          variant="scrollable"
+          scrollButtons="auto"
+        >
+          <Tab label={t('weather')} value="weather" />
+          <Tab label={t('profile')} value="profile" />
+        </Tabs>
+        {activeTab === 'weather' && (
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="subtitle1" gutterBottom>
+              {t('weatherConditions')}
+            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Slider
+                value={weatherConditions.precipitation}
+                min={0}
+                max={100}
+                step={1}
+                onChange={(event, value) => updateWeatherCondition('precipitation', value)}
+              />
+              <Box sx={{ ml: 2 }}>
+                <Typography variant="body2">
+                  {t('precipitation')}: {weatherConditions.precipitation}%
+                </Typography>
+              </Box>
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Slider
+                value={weatherConditions.temperature}
+                min={-20}
+                max={40}
+                step={1}
+                onChange={(event, value) => updateWeatherCondition('temperature', value)}
+              />
+              <Box sx={{ ml: 2 }}>
+                <Typography variant="body2">
+                  {t('temperature')}: {weatherConditions.temperature}°C
+                </Typography>
+              </Box>
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Slider
+                value={weatherConditions.windSpeed}
+                min={0}
+                max={100}
+                step={1}
+                onChange={(event, value) => updateWeatherCondition('windSpeed', value)}
+              />
+              <Box sx={{ ml: 2 }}>
+                <Typography variant="body2">
+                  {t('windSpeed')}: {weatherConditions.windSpeed} km/h
+                </Typography>
+              </Box>
+            </Box>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={weatherConditions.stormRisk}
+                  onChange={(event) => updateWeatherCondition('stormRisk', event.target.checked)}
+                />
+              }
+              label={t('stormRisk')}
+            />
+          </Box>
+        )}
+        {activeTab === 'profile' && (
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="subtitle1" gutterBottom>
+              {t('userProfile')}
+            </Typography>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={userProfile.withChildren}
+                  onChange={(event) => updateUserProfile('withChildren', event.target.checked)}
+                />
+              }
+              label={t('withChildren')}
+            />
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={userProfile.preferences.includes('cultural')}
+                  onChange={(event) => updateUserProfile('preferences', 'cultural')}
+                />
+              }
+              label={t('cultural')}
+            />
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={userProfile.preferences.includes('landscape')}
+                  onChange={(event) => updateUserProfile('preferences', 'landscape')}
+                />
+              }
+              label={t('landscape')}
+            />
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={userProfile.preferences.includes('historical')}
+                  onChange={(event) => updateUserProfile('preferences', 'historical')}
+                />
+              }
+              label={t('historical')}
+            />
+          </Box>
+        )}
+        {selectedRoute && (
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="subtitle1" gutterBottom>
+              {t('routeStats')}
+            </Typography>
+            <RouteStats route={selectedRoute} t={t} />
+            <ElevationProfile route={selectedRoute} t={t} />
+          </Box>
+        )}
+        {selectedRoute && (
+          <Box sx={{ mt: 2 }}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => handleToggleFavorite(selectedRoute)}
+            >
+              {favoriteRoutes.includes(selectedRoute.id) ? t('removeFromFavorites') : t('addToFavorites')}
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => handleShareRoute(selectedRoute)}
+              sx={{ ml: 2 }}
+            >
+              {t('shareRoute')}
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => handleDownloadGpx(selectedRoute)}
+              sx={{ ml: 2 }}
+            >
+              {t('downloadGpx')}
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleOpenSaveDialog}
+              sx={{ ml: 2 }}
+            >
+              {t('saveRoute')}
+            </Button>
+          </Box>
+        )}
+      </Box>
+      <Dialog
+        open={showSaveDialog}
+        onClose={() => setShowSaveDialog(false)}
+        maxWidth="sm"
+        fullWidth
+      >
+        <DialogTitle>
+          {t('saveRoute')}
+        </DialogTitle>
+        <DialogContent>
+          <TextField
+            label={t('routeName')}
+            value={routeName}
+            onChange={(event) => setRouteName(event.target.value)}
+            fullWidth
+            sx={{ mb: 2 }}
+          />
+          <TextField
+            label={t('routeDescription')}
+            value={routeDescription}
+            onChange={(event) => setRouteDescription(event.target.value)}
+            fullWidth
+            multiline
+            rows={4}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setShowSaveDialog(false)} color="primary">
+            {t('cancel')}
+          </Button>
+          <Button onClick={handleSaveRoute} color="primary">
+            {t('save')}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </Box>
+  );
+};
+
+export default EnhancedRouteAlternatives;

@@ -40,7 +40,7 @@ import RouteService from '../../../services/routeService';
 import { brandConfig } from '../../../config/branding';
 
 // Configurer l'API Mapbox
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN || 'pk.eyJ1IjoidmVsby1hbHRpdHVkZSIsImEiOiJjbGFtYnVwYmowYTRrM3Z0YW9tcmVjZjJkIn0.pKZMZNvWCX5xKEXQGJth1Q';
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN || 'YOUR_MAPBOX_TOKEN';
 
 /**
  * Composant pour sélectionner un itinéraire sur une carte

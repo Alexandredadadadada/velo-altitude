@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // OpenWeatherMap API key
-const WEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY || 'your-api-key-placeholder';
+const WEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY || '';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 /**

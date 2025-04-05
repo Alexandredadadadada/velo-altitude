@@ -87,7 +87,7 @@ const FeaturesSection = ({ animationComplexity, scrollProgress, className }) => 
   // Initialize Mapbox
   useEffect(() => {
     if (inView && mapContainerRef.current && !mapRef.current && animationComplexity !== 'low') {
-      mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN || 'pk.sample_token';
+      mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN || 'YOUR_MAPBOX_TOKEN';
       
       const map = new mapboxgl.Map({
         container: mapContainerRef.current,
