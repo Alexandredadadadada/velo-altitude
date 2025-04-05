@@ -25,6 +25,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-syntax-dynamic-import']
           }
         }
       },
@@ -69,7 +70,7 @@ module.exports = {
   plugins: [
     // Une seule instance de HtmlWebpackPlugin
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './client/public/index.html',
       filename: 'index.html',
       minify: {
         removeComments: true,
@@ -91,33 +92,27 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { 
-          from: 'public', 
-          to: '', 
-          globOptions: { 
-            ignore: ['**/index.html'] 
-          } 
-        },
-        { 
           from: 'client/public', 
           to: '', 
           globOptions: { 
             ignore: ['**/index.html'] 
           } 
         },
-        { from: 'src/assets', to: 'assets' },
-        // Copier notre version corrigée de weather-map.js
-        {
-          from: 'public/js/weather-map-fixed.js',
-          to: 'js/weather-map.js',
+        { 
+          from: 'client/src/assets', 
+          to: 'assets',
+          noErrorOnMissing: true
         },
-        // Conserver le script de fallback d'images qui est crucial
+        // Si ces fichiers spécifiques existent, les copier
+        {
+          from: 'client/public/js/weather-map-fixed.js',
+          to: 'js/weather-map.js',
+          noErrorOnMissing: true
+        },
         {
           from: 'client/public/js/image-fallback.js',
           to: 'js/image-fallback.js',
-        },
-        {
-          from: 'client/node_modules/leaflet/dist/images',
-          to: 'images'
+          noErrorOnMissing: true
         }
       ]
     })
@@ -125,13 +120,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      'components': path.resolve(__dirname, 'src/components'),
-      'pages': path.resolve(__dirname, 'src/pages'),
-      'utils': path.resolve(__dirname, 'src/utils'),
-      'assets': path.resolve(__dirname, 'src/assets'),
-      'services': path.resolve(__dirname, 'src/services'),
-      'images': path.resolve(__dirname, 'public/images'),
+      '@': path.resolve(__dirname, 'client/src'),
+      'components': path.resolve(__dirname, 'client/src/components'),
+      'pages': path.resolve(__dirname, 'client/src/pages'),
+      'utils': path.resolve(__dirname, 'client/src/utils'),
+      'assets': path.resolve(__dirname, 'client/src/assets'),
+      'services': path.resolve(__dirname, 'client/src/services'),
+      'images': path.resolve(__dirname, 'client/public/images'),
     }
   },
   optimization: {
