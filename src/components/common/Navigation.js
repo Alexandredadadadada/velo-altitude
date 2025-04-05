@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaUser, FaMapMarkedAlt, FaRoute, FaChartLine, FaHome } from 'react-icons/fa';
+import { FaBars, FaTimes, FaUser, FaMapMarkedAlt, FaRoute, FaChartLine, FaHome, FaTrophy } from 'react-icons/fa';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -23,8 +23,8 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="logo">
-          <img src="/logo.png" alt="Grand Est Cyclisme" />
-          <span>Grand Est Cyclisme</span>
+          <img src="/logo.png" alt="Velo-Altitude" />
+          <span>Velo-Altitude</span>
         </Link>
 
         <div className="menu-icon" onClick={toggleMenu}>
@@ -35,6 +35,11 @@ const Navigation = () => {
           <li>
             <Link to="/" className={isActive('/')} onClick={closeMenu}>
               <FaHome /> Accueil
+            </Link>
+          </li>
+          <li>
+            <Link to="/seven-majors" className={isActive('/seven-majors')} onClick={closeMenu}>
+              <FaTrophy /> Les 7 Majeurs
             </Link>
           </li>
           <li>

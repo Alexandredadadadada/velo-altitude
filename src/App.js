@@ -20,6 +20,7 @@ const EnhancedRouteAlternatives = lazy(() => import('./components/visualization/
 const EnhancedSocialHub = lazy(() => import('./components/social/EnhancedSocialHub'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Profile = lazy(() => import('./pages/Profile'));
+const SevenMajorsChallenge = lazy(() => import('./components/challenges/SevenMajorsChallenge'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
               <Suspense fallback={<div className="loading-container">Chargement...</div>}>
                 <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/seven-majors" element={<SevenMajorsChallenge />} />
                   <Route path="/cols" element={<ColsExplorer />} />
                   <Route path="/cols/:id" element={<EnhancedColDetail />} />
                   <Route path="/training" element={<TrainingModule />} />
