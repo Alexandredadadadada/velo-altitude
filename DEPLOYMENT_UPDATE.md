@@ -29,6 +29,14 @@ Command failed with exit code 127: npm run netlify-build
    }
    ```
 
+4. Modification directe de la commande de build dans `netlify.toml` pour utiliser npx explicitement :
+```toml
+[build]
+  command = "npx webpack --mode production"
+  publish = "build"
+  functions = "netlify/functions"
+```
+
 ### Statut actuel
 ✅ Toutes les dépendances nécessaires ont été installées
 ✅ Les scripts de build ont été correctement configurés
