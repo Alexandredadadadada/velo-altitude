@@ -115,7 +115,7 @@
     "postcss-loader": "^8.1.1"
   },
   "engines": {
-    "node": "18.17.0",
+    "node": "20.10.0",
     "npm": "9.6.7"
   },
   "jest": {

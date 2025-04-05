@@ -4,8 +4,8 @@
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "18.17.0"
-  NPM_VERSION = "9.6.7"
+  NODE_VERSION = "20.10.0"
+  NPM_VERSION = "9.8.0"
   # Désactiver complètement l'installation de Go
   GO_IMPORT_DURING_BUILD = "false"
   # Ne pas tenter d'installer une version de Go
