@@ -8,10 +8,9 @@
   NPM_VERSION = "9.6.7"
   # Désactiver complètement l'installation de Go
   GO_IMPORT_DURING_BUILD = "false"
-  # Si nécessaire, on pourrait aussi spécifier explicitement la version Go
-  # GO_VERSION = "1.19"
+  # Ne pas tenter d'installer une version de Go
+  # SUPPRIMER complètement GO_VERSION au lieu de mettre "skip"
   CI = "false"
-  GO_VERSION = "skip"
 
 # Règle de redirection pour les API
 [[redirects]]
