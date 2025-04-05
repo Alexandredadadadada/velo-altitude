@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./server/server.js",
     "dev": "nodemon ./server/server.js",
-    "build": "npx webpack --config webpack.fix.js --mode production",
+    "build": "npx webpack --config webpack.fix.js --mode production --stats-error-details",
     "lint": "eslint .",
     "test": "jest",
     "check-deps": "node ./scripts/check-dependencies.js",
@@ -55,6 +55,7 @@
     "cors": "^2.8.5",
     "css-loader": "^7.1.2",
     "d3": "^7.9.0",
+    "dompurify": "^3.2.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-rate-limit": "^7.1.5",

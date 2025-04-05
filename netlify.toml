@@ -6,7 +6,12 @@
 [build.environment]
   NODE_VERSION = "18.17.0"
   NPM_VERSION = "9.6.7"
+  # Désactiver complètement l'installation de Go
+  GO_IMPORT_DURING_BUILD = "false"
+  # Si nécessaire, on pourrait aussi spécifier explicitement la version Go
+  # GO_VERSION = "1.19"
   CI = "false"
+  GO_VERSION = "skip"
 
 # Règle de redirection pour les API
 [[redirects]]
