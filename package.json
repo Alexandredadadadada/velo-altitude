@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "test": "jest",
     "check-deps": "node ./scripts/check-dependencies.js",
-    "netlify-build": "CI=false npm install && CI=false npm run build"
+    "netlify-build": "npm install && npm run build"
   },
   "keywords": [
     "cyclisme",
