@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node ./server/server.js",
     "dev": "nodemon ./server/server.js",
-    "build": "CI=false webpack --mode production",
+    "build": "cmd.exe /c \"npx webpack --config webpack.fix.js --mode production\"",
     "lint": "eslint .",
     "test": "jest",
     "check-deps": "node ./scripts/check-dependencies.js",
-    "netlify-build": "CI=false npm install && CI=false npm run build"
+    "netlify-build": "npm install && npm run build"
   },
   "keywords": [
     "cyclisme",

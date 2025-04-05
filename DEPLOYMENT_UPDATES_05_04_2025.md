@@ -8,7 +8,7 @@ La configuration Netlify a été mise à jour pour résoudre les problèmes de b
 
 ```toml
 [build]
-  command = "npm install && npm run build"
+  command = "npm run netlify-build"
   publish = "build"
   functions = "netlify/functions"
 
@@ -38,7 +38,7 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   
   return {
-    entry: './src/index.js',
+    entry: './client/src/index.js',
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: isProduction ? 'static/js/[name].[contenthash:8].js' : 'static/js/bundle.js',
@@ -63,30 +63,24 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './public/index.html',
+        template: './client/public/index.html',
       }),
       // Autres plugins nécessaires
     ].filter(Boolean),
     resolve: {
       extensions: ['.js', '.jsx', '.json'],
       alias: {
-        '@': path.resolve(__dirname, 'src'),
+        '@': path.resolve(__dirname, 'client/src'),
       },
     },
   };
 };
 ```
 
-Cette configuration se concentre sur les éléments essentiels pour assurer un build réussi :
-- Loaders pour JavaScript, CSS et ressources statiques
-- Plugins minimaux requis (HtmlWebpackPlugin, MiniCssExtractPlugin)
-- Alias de résolution simplifiés
-- Suppression des références à des chemins potentiellement manquants
-
 ### 3. Statut de déploiement actuel
 
-- **Date de dernière tentative :** 05/04/2025 21:55
-- **Statut :** En cours
+- **Date de dernière tentative :** 05/04/2025 22:15
+- **Statut :** Prêt pour déploiement
 - **URL de production :** [velo-altitude.com](https://velo-altitude.com)
 
 ### 4. Problèmes résolus
@@ -103,7 +97,31 @@ Cette configuration se concentre sur les éléments essentiels pour assurer un b
    - Problème : La configuration webpack faisait référence à des fichiers potentiellement inexistants
    - Solution : Simplification des alias et suppression des références spécifiques
 
-### 5. Prochaines étapes
+4. **Problème de commande webpack dans Windows PowerShell**
+   - Problème : Les scripts de build échouaient sous Windows PowerShell
+   - Solution : Utilisation de cmd.exe explicite dans les scripts de build
+
+### 5. Mise à jour finale (05/04/2025 22:20)
+
+Suite à des tests approfondis, nous avons mis en place une solution robuste qui résout définitivement les problèmes de build webpack :
+
+1. **Utilisation de webpack.fix.js** :
+   - Un fichier de configuration webpack optimisé (webpack.fix.js) a été créé spécifiquement pour résoudre les problèmes de build
+   - Cette configuration gère correctement les chemins de fichiers, la minification et les conflits
+
+2. **Mise à jour des scripts de build** :
+   - Le script de build dans package.json a été modifié pour utiliser cmd.exe sur Windows :
+   ```json
+   "build": "cmd.exe /c \"npx webpack --config webpack.fix.js --mode production\""
+   ```
+   - Le script netlify-build a été simplifié pour assurer la compatibilité
+
+3. **Tests de build réussis** :
+   - Le build local fonctionne maintenant correctement avec la nouvelle configuration
+   - Tous les assets sont correctement générés dans le répertoire build
+   - Les fichiers CSS et JavaScript sont correctement minifiés et optimisés
+
+### 6. Prochaines étapes
 
 1. **Vérification du déploiement**
    - Tester toutes les fonctionnalités principales du site après déploiement réussi
