@@ -1,5 +1,5 @@
 [build]
-  command = "npm install -g webpack-cli && npx webpack --mode production"
+  command = "npm install -D webpack webpack-cli && npx webpack-cli --mode production"
   publish = "build"
   functions = "netlify/functions"
 
