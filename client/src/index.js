@@ -30,8 +30,8 @@ window.addEventListener('error', (event) => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Log d'initialisation pour débogage
-console.log('Initialisation de l'application React Velo-Altitude...');
-console.log('Mode d'environnement:', process.env.NODE_ENV);
+console.log('Initialisation de l\'application React Velo-Altitude...');
+console.log('Mode d\'environnement:', process.env.NODE_ENV);
 console.log('URL de base:', process.env.PUBLIC_URL || '/');
 
 // Rendu de base sans wrapper complexe
