@@ -14,9 +14,8 @@ import 'whatwg-fetch';
 const preloadCriticalResources = () => {
   // Liste des ressources critiques à précharger
   const criticalResources = [
-    '/fonts/main-font.woff2',
-    '/images/logo.svg',
-    '/images/hero-background.jpg'
+    '/assets/images/logo.svg',
+    '/assets/images/hero-background.jpg'
   ];
   
   // Précharger les ressources
@@ -137,18 +136,25 @@ const optimizeInitialRender = () => {
       transition: none !important;
     }
     .root-loading {
-      opacity: 0;
+      opacity: 0.2;
+      transition: opacity 0.3s ease-in;
     }
   `;
   document.head.appendChild(style);
   document.documentElement.classList.add('root-loading');
   
-  // Révéler le contenu une fois chargé
-  window.addEventListener('load', () => {
+  // Révéler le contenu une fois chargé ou après un délai de sécurité
+  const revealContent = () => {
     requestAnimationFrame(() => {
       document.documentElement.classList.remove('root-loading');
     });
-  });
+  };
+
+  // Révéler le contenu après un délai maximal, même si tout n'est pas chargé
+  setTimeout(revealContent, 2000);
+  
+  // Mais aussi quand tout est vraiment chargé
+  window.addEventListener('load', revealContent);
 };
 
 // Appliquer l'optimisation du rendu initial

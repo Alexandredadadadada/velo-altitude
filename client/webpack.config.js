@@ -76,7 +76,7 @@ module.exports = (env, argv) => {
             priority: 30,
           },
           charts: {
-            test: /[\\/]node_modules[\\/](recharts|d3|victory)[\\/]/,
+            test: /[\\/]node_modules[\\/]recharts[\\/]/,
             name: 'charts',
             chunks: 'all',
             priority: 25,
@@ -118,6 +118,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
+          exclude: /node_modules\/leaflet/,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
             {
@@ -149,6 +150,19 @@ module.exports = (env, argv) => {
               },
             },
           ],
+        },
+        {
+          test: /\.css$/,
+          include: /node_modules\/leaflet/,
+          use: [
+            isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                url: false // Désactiver la résolution des URL pour Leaflet
+              }
+            }
+          ]
         },
         {
           test: /\.(png|jpg|jpeg|gif)$/i,
@@ -214,6 +228,11 @@ module.exports = (env, argv) => {
               ignore: ['**/index.html'],
             },
           },
+          // Ajout pour Leaflet - Copier explicitement les images de Leaflet
+          {
+            from: 'node_modules/leaflet/dist/images',
+            to: 'static/css/images'
+          }
         ],
       }),
       isProduction && new WebpackManifestPlugin({
