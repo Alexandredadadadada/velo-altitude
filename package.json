@@ -40,9 +40,10 @@
     "@fullcalendar/react": "^6.1.17",
     "@mui/icons-material": "^7.0.1",
     "@mui/material": "^7.0.1",
-    "@react-three/drei": "^9.96.5",
-    "@react-three/fiber": "^8.15.16",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
     "@svgr/webpack": "^8.1.0",
+    "@types/three": "^0.175.0",
     "axios": "^1.8.4",
     "babel-loader": "^10.0.0",
     "bcryptjs": "^2.4.3",
@@ -72,6 +73,7 @@
     "mapbox-gl": "^3.1.2",
     "mini-css-extract-plugin": "^2.9.2",
     "mongoose": "^8.2.3",
+    "next": "^15.2.4",
     "node-cache": "^5.1.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -114,7 +116,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "netlify-cli": "^16.1.0",
     "nodemon": "^3.0.3",
-    "postcss-loader": "^8.1.1"
+    "postcss-loader": "^8.1.1",
+    "typescript": "5.8.3"
   },
   "engines": {
     "node": "20.10.0",

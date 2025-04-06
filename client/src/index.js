@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from './auth/AuthCore';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // Polyfills de base
 import 'core-js/stable';
@@ -34,10 +36,14 @@ console.log('Initialisation de l\'application React Velo-Altitude...');
 console.log('Mode d\'environnement:', process.env.NODE_ENV);
 console.log('URL de base:', process.env.PUBLIC_URL || '/');
 
-// Rendu de base sans wrapper complexe
+// Rendu avec la hiérarchie de composants correcte
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <Router basename={process.env.PUBLIC_URL || '/'}>
+        <App />
+      </Router>
+    </AuthProvider>
   </React.StrictMode>
 );
 

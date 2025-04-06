@@ -1,8 +1,9 @@
 import React, { useEffect, lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import { AnimatePresence } from 'framer-motion';
+import { useAuth } from './auth/AuthCore'; // Import corrigé pour utiliser le nouveau système AuthCore
 
 // Composants communs avec chargement immédiat
 import Footer from './components/common/Footer';
@@ -31,7 +32,7 @@ const VisualizationDashboard = lazy(() => import('./pages/VisualizationDashboard
 // Utilitaires
 import { usePerformanceOptimizer } from './utils/PerformanceOptimizer';
 import { useImageOptimizer } from './utils/ImageOptimizer';
-import { AuthProvider } from './contexts/AuthContext'; 
+// Suppression de l'import du AuthProvider car nous utilisons celui de index.js
 import { NotificationProvider } from './context/NotificationContext';
 
 // Nouveau thème moderne
@@ -55,6 +56,9 @@ function App() {
   
   // Initialiser l'optimiseur d'images
   useImageOptimizer();
+  
+  // Obtenir explicitement le contexte d'authentification
+  const auth = useAuth();
   
   // Effet pour appliquer les classes d'optimisation au document
   useEffect(() => {
@@ -86,50 +90,51 @@ function App() {
     };
   }, [deviceInfo]);
 
+  // Si l'authentification est en cours de chargement, afficher un indicateur
+  if (auth.loading) {
+    return <LoadingFallback type="fullscreen" message="Initialisation de l'authentification..." />;
+  }
+
   return (
     <I18nextProvider i18n={i18n}>
-      <AuthProvider>
-        <Router basename={process.env.PUBLIC_URL || '/'}>
-          <ThemeProvider theme={modernTheme}>
-            <CssBaseline />
-            <NotificationProvider>
-              <div className="app" role="application">
-                {/* Nouvelle barre de navigation animée */}
-                <AnimatedNavbar />
+      <ThemeProvider theme={modernTheme}>
+        <CssBaseline />
+        <NotificationProvider>
+          <div className="app" role="application">
+            {/* Nouvelle barre de navigation animée */}
+            <AnimatedNavbar />
 
-                {/* Contenu principal avec animations de transition de page */}
-                <main className="main-content" id="main-content" role="main">
-                  <ErrorBoundary>
-                    <Suspense fallback={<LoadingFallback type="content" />}>
-                      <AnimatePresence mode="wait">
-                        <Routes>
-                          <Route path="/" element={<Home />} />
-                          <Route path="/cols/*" element={<ColsRoutes />} />
-                          <Route path="/training/*" element={<TrainingDashboard />} />
-                          <Route path="/nutrition/*" element={<NutritionPage />} />
-                          <Route path="/routes/*" element={<RoutePlanner />} />
-                          <Route path="/social/*" element={<SocialHub />} />
-                          <Route path="/community/*" element={<CommunityRoutes />} />
-                          <Route path="/mountain/*" element={<MountainHub />} />
-                          <Route path="/profile/*" element={<Profile />} />
-                          <Route path="/settings" element={<Settings />} />
-                          <Route path="/strava/sync" element={<StravaSync />} />
-                          <Route path="/error-demo" element={<ErrorDemo />} />
-                          <Route path="/visualization" element={<VisualizationDashboard />} />
-                          <Route path="*" element={<NotFound />} />
-                        </Routes>
-                      </AnimatePresence>
-                    </Suspense>
-                  </ErrorBoundary>
-                </main>
+            {/* Contenu principal avec animations de transition de page */}
+            <main className="main-content" id="main-content" role="main">
+              <ErrorBoundary>
+                <Suspense fallback={<LoadingFallback type="content" />}>
+                  <AnimatePresence mode="wait">
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/cols/*" element={<ColsRoutes />} />
+                      <Route path="/training/*" element={<TrainingDashboard />} />
+                      <Route path="/nutrition/*" element={<NutritionPage />} />
+                      <Route path="/routes/*" element={<RoutePlanner />} />
+                      <Route path="/social/*" element={<SocialHub />} />
+                      <Route path="/community/*" element={<CommunityRoutes />} />
+                      <Route path="/mountain/*" element={<MountainHub />} />
+                      <Route path="/profile/*" element={<Profile />} />
+                      <Route path="/settings" element={<Settings />} />
+                      <Route path="/strava/sync" element={<StravaSync />} />
+                      <Route path="/error-demo" element={<ErrorDemo />} />
+                      <Route path="/visualization" element={<VisualizationDashboard />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </AnimatePresence>
+                </Suspense>
+              </ErrorBoundary>
+            </main>
 
-                {/* Pied de page */}
-                <Footer />
-              </div>
-            </NotificationProvider>
-          </ThemeProvider>
-        </Router>
-      </AuthProvider>
+            {/* Pied de page */}
+            <Footer />
+          </div>
+        </NotificationProvider>
+      </ThemeProvider>
     </I18nextProvider>
   );
 }

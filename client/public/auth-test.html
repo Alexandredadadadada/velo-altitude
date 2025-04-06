@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velo-Altitude | Tests d'Authentification</title>
+  <link rel="icon" href="favicon.svg">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f0 100%);
+      min-height: 100vh;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .logo {
+      margin-right: 20px;
+    }
+    .logo svg {
+      height: 50px;
+      width: auto;
+    }
+    h1 {
+      font-size: 24px;
+      color: #1976d2;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 25px 0 15px;
+      color: #333;
+    }
+    .test-section {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .test-section h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+    .status-badge {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: normal;
+    }
+    .status-pending {
+      background: #fff8e1;
+      color: #f57f17;
+    }
+    .status-success {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+    .status-error {
+      background: #ffebee;
+      color: #c62828;
+    }
+    .status-running {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+    .test-options {
+      margin: 15px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #1976d2;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .btn:hover {
+      background: #1565c0;
+    }
+    .btn-secondary {
+      background: #f5f5f5;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .btn-secondary:hover {
+      background: #e0e0e0;
+    }
+    .btn-danger {
+      background: #f44336;
+    }
+    .btn-danger:hover {
+      background: #d32f2f;
+    }
+    .log-console {
+      background: #263238;
+      color: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      height: 200px;
+      overflow-y: auto;
+      margin: 15px 0;
+    }
+    .log-entry {
+      margin-bottom: 5px;
+      display: flex;
+    }
+    .log-time {
+      color: #78909c;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .log-content {
+      flex-grow: 1;
+      word-break: break-word;
+    }
+    .log-info {
+      color: #4fc3f7;
+    }
+    .log-success {
+      color: #81c784;
+    }
+    .log-error {
+      color: #ef9a9a;
+    }
+    .log-warning {
+      color: #ffd54f;
+    }
+    .test-results {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .result-item {
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .result-success {
+      background: #e8f5e9;
+    }
+    .result-error {
+      background: #ffebee;
+    }
+    .result-icon {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .debug-panel {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .debug-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .debug-card {
+      background: #f5f5f5;
+      border-radius: 6px;
+      padding: 15px;
+    }
+    .debug-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1976d2;
+    }
+    .debug-content {
+      font-family: monospace;
+      font-size: 13px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15,35 Q25,20 35,35 Q45,50 55,35 Q65,20 75,35 Q85,50 95,35" stroke="#1976d2" stroke-width="4" fill="none" />
+          <text x="22" y="18" font-family="Arial" font-weight="bold" font-size="12" fill="#1976d2">VELO-ALTITUDE</text>
+        </svg>
+      </div>
+      <div>
+        <h1>Tests d'Authentification</h1>
+        <p>Outils de diagnostic pour le système d'authentification Velo-Altitude</p>
+      </div>
+    </header>
+    
+    <h2>Tests du flux d'authentification</h2>
+    
+    <div class="test-section">
+      <h3>Test 1: Authentification Auth0 <span id="test1-status" class="status-badge status-pending">En attente</span></h3>
+      <p>Vérifie que l'authentification Auth0 fonctionne correctement en condition normale.</p>
+      
+      <div class="test-options">
+        <button id="test1-run" class="btn">Exécuter le test</button>
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h3>Test 2: Simulation d'échec Auth0 <span id="test2-status" class="status-badge status-pending">En attente</span></h3>
+      <p>Simule un échec d'Auth0 et vérifie le basculement vers le mode d'urgence.</p>
+      
+      <div class="test-options">
+        <button id="test2-run" class="btn">Exécuter le test</button>
+        <button id="test2-force-error" class="btn btn-danger">Forcer l'échec d'Auth0</button>
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h3>Test 3: Mode d'urgence <span id="test3-status" class="status-badge status-pending">En attente</span></h3>
+      <p>Vérifie que l'authentification en mode d'urgence fonctionne correctement.</p>
+      
+      <div class="test-options">
+        <button id="test3-run" class="btn">Exécuter le test</button>
+        <button id="test3-reset" class="btn btn-secondary">Réinitialiser l'authentification</button>
+      </div>
+    </div>
+    
+    <h2>Logs et résultats</h2>
+    
+    <div class="log-console" id="log-console">
+      <!-- Les entrées de journal seront ajoutées ici -->
+    </div>
+    
+    <div class="test-results" id="test-results">
+      <!-- Les résultats des tests seront ajoutés ici -->
+    </div>
+    
+    <div class="debug-panel">
+      <h2>Informations de débogage</h2>
+      
+      <div class="test-options">
+        <button id="clear-auth" class="btn btn-danger">Effacer toutes les données d'authentification</button>
+        <button id="check-auth" class="btn btn-secondary">Vérifier l'état actuel</button>
+        <button id="goto-dashboard" class="btn">Aller au dashboard</button>
+      </div>
+      
+      <div class="debug-info">
+        <div class="debug-card">
+          <div class="debug-title">Auth0 Status</div>
+          <div class="debug-content" id="auth0-status">Non vérifié</div>
+        </div>
+        
+        <div class="debug-card">
+          <div class="debug-title">Mode d'urgence</div>
+          <div class="debug-content" id="emergency-status">Non vérifié</div>
+        </div>
+        
+        <div class="debug-card">
+          <div class="debug-title">Utilisateur actuel</div>
+          <div class="debug-content" id="current-user">Aucun</div>
+        </div>
+        
+        <div class="debug-card">
+          <div class="debug-title">Variables d'environnement Auth0</div>
+          <div class="debug-content" id="env-vars">Non disponible</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Référence aux éléments DOM
+      const logConsole = document.getElementById('log-console');
+      const testResults = document.getElementById('test-results');
+      
+      // Éléments de statut des tests
+      const test1Status = document.getElementById('test1-status');
+      const test2Status = document.getElementById('test2-status');
+      const test3Status = document.getElementById('test3-status');
+      
+      // Éléments de débogage
+      const auth0Status = document.getElementById('auth0-status');
+      const emergencyStatus = document.getElementById('emergency-status');
+      const currentUser = document.getElementById('current-user');
+      const envVars = document.getElementById('env-vars');
+      
+      // Fonction pour ajouter une entrée de log
+      function log(message, type = 'info') {
+        const now = new Date();
+        const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        
+        const logEntry = document.createElement('div');
+        logEntry.className = 'log-entry';
+        
+        const logTime = document.createElement('div');
+        logTime.className = 'log-time';
+        logTime.textContent = time;
+        
+        const logContent = document.createElement('div');
+        logContent.className = `log-content log-${type}`;
+        logContent.textContent = message;
+        
+        logEntry.appendChild(logTime);
+        logEntry.appendChild(logContent);
+        
+        logConsole.appendChild(logEntry);
+        logConsole.scrollTop = logConsole.scrollHeight;
+      }
+      
+      // Fonction pour ajouter un résultat de test
+      function addTestResult(success, message) {
+        const resultItem = document.createElement('div');
+        resultItem.className = `result-item ${success ? 'result-success' : 'result-error'}`;
+        
+        const resultIcon = document.createElement('div');
+        resultIcon.className = 'result-icon';
+        resultIcon.textContent = success ? '✓' : '✗';
+        
+        const resultContent = document.createElement('div');
+        resultContent.textContent = message;
+        
+        resultItem.appendChild(resultIcon);
+        resultItem.appendChild(resultContent);
+        
+        testResults.appendChild(resultItem);
+      }
+      
+      // Fonction pour mettre à jour l'état d'un test
+      function updateTestStatus(element, status, text) {
+        element.className = `status-badge status-${status}`;
+        element.textContent = text;
+      }
+      
+      // Forcer une erreur d'Auth0
+      document.getElementById('test2-force-error').addEventListener('click', function() {
+        log('Simulation d\'un échec d\'Auth0...', 'warning');
+        
+        // Stocker un indicateur pour simuler une erreur Auth0
+        localStorage.setItem('auth0_simulate_error', 'true');
+        
+        log('Indicateur d\'erreur Auth0 configuré. Le prochain test échouera.', 'info');
+        updateTestStatus(test2Status, 'running', 'Prêt à tester');
+      });
+      
+      // Réinitialiser l'authentification
+      document.getElementById('test3-reset').addEventListener('click', function() {
+        log('Réinitialisation de toutes les données d\'authentification...', 'warning');
+        
+        // Supprimer toutes les données d'authentification du localStorage
+        localStorage.removeItem('velo_user');
+        localStorage.removeItem('velo_altitude_user');
+        localStorage.removeItem('auth0_simulate_error');
+        localStorage.removeItem('emergency_access');
+        localStorage.removeItem('velo_token');
+        localStorage.removeItem('auth_redirected');
+        
+        log('Données d\'authentification réinitialisées', 'success');
+        updateTestStatus(test3Status, 'pending', 'En attente');
+        
+        // Mettre à jour les informations de débogage
+        checkAuthStatus();
+      });
+      
+      // Effacer toutes les données d'authentification
+      document.getElementById('clear-auth').addEventListener('click', function() {
+        localStorage.clear();
+        log('Toutes les données du localStorage ont été effacées', 'warning');
+        checkAuthStatus();
+      });
+      
+      // Vérifier l'état d'authentification actuel
+      document.getElementById('check-auth').addEventListener('click', checkAuthStatus);
+      
+      // Aller au dashboard
+      document.getElementById('goto-dashboard').addEventListener('click', function() {
+        window.location.href = '/';
+      });
+      
+      // Test 1: Authentification Auth0
+      document.getElementById('test1-run').addEventListener('click', function() {
+        updateTestStatus(test1Status, 'running', 'En cours...');
+        log('Démarrage du test d\'authentification Auth0...', 'info');
+        
+        // Réinitialiser l'indicateur d'erreur simulée
+        localStorage.removeItem('auth0_simulate_error');
+        
+        // Ouvrir l'application avec un paramètre spécial pour le test
+        const testWindow = window.open('/?auth_test=auth0', '_blank');
+        
+        log('Fenêtre d\'authentification Auth0 ouverte. Veuillez vous connecter.', 'info');
+        log('Vérifiez le résultat et revenez à cette page.', 'info');
+        
+        // Pour ce test, nous laissons l'utilisateur vérifier manuellement
+        updateTestStatus(test1Status, 'success', 'Test lancé');
+        addTestResult(true, 'Test d\'authentification Auth0 démarré. Vérifiez le résultat dans la nouvelle fenêtre.');
+      });
+      
+      // Test 2: Simulation d'échec Auth0
+      document.getElementById('test2-run').addEventListener('click', function() {
+        updateTestStatus(test2Status, 'running', 'En cours...');
+        log('Démarrage du test de basculement vers le mode d\'urgence...', 'info');
+        
+        // S'assurer que l'indicateur d'erreur est activé
+        if (localStorage.getItem('auth0_simulate_error') !== 'true') {
+          log('Activation de la simulation d\'erreur Auth0...', 'warning');
+          localStorage.setItem('auth0_simulate_error', 'true');
+        }
+        
+        // Ouvrir l'application avec un paramètre spécial pour le test
+        const testWindow = window.open('/?auth_test=failure', '_blank');
+        
+        log('Test de basculement vers le mode d\'urgence démarré.', 'info');
+        log('L\'application devrait détecter l\'échec d\'Auth0 et basculer vers le mode d\'urgence.', 'info');
+        
+        updateTestStatus(test2Status, 'success', 'Test lancé');
+        addTestResult(true, 'Test de basculement vers le mode d\'urgence démarré. Vérifiez le résultat dans la nouvelle fenêtre.');
+      });
+      
+      // Test 3: Mode d'urgence
+      document.getElementById('test3-run').addEventListener('click', function() {
+        updateTestStatus(test3Status, 'running', 'En cours...');
+        log('Démarrage du test du mode d\'urgence...', 'info');
+        
+        // Activer explicitement le mode d'urgence
+        localStorage.setItem('emergency_access', 'true');
+        localStorage.removeItem('velo_altitude_user');
+        localStorage.removeItem('velo_user');
+        
+        // Ouvrir la page de connexion d'urgence
+        const testWindow = window.open('/emergency-login.html', '_blank');
+        
+        log('Page de connexion d\'urgence ouverte.', 'info');
+        log('Connectez-vous avec les identifiants de démonstration.', 'info');
+        
+        updateTestStatus(test3Status, 'success', 'Test lancé');
+        addTestResult(true, 'Test du mode d\'urgence démarré. Connectez-vous dans la nouvelle fenêtre.');
+      });
+      
+      // Fonction pour vérifier l'état d'authentification actuel
+      function checkAuthStatus() {
+        log('Vérification de l\'état d\'authentification...', 'info');
+        
+        // Vérifier l'utilisateur Auth0
+        const auth0User = localStorage.getItem('velo_altitude_user');
+        
+        // Vérifier l'utilisateur en mode d'urgence
+        const emergencyUser = localStorage.getItem('velo_user');
+        
+        // Vérifier si le mode d'urgence est activé
+        const emergencyMode = localStorage.getItem('emergency_access') === 'true';
+        
+        // Vérifier si une erreur Auth0 est simulée
+        const auth0Error = localStorage.getItem('auth0_simulate_error') === 'true';
+        
+        // Mettre à jour les informations de débogage
+        auth0Status.textContent = auth0User ? 'Connecté' : (auth0Error ? 'Erreur simulée' : 'Non connecté');
+        emergencyStatus.textContent = emergencyMode ? 'Activé' : (emergencyUser ? 'Disponible' : 'Non configuré');
+        
+        // Afficher les informations de l'utilisateur
+        if (auth0User) {
+          currentUser.textContent = `Auth0: ${JSON.parse(auth0User).email || 'Inconnu'}`;
+          log('Utilisateur Auth0 trouvé', 'success');
+        } else if (emergencyUser) {
+          currentUser.textContent = `Urgence: ${JSON.parse(emergencyUser).email || 'Inconnu'}`;
+          log('Utilisateur en mode d\'urgence trouvé', 'warning');
+        } else {
+          currentUser.textContent = 'Aucun utilisateur connecté';
+          log('Aucun utilisateur connecté', 'error');
+        }
+        
+        // Essayer de récupérer les variables d'environnement Auth0
+        try {
+          envVars.textContent = 'Vérifié: ' + (process.env.AUTH0_CLIENT_ID ? 'Disponible' : 'Non disponible');
+        } catch (error) {
+          envVars.textContent = 'Non disponible dans ce contexte';
+        }
+        
+        log('Vérification de l\'état d\'authentification terminée', 'info');
+      }
+      
+      // Message de bienvenue
+      log('Outil de test d\'authentification Velo-Altitude chargé', 'info');
+      log('Utilisez les boutons ci-dessus pour tester les différents modes d\'authentification', 'info');
+      
+      // Vérifier l'état initial
+      checkAuthStatus();
+    });
+  </script>
+</body>
+</html>

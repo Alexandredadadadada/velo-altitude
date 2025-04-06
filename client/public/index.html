@@ -2,11 +2,15 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+  
+  <!-- URGENT: Script d'authentification d'urgence (PRIORITÉ ABSOLUE) -->
+  <script src="%PUBLIC_URL%/emergency-auth.js"></script>
+  
   <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
   <link rel="alternate icon" href="%PUBLIC_URL%/images/favicon.ico" />
   
-  <!-- SOLUTION D'URGENCE - Script d'override d'authentification -->
-  <script src="%PUBLIC_URL%/auth-override.js"></script>
+  <!-- IMPORTANT: Script d'authentification runtime (doit être chargé en premier) -->
+  <script src="%PUBLIC_URL%/auth-runtime.js"></script>
   
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#1976d2" />
@@ -24,10 +28,6 @@
   <meta property="og:description" content="Planifiez vos entraînements, suivez vos performances et relevez des défis cyclistes dans les plus beaux cols d'Europe avec des visualisations 3D exclusives." />
   <meta property="og:image" content="%PUBLIC_URL%/images/social/velo-altitude-facebook.png" />
   
-  <!-- SOLUTION DE CONTOURNEMENT TEMPORAIRE -->
-  <!-- Cette redirection sera supprimée une fois le problème d'authentification résolu -->
-  <meta http-equiv="refresh" content="0; URL=maintenance.html">
-  
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://velo-altitude.com/" />
@@ -35,7 +35,50 @@
   <meta property="twitter:description" content="Planifiez vos entraînements, suivez vos performances et relevez des défis cyclistes dans les plus beaux cols d'Europe avec des visualisations 3D exclusives." />
   <meta property="twitter:image" content="%PUBLIC_URL%/images/social/velo-altitude-twitter.png" />
   
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+    Notice the use of %PUBLIC_URL% in the tags above.
+  -->
+  <!-- Scripts de compatibilité et diagnostic -->
+  <script>
+    // Vérifier si nous sommes en mode test d'authentification
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAuthTest = urlParams.has('auth_test');
+    
+    // Fonction pour charger un script dynamiquement
+    function loadScript(src, async = true, defer = true) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = async;
+        script.defer = defer;
+        script.onload = () => resolve(script);
+        script.onerror = () => reject(new Error(`Échec de chargement du script: ${src}`));
+        document.head.appendChild(script);
+      });
+    }
+    
+    // Charger le script d'override d'authentification avant le script de diagnostic
+    loadScript('/auth-override.js')
+      .then(() => {
+        console.log('Script auth-override.js chargé avec succès');
+        
+        // Si nous sommes en mode test, charger le script de diagnostic
+        if (isAuthTest) {
+          return loadScript('/auth-diagnostic.js');
+        }
+      })
+      .then(() => {
+        if (isAuthTest) {
+          console.log('Script de diagnostic chargé avec succès');
+        }
+      })
+      .catch(error => {
+        console.error('Erreur lors du chargement des scripts:', error);
+      });
+  </script>
+  <title>Velo-Altitude | Votre partenaire cyclisme</title>
   
   <!-- Préchargement des ressources critiques -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,10 +116,6 @@
       100% { transform: rotate(360deg); }
     }
   </style>
-  
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  
-  <title>Velo-Altitude | Le dashboard vélo ultime pour les passionnés de cols</title>
 </head>
 <body>
   <noscript>Vous devez activer JavaScript pour utiliser cette application.</noscript>
