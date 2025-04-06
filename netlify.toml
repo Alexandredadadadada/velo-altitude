@@ -3,7 +3,7 @@
 
 [build]
   publish = "client/build"
-  command = "cd client && npm install && CI=false npm run build"
+  command = "cd client && npm install && npm rebuild node-sass && chmod +x ./node_modules/.bin/react-scripts && CI=false npm run build"
 
 [build.environment]
   NODE_VERSION = "20.10.0"
