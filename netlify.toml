@@ -2,8 +2,8 @@
 # Redirections pour standardiser les URLs
 
 [build]
-  publish = "client/build"
-  command = "cd client && npm install && npm rebuild node-sass && chmod +x ./node_modules/.bin/react-scripts && DISABLE_ESLINT_PLUGIN=true CI=false npm run build"
+  publish = "build"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "20.10.0"
