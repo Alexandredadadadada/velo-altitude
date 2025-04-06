@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 import FeatureFlagsManager from '../components/admin/FeatureFlagsManager';
 import AdminSidebar from '../components/admin/AdminSidebar';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuthCentral';
 
 /**
  * Page d'administration des feature flags

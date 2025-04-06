@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import ApiMonitoringDashboard from '../components/admin/ApiMonitoringDashboard';
 import AdminSidebar from '../components/admin/AdminSidebar';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuthCentral';
 
 /**
  * Page de monitoring des API

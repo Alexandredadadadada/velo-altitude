@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import axios from 'axios';
-import { useAuth } from './useAuth';
+import { useAuth } from './useAuthCentral';
 
 /**
  * Hook personnalisé pour interagir avec l'API des recommandations

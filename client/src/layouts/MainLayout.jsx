@@ -41,7 +41,7 @@ import {
   ArrowDropDown
 } from '@mui/icons-material';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuthCentral';
 
 // Composant pour masquer l'AppBar lors du défilement
 function HideOnScroll(props) {

@@ -37,7 +37,7 @@ import {
   ExitToApp as LogoutIcon
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuthCentral';
 
 const drawerWidth = 240;
 

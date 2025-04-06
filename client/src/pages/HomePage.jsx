@@ -25,7 +25,7 @@ import { motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';
 import RouteRecommendations from '../components/recommendations/RouteRecommendations';
 import AnimatedHeroSection from '../components/home/AnimatedHeroSection';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuthCentral';
 
 const MotionBox = motion(Box);
 const MotionPaper = motion(Paper);
