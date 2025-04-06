@@ -198,9 +198,25 @@ export const AuthProvider = ({ children }) => {
  */
 export const useAuth = () => {
   const context = useContext(AuthContext);
+  
+  // Si le contexte n'est pas disponible, fournir un contexte par défaut
+  // au lieu de lancer une erreur, pour plus de résilience
   if (!context) {
-    throw new Error('useAuth doit être utilisé à l\'intérieur d\'un AuthProvider');
+    console.warn('useAuth utilisé en dehors d\'un AuthProvider - utilisation d\'un contexte par défaut');
+    
+    // Retourner un contexte par défaut pour éviter les erreurs
+    return {
+      currentUser: null,
+      loading: false,
+      isAuthenticated: false,
+      login: () => Promise.reject(new Error('Non disponible - AuthProvider manquant')),
+      logout: () => Promise.resolve(),
+      getAuthFetch: () => Promise.reject(new Error('Non disponible - AuthProvider manquant')),
+      loadUserProfile: () => Promise.reject(new Error('Non disponible - AuthProvider manquant')),
+      error: null
+    };
   }
+  
   return context;
 };
 
