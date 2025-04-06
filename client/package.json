@@ -4,6 +4,7 @@
   "description": "Interface utilisateur pour l'application Grand Est Cyclisme",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.4",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
