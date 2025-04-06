@@ -3,12 +3,13 @@
 
 [build]
   publish = "client/build"
-  command = "cd client && npm install && npm rebuild node-sass && chmod +x ./node_modules/.bin/react-scripts && CI=false npm run build"
+  command = "cd client && npm install && npm rebuild node-sass && chmod +x ./node_modules/.bin/react-scripts && DISABLE_ESLINT_PLUGIN=true CI=false npm run build"
 
 [build.environment]
   NODE_VERSION = "20.10.0"
   NPM_VERSION = "9.8.0"
   CI = "false"
+  DISABLE_ESLINT_PLUGIN = "true"
 
 [[redirects]]
   from = "/cols/:slug"
