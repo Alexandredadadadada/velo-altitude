@@ -92,7 +92,7 @@ function App() {
         <ThemeProvider theme={modernTheme}>
           <CssBaseline />
           <NotificationProvider>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL || '/'}>
               <div className="app" role="application">
                 {/* Nouvelle barre de navigation animée */}
                 <AnimatedNavbar />
