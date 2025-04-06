@@ -2,8 +2,8 @@
 # Redirections pour standardiser les URLs
 
 [build]
-  publish = "build"
-  command = "DISABLE_ESLINT_PLUGIN=true CI=false npm run build"
+  publish = "client/build"
+  command = "cd client && npm install && npm rebuild node-sass && chmod +x ./node_modules/.bin/react-scripts && DISABLE_ESLINT_PLUGIN=true CI=false npm run build"
 
 [build.environment]
   NODE_VERSION = "20.10.0"
@@ -11,68 +11,24 @@
   CI = "false"
   DISABLE_ESLINT_PLUGIN = "true"
 
-[[redirects]]
-  from = "/cols/:slug"
-  to = "/cols/:country/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/training/:slug"
-  to = "/entrainement/:level/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/entrainement/:slug"
-  to = "/entrainement/:level/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/nutrition/:slug"
-  to = "/nutrition/:category/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/nutrition/recipes/:slug"
-  to = "/nutrition/:category/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/7-majeurs/:slug"
-  to = "/defis/:type/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/seven-majors/:slug"
-  to = "/defis/:type/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/routes/:slug"
-  to = "/visualisation-3d/:country/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/visualisation-3d/:slug"
-  to = "/visualisation-3d/:country/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/social/:slug"
-  to = "/communaute/:section/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/challenges/:slug"
-  to = "/communaute/:section/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/communaute/:slug"
-  to = "/communaute/:section/:slug"
-  status = 301
-
-# Fallback pour SPA - CRUCIAL POUR LE ROUTAGE CLIENT REACT
+# Redirection pour SPA (Single Page Application)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Optimisation de cache pour les assets statiques
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
