@@ -43,7 +43,7 @@ const preloadCriticalResources = () => {
         
         document.head.appendChild(link);
       } catch (err) {
-        console.warn(`Erreur lors du préchargement de ${resource}:`, err);
+        console.warn("Erreur lors du préchargement de " + resource + ":", err);
         // Continuer malgré les erreurs
       }
     });
@@ -167,7 +167,7 @@ const initApp = () => {
       preloadCriticalResources();
       preconnectToDomains();
     } catch (err) {
-      console.warn('Erreur lors des optimisations initiales:', err);
+      console.warn("Erreur lors des optimisations initiales:", err);
       // Continuer malgré les erreurs
     }
     
@@ -183,7 +183,7 @@ const initApp = () => {
     // Mesure des performances après le rendu
     reportWebVitals(console.log);
   } catch (err) {
-    console.error('Erreur critique lors de l'initialisation de l'application:', err);
+    console.error("Erreur critique lors de l'initialisation de l'application:", err);
     
     // Affichage d'un message d'erreur user-friendly en cas d'échec total
     document.body.innerHTML = `
