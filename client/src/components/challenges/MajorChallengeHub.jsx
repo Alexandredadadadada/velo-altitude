@@ -71,16 +71,18 @@ const MajorChallengeHub = () => {
   const [compareMode, setCompareMode] = useState(false);
   const [shareModalOpen, setShareModalOpen] = useState(false);
   const [currentChallenge, setCurrentChallenge] = useState(null);
+  const [error, setError] = useState(null);
   
   // Chargement des données
   useEffect(() => {
     // Simuler le chargement des cols disponibles
     const fetchData = async () => {
       try {
-        // Ici on utiliserait une vraie requête API
-        // fetch('/api/cols').then(...)
+        setLoading(true);
+        // Simuler un délai de chargement pour l'UI
+        await new Promise(resolve => setTimeout(resolve, 1000));
         
-        // Données simulées pour la démonstration
+        // Utiliser les données mockées en attendant l'API
         const mockCols = [
           { 
             id: 'bonette', 
@@ -161,19 +163,21 @@ const MajorChallengeHub = () => {
           }
         ];
         
-        setAvailableCols(mockCols);
-        setUserChallenges(mockUserChallenges);
-        setFeaturedChallenges(mockFeaturedChallenges);
+        setAvailableCols(mockCols || []); // Fallback à un tableau vide si mockCols est undefined
+        setUserChallenges(mockUserChallenges || []);
+        setFeaturedChallenges(mockFeaturedChallenges || []);
+        
         setLoading(false);
-      } catch (error) {
-        console.error("Erreur lors du chargement des données:", error);
+      } catch (err) {
+        console.error('Erreur lors du chargement des données:', err);
+        setError('Impossible de charger les données. Veuillez réessayer.');
         setLoading(false);
       }
     };
     
     fetchData();
   }, []);
-  
+
   // Gestion des onglets
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
@@ -804,6 +808,32 @@ const MajorChallengeHub = () => {
         return null;
     }
   };
+  
+  // Afficher un message d'erreur si nécessaire
+  if (error) {
+    return (
+      <Box sx={{ 
+        display: 'flex', 
+        flexDirection: 'column',
+        justifyContent: 'center', 
+        alignItems: 'center',
+        height: '50vh',
+        textAlign: 'center',
+        p: 3
+      }}>
+        <Typography variant="h5" color="error" gutterBottom>
+          {error}
+        </Typography>
+        <Button 
+          variant="contained" 
+          onClick={() => window.location.reload()}
+          sx={{ mt: 2 }}
+        >
+          Réessayer
+        </Button>
+      </Box>
+    );
+  }
   
   // Afficher un chargement si nécessaire
   if (loading) {
