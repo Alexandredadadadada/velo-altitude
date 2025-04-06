@@ -1,10 +1,10 @@
-// Fichier d'authentification centralisé qui résout les problèmes d'imports incohérents
-// Ce fichier redirige maintenant vers l'implémentation temporaire simplifiée
+// Fichier d'authentification centralisé - Version simplifiée et robuste
+// Ce fichier redirige vers l'implémentation complète dans contexts/AuthContext.js
 
-import { useTempAuth, TempAuthProvider as AuthProvider } from '../utils/TempAuthContext';
+import { useAuth, AuthProvider } from '../contexts/AuthContext';
 
-// Exporter le hook d'authentification principal
-export const useAuth = useTempAuth;
+// Exporter le hook d'authentification pour tous les imports
+export { useAuth, AuthProvider };
 
-// Exporter également le provider pour que App.js puisse l'utiliser
-export { AuthProvider };
+// Export par défaut pour compatibilité avec les imports par défaut
+export default useAuth;

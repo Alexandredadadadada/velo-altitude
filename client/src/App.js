@@ -88,8 +88,8 @@ function App() {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <Router basename={process.env.PUBLIC_URL || '/'}>
-        <AuthProvider>
+      <AuthProvider>
+        <Router basename={process.env.PUBLIC_URL || '/'}>
           <ThemeProvider theme={modernTheme}>
             <CssBaseline />
             <NotificationProvider>
@@ -128,8 +128,8 @@ function App() {
               </div>
             </NotificationProvider>
           </ThemeProvider>
-        </AuthProvider>
-      </Router>
+        </Router>
+      </AuthProvider>
     </I18nextProvider>
   );
 }
