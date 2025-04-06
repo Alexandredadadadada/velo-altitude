@@ -36,14 +36,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              url: {
-                filter: (url) => {
-                  if (url.startsWith('/images/')) {
-                    return false;
-                  }
-                  return true;
-                },
-              },
+              url: false // Désactiver la résolution d'URL pour éviter les erreurs avec les images Leaflet
             },
           }
         ]
@@ -103,6 +96,12 @@ module.exports = {
           to: 'assets',
           noErrorOnMissing: true
         },
+        // Copier les images Leaflet directement
+        {
+          from: 'node_modules/leaflet/dist/images',
+          to: 'images',
+          noErrorOnMissing: true
+        },
         // Si ces fichiers spécifiques existent, les copier
         {
           from: 'client/public/js/weather-map-fixed.js',
@@ -127,6 +126,8 @@ module.exports = {
       'assets': path.resolve(__dirname, 'client/src/assets'),
       'services': path.resolve(__dirname, 'client/src/services'),
       'images': path.resolve(__dirname, 'client/public/images'),
+      // Ajouter un alias pour les images Leaflet
+      'leaflet/dist/images': path.resolve(__dirname, 'node_modules/leaflet/dist/images')
     }
   },
   optimization: {
