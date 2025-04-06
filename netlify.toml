@@ -71,7 +71,7 @@
   to = "/communaute/:section/:slug"
   status = 301
 
-# Fallback pour SPA
+# Fallback pour SPA - CRUCIAL POUR LE ROUTAGE CLIENT REACT
 [[redirects]]
   from = "/*"
   to = "/index.html"
