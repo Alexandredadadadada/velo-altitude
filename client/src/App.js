@@ -88,11 +88,11 @@ function App() {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <AuthProvider>
-        <ThemeProvider theme={modernTheme}>
-          <CssBaseline />
-          <NotificationProvider>
-            <Router basename={process.env.PUBLIC_URL || '/'}>
+      <Router basename={process.env.PUBLIC_URL || '/'}>
+        <AuthProvider>
+          <ThemeProvider theme={modernTheme}>
+            <CssBaseline />
+            <NotificationProvider>
               <div className="app" role="application">
                 {/* Nouvelle barre de navigation animée */}
                 <AnimatedNavbar />
@@ -126,10 +126,10 @@ function App() {
                 {/* Pied de page */}
                 <Footer />
               </div>
-            </Router>
-          </NotificationProvider>
-        </ThemeProvider>
-      </AuthProvider>
+            </NotificationProvider>
+          </ThemeProvider>
+        </AuthProvider>
+      </Router>
     </I18nextProvider>
   );
 }
