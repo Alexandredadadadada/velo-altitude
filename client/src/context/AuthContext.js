@@ -163,16 +163,22 @@ export const AuthProvider = ({ children }) => {
     fetchUserProfile
   };
 
+  // Important : Toujours rendre les enfants, même pendant le chargement
+  // Cela garantit que le contexte est disponible pour les composants chargés par lazy loading
   return (
     <AuthContext.Provider value={value}>
-      {!loading && children}
+      {children}
     </AuthContext.Provider>
   );
 };
 
 // Hook personnalisé pour utiliser le contexte d'authentification
 export const useAuth = () => {
-  return useContext(AuthContext);
+  const context = useContext(AuthContext);
+  if (context === null) {
+    throw new Error('useAuth doit être utilisé dans un AuthProvider');
+  }
+  return context;
 };
 
 export default AuthContext;

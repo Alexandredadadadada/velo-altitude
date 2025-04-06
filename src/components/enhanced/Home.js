@@ -21,7 +21,7 @@ const Home = () => {
       />
     <div className="home-container">
       <section className="hero-section">
-        <h1>Bienvenue sur Grand Est Cyclisme</h1>
+        <h1>Bienvenue sur Velo-Altitude</h1>
         <p>Votre compagnon ultime pour explorer les plus beaux cols de France et d'Europe</p>
       </section>
       

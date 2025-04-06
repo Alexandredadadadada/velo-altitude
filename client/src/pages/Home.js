@@ -37,7 +37,9 @@ import {
   DirectionsBike as BikeIcon,
   ExploreOutlined as ExploreIcon,
   LightMode as SunIcon,
-  Refresh as RefreshIcon
+  Refresh as RefreshIcon,
+  FitnessCenter as TrainingIcon,
+  Restaurant as RestaurantIcon
 } from '@mui/icons-material';
 
 // Components
@@ -51,9 +53,11 @@ import Breadcrumbs from '../components/common/Breadcrumbs';
 import HeroParallax from '../components/animations/HeroParallax';
 import PageTransition from '../components/animations/PageTransition';
 import AnimatedStats from '../components/animations/AnimatedStats';
+import TrainingSection from '../components/home/modern/TrainingSection';
+import NutritionSection from '../components/home/modern/NutritionSection';
 
 // Hooks
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuthCentral';
 import useErrorHandler from '../hooks/useErrorHandler';
 
 // Styled Components
@@ -726,6 +730,36 @@ const Home = () => {
           </motion.div>
         </Container>
         
+        <Container maxWidth="xl">
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+          >
+            <SectionTitle variant="h4" component="h2" id="training-section">
+              <TrainingIcon color="primary" sx={{ mr: 1 }} />
+              Tableau de bord d'entraînement
+            </SectionTitle>
+            <TrainingSection />
+          </motion.div>
+        </Container>
+
+        <Container maxWidth="xl">
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+          >
+            <SectionTitle variant="h4" component="h2" id="nutrition-section" sx={{ mt: 6 }}>
+              <RestaurantIcon color="primary" sx={{ mr: 1 }} />
+              Tableau de bord nutrition
+            </SectionTitle>
+            <NutritionSection />
+          </motion.div>
+        </Container>
+
         <FeatureSection darkMode>
           <Container maxWidth="xl">
             <motion.div

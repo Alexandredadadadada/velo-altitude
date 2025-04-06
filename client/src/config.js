@@ -6,7 +6,8 @@
 
 // Configuration de l'environnement
 const isDevelopment = process.env.NODE_ENV === 'development';
-const apiBaseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+const isNetlify = process.env.NETLIFY === 'true';
+const apiBaseUrl = process.env.REACT_APP_API_URL || 'https://api.velo-altitude.com';
 
 // Configuration pour les APIs externes
 const config = {
@@ -22,7 +23,8 @@ const config = {
   api: {
     baseUrl: apiBaseUrl,
     timeout: 15000, // 15 secondes
-    retryAttempts: 3
+    retryAttempts: 3,
+    useMockData: isNetlify || (isDevelopment && (process.env.REACT_APP_USE_MOCK_DATA === 'true')) // Utiliser des données mockées sur Netlify
   },
   
   // Paramètres d'affichage
@@ -38,14 +40,14 @@ const config = {
   features: {
     useElevationProfile: true,
     useWeatherData: true,
-    useRealTimeData: true,
+    useRealTimeData: !isNetlify, // Désactiver les données en temps réel sur Netlify
     cacheDuration: 30 * 60 * 1000 // 30 minutes
   },
   
   // Paramètres pour le développement
   development: {
     enableLogs: isDevelopment,
-    mockData: isDevelopment && (process.env.REACT_APP_USE_MOCK_DATA === 'true')
+    mockData: isNetlify || (isDevelopment && (process.env.REACT_APP_USE_MOCK_DATA === 'true'))
   }
 };
 

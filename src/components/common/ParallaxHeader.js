@@ -10,9 +10,9 @@ const ParallaxHeader = () => {
       <div className="parallax-layer parallax-layer-base">
         <div className="header-content">
           <div className="logo">
-            <img src="/images/logo.svg" alt="Grand Est Cyclisme" />
+            <img src="/images/logo.svg" alt="Velo-Altitude" />
           </div>
-          <h1>Grand Est Cyclisme</h1>
+          <h1>Velo-Altitude</h1>
           <p>Explorez les plus beaux cols d'Europe</p>
         </div>
       </div>

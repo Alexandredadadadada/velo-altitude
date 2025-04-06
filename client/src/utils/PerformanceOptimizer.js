@@ -35,7 +35,21 @@ class PerformanceOptimizer {
       prefetching: true,
       resourceHints: true,
     };
-    this.deviceInfo = this._detectDeviceCapabilities();
+    // Simplification de la détection des capacités pour éviter les blocages
+    this.deviceInfo = {
+      isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+      isLowEndDevice: false,
+      hasLimitedMemory: false,
+      hasSlowConnection: false,
+      supportsWebGL: true,
+      supportsWebP: true,
+      devicePixelRatio: window.devicePixelRatio || 1,
+      screenSize: {
+        width: window.screen.width,
+        height: window.screen.height,
+      },
+      connection: null,
+    };
     this.initialized = false;
   }
 
@@ -51,85 +65,24 @@ class PerformanceOptimizer {
     // Fusionner les options avec les valeurs par défaut
     this.optimizations = { ...this.optimizations, ...options };
     
-    // Démarrer la collecte de métriques
-    this._startMetricsCollection();
-    
-    // Initialiser les observateurs
-    this._initializeObservers();
-    
-    // Appliquer les optimisations initiales
-    this._applyInitialOptimizations();
+    // Ne pas bloquer le chargement initial avec la collecte de métriques
+    setTimeout(() => {
+      this._startMetricsCollection();
+      this._initializeObservers();
+      this._applyInitialOptimizations();
+    }, 2000);
     
     this.initialized = true;
     console.log('Optimiseur de performances initialisé avec succès');
   }
 
   /**
-   * Détecte les capacités de l'appareil
+   * Méthode de détection des capacités simplifiée pour éviter les blocages
    * @returns {Object} Informations sur l'appareil
    * @private
    */
   _detectDeviceCapabilities() {
-    const info = {
-      isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-      isLowEndDevice: false,
-      hasLimitedMemory: false,
-      hasSlowConnection: false,
-      supportsWebGL: false,
-      supportsWebP: false,
-      devicePixelRatio: window.devicePixelRatio || 1,
-      screenSize: {
-        width: window.screen.width,
-        height: window.screen.height,
-      },
-      connection: null,
-    };
-    
-    // Détecter les appareils à faibles ressources
-    if ('deviceMemory' in navigator) {
-      info.hasLimitedMemory = navigator.deviceMemory < 4; // Moins de 4GB de RAM
-    }
-    
-    // Détecter les connexions lentes
-    if ('connection' in navigator && navigator.connection) {
-      info.connection = {
-        type: navigator.connection.effectiveType,
-        downlink: navigator.connection.downlink,
-        rtt: navigator.connection.rtt,
-        saveData: navigator.connection.saveData,
-      };
-      
-      info.hasSlowConnection = 
-        navigator.connection.effectiveType === 'slow-2g' || 
-        navigator.connection.effectiveType === '2g' ||
-        navigator.connection.downlink < 1.0;
-    }
-    
-    // Vérifier le support WebGL
-    try {
-      const canvas = document.createElement('canvas');
-      info.supportsWebGL = !!(window.WebGLRenderingContext && 
-        (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-    } catch (e) {
-      info.supportsWebGL = false;
-    }
-    
-    // Vérifier le support WebP
-    const webpImage = new Image();
-    webpImage.onload = function() {
-      info.supportsWebP = (webpImage.width > 0) && (webpImage.height > 0);
-    };
-    webpImage.onerror = function() {
-      info.supportsWebP = false;
-    };
-    webpImage.src = 'data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
-    
-    // Déterminer si c'est un appareil à faibles performances
-    info.isLowEndDevice = info.hasLimitedMemory || 
-                          info.hasSlowConnection || 
-                          info.isMobile && info.screenSize.width < 768;
-    
-    return info;
+    return this.deviceInfo;
   }
 
   /**

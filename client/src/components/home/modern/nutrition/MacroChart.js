@@ -290,7 +290,7 @@ const MacroChart = ({ nutritionNeeds, animationComplexity }) => {
       ],
       fat: [
         { name: 'Avocat', quantity: '1/2', timing: 'avant' },
-        { name: 'Huile d'olive', quantity: '1 c. à soupe', timing: 'avant' },
+        { name: "Huile d'olive", quantity: '1 c. à soupe', timing: 'avant' },
         { name: 'Noix', quantity: '30g', timing: 'avant' },
         { name: 'Amandes', quantity: '25g', timing: 'avant' },
         { name: 'Beurre de cacahuète', quantity: '1 c. à soupe', timing: 'avant' },
