@@ -40,7 +40,7 @@ import {
   ArrowDropDown as ArrowDropDownIcon,
   DirectionsBike as BikeIcon
 } from '@mui/icons-material';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../context/AuthContext';
 
 // Styled Components
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
