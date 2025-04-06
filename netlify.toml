@@ -2,12 +2,13 @@
 # Redirections pour standardiser les URLs
 
 [build]
-  publish = "build"
-  command = "npm run build"
+  publish = "client/build"
+  command = "cd client && npm install && CI=false npm run build"
 
 [build.environment]
   NODE_VERSION = "20.10.0"
   NPM_VERSION = "9.8.0"
+  CI = "false"
 
 [[redirects]]
   from = "/cols/:slug"
