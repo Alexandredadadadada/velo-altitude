@@ -31,7 +31,7 @@ const VisualizationDashboard = lazy(() => import('./pages/VisualizationDashboard
 // Utilitaires
 import { usePerformanceOptimizer } from './utils/PerformanceOptimizer';
 import { useImageOptimizer } from './utils/ImageOptimizer';
-import { AuthProvider } from './hooks/useAuthCentral';
+import { AuthProvider } from './contexts/AuthContext'; 
 import { NotificationProvider } from './context/NotificationContext';
 
 // Nouveau thème moderne
