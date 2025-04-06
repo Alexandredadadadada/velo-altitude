@@ -8,7 +8,7 @@ import Pass3DViewer from './Pass3DViewer';
 import './PassVisualizer.css';
 
 // Constantes pour les styles de carte
-const MAPBOX_TOKEN = 'YOUR_MAPBOX_TOKEN'; // À remplacer par une clé réelle dans un environnement de production
+const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN || process.env.REACT_APP_MAPBOX_TOKEN || 'pk.placeholder'; // Utiliser la variable d'environnement
 const mapStyle = 'mapbox://styles/mapbox/outdoors-v11';
 
 // Constantes pour les types de vues

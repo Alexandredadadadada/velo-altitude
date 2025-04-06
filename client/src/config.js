@@ -11,7 +11,7 @@ const apiBaseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 // Configuration pour les APIs externes
 const config = {
   // Mapbox (cartographie)
-  mapboxToken: process.env.REACT_APP_MAPBOX_TOKEN || 'YOUR_MAPBOX_TOKEN',
+  mapboxToken: process.env.MAPBOX_TOKEN || process.env.REACT_APP_MAPBOX_TOKEN || 'YOUR_MAPBOX_TOKEN',
   mapboxStyles: {
     outdoor: 'mapbox://styles/mapbox/outdoors-v12',
     satellite: 'mapbox://styles/mapbox/satellite-streets-v12',
