@@ -1,0 +1,156 @@
+/**
+ * Styles pour le composant PremiumLoader
+ * 
+ * Animations et effets visuels premium pour les états de chargement
+ */
+
+.premium-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spinner */
+.premium-loader__spinner {
+  border-style: solid;
+  border-radius: 50%;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.premium-loader__spinner.premium-loader--gradient {
+  border-top-color: #3494E6;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #EC6EAD;
+  box-shadow: 0 0 15px rgba(236, 110, 173, 0.3);
+}
+
+.premium-loader__spinner.premium-loader--blue {
+  border-top-color: #3494E6;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.premium-loader__spinner.premium-loader--pink {
+  border-top-color: #EC6EAD;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.premium-loader__spinner.premium-loader--white {
+  border-top-color: rgba(255, 255, 255, 0.9);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* Pulse */
+.premium-loader__pulse {
+  border-radius: 50%;
+}
+
+.premium-loader__pulse.premium-loader--gradient {
+  background: linear-gradient(135deg, #3494E6, #EC6EAD);
+  box-shadow: 0 0 20px rgba(52, 148, 230, 0.5);
+}
+
+.premium-loader__pulse.premium-loader--blue {
+  background: #3494E6;
+  box-shadow: 0 0 20px rgba(52, 148, 230, 0.5);
+}
+
+.premium-loader__pulse.premium-loader--pink {
+  background: #EC6EAD;
+  box-shadow: 0 0 20px rgba(236, 110, 173, 0.5);
+}
+
+.premium-loader__pulse.premium-loader--white {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Dots */
+.premium-loader__dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.premium-loader__dot {
+  border-radius: 50%;
+}
+
+.premium-loader__dot.premium-loader--gradient:nth-child(1) {
+  background: #3494E6;
+}
+
+.premium-loader__dot.premium-loader--gradient:nth-child(2) {
+  background: #9c66e4;
+}
+
+.premium-loader__dot.premium-loader--gradient:nth-child(3) {
+  background: #EC6EAD;
+}
+
+.premium-loader__dot.premium-loader--blue {
+  background: #3494E6;
+}
+
+.premium-loader__dot.premium-loader--pink {
+  background: #EC6EAD;
+}
+
+.premium-loader__dot.premium-loader--white {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Texte */
+.premium-loader__text {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+/* Overlay */
+.premium-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 30, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.premium-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(30, 30, 40, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.premium-loader-overlay {
+  animation: fadeIn 0.3s ease-in-out;
+}

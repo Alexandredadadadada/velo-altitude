@@ -2,26 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 
-// Pages publiques
-import HomePage from './pages/HomePage';
+// Pages essentielles uniquement pour tester l'authentification
 import EnhancedHomePage from './pages/EnhancedHomePage';
-import ColsPage from './pages/ColsPage';
-import ColsCataloguePage from './pages/ColsCataloguePage';
-import MajorChallengePage from './pages/MajorChallengePage';
-import RoutesPage from './pages/RoutesPage';
-import TrainingPage from './pages/TrainingPage';
-import NutritionPage from './pages/NutritionPage';
 import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 
-// Pages admin
-import AdminDashboardPage from './pages/AdminDashboardPage';
-import AdminColsConditionsPage from './pages/AdminColsConditionsPage';
-import AdminApiAnalyticsPage from './pages/AdminApiAnalyticsPage';
-import AdminApiSettingsPage from './pages/AdminApiSettingsPage';
-import ApiMonitoring from './pages/ApiMonitoring';
-import AdminFeatureFlagsPage from './pages/AdminFeatureFlagsPage';
+// Environnement de test d'authentification
+import AuthTestApp from './tests/auth-test/AuthTestApp';
+
+// Note: Plusieurs imports ont été temporairement commentés pour permettre
+// le démarrage de l'application et tester le système d'authentification
 
 // Composant privé nécessitant une authentification
 const PrivateRoute = ({ element }) => {
@@ -64,53 +54,32 @@ const AdminRoute = ({ element }) => {
   return element;
 };
 
+/**
+ * Version simplifiée d'AppRouter pour tester l'authentification
+ * 
+ * Cette version ne contient que les routes essentielles pour valider
+ * le système d'authentification : page d'accueil, login et profil.
+ * Les autres routes ont été temporairement supprimées pour éviter
+ * les erreurs de compilation dues aux fichiers manquants.
+ */
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        {/* Pages publiques */}
+        {/* Pages publiques essentielles */}
         <Route path="/" element={<EnhancedHomePage />} />
-        <Route path="/home-classic" element={<HomePage />} />
-        <Route path="/cols" element={<ColsPage />} />
-        <Route path="/cols/catalogue" element={<ColsCataloguePage />} />
-        <Route path="/challenges" element={<MajorChallengePage />} />
-        <Route path="/challenges/7-majeurs" element={<MajorChallengePage />} />
-        <Route path="/routes" element={<RoutesPage />} />
-        <Route path="/training" element={<TrainingPage />} />
-        <Route path="/nutrition" element={<NutritionPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
         
-        {/* Pages nécessitant une authentification */}
+        {/* Page de profil protégée pour tester l'authentification */}
         <Route 
           path="/profile" 
           element={<PrivateRoute element={<ProfilePage />} />} 
         />
         
-        {/* Pages d'administration (nécessitant des droits d'admin) */}
-        <Route 
-          path="/admin" 
-          element={<AdminRoute element={<AdminDashboardPage />} />} 
-        />
-        <Route 
-          path="/admin/api-monitoring" 
-          element={<AdminRoute element={<ApiMonitoring />} />} 
-        />
-        <Route 
-          path="/admin/api-analytics" 
-          element={<AdminRoute element={<AdminApiAnalyticsPage />} />} 
-        />
-        <Route 
-          path="/admin/api-settings" 
-          element={<AdminRoute element={<AdminApiSettingsPage />} />} 
-        />
-        <Route 
-          path="/admin/cols-conditions" 
-          element={<AdminRoute element={<AdminColsConditionsPage />} />} 
-        />
-        <Route 
-          path="/admin/feature-flags" 
-          element={<AdminRoute element={<AdminFeatureFlagsPage />} />} 
+        {/* Environnement de test de l'authentification */}
+        <Route
+          path="/auth-test/*"
+          element={<AuthTestApp />}
         />
         
         {/* Redirection en cas de route non trouvée */}

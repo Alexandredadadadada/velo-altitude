@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Dashboard.css';
+import AIChatbox from '../components/dashboard/AIChatbox';
+import { useTheme } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 
 const Dashboard = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [chatboxVisible, setChatboxVisible] = useState(true);
+
   return (
     <div className="dashboard-container">
       <h1>Tableau de Bord</h1>
@@ -36,6 +43,28 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      
+      {/* AI Chatbox integration */}
+      {chatboxVisible && (
+        <AIChatbox
+          position="fixed"
+          bottom={isMobile ? 0 : 20}
+          right={isMobile ? 0 : 20}
+          width={isMobile ? '100%' : '350px'}
+          height={isMobile ? '70vh' : '500px'}
+        />
+      )}
+      
+      {/* Chat toggle button for mobile */}
+      {isMobile && !chatboxVisible && (
+        <button 
+          className="chat-toggle-button"
+          onClick={() => setChatboxVisible(true)}
+          aria-label="Ouvrir l'assistant IA"
+        >
+          <span className="chat-icon">💬</span>
+        </button>
+      )}
     </div>
   );
 };

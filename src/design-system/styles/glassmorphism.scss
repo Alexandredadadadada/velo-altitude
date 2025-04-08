@@ -1,0 +1,317 @@
+/**
+ * Glassmorphism 2.0
+ * 
+ * Styles avancés pour créer des effets de verre/vitre moderne
+ * Optimisés pour les performances avec des fallbacks appropriés
+ */
+
+@use 'sass:map';
+@import '../theme.js' as theme;
+
+// Mixin de base pour l'effet glassmorphism
+@mixin glassmorphism(
+  $bg-opacity: 0.65,
+  $blur-amount: 10px,
+  $border-opacity: 0.18,
+  $dark-mode: false,
+  $bg-color: white
+) {
+  $bg-color-rgba: if(
+    $dark-mode,
+    rgba(25, 25, 25, $bg-opacity),
+    rgba($bg-color, $bg-opacity)
+  );
+  $border-color: if(
+    $dark-mode,
+    rgba(255, 255, 255, $border-opacity * 0.5),
+    rgba(255, 255, 255, $border-opacity)
+  );
+  
+  position: relative;
+  background: $bg-color-rgba;
+  backdrop-filter: blur($blur-amount);
+  -webkit-backdrop-filter: blur($blur-amount); // Safari support
+  border: 1px solid $border-color;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  
+  // Performance optimization
+  will-change: transform;
+  transform: translateZ(0);
+  
+  // Fallback pour navigateurs ne supportant pas backdrop-filter
+  @supports not (backdrop-filter: blur(1px)) {
+    background: if(
+      $dark-mode,
+      rgba(25, 25, 25, $bg-opacity + 0.2),
+      rgba($bg-color, $bg-opacity + 0.2)
+    );
+  }
+}
+
+// Classes prédéfinies pour différents types d'effets glass
+.glass {
+  @include glassmorphism();
+  border-radius: 16px;
+  
+  // Variations
+  &--dark {
+    @include glassmorphism($dark-mode: true);
+  }
+  
+  &--primary {
+    @include glassmorphism($bg-color: #1A4977);
+    color: white;
+  }
+  
+  &--secondary {
+    @include glassmorphism($bg-color: #24A26F);
+    color: white;
+  }
+  
+  &--accent {
+    @include glassmorphism($bg-color: #FF6B35);
+    color: white;
+  }
+  
+  &--premium {
+    @include glassmorphism($bg-opacity: 0.75, $blur-amount: 15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.15),
+      0 30px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  &--subtle {
+    @include glassmorphism($bg-opacity: 0.4, $blur-amount: 5px);
+  }
+  
+  // Tailles
+  &--sm {
+    border-radius: 8px;
+    padding: 12px;
+  }
+  
+  &--md {
+    border-radius: 16px;
+    padding: 16px;
+  }
+  
+  &--lg {
+    border-radius: 24px;
+    padding: 24px;
+  }
+  
+  // Hover et Focus states
+  &:hover {
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.2),
+      0 4px 8px 0 rgba(31, 38, 135, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  // Effet interactif
+  &--interactive {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 
+        0 12px 40px 0 rgba(31, 38, 135, 0.25),
+        0 8px 16px 0 rgba(31, 38, 135, 0.15);
+    }
+    
+    &:active {
+      transform: translateY(-2px);
+      box-shadow: 
+        0 8px 20px 0 rgba(31, 38, 135, 0.2),
+        0 4px 8px 0 rgba(31, 38, 135, 0.1);
+    }
+  }
+}
+
+// Classe pour appliquer l'effet de profondeur
+.depth-effect {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  
+  // Éléments enfants avec effet de profondeur
+  &__layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+    &--back {
+      transform: translateZ(-10px);
+      opacity: 0.8;
+    }
+    
+    &--middle {
+      transform: translateZ(0);
+    }
+    
+    &--front {
+      transform: translateZ(10px);
+    }
+  }
+  
+  // Animation de profondeur au survol
+  &:hover {
+    .depth-effect__layer--back {
+      transform: translateZ(-15px);
+    }
+    
+    .depth-effect__layer--front {
+      transform: translateZ(15px);
+    }
+  }
+}
+
+// Effets spécifiques pour les cartes
+.card-glass {
+  @extend .glass;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  &__header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  &__content {
+    padding: 16px;
+    flex: 1;
+  }
+  
+  &__footer {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  // Animation d'entrée
+  @keyframes card-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  &--animated {
+    animation: card-reveal 0.6s ease-out forwards;
+  }
+}
+
+// Effet pour les modales
+.modal-glass {
+  @extend .glass;
+  @extend .glass--premium;
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  overflow: hidden;
+  
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  // Animation d'entrée
+  @keyframes modal-reveal {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  animation: modal-reveal 0.3s ease-out forwards;
+}
+
+// Effet pour la navigation principale
+.nav-glass {
+  @extend .glass;
+  @extend .glass--subtle;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  
+  // Version flottante
+  &--floating {
+    margin: 16px;
+    border-radius: 100px;
+    left: 16px;
+    right: 16px;
+    width: calc(100% - 32px);
+  }
+}
+
+// Effet pour les actions et boutons
+.button-glass {
+  @extend .glass;
+  @extend .glass--interactive;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  &--primary {
+    @extend .glass--primary;
+  }
+  
+  &--secondary {
+    @extend .glass--secondary;
+  }
+  
+  &--accent {
+    @extend .glass--accent;
+  }
+  
+  &--rounded {
+    border-radius: 100px;
+  }
+}

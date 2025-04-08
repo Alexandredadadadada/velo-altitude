@@ -202,12 +202,13 @@ class ThreeDConfigManager {
     
     this.currentConfig = config;
     
-    console.log('ThreeDConfigManager: configuration mise à jour', {
-      performanceLevel,
-      batteryLevel: batteryStatus.level,
-      savingMode: batteryStatus.savingMode,
-      config: this.getConfigSummary()
-    });
+    // 
+    // console.log('ThreeDConfigManager: configuration mise à jour', {
+    //   performanceLevel,
+    //   batteryLevel: batteryStatus.level,
+    //   savingMode: batteryStatus.savingMode,
+    //   config: this.getConfigSummary()
+    // });
     
     return this.currentConfig;
   }

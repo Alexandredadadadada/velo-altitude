@@ -28,6 +28,8 @@ const CommunityRoutes = lazy(() => import('./pages/community/CommunityRoutes'));
 const MountainHub = lazy(() => import('./pages/MountainHub'));
 const ErrorDemo = lazy(() => import('./pages/ErrorDemo'));
 const VisualizationDashboard = lazy(() => import('./pages/VisualizationDashboard'));
+const OptimizedServiceTest = lazy(() => import('./components/test/OptimizedServiceTest')); // Import du composant de test
+const ServiceTest = lazy(() => import('./components/tests/ServiceTest')); // Import du nouveau composant de test
 
 // Utilitaires
 import { usePerformanceOptimizer } from './utils/PerformanceOptimizer';
@@ -123,6 +125,8 @@ function App() {
                       <Route path="/strava/sync" element={<StravaSync />} />
                       <Route path="/error-demo" element={<ErrorDemo />} />
                       <Route path="/visualization" element={<VisualizationDashboard />} />
+                      <Route path="/test-service" element={<OptimizedServiceTest />} />
+                      <Route path="/test-refactored-services" element={<ServiceTest />} />
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </AnimatePresence>

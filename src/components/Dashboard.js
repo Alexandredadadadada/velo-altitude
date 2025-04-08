@@ -7,6 +7,7 @@ import WeatherDashboard from './weather/WeatherDashboard';
 import TrainingModule from './training/TrainingModule';
 import SocialHub from './social/SocialHub';
 import WidgetManager from './dashboard/WidgetManager';
+import AIChatbox from './dashboard/AIChatbox';
 import './Dashboard.css';
 
 // Mock API service for fetching cols data
@@ -308,6 +309,9 @@ const Dashboard = () => {
       <div className="dashboard-footer">
         <p> 2025 Grand Est Cyclisme</p>
       </div>
+      
+      {/* AI Chatbox - fixed position, appears on all pages */}
+      <AIChatbox />
     </div>
   );
 };

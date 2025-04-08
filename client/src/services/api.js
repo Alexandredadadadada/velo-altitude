@@ -3,10 +3,10 @@
  * Ce fichier configure axios pour toutes les requêtes API
  */
 import axios from 'axios';
+import config from '../config'; // Importer la configuration centralisée
 
-// Récupérer l'URL de base depuis les variables d'environnement
+// Récupérer l'URL de base depuis la configuration
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000';
-const USE_MOCK_DATA = process.env.REACT_APP_USE_MOCK_DATA === 'true';
 
 // Création d'une instance axios avec la configuration de base
 const api = axios.create({
@@ -150,5 +150,5 @@ const createCachedRequest = (url, options = {}) => {
     });
 };
 
-export { api, USE_MOCK_DATA, createCachedRequest };
+export { api, createCachedRequest };
 export default api;

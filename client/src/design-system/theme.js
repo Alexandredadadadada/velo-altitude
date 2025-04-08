@@ -283,16 +283,24 @@ const darkTheme = {
     background: {
       default: colors.dark.background,
       paper: colors.dark.surface,
+      altitude: colors.overlay.altitude, // Ajouter la propriété altitude manquante
     },
     text: {
       primary: colors.neutral.grey[100],
       secondary: colors.neutral.grey[300],
+      disabled: colors.neutral.grey[500], // Ajouter la propriété disabled manquante
     },
     primary: {
       main: colors.dark.primary,
+      light: colors.dark.primary + '99', // Ajouter 60% d'opacité pour une version plus claire
+      dark: colors.dark.primary + 'dd',  // Ajouter 87% d'opacité pour une version plus foncée
+      contrastText: colors.neutral.white,
     },
     secondary: {
       main: colors.dark.secondary,
+      light: colors.dark.secondary + '99', // Ajouter 60% d'opacité pour une version plus claire
+      dark: colors.dark.secondary + 'dd',  // Ajouter 87% d'opacité pour une version plus foncée
+      contrastText: colors.neutral.white,
     },
   },
 };

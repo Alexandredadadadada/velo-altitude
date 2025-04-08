@@ -1,15 +1,14 @@
 /**
- * hooks/useAuth.js
- * Hook d'authentification pour Velo-Altitude
+ * @file useAuth.js
+ * @description Hook d'authentification unifié pour Velo-Altitude
  * 
- * Ce fichier maintient la compatibilité avec les imports existants
- * qui utilisent useAuth depuis le dossier hooks.
+ * IMPORTANT: Ce fichier est maintenu uniquement pour la rétrocompatibilité
+ * Les nouveaux composants devraient importer directement depuis '../auth'
  * 
- * @version 2.1 - Avril 2025
+ * @deprecated Utilisez les exports de '../auth' directement
  */
 
-// Import direct depuis AuthCore pour éviter les dépendances circulaires
-import { useAuth, useSafeAuth, AuthProvider, AuthContext } from '../auth/AuthCore';
+import { useAuth, useSafeAuth, AuthProvider, AuthContext } from '../auth';
 
 // Export nommé pour les imports destructurés
 export { useAuth, useSafeAuth, AuthProvider, AuthContext };

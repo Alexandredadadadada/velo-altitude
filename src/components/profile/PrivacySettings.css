@@ -1,0 +1,462 @@
+/**
+ * Styles pour les paramètres de confidentialité
+ * 
+ * Interface permettant aux utilisateurs de gérer leurs préférences de confidentialité
+ * et de sécurité en s'intégrant avec le Security Middleware et l'Authentication Middleware
+ */
+
+.privacy-settings {
+  width: 100%;
+}
+
+.privacy-settings-intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.privacy-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.privacy-section:last-child {
+  border-bottom: none;
+}
+
+.privacy-section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 20px;
+}
+
+.privacy-options {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.privacy-option {
+  position: relative;
+}
+
+.privacy-option-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+  margin-left: 30px;
+  line-height: 1.5;
+}
+
+/* Styles spécifiques pour les options de sécurité */
+.security-options {
+  gap: 40px;
+}
+
+.change-password-button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.change-password-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Styles pour l'authentification à deux facteurs */
+.two-factor-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.two-factor-auth-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.two-factor-auth-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.two-factor-auth-status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.two-factor-auth-status.enabled {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: rgba(40, 167, 69, 0.9);
+}
+
+.two-factor-auth-status.disabled {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.two-factor-auth-button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.two-factor-auth-button.enable {
+  background-color: rgba(40, 167, 69, 0.2);
+}
+
+.two-factor-auth-button.disable {
+  background-color: rgba(228, 37, 53, 0.2);
+}
+
+.two-factor-auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Styles pour les sessions actives */
+.login-sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-sessions-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.session-item.current {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.session-device {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+}
+
+.session-location, 
+.session-time {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.session-current-badge {
+  padding: 5px 12px;
+  background: linear-gradient(90deg, rgba(26, 73, 119, 0.5), rgba(36, 162, 111, 0.5));
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.session-logout-button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(228, 37, 53, 0.2);
+  color: rgba(228, 37, 53, 0.9);
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.session-logout-button:hover {
+  background: rgba(228, 37, 53, 0.3);
+}
+
+.session-logout-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.logout-all-button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgba(228, 37, 53, 0.2);
+  align-self: flex-start;
+}
+
+.logout-all-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Styles pour la gestion des données */
+.data-management-title,
+.data-sharing-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 15px;
+  color: white;
+}
+
+.data-management-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.export-data-button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-account-button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: rgba(228, 37, 53, 0.2);
+  color: rgba(228, 37, 53, 0.9);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-account-button:hover {
+  background: rgba(228, 37, 53, 0.3);
+}
+
+.export-data-button:disabled,
+.delete-account-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Styles pour les options de partage de données */
+.data-sharing-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Styles pour la boîte de dialogue de confirmation */
+.confirmation-dialog {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.delete-confirmation {
+  background: rgba(228, 37, 53, 0.1);
+  border: 1px solid rgba(228, 37, 53, 0.2);
+}
+
+.confirmation-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 15px;
+  color: white;
+}
+
+.confirmation-message {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.delete-verification {
+  margin-bottom: 20px;
+}
+
+.confirmation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.confirmation-cancel {
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.confirmation-confirm {
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-confirm-button {
+  background: rgba(228, 37, 53, 0.6);
+}
+
+.delete-confirm-button:hover {
+  background: rgba(228, 37, 53, 0.8);
+}
+
+/* Styles pour le pied de page des paramètres de confidentialité */
+.privacy-settings-footer {
+  margin-top: 30px;
+}
+
+.privacy-settings-note {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin: 0;
+}
+
+.privacy-link {
+  color: rgba(36, 162, 111, 0.9);
+  text-decoration: none;
+  margin: 0 5px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.privacy-link:hover {
+  color: rgba(36, 162, 111, 1);
+}
+
+.privacy-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(36, 162, 111, 0.6);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.privacy-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .privacy-section-title {
+    font-size: 1.2rem;
+  }
+  
+  .two-factor-auth-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .data-management-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-settings-intro {
+    font-size: 0.95rem;
+  }
+  
+  .privacy-section-title {
+    font-size: 1.1rem;
+  }
+  
+  .two-factor-auth-title,
+  .login-sessions-title,
+  .data-management-title,
+  .data-sharing-title,
+  .confirmation-title {
+    font-size: 1rem;
+  }
+  
+  .session-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .session-current-badge,
+  .session-logout-button {
+    align-self: flex-start;
+  }
+}

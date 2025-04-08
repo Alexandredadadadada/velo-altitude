@@ -51,7 +51,7 @@ import RegionMap from '../components/maps/RegionMap';
 import StatsSummary from '../components/home/StatsSummary';
 import Breadcrumbs from '../components/common/Breadcrumbs';
 import HeroParallax from '../components/animations/HeroParallax';
-import PageTransition from '../components/animations/PageTransition';
+import PageTransition from '../../src/components/common/PageTransition';
 import AnimatedStats from '../components/animations/AnimatedStats';
 import TrainingSection from '../components/home/modern/TrainingSection';
 import NutritionSection from '../components/home/modern/NutritionSection';

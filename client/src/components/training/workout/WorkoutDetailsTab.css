@@ -1,0 +1,168 @@
+/**
+ * Styles pour le composant WorkoutDetailsTab
+ * 
+ * Design premium pour l'onglet de détails d'un entraînement
+ */
+
+.workout-details-tab h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.workout-details-tab h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #3494E6, #EC6EAD);
+  border-radius: 3px;
+}
+
+.workout-details-tab h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.workout-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.workout-benefits-list, .workout-tips-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.workout-benefit-item, .workout-tip-item {
+  display: flex;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.workout-benefit-item::before, .workout-tip-item::before {
+  content: '•';
+  color: #3494E6;
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.workout-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.workout-section {
+  padding: 1.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.workout-section:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.section-duration {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+}
+
+.section-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.section-target {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.target-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Adaptative */
+@media (max-width: 768px) {
+  .workout-details-tab h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .workout-section {
+    padding: 1.2rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .section-duration {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .workout-details-tab h2 {
+    font-size: 1.2rem;
+  }
+  
+  .workout-section {
+    padding: 1rem;
+  }
+  
+  .section-target {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

@@ -1,13 +1,9 @@
 /**
  * Service pour la gestion des fonctionnalités sociales
+ * Utilise apiWrapper qui a été mis à jour pour fonctionner avec MSW en mode développement.
  */
-import api from './api';
-import mockPosts from '../mocks/posts';
-import mockComments from '../mocks/comments';
-import mockStravaActivities from '../mocks/stravaActivities';
-
-// Vérifier si nous utilisons les données mockées ou les API réelles
-const USE_MOCK_DATA = process.env.REACT_APP_USE_MOCK_DATA === 'true';
+import api from './apiWrapper';
+import { handleApiError } from '../utils/apiErrorUtils';
 
 const SocialService = {
   /**
@@ -17,29 +13,14 @@ const SocialService = {
    */
   getFeedPosts: async (options = {}) => {
     try {
-      if (USE_MOCK_DATA) {
-        console.log('Using mock data for posts');
-        // Filtrer les posts mockés selon les options
-        const filteredPosts = mockPosts.filter(post => {
-          if (options.filter && options.filter !== 'all') {
-            return post.type === options.filter;
-          }
-          return true;
-        });
-        
-        // Simuler une latence réseau
-        await new Promise(resolve => setTimeout(resolve, 500));
-        return filteredPosts;
-      }
-      
       // Construire les paramètres de requête
       const params = new URLSearchParams();
       if (options.filter && options.filter !== 'all') {
         params.append('type', options.filter);
       }
       
-      // Appel API réel
-      const response = await api.get(`/social/posts?${params.toString()}`);
+      // Appel API
+      const response = await api.get(`/social/posts${params.toString() ? `?${params.toString()}` : ''}`);
       return response.data;
     } catch (error) {
       console.error('Error fetching feed posts:', error);
@@ -54,36 +35,7 @@ const SocialService = {
    */
   createPost: async (postData) => {
     try {
-      if (USE_MOCK_DATA) {
-        console.log('Using mock data for creating post');
-        
-        // Créer un nouveau post mocké
-        const newPost = {
-          id: `post-${Date.now()}`,
-          user: {
-            id: 'user-123',
-            name: 'Jean Dupont',
-            avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
-          },
-          content: postData.content,
-          timestamp: new Date().toISOString(),
-          likes: 0,
-          comments: [],
-          userLiked: false,
-          type: postData.type || 'text'
-        };
-        
-        // Ajouter des détails spécifiques selon le type de post
-        if (postData.type === 'ride' && postData.activity) {
-          newPost.activity = postData.activity;
-        }
-        
-        // Simuler une latence réseau
-        await new Promise(resolve => setTimeout(resolve, 500));
-        return newPost;
-      }
-      
-      // Appel API réel
+      // Appel API
       const response = await api.post('/social/posts', postData);
       return response.data;
     } catch (error) {
@@ -99,18 +51,7 @@ const SocialService = {
    */
   getComments: async (postId) => {
     try {
-      if (USE_MOCK_DATA) {
-        console.log(`Using mock data for comments of post ${postId}`);
-        
-        // Filtrer les commentaires mockés pour ce post
-        const comments = mockComments.filter(comment => comment.postId === postId);
-        
-        // Simuler une latence réseau
-        await new Promise(resolve => setTimeout(resolve, 300));
-        return comments;
-      }
-      
-      // Appel API réel
+      // Appel API
       const response = await api.get(`/social/posts/${postId}/comments`);
       return response.data;
     } catch (error) {
@@ -127,28 +68,7 @@ const SocialService = {
    */
   addComment: async (postId, content) => {
     try {
-      if (USE_MOCK_DATA) {
-        console.log(`Using mock data for adding comment to post ${postId}`);
-        
-        // Créer un nouveau commentaire mocké
-        const newComment = {
-          id: `comment-${Date.now()}`,
-          postId,
-          user: {
-            id: 'user-123',
-            name: 'Jean Dupont',
-            avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
-          },
-          content,
-          timestamp: new Date().toISOString()
-        };
-        
-        // Simuler une latence réseau
-        await new Promise(resolve => setTimeout(resolve, 300));
-        return newComment;
-      }
-      
-      // Appel API réel
+      // Appel API
       const response = await api.post(`/social/posts/${postId}/comments`, { content });
       return response.data;
     } catch (error) {
@@ -165,24 +85,11 @@ const SocialService = {
    */
   toggleLike: async (postId, liked) => {
     try {
-      if (USE_MOCK_DATA) {
-        console.log(`Using mock data for toggling like on post ${postId}`);
-        
-        // Simuler une latence réseau
-        await new Promise(resolve => setTimeout(resolve, 200));
-        return { success: true };
-      }
-      
-      // Appel API réel
-      if (liked) {
-        const response = await api.post(`/social/posts/${postId}/like`);
-        return response.data;
-      } else {
-        const response = await api.delete(`/social/posts/${postId}/like`);
-        return response.data;
-      }
+      // Appel API
+      const response = await api.post(`/social/posts/${postId}/like`, { liked });
+      return response.data;
     } catch (error) {
-      console.error(`Error toggling like on post ${postId}:`, error);
+      console.error(`Error toggling like for post ${postId}:`, error);
       throw error;
     }
   },
@@ -194,18 +101,8 @@ const SocialService = {
    */
   checkStravaConnection: async (userId) => {
     try {
-      if (USE_MOCK_DATA) {
-        console.log(`Using mock data for checking Strava connection of user ${userId}`);
-        
-        // Simuler une latence réseau
-        await new Promise(resolve => setTimeout(resolve, 300));
-        
-        // Retourner false par défaut pour permettre de tester la connexion
-        return false;
-      }
-      
-      // Appel API réel
-      const response = await api.get(`/social/strava/status`);
+      // Appel API
+      const response = await api.get(`/social/strava/check/${userId}`);
       return response.data.connected;
     } catch (error) {
       console.error(`Error checking Strava connection for user ${userId}:`, error);
@@ -220,19 +117,11 @@ const SocialService = {
    */
   connectStrava: async (userId) => {
     try {
-      if (USE_MOCK_DATA) {
-        console.log(`Using mock data for connecting user ${userId} to Strava`);
-        
-        // Simuler une latence réseau
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        return { success: true };
-      }
-      
-      // Appel API réel
-      const response = await api.post(`/social/strava/connect`);
+      // Appel API
+      const response = await api.post(`/social/strava/connect`, { userId });
       return response.data;
     } catch (error) {
-      console.error(`Error connecting user ${userId} to Strava:`, error);
+      console.error(`Error connecting Strava for user ${userId}:`, error);
       throw error;
     }
   },
@@ -244,16 +133,8 @@ const SocialService = {
    */
   getStravaActivities: async (userId) => {
     try {
-      if (USE_MOCK_DATA) {
-        console.log(`Using mock data for Strava activities of user ${userId}`);
-        
-        // Simuler une latence réseau
-        await new Promise(resolve => setTimeout(resolve, 800));
-        return mockStravaActivities;
-      }
-      
-      // Appel API réel
-      const response = await api.get(`/social/strava/activities`);
+      // Appel API
+      const response = await api.get(`/social/strava/activities/${userId}`);
       return response.data;
     } catch (error) {
       console.error(`Error fetching Strava activities for user ${userId}:`, error);
@@ -267,12 +148,6 @@ const SocialService = {
    * @returns {Promise<Object>} Données du post
    */
   getPostById: async (postId) => {
-    if (USE_MOCK_DATA) {
-      const post = mockPosts.find(p => p.id === postId);
-      if (!post) throw new Error('Post non trouvé');
-      return Promise.resolve(post);
-    }
-    
     try {
       const response = await api.get(`/api/social/posts/${postId}`);
       return response.data;
@@ -289,16 +164,6 @@ const SocialService = {
    * @returns {Promise<Object>} Post mis à jour
    */
   updatePost: async (postId, postData) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 400));
-      return Promise.resolve({
-        id: postId,
-        ...postData,
-        updatedAt: new Date().toISOString()
-      });
-    }
-    
     try {
       const response = await api.put(`/api/social/posts/${postId}`, postData);
       return response.data;
@@ -314,12 +179,6 @@ const SocialService = {
    * @returns {Promise<Object>} Résultat de l'opération
    */
   deletePost: async (postId) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 300));
-      return Promise.resolve({ success: true });
-    }
-    
     try {
       const response = await api.delete(`/api/social/posts/${postId}`);
       return response.data;
@@ -337,42 +196,6 @@ const SocialService = {
    * @returns {Promise<Object>} Post créé
    */
   shareStravaActivity: async (userId, activityId, postData = {}) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      // Recherche de l'activité dans les données mockées
-      const activity = mockStravaActivities.find(a => a.id === activityId);
-      if (!activity) throw new Error('Activité Strava non trouvée');
-      
-      const newPost = {
-        id: `post-${Date.now()}`,
-        userId,
-        type: 'ride',
-        content: postData.content || `J'ai partagé mon activité Strava: ${activity.name}`,
-        timestamp: new Date().toISOString(),
-        likes: 0,
-        comments: [],
-        userLiked: false,
-        activity: {
-          id: activity.id,
-          title: activity.name,
-          distance: (activity.distance / 1000).toFixed(1),
-          duration: formatDuration(activity.moving_time),
-          elevationGain: activity.total_elevation_gain,
-          stravaId: activity.id,
-          polyline: activity.map?.polyline || null
-        },
-        user: {
-          id: userId,
-          name: 'Jean Dupont', // Normalement récupéré depuis l'API
-          avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
-        }
-      };
-      
-      return Promise.resolve(newPost);
-    }
-    
     try {
       const response = await api.post(`/api/social/strava/${activityId}/share`, {
         userId,
@@ -391,16 +214,6 @@ const SocialService = {
    * @returns {Promise<Object>} Statut de connexion Strava
    */
   getStravaConnectionStatus: async (userId) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 200));
-      return Promise.resolve({ 
-        connected: true,
-        athleteId: '12345678',
-        athleteName: 'Jean Dupont'
-      });
-    }
-    
     try {
       const response = await api.get(`/api/users/${userId}/strava/status`);
       return response.data;

@@ -17,6 +17,22 @@ export interface AthleteData {
   experience?: string;
 }
 
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant' | 'system';
+  content: string;
+  timestamp: number;
+}
+
+export interface ChatContext {
+  userProfile?: any;
+  recentActivities?: any[];
+  weatherData?: any;
+  equipment?: any[];
+  goals?: string[];
+  language?: string;
+}
+
 export class AIService {
   private claudeApiKey: string;
   private openaiApiKey: string;
@@ -77,6 +93,40 @@ export class AIService {
     }
     
     throw new Error('No AI service available for equipment recommendations');
+  }
+  
+  // Chat with the AI assistant
+  async sendChatMessage(messages: ChatMessage[], context?: ChatContext) {
+    try {
+      if (this.claudeApiKey) {
+        return await this.claudeChatMessage(messages, context);
+      }
+    } catch (error) {
+      console.warn('Claude API failed for chat message, falling back to OpenAI', error);
+    }
+    
+    if (this.openaiApiKey) {
+      return await this.openAIChatMessage(messages, context);
+    }
+    
+    throw new Error('No AI service available for chat');
+  }
+  
+  // Generate suggested queries based on conversation history
+  async getSuggestedQueries(messages: ChatMessage[], context?: ChatContext) {
+    try {
+      if (this.claudeApiKey) {
+        return await this.claudeSuggestedQueries(messages, context);
+      }
+    } catch (error) {
+      console.warn('Claude API failed for suggested queries, falling back to OpenAI', error);
+    }
+    
+    if (this.openaiApiKey) {
+      return await this.openAISuggestedQueries(messages, context);
+    }
+    
+    throw new Error('No AI service available for suggested queries');
   }
   
   private async claudeRecommendation(athleteData: AthleteData) {
@@ -269,5 +319,213 @@ export class AIService {
     });
     
     return response.data.choices[0].message.content;
+  }
+  
+  private async claudeChatMessage(messages: ChatMessage[], context?: ChatContext) {
+    // Convert our message format to Claude's format
+    const claudeMessages = messages.map(msg => ({
+      role: msg.role === 'assistant' ? 'assistant' : 'user',
+      content: msg.content
+    }));
+    
+    // Add context as a system message if provided
+    let systemContent = 'You are a cycling assistant for Velo-Altitude, specializing in training advice, nutrition, route planning, and equipment recommendations.';
+    
+    if (context) {
+      systemContent += ' Here is some context about the user:\n\n';
+      
+      if (context.userProfile) {
+        systemContent += `User Profile: ${JSON.stringify(context.userProfile, null, 2)}\n\n`;
+      }
+      
+      if (context.recentActivities && context.recentActivities.length > 0) {
+        systemContent += `Recent Activities: ${JSON.stringify(context.recentActivities, null, 2)}\n\n`;
+      }
+      
+      if (context.weatherData) {
+        systemContent += `Current Weather: ${JSON.stringify(context.weatherData, null, 2)}\n\n`;
+      }
+      
+      if (context.equipment && context.equipment.length > 0) {
+        systemContent += `User Equipment: ${JSON.stringify(context.equipment, null, 2)}\n\n`;
+      }
+      
+      if (context.goals && context.goals.length > 0) {
+        systemContent += `User Goals: ${context.goals.join(', ')}\n\n`;
+      }
+      
+      if (context.language) {
+        systemContent += `Respond in: ${context.language}`;
+      }
+    }
+    
+    // Add system message at the beginning
+    claudeMessages.unshift({
+      role: 'user',
+      content: `<system>${systemContent}</system>\n\n`
+    });
+    
+    const response = await axios.post('https://api.anthropic.com/v1/messages', {
+      model: 'claude-3-haiku-20240307',
+      max_tokens: 1024,
+      messages: claudeMessages
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': this.claudeApiKey,
+        'anthropic-version': '2023-06-01'
+      }
+    });
+    
+    return response.data.content[0].text;
+  }
+  
+  private async openAIChatMessage(messages: ChatMessage[], context?: ChatContext) {
+    // Convert our message format to OpenAI's format
+    const openaiMessages = messages.map(msg => ({
+      role: msg.role,
+      content: msg.content
+    }));
+    
+    // Add context as a system message if provided
+    let systemContent = 'You are a cycling assistant for Velo-Altitude, specializing in training advice, nutrition, route planning, and equipment recommendations.';
+    
+    if (context) {
+      systemContent += ' Here is some context about the user:\n\n';
+      
+      if (context.userProfile) {
+        systemContent += `User Profile: ${JSON.stringify(context.userProfile, null, 2)}\n\n`;
+      }
+      
+      if (context.recentActivities && context.recentActivities.length > 0) {
+        systemContent += `Recent Activities: ${JSON.stringify(context.recentActivities, null, 2)}\n\n`;
+      }
+      
+      if (context.weatherData) {
+        systemContent += `Current Weather: ${JSON.stringify(context.weatherData, null, 2)}\n\n`;
+      }
+      
+      if (context.equipment && context.equipment.length > 0) {
+        systemContent += `User Equipment: ${JSON.stringify(context.equipment, null, 2)}\n\n`;
+      }
+      
+      if (context.goals && context.goals.length > 0) {
+        systemContent += `User Goals: ${context.goals.join(', ')}\n\n`;
+      }
+      
+      if (context.language) {
+        systemContent += `Respond in: ${context.language}`;
+      }
+    }
+    
+    // Add system message at the beginning
+    openaiMessages.unshift({
+      role: 'system',
+      content: systemContent
+    });
+    
+    const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+      model: 'gpt-3.5-turbo',
+      messages: openaiMessages
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.openaiApiKey}`
+      }
+    });
+    
+    return response.data.choices[0].message.content;
+  }
+  
+  private async claudeSuggestedQueries(messages: ChatMessage[], context?: ChatContext) {
+    // Similar to chat message but with a specific prompt for generating suggestions
+    const systemContent = 'You are a cycling assistant that generates relevant follow-up questions based on the conversation history. Generate 3-5 concise, cycling-related questions the user might want to ask next.';
+    
+    // Convert our message format to Claude's format
+    const claudeMessages = messages.map(msg => ({
+      role: msg.role === 'assistant' ? 'assistant' : 'user',
+      content: msg.content
+    }));
+    
+    // Add system message at the beginning
+    claudeMessages.push({
+      role: 'user',
+      content: `<system>${systemContent}</system>\n\nBased on this conversation, generate 3-5 brief, relevant follow-up questions about cycling that the user might want to ask next. Keep each suggestion under 60 characters. Format as a JSON array of strings only.`
+    });
+    
+    const response = await axios.post('https://api.anthropic.com/v1/messages', {
+      model: 'claude-3-haiku-20240307',
+      max_tokens: 400,
+      messages: claudeMessages
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': this.claudeApiKey,
+        'anthropic-version': '2023-06-01'
+      }
+    });
+    
+    // Parse the response text as JSON array
+    try {
+      const text = response.data.content[0].text;
+      // Extract JSON array from possible text explanation - using standard regex without 's' flag
+      const match = text.match(/\[[\s\S]*\]/);
+      if (match) {
+        return JSON.parse(match[0]);
+      }
+      // If no array is found but there's a comma-separated list, convert it
+      const lines = text.split('\n').filter(line => line.trim() !== '').map(line => line.replace(/^\d+\.\s*/, '').trim());
+      if (lines.length > 0) {
+        return lines;
+      }
+      return [];
+    } catch (error) {
+      console.error('Failed to parse suggested queries', error);
+      return [];
+    }
+  }
+  
+  private async openAISuggestedQueries(messages: ChatMessage[], context?: ChatContext) {
+    // Convert our message format to OpenAI's format
+    const openaiMessages = messages.map(msg => ({
+      role: msg.role,
+      content: msg.content
+    }));
+    
+    // Add system message for generating suggestions
+    openaiMessages.push({
+      role: 'system',
+      content: 'Generate 3-5 brief, relevant follow-up questions about cycling that the user might want to ask next based on the conversation history. Keep each suggestion under 60 characters. Format as a JSON array of strings only.'
+    });
+    
+    const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+      model: 'gpt-3.5-turbo',
+      messages: openaiMessages,
+      temperature: 0.7
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.openaiApiKey}`
+      }
+    });
+    
+    // Parse the response text as JSON array
+    try {
+      const text = response.data.choices[0].message.content;
+      // Extract JSON array from possible text explanation - using standard regex without 's' flag
+      const match = text.match(/\[[\s\S]*\]/);
+      if (match) {
+        return JSON.parse(match[0]);
+      }
+      // If no array is found but there's a comma-separated list, convert it
+      const lines = text.split('\n').filter(line => line.trim() !== '').map(line => line.replace(/^\d+\.\s*/, '').trim());
+      if (lines.length > 0) {
+        return lines;
+      }
+      return [];
+    } catch (error) {
+      console.error('Failed to parse suggested queries', error);
+      return [];
+    }
   }
 }

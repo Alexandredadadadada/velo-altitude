@@ -32,8 +32,6 @@ const weatherCache = {
           this.data.set(key, parsedCache[key]);
         });
         
-        console.log(`[WeatherCache] Chargement du cache depuis localStorage: ${this.data.size} entrées`);
-        
         // Purger les entrées trop anciennes
         this.purgeExpiredEntries();
       }
@@ -58,7 +56,6 @@ const weatherCache = {
       });
       
       localStorage.setItem(STORAGE_KEY, JSON.stringify(cacheObject));
-      console.log(`[WeatherCache] Cache sauvegardé dans localStorage: ${this.data.size} entrées`);
     } catch (error) {
       console.error('[WeatherCache] Erreur lors de la sauvegarde du cache:', error);
     }
@@ -79,7 +76,6 @@ const weatherCache = {
     });
     
     if (purgedCount > 0) {
-      console.log(`[WeatherCache] Purge automatique: ${purgedCount} entrées supprimées`);
       this.saveToLocalStorage();
     }
     
@@ -99,13 +95,11 @@ const weatherCache = {
     
     // Vérifier si les données sont dans le cache et toujours valides
     if (cachedData && (Date.now() - cachedData.timestamp < CACHE_DURATION)) {
-      console.log(`[WeatherCache] ✅ Utilisation des données météo en cache pour ${cacheKey}`);
       return cachedData.data;
     }
     
     try {
       // Récupérer de nouvelles données
-      console.log(`[WeatherCache] 🔄 Récupération de nouvelles données météo pour ${cacheKey}`);
       const weatherData = await fetchFunction(latitude, longitude);
       
       // Stocker dans le cache
@@ -123,12 +117,10 @@ const weatherCache = {
       
       // En cas d'erreur, utiliser les données en cache même si elles sont expirées
       if (cachedData) {
-        console.log(`[WeatherCache] ⚠️ Utilisation des données en cache expirées pour ${cacheKey}`);
         return cachedData.data;
       }
       
       // Si pas de données en cache, renvoyer des données par défaut
-      console.log(`[WeatherCache] ⚠️ Utilisation des données météo par défaut pour ${cacheKey}`);
       return this.getDefaultWeatherData();
     }
   },
@@ -176,7 +168,6 @@ const weatherCache = {
   clearCache() {
     this.data.clear();
     localStorage.removeItem(STORAGE_KEY);
-    console.log('[WeatherCache] 🧹 Cache entièrement vidé');
   },
   
   /**

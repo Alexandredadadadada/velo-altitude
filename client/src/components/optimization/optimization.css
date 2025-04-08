@@ -1,0 +1,55 @@
+/* Styles pour les composants d'optimisation */
+
+.optimized-component-placeholder {
+  min-height: 20px;
+  display: block;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lazy-loading-container {
+  min-height: 10px;
+  position: relative;
+  display: block;
+}
+
+.optimized-component-placeholder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: placeholder-shimmer 1.5s infinite;
+}
+
+@keyframes placeholder-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.lazy-loaded-component {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.performance-optimized {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

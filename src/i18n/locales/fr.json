@@ -22,7 +22,7 @@
   "difficulty": "Difficulté",
   "gradient": "Pente",
   "temperature": "Température",
-  "wind": "Vent",
+  "windSpeed": "Vent",
   "precipitation": "Précipitations",
   "sunshine": "Ensoleillement",
   "asphalt": "Asphalte",
@@ -53,5 +53,27 @@
   "current": "les",
   "conditions": "actuelles",
   "rain": "pluie",
-  "wind": "vent"
+  "wind": "vent",
+  
+  "chatbox": {
+    "title": "Assistant Velo-Altitude",
+    "assistantName": "Assistant IA",
+    "options": "Options",
+    "minimize": "Réduire",
+    "maximize": "Agrandir",
+    "darkMode": "Mode sombre",
+    "lightMode": "Mode clair",
+    "switchLanguage": "Changer de langue",
+    "exportChat": "Exporter la conversation",
+    "clearHistory": "Effacer l'historique",
+    "inputPlaceholder": "Posez votre question...",
+    "emptyState": "Bonjour ! Je suis votre assistant cyclisme. Comment puis-je vous aider aujourd'hui ?",
+    "suggestedQueries": "Questions suggérées"
+  },
+  
+  "common": {
+    "user": "Utilisateur",
+    "loadingMessage": "Chargement...",
+    "error": "Erreur"
+  }
 }

@@ -1,0 +1,35 @@
+/**
+ * Styles pour le composant PageTransition
+ * 
+ * Fournit des styles de base pour les animations de transition entre pages
+ */
+
+.page-transition-container {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* Optimisation des animations */
+.page-transition-container * {
+  backface-visibility: hidden;
+}
+
+/* Support pour différents navigateurs */
+@supports (transform-style: preserve-3d) {
+  .page-transition-container {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Garantit que les animations ne génèrent pas de scrollbar temporaire */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Amélioration des performances d'animation */
+.page-transition-container {
+  will-change: opacity, transform;
+}

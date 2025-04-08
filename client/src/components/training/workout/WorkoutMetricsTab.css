@@ -1,0 +1,242 @@
+/**
+ * Styles pour le composant WorkoutMetricsTab
+ * 
+ * Design premium pour l'affichage des métriques d'entraînement
+ * Optimisé pour l'intégration avec les services de cache et de monitoring
+ * compatibles avec les standards de performance de Velo-Altitude
+ */
+
+.workout-metrics-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.workout-metrics-tab h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.workout-metrics-tab h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #3494E6, #EC6EAD);
+  border-radius: 3px;
+}
+
+.workout-metrics-tab h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1rem;
+}
+
+/* Styles pour la section d'aperçu des métriques */
+.metrics-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.metric-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-card.power .metric-icon {
+  color: #FFC107;
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.metric-card.heart-rate .metric-icon {
+  color: #F44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.metric-card.cadence .metric-icon {
+  color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.metric-card.speed .metric-icon {
+  color: #3494E6;
+  background: rgba(52, 148, 230, 0.1);
+}
+
+.metric-values {
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.metric-main-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.metric-main-value .unit {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 0.3rem;
+}
+
+.metric-secondary-value {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.metric-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Styles pour les graphiques */
+.metrics-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.chart-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 200px;
+}
+
+.chart-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Styles pour l'analyse des performances */
+.metrics-analysis-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.analysis-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.analysis-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.analysis-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  margin: 1rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.analysis-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* État de chargement pour intégration avec le service de monitoring */
+.metrics-loading {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles adaptatifs */
+@media (max-width: 992px) {
+  .metrics-overview,
+  .metrics-charts,
+  .metrics-analysis-cards {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .workout-metrics-tab h2 {
+    font-size: 1.3rem;
+  }
+  
+  .metric-card {
+    padding: 1.2rem;
+  }
+  
+  .metric-main-value {
+    font-size: 1.6rem;
+  }
+  
+  .chart-card {
+    min-height: 250px;
+  }
+}

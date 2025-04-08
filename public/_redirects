@@ -1,0 +1,22 @@
+# Règles de redirection pour Netlify
+
+# Redirections des anciennes URLs vers les nouvelles
+/col/*                    /cols/:splat              301
+/itineraire/*             /itineraires/:splat       301
+/entrainements/*          /entrainement/:splat      301
+/avis/*                   /communaute/avis/:splat   301
+/profile/*                /profil/:splat            301
+
+# Redirection des URL avec trailing slash vers non-trailing slash
+/*/ /:splat 301
+
+# Redirections linguistiques
+/en/*  /en/:splat  200
+/de/*  /de/:splat  200
+
+# Redirections des pages d'authentification 
+/login  /connexion 301
+/signup /inscription 301
+
+# SPA fallback - toutes les autres URLs sont gérées par React Router
+/*    /index.html   200

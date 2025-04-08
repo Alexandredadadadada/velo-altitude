@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSafeAuth } from '../auth/AuthCore';
+import { useSafeAuth } from '../auth';
+import LoadingSpinner from './ui/loaders/LoadingSpinner';
 
 /**
  * Composant d'encapsulation d'authentification
@@ -15,7 +16,7 @@ function AuthenticationWrapper({ children }) {
     return (
       <div className="loading-screen">
         <div className="loading-container">
-          <div className="loading-spinner"></div>
+          <LoadingSpinner />
           <p>Chargement de l'authentification...</p>
         </div>
       </div>

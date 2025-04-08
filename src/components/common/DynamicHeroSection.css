@@ -1,0 +1,199 @@
+/**
+ * Styles pour le composant DynamicHeroSection
+ * 
+ * Styles visuels avancés pour créer une section hero immersive
+ * qui crée un effet "WOW" dès le premier regard
+ */
+
+.dynamic-hero-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+/* Styles du background */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-video,
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.hero-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(26, 73, 119, 0.6) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 2;
+}
+
+/* Styles du contenu */
+.hero-content-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  will-change: transform;
+}
+
+.hero-content {
+  padding: 40px;
+  border-radius: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  opacity: 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0;
+  line-height: 1.5;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-action {
+  opacity: 0;
+  font-size: 1rem;
+  min-width: 160px;
+}
+
+.hero-custom-content {
+  margin-top: 2rem;
+}
+
+/* Indicateur de scroll */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  width: 30px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.scroll-arrow {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+  border-right: 3px solid rgba(255, 255, 255, 0.8);
+  transform: rotate(45deg);
+}
+
+.scroll-arrow::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+  border-right: 3px solid rgba(255, 255, 255, 0.4);
+  animation: pulse 2s infinite;
+}
+
+/* Effet de particules flottantes (optionnel) */
+.floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+/* Media queries pour le responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-content {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-content {
+    padding: 20px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+}

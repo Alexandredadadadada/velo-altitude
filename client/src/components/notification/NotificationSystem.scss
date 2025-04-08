@@ -1,0 +1,97 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.notification-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 420px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 9999;
+  padding: 1rem;
+  pointer-events: none; // Permet de cliquer a travers le conteneur
+  
+  // Positions
+  &--top-left {
+    top: 0;
+    left: 0;
+  }
+  
+  &--top-center {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  &--top-right {
+    top: 0;
+    right: 0;
+  }
+  
+  &--bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+  
+  &--bottom-center {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  &--bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+  
+  // Chaque notification a l'interieur du conteneur peut recevoir des evenements
+  > * {
+    pointer-events: auto;
+  }
+  
+  // Scroll invisible mais fonctionnel
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  &:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+// Responsive
+@media (max-width: 480px) {
+  .notification-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5rem;
+    
+    // En mobile, toujours en haut ou en bas
+    &--top-left,
+    &--top-center,
+    &--top-right {
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: none;
+    }
+    
+    &--bottom-left,
+    &--bottom-center,
+    &--bottom-right {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: none;
+    }
+  }
+}

@@ -1,0 +1,421 @@
+/**
+ * Styles pour le composant PremiumNavigation
+ * 
+ * Navigation principale premium avec effet glassmorphism et animations fluides
+ */
+
+.premium-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+  will-change: transform, background-color, box-shadow;
+}
+
+/* Variation flottante */
+.premium-navigation--floating {
+  margin: 20px;
+  border-radius: 70px;
+  width: calc(100% - 40px);
+  height: 60px;
+}
+
+/* Version scrollée (plus compacte) */
+.premium-navigation--scrolled {
+  height: 60px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+.premium-navigation--floating.premium-navigation--scrolled {
+  margin: 10px;
+  width: calc(100% - 20px);
+  height: 55px;
+}
+
+/* Conteneur principal */
+.premium-navigation__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.premium-navigation__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 20px;
+  height: 40px;
+}
+
+.premium-navigation__logo img {
+  height: 100%;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.premium-navigation__logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #1A4977, #24A26F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu principal */
+.premium-navigation__menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.premium-navigation__item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.premium-navigation__link {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  height: 100%;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.premium-navigation__link:hover {
+  color: white;
+}
+
+/* Indicateur de lien actif */
+.premium-navigation__link--active {
+  color: white;
+}
+
+.premium-navigation__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  height: 3px;
+  background: linear-gradient(90deg, #24A26F, #1A4977);
+  border-radius: 3px 3px 0 0;
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+  transform: scaleY(1);
+}
+
+.premium-navigation__link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  height: 3px;
+  background: linear-gradient(90deg, #24A26F, #1A4977);
+  border-radius: 3px 3px 0 0;
+  transform: scaleY(1);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+.premium-navigation__link:not(.premium-navigation__link--active)::after {
+  transform: scaleY(0);
+}
+
+/* Icônes dans les liens */
+.premium-navigation__icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.premium-navigation__text {
+  position: relative;
+}
+
+/* Badges */
+.premium-navigation__badge {
+  position: absolute;
+  top: -8px;
+  right: -15px;
+  background: #FF6B35;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 16px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Actions (droite de la navigation) */
+.premium-navigation__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Widget météo compact */
+.premium-navigation__weather {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-right: 5px;
+}
+
+.premium-navigation__weather-icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.premium-navigation__weather-temp {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+}
+
+/* Bouton de notification */
+.premium-navigation__notification-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.premium-navigation__notification-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.premium-navigation__notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #FF6B35;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Profil utilisateur */
+.premium-navigation__profile {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.premium-navigation__avatar,
+.premium-navigation__avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.premium-navigation__avatar {
+  object-fit: cover;
+}
+
+.premium-navigation__avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1A4977, #24A26F);
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.premium-navigation__profile:hover .premium-navigation__avatar,
+.premium-navigation__profile:hover .premium-navigation__avatar-placeholder {
+  border-color: white;
+  transform: scale(1.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Bouton de connexion */
+.premium-navigation__login {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+/* Menu mobile et bouton */
+.premium-navigation__mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.premium-navigation__mobile-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.premium-navigation__mobile-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.premium-navigation__mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.premium-navigation__mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Menu mobile */
+.premium-navigation__mobile-menu {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  right: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  z-index: 999;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  display: none;
+}
+
+.premium-navigation__mobile-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.premium-navigation__mobile-item {
+  margin-bottom: 5px;
+}
+
+.premium-navigation__mobile-link {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.premium-navigation__mobile-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.premium-navigation__mobile-link--active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.premium-navigation__mobile-icon {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+  .premium-navigation__text {
+    display: none;
+  }
+  
+  .premium-navigation__icon {
+    margin-right: 0;
+    font-size: 1.3rem;
+  }
+  
+  .premium-navigation__link {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-navigation__menu {
+    display: none;
+  }
+  
+  .premium-navigation__mobile-toggle {
+    display: flex;
+  }
+  
+  .premium-navigation__mobile-menu {
+    display: block;
+  }
+  
+  .premium-navigation--floating {
+    margin: 10px;
+    border-radius: 50px;
+    width: calc(100% - 20px);
+  }
+  
+  .premium-navigation__weather {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-navigation__container {
+    padding: 0 15px;
+  }
+  
+  .premium-navigation__logo-text {
+    font-size: 1.25rem;
+  }
+}

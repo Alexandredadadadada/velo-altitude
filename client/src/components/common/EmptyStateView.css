@@ -1,0 +1,128 @@
+/**
+ * Styles pour le composant EmptyStateView
+ * 
+ * Design premium avec animations fluides et compatibilité WCAG 2.1 AA
+ */
+
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 300px;
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(30, 30, 40, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.empty-state-icon {
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.empty-state-image {
+  margin-bottom: 1.5rem;
+  max-width: 180px;
+  max-height: 180px;
+}
+
+.empty-state-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.empty-state-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1rem;
+}
+
+.empty-state-message {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 1.5rem;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.empty-state-action {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(52, 148, 230, 0.5), rgba(236, 110, 173, 0.5));
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.empty-state-action:hover {
+  background: linear-gradient(135deg, rgba(52, 148, 230, 0.7), rgba(236, 110, 173, 0.7));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state-action:focus {
+  box-shadow: 0 0 0 3px rgba(52, 148, 230, 0.3);
+}
+
+/* Animation subtile de flottement pour l'icône */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.empty-state-icon {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Adaptative */
+@media (max-width: 768px) {
+  .empty-state-container {
+    padding: 1.5rem;
+    min-height: 250px;
+  }
+  
+  .empty-state-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .empty-state-image {
+    max-width: 140px;
+    max-height: 140px;
+    margin-bottom: 1rem;
+  }
+  
+  .empty-state-title {
+    font-size: 1.3rem;
+  }
+  
+  .empty-state-message {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,373 @@
+/**
+ * Styles pour la page de paramètres utilisateur
+ * 
+ * Interface élégante qui s'intègre parfaitement avec le service de profil utilisateur
+ * optimisé et le système d'authentification JWT du backend
+ */
+
+.user-settings-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.user-settings-container {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.user-settings-header {
+  padding: 40px 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.user-settings-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.user-settings-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.user-settings-success,
+.user-settings-error {
+  margin: 0 40px 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.user-settings-success {
+  background-color: rgba(40, 167, 69, 0.15);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  color: rgba(40, 167, 69, 0.9);
+}
+
+.user-settings-error {
+  background-color: rgba(228, 37, 53, 0.15);
+  border: 1px solid rgba(228, 37, 53, 0.3);
+  color: rgba(255, 200, 200, 0.9);
+}
+
+.user-settings-tabs {
+  padding: 0 40px;
+}
+
+.user-settings-content {
+  padding: 30px 40px 40px;
+}
+
+.user-settings-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-settings-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.user-settings-section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 20px;
+}
+
+.user-settings-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.user-settings-form-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Styles pour la section Strava */
+.user-settings-strava {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.user-settings-strava-connected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.user-settings-strava-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-settings-strava-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(252, 76, 2, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.user-settings-strava-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-settings-strava-username {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.user-settings-strava-sync {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.user-settings-strava-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.user-settings-strava-sync-button,
+.user-settings-strava-disconnect-button {
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.user-settings-strava-sync-button {
+  color: white;
+}
+
+.user-settings-strava-disconnect-button {
+  background-color: rgba(228, 37, 53, 0.2);
+  color: rgba(228, 37, 53, 0.9);
+}
+
+.user-settings-strava-disconnect-button:hover {
+  background-color: rgba(228, 37, 53, 0.3);
+}
+
+.user-settings-strava-disconnected {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.user-settings-strava-message {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.user-settings-strava-connect-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #FC4C02; /* Couleur Strava */
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(252, 76, 2, 0.3);
+}
+
+.user-settings-strava-connect-button:hover {
+  background-color: #E34402;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(252, 76, 2, 0.4);
+}
+
+.user-settings-strava-connect-button:disabled,
+.user-settings-strava-sync-button:disabled,
+.user-settings-strava-disconnect-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Boutons d'action en bas de page */
+.user-settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 40px 40px;
+  gap: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-settings-edit-button,
+.user-settings-save-button,
+.user-settings-cancel-button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.user-settings-edit-button,
+.user-settings-save-button {
+  color: white;
+}
+
+.user-settings-cancel-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.user-settings-cancel-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.user-settings-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* État de chargement */
+.user-settings-page--loading {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Éléments désactivés */
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-settings-header {
+    padding: 30px 30px 15px;
+  }
+  
+  .user-settings-title {
+    font-size: 1.7rem;
+  }
+  
+  .user-settings-subtitle {
+    font-size: 1rem;
+  }
+  
+  .user-settings-tabs,
+  .user-settings-content,
+  .user-settings-actions {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .user-settings-strava-connected {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-settings-page {
+    padding: 20px 10px;
+  }
+  
+  .user-settings-header {
+    padding: 25px 20px 10px;
+  }
+  
+  .user-settings-title {
+    font-size: 1.5rem;
+  }
+  
+  .user-settings-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .user-settings-success,
+  .user-settings-error {
+    margin: 0 20px 15px;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .user-settings-tabs,
+  .user-settings-content,
+  .user-settings-actions {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .user-settings-section-title {
+    font-size: 1.2rem;
+  }
+  
+  .user-settings-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .user-settings-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .user-settings-edit-button,
+  .user-settings-save-button,
+  .user-settings-cancel-button {
+    width: 100%;
+    text-align: center;
+  }
+}

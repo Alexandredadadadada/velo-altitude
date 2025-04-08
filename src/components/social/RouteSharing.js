@@ -20,7 +20,7 @@ import StravaIntegration from './StravaIntegration';
 import RouteService from '../../services/routeService';
 import SocialService from '../../services/socialService';
 import StravaService from '../../services/stravaService';
-import AuthService from '../../services/authService';
+import AuthService from '../../../client/src/services/authService';
 import WeatherService from '../../services/weatherService';
 import { Chart, registerables } from 'chart.js';
 import 'leaflet/dist/leaflet.css';

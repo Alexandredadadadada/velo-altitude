@@ -1,0 +1,669 @@
+/**
+ * Styles pour le composant PerformanceDashboard
+ * 
+ * Tableau de bord premium avec visualisations de données et effets visuels avancés
+ */
+
+.performance-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* En-tête avec info utilisateur et météo */
+.performance-dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section utilisateur */
+.performance-dashboard__user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.performance-dashboard__avatar-container {
+  position: relative;
+}
+
+.performance-dashboard__avatar,
+.performance-dashboard__avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.performance-dashboard__avatar {
+  object-fit: cover;
+}
+
+.performance-dashboard__avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1A4977, #24A26F);
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.performance-dashboard__level {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(135deg, #FF6B35, #E6B54A);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.performance-dashboard__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.performance-dashboard__user-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: white;
+}
+
+.performance-dashboard__user-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.performance-dashboard__user-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.performance-dashboard__user-stat-icon {
+  font-size: 1.1rem;
+}
+
+/* Widget météo */
+.performance-dashboard__weather {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 12px;
+  min-width: 220px;
+}
+
+.performance-dashboard__weather-current {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.performance-dashboard__weather-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.performance-dashboard__weather-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.performance-dashboard__weather-temp {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.performance-dashboard__weather-condition {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2px;
+}
+
+.performance-dashboard__weather-location {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.performance-dashboard__weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 10px;
+}
+
+.performance-dashboard__weather-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.performance-dashboard__weather-day-name {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.performance-dashboard__weather-day-icon {
+  font-size: 1.2rem;
+}
+
+.performance-dashboard__weather-day-temp {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Strava */
+.performance-dashboard__strava {
+  display: flex;
+  align-items: center;
+}
+
+.performance-dashboard__strava-connect,
+.performance-dashboard__strava-connected {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.performance-dashboard__strava-connect {
+  background-color: rgba(252, 76, 2, 0.85);
+  border: none;
+}
+
+.performance-dashboard__strava-connect:hover {
+  background-color: rgba(252, 76, 2, 1);
+  transform: translateY(-2px);
+}
+
+.performance-dashboard__strava-connected {
+  background-color: rgba(252, 76, 2, 0.2);
+}
+
+.performance-dashboard__strava-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation par onglets */
+.performance-dashboard__tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  scrollbar-width: thin;
+}
+
+.performance-dashboard__tab {
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.performance-dashboard__tab:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.performance-dashboard__tab--active {
+  color: white;
+  background: linear-gradient(135deg, rgba(26, 73, 119, 0.8), rgba(36, 162, 111, 0.8));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenu du tableau de bord */
+.performance-dashboard__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Rangée de statistiques */
+.performance-dashboard__stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.performance-dashboard__stat-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.performance-dashboard__stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.performance-dashboard__stat-icon {
+  font-size: 2.5rem;
+  margin-right: 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.stat-icon--distance {
+  background: linear-gradient(135deg, rgba(26, 73, 119, 0.3), rgba(26, 73, 119, 0.1));
+  color: #1A4977;
+}
+
+.stat-icon--elevation {
+  background: linear-gradient(135deg, rgba(36, 162, 111, 0.3), rgba(36, 162, 111, 0.1));
+  color: #24A26F;
+}
+
+.stat-icon--achievements {
+  background: linear-gradient(135deg, rgba(230, 181, 74, 0.3), rgba(230, 181, 74, 0.1));
+  color: #E6B54A;
+}
+
+.stat-icon--routes {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.3), rgba(255, 107, 53, 0.1));
+  color: #FF6B35;
+}
+
+.performance-dashboard__stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.performance-dashboard__stat-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.performance-dashboard__stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.performance-dashboard__stat-caption {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Carte avec graphique */
+.performance-dashboard__chart-card {
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.performance-dashboard__chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.performance-dashboard__chart-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.performance-dashboard__chart-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.performance-dashboard__chart-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.performance-dashboard__chart-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.performance-dashboard__chart-button--active {
+  background: linear-gradient(135deg, rgba(26, 73, 119, 0.8), rgba(36, 162, 111, 0.8));
+  color: white;
+}
+
+.performance-dashboard__chart {
+  height: 250px;
+  position: relative;
+}
+
+.performance-dashboard__chart-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Styling pour les graphiques D3.js */
+.chart-line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-point {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-axis-x, .chart-axis-y {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+
+.chart-axis-x path, .chart-axis-y path,
+.chart-axis-x line, .chart-axis-y line {
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+/* Chargement */
+.performance-dashboard__chart-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #24A26F;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* État vide */
+.performance-dashboard__chart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+}
+
+.performance-dashboard__chart-empty-icon {
+  font-size: 2.5rem;
+  opacity: 0.5;
+}
+
+.performance-dashboard__chart-empty-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 250px;
+}
+
+/* Activités récentes */
+.performance-dashboard__recent-activities {
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.performance-dashboard__section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.performance-dashboard__activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.performance-dashboard__activity-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.performance-dashboard__activity-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.performance-dashboard__activity-icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.performance-dashboard__activity-details {
+  flex: 1;
+}
+
+.performance-dashboard__activity-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.performance-dashboard__activity-stats {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.performance-dashboard__activity-date {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 10px;
+}
+
+/* État vide pour les activités */
+.performance-dashboard__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 15px;
+  text-align: center;
+}
+
+.performance-dashboard__empty-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.performance-dashboard__empty-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.performance-dashboard__empty-action {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(26, 73, 119, 0.8), rgba(36, 162, 111, 0.8));
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.performance-dashboard__empty-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenu de substitution pour les onglets à venir */
+.performance-dashboard__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+  border-radius: 16px;
+}
+
+.performance-dashboard__placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.performance-dashboard__placeholder-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.performance-dashboard__placeholder-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  max-width: 300px;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+  .performance-dashboard__stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .performance-dashboard__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .performance-dashboard__weather {
+    width: 100%;
+  }
+  
+  .performance-dashboard__strava {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .performance-dashboard__user {
+    width: 100%;
+  }
+  
+  .performance-dashboard__activity-item {
+    flex-wrap: wrap;
+  }
+  
+  .performance-dashboard__activity-date {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: right;
+  }
+}
+
+@media (max-width: 480px) {
+  .performance-dashboard__stats-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .performance-dashboard__user {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .performance-dashboard__user-stats {
+    justify-content: center;
+  }
+  
+  .performance-dashboard__weather-forecast {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}

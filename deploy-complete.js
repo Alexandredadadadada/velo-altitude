@@ -12,7 +12,7 @@ function runCommand(command, directory, silent = false) {
   const options = { 
     cwd: directory || process.cwd(),
     stdio: silent ? 'pipe' : 'inherit',
-    env: { ...process.env, CI: 'false', DISABLE_ESLINT_PLUGIN: 'true' }
+    env: { ...process.env, CI: 'false' }
   };
   
   try {
@@ -112,7 +112,6 @@ async function deployVeloAltitude() {
     // Mode de déploiement
     NODE_ENV: 'production',
     GENERATE_SOURCEMAP: 'false',
-    DISABLE_ESLINT_PLUGIN: 'true',
     CI: 'false'
   };
   

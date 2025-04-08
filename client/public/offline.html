@@ -1,200 +1,336 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Velo - Hors ligne</title>
-  <style>
-    body {
-      font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hors ligne - Velo-Altitude</title>
+    <meta name="description" content="Velo-Altitude - Mode hors ligne temporairement actif">
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0466C8" />
     
-    .offline-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .header {
-      background-color: #1976d2;
-      color: white;
-      padding: 1rem;
-      width: 100%;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #1976d2;
-    }
-    
-    p {
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-    
-    .cycling-animation {
-      margin: 2rem 0;
-      position: relative;
-    }
-    
-    .bike {
-      font-size: 3rem;
-      animation: ride 4s infinite linear;
-      position: relative;
-    }
-    
-    @keyframes ride {
-      0% { transform: translateX(-150px); }
-      100% { transform: translateX(150px); }
-    }
-    
-    .road {
-      height: 5px;
-      background-color: #333;
-      width: 300px;
-      margin: 10px auto;
-      border-radius: 5px;
-    }
-    
-    .cached-features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    
-    .feature-card {
-      background-color: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      width: 200px;
-      text-align: center;
-    }
-    
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #1976d2;
-    }
-    
-    .retry-button {
-      background-color: #1976d2;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      margin-top: 2rem;
-    }
-    
-    .retry-button:hover {
-      background-color: #1565c0;
-    }
-    
-    .footer {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      width: 100%;
-    }
-    
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-      
-      .cached-features {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .feature-card {
-        width: 100%;
-        max-width: 250px;
-      }
-    }
-  </style>
+    <style>
+        /* Styles critiques inlinés pour un rendu immédiat */
+        :root {
+            --primary-color: #0466C8;
+            --secondary-color: #00A896;
+            --background-color: #f5f7fa;
+            --text-color: #333;
+            --error-color: #EF476F;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .offline-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .offline-logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+            margin: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #0353a4;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(4, 102, 200, 0.1);
+        }
+        
+        .cached-data {
+            margin-top: 3rem;
+            width: 100%;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            padding: 1.5rem;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+        
+        /* Animation du logo pour feedback visuel */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .offline-logo {
+            animation: pulse 2s infinite ease-in-out;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="header">
-    <div class="logo">Dashboard Velo</div>
-  </div>
-  
-  <div class="offline-container">
-    <h1>Vous êtes actuellement hors ligne</h1>
-    <p>La connexion internet semble indisponible. Certaines fonctionnalités de Dashboard Velo sont disponibles hors ligne, mais d'autres nécessitent une connexion internet active.</p>
-    
-    <div class="cycling-animation">
-      <div class="bike">🚴</div>
-      <div class="road"></div>
+    <div class="offline-container">
+        <img src="/static/media/logo.svg" alt="Velo-Altitude Logo" class="offline-logo" />
+        <h1>Mode hors ligne</h1>
+        <p>Vous êtes actuellement hors ligne. Certaines fonctionnalités de Velo-Altitude ne sont pas disponibles sans connexion internet. Nous avons cependant préservé les données locales auxquelles vous pouvez accéder.</p>
+        
+        <div>
+            <button class="btn" id="reload-btn">Retenter la connexion</button>
+            <button class="btn btn-outline" id="show-cached-btn">Afficher les données disponibles</button>
+        </div>
+        
+        <div id="cached-data" class="cached-data" style="display: none;">
+            <h2>Contenu disponible hors ligne</h2>
+            <div id="cached-cols" class="card">
+                <h3>Cols enregistrés</h3>
+                <div id="cols-list">Chargement des données en cache...</div>
+            </div>
+            
+            <div id="cached-challenges" class="card">
+                <h3>Défis enregistrés</h3>
+                <div id="challenges-list">Chargement des données en cache...</div>
+            </div>
+            
+            <div id="cached-profile" class="card">
+                <h3>Votre profil</h3>
+                <div id="profile-data">Chargement des données en cache...</div>
+            </div>
+        </div>
     </div>
     
-    <p>Voici ce que vous pouvez toujours consulter :</p>
+    <footer class="footer">
+        <p>&copy; 2023 Velo-Altitude. Tous droits réservés.</p>
+    </footer>
     
-    <div class="cached-features">
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Statistiques</h3>
-        <p>Consultez vos dernières statistiques d'entraînement sauvegardées.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">🗺️</div>
-        <h3>Cols favoris</h3>
-        <p>Accédez à vos cols favoris enregistrés en cache.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">📝</div>
-        <h3>Programme</h3>
-        <p>Consultez votre dernier programme d'entraînement.</p>
-      </div>
-    </div>
-    
-    <p>Pour accéder à toutes les fonctionnalités, veuillez vous reconnecter à internet.</p>
-    
-    <button class="retry-button" onclick="window.location.reload()">Réessayer la connexion</button>
-  </div>
-  
-  <div class="footer">
-    © 2025 Dashboard Velo - Grand Est Cyclisme
-  </div>
-  
-  <script>
-    // Vérifier périodiquement la connexion internet
-    setInterval(() => {
-      if (navigator.onLine) {
-        window.location.reload();
-      }
-    }, 5000);
-  </script>
+    <script>
+        // Script minimal pour la page hors connexion
+        document.addEventListener('DOMContentLoaded', function() {
+            const reloadBtn = document.getElementById('reload-btn');
+            const showCachedBtn = document.getElementById('show-cached-btn');
+            const cachedData = document.getElementById('cached-data');
+            
+            // Fonction de rechargement
+            reloadBtn.addEventListener('click', function() {
+                window.location.reload();
+            });
+            
+            // Afficher/masquer les données en cache
+            showCachedBtn.addEventListener('click', function() {
+                if (cachedData.style.display === 'none') {
+                    cachedData.style.display = 'block';
+                    showCachedBtn.textContent = 'Masquer les données';
+                    loadCachedData();
+                } else {
+                    cachedData.style.display = 'none';
+                    showCachedBtn.textContent = 'Afficher les données disponibles';
+                }
+            });
+            
+            // Charger les données depuis IndexedDB
+            function loadCachedData() {
+                // Ouvrir la base de données
+                const dbPromise = indexedDB.open('velo-altitude-offline', 1);
+                
+                dbPromise.onerror = function() {
+                    console.error("Erreur d'accès à la base de données IndexedDB");
+                    document.getElementById('cols-list').innerHTML = 'Aucune donnée disponible';
+                    document.getElementById('challenges-list').innerHTML = 'Aucune donnée disponible';
+                    document.getElementById('profile-data').innerHTML = 'Aucune donnée disponible';
+                };
+                
+                dbPromise.onsuccess = function(event) {
+                    const db = event.target.result;
+                    
+                    // Charger les cols
+                    try {
+                        const colsTransaction = db.transaction('cols', 'readonly');
+                        const colsStore = colsTransaction.objectStore('cols');
+                        const colsRequest = colsStore.getAll();
+                        
+                        colsRequest.onsuccess = function() {
+                            const cols = colsRequest.result;
+                            if (cols && cols.length > 0) {
+                                let colsHtml = '<ul>';
+                                cols.slice(0, 10).forEach(col => {
+                                    colsHtml += `<li>${col.name} - ${col.height}m</li>`;
+                                });
+                                if (cols.length > 10) {
+                                    colsHtml += `<li>...et ${cols.length - 10} autres</li>`;
+                                }
+                                colsHtml += '</ul>';
+                                document.getElementById('cols-list').innerHTML = colsHtml;
+                            } else {
+                                document.getElementById('cols-list').innerHTML = 'Aucun col enregistré';
+                            }
+                        };
+                        
+                        colsRequest.onerror = function() {
+                            document.getElementById('cols-list').innerHTML = 'Erreur lors du chargement des cols';
+                        };
+                    } catch (error) {
+                        document.getElementById('cols-list').innerHTML = 'Données non disponibles';
+                    }
+                    
+                    // Charger les défis
+                    try {
+                        const challengesTransaction = db.transaction('challenges', 'readonly');
+                        const challengesStore = challengesTransaction.objectStore('challenges');
+                        const challengesRequest = challengesStore.getAll();
+                        
+                        challengesRequest.onsuccess = function() {
+                            const challenges = challengesRequest.result;
+                            if (challenges && challenges.length > 0) {
+                                let challengesHtml = '<ul>';
+                                challenges.forEach(challenge => {
+                                    challengesHtml += `<li>${challenge.title}</li>`;
+                                });
+                                challengesHtml += '</ul>';
+                                document.getElementById('challenges-list').innerHTML = challengesHtml;
+                            } else {
+                                document.getElementById('challenges-list').innerHTML = 'Aucun défi enregistré';
+                            }
+                        };
+                        
+                        challengesRequest.onerror = function() {
+                            document.getElementById('challenges-list').innerHTML = 'Erreur lors du chargement des défis';
+                        };
+                    } catch (error) {
+                        document.getElementById('challenges-list').innerHTML = 'Données non disponibles';
+                    }
+                    
+                    // Charger le profil
+                    try {
+                        const userTransaction = db.transaction('user', 'readonly');
+                        const userStore = userTransaction.objectStore('user');
+                        const userRequest = userStore.get('profile');
+                        
+                        userRequest.onsuccess = function() {
+                            const profile = userRequest.result;
+                            if (profile) {
+                                document.getElementById('profile-data').innerHTML = `
+                                    <p><strong>Nom:</strong> ${profile.firstName} ${profile.lastName}</p>
+                                    <p><strong>Email:</strong> ${profile.email}</p>
+                                    <p><strong>Niveau:</strong> ${profile.level || 'Non défini'}</p>
+                                `;
+                            } else {
+                                document.getElementById('profile-data').innerHTML = 'Profil non disponible';
+                            }
+                        };
+                        
+                        userRequest.onerror = function() {
+                            document.getElementById('profile-data').innerHTML = 'Erreur lors du chargement du profil';
+                        };
+                    } catch (error) {
+                        document.getElementById('profile-data').innerHTML = 'Données non disponibles';
+                    }
+                };
+            }
+            
+            // Vérifier périodiquement la reconnexion
+            setInterval(() => {
+                if (navigator.onLine) {
+                    const statusElement = document.createElement('div');
+                    statusElement.style.position = 'fixed';
+                    statusElement.style.top = '0';
+                    statusElement.style.left = '0';
+                    statusElement.style.right = '0';
+                    statusElement.style.backgroundColor = '#4CAF50';
+                    statusElement.style.color = 'white';
+                    statusElement.style.padding = '10px';
+                    statusElement.style.textAlign = 'center';
+                    statusElement.textContent = 'Connexion rétablie! Redirection...';
+                    document.body.appendChild(statusElement);
+                    
+                    // Rediriger après 2 secondes
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 2000);
+                }
+            }, 5000);
+        });
+    </script>
 </body>
 </html>

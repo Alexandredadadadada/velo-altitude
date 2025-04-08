@@ -9,9 +9,10 @@ export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '/api';
 
 // Clés d'API pour les services tiers - à configurer dans les variables d'environnement Netlify
 export const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_TOKEN || process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || 'pk.placeholder';
-export const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY || 'placeholder';
+export const WEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY || 'placeholder';
 export const STRAVA_CLIENT_ID = process.env.REACT_APP_STRAVA_CLIENT_ID || 'placeholder';
-export const STRAVA_CLIENT_SECRET = process.env.REACT_APP_STRAVA_CLIENT_SECRET || 'placeholder';
+// export const STRAVA_CLIENT_SECRET = process.env.REACT_APP_STRAVA_CLIENT_SECRET || 'placeholder'; // REMOVED FOR SECURITY
+export const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY || 'placeholder';
 
 // Constantes d'application
 export const APP_NAME = 'Velo-Altitude';

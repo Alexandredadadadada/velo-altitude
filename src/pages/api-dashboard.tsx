@@ -9,21 +9,27 @@ import {
   Divider,
   Button,
   Alert,
-  Snackbar
+  Snackbar,
+  useMediaQuery
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import AthleteProfile from '../components/athlete/AthleteProfile';
 import RouteDetails from '../components/routes/RouteDetails';
 import TrainingRecommendations from '../components/training/TrainingRecommendations';
 import NutritionRecommendations from '../components/nutrition/NutritionRecommendations';
 import EquipmentRecommendations from '../components/equipment/EquipmentRecommendations';
 import { APIOrchestrator } from '../api/orchestration';
+import AIChatbox from '../components/dashboard/AIChatbox';
 
 const APIDashboard: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [currentTab, setCurrentTab] = useState(0);
   const [selectedRouteId, setSelectedRouteId] = useState<string>('');
   const [selectedActivityId, setSelectedActivityId] = useState<string>('');
   const [showNutrition, setShowNutrition] = useState(false);
   const [showEquipment, setShowEquipment] = useState(false);
+  const [chatboxVisible, setChatboxVisible] = useState(true);
   const [notification, setNotification] = useState<{open: boolean, message: string, severity: 'success' | 'error' | 'info'}>({
     open: false,
     message: '',
@@ -87,84 +93,108 @@ const APIDashboard: React.FC = () => {
   };
   
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Paper elevation={3} sx={{ p: 3, mb: 4, borderRadius: 2 }}>
-        <Typography variant="h3" gutterBottom>
-          Velo-Altitude Dashboard
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary" paragraph>
-          Tableau de bord d'intégration API pour le cyclisme de montagne
-        </Typography>
-        
-        <Alert severity="info" sx={{ mb: 3 }}>
-          Cette interface démontre l'intégration de la couche d'orchestration API avec les composants React pour Velo-Altitude.
-          Naviguez entre les onglets pour explorer les différentes fonctionnalités.
-        </Alert>
-        
-        <Box display="flex" justifyContent="flex-end" mb={2}>
-          <Button 
-            variant="outlined" 
-            color="primary" 
-            onClick={handleClearCache}
-            size="small"
+    <Box sx={{ position: 'relative', minHeight: '100vh' }}>
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <Paper elevation={3} sx={{ p: 3, mb: 4, borderRadius: 2 }}>
+          <Typography variant="h3" gutterBottom>
+            Velo-Altitude Dashboard
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary" paragraph>
+            Tableau de bord d'intégration API pour le cyclisme de montagne
+          </Typography>
+          
+          <Alert severity="info" sx={{ mb: 3 }}>
+            Cette interface démontre l'intégration de la couche d'orchestration API avec les composants React pour Velo-Altitude.
+            Naviguez entre les onglets pour explorer les différentes fonctionnalités.
+          </Alert>
+          
+          <Box display="flex" justifyContent="flex-end" mb={2}>
+            <Button 
+              variant="outlined" 
+              color="primary" 
+              onClick={handleClearCache}
+              size="small"
+            >
+              Vider le cache API
+            </Button>
+          </Box>
+          
+          <Divider sx={{ mb: 3 }} />
+          
+          <Tabs 
+            value={currentTab} 
+            onChange={handleTabChange}
+            variant="scrollable"
+            scrollButtons="auto"
+            sx={{ mb: 3 }}
           >
-            Vider le cache API
-          </Button>
-        </Box>
+            <Tab label="Profil Athlète" />
+            <Tab label="Détails Itinéraire" disabled={!selectedRouteId} />
+            <Tab label="Entraînement" />
+            <Tab label="Nutrition" disabled={!showNutrition} />
+            <Tab label="Équipement" disabled={!showEquipment} />
+          </Tabs>
+          
+          <Box sx={{ mt: 2 }}>
+            {currentTab === 0 && (
+              <AthleteProfile onSelectActivity={handleSelectActivity} />
+            )}
+            
+            {currentTab === 1 && selectedRouteId && (
+              <RouteDetails 
+                routeId={selectedRouteId}
+                onGetNutritionRecommendations={handleGetNutritionRecommendations}
+                onGetEquipmentRecommendations={handleGetEquipmentRecommendations}
+              />
+            )}
+            
+            {currentTab === 2 && (
+              <TrainingRecommendations />
+            )}
+            
+            {currentTab === 3 && showNutrition && selectedRouteId && (
+              <NutritionRecommendations routeId={selectedRouteId} />
+            )}
+            
+            {currentTab === 4 && showEquipment && selectedRouteId && (
+              <EquipmentRecommendations routeId={selectedRouteId} />
+            )}
+          </Box>
+        </Paper>
         
-        <Divider sx={{ mb: 3 }} />
-        
-        <Tabs 
-          value={currentTab} 
-          onChange={handleTabChange}
-          variant="scrollable"
-          scrollButtons="auto"
-          sx={{ mb: 3 }}
+        <Snackbar
+          open={notification.open}
+          autoHideDuration={6000}
+          onClose={handleCloseNotification}
         >
-          <Tab label="Profil Athlète" />
-          <Tab label="Détails Itinéraire" disabled={!selectedRouteId} />
-          <Tab label="Entraînement" />
-          <Tab label="Nutrition" disabled={!showNutrition} />
-          <Tab label="Équipement" disabled={!showEquipment} />
-        </Tabs>
-        
-        <Box sx={{ mt: 2 }}>
-          {currentTab === 0 && (
-            <AthleteProfile onSelectActivity={handleSelectActivity} />
-          )}
-          
-          {currentTab === 1 && selectedRouteId && (
-            <RouteDetails 
-              routeId={selectedRouteId}
-              onGetNutritionRecommendations={handleGetNutritionRecommendations}
-              onGetEquipmentRecommendations={handleGetEquipmentRecommendations}
-            />
-          )}
-          
-          {currentTab === 2 && (
-            <TrainingRecommendations />
-          )}
-          
-          {currentTab === 3 && showNutrition && selectedRouteId && (
-            <NutritionRecommendations routeId={selectedRouteId} />
-          )}
-          
-          {currentTab === 4 && showEquipment && selectedRouteId && (
-            <EquipmentRecommendations routeId={selectedRouteId} />
-          )}
-        </Box>
-      </Paper>
+          <Alert onClose={handleCloseNotification} severity={notification.severity}>
+            {notification.message}
+          </Alert>
+        </Snackbar>
+      </Container>
       
-      <Snackbar
-        open={notification.open}
-        autoHideDuration={6000}
-        onClose={handleCloseNotification}
-      >
-        <Alert onClose={handleCloseNotification} severity={notification.severity}>
-          {notification.message}
-        </Alert>
-      </Snackbar>
-    </Container>
+      {/* AI Chatbox integration */}
+      {chatboxVisible && (
+        <AIChatbox
+          position="fixed"
+          bottom={isMobile ? 0 : 20}
+          right={isMobile ? 0 : 20}
+          width={isMobile ? '100%' : '350px'}
+          height={isMobile ? '70vh' : '500px'}
+        />
+      )}
+      
+      {/* Chat toggle button for mobile */}
+      {isMobile && !chatboxVisible && (
+        <button 
+          className="chat-toggle-button"
+          onClick={() => setChatboxVisible(true)}
+          aria-label="Ouvrir l'assistant IA"
+        >
+          <span className="chat-icon">💬</span>
+        </button>
+      )}
+    </Box>
   );
 };
 

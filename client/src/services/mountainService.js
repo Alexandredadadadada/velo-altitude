@@ -1,9 +1,9 @@
-import axios from 'axios';
-import { API_BASE_URL } from '../config/constants';
+import api from './apiWrapper';
 
 /**
  * Service pour gérer les appels API du module Montagne
  * Gère les demandes liées aux cols, plans d'entraînement et nutrition
+ * Utilise apiWrapper qui gère les appels API réels avec MSW en mode développement.
  */
 const mountainService = {
   /**
@@ -13,7 +13,7 @@ const mountainService = {
    */
   async getCols(filters = {}) {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/cols`, { params: filters });
+      const response = await api.get(`/cols`, { params: filters });
       return response.data;
     } catch (error) {
       console.error('Erreur lors de la récupération des cols:', error);
@@ -28,7 +28,7 @@ const mountainService = {
    */
   async getColDetails(colId) {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/cols/${colId}`);
+      const response = await api.get(`/cols/${colId}`);
       return response.data;
     } catch (error) {
       console.error(`Erreur lors de la récupération des détails du col ${colId}:`, error);
@@ -44,7 +44,7 @@ const mountainService = {
    */
   async generateTrainingPlan(colId, userMetrics) {
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/mountain/training-plan`, {
+      const response = await api.post(`/mountain/training-plan`, {
         colId,
         userMetrics
       });
@@ -63,7 +63,7 @@ const mountainService = {
    */
   async generateNutritionPlan(colId, userMetrics) {
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/mountain/nutrition-plan`, {
+      const response = await api.post(`/mountain/nutrition-plan`, {
         colId,
         userMetrics
       });
@@ -81,7 +81,7 @@ const mountainService = {
    */
   async getRegionalTrainingPlans(region) {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/mountain/regional-plans/${region}`);
+      const response = await api.get(`/mountain/regional-plans/${region}`);
       return response.data;
     } catch (error) {
       console.error(`Erreur lors de la récupération des plans régionaux pour ${region}:`, error);
@@ -96,7 +96,7 @@ const mountainService = {
    */
   async getCol3DVisualizationData(colId) {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/cols/${colId}/3d-data`);
+      const response = await api.get(`/cols/${colId}/3d-data`);
       return response.data;
     } catch (error) {
       console.error(`Erreur lors de la récupération des données 3D pour le col ${colId}:`, error);

@@ -10,6 +10,7 @@
 
 // Composants d'authentification
 export { default as AuthenticationWrapper } from './AuthenticationWrapper';
-export { default as ProtectedRoute } from './ProtectedRoute';
+// Import ProtectedRoute depuis le module auth pour unification
+export { default as ProtectedRoute } from '../auth/ProtectedRoute';
 
 // Autres composants pourront être ajoutés ici

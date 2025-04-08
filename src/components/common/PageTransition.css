@@ -1,0 +1,76 @@
+/**
+ * Styles pour le composant PageTransition
+ * 
+ * Styles complémentaires aux animations gérées par Framer Motion
+ */
+
+.page-transition-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+/* Optimisation des performances d'animation */
+.page-transition-container > * {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Loading indicator pour les transitions plus longues */
+.transition-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #1A4977, #24A26F, #FF6B35);
+  z-index: 9999;
+  transform-origin: left;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.transition-loader.active {
+  opacity: 1;
+  animation: loading-bar 1s ease forwards;
+}
+
+@keyframes loading-bar {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(0.5);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Styles pour les transitions spécifiques */
+.fade-transition {
+  transition: opacity 0.5s ease;
+}
+
+.slide-transition {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.scale-transition {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.flip-transition {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Focus sur les performances pour les appareils mobiles */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-container {
+    transition: opacity 0.3s ease !important;
+    transform: none !important;
+  }
+}

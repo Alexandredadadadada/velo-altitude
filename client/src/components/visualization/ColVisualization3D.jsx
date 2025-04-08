@@ -4,15 +4,14 @@ import {
   OrbitControls, 
   Stats, 
   PerspectiveCamera, 
-  useTexture, 
   Environment, 
-  Text,
   Html
 } from '@react-three/drei';
 import * as THREE from 'three';
 import { Box, Typography, CircularProgress, useTheme, Chip, Paper } from '@mui/material';
 import { useBatteryStatus } from '../../hooks/useBatteryStatus';
 import { threeDConfigManager } from '../../utils/threeDConfigManager';
+import { markPerformanceEvent } from '../../performance/setupMonitoring';
 
 // Composant qui génère le terrain à partir des données d'élévation
 const Terrain = ({ data, color, wireframe, segments, position, rotation, scale }) => {
@@ -93,7 +92,7 @@ const Terrain = ({ data, color, wireframe, segments, position, rotation, scale }
 
 // Marqueurs d'altitude sur le terrain
 const ElevationMarkers = ({ data, position, rotation, scale }) => {
-  const { camera } = useThree();
+  useThree();
   const theme = useTheme();
   
   // Créer des marqueurs pour les points clés du profil d'élévation
@@ -227,38 +226,116 @@ const ColVisualization3D = ({
   wireframe = false
 }) => {
   const theme = useTheme();
-  const { batteryStatus } = useBatteryStatus();
-  const [isLoading, setIsLoading] = useState(true);
+  const canvasRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(!colData);
   const [error, setError] = useState(null);
-  const canvasRef = useRef();
+  const batteryStatus = useBatteryStatus();
+  const initialRenderTimeRef = useRef(null);
   
-  // Configuration basée sur les performances et la batterie
+  // Récupérer la configuration 3D adaptée au dispositif
   const config = useMemo(() => {
-    return threeDConfigManager.getConfig(batteryStatus);
+    // Marquer le début de la configuration
+    markPerformanceEvent('3d_config_start');
+    
+    let quality = 'medium';
+    
+    // Adapter la qualité en fonction de la batterie et du dispositif
+    if (batteryStatus) {
+      if (batteryStatus.level < 0.2 && !batteryStatus.charging) {
+        quality = 'low';
+      } else if (batteryStatus.level > 0.6 || batteryStatus.charging) {
+        quality = 'high';
+      }
+    }
+    
+    // Obtenir la configuration basée sur la qualité
+    const config = threeDConfigManager.getConfig(quality);
+    
+    // Marquer la fin de la configuration
+    markPerformanceEvent('3d_config_end');
+    
+    return config;
   }, [batteryStatus]);
   
-  // Déterminer le nombre de segments en fonction de la configuration
+  // Définir le nombre de segments en fonction de la configuration
   const segments = useMemo(() => {
-    return config.segments || 100;
+    return config.segmentsCount || 50;
   }, [config]);
   
-  // Effets de chargement
-  useEffect(() => {
-    if (colData) {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-    } else {
-      setError('Aucune donnée disponible pour ce col');
-    }
-  }, [colData]);
-  
+  // Définir la couleur d'arrière-plan
   const bgColor = useMemo(() => {
     return backgroundColor || (theme.palette.mode === 'dark' ? '#1A1A2E' : '#E6F2FF');
   }, [backgroundColor, theme]);
   
+  // Mesurer les performances d'initialisation
+  useEffect(() => {
+    if (colData && !initialRenderTimeRef.current) {
+      // Marquer le début du rendu initial
+      markPerformanceEvent('3d_render_init_start', { 
+        colId: colData.id, 
+        complexity: segments 
+      });
+      
+      const startTime = performance.now();
+      initialRenderTimeRef.current = startTime;
+      
+      // Simuler la détection de la fin du rendu initial
+      const checkRendered = () => {
+        if (canvasRef.current) {
+          const endTime = performance.now();
+          const renderTime = endTime - startTime;
+          
+          // Marquer la fin du rendu initial
+          markPerformanceEvent('3d_render_init_complete', { 
+            colId: colData.id, 
+            renderTimeMs: renderTime,
+            quality: config.quality
+          });
+          
+          console.log(`[Performance] Initial 3D render completed in ${renderTime.toFixed(2)}ms (quality: ${config.quality})`);
+        } else {
+          // Réessayer si le canvas n'est pas encore disponible
+          setTimeout(checkRendered, 100);
+        }
+      };
+      
+      // Attendre que le canvas soit rendu
+      setTimeout(checkRendered, 300);
+    }
+    
+    // Nettoyage lors du démontage du composant
+    return () => {
+      if (initialRenderTimeRef.current) {
+        // Marquer la fin de vie du composant
+        markPerformanceEvent('3d_component_unmount', { 
+          colId: colData?.id
+        });
+      }
+    };
+  }, [colData, segments, config.quality]);
+  
+  // Mettre à jour l'état de chargement lorsque les données du col changent
+  useEffect(() => {
+    if (colData) {
+      markPerformanceEvent('3d_data_received', { colId: colData.id });
+      setIsLoading(false);
+    } else {
+      setIsLoading(true);
+    }
+  }, [colData]);
+  
+  // Gérer les erreurs
+  useEffect(() => {
+    if (!colData?.elevationProfile) {
+      setError('Les données d\'élévation ne sont pas disponibles.');
+    } else {
+      setError(null);
+    }
+  }, [colData]);
+  
   // Si les données ne sont pas disponibles
   if (error) {
+    markPerformanceEvent('3d_render_error', { error });
     return (
       <Box
         sx={{
@@ -309,7 +386,20 @@ const ColVisualization3D = ({
         </Box>
       )}
       
-      <Canvas ref={canvasRef} shadows>
+      <Canvas 
+        ref={canvasRef} 
+        shadows
+        frameloop={colData ? 'demand' : 'never'} // Optimisation: utiliser 'demand' pour économiser les ressources
+        onCreated={({ gl }) => {
+          markPerformanceEvent('3d_canvas_created');
+          // Force l'utilisation de WebGL2 quand possible pour de meilleures performances
+          if (gl.capabilities.isWebGL2) {
+            markPerformanceEvent('3d_using_webgl2', { supported: true });
+          } else {
+            markPerformanceEvent('3d_using_webgl2', { supported: false });
+          }
+        }}
+      >
         <color attach="background" args={[bgColor]} />
         
         <PerspectiveCamera
@@ -356,6 +446,10 @@ const ColVisualization3D = ({
           maxPolarAngle={Math.PI / 2}
           minDistance={5}
           maxDistance={50}
+          onChange={() => {
+            // Marquer les interactions utilisateur pour le suivi des performances
+            markPerformanceEvent('3d_user_interaction');
+          }}
         />
         
         {showStats && config.performance === 'high' && <Stats />}

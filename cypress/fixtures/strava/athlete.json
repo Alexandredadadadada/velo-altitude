@@ -1,0 +1,73 @@
+{
+  "id": 12345678,
+  "username": "testuser",
+  "resource_state": 3,
+  "firstname": "Test",
+  "lastname": "User",
+  "city": "Strasbourg",
+  "state": "Grand Est",
+  "country": "France",
+  "sex": "M",
+  "premium": true,
+  "summit": true,
+  "created_at": "2018-02-15T15:30:24Z",
+  "updated_at": "2023-04-01T12:45:33Z",
+  "badge_type_id": 1,
+  "profile_medium": "https://dgalywyr863hv.cloudfront.net/profile/medium.jpg",
+  "profile": "https://dgalywyr863hv.cloudfront.net/profile/large.jpg",
+  "friend": null,
+  "follower": null,
+  "follower_count": 145,
+  "friend_count": 123,
+  "mutual_friend_count": 0,
+  "athlete_type": 0,
+  "date_preference": "%d/%m/%Y",
+  "measurement_preference": "meters",
+  "clubs": [
+    {
+      "id": 87654,
+      "resource_state": 2,
+      "name": "Grand Est Cyclisme",
+      "profile_medium": "https://dgalywyr863hv.cloudfront.net/clubs/medium.jpg",
+      "profile": "https://dgalywyr863hv.cloudfront.net/clubs/large.jpg",
+      "cover_photo": "https://dgalywyr863hv.cloudfront.net/clubs/cover.jpg",
+      "cover_photo_small": "https://dgalywyr863hv.cloudfront.net/clubs/small_cover.jpg",
+      "sport_type": "cycling",
+      "city": "Strasbourg",
+      "state": "Grand Est",
+      "country": "France",
+      "private": false,
+      "member_count": 128,
+      "featured": false,
+      "verified": true,
+      "url": "grand-est-cyclisme"
+    }
+  ],
+  "ftp": 285,
+  "weight": 72.5,
+  "bikes": [
+    {
+      "id": "b12345",
+      "primary": true,
+      "name": "Canyon Ultimate CF SLX",
+      "resource_state": 2,
+      "distance": 8765432
+    },
+    {
+      "id": "b67890",
+      "primary": false,
+      "name": "Trek Madone SLR",
+      "resource_state": 2,
+      "distance": 3456789
+    }
+  ],
+  "shoes": [
+    {
+      "id": "s12345",
+      "primary": true,
+      "name": "Sidi Wire 2",
+      "resource_state": 2,
+      "distance": 1234567
+    }
+  ]
+}

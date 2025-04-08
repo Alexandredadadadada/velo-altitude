@@ -530,7 +530,7 @@ const RouteReviewList = ({
         </Paper>
       ) : (
         <>
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             <motion.div
               variants={listVariants}
               initial="hidden"

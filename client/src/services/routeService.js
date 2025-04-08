@@ -1,84 +1,51 @@
 /**
- * Service pour la gestion des itinéraires cyclistes
+ * Service pour la gestion des itinéraires cyclables
+ * Utilise apiWrapper qui gère les appels API réels avec MSW en mode développement.
  */
-import api, { USE_MOCK_DATA } from './api';
-import mockRoutes from '../mocks/routes';
-import mockUserRoutes from '../mocks/userRoutes';
+import api from './apiWrapper';
 
 const RouteService = {
   /**
-   * Récupère tous les itinéraires disponibles
-   * @param {Object} filters - Filtres à appliquer
+   * Récupère la liste des itinéraires disponibles
+   * @param {Object} options - Options de filtrage et de pagination
    * @returns {Promise<Array>} Liste des itinéraires
    */
-  getAllRoutes: async (filters = {}) => {
-    if (USE_MOCK_DATA) {
-      // Filtrage côté client pour les données mockées
-      let filteredRoutes = [...mockRoutes];
-      
-      if (filters.minDistance) {
-        filteredRoutes = filteredRoutes.filter(route => route.distance >= filters.minDistance);
-      }
-      
-      if (filters.maxDistance) {
-        filteredRoutes = filteredRoutes.filter(route => route.distance <= filters.maxDistance);
-      }
-      
-      if (filters.minElevation) {
-        filteredRoutes = filteredRoutes.filter(route => route.elevationGain >= filters.minElevation);
-      }
-      
-      if (filters.maxElevation) {
-        filteredRoutes = filteredRoutes.filter(route => route.elevationGain <= filters.maxElevation);
-      }
-      
-      if (filters.difficulty && filters.difficulty.length > 0) {
-        filteredRoutes = filteredRoutes.filter(route => filters.difficulty.includes(route.difficulty));
-      }
-      
-      if (filters.region && filters.region.length > 0) {
-        filteredRoutes = filteredRoutes.filter(route => filters.region.includes(route.region));
-      }
-      
-      if (filters.searchTerm) {
-        const term = filters.searchTerm.toLowerCase();
-        filteredRoutes = filteredRoutes.filter(
-          route => route.name.toLowerCase().includes(term) || 
-                  route.description.toLowerCase().includes(term) ||
-                  route.region.toLowerCase().includes(term)
-        );
-      }
-      
-      return Promise.resolve(filteredRoutes);
-    }
-    
+  getAllRoutes: async (options = {}) => {
     try {
-      // Envoi des filtres comme paramètres de requête
-      const response = await api.get('/api/routes', { params: filters });
+      // Construire les paramètres de requête
+      const params = new URLSearchParams();
+      if (options.region) params.append('region', options.region);
+      if (options.difficulty) params.append('difficulty', options.difficulty);
+      if (options.minLength) params.append('minLength', options.minLength);
+      if (options.maxLength) params.append('maxLength', options.maxLength);
+      if (options.minElevation) params.append('minElevation', options.minElevation);
+      if (options.maxElevation) params.append('maxElevation', options.maxElevation);
+      if (options.surface) params.append('surface', options.surface);
+      if (options.page) params.append('page', options.page);
+      if (options.limit) params.append('limit', options.limit);
+      if (options.sortBy) params.append('sortBy', options.sortBy);
+      if (options.sortOrder) params.append('sortOrder', options.sortOrder);
+      
+      // Appel API
+      const response = await api.get(`/routes${params.toString() ? `?${params.toString()}` : ''}`);
       return response.data;
     } catch (error) {
-      console.error('Erreur lors de la récupération des itinéraires', error);
+      console.error('Error fetching routes:', error);
       throw error;
     }
   },
   
   /**
-   * Récupère un itinéraire par son ID
+   * Récupère les détails d'un itinéraire
    * @param {string} routeId - ID de l'itinéraire
-   * @returns {Promise<Object>} Données de l'itinéraire
+   * @returns {Promise<Object>} Détails de l'itinéraire
    */
   getRouteById: async (routeId) => {
-    if (USE_MOCK_DATA) {
-      const route = mockRoutes.find(r => r.id === routeId);
-      if (!route) throw new Error('Itinéraire non trouvé');
-      return Promise.resolve(route);
-    }
-    
     try {
-      const response = await api.get(`/api/routes/${routeId}`);
+      const response = await api.get(`/routes/${routeId}`);
       return response.data;
     } catch (error) {
-      console.error(`Erreur lors de la récupération de l'itinéraire ${routeId}`, error);
+      console.error(`Error fetching route ${routeId}:`, error);
       throw error;
     }
   },
@@ -89,61 +56,43 @@ const RouteService = {
    * @returns {Promise<Array>} Liste des itinéraires de l'utilisateur
    */
   getUserRoutes: async (userId) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 300));
-      return Promise.resolve(mockUserRoutes);
-    }
-    
     try {
-      const response = await api.get(`/api/users/${userId}/routes`);
+      const response = await api.get(`/users/${userId}/routes`);
       return response.data;
     } catch (error) {
-      console.error(`Erreur lors de la récupération des itinéraires de l'utilisateur ${userId}`, error);
+      console.error(`Error fetching routes for user ${userId}:`, error);
       throw error;
     }
   },
   
   /**
-   * Ajoute un itinéraire aux favoris de l'utilisateur
-   * @param {string} userId - ID de l'utilisateur
+   * Ajoute un itinéraire aux favoris
    * @param {string} routeId - ID de l'itinéraire
+   * @param {string} userId - ID de l'utilisateur
    * @returns {Promise<Object>} Résultat de l'opération
    */
-  addFavorite: async (userId, routeId) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 300));
-      return Promise.resolve({ success: true });
-    }
-    
+  addFavorite: async (routeId, userId) => {
     try {
-      const response = await api.post(`/api/users/${userId}/favorites`, { routeId });
+      const response = await api.post(`/routes/${routeId}/favorite`, { userId });
       return response.data;
     } catch (error) {
-      console.error('Erreur lors de l\'ajout aux favoris', error);
+      console.error(`Error adding route ${routeId} to favorites:`, error);
       throw error;
     }
   },
   
   /**
-   * Retire un itinéraire des favoris de l'utilisateur
-   * @param {string} userId - ID de l'utilisateur
+   * Retire un itinéraire des favoris
    * @param {string} routeId - ID de l'itinéraire
+   * @param {string} userId - ID de l'utilisateur
    * @returns {Promise<Object>} Résultat de l'opération
    */
-  removeFavorite: async (userId, routeId) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 300));
-      return Promise.resolve({ success: true });
-    }
-    
+  removeFavorite: async (routeId, userId) => {
     try {
-      const response = await api.delete(`/api/users/${userId}/favorites/${routeId}`);
+      const response = await api.delete(`/routes/${routeId}/favorite`, { data: { userId } });
       return response.data;
     } catch (error) {
-      console.error('Erreur lors du retrait des favoris', error);
+      console.error(`Error removing route ${routeId} from favorites:`, error);
       throw error;
     }
   },
@@ -154,22 +103,11 @@ const RouteService = {
    * @returns {Promise<Object>} Itinéraire créé
    */
   createRoute: async (routeData) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 500));
-      const newRoute = {
-        id: `route-${Date.now()}`,
-        ...routeData,
-        createdAt: new Date().toISOString()
-      };
-      return Promise.resolve(newRoute);
-    }
-    
     try {
-      const response = await api.post('/api/routes', routeData);
+      const response = await api.post('/routes', routeData);
       return response.data;
     } catch (error) {
-      console.error('Erreur lors de la création de l\'itinéraire', error);
+      console.error('Error creating route:', error);
       throw error;
     }
   },
@@ -177,25 +115,15 @@ const RouteService = {
   /**
    * Met à jour un itinéraire existant
    * @param {string} routeId - ID de l'itinéraire
-   * @param {Object} routeData - Données mises à jour
+   * @param {Object} routeData - Nouvelles données
    * @returns {Promise<Object>} Itinéraire mis à jour
    */
   updateRoute: async (routeId, routeData) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 500));
-      return Promise.resolve({
-        id: routeId,
-        ...routeData,
-        updatedAt: new Date().toISOString()
-      });
-    }
-    
     try {
-      const response = await api.put(`/api/routes/${routeId}`, routeData);
+      const response = await api.put(`/routes/${routeId}`, routeData);
       return response.data;
     } catch (error) {
-      console.error(`Erreur lors de la mise à jour de l'itinéraire ${routeId}`, error);
+      console.error(`Error updating route ${routeId}:`, error);
       throw error;
     }
   },
@@ -206,17 +134,11 @@ const RouteService = {
    * @returns {Promise<Object>} Résultat de l'opération
    */
   deleteRoute: async (routeId) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 300));
-      return Promise.resolve({ success: true });
-    }
-    
     try {
-      const response = await api.delete(`/api/routes/${routeId}`);
+      const response = await api.delete(`/routes/${routeId}`);
       return response.data;
     } catch (error) {
-      console.error(`Erreur lors de la suppression de l'itinéraire ${routeId}`, error);
+      console.error(`Error deleting route ${routeId}:`, error);
       throw error;
     }
   },
@@ -227,44 +149,26 @@ const RouteService = {
    * @returns {Promise<Array>} Liste des itinéraires populaires
    */
   getPopularRoutes: async (limit = 5) => {
-    if (USE_MOCK_DATA) {
-      // Trier par popularité (nombre de favoris)
-      const sortedRoutes = [...mockRoutes].sort((a, b) => (b.favorites || 0) - (a.favorites || 0));
-      return Promise.resolve(sortedRoutes.slice(0, limit));
-    }
-    
     try {
-      const response = await api.get('/api/routes/popular', { params: { limit } });
+      const response = await api.get(`/routes/popular?limit=${limit}`);
       return response.data;
     } catch (error) {
-      console.error('Erreur lors de la récupération des itinéraires populaires', error);
+      console.error('Error fetching popular routes:', error);
       throw error;
     }
   },
   
   /**
-   * Récupère les statistiques d'itinéraires pour un utilisateur
+   * Récupère les statistiques d'utilisation des itinéraires d'un utilisateur
    * @param {string} userId - ID de l'utilisateur
-   * @returns {Promise<Object>} Statistiques des itinéraires
+   * @returns {Promise<Object>} Statistiques d'utilisation
    */
   getUserRouteStats: async (userId) => {
-    if (USE_MOCK_DATA) {
-      // Simuler un délai réseau
-      await new Promise(resolve => setTimeout(resolve, 400));
-      return Promise.resolve({
-        totalRoutes: mockUserRoutes.length,
-        totalDistance: mockUserRoutes.reduce((sum, route) => sum + route.distance, 0),
-        totalElevation: mockUserRoutes.reduce((sum, route) => sum + route.elevationGain, 0),
-        favoriteRegion: 'Grand Est',
-        avgDifficulty: 'Intermédiaire'
-      });
-    }
-    
     try {
-      const response = await api.get(`/api/users/${userId}/route-stats`);
+      const response = await api.get(`/users/${userId}/routes/stats`);
       return response.data;
     } catch (error) {
-      console.error(`Erreur lors de la récupération des statistiques d'itinéraires pour l'utilisateur ${userId}`, error);
+      console.error(`Error fetching route stats for user ${userId}:`, error);
       throw error;
     }
   }

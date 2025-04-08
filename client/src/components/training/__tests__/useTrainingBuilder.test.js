@@ -1,4 +1,5 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import React from 'react';
+import { renderHook, act } from '@testing-library/react';
 import { NotificationContext } from '../../../context/NotificationContext';
 import useTrainingBuilder from '../hooks/useTrainingBuilder';
 

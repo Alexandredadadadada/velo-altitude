@@ -1,11 +1,9 @@
-import axios from 'axios';
+import api from './apiWrapper';
 import { formatDate } from '../utils/formatters';
-
-// URL de base pour les requêtes API liées à l'entraînement
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 /**
  * Service de gestion des données d'entraînement
+ * Utilise apiWrapper qui gère les appels API réels avec MSW en mode développement.
  */
 class TrainingService {
   /**
@@ -16,9 +14,8 @@ class TrainingService {
    */
   async getActivities(userId, timeframe = 'month') {
     try {
-      const response = await axios.get(`${API_URL}/training/activities`, {
-        params: { userId, timeframe },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      const response = await api.get(`/training/activities`, {
+        params: { userId, timeframe }
       });
       
       return response.data;
@@ -35,9 +32,7 @@ class TrainingService {
    */
   async getActivityById(activityId) {
     try {
-      const response = await axios.get(`${API_URL}/training/activities/${activityId}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      });
+      const response = await api.get(`/training/activities/${activityId}`);
       
       return response.data;
     } catch (error) {
@@ -53,9 +48,7 @@ class TrainingService {
    */
   async createActivity(activityData) {
     try {
-      const response = await axios.post(`${API_URL}/training/activities`, activityData, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      });
+      const response = await api.post(`/training/activities`, activityData);
       
       return response.data;
     } catch (error) {
@@ -72,9 +65,7 @@ class TrainingService {
    */
   async updateActivity(activityId, activityData) {
     try {
-      const response = await axios.put(`${API_URL}/training/activities/${activityId}`, activityData, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      });
+      const response = await api.put(`/training/activities/${activityId}`, activityData);
       
       return response.data;
     } catch (error) {
@@ -90,9 +81,7 @@ class TrainingService {
    */
   async deleteActivity(activityId) {
     try {
-      const response = await axios.delete(`${API_URL}/training/activities/${activityId}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      });
+      const response = await api.delete(`/training/activities/${activityId}`);
       
       return response.data;
     } catch (error) {
@@ -117,11 +106,8 @@ class TrainingService {
         formData.append(key, metadata[key]);
       });
       
-      const response = await axios.post(`${API_URL}/training/import-gpx`, formData, {
-        headers: { 
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'multipart/form-data'
-        }
+      const response = await api.post(`/training/import-gpx`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
       });
       
       return response.data;
@@ -139,9 +125,8 @@ class TrainingService {
    */
   async getTrainingStats(userId, timeframe = 'month') {
     try {
-      const response = await axios.get(`${API_URL}/training/stats`, {
-        params: { userId, timeframe },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      const response = await api.get(`/training/stats`, {
+        params: { userId, timeframe }
       });
       
       return response.data;
@@ -158,9 +143,8 @@ class TrainingService {
    */
   async getTrainingGoals(userId) {
     try {
-      const response = await axios.get(`${API_URL}/training/goals`, {
-        params: { userId },
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      const response = await api.get(`/training/goals`, {
+        params: { userId }
       });
       
       return response.data;
@@ -177,9 +161,7 @@ class TrainingService {
    */
   async createTrainingGoal(goalData) {
     try {
-      const response = await axios.post(`${API_URL}/training/goals`, goalData, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      });
+      const response = await api.post(`/training/goals`, goalData);
       
       return response.data;
     } catch (error) {

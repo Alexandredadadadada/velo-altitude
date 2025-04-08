@@ -1,0 +1,346 @@
+/**
+ * Styles pour le panneau de filtres de l'explorateur de cols
+ * Interface premium avec contrôles intuitifs
+ */
+
+.col-filter-panel {
+  padding: 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(25, 25, 35, 0.7);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.col-filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.col-filter-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: white;
+}
+
+.col-filter-title svg {
+  font-size: 1.5rem;
+  color: rgba(52, 148, 230, 0.9);
+}
+
+.col-filter-title h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.col-filter-actions {
+  display: flex;
+  align-items: center;
+}
+
+.col-filter-reset-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.col-filter-reset-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.col-filter-reset-button svg {
+  font-size: 1.1rem;
+}
+
+.col-filter-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.col-filter-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-filter-section-header {
+  margin-bottom: 1rem;
+}
+
+.col-filter-section-header h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.col-filter-section-header h4 svg {
+  color: rgba(236, 110, 173, 0.9);
+  font-size: 1.3rem;
+}
+
+/* Filtres de difficulté */
+.col-difficulty-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.col-difficulty-button {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.col-difficulty-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.col-difficulty-button.active {
+  background: rgba(52, 148, 230, 0.15);
+  border-color: rgba(52, 148, 230, 0.3);
+}
+
+.col-difficulty-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  margin-right: 4px;
+}
+
+.col-difficulty-button.active .col-difficulty-dot {
+  background: rgba(52, 148, 230, 0.9);
+}
+
+.col-difficulty-label {
+  margin-left: 6px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.col-difficulty-button.active .col-difficulty-label {
+  color: white;
+}
+
+/* Filtres de plage (sliders) */
+.col-range-filter {
+  margin-bottom: 1.5rem;
+}
+
+.col-range-filter:last-child {
+  margin-bottom: 0;
+}
+
+.col-range-filter label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.col-range-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.col-range-value {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.col-range-inputs {
+  position: relative;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin: 1.5rem 0.5rem 0.5rem;
+}
+
+.col-range-input {
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+.col-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 2px solid #3494E6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+
+.col-range-input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 2px solid #3494E6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+
+.col-range-input:focus {
+  outline: none;
+}
+
+.col-range-input:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(52, 148, 230, 0.3);
+}
+
+.col-range-input:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 3px rgba(52, 148, 230, 0.3);
+}
+
+/* Filtres de région */
+.col-region-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.col-region-button {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.col-region-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.col-region-button.active {
+  background: rgba(236, 110, 173, 0.15);
+  border-color: rgba(236, 110, 173, 0.3);
+  color: white;
+  padding-right: 2.2rem;
+}
+
+.col-region-check {
+  position: absolute;
+  right: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(236, 110, 173, 0.9);
+  font-size: 1.1rem;
+}
+
+/* Filtres de statut */
+.col-status-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.col-status-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.col-status-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.col-status-button.active {
+  background: rgba(52, 148, 230, 0.15);
+  border-color: rgba(52, 148, 230, 0.3);
+  color: white;
+}
+
+.col-status-button svg {
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .col-filter-panel {
+    padding: 1.2rem;
+  }
+  
+  .col-filter-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .col-filter-section {
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .col-filter-section:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .col-filter-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .col-filter-reset-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

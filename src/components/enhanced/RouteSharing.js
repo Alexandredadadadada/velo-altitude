@@ -20,7 +20,7 @@ import StravaIntegration from './StravaIntegration';
 import RouteService from '../../services/routeService';
 import SocialService from '../../services/socialService';
 import StravaService from '../../services/stravaService';
-import AuthService from '../../services/authService';
+import AuthService from '../../../client/src/services/authService';
 import WeatherService from '../../services/weatherService';
 import { Chart, registerables } from 'chart.js';
 import 'leaflet/dist/leaflet.css';
@@ -500,7 +500,6 @@ const RouteSharing = ({ userId }) => {
       setAlert({
         open: true,
         message: 'Aucune donnée de trajet. Veuillez importer un fichier GPX ou ajouter des points.',
-import EnhancedMetaTags from '../common/EnhancedMetaTags';
         severity: 'warning'
       });
       return;
@@ -774,27 +773,29 @@ import EnhancedMetaTags from '../common/EnhancedMetaTags';
 
   if (loading && activeTab !== 2) {
     return (
-      <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Velo-Altitude",
-          "description": "La plateforme complète pour les cyclistes passionnés de cols et de montagne.",
-          "url": "https://velo-altitude.com/routesharing"
-        }
-      </script>
-      <EnhancedMetaTags
-        title=""
-        description="Découvrez les meilleurs cols cyclistes d'Europe, avec des informations détaillées, des visualisations 3D et des programmes d'entraînement adaptés."
-        type="website"
-        imageUrl="/images/og-image.jpg"
-      />
-      <Box display="flex" justifyContent="center" alignItems="center" height="400px">
-        <CircularProgress />
-        <Typography variant="body1" sx={{ ml: 2 }}>
-          Chargement des itinéraires...
-        </Typography>
-      </Box>
+      <>
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Velo-Altitude",
+            "description": "La plateforme complète pour les cyclistes passionnés de cols et de montagne.",
+            "url": "https://velo-altitude.com/routesharing"
+          }
+        </script>
+        <EnhancedMetaTags
+          title=""
+          description="Découvrez les meilleurs cols cyclistes d'Europe, avec des informations détaillées, des visualisations 3D et des programmes d'entraînement adaptés."
+          type="website"
+          imageUrl="/images/og-image.jpg"
+        />
+        <Box display="flex" justifyContent="center" alignItems="center" height="400px">
+          <CircularProgress />
+          <Typography variant="body1" sx={{ ml: 2 }}>
+            Chargement des itinéraires...
+          </Typography>
+        </Box>
+      </>
     );
   }
   

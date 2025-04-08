@@ -512,7 +512,7 @@ const AnimatedNavbar = () => {
         open={drawerOpen}
         onClose={toggleDrawer(false)}
       >
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {drawerOpen && drawerContent}
         </AnimatePresence>
       </Drawer>

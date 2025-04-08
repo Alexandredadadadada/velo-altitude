@@ -139,7 +139,7 @@ function App() {
 
 ### PageTransition
 
-Le composant `PageTransition` (`src/components/animations/PageTransition.js`) gère les transitions entre les pages de l'application.
+Le composant `PageTransition` (`src/components/common/PageTransition.js`) gère les transitions entre les pages de l'application.
 
 #### Caractéristiques
 
@@ -150,7 +150,7 @@ Le composant `PageTransition` (`src/components/animations/PageTransition.js`) g�
 #### Utilisation
 
 ```jsx
-import { PageTransition } from '../components/animations/PageTransition';
+import PageTransition from '../../src/components/common/PageTransition';
 
 function MyPage() {
   return (

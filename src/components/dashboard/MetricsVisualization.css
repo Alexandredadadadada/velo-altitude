@@ -1,0 +1,331 @@
+/**
+ * Styles pour les composants de visualisation de métriques premium
+ * 
+ * Fournit des graphiques, jauges et visualisations de données avancées
+ * avec des animations fluides et des interactions utilisateur élégantes
+ */
+
+/* Styles communs à tous les graphiques */
+.metrics-chart {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.metrics-chart-svg {
+  overflow: visible;
+}
+
+.metrics-chart-point {
+  cursor: pointer;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all 0.2s ease;
+}
+
+.metrics-chart-point:hover {
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.4));
+}
+
+.metrics-chart-tooltip {
+  pointer-events: none;
+}
+
+.metrics-chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 150px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styles spécifiques au graphique en ligne */
+.metrics-line-chart {
+  padding-bottom: 10px;
+}
+
+.metrics-line-chart path {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Styles spécifiques au graphique à barres */
+.metrics-bar-chart {
+  padding-bottom: 10px;
+}
+
+.metrics-chart-bar {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.metrics-chart-bar:hover {
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* Styles spécifiques au graphique en radar */
+.metrics-radar-chart {
+  margin: 0 auto;
+}
+
+.metrics-radar-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+}
+
+.metrics-radar-svg polygon {
+  filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* Styles pour l'anneau de progression circulaire */
+.metrics-progress-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metrics-progress-ring circle {
+  transition: stroke-dashoffset 0.3s ease;
+  transform-origin: center;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Styles pour le graphique jauge */
+.metrics-gauge-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.gauge-ranges path {
+  filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+}
+
+/* Layout pour plusieurs graphiques */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.metrics-grid-col-2 {
+  grid-column: span 2;
+}
+
+.metrics-grid-row-2 {
+  grid-row: span 2;
+}
+
+/* Conteneur de statistiques chiffres clés */
+.metrics-stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Statistique individuelle */
+.metrics-stat-card {
+  flex: 1;
+  min-width: 140px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.metrics-stat-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+.metrics-stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin: 5px 0;
+}
+
+.metrics-stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+
+.metrics-stat-change {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metrics-stat-change.positive {
+  background: rgba(40, 167, 69, 0.15);
+  color: rgba(40, 167, 69, 0.9);
+}
+
+.metrics-stat-change.negative {
+  background: rgba(228, 37, 53, 0.15);
+  color: rgba(228, 37, 53, 0.9);
+}
+
+.metrics-stat-change.neutral {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.metrics-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Carte de progression avec cible */
+.metrics-progress-card {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.metrics-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.metrics-progress-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.metrics-progress-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 4px 0 0;
+}
+
+.metrics-progress-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.metrics-progress-status.on-track {
+  background: rgba(40, 167, 69, 0.15);
+  color: rgba(40, 167, 69, 0.9);
+}
+
+.metrics-progress-status.attention {
+  background: rgba(255, 193, 7, 0.15);
+  color: rgba(255, 193, 7, 0.9);
+}
+
+.metrics-progress-status.behind {
+  background: rgba(228, 37, 53, 0.15);
+  color: rgba(228, 37, 53, 0.9);
+}
+
+.metrics-progress-bar-container {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.metrics-progress-bar {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #3494E6, #EC6EAD);
+  transition: width 1s ease;
+}
+
+.metrics-progress-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.metrics-progress-stat {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.metrics-progress-stat span {
+  color: white;
+  font-weight: 600;
+}
+
+/* Légendes pour les graphiques */
+.metrics-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.metrics-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.metrics-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrics-grid-col-2 {
+    grid-column: span 1;
+  }
+  
+  .metrics-stats-container {
+    flex-direction: column;
+  }
+  
+  .metrics-stat-card {
+    width: 100%;
+  }
+}

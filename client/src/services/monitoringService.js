@@ -5,9 +5,10 @@
  */
 
 import axios from 'axios';
+import config from '../config';
 
 // Configuration de base
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = config.api.baseUrl;
 const METRICS_ENDPOINT = `${API_URL}/monitoring/metrics`;
 const PERFORMANCE_ENDPOINT = `${API_URL}/monitoring/performance`;
 const ERROR_ENDPOINT = `${API_URL}/monitoring/errors`;

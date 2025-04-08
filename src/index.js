@@ -230,3 +230,63 @@ reportWebVitals(metric => {
     // sendToAnalyticsService(metric);
   }
 });
+
+// Enregistrer le Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('Service Worker enregistré avec succès:', registration.scope);
+        
+        // Mettre à jour le Service Worker si nécessaire
+        registration.onupdatefound = () => {
+          const installingWorker = registration.installing;
+          if (installingWorker == null) {
+            return;
+          }
+          installingWorker.onstatechange = () => {
+            if (installingWorker.state === 'installed') {
+              if (navigator.serviceWorker.controller) {
+                // Une nouvelle version est disponible
+                console.log('Une nouvelle version est disponible et sera utilisée au prochain chargement.');
+                
+                // Afficher une notification à l'utilisateur
+                const updateNotification = document.createElement('div');
+                updateNotification.className = 'update-notification';
+                updateNotification.innerHTML = `
+                  <div class="update-content">
+                    <p>Une nouvelle version est disponible!</p>
+                    <button id="update-button">Mettre à jour</button>
+                  </div>
+                `;
+                document.body.appendChild(updateNotification);
+                
+                // Gérer le clic sur le bouton de mise à jour
+                document.getElementById('update-button').addEventListener('click', () => {
+                  window.location.reload();
+                  updateNotification.remove();
+                });
+              } else {
+                // L'application est mise en cache pour une utilisation hors ligne
+                console.log('L\'application est maintenant disponible hors ligne.');
+                
+                // Stocker l'heure de la dernière synchronisation
+                localStorage.setItem('lastSyncTime', Date.now().toString());
+              }
+            }
+          };
+        };
+      })
+      .catch(error => {
+        console.error('Erreur lors de l\'enregistrement du Service Worker:', error);
+      });
+      
+    // Gérer les mises à jour du Service Worker
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+  });
+}

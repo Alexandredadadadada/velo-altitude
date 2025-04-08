@@ -1,0 +1,610 @@
+/**
+ * Styles pour les champs de formulaire premium
+ * 
+ * Ces styles assurent une expérience utilisateur fluide et élégante
+ * pour tous les composants de formulaire, avec des effets glassmorphism
+ * et des animations subtiles
+ */
+
+/* Variables communes */
+:root {
+  --field-padding-small: 8px 12px;
+  --field-padding-medium: 12px 16px;
+  --field-padding-large: 16px 20px;
+  
+  --field-border-radius: 12px;
+  --field-border-width: 1px;
+  
+  --field-font-size-small: 0.85rem;
+  --field-font-size-medium: 0.95rem;
+  --field-font-size-large: 1.05rem;
+  
+  --field-label-color: rgba(255, 255, 255, 0.8);
+  --field-text-color: white;
+  --field-placeholder-color: rgba(255, 255, 255, 0.5);
+  
+  --field-background: rgba(255, 255, 255, 0.1);
+  --field-background-hover: rgba(255, 255, 255, 0.15);
+  --field-background-focus: rgba(255, 255, 255, 0.2);
+  
+  --field-border-color: rgba(255, 255, 255, 0.2);
+  --field-border-color-hover: rgba(255, 255, 255, 0.3);
+  --field-border-color-focus: rgba(255, 255, 255, 0.4);
+  
+  --field-error-color: rgba(228, 37, 53, 0.9);
+  --field-success-color: rgba(40, 167, 69, 0.9);
+  
+  --field-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --field-shadow-focus: 0 8px 20px rgba(0, 0, 0, 0.1);
+  
+  --field-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* TextField */
+.premium-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+}
+
+.premium-field--full-width {
+  max-width: none;
+}
+
+.premium-field__container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: var(--field-border-radius);
+  background: var(--field-background);
+  border: var(--field-border-width) solid var(--field-border-color);
+  transition: var(--field-transition);
+  box-shadow: var(--field-shadow);
+  overflow: hidden;
+}
+
+.premium-field__container:hover {
+  background: var(--field-background-hover);
+  border-color: var(--field-border-color-hover);
+}
+
+.premium-field__container--focused {
+  background: var(--field-background-focus);
+  border-color: var(--field-border-color-focus);
+  box-shadow: var(--field-shadow-focus);
+}
+
+.premium-field__input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.premium-field__label {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  transition: var(--field-transition);
+  color: var(--field-label-color);
+  transform-origin: left top;
+  z-index: 1;
+}
+
+.premium-field__label--animated {
+  transform: translateY(-24px) scale(0.85);
+}
+
+.premium-field__required {
+  color: var(--field-error-color);
+  margin-left: 4px;
+}
+
+.premium-field__input,
+.premium-field__textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--field-text-color);
+  font-family: inherit;
+  padding: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.premium-field__input::placeholder,
+.premium-field__textarea::placeholder {
+  color: var(--field-placeholder-color);
+  opacity: 0;
+  transition: var(--field-transition);
+}
+
+.premium-field__label--animated + .premium-field__input::placeholder,
+.premium-field__label--animated + .premium-field__textarea::placeholder {
+  opacity: 1;
+}
+
+.premium-field__helper-text {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--field-transition);
+}
+
+.premium-field__helper-text--error {
+  color: var(--field-error-color);
+}
+
+.premium-field__counter {
+  position: absolute;
+  bottom: -22px;
+  right: 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.premium-field__icon {
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--field-transition);
+}
+
+.premium-field__container--focused .premium-field__icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Variantes de taille */
+.premium-field--small .premium-field__container {
+  padding: var(--field-padding-small);
+}
+
+.premium-field--small .premium-field__input,
+.premium-field--small .premium-field__textarea,
+.premium-field--small .premium-field__label {
+  font-size: var(--field-font-size-small);
+}
+
+.premium-field--medium .premium-field__container {
+  padding: var(--field-padding-medium);
+}
+
+.premium-field--medium .premium-field__input,
+.premium-field--medium .premium-field__textarea,
+.premium-field--medium .premium-field__label {
+  font-size: var(--field-font-size-medium);
+}
+
+.premium-field--large .premium-field__container {
+  padding: var(--field-padding-large);
+}
+
+.premium-field--large .premium-field__input,
+.premium-field--large .premium-field__textarea,
+.premium-field--large .premium-field__label {
+  font-size: var(--field-font-size-large);
+}
+
+/* Variantes de style */
+.premium-field--default .premium-field__container {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.premium-field--filled .premium-field__container {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: transparent;
+}
+
+.premium-field--filled.premium-field__container--focused {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.premium-field--outline .premium-field__container {
+  background: transparent;
+  border-width: 2px;
+}
+
+/* États */
+.premium-field--error .premium-field__container {
+  border-color: var(--field-error-color);
+}
+
+.premium-field--success .premium-field__container {
+  border-color: var(--field-success-color);
+}
+
+.premium-field--error .premium-field__label {
+  color: var(--field-error-color);
+}
+
+.premium-field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* TextArea spécifique */
+.premium-field--textarea .premium-field__container {
+  min-height: 100px;
+}
+
+.premium-field--no-resize .premium-field__textarea {
+  resize: none;
+}
+
+.premium-field__textarea {
+  line-height: 1.5;
+  min-height: 80px;
+}
+
+/* Checkbox */
+.premium-checkbox {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.premium-checkbox__label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.premium-checkbox__input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.premium-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.premium-checkbox__custom-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: var(--field-background);
+  border: var(--field-border-width) solid var(--field-border-color);
+  transition: var(--field-transition);
+  overflow: hidden;
+}
+
+.premium-checkbox__custom-input svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: var(--field-transition);
+  color: white;
+}
+
+.premium-checkbox__input:checked ~ .premium-checkbox__custom-input {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.premium-checkbox__input:checked ~ .premium-checkbox__custom-input svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.premium-checkbox__input:focus ~ .premium-checkbox__custom-input {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.premium-checkbox__text {
+  font-size: var(--field-font-size-medium);
+  color: var(--field-text-color);
+  padding-top: 2px;
+  user-select: none;
+}
+
+.premium-checkbox__required {
+  color: var(--field-error-color);
+  margin-left: 4px;
+}
+
+.premium-checkbox__helper-text {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  margin-left: 30px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.premium-checkbox__helper-text--error {
+  color: var(--field-error-color);
+}
+
+/* Variantes de taille pour Checkbox */
+.premium-checkbox--small .premium-checkbox__custom-input {
+  width: 16px;
+  height: 16px;
+}
+
+.premium-checkbox--small .premium-checkbox__custom-input svg {
+  width: 12px;
+  height: 12px;
+}
+
+.premium-checkbox--small .premium-checkbox__text {
+  font-size: var(--field-font-size-small);
+}
+
+.premium-checkbox--large .premium-checkbox__custom-input {
+  width: 24px;
+  height: 24px;
+}
+
+.premium-checkbox--large .premium-checkbox__custom-input svg {
+  width: 20px;
+  height: 20px;
+}
+
+.premium-checkbox--large .premium-checkbox__text {
+  font-size: var(--field-font-size-large);
+}
+
+/* Variante filled pour Checkbox */
+.premium-checkbox--filled .premium-checkbox__custom-input {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: transparent;
+}
+
+/* Variantes de couleur pour Checkbox */
+.premium-checkbox--primary .premium-checkbox__input:checked ~ .premium-checkbox__custom-input {
+  background: linear-gradient(135deg, rgba(26, 73, 119, 0.7), rgba(36, 162, 111, 0.7));
+}
+
+.premium-checkbox--secondary .premium-checkbox__input:checked ~ .premium-checkbox__custom-input {
+  background: linear-gradient(135deg, rgba(93, 81, 163, 0.7), rgba(107, 79, 187, 0.7));
+}
+
+.premium-checkbox--accent .premium-checkbox__input:checked ~ .premium-checkbox__custom-input {
+  background: linear-gradient(135deg, rgba(228, 37, 53, 0.7), rgba(232, 113, 33, 0.7));
+}
+
+/* État disabled pour Checkbox */
+.premium-checkbox__input:disabled ~ .premium-checkbox__custom-input {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.premium-checkbox__input:disabled ~ .premium-checkbox__text {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Radio */
+.premium-radio {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.premium-radio__label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.premium-radio__input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.premium-radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.premium-radio__custom-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--field-background);
+  border: var(--field-border-width) solid var(--field-border-color);
+  transition: var(--field-transition);
+  overflow: hidden;
+}
+
+.premium-radio__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  transform: scale(0);
+  transition: var(--field-transition);
+}
+
+.premium-radio__input:checked ~ .premium-radio__custom-input {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.premium-radio__input:checked ~ .premium-radio__custom-input .premium-radio__dot {
+  transform: scale(1);
+}
+
+.premium-radio__input:focus ~ .premium-radio__custom-input {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.premium-radio__text {
+  font-size: var(--field-font-size-medium);
+  color: var(--field-text-color);
+  padding-top: 2px;
+  user-select: none;
+}
+
+.premium-radio__required {
+  color: var(--field-error-color);
+  margin-left: 4px;
+}
+
+.premium-radio__helper-text {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  margin-left: 30px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.premium-radio__helper-text--error {
+  color: var(--field-error-color);
+}
+
+/* Variantes de taille pour Radio */
+.premium-radio--small .premium-radio__custom-input {
+  width: 16px;
+  height: 16px;
+}
+
+.premium-radio--small .premium-radio__dot {
+  width: 8px;
+  height: 8px;
+}
+
+.premium-radio--small .premium-radio__text {
+  font-size: var(--field-font-size-small);
+}
+
+.premium-radio--large .premium-radio__custom-input {
+  width: 24px;
+  height: 24px;
+}
+
+.premium-radio--large .premium-radio__dot {
+  width: 12px;
+  height: 12px;
+}
+
+.premium-radio--large .premium-radio__text {
+  font-size: var(--field-font-size-large);
+}
+
+/* Variante filled pour Radio */
+.premium-radio--filled .premium-radio__custom-input {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: transparent;
+}
+
+/* Variantes de couleur pour Radio */
+.premium-radio--primary .premium-radio__input:checked ~ .premium-radio__custom-input {
+  background: linear-gradient(135deg, rgba(26, 73, 119, 0.7), rgba(36, 162, 111, 0.7));
+}
+
+.premium-radio--secondary .premium-radio__input:checked ~ .premium-radio__custom-input {
+  background: linear-gradient(135deg, rgba(93, 81, 163, 0.7), rgba(107, 79, 187, 0.7));
+}
+
+.premium-radio--accent .premium-radio__input:checked ~ .premium-radio__custom-input {
+  background: linear-gradient(135deg, rgba(228, 37, 53, 0.7), rgba(232, 113, 33, 0.7));
+}
+
+/* État disabled pour Radio */
+.premium-radio__input:disabled ~ .premium-radio__custom-input {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.premium-radio__input:disabled ~ .premium-radio__text {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* RadioGroup */
+.premium-radio-group {
+  margin-bottom: 20px;
+}
+
+.premium-radio-group__label {
+  font-size: var(--field-font-size-medium);
+  color: var(--field-label-color);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.premium-radio-group__required {
+  color: var(--field-error-color);
+  margin-left: 4px;
+}
+
+.premium-radio-group__options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.premium-radio-group--horizontal .premium-radio-group__options {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.premium-radio-group--horizontal .premium-radio {
+  margin-bottom: 0;
+}
+
+.premium-radio-group__helper-text {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.premium-radio-group__helper-text--error {
+  color: var(--field-error-color);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .premium-field,
+  .premium-checkbox,
+  .premium-radio,
+  .premium-radio-group {
+    max-width: 100%;
+  }
+  
+  .premium-radio-group--horizontal .premium-radio-group__options {
+    flex-direction: column;
+  }
+}

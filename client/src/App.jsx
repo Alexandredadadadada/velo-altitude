@@ -5,6 +5,10 @@ import { AuthProvider } from './hooks/useAuth';
 import AppRouter from './AppRouter';
 import { SnackbarProvider } from 'notistack';
 import { AnimatePresence } from 'framer-motion';
+import ErrorBoundary from './components/error/ErrorBoundary';
+import NotificationSystem from './components/notification/NotificationSystem';
+import monitoringService from './services/monitoring/MonitoringService';
+import apiErrorHandler from './services/errorHandling/apiErrorHandler';
 
 // Définition du thème
 const getTheme = (mode) => createTheme({
@@ -318,6 +322,16 @@ function App() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
+  // Initialiser le service de monitoring
+  useEffect(() => {
+    // Initialiser avec l'ID de l'utilisateur si disponible
+    const userId = localStorage.getItem('userId') || 'anonymous';
+    monitoringService.init(userId);
+    
+    // Log de démarrage de l'application
+    console.log('[App] Application démarrée avec succès');
+  }, []);
+
   // Fonction pour changer le thème
   const toggleTheme = () => {
     const newMode = mode === 'light' ? 'dark' : 'light';
@@ -325,21 +339,37 @@ function App() {
     localStorage.setItem('themeMode', newMode);
   };
 
+  // Gestionnaire global des erreurs
+  const handleApplicationError = (errorData) => {
+    console.error('[App] Erreur globale capturée:', errorData);
+    monitoringService.trackError(errorData.error, {
+      componentStack: errorData.errorInfo?.componentStack,
+      moduleName: errorData.moduleName || 'App'
+    });
+  };
+
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <SnackbarProvider 
-        maxSnack={3} 
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        autoHideDuration={4000}
-      >
-        <AuthProvider toggleTheme={toggleTheme} currentTheme={mode}>
-          <AnimatePresence mode="wait">
-            <AppRouter />
-          </AnimatePresence>
-        </AuthProvider>
-      </SnackbarProvider>
-    </ThemeProvider>
+    <ErrorBoundary 
+      moduleName="Application" 
+      onError={handleApplicationError}
+      showErrorDetails={process.env.NODE_ENV !== 'production'}
+    >
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <SnackbarProvider 
+          maxSnack={3} 
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          autoHideDuration={4000}
+        >
+          <AuthProvider toggleTheme={toggleTheme} currentTheme={mode}>
+            <AnimatePresence mode="wait">
+              <AppRouter />
+            </AnimatePresence>
+          </AuthProvider>
+          <NotificationSystem maxNotifications={5} />
+        </SnackbarProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 

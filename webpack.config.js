@@ -3,19 +3,84 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
+  const isAnalyze = env && env.analyze;
   
   return {
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: isProduction ? 'static/js/[name].[contenthash:8].js' : 'static/js/bundle.js',
+      chunkFilename: isProduction ? 'static/js/[name].[contenthash:8].chunk.js' : 'static/js/[name].chunk.js',
       publicPath: '/',
       clean: true,
     },
     mode: isProduction ? 'production' : 'development',
+    devtool: isProduction ? false : 'source-map',
+    optimization: {
+      minimize: isProduction,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            parse: {
+              ecma: 8,
+            },
+            compress: {
+              ecma: 5,
+              warnings: false,
+              comparisons: false,
+              inline: 2,
+              drop_console: isProduction,
+            },
+            mangle: {
+              safari10: true,
+            },
+            output: {
+              ecma: 5,
+              comments: false,
+              ascii_only: true,
+            },
+          },
+        }),
+      ],
+      splitChunks: {
+        chunks: 'all',
+        maxInitialRequests: Infinity,
+        minSize: 20000,
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            name(module) {
+              // Créer des chunks par nom de package npm
+              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+              
+              // Pour les bibliothèques lourdes, créer des chunks dédiés
+              if (packageName.includes('three')) return 'vendor.three';
+              if (packageName.includes('chart')) return 'vendor.chart';
+              if (packageName.includes('react') || packageName.includes('redux')) return 'vendor.react';
+              if (packageName.includes('material') || packageName.includes('mui')) return 'vendor.material';
+              
+              // Autres bibliothèques
+              return `vendor.${packageName.replace('@', '')}`;
+            },
+          },
+          // Regrouper les modules communs
+          common: {
+            name: 'common',
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true,
+          },
+        },
+      },
+      runtimeChunk: 'single',
+    },
     module: {
       rules: [
         {
@@ -24,7 +89,8 @@ module.exports = (env, argv) => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+              cacheDirectory: true,
             },
           },
         },
@@ -38,6 +104,11 @@ module.exports = (env, argv) => {
         {
           test: /\.(png|jpg|jpeg|gif)$/i,
           type: 'asset',
+          parser: {
+            dataUrlCondition: {
+              maxSize: 10 * 1024, // 10kb
+            },
+          },
         },
         {
           test: /\.svg$/,
@@ -52,9 +123,29 @@ module.exports = (env, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './public/index.html',
+        minify: isProduction && {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        },
       }),
       isProduction && new MiniCssExtractPlugin({
         filename: 'static/css/[name].[contenthash:8].css',
+        chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
+      }),
+      isProduction && new CompressionPlugin({
+        filename: '[path][base].gz',
+        algorithm: 'gzip',
+        test: /\.(js|css|html|svg)$/,
+        threshold: 10240,
+        minRatio: 0.8,
       }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(isProduction ? 'production' : 'development'),
@@ -70,12 +161,24 @@ module.exports = (env, argv) => {
           },
         ],
       }),
+      isAnalyze && new BundleAnalyzerPlugin({
+        analyzerMode: isProduction ? 'static' : 'server',
+        reportFilename: 'bundle-analysis.html',
+        openAnalyzer: !isProduction,
+        generateStatsFile: true,
+        statsFilename: 'bundle-stats.json',
+      }),
     ].filter(Boolean),
     resolve: {
       extensions: ['.js', '.jsx', '.json'],
       alias: {
         '@': path.resolve(__dirname, 'src'),
       },
+    },
+    performance: {
+      hints: isProduction ? 'warning' : false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000,
     },
   };
 };

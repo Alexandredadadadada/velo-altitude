@@ -1,0 +1,161 @@
+/**
+ * Design tokens globaux pour Velo-Altitude
+ * 
+ * Ce fichier centralise toutes les variables CSS qui définissent
+ * l'aspect visuel cohérent de l'application.
+ */
+
+:root {
+  /* Couleurs principales */
+  --color-primary: #3494E6;
+  --color-primary-light: #61B0FA;
+  --color-primary-dark: #1C6DB3;
+  
+  --color-secondary: #EC6EAD;
+  --color-secondary-light: #FF8BC2;
+  --color-secondary-dark: #C93D7C;
+  
+  --color-accent: #FFD166;
+  
+  /* Palette de dégradés */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --gradient-dark: linear-gradient(135deg, #141E30, #243B55);
+  --gradient-light: linear-gradient(135deg, #E0EAFC, #CFDEF3);
+  
+  /* Couleurs de texte */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.8);
+  --color-text-tertiary: rgba(255, 255, 255, 0.6);
+  --color-text-disabled: rgba(255, 255, 255, 0.4);
+  
+  /* Couleurs de fond */
+  --color-background-primary: #0F172A;
+  --color-background-secondary: #1E293B;
+  --color-background-card: #1E293B;
+  --color-background-elevated: #334155;
+  
+  /* Effet de verre (glassmorphism) */
+  --glass-background: rgba(255, 255, 255, 0.05);
+  --glass-background-dense: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(10px);
+  
+  /* Ombres */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  
+  /* États */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  
+  /* Espacement */
+  --space-xs: 0.25rem;    /* 4px */
+  --space-sm: 0.5rem;     /* 8px */
+  --space-md: 1rem;       /* 16px */
+  --space-lg: 1.5rem;     /* 24px */
+  --space-xl: 2rem;       /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4rem;      /* 64px */
+  
+  /* Bordures */
+  --border-radius-sm: 0.25rem;    /* 4px */
+  --border-radius-md: 0.5rem;     /* 8px */
+  --border-radius-lg: 0.75rem;    /* 12px */
+  --border-radius-xl: 1rem;       /* 16px */
+  --border-radius-full: 9999px;
+  
+  /* Typographie */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-md: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.75;
+  
+  /* Transitions */
+  --transition-fast: all 0.15s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  
+  /* Mise en page */
+  --max-width-container: 1200px;
+  --width-sidebar: 280px;
+  --height-header: 80px;
+  --height-footer: 60px;
+  
+  /* z-index */
+  --z-index-dropdown: 100;
+  --z-index-sticky: 200;
+  --z-index-fixed: 300;
+  --z-index-modal-backdrop: 400;
+  --z-index-modal: 500;
+  --z-index-popover: 600;
+  --z-index-toast: 700;
+  --z-index-tooltip: 800;
+  
+  /* Animations */
+  --animation-duration-fast: 150ms;
+  --animation-duration-normal: 300ms;
+  --animation-duration-slow: 500ms;
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tokens pour l'accessibilité */
+:root {
+  /* Contours de focus pour meilleure accessibilité */
+  --focus-ring-color: var(--color-primary);
+  --focus-ring-offset: 2px;
+  --focus-ring-width: 2px;
+  --focus-ring: var(--focus-ring-width) solid var(--focus-ring-color);
+  
+  /* Propriétés pour les lecteurs d'écran et autres technologies d'assistance */
+  --reduced-motion: var(--transition-fast); /* Pour les utilisateurs qui préfèrent un mouvement réduit */
+}
+
+/* Classes d'utilité pour l'accessibilité */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Préférences utilisateur - Respecter les choix d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Classes pour les états de focus */
+.focus-visible-ring:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}

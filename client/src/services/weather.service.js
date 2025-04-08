@@ -1,12 +1,14 @@
 // Weather Service
-import axios from 'axios';
+import api from './apiWrapper';
+import config from '../config';
 
-// OpenWeatherMap API key
-const WEATHER_API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY || '';
+// OpenWeatherMap API key et URL de base depuis la configuration centralisée
+const WEATHER_API_KEY = config.api.weatherApiKey || '';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 /**
- * Weather Service to fetch and process weather data
+ * Service météo pour obtenir et traiter les données météorologiques
+ * Utilise apiWrapper qui gère les appels API réels avec MSW en mode développement.
  */
 class WeatherService {
   /**
@@ -18,12 +20,10 @@ class WeatherService {
    */
   async getCurrentWeather(lat, lng, lang = 'en') {
     try {
-      const response = await axios.get(`${BASE_URL}/weather`, {
+      const response = await api.get(`/weather/current`, {
         params: {
           lat,
-          lon: lng,
-          appid: WEATHER_API_KEY,
-          units: 'metric',
+          lng,
           lang
         }
       });
@@ -43,12 +43,10 @@ class WeatherService {
    */
   async getForecast(lat, lng, lang = 'en') {
     try {
-      const response = await axios.get(`${BASE_URL}/forecast`, {
+      const response = await api.get(`/weather/forecast`, {
         params: {
           lat,
-          lon: lng,
-          appid: WEATHER_API_KEY,
-          units: 'metric',
+          lng,
           lang
         }
       });
@@ -82,12 +80,11 @@ class WeatherService {
         sampledPoints.push(routePoints[routePoints.length - 1]);
       }
       
-      // Get weather for each point
-      const weatherPromises = sampledPoints.map(point => 
-        this.getCurrentWeather(point.lat, point.lng, lang)
-      );
-      
-      return await Promise.all(weatherPromises);
+      const response = await api.post(`/weather/route`, {
+        points: sampledPoints,
+        lang
+      });
+      return response.data;
     } catch (error) {
       console.error('Error fetching route weather:', error);
       throw error;

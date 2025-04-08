@@ -1,0 +1,85 @@
+// Variables de couleur
+$primary-color: #1976d2;
+$secondary-color: #dc004e;
+$success-color: #4caf50;
+$warning-color: #ff9800;
+$error-color: #f44336;
+$info-color: #2196f3;
+
+// Couleurs neutres
+$black: #000000;
+$white: #ffffff;
+$gray-100: #f5f5f5;
+$gray-200: #eeeeee;
+$gray-300: #e0e0e0;
+$gray-400: #bdbdbd;
+$gray-500: #9e9e9e;
+$gray-600: #757575;
+$gray-700: #616161;
+$gray-800: #424242;
+$gray-900: #212121;
+
+// Couleurs spécifiques à l'application
+$col-easy: #4caf50;
+$col-medium: #ff9800;
+$col-hard: #f44336;
+$col-extreme: #9c27b0;
+
+// Couleurs de fond
+$background-light: #f5f5f5;
+$background-dark: #303030;
+$background-paper-light: #ffffff;
+$background-paper-dark: #424242;
+
+// Espacements
+$spacing-unit: 8px;
+$spacing-xs: $spacing-unit;
+$spacing-sm: $spacing-unit * 2;
+$spacing-md: $spacing-unit * 3;
+$spacing-lg: $spacing-unit * 4;
+$spacing-xl: $spacing-unit * 5;
+
+// Typographie
+$font-family-base: "'Roboto', 'Helvetica', 'Arial', sans-serif";
+$font-family-heading: "'Montserrat', 'Roboto', 'Helvetica', 'Arial', sans-serif";
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1920px;
+
+// Z-index
+$z-index-drawer: 1200;
+$z-index-app-bar: 1100;
+$z-index-modal: 1300;
+$z-index-tooltip: 1500;
+$z-index-snackbar: 1400;
+
+// Animations
+$transition-duration-short: 150ms;
+$transition-duration-standard: 300ms;
+$transition-duration-complex: 500ms;
+$transition-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+$transition-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+
+// Ombres
+$shadow-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$shadow-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$shadow-4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+$shadow-5: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+// Bordures
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-width: 1px;
+$border-color: $gray-300;

@@ -38,8 +38,6 @@ class WeatherPreloader {
     this.options = { ...defaultOptions, ...options };
     this.isInitialized = true;
     
-    console.log('[WeatherPreloader] ⚡ Préchargeur de données météo initialisé');
-    
     // Précharger les données météo pour les cols populaires au démarrage
     if (this.options.preloadPopularOnStart) {
       this.preloadPopularLocations();
@@ -50,8 +48,6 @@ class WeatherPreloader {
       this.preloadInterval = setInterval(() => {
         this.preloadPopularLocations();
       }, this.options.preloadInterval);
-      
-      console.log(`[WeatherPreloader] 🔄 Synchronisation planifiée toutes les ${this.options.preloadInterval / 60000} minutes`);
     }
   }
 
@@ -60,12 +56,10 @@ class WeatherPreloader {
    */
   async preloadPopularLocations() {
     if (this.syncInProgress) {
-      console.log('[WeatherPreloader] ⏳ Synchronisation déjà en cours');
       return;
     }
     
     this.syncInProgress = true;
-    console.log('[WeatherPreloader] 🔄 Démarrage de la synchronisation des données météo');
     
     try {
       // Ajouter les cols populaires à la file d'attente de préchargement
@@ -78,7 +72,6 @@ class WeatherPreloader {
       await this.startPreloading();
       
       this.stats.lastPreloadTime = new Date();
-      console.log(`[WeatherPreloader] ✅ Synchronisation terminée avec ${this.stats.successCount} succès et ${this.stats.errorCount} erreurs`);
     } catch (error) {
       console.error('[WeatherPreloader] ❌ Erreur lors de la synchronisation:', error);
     } finally {
@@ -97,8 +90,6 @@ class WeatherPreloader {
     }
     
     try {
-      console.log(`[WeatherPreloader] 🔍 Préchargement des données météo pour ${location.name || 'lieu inconnu'}`);
-      
       // Récupérer les données météo actuelles
       const currentWeather = await axios.get(`/api/weather/current?lat=${location.lat}&lon=${location.lng}`);
       
@@ -202,7 +193,6 @@ class WeatherPreloader {
     
     this.isInitialized = false;
     this.preloadQueue = [];
-    console.log('[WeatherPreloader] 🛑 Préchargeur de données météo arrêté');
   }
 
   /**

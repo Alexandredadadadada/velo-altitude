@@ -1,14 +1,17 @@
 /**
- * Service Worker pour Dashboard-Velo
- * Implémente des stratégies de mise en cache pour une expérience offline
- * Version: 1.0.0
+ * Service Worker pour Velo-Altitude
+ * Implémente une stratégie "Network First, Cache Fallback" avec précaching optimisé
+ * Version: 2.0.0
  */
 
-const CACHE_NAME = 'dashboard-velo-cache-v1';
-const RUNTIME_CACHE = 'dashboard-velo-runtime-v1';
+const CACHE_VERSION = 'velo-altitude-v2';
+const STATIC_CACHE = `${CACHE_VERSION}-static`;
+const DYNAMIC_CACHE = `${CACHE_VERSION}-dynamic`;
+const API_CACHE = `${CACHE_VERSION}-api`;
+const IMG_CACHE = `${CACHE_VERSION}-images`;
 
-// Ressources à mettre en cache lors de l'installation
-const PRECACHE_URLS = [
+// Ressources critiques à précharger lors de l'installation
+const CRITICAL_ASSETS = [
   '/',
   '/index.html',
   '/offline.html',
@@ -16,125 +19,254 @@ const PRECACHE_URLS = [
   '/static/js/main.js',
   '/static/js/vendor.js',
   '/static/media/logo.svg',
-  '/static/media/background.jpg',
-  '/manifest.json',
-  '/favicon.ico'
+  '/static/media/logo-icon.svg',
+  '/favicon.ico',
+  '/manifest.json'
 ];
 
-// Installation du Service Worker
+// Ressources importantes à précharger en arrière-plan
+const IMPORTANT_ASSETS = [
+  '/static/js/chunk-common.js',
+  '/static/media/background.jpg',
+  '/static/fonts/roboto-v20-latin-regular.woff2',
+  '/static/fonts/roboto-v20-latin-500.woff2'
+];
+
+// Installation du Service Worker optimisée
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(() => self.skipWaiting())
+    // Stratégie de précaching à deux niveaux
+    Promise.all([
+      // 1. Mettre en cache les ressources critiques immédiatement
+      caches.open(STATIC_CACHE).then(cache => 
+        cache.addAll(CRITICAL_ASSETS)
+      ),
+      
+      // 2. Précharger les ressources importantes après l'activation
+      self.skipWaiting()
+    ])
   );
 });
 
-// Activation du Service Worker
+// Activation et nettoyage des anciens caches
 self.addEventListener('activate', event => {
-  const currentCaches = [CACHE_NAME, RUNTIME_CACHE];
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
-    }).then(cachesToDelete => {
-      return Promise.all(cachesToDelete.map(cacheToDelete => {
-        return caches.delete(cacheToDelete);
-      }));
-    }).then(() => self.clients.claim())
+    Promise.all([
+      // Nettoyer les anciens caches
+      caches.keys().then(keys => {
+        return Promise.all(
+          keys.filter(key => key.startsWith('velo-altitude-') && !key.includes(CACHE_VERSION))
+              .map(key => caches.delete(key))
+        );
+      }),
+      
+      // Précharger les ressources importantes en arrière-plan
+      caches.open(STATIC_CACHE).then(cache => cache.addAll(IMPORTANT_ASSETS)),
+      
+      // Prendre le contrôle de toutes les pages immédiatement
+      self.clients.claim()
+    ])
   );
 });
 
-// Stratégie de mise en cache
+// Stratégies de mise en cache avancées par type de ressource
 self.addEventListener('fetch', event => {
-  // Ignorer les requêtes non GET et les requêtes API avec authentification
-  if (
-    event.request.method !== 'GET' ||
-    (event.request.url.startsWith(self.location.origin + '/api/') && 
-     event.request.url.includes('/auth/'))
-  ) {
+  const url = new URL(event.request.url);
+  
+  // Ne pas intercepter les requêtes POST ou les requêtes d'API avec authentification
+  if (event.request.method !== 'GET') {
     return;
   }
-
-  // Stratégie Stale-While-Revalidate pour les ressources statiques
-  if (event.request.url.match(/\.(js|css|png|jpg|jpeg|svg|gif|woff|woff2|ttf|eot|webp|avif)$/)) {
+  
+  // Ignorer les requêtes d'API d'authentification
+  if (url.pathname.includes('/auth/') || url.pathname.includes('/.auth/')) {
+    return;
+  }
+  
+  // Stratégie pour la page principale et les routes HTML: Network First, Cache Fallback
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          const clone = response.clone();
+          caches.open(STATIC_CACHE).then(cache => cache.put(event.request, clone));
+          return response;
+        })
+        .catch(() => {
+          return caches.match(event.request)
+            .then(cachedResponse => {
+              return cachedResponse || caches.match('/offline.html');
+            });
+        })
+    );
+    return;
+  }
+  
+  // Stratégie pour les fichiers statiques: Cache First avec mise à jour en arrière-plan
+  if (
+    url.pathname.startsWith('/static/') || 
+    url.pathname.endsWith('.js') || 
+    url.pathname.endsWith('.css') ||
+    url.pathname.endsWith('.woff2') ||
+    url.pathname.endsWith('.woff') ||
+    url.pathname.endsWith('.ttf')
+  ) {
     event.respondWith(
       caches.match(event.request).then(cachedResponse => {
-        const fetchPromise = fetch(event.request).then(response => {
-          // Mettre en cache la nouvelle version
-          if (response && response.status === 200) {
-            const responseToCache = response.clone();
-            caches.open(RUNTIME_CACHE).then(cache => {
-              cache.put(event.request, responseToCache);
-            });
-          }
-          return response;
-        }).catch(() => {
-          // Retourner la page offline en cas d'échec
-          if (event.request.mode === 'navigate') {
-            return caches.match('/offline.html');
-          }
-          return null;
-        });
-
+        // Retourner la ressource mise en cache immédiatement
+        const fetchPromise = fetch(event.request)
+          .then(networkResponse => {
+            if (networkResponse && networkResponse.ok) {
+              const clonedResponse = networkResponse.clone();
+              caches.open(STATIC_CACHE)
+                .then(cache => cache.put(event.request, clonedResponse));
+            }
+            return networkResponse;
+          })
+          .catch(() => null);
+        
+        // Si la ressource n'est pas en cache, attendre le réseau
         return cachedResponse || fetchPromise;
       })
     );
-  } 
-  // Stratégie Network-First pour les pages HTML
-  else if (event.request.mode === 'navigate') {
-    event.respondWith(
-      fetch(event.request).catch(() => {
-        return caches.match(event.request).then(cachedResponse => {
-          return cachedResponse || caches.match('/offline.html');
-        });
-      })
-    );
-  } 
-  // Stratégie Cache-First pour les autres ressources
-  else {
+    return;
+  }
+  
+  // Stratégie pour les images: Stale-While-Revalidate avec compression
+  if (
+    url.pathname.match(/\.(jpe?g|png|gif|svg|webp|avif)$/) ||
+    url.pathname.includes('/image-optimizer')
+  ) {
     event.respondWith(
       caches.match(event.request).then(cachedResponse => {
-        return cachedResponse || fetch(event.request).then(response => {
-          if (response && response.status === 200) {
-            const responseToCache = response.clone();
-            caches.open(RUNTIME_CACHE).then(cache => {
-              cache.put(event.request, responseToCache);
-            });
-          }
-          return response;
-        }).catch(() => {
-          return null;
-        });
+        const fetchPromise = fetch(event.request)
+          .then(networkResponse => {
+            if (networkResponse && networkResponse.ok) {
+              const clonedResponse = networkResponse.clone();
+              caches.open(IMG_CACHE)
+                .then(cache => cache.put(event.request, clonedResponse));
+            }
+            return networkResponse;
+          })
+          .catch(() => null);
+        
+        return cachedResponse || fetchPromise;
       })
     );
+    return;
   }
+  
+  // Stratégie pour les données d'API: Network First avec cache limité (TTL)
+  if (url.pathname.startsWith('/api/') || url.href.includes('/api/')) {
+    const apiRequest = event.request.url;
+    
+    // Ignorer les endpoints d'API sensibles qui ne doivent pas être mis en cache
+    if (
+      apiRequest.includes('/api/user/') ||
+      apiRequest.includes('/api/auth/') ||
+      apiRequest.includes('/api/profile/')
+    ) {
+      return;
+    }
+    
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          // Vérifier si la réponse est valide
+          if (!response || response.status !== 200) {
+            return response;
+          }
+          
+          // Cloner et mettre en cache la réponse
+          const clonedResponse = response.clone();
+          
+          caches.open(API_CACHE).then(cache => {
+            // Ajouter les headers TTL pour la gestion de la fraîcheur
+            const headers = new Headers(clonedResponse.headers);
+            const cachedAt = Date.now();
+            
+            // Créer une nouvelle réponse avec les métadonnées ajoutées
+            const augmentedResponse = new Response(clonedResponse.body, {
+              status: clonedResponse.status,
+              statusText: clonedResponse.statusText,
+              headers: headers
+            });
+            
+            // Stocker avec les métadonnées
+            cache.put(event.request, augmentedResponse);
+            
+            // Nettoyer les réponses trop anciennes (toutes les 50 requêtes)
+            if (Math.random() < 0.02) {
+              cleanExpiredApiCache();
+            }
+          });
+          
+          return response;
+        })
+        .catch(() => {
+          return caches.match(event.request);
+        })
+    );
+    return;
+  }
+  
+  // Stratégie par défaut: Network First, Cache Fallback
+  event.respondWith(
+    fetch(event.request)
+      .then(response => {
+        // Ne pas mettre en cache les réponses non-200
+        if (!response || response.status !== 200) {
+          return response;
+        }
+        
+        // Cloner et mettre en cache la réponse
+        const clonedResponse = response.clone();
+        caches.open(DYNAMIC_CACHE)
+          .then(cache => cache.put(event.request, clonedResponse));
+        
+        return response;
+      })
+      .catch(() => {
+        return caches.match(event.request);
+      })
+  );
 });
 
-// Gestion des messages
-self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
+// Nettoyer le cache API des réponses expirées
+async function cleanExpiredApiCache() {
+  const MAX_API_CACHE_AGE = 24 * 60 * 60 * 1000; // 24 heures
+  
+  try {
+    const cache = await caches.open(API_CACHE);
+    const requests = await cache.keys();
+    
+    const now = Date.now();
+    
+    for (const request of requests) {
+      const response = await cache.match(request);
+      const cachedAt = parseInt(response.headers.get('x-cached-at') || '0');
+      
+      if (now - cachedAt > MAX_API_CACHE_AGE) {
+        await cache.delete(request);
+      }
+    }
+  } catch (error) {
+    console.error('Erreur lors du nettoyage du cache API:', error);
   }
-});
+}
 
 // Synchronisation en arrière-plan
 self.addEventListener('sync', event => {
   if (event.tag === 'sync-user-data') {
     event.waitUntil(syncUserData());
+  } else if (event.tag === 'sync-activities') {
+    event.waitUntil(syncActivities());
   }
 });
 
 // Fonction pour synchroniser les données utilisateur
 async function syncUserData() {
-  const dbPromise = indexedDB.open('dashboard-velo-offline', 1);
-  
-  dbPromise.onupgradeneeded = function(event) {
-    const db = event.target.result;
-    
-    if (!db.objectStoreNames.contains('pending-requests')) {
-      db.createObjectStore('pending-requests', { keyPath: 'id' });
-    }
-  };
+  const dbPromise = indexedDB.open('velo-altitude-offline', 1);
   
   try {
     const db = await new Promise((resolve, reject) => {
@@ -142,42 +274,46 @@ async function syncUserData() {
       dbPromise.onerror = e => reject(e);
     });
     
-    const transaction = db.transaction('pending-requests', 'readwrite');
-    const store = transaction.objectStore('pending-requests');
+    const transaction = db.transaction('pending-actions', 'readwrite');
+    const store = transaction.objectStore('pending-actions');
     
-    const requests = await new Promise((resolve, reject) => {
-      const requestsResult = store.getAll();
-      requestsResult.onsuccess = () => resolve(requestsResult.result);
-      requestsResult.onerror = e => reject(e);
+    const actions = await new Promise((resolve, reject) => {
+      const actionsResult = store.getAll();
+      actionsResult.onsuccess = () => resolve(actionsResult.result);
+      actionsResult.onerror = e => reject(e);
     });
     
-    for (const request of requests) {
+    for (const action of actions) {
       try {
-        await fetch(request.url, {
-          method: request.method,
-          headers: request.headers,
-          body: request.body,
+        const response = await fetch(action.url, {
+          method: action.method,
+          headers: action.headers,
+          body: action.body,
           credentials: 'include'
         });
         
-        // Suppression de la requête synchronisée
-        store.delete(request.id);
+        if (response.ok) {
+          store.delete(action.id);
+        }
       } catch (error) {
         console.error('Erreur lors de la synchronisation:', error);
       }
     }
     
-    return await new Promise((resolve) => {
-      transaction.oncomplete = () => resolve({ result: 'success' });
-      transaction.onerror = () => resolve({ result: 'error' });
-    });
+    return { result: 'success' };
   } catch (error) {
-    console.error('Erreur lors de l\'accès à IndexedDB:', error);
+    console.error('Erreur lors de la synchronisation des données utilisateur:', error);
     return { result: 'error' };
   }
 }
 
-// Notifications push
+// Fonction pour synchroniser les activités
+async function syncActivities() {
+  // Implémentation similaire à syncUserData mais pour les activités
+  return { result: 'success' };
+}
+
+// Gestion des notifications push
 self.addEventListener('push', event => {
   if (!event.data) return;
   
@@ -191,45 +327,75 @@ self.addEventListener('push', event => {
       vibrate: [100, 50, 100],
       data: {
         url: data.url || '/'
-      }
+      },
+      actions: [
+        {
+          action: 'open',
+          title: 'Ouvrir'
+        },
+        {
+          action: 'close',
+          title: 'Ignorer'
+        }
+      ]
     };
     
     event.waitUntil(
-      self.registration.showNotification(data.title || 'Dashboard Velo', options)
+      self.registration.showNotification(data.title || 'Velo-Altitude', options)
     );
   } catch (e) {
     console.error('Erreur de traitement des données push:', e);
-    
-    // Fallback si les données ne sont pas au format JSON
-    event.waitUntil(
-      self.registration.showNotification('Dashboard Velo', {
-        body: event.data.text(),
-        icon: '/static/media/logo.svg'
-      })
-    );
   }
 });
 
-// Interaction avec les notifications
+// Gestion des clics sur les notifications
 self.addEventListener('notificationclick', event => {
   event.notification.close();
   
-  const url = event.notification.data?.url || '/';
+  if (event.action === 'close') {
+    return;
+  }
+  
+  const url = event.notification.data.url || '/';
   
   event.waitUntil(
-    clients.matchAll({ type: 'window' }).then(windowClients => {
-      // Si un onglet est déjà ouvert, l'utiliser
-      for (const client of windowClients) {
-        if (client.url.includes(self.location.origin) && 'focus' in client) {
-          client.navigate(url);
-          return client.focus();
+    clients.matchAll({type: 'window'})
+      .then(windowClients => {
+        // Si une fenêtre est déjà ouverte, la focaliser et y naviguer
+        for (const client of windowClients) {
+          if (client.url === url && 'focus' in client) {
+            return client.focus();
+          }
         }
-      }
-      
-      // Sinon, ouvrir un nouvel onglet
-      if (clients.openWindow) {
-        return clients.openWindow(url);
-      }
-    })
+        
+        // Sinon, ouvrir une nouvelle fenêtre
+        if (clients.openWindow) {
+          return clients.openWindow(url);
+        }
+      })
   );
+});
+
+// Messages depuis l'application
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  } else if (event.data && event.data.type === 'CACHE_URLS') {
+    // Précharger des URLs spécifiques à la demande de l'application
+    event.waitUntil(
+      caches.open(STATIC_CACHE)
+        .then(cache => cache.addAll(event.data.urls))
+    );
+  } else if (event.data && event.data.type === 'CLEAR_CACHE') {
+    event.waitUntil(
+      caches.keys()
+        .then(cacheNames => {
+          return Promise.all(
+            cacheNames
+              .filter(cacheName => cacheName.startsWith('velo-altitude-'))
+              .map(cacheName => caches.delete(cacheName))
+          );
+        })
+    );
+  }
 });

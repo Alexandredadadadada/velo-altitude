@@ -43,12 +43,15 @@ import {
   Speed as SpeedIcon,
   Favorite as FavoriteIcon,
   TimerOutlined as TimerIcon,
-  BarChart as BarChartIcon
+  BarChart as BarChartIcon,
+  Chat as ChatIcon
 } from '@mui/icons-material';
 
 // Import des services
 import nutritionService from '../../services/nutritionService';
 import { useAuth } from '../../contexts/AuthContext';
+// Import du composant AIChatbox
+import AIChatbox from '../../components/dashboard/AIChatbox';
 
 // Styles personnalisés
 const DashboardContainer = styled(Container)(({ theme }) => ({
@@ -211,6 +214,8 @@ const NutritionDashboard = () => {
   const [userNutrition, setUserNutrition] = useState(null);
   const [recentRecipes, setRecentRecipes] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
+  // État pour le chatbox
+  const [chatboxVisible, setChatboxVisible] = useState(true);
   
   // Récupération des données de nutrition de l'utilisateur
   useEffect(() => {
@@ -686,6 +691,28 @@ const NutritionDashboard = () => {
           </>
         )}
       </Box>
+      
+      {/* AI Chatbox integration */}
+      {chatboxVisible && (
+        <AIChatbox
+          position="fixed"
+          bottom={isMobile ? 0 : 20}
+          right={isMobile ? 0 : 20}
+          width={isMobile ? '100%' : '350px'}
+          height={isMobile ? '70vh' : '500px'}
+        />
+      )}
+      
+      {/* Chat toggle button for mobile */}
+      {isMobile && !chatboxVisible && (
+        <button 
+          className="chat-toggle-button"
+          onClick={() => setChatboxVisible(true)}
+          aria-label="Ouvrir l'assistant IA"
+        >
+          <span className="chat-icon">💬</span>
+        </button>
+      )}
       
       {/* Section Mise en avant */}
       <Box sx={{ mt: 8, mb: 4 }}>

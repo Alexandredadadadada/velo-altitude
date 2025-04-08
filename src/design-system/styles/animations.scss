@@ -1,0 +1,270 @@
+/**
+ * Animations et Transitions
+ * 
+ * Collection d'animations et transitions fluides pour créer
+ * l'effet "WOW" dans l'interface utilisateur de Velo-Altitude
+ */
+
+// Variables d'animation
+$transition-fast: 100ms;
+$transition-default: 200ms;
+$transition-slow: 400ms;
+$transition-xslow: 600ms;
+
+$easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+$easing-decelerate: cubic-bezier(0.0, 0, 0.2, 1);
+$easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+$easing-sharp: cubic-bezier(0.4, 0, 0.6, 1);
+
+// Transitions de base
+@mixin transition-standard($properties: all, $duration: $transition-default, $easing: $easing-standard) {
+  transition-property: $properties;
+  transition-duration: $duration;
+  transition-timing-function: $easing;
+}
+
+// Effet Parallax Reveal
+@keyframes parallax-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Effet de fondu en entrée
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Effet de slide des pages
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Effet de pulse pour attirer l'attention
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Effet de rebond léger
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// Animation spéciale pour le chargement de données
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+// Animation d'apparition pour les ColReveal
+@keyframes col-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+// Classes d'animation réutilisables
+.animate {
+  // Animations d'entrée et de sortie de base
+  &-fade-in {
+    animation: fade-in $transition-default $easing-standard forwards;
+  }
+  
+  &-slide-up {
+    animation: slide-up $transition-default $easing-decelerate forwards;
+  }
+  
+  &-slide-down {
+    animation: slide-down $transition-default $easing-decelerate forwards;
+  }
+  
+  &-slide-left {
+    animation: slide-left $transition-default $easing-decelerate forwards;
+  }
+  
+  &-slide-right {
+    animation: slide-right $transition-default $easing-decelerate forwards;
+  }
+  
+  // Animations d'attention
+  &-pulse {
+    animation: pulse 1.5s $easing-standard infinite;
+  }
+  
+  &-bounce {
+    animation: bounce 2s $easing-standard infinite;
+  }
+  
+  // Animation Parallax Reveal
+  &-parallax-reveal {
+    animation: parallax-reveal $transition-slow $easing-decelerate forwards;
+    
+    // Variations avec délais
+    @for $i from 1 through 10 {
+      &-delay-#{$i} {
+        animation: parallax-reveal $transition-slow $easing-decelerate forwards;
+        animation-delay: $i * 0.1s;
+      }
+    }
+  }
+  
+  // Animation ColReveal
+  &-col-reveal {
+    animation: col-reveal $transition-slow $easing-decelerate forwards;
+    
+    // Variations avec délais
+    @for $i from 1 through 10 {
+      &-delay-#{$i} {
+        animation: col-reveal $transition-slow $easing-decelerate forwards;
+        animation-delay: $i * 0.1s;
+      }
+    }
+  }
+  
+  // États de chargement
+  &-shimmer {
+    background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+    background-size: 800px 104px;
+    animation: shimmer 1.5s infinite linear;
+  }
+}
+
+// Classes pour les transitions de page
+.page-transition {
+  &-enter {
+    opacity: 0;
+    transform: translateY(20px);
+    
+    &-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity $transition-default $easing-decelerate, 
+                  transform $transition-default $easing-decelerate;
+    }
+  }
+  
+  &-exit {
+    opacity: 1;
+    
+    &-active {
+      opacity: 0;
+      transition: opacity $transition-default $easing-accelerate;
+    }
+  }
+}
+
+// Mixin pour créer des animations séquentielles
+@mixin staggered-animation($animation-name, $items, $initial-delay: 0s, $stagger-delay: 0.1s) {
+  @for $i from 1 through $items {
+    &:nth-child(#{$i}) {
+      animation-delay: $initial-delay + ($i - 1) * $stagger-delay;
+    }
+  }
+}
+
+// Classes utilitaires pour le timing et l'easing
+.transition {
+  &-fast {
+    transition-duration: $transition-fast;
+  }
+  
+  &-default {
+    transition-duration: $transition-default;
+  }
+  
+  &-slow {
+    transition-duration: $transition-slow;
+  }
+  
+  &-xslow {
+    transition-duration: $transition-xslow;
+  }
+  
+  &-standard {
+    transition-timing-function: $easing-standard;
+  }
+  
+  &-decelerate {
+    transition-timing-function: $easing-decelerate;
+  }
+  
+  &-accelerate {
+    transition-timing-function: $easing-accelerate;
+  }
+  
+  &-sharp {
+    transition-timing-function: $easing-sharp;
+  }
+}

@@ -1,0 +1,108 @@
+/**
+ * Styles pour le composant WorkoutTabs
+ * 
+ * Design premium pour la navigation par onglets
+ * Compatible avec les directives d'accessibilité WCAG
+ * Utilise les tokens du système de design Velo-Altitude
+ */
+
+.workout-tabs {
+  display: flex;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: var(--overlay-dark, rgba(25, 25, 35, 0.5));
+  overflow: hidden;
+  position: relative;
+}
+
+.workout-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.workout-tab:hover {
+  color: white;
+}
+
+.workout-tab.active {
+  color: white;
+}
+
+.workout-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-main, #3494E6), var(--accent-orange, #EC6EAD));
+}
+
+.workout-tab-icon {
+  font-size: 1.2rem;
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-main, #3494E6), var(--accent-orange, #EC6EAD));
+}
+
+/* Focus styles for accessibility */
+.workout-tab:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--functional-info, rgba(52, 148, 230, 0.5));
+}
+
+.workout-tab:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+/* Adaptative */
+@media (max-width: 768px) {
+  .workout-tabs {
+    overflow-x: auto;
+    padding: 0;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .workout-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .workout-tab {
+    padding: 0.8rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .workout-tab-text {
+    display: none;
+  }
+  
+  .workout-tab-icon {
+    font-size: 1.4rem;
+  }
+  
+  .workout-tab {
+    justify-content: center;
+  }
+}

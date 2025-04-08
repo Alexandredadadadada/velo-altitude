@@ -1,0 +1,100 @@
+/**
+ * Styles pour les onglets de profil
+ * 
+ * Fournit une navigation élégante avec des animations fluides
+ * et des indicateurs visuels pour la section active
+ */
+
+.profile-tabs {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.profile-tabs-nav {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.profile-tabs-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.profile-tabs-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.profile-tabs-nav::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.profile-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.profile-tab:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.profile-tab--active {
+  color: white;
+}
+
+.profile-tab-icon {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-tab-indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3494E6, #EC6EAD);
+  border-radius: 3px 3px 0 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-tab {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .profile-tab-icon {
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-tab-label {
+    display: none;
+  }
+  
+  .profile-tab-icon {
+    margin-right: 0;
+  }
+  
+  .profile-tab {
+    padding: 12px;
+  }
+}

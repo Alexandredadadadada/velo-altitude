@@ -1,0 +1,343 @@
+/**
+ * Styles pour les cartes de cols premium
+ * Incorpore le design glassmorphism et des animations fluides
+ */
+
+.col-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(25, 25, 35, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.col-card:hover {
+  background: rgba(25, 25, 35, 0.7);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Container d'image */
+.col-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.col-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.col-card:hover .col-card-image {
+  transform: scale(1.05);
+}
+
+/* Badge de région */
+.col-card-region {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.col-card-region svg {
+  color: #EC6EAD;
+  font-size: 1rem;
+}
+
+/* Bouton favoris */
+.col-favorite-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+.col-favorite-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.col-favorite-icon {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.col-favorite-icon.active {
+  color: #F5D76E;
+}
+
+/* Badge "Gravi" */
+.col-completed-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  background: rgba(52, 148, 230, 0.85);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.col-completed-badge svg {
+  font-size: 1rem;
+}
+
+/* Contenu de la carte */
+.col-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.2rem;
+  position: relative;
+}
+
+.col-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: white;
+}
+
+/* Statistiques du col */
+.col-card-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.col-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  flex: 1;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.col-stat-icon {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.3rem;
+}
+
+.col-stat-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.2rem;
+}
+
+.col-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Couleurs pour les niveaux de pente */
+.gradient-easy {
+  color: #4CAF50;
+}
+
+.gradient-moderate {
+  color: #FFC107;
+}
+
+.gradient-hard {
+  color: #FF9800;
+}
+
+.gradient-extreme {
+  color: #F44336;
+}
+
+/* Indicateur de difficulté */
+.col-difficulty {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.col-difficulty-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 0.8rem;
+}
+
+.col-difficulty-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.col-difficulty-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.col-difficulty-dot.active {
+  background: linear-gradient(45deg, #3494E6, #EC6EAD);
+}
+
+/* Section météo */
+.col-card-weather {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.col-current-weather {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.col-weather-icon {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 0.8rem;
+}
+
+.col-weather-temp {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-right: 0.8rem;
+}
+
+.col-weather-conditions {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.col-weather-forecast {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.col-forecast-day-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.3rem;
+}
+
+.col-forecast-icon {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.3rem;
+}
+
+.col-forecast-temp {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Lien vers la page détaillée */
+.col-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 0;
+  margin-top: auto;
+  background: rgba(52, 148, 230, 0.1);
+  border-radius: 8px;
+  color: rgba(52, 148, 230, 0.9);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.col-card-link:hover {
+  background: rgba(52, 148, 230, 0.2);
+  color: #3494E6;
+}
+
+.col-card-link svg {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.col-card-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .col-card-image-container {
+    height: 160px;
+  }
+  
+  .col-card-content {
+    padding: 1rem;
+  }
+  
+  .col-card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .col-card-stats {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .col-stat {
+    flex: 0 0 calc(50% - 0.25rem);
+  }
+}

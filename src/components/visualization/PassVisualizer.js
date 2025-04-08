@@ -8,7 +8,6 @@ import Pass3DViewer from './Pass3DViewer';
 import './PassVisualizer.css';
 
 // Constantes pour les styles de carte
-const MAPBOX_TOKEN = 'YOUR_MAPBOX_TOKEN'; // À remplacer par une clé réelle dans un environnement de production
 const mapStyle = 'mapbox://styles/mapbox/outdoors-v11';
 
 // Constantes pour les types de vues
@@ -184,7 +183,7 @@ const PassVisualizer = ({ passId }) => {
                   onMove={evt => setViewState(evt.viewState)}
                   style={{ width: '100%', height: '100%' }}
                   mapStyle={mapStyle}
-                  mapboxAccessToken={MAPBOX_TOKEN}
+                  mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN || process.env.MAPBOX_TOKEN}
                 >
                   {/* Dans une implémentation réelle, nous ajouterions des couches
                       pour visualiser le col sur la carte */}

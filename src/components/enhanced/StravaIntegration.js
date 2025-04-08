@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import { DirectionsBike, Hiking, DirectionsRun } from '@mui/icons-material';
 import StravaService from '../../services/stravaService';
-import AuthService from '../../services/authService';
+import AuthService from '../../../client/src/services/authService';
 
 /**
  * StravaIntegration component for importing and sharing Strava activities
@@ -161,14 +161,17 @@ const StravaIntegration = ({ userId, onActivityShared }) => {
   };
 
   return (
+    <>
       <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Velo-Altitude",
-          "description": "La plateforme complète pour les cyclistes passionnés de cols et de montagne.",
-          "url": "https://velo-altitude.com/stravaintegration"
-        }
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Velo-Altitude",
+            "description": "La plateforme complète pour les cyclistes passionnés de cols et de montagne.",
+            "url": "https://velo-altitude.com/stravaintegration"
+          }
+        `}
       </script>
       <EnhancedMetaTags
         title=""
@@ -176,201 +179,202 @@ const StravaIntegration = ({ userId, onActivityShared }) => {
         type="website"
         imageUrl="/images/og-image.jpg"
       />
-    <Box>
-      {!connected ? (
-        <Button
-          variant="contained"
-          color="warning"
-          onClick={handleConnectStrava}
-          disabled={loadingStrava}
-          startIcon={loadingStrava ? <CircularProgress size={20} /> : null}
-          sx={{ 
-            bgcolor: '#FC4C02', 
-            '&:hover': { bgcolor: '#E34000' } 
-          }}
-        >
-          {loadingStrava ? 'Connexion...' : 'Connecter avec Strava'}
-        </Button>
-      ) : (
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={() => setShowShareDialog(true)}
-          disabled={stravaActivities.length === 0}
-        >
-          Importer depuis Strava
-        </Button>
-      )}
-      
-      {/* Strava Activities Dialog */}
-      <Dialog 
-        open={showShareDialog && !selectedActivity && connected}
-        onClose={() => setShowShareDialog(false)}
-        maxWidth="md"
-        fullWidth
-      >
-        <DialogTitle>
-          Vos activités Strava
-        </DialogTitle>
-        
-        <DialogContent dividers>
-          {loadingStrava ? (
-            <Box display="flex" justifyContent="center" p={4}>
-              <CircularProgress />
-            </Box>
-          ) : stravaActivities.length === 0 ? (
-            <Typography variant="body1" align="center" p={4}>
-              Aucune activité Strava trouvée.
-            </Typography>
-          ) : (
-            <Grid container spacing={2}>
-              {stravaActivities.map(activity => (
-                <Grid item xs={12} sm={6} md={4} key={activity.id}>
-                  <Card variant="outlined">
-                    <CardHeader
-                      avatar={getActivityTypeIcon(activity.type)}
-                      title={activity.name}
-                      subheader={formatDate(activity.start_date)}
-                    />
-                    
-                    <CardContent>
-                      <Box display="flex" justifyContent="space-between">
-                        <Box>
-                          <Typography variant="caption" color="textSecondary">
-                            Distance
-                          </Typography>
-                          <Typography variant="body2" fontWeight="bold">
-                            {(activity.distance / 1000).toFixed(1)} km
-                          </Typography>
-                        </Box>
-                        
-                        <Box>
-                          <Typography variant="caption" color="textSecondary" align="center">
-                            Durée
-                          </Typography>
-                          <Typography variant="body2" fontWeight="bold" align="center">
-                            {formatDuration(activity.moving_time)}
-                          </Typography>
-                        </Box>
-                        
-                        <Box>
-                          <Typography variant="caption" color="textSecondary" align="right">
-                            Dénivelé
-                          </Typography>
-                          <Typography variant="body2" fontWeight="bold" align="right">
-                            {activity.total_elevation_gain} m
-                          </Typography>
-                        </Box>
-                      </Box>
-                    </CardContent>
-                    
-                    <CardActions>
-                      <Button 
-                        fullWidth 
-                        variant="contained" 
-                        color="primary"
-                        onClick={() => handleOpenShareDialog(activity)}
-                      >
-                        Partager
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          )}
-        </DialogContent>
-        
-        <DialogActions>
-          <Button onClick={() => setShowShareDialog(false)}>
-            Fermer
-          </Button>
-          <Button 
-            variant="outlined" 
-            color="primary"
-            onClick={fetchStravaActivities}
+      <Box>
+        {!connected ? (
+          <Button
+            variant="contained"
+            color="warning"
+            onClick={handleConnectStrava}
             disabled={loadingStrava}
+            startIcon={loadingStrava ? <CircularProgress size={20} /> : null}
+            sx={{ 
+              bgcolor: '#FC4C02', 
+              '&:hover': { bgcolor: '#E34000' } 
+            }}
           >
-            Actualiser
+            {loadingStrava ? 'Connexion...' : 'Connecter avec Strava'}
           </Button>
-        </DialogActions>
-      </Dialog>
-      
-      {/* Share Activity Dialog */}
-      <Dialog open={showShareDialog && selectedActivity} onClose={() => setShowShareDialog(false)}>
-        <DialogTitle>
-          Partager cette activité
-        </DialogTitle>
+        ) : (
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={() => setShowShareDialog(true)}
+            disabled={stravaActivities.length === 0}
+          >
+            Importer depuis Strava
+          </Button>
+        )}
         
-        <DialogContent dividers>
-          {selectedActivity && (
-            <Box>
-              <Typography variant="h6" gutterBottom>
-                {selectedActivity.name}
+        {/* Strava Activities Dialog */}
+        <Dialog 
+          open={showShareDialog && !selectedActivity && connected}
+          onClose={() => setShowShareDialog(false)}
+          maxWidth="md"
+          fullWidth
+        >
+          <DialogTitle>
+            Vos activités Strava
+          </DialogTitle>
+          
+          <DialogContent dividers>
+            {loadingStrava ? (
+              <Box display="flex" justifyContent="center" p={4}>
+                <CircularProgress />
+              </Box>
+            ) : stravaActivities.length === 0 ? (
+              <Typography variant="body1" align="center" p={4}>
+                Aucune activité Strava trouvée.
               </Typography>
-              
-              <Typography variant="body2" paragraph>
-                {formatDate(selectedActivity.start_date)}
-              </Typography>
-              
-              <Box display="flex" justifyContent="space-between" mb={2}>
-                <Typography variant="body2">
-                  {(selectedActivity.distance / 1000).toFixed(1)} km
+            ) : (
+              <Grid container spacing={2}>
+                {stravaActivities.map(activity => (
+                  <Grid item xs={12} sm={6} md={4} key={activity.id}>
+                    <Card variant="outlined">
+                      <CardHeader
+                        avatar={getActivityTypeIcon(activity.type)}
+                        title={activity.name}
+                        subheader={formatDate(activity.start_date)}
+                      />
+                      
+                      <CardContent>
+                        <Box display="flex" justifyContent="space-between">
+                          <Box>
+                            <Typography variant="caption" color="textSecondary">
+                              Distance
+                            </Typography>
+                            <Typography variant="body2" fontWeight="bold">
+                              {(activity.distance / 1000).toFixed(1)} km
+                            </Typography>
+                          </Box>
+                          
+                          <Box>
+                            <Typography variant="caption" color="textSecondary" align="center">
+                              Durée
+                            </Typography>
+                            <Typography variant="body2" fontWeight="bold" align="center">
+                              {formatDuration(activity.moving_time)}
+                            </Typography>
+                          </Box>
+                          
+                          <Box>
+                            <Typography variant="caption" color="textSecondary" align="right">
+                              Dénivelé
+                            </Typography>
+                            <Typography variant="body2" fontWeight="bold" align="right">
+                              {activity.total_elevation_gain} m
+                            </Typography>
+                          </Box>
+                        </Box>
+                      </CardContent>
+                      
+                      <CardActions>
+                        <Button 
+                          fullWidth 
+                          variant="contained" 
+                          color="primary"
+                          onClick={() => handleOpenShareDialog(activity)}
+                        >
+                          Partager
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
+            )}
+          </DialogContent>
+          
+          <DialogActions>
+            <Button onClick={() => setShowShareDialog(false)}>
+              Fermer
+            </Button>
+            <Button 
+              variant="outlined" 
+              color="primary"
+              onClick={fetchStravaActivities}
+              disabled={loadingStrava}
+            >
+              Actualiser
+            </Button>
+          </DialogActions>
+        </Dialog>
+        
+        {/* Share Activity Dialog */}
+        <Dialog open={showShareDialog && selectedActivity} onClose={() => setShowShareDialog(false)}>
+          <DialogTitle>
+            Partager cette activité
+          </DialogTitle>
+          
+          <DialogContent dividers>
+            {selectedActivity && (
+              <Box>
+                <Typography variant="h6" gutterBottom>
+                  {selectedActivity.name}
                 </Typography>
-                <Typography variant="body2">
-                  {formatDuration(selectedActivity.moving_time)}
+                
+                <Typography variant="body2" paragraph>
+                  {formatDate(selectedActivity.start_date)}
                 </Typography>
-                <Typography variant="body2">
-                  {selectedActivity.total_elevation_gain} m D+
+                
+                <Box display="flex" justifyContent="space-between" mb={2}>
+                  <Typography variant="body2">
+                    {(selectedActivity.distance / 1000).toFixed(1)} km
+                  </Typography>
+                  <Typography variant="body2">
+                    {formatDuration(selectedActivity.moving_time)}
+                  </Typography>
+                  <Typography variant="body2">
+                    {selectedActivity.total_elevation_gain} m D+
+                  </Typography>
+                </Box>
+                
+                <Typography variant="body2" paragraph>
+                  Cette activité sera convertie en itinéraire partageable.
                 </Typography>
               </Box>
-              
-              <Typography variant="body2" paragraph>
-                Cette activité sera convertie en itinéraire partageable.
-              </Typography>
-            </Box>
-          )}
-        </DialogContent>
+            )}
+          </DialogContent>
+          
+          <DialogActions>
+            <Button onClick={() => setShowShareDialog(false)}>
+              Annuler
+            </Button>
+            <Button 
+              variant="contained" 
+              color="primary"
+              onClick={shareStravaActivity}
+              disabled={loadingStrava}
+            >
+              {loadingStrava ? <CircularProgress size={24} /> : 'Partager'}
+            </Button>
+          </DialogActions>
+        </Dialog>
         
-        <DialogActions>
-          <Button onClick={() => setShowShareDialog(false)}>
-            Annuler
-          </Button>
-          <Button 
-            variant="contained" 
-            color="primary"
-            onClick={shareStravaActivity}
-            disabled={loadingStrava}
-          >
-            {loadingStrava ? <CircularProgress size={24} /> : 'Partager'}
-          </Button>
-        </DialogActions>
-      </Dialog>
-      
-      {/* Success Snackbar */}
-      <Snackbar
-        open={shareSuccess}
-        autoHideDuration={6000}
-        onClose={() => setShareSuccess(false)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
-        <Alert onClose={() => setShareSuccess(false)} severity="success">
-          Activité partagée avec succès !
-        </Alert>
-      </Snackbar>
-      
-      {/* Error Snackbar */}
-      <Snackbar
-        open={!!shareError}
-        autoHideDuration={6000}
-        onClose={() => setShareError(null)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
-        <Alert onClose={() => setShareError(null)} severity="error">
-          {shareError}
-        </Alert>
-      </Snackbar>
-    </Box>
+        {/* Success Snackbar */}
+        <Snackbar
+          open={shareSuccess}
+          autoHideDuration={6000}
+          onClose={() => setShareSuccess(false)}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        >
+          <Alert onClose={() => setShareSuccess(false)} severity="success">
+            Activité partagée avec succès !
+          </Alert>
+        </Snackbar>
+        
+        {/* Error Snackbar */}
+        <Snackbar
+          open={!!shareError}
+          autoHideDuration={6000}
+          onClose={() => setShareError(null)}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        >
+          <Alert onClose={() => setShareError(null)} severity="error">
+            {shareError}
+          </Alert>
+        </Snackbar>
+      </Box>
+    </>
   );
 };
 

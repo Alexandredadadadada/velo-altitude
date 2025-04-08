@@ -1,15 +1,12 @@
 /**
  * Service pour l'intégration avec l'API Strava
  * Gère l'authentification et les appels API à Strava
+ * Utilise apiWrapper qui gère les appels API réels avec MSW en mode développement.
  */
-import axios from 'axios';
+import api from './apiWrapper';
 import authService from './authService';
 
 class StravaService {
-  constructor() {
-    this.baseUrl = '/api/strava';
-  }
-  
   /**
    * Récupère les activités Strava de l'utilisateur
    * @param {Object} params - Paramètres de filtrage (before, after, page, per_page)
@@ -17,7 +14,7 @@ class StravaService {
    */
   async getUserActivities(params = {}) {
     try {
-      const response = await axios.get(`${this.baseUrl}/activities`, { params });
+      const response = await api.get(`/strava/activities`, { params });
       return response.data;
     } catch (error) {
       console.error('Erreur lors de la récupération des activités Strava:', error);
@@ -32,7 +29,7 @@ class StravaService {
    */
   async importActivity(activityId) {
     try {
-      const response = await axios.post(`${this.baseUrl}/import`, { activityId });
+      const response = await api.post(`/strava/import`, { activityId });
       return response.data;
     } catch (error) {
       console.error("Erreur lors de l'importation de l'activité Strava:", error);
@@ -47,7 +44,7 @@ class StravaService {
    */
   async convertActivityToRoute(activity) {
     try {
-      const response = await axios.post(`${this.baseUrl}/convert`, { activity });
+      const response = await api.post(`/strava/convert`, { activity });
       return response.data;
     } catch (error) {
       console.error("Erreur lors de la conversion de l'activité Strava:", error);
@@ -61,7 +58,7 @@ class StravaService {
    */
   async checkAuthStatus() {
     try {
-      const response = await axios.get(`${this.baseUrl}/auth-status`);
+      const response = await api.get(`/strava/auth-status`);
       return response.data.isAuthenticated;
     } catch (error) {
       console.error("Erreur lors de la vérification du statut d'authentification Strava:", error);
@@ -75,7 +72,7 @@ class StravaService {
    */
   async getAuthUrl() {
     try {
-      const response = await axios.get(`${this.baseUrl}/auth-url`);
+      const response = await api.get(`/strava/auth-url`);
       return response.data.url;
     } catch (error) {
       console.error("Erreur lors de la récupération de l'URL d'authentification Strava:", error);
@@ -89,7 +86,7 @@ class StravaService {
    */
   async syncActivities() {
     try {
-      const response = await axios.post(`${this.baseUrl}/sync`);
+      const response = await api.post(`/strava/sync`);
       return response.data;
     } catch (error) {
       console.error("Erreur lors de la synchronisation des activités Strava:", error);

@@ -183,7 +183,7 @@ const ColSelectionStep = ({ selectedCols = [], onColsChange, availableCols = [] 
           </Grid>
         </Grid>
         
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {showFilters && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}

@@ -9,7 +9,7 @@ import './PassVisualizer.css';
 import EnhancedMetaTags from '../common/EnhancedMetaTags';
 
 // Constantes pour les styles de carte
-const MAPBOX_TOKEN = 'YOUR_MAPBOX_TOKEN'; // À remplacer par une clé réelle dans un environnement de production
+const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN; // Utiliser une variable d'environnement pour le token Mapbox
 const mapStyle = 'mapbox://styles/mapbox/outdoors-v11';
 
 // Constantes pour les types de vues

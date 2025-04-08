@@ -1,21 +1,23 @@
 # Configuration Netlify pour Velo-Altitude
-# Mise à jour : Avril 2025 - Configuration optimisée pour l'authentification et les performances
+# Mise à jour : Avril 2025 - Configuration optimisée pour l'authentification, les performances et le code splitting
 
 [build]
-  publish = "client/build"
-  command = "cd client && npm ci && DISABLE_ESLINT_PLUGIN=true CI=false npm run build && node ../scripts/deploy-complete.js"
+  publish = "build"
+  command = "npm ci && npm run build:analyze && node ./scripts/deploy-complete.js"
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20.10.0"
   NPM_VERSION = "9.8.0"
-  CI = "false"
-  DISABLE_ESLINT_PLUGIN = "true"
-  # Force un build sans cache
+  # Configuration optimisée pour les performances de build
   NETLIFY_USE_YARN = "false"
   NETLIFY_YARN_WORKSPACES = "false"
   NETLIFY_CACHE_BUST = "true"
   ENABLE_BROTLI_COMPRESSION = "true"
+  # Optimisations webpack
+  GENERATE_SOURCEMAP = "false"
+  INLINE_RUNTIME_CHUNK = "false"
+  REACT_APP_BUNDLE_VISUALIZE = "false"
 
 # Configuration de traitement des assets
 [build.processing]
@@ -29,32 +31,13 @@
   bundle = true
   minify = true
 
+[build.processing.html]
+  pretty_urls = true
+  
 [build.processing.images]
   compress = true
 
-# Redirection pour SPA (Single Page Application)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Optimisation de cache pour les assets statiques
-[[headers]]
-  for = "/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Entêtes de sécurité pour toutes les pages
+# Configuration des en-têtes HTTP
 [[headers]]
   for = "/*"
   [headers.values]
@@ -62,5 +45,91 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; connect-src 'self' https://*.mapbox.com https://*.auth0.com https://api.openweathermap.org https://api.strava.com https://api.openrouteservice.org https://*.netlify.app https://api.anthropic.com https://api.openai.com; script-src 'self' 'unsafe-inline' https://*.mapbox.com https://*.auth0.com; style-src 'self' 'unsafe-inline' https://*.mapbox.com; img-src 'self' data: blob: https://*.mapbox.com https://openweathermap.org;"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(self)"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# Configuration des en-têtes pour les chunks JavaScript et CSS
+[[headers]]
+  for = "/static/js/*chunk*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/css/*chunk*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuration des en-têtes pour les ressources statiques
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuration des en-têtes pour les images
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Configuration des en-têtes pour les fonts
+[[headers]]
+  for = "/static/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuration des redirections
+[[redirects]]
+  from = "/col/*"
+  to = "/cols/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/itineraire/*"
+  to = "/itineraires/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/entrainements/*"
+  to = "/entrainement/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/profile/*"
+  to = "/profil/:splat"
+  status = 301
+
+# Redirection pour SPA - toutes les routes non correspondantes sont gérées par React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Configuration des plugins
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  
+  [plugins.inputs]
+    output_path = "reports/lighthouse.html"
+    
+    [plugins.inputs.thresholds]
+      performance = 90
+      accessibility = 90
+      best-practices = 90
+      seo = 90
+
+[[plugins]]
+  package = "netlify-plugin-cache"
+  
+  [plugins.inputs]
+    paths = [
+      "node_modules/.cache",
+      "build/_next/cache",
+      ".eslintcache"
+    ]
+
+# Déploiement automatique des branches
+[context.production]
+  environment = { NODE_ENV = "production", API_ENV = "production" }
+
+[context.deploy-preview]
+  environment = { NODE_ENV = "production", API_ENV = "staging" }

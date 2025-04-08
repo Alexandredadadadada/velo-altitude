@@ -1,116 +1,43 @@
 /**
- * API Wrapper pour Velo-Altitude
- * Ce service détecte automatiquement si l'application est sur Netlify et utilise des données mockées
- * au lieu d'appeler réellement les API si nécessaire
+ * Service de wrapping des appels API
+ * Fournit une interface unifiée pour les appels API avec authentification
+ * 
+ * En mode développement, MSW intercepte automatiquement les requêtes,
+ * ce qui élimine la nécessité d'une logique de mocking intégrée.
  */
+import axios from 'axios';
 import config from '../config';
-import mockColsData from '../data/mockColsData';
-import mockMajorChallengeData from '../data/mockMajorChallengeData';
-import mockNutritionData from '../data/mockNutritionData';
-import mockTrainingData from '../data/mockTrainingData';
-
-// Déterminer si nous devons utiliser des données mockées
-const useMockData = config.api.useMockData || config.development.mockData;
+import { handleApiError } from '../utils/apiErrorUtils';
+import { getAccessToken } from '../auth';
 
 /**
- * Wrapper pour les appels API qui utilise des données mockées si configuré ainsi
+ * Wrapper pour les appels API
  */
 class ApiWrapper {
   /**
-   * Récupère les données appropriées (réelles ou mockées) en fonction de la configuration
+   * Récupère les données via un appel GET
    * @param {string} endpoint - L'endpoint API à appeler
    * @param {Object} options - Options de la requête
    * @returns {Promise} - Promesse avec les données
    */
   async get(endpoint, options = {}) {
-    // Si on utilise des données mockées, retourner les données appropriées
-    if (useMockData) {
-      console.log(`Using mock data for ${endpoint}`);
-      return this.getMockData(endpoint, options);
-    }
-
-    // Sinon, faire un vrai appel API
     try {
-      const response = await fetch(`${config.api.baseUrl}${endpoint}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          ...options.headers
-        },
+      // Préparer les headers avec authentification si disponible
+      const headers = await this.prepareHeaders(options.headers);
+      
+      const response = await axios.get(`${config.API_BASE_URL}${endpoint}`, {
+        headers,
         ...options
       });
 
       if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        throw await this.createApiError(response);
       }
 
-      return await response.json();
+      return await response.data;
     } catch (error) {
-      console.error(`API error for ${endpoint}:`, error);
-      
-      // En cas d'erreur, on peut fallback sur les données mockées
-      console.log(`Falling back to mock data for ${endpoint}`);
-      return this.getMockData(endpoint, options);
+      return handleApiError(error, endpoint, 'GET');
     }
-  }
-
-  /**
-   * Récupère les données mockées appropriées en fonction de l'endpoint
-   * @param {string} endpoint - L'endpoint API
-   * @param {Object} options - Options de la requête
-   * @returns {Promise} - Promesse avec les données mockées
-   */
-  getMockData(endpoint, options = {}) {
-    // Simuler un délai réseau pour que ça paraisse plus réaliste
-    return new Promise(resolve => {
-      setTimeout(() => {
-        // Retourner les données mockées appropriées en fonction de l'endpoint
-        if (endpoint.includes('/cols')) {
-          resolve({ data: mockColsData });
-        } 
-        else if (endpoint.includes('/major-challenge') || endpoint.includes('/7majeurs')) {
-          if (endpoint.includes('/community')) {
-            resolve({ data: mockMajorChallengeData.communityChallenges });
-          } else if (endpoint.includes('/user')) {
-            resolve({ data: mockMajorChallengeData.userChallenges });
-          } else {
-            resolve({ data: mockMajorChallengeData.detailedCols });
-          }
-        }
-        else if (endpoint.includes('/nutrition')) {
-          if (endpoint.includes('/profile')) {
-            resolve({ data: mockNutritionData.nutritionProfile });
-          } else if (endpoint.includes('/recommendations')) {
-            resolve({ data: mockNutritionData.mealRecommendations });
-          } else if (endpoint.includes('/tracking')) {
-            resolve({ data: mockNutritionData.nutritionTracking });
-          } else if (endpoint.includes('/recipes')) {
-            resolve({ data: mockNutritionData.recipes });
-          } else {
-            resolve({ data: mockNutritionData });
-          }
-        }
-        else if (endpoint.includes('/training')) {
-          if (endpoint.includes('/profile')) {
-            resolve({ data: mockTrainingData.trainingProfile });
-          } else if (endpoint.includes('/plans')) {
-            resolve({ data: mockTrainingData.trainingPlans });
-          } else if (endpoint.includes('/workouts')) {
-            resolve({ data: mockTrainingData.colTrainingWorkouts });
-          } else if (endpoint.includes('/progress')) {
-            resolve({ data: mockTrainingData.trainingProgress });
-          } else if (endpoint.includes('/simulator')) {
-            resolve({ data: mockTrainingData.colSimulatorData });
-          } else {
-            resolve({ data: mockTrainingData });
-          }
-        }
-        else {
-          // Endpoint inconnu, retourner un objet vide
-          resolve({ data: {} });
-        }
-      }, 300); // Délai de 300ms pour simuler une requête réseau
-    });
   }
 
   /**
@@ -121,39 +48,22 @@ class ApiWrapper {
    * @returns {Promise} - Promesse avec la réponse
    */
   async post(endpoint, data, options = {}) {
-    // Si on utilise des données mockées, simuler une réponse réussie
-    if (useMockData) {
-      console.log(`Using mock POST for ${endpoint}`);
-      return new Promise(resolve => {
-        setTimeout(() => {
-          resolve({ success: true, data: { id: 'mock-id-' + Date.now() } });
-        }, 300);
-      });
-    }
-
-    // Sinon, faire un vrai appel API
     try {
-      const response = await fetch(`${config.api.baseUrl}${endpoint}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...options.headers
-        },
-        body: JSON.stringify(data),
+      // Préparer les headers avec authentification si disponible
+      const headers = await this.prepareHeaders(options.headers);
+      
+      const response = await axios.post(`${config.API_BASE_URL}${endpoint}`, data, {
+        headers,
         ...options
       });
 
       if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        throw await this.createApiError(response);
       }
 
-      return await response.json();
+      return await response.data;
     } catch (error) {
-      console.error(`API error for ${endpoint}:`, error);
-      
-      // En cas d'erreur, simuler une réponse réussie
-      console.log(`Falling back to mock response for ${endpoint}`);
-      return { success: true, data: { id: 'mock-id-' + Date.now() } };
+      return handleApiError(error, endpoint, 'POST');
     }
   }
 
@@ -165,34 +75,22 @@ class ApiWrapper {
    * @returns {Promise} - Promesse avec la réponse
    */
   async put(endpoint, data, options = {}) {
-    if (useMockData) {
-      console.log(`Using mock PUT for ${endpoint}`);
-      return new Promise(resolve => {
-        setTimeout(() => {
-          resolve({ success: true });
-        }, 300);
-      });
-    }
-
     try {
-      const response = await fetch(`${config.api.baseUrl}${endpoint}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          ...options.headers
-        },
-        body: JSON.stringify(data),
+      // Préparer les headers avec authentification si disponible
+      const headers = await this.prepareHeaders(options.headers);
+      
+      const response = await axios.put(`${config.API_BASE_URL}${endpoint}`, data, {
+        headers,
         ...options
       });
 
       if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        throw await this.createApiError(response);
       }
 
-      return await response.json();
+      return await response.data;
     } catch (error) {
-      console.error(`API error for ${endpoint}:`, error);
-      return { success: true };
+      return handleApiError(error, endpoint, 'PUT');
     }
   }
 
@@ -203,36 +101,71 @@ class ApiWrapper {
    * @returns {Promise} - Promesse avec la réponse
    */
   async delete(endpoint, options = {}) {
-    if (useMockData) {
-      console.log(`Using mock DELETE for ${endpoint}`);
-      return new Promise(resolve => {
-        setTimeout(() => {
-          resolve({ success: true });
-        }, 300);
-      });
-    }
-
     try {
-      const response = await fetch(`${config.api.baseUrl}${endpoint}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          ...options.headers
-        },
+      // Préparer les headers avec authentification si disponible
+      const headers = await this.prepareHeaders(options.headers);
+      
+      const response = await axios.delete(`${config.API_BASE_URL}${endpoint}`, {
+        headers,
         ...options
       });
 
       if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        throw await this.createApiError(response);
       }
 
-      return await response.json();
+      return await response.data;
     } catch (error) {
-      console.error(`API error for ${endpoint}:`, error);
-      return { success: true };
+      return handleApiError(error, endpoint, 'DELETE');
     }
+  }
+
+  /**
+   * Prépare les headers avec authentification
+   * @param {Object} customHeaders - Headers spécifiques à ajouter
+   * @returns {Promise<Object>} - Headers complets
+   */
+  async prepareHeaders(customHeaders = {}) {
+    const headers = {
+      'Content-Type': 'application/json',
+      ...customHeaders
+    };
+
+    try {
+      // Ajouter le token d'authentification s'il est disponible
+      const authToken = await getAccessToken();
+      if (authToken) {
+        headers['Authorization'] = `Bearer ${authToken}`;
+      }
+    } catch (error) {
+      console.error('Erreur lors de la récupération du token d\'authentification:', error);
+      // Continuer sans token
+    }
+
+    return headers;
+  }
+
+  /**
+   * Crée une erreur API structurée
+   * @param {Response} response - Réponse de l'API
+   * @returns {Error} - Erreur API
+   */
+  async createApiError(response) {
+    let errorDetails;
+    try {
+      errorDetails = await response.data;
+    } catch {
+      errorDetails = { message: 'Unknown error' };
+    }
+
+    const error = new Error(errorDetails.message || `API error: ${response.status}`);
+    error.status = response.status;
+    error.statusText = response.statusText;
+    error.details = errorDetails;
+    return error;
   }
 }
 
 // Exporter une instance unique du wrapper
-export default new ApiWrapper();
+const apiWrapperInstance = new ApiWrapper();
+export default apiWrapperInstance;

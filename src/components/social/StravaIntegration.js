@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import { DirectionsBike, Hiking, DirectionsRun } from '@mui/icons-material';
 import StravaService from '../../services/stravaService';
-import AuthService from '../../services/authService';
+import AuthService from '../../../client/src/services/authService';
 
 /**
  * StravaIntegration component for importing and sharing Strava activities

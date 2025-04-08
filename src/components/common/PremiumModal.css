@@ -1,0 +1,296 @@
+/**
+ * Styles pour le composant PremiumModal
+ * 
+ * Modale premium avec effet glassmorphism, animations fluides et
+ * différentes variantes visuelles
+ */
+
+.premium-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: opacity;
+}
+
+/* Backdrop */
+.premium-modal__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 0;
+}
+
+/* Container principal */
+.premium-modal__container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.premium-modal__container--center {
+  align-items: center;
+}
+
+.premium-modal__container--top {
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+.premium-modal__container--bottom {
+  align-items: flex-end;
+  padding-bottom: 60px;
+}
+
+/* Contenu de la modale */
+.premium-modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 95%;
+  max-height: calc(100vh - 40px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+}
+
+/* Variantes de taille */
+.premium-modal__content--small {
+  width: 400px;
+}
+
+.premium-modal__content--medium {
+  width: 600px;
+}
+
+.premium-modal__content--large {
+  width: 800px;
+}
+
+.premium-modal__content--fullscreen {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  border-radius: 20px;
+}
+
+/* Variantes de couleur */
+.premium-modal__content--success {
+  box-shadow: 0 0 0 1px rgba(36, 162, 111, 0.2), 
+              0 8px 30px rgba(36, 162, 111, 0.15);
+}
+
+.premium-modal__content--warning {
+  box-shadow: 0 0 0 1px rgba(230, 181, 74, 0.2), 
+              0 8px 30px rgba(230, 181, 74, 0.15);
+}
+
+.premium-modal__content--error {
+  box-shadow: 0 0 0 1px rgba(228, 37, 53, 0.2), 
+              0 8px 30px rgba(228, 37, 53, 0.15);
+}
+
+.premium-modal__content--info {
+  box-shadow: 0 0 0 1px rgba(26, 73, 119, 0.2), 
+              0 8px 30px rgba(26, 73, 119, 0.15);
+}
+
+/* En-tête */
+.premium-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.premium-modal__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.01em;
+}
+
+/* Bouton de fermeture */
+.premium-modal__close-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0;
+  margin-left: 15px;
+}
+
+.premium-modal__close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.premium-modal__close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  margin-top: -2px;
+}
+
+/* Corps */
+.premium-modal__body {
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+.premium-modal__body--scrollable {
+  overflow-y: auto;
+  max-height: calc(100vh - 180px);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.premium-modal__body--scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.premium-modal__body--scrollable::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.premium-modal__body--scrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* Pied de page */
+.premium-modal__footer {
+  padding: 16px 24px 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Effets au survol */
+.premium-modal__content:hover {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations des boutons du footer */
+.premium-modal__footer button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.premium-modal__footer button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .premium-modal__content--small,
+  .premium-modal__content--medium {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .premium-modal__content--large {
+    width: 100%;
+  }
+  
+  .premium-modal__body--scrollable {
+    max-height: calc(100vh - 160px);
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-modal__container {
+    padding: 15px;
+  }
+  
+  .premium-modal__content {
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+  .premium-modal__header {
+    padding: 16px 20px;
+  }
+  
+  .premium-modal__title {
+    font-size: 1.1rem;
+  }
+  
+  .premium-modal__body {
+    padding: 20px;
+  }
+  
+  .premium-modal__footer {
+    padding: 15px 20px 20px;
+    flex-direction: column;
+  }
+  
+  .premium-modal__footer button {
+    width: 100%;
+  }
+}
+
+/* Styles spécifiques par type de modale */
+.premium-modal__content--success .premium-modal__header {
+  border-bottom-color: rgba(36, 162, 111, 0.2);
+}
+
+.premium-modal__content--warning .premium-modal__header {
+  border-bottom-color: rgba(230, 181, 74, 0.2);
+}
+
+.premium-modal__content--error .premium-modal__header {
+  border-bottom-color: rgba(228, 37, 53, 0.2);
+}
+
+.premium-modal__content--info .premium-modal__header {
+  border-bottom-color: rgba(26, 73, 119, 0.2);
+}
+
+/* Animation pour les transitions entre deux états d'une même modale */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+}

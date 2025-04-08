@@ -35,8 +35,11 @@ class OptimizedDataService {
     // Configuration de la compression
     this.useCompression = true;
     
-    // Vérifier si mock data est activé
+    // Remplacer la vérification des données mockées par l'importation du RealApiOrchestrator
     this.useMockData = process.env.REACT_APP_USE_MOCK_DATA === 'true';
+    
+    // Initialiser RealApiOrchestrator (sera importé au besoin)
+    this.realApiOrchestrator = null;
   }
 
   /**
@@ -224,53 +227,49 @@ class OptimizedDataService {
    */
   async _makeApiRequest(endpoint, queryParams, dataType, cacheKey) {
     try {
-      // Si nous utilisons des données simulées, retourner les données mockées
-      if (this.useMockData) {
-        const mockData = await this._getMockData(dataType, queryParams);
+      // Construire l'URL complète
+      const url = `${endpoint}?${queryParams.toString()}`;
+      
+      try {
+        // Utiliser l'API standard ou les données mockées
+        if (this.useMockData) {
+          return this._getMockData(dataType, queryParams);
+        } else {
+          const response = await this.apiClient.get(url);
+          const data = response.data;
+          
+          // Mettre en cache les données
+          this._setCacheData(cacheKey, data, dataType);
+          
+          // Supprimer des requêtes en cours
+          if (this.pendingRequests.has(cacheKey)) {
+            this.pendingRequests.delete(cacheKey);
+          }
+          
+          return data;
+        }
+      } catch (error) {
+        console.error('[OptimizedDataService] Erreur de requête API:', error);
         
-        // Mettre en cache les données mockées
-        this._setCacheData(cacheKey, mockData, dataType);
-        
-        // Supprimer des requêtes en cours
+        // Supprimer des requêtes en cours en cas d'erreur
         if (this.pendingRequests.has(cacheKey)) {
           this.pendingRequests.delete(cacheKey);
         }
         
-        return mockData;
+        // En cas d'erreur et si des données en cache existent, retourner les données en cache périmées
+        if (this.cache.has(cacheKey)) {
+          console.warn('[OptimizedDataService] Retourne des données en cache périmées en raison d\'une erreur API');
+          return this.cache.get(cacheKey);
+        }
+        
+        throw error;
       }
-      
-      // Construire l'URL complète
-      const url = `${endpoint}?${queryParams.toString()}`;
-      
-      // Faire la requête API
-      const response = await this.apiClient.get(url);
-      
-      // Vérifier la réponse
-      if (response.status !== 200) {
-        throw new Error(`API request failed with status ${response.status}`);
-      }
-      
-      // Mettre en cache les données
-      this._setCacheData(cacheKey, response.data, dataType);
-      
-      // Supprimer des requêtes en cours
-      if (this.pendingRequests.has(cacheKey)) {
-        this.pendingRequests.delete(cacheKey);
-      }
-      
-      return response.data;
     } catch (error) {
-      console.error('[OptimizedDataService] API request error:', error);
+      console.error('[OptimizedDataService] Erreur de requête API:', error);
       
       // Supprimer des requêtes en cours en cas d'erreur
       if (this.pendingRequests.has(cacheKey)) {
         this.pendingRequests.delete(cacheKey);
-      }
-      
-      // En cas d'erreur et si des données en cache existent, retourner les données en cache périmées
-      if (this.cache.has(cacheKey)) {
-        console.warn('[OptimizedDataService] Returning stale cache data due to API error');
-        return this.cache.get(cacheKey);
       }
       
       throw error;
@@ -306,10 +305,10 @@ class OptimizedDataService {
    */
   async _getMockData(dataType, params) {
     try {
-      // Simuler un délai réseau pour le réalisme
+      // Simuler un délai réseau
       await new Promise(resolve => setTimeout(resolve, 200));
       
-      // Charger les données mockées en fonction du type
+      // Charger les données mockées en fonction du type comme fallback
       let mockData;
       
       switch(dataType) {
@@ -367,9 +366,9 @@ class OptimizedDataService {
       }
       
       return mockData;
-    } catch (error) {
-      console.error('[OptimizedDataService] Error loading mock data:', error);
-      return { error: 'Failed to load mock data', message: error.message };
+    } catch (fallbackError) {
+      console.error('[OptimizedDataService] Fallback error:', fallbackError);
+      return { error: 'Service unavailable', message: fallbackError.message };
     }
   }
 

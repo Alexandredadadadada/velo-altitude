@@ -33,13 +33,13 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 
 // Components
-import PageTransition from '../components/animations/PageTransition';
+import VisualizationGrid from '../components/visualization/VisualizationGrid';
+import VisualizationCarousel from '../components/visualization/VisualizationCarousel';
+import PageTransition from '../../src/components/common/PageTransition';
 import PassVisualizer from '../components/visualization/PassVisualizer';
 import PassComparison from '../components/visualization/PassComparison';
 import RouteAlternatives from '../components/visualization/RouteAlternatives';
 import ColVisualization3D from '../components/visualization/ColVisualization3D';
-import VisualizationGrid from '../components/visualization/VisualizationGrid';
-import VisualizationCarousel from '../components/visualization/VisualizationCarousel';
 import './VisualizationDashboard.css';
 import '../i18n'; // Ensure i18n is initialized
 
@@ -577,7 +577,7 @@ const VisualizationDashboard = () => {
                             <RouteIcon fontSize="large" />
                           </FeatureIcon>
                           <Typography variant="h6" gutterBottom>
-                            Alternatives de parcours
+                            Alternatives d'itinéraires
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
                             Découvrez des variantes de parcours adaptées à vos préférences et aux conditions météo.

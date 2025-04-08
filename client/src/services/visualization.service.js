@@ -1,6 +1,4 @@
-import axios from 'axios';
-
-const API_URL = '/api';
+import { apiWrapper as api } from '../utils/apiWrapper';
 
 /**
  * Service pour gérer les appels API liés aux visualisations
@@ -12,7 +10,7 @@ class VisualizationService {
    * @returns {Promise} - La promesse contenant les données du col
    */
   getPassVisualization(passId) {
-    return axios.get(`${API_URL}/visualization/passes/${passId}/visualization`);
+    return api.get(`/visualization/passes/${passId}/visualization`);
   }
 
   /**
@@ -21,7 +19,7 @@ class VisualizationService {
    * @returns {Promise} - La promesse contenant les données 3D
    */
   get3DPassVisualization(passId) {
-    return axios.get(`${API_URL}/visualization/passes/${passId}/3d`);
+    return api.get(`/visualization/passes/${passId}/3d`);
   }
 
   /**
@@ -30,7 +28,7 @@ class VisualizationService {
    * @returns {Promise} - La promesse contenant les annotations
    */
   getPassAnnotations(passId) {
-    return axios.get(`${API_URL}/visualization/passes/${passId}/annotations`);
+    return api.get(`/visualization/passes/${passId}/annotations`);
   }
 
   /**
@@ -40,7 +38,7 @@ class VisualizationService {
    * @returns {Promise} - La promesse contenant les données de comparaison
    */
   comparePassesData(passId1, passId2) {
-    return axios.get(`${API_URL}/visualization/passes/compare`, {
+    return api.get(`/visualization/passes/compare`, {
       params: { firstPassId: passId1, secondPassId: passId2 }
     });
   }
@@ -50,7 +48,7 @@ class VisualizationService {
    * @returns {Promise} - La promesse contenant les métadonnées
    */
   getPassComparisonMetadata() {
-    return axios.get(`${API_URL}/visualization/passes/comparison/metadata`);
+    return api.get(`/visualization/passes/comparison/metadata`);
   }
 
   /**
@@ -61,7 +59,7 @@ class VisualizationService {
    * @returns {Promise} - La promesse contenant l'URL du fichier exporté
    */
   exportPassComparison(passId1, passId2, format) {
-    return axios.post(`${API_URL}/visualization/passes/export`, {
+    return api.post(`/visualization/passes/export`, {
       firstPassId: passId1,
       secondPassId: passId2,
       format: format

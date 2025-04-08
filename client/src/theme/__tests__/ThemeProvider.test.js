@@ -19,40 +19,32 @@ const TestComponent = () => {
   );
 };
 
-// Mock de ThemeManager
-jest.mock('../../utils/ThemeManager', () => ({
-  initialize: jest.fn(),
-  isDarkModeEnabled: jest.fn(),
-  addThemeListener: jest.fn(),
-  removeThemeListener: jest.fn(),
-  toggleDarkMode: jest.fn(),
-  isInitialized: false
+// Mock des modules externes
+jest.mock('../materialTheme', () => ({
+  toggleTheme: jest.fn(),
+  getCurrentTheme: jest.fn().mockImplementation(() => ({
+    palette: {
+      mode: 'light',
+      background: { default: '#ffffff' },
+      primary: { main: '#1976d2' }
+    }
+  }))
 }));
 
 describe('ThemeProvider Component', () => {
-  let themeListenerCallback;
-  
   beforeEach(() => {
     jest.clearAllMocks();
+    document.body.classList.remove('dark-mode');
     
-    // Configurer le mode initial (light par défaut)
+    // Réinitialiser les mocks
     themeManager.isDarkModeEnabled.mockReturnValue(false);
-    
-    // Capturer le callback pour simuler les changements de thème
-    themeManager.addThemeListener.mockImplementation((callback) => {
-      themeListenerCallback = callback;
-      return () => {};
-    });
-    
-    // Simuler le toggle
-    themeManager.toggleDarkMode.mockImplementation(() => {
-      const newMode = !themeManager.isDarkModeEnabled();
-      themeManager.isDarkModeEnabled.mockReturnValue(newMode);
-      if (themeListenerCallback) {
-        themeListenerCallback(newMode);
+    getCurrentTheme.mockImplementation(() => ({
+      palette: {
+        mode: 'light',
+        background: { default: '#ffffff' },
+        primary: { main: '#1976d2' }
       }
-      return newMode;
-    });
+    }));
   });
 
   test('should render with light theme by default', () => {
@@ -77,8 +69,21 @@ describe('ThemeProvider Component', () => {
     // Vérifier le thème initial
     expect(screen.getByTestId('theme-mode').textContent).toBe('light');
     
-    // Simuler le toggle vers le mode sombre
+    // Simuler le passage au thème sombre
     act(() => {
+      // Mettre à jour le mock pour getCurrentTheme
+      getCurrentTheme.mockImplementation(() => ({
+        palette: {
+          mode: 'dark',
+          background: { default: '#121212' },
+          primary: { main: '#90caf9' }
+        }
+      }));
+      
+      // Déclencher le callback avec le thème sombre
+      themeManager._simulateThemeChange(true);
+      
+      // Appeler toggleTheme pour simuler un clic sur le bouton de bascule
       toggleTheme();
     });
     
@@ -87,6 +92,19 @@ describe('ThemeProvider Component', () => {
     
     // Simuler un autre toggle pour revenir au mode clair
     act(() => {
+      // Mise à jour de getCurrentTheme pour le thème clair
+      getCurrentTheme.mockImplementation(() => ({
+        palette: {
+          mode: 'light',
+          background: { default: '#ffffff' },
+          primary: { main: '#1976d2' }
+        }
+      }));
+      
+      // Déclencher le callback avec le thème clair
+      themeManager._simulateThemeChange(false);
+      
+      // Appeler toggleTheme à nouveau
       toggleTheme();
     });
     
@@ -95,28 +113,41 @@ describe('ThemeProvider Component', () => {
   });
   
   test('should properly apply theme values to Material-UI components', () => {
+    // Définir des valeurs spécifiques pour le test
+    getCurrentTheme.mockImplementation(() => ({
+      palette: {
+        mode: 'light',
+        background: { default: '#ffffff' },
+        primary: { main: '#ff0000' }
+      }
+    }));
+    
     render(
       <ThemeProvider>
         <TestComponent />
       </ThemeProvider>
     );
     
-    // Vérifier que les composants Material-UI reçoivent correctement le thème
-    const button = screen.getByTestId('mui-button');
-    
-    // En mode clair, le bouton doit avoir une couleur de fond égale à primary.main
-    const lightTheme = getCurrentTheme();
-    expect(getComputedStyle(button).backgroundColor).toBe(lightTheme.palette.primary.main);
+    // Vérifier que les valeurs du thème sont correctement appliquées
+    expect(screen.getByTestId('primary-color').textContent).toBe('#ff0000');
+    expect(screen.getByTestId('bg-color').textContent).toBe('#ffffff');
     
     // Simuler le passage en mode sombre
     act(() => {
-      toggleTheme();
+      getCurrentTheme.mockImplementation(() => ({
+        palette: {
+          mode: 'dark',
+          background: { default: '#121212' },
+          primary: { main: '#00ff00' }
+        }
+      }));
+      
+      themeManager._simulateThemeChange(true);
     });
     
     // En mode sombre, les couleurs devraient être différentes
-    const darkTheme = getCurrentTheme();
-    expect(screen.getByTestId('bg-color').textContent).toBe(darkTheme.palette.background.default);
-    expect(screen.getByTestId('primary-color').textContent).toBe(darkTheme.palette.primary.main);
+    expect(screen.getByTestId('bg-color').textContent).toBe('#121212');
+    expect(screen.getByTestId('primary-color').textContent).toBe('#00ff00');
   });
   
   test('should clean up theme listener on unmount', () => {

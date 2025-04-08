@@ -1,0 +1,320 @@
+/**
+ * Styles pour le composant WorkoutInstructorTab
+ * 
+ * Design premium pour l'affichage des informations de l'instructeur
+ * Compatible avec le service de profil utilisateur et son cache multi-niveau
+ */
+
+.workout-instructor-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.instructor-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.instructor-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.instructor-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(52, 148, 230, 0.2), rgba(236, 110, 173, 0.2));
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.instructor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instructor-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #3494E6, #EC6EAD);
+}
+
+.instructor-info {
+  flex: 1;
+}
+
+.instructor-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.3rem;
+}
+
+.instructor-title {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.instructor-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.rating-star {
+  color: #FFC107;
+  margin-left: 0.2rem;
+  font-size: 1rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.instructor-contact {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-button.email {
+  background: rgba(52, 148, 230, 0.15);
+  color: #3494E6;
+  border: 1px solid rgba(52, 148, 230, 0.3);
+}
+
+.contact-button.email:hover {
+  background: rgba(52, 148, 230, 0.25);
+}
+
+.contact-button.website {
+  background: rgba(236, 110, 173, 0.15);
+  color: #EC6EAD;
+  border: 1px solid rgba(236, 110, 173, 0.3);
+}
+
+.contact-button.website:hover {
+  background: rgba(236, 110, 173, 0.25);
+}
+
+.instructor-bio {
+  padding: 1.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.instructor-bio h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1rem;
+}
+
+.instructor-bio p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.instructor-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.instructor-detail-item {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.instructor-detail-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.detail-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.detail-content {
+  flex: 1;
+}
+
+.detail-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 0.5rem;
+}
+
+.detail-content p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.certification-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.certification-list li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.certification-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #3494E6;
+}
+
+.instructor-specialties {
+  padding: 1.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.instructor-specialties h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1rem;
+}
+
+.specialties-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.specialty-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+/* Classes pour l'intégration avec le service de profil utilisateur */
+.user-profile-loading {
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instructor-verified {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(76, 175, 80, 0.15);
+  color: #4CAF50;
+  font-size: 0.8rem;
+  margin-left: 0.8rem;
+}
+
+/* Adaptative */
+@media (max-width: 768px) {
+  .instructor-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .instructor-stats {
+    justify-content: center;
+  }
+  
+  .instructor-contact {
+    justify-content: center;
+  }
+  
+  .instructor-detail-item {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialties-list {
+    flex-direction: column;
+  }
+  
+  .specialty-tag {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .instructor-details-grid {
+    grid-template-columns: 1fr;
+  }
+}

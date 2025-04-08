@@ -24,7 +24,7 @@ const config = {
     baseUrl: apiBaseUrl,
     timeout: 15000, // 15 secondes
     retryAttempts: 3,
-    useMockData: isNetlify || (isDevelopment && (process.env.REACT_APP_USE_MOCK_DATA === 'true')) // Utiliser des données mockées sur Netlify
+    // Suppression de useMockData qui est géré par MSW maintenant
   },
   
   // Paramètres d'affichage
@@ -40,14 +40,16 @@ const config = {
   features: {
     useElevationProfile: true,
     useWeatherData: true,
-    useRealTimeData: !isNetlify, // Désactiver les données en temps réel sur Netlify
+    // MODIFICATION: Activer les données en temps réel sur Netlify
+    useRealTimeData: true,
     cacheDuration: 30 * 60 * 1000 // 30 minutes
   },
   
   // Paramètres pour le développement
   development: {
     enableLogs: isDevelopment,
-    mockData: isNetlify || (isDevelopment && (process.env.REACT_APP_USE_MOCK_DATA === 'true'))
+    // Modification: Données mockées gérées par MSW maintenant
+    mockDataMigrated: true
   }
 };
 

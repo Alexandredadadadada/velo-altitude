@@ -1,0 +1,536 @@
+/**
+ * Styles pour les composants "Empty State"
+ * 
+ * Écrans élégants et informatifs pour les situations où aucune donnée n'est disponible
+ * Les styles s'intègrent avec le système de design premium et l'effet glassmorphism
+ */
+
+/* Styles communs pour tous les états vides */
+.empty-state,
+.profile-empty-state,
+.search-empty-state,
+.collection-empty-state,
+.illustration-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+}
+
+/* BasicEmptyState */
+.empty-state {
+  min-height: 200px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.empty-state--compact {
+  padding: 20px;
+  min-height: 150px;
+}
+
+.empty-state--centered {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.empty-state--fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.empty-state__icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.empty-state__emoji {
+  display: inline-block;
+  animation: float 6s ease-in-out infinite;
+}
+
+.empty-state__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 15px;
+  color: white;
+}
+
+.empty-state__description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 25px;
+  max-width: 400px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.empty-state__action {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.empty-state__action:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* ProfileEmptyState */
+.profile-empty-state {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .profile-empty-state {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.profile-empty-state__content {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-empty-state__avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, rgba(26, 73, 119, 0.5), rgba(36, 162, 111, 0.5));
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-empty-state__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 15px;
+  color: white;
+}
+
+.profile-empty-state__description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 30px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 350px;
+}
+
+.profile-empty-state__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.profile-empty-state__connect-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #FC4C02; /* Couleur Strava */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(252, 76, 2, 0.3);
+}
+
+.profile-empty-state__connect-button:hover {
+  background-color: #E34402;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(252, 76, 2, 0.4);
+}
+
+.profile-empty-state__signup-button {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.profile-empty-state__signup-button:hover {
+  transform: translateY(-3px);
+}
+
+.profile-empty-state__service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section des avantages */
+.profile-empty-state__benefits {
+  background: linear-gradient(135deg, rgba(26, 73, 119, 0.3), rgba(36, 162, 111, 0.3));
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-radius: 0 16px 16px 0;
+}
+
+@media (max-width: 767px) {
+  .profile-empty-state__benefits {
+    border-radius: 0 0 16px 16px;
+  }
+}
+
+.profile-empty-state__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.profile-empty-state__benefit-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-empty-state__benefit-text {
+  flex: 1;
+}
+
+.profile-empty-state__benefit-text h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 5px;
+  color: white;
+}
+
+.profile-empty-state__benefit-text p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* SearchEmptyState */
+.search-empty-state {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 35px 30px;
+}
+
+.search-empty-state__icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  opacity: 0.8;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.search-empty-state__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: white;
+}
+
+.search-empty-state__description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-empty-state__suggestions {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.search-empty-state__suggestions-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+}
+
+.search-empty-state__suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.search-empty-state__suggestion-button {
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-empty-state__suggestion-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-empty-state__reset {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* CollectionEmptyState */
+.collection-empty-state {
+  min-height: 250px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.collection-empty-state__icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.collection-empty-state__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: white;
+}
+
+.collection-empty-state__description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 350px;
+}
+
+.collection-empty-state__action {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* États particuliers */
+.collection-empty-state--error .collection-empty-state__icon {
+  color: rgba(228, 37, 53, 0.8);
+}
+
+.collection-empty-state--loading {
+  min-height: 200px;
+}
+
+.collection-empty-state__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.collection-empty-state__loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+.collection-empty-state__loading-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* IllustrationEmptyState */
+.illustration-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .illustration-empty-state {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+  }
+}
+
+.illustration-empty-state__illustration {
+  margin-bottom: 30px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .illustration-empty-state__illustration {
+    margin-bottom: 0;
+    flex: 0 0 40%;
+  }
+}
+
+.illustration-empty-state__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .illustration-empty-state__content {
+    align-items: flex-start;
+    flex: 1;
+  }
+}
+
+.illustration-empty-state__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 15px;
+  color: white;
+}
+
+.illustration-empty-state__description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.illustration-empty-state__action {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media queries */
+@media (max-width: 480px) {
+  .empty-state,
+  .search-empty-state,
+  .collection-empty-state {
+    padding: 30px 20px;
+  }
+  
+  .profile-empty-state__content,
+  .profile-empty-state__benefits {
+    padding: 30px 20px;
+  }
+  
+  .empty-state__title,
+  .profile-empty-state__title,
+  .search-empty-state__title,
+  .collection-empty-state__title,
+  .illustration-empty-state__title {
+    font-size: calc(100% + 0.4rem);
+  }
+  
+  .empty-state__description,
+  .profile-empty-state__description,
+  .search-empty-state__description,
+  .collection-empty-state__description,
+  .illustration-empty-state__description {
+    font-size: calc(100% - 0.05rem);
+  }
+}

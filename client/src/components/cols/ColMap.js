@@ -20,6 +20,7 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Chart, registerables } from 'chart.js';
 import config from '../../config';
+import { markPerformanceEvent } from '../../performance/setupMonitoring';
 
 // Configuration de l'API mapbox
 mapboxgl.accessToken = config.mapboxToken;
@@ -36,6 +37,7 @@ const ColMap = ({ col }) => {
   const map = useRef(null);
   const elevationChartRef = useRef(null);
   const elevationChart = useRef(null);
+  const mapInitTimeRef = useRef(null);
   
   const [activeTab, setActiveTab] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -45,12 +47,22 @@ const ColMap = ({ col }) => {
   // Changer d'onglet
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
+    
+    // Mesurer le temps d'accès à chaque onglet
+    markPerformanceEvent('map_tab_change', { 
+      tabIndex: newValue,
+      tabName: newValue === 0 ? 'map' : 'elevation'
+    });
   };
   
   // Initialiser la carte
   useEffect(() => {
     if (!map.current && mapContainer.current && col?.location?.coordinates) {
       try {
+        // Marquer le début de l'initialisation de la carte
+        markPerformanceEvent('map_init_start', { colId: col.id });
+        mapInitTimeRef.current = performance.now();
+        
         const { latitude, longitude } = col.location.coordinates;
         
         map.current = new mapboxgl.Map({
@@ -61,6 +73,7 @@ const ColMap = ({ col }) => {
           attributionControl: true
         });
         
+        // Ajouter les contrôles de navigation
         map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
         map.current.addControl(new mapboxgl.FullscreenControl(), 'top-right');
         map.current.addControl(new mapboxgl.GeolocateControl({
@@ -102,6 +115,9 @@ const ColMap = ({ col }) => {
         // Si le col a un parcours GPX, l'afficher
         if (col.route && col.route.coordinates && col.route.coordinates.length > 0) {
           map.current.on('load', () => {
+            // Marquer le chargement du style de la carte
+            markPerformanceEvent('map_style_loaded');
+            
             // Ajouter la source de données pour le parcours
             map.current.addSource('route', {
               'type': 'geojson',
@@ -110,12 +126,12 @@ const ColMap = ({ col }) => {
                 'properties': {},
                 'geometry': {
                   'type': 'LineString',
-                  'coordinates': col.route.coordinates.map(point => [point.longitude, point.latitude])
+                  'coordinates': col.route.coordinates.map(coord => [coord.longitude, coord.latitude])
                 }
               }
             });
             
-            // Ajouter la couche pour afficher le parcours
+            // Ajouter la couche de ligne pour le parcours
             map.current.addLayer({
               'id': 'route',
               'type': 'line',
@@ -125,114 +141,208 @@ const ColMap = ({ col }) => {
                 'line-cap': 'round'
               },
               'paint': {
-                'line-color': markerColor,
+                'line-color': theme.palette.primary.main,
                 'line-width': 4
               }
             });
             
-            // Ajuster la vue pour voir tout le parcours
-            const coordinates = col.route.coordinates.map(point => [point.longitude, point.latitude]);
+            // Définir les limites de la carte pour inclure tout le parcours
+            const coordinates = col.route.coordinates.map(coord => [coord.longitude, coord.latitude]);
+            
+            // Créer une enveloppe autour des coordonnées du parcours
             const bounds = coordinates.reduce((bounds, coord) => {
               return bounds.extend(coord);
             }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
             
+            // Ajuster la carte pour montrer le parcours complet
             map.current.fitBounds(bounds, {
-              padding: 50,
-              maxZoom: 14
+              padding: 50
             });
             
-            setLoading(false);
-            setMapInitialized(true);
-          });
-        } else {
-          // Si pas de parcours, considérer la carte comme chargée
-          map.current.on('load', () => {
-            setLoading(false);
-            setMapInitialized(true);
+            // Marquer l'affichage du parcours GPX
+            markPerformanceEvent('map_route_displayed', { 
+              routePointsCount: coordinates.length 
+            });
           });
         }
+        
+        // Événements de performance de la carte
+        map.current.on('load', () => {
+          const loadTime = performance.now() - mapInitTimeRef.current;
+          setMapInitialized(true);
+          setLoading(false);
+          
+          // Marquer la fin de l'initialisation de la carte
+          markPerformanceEvent('map_init_complete', { 
+            colId: col.id, 
+            loadTimeMs: loadTime,
+            hasRoute: Boolean(col.route?.coordinates?.length)
+          });
+          
+          console.log(`[Performance] Map initialized in ${loadTime.toFixed(2)}ms`);
+        });
+        
+        map.current.on('error', (e) => {
+          setError(`Erreur de chargement de la carte: ${e.error?.message || 'Erreur inconnue'}`);
+          setLoading(false);
+          
+          // Marquer l'erreur de chargement de la carte
+          markPerformanceEvent('map_load_error', { 
+            colId: col.id,
+            error: e.error?.message || 'Erreur inconnue'
+          });
+        });
+        
+        // Suivre les interactions utilisateur
+        map.current.on('movestart', () => markPerformanceEvent('map_interaction_move_start'));
+        map.current.on('moveend', () => markPerformanceEvent('map_interaction_move_end'));
+        map.current.on('zoomstart', () => markPerformanceEvent('map_interaction_zoom_start'));
+        map.current.on('zoomend', () => markPerformanceEvent('map_interaction_zoom_end'));
+        
       } catch (err) {
         console.error('Erreur lors de l\'initialisation de la carte:', err);
-        setError('Impossible de charger la carte. Veuillez réessayer plus tard.');
+        setError(`Impossible d'initialiser la carte: ${err.message}`);
         setLoading(false);
+        
+        // Marquer l'erreur d'initialisation
+        markPerformanceEvent('map_init_error', { error: err.message });
       }
     }
-  }, [col, theme.palette.difficulty]);
+    
+    // Cleanup
+    return () => {
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+        markPerformanceEvent('map_component_unmount');
+      }
+    };
+  }, [col, theme.palette.difficulty, theme.palette.primary.main]);
   
   // Initialiser le graphique d'élévation
   useEffect(() => {
-    if (activeTab === 1 && elevationChartRef.current && col?.elevation_profile) {
-      // Nettoyer le graphique existant si nécessaire
-      if (elevationChart.current) {
-        elevationChart.current.destroy();
-      }
-      
+    if (elevationChartRef.current && col?.elevation_profile && activeTab === 1) {
       try {
+        // Marquer le début de l'initialisation du graphique
+        markPerformanceEvent('elevation_chart_init_start', { colId: col.id });
+        const startTime = performance.now();
+        
         const ctx = elevationChartRef.current.getContext('2d');
         
-        // Créer les données pour le graphique
-        const data = {
-          labels: col.elevation_profile.map((_, index) => {
-            return `${(index / (col.elevation_profile.length - 1) * 100).toFixed(0)}%`;
-          }),
-          datasets: [{
-            label: 'Altitude (m)',
-            data: col.elevation_profile.map(point => point.elevation),
-            fill: true,
-            backgroundColor: `${theme.palette.primary.main}40`, // Avec transparence
-            borderColor: theme.palette.primary.main,
-            tension: 0.2
-          }]
-        };
+        // Détruire le graphique existant s'il y en a un
+        if (elevationChart.current) {
+          elevationChart.current.destroy();
+        }
+        
+        // Extraire les données d'élévation
+        const labels = col.elevation_profile.map((point, index) => 
+          `${(point.distance || index * 0.1).toFixed(1)} km`);
+        const data = col.elevation_profile.map(point => point.elevation);
         
         // Créer le graphique
         elevationChart.current = new Chart(ctx, {
           type: 'line',
-          data: data,
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Altitude (m)',
+              data: data,
+              borderColor: theme.palette.primary.main,
+              backgroundColor: `${theme.palette.primary.main}33`,
+              borderWidth: 2,
+              pointRadius: 0,
+              pointHoverRadius: 4,
+              pointBackgroundColor: theme.palette.primary.dark,
+              fill: true,
+              tension: 0.2
+            }]
+          },
           options: {
             responsive: true,
             maintainAspectRatio: false,
-            interaction: {
-              intersect: false,
-              mode: 'nearest'
-            },
-            plugins: {
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    return `${context.parsed.y}m d'altitude`;
-                  },
-                  title: function(context) {
-                    return `Progression: ${context[0].label}`;
-                  }
-                }
-              },
-              legend: {
-                display: false
-              }
-            },
             scales: {
               y: {
                 beginAtZero: false,
                 title: {
                   display: true,
                   text: 'Altitude (m)'
+                },
+                ticks: {
+                  callback: function(value) {
+                    return value + ' m';
+                  }
                 }
               },
               x: {
                 title: {
                   display: true,
-                  text: 'Progression'
+                  text: 'Distance (km)'
+                },
+                ticks: {
+                  // Réduire le nombre de ticks pour éviter l'encombrement
+                  maxTicksLimit: 10,
+                  callback: function(value, index, values) {
+                    // Afficher uniquement tous les x km pour une meilleure lisibilité
+                    const distance = parseFloat(this.getLabelForValue(index).split(' ')[0]);
+                    return distance % 2 === 0 ? this.getLabelForValue(index) : '';
+                  }
                 }
               }
+            },
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: ColMap.label,
+                  title: ColMap.title
+                },
+                intersect: false,
+                mode: 'index'
+              },
+              legend: {
+                display: false
+              }
+            },
+            interaction: {
+              mode: 'nearest',
+              axis: 'x',
+              intersect: false
+            },
+            animation: {
+              duration: theme.transitions.duration.complex
             }
           }
         });
+        
+        // Mesurer le temps d'initialisation
+        const initTime = performance.now() - startTime;
+        
+        // Marquer la fin de l'initialisation du graphique
+        markPerformanceEvent('elevation_chart_init_complete', { 
+          colId: col.id, 
+          dataPointsCount: data.length,
+          initTimeMs: initTime
+        });
+        
+        console.log(`[Performance] Elevation chart initialized in ${initTime.toFixed(2)}ms`);
       } catch (err) {
-        console.error('Erreur lors de la création du profil d\'élévation:', err);
+        console.error('Erreur lors de l\'initialisation du graphique d\'élévation:', err);
+        
+        // Marquer l'erreur d'initialisation du graphique
+        markPerformanceEvent('elevation_chart_init_error', { 
+          colId: col.id, 
+          error: err.message 
+        });
       }
     }
-  }, [activeTab, col, theme.palette.primary]);
+    
+    // Nettoyage du graphique
+    return () => {
+      if (elevationChart.current) {
+        elevationChart.current.destroy();
+        elevationChart.current = null;
+      }
+    };
+  }, [col?.elevation_profile, activeTab, theme.palette.primary.main, theme.palette.primary.dark, theme.transitions.duration.complex, col?.id]);
   
   // Si pas de coordonnées
   if (!col?.location?.coordinates) {

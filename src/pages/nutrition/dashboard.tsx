@@ -20,7 +20,8 @@ import {
   ListItemAvatar,
   Breadcrumbs,
   Link as MuiLink,
-  useTheme
+  useTheme,
+  useMediaQuery
 } from '@mui/material';
 import {
   Restaurant as RestaurantIcon,
@@ -33,7 +34,8 @@ import {
   EmojiEvents as EmojiEventsIcon,
   Today as TodayIcon,
   Home as HomeIcon,
-  ArrowForward as ArrowForwardIcon
+  ArrowForward as ArrowForwardIcon,
+  Chat as ChatIcon
 } from '@mui/icons-material';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -41,6 +43,7 @@ import { useRouter } from 'next/router';
 import { APIOrchestrator } from '../../api/orchestration';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
+import AIChatbox from '../../components/dashboard/AIChatbox';
 
 // Composant de carte pour le Dashboard
 interface DashboardCardProps {
@@ -140,12 +143,14 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
 const NutritionDashboard: React.FC = () => {
   const theme = useTheme();
   const router = useRouter();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   
   // États
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [dashboardData, setDashboardData] = useState<any>(null);
   const [todayEntries, setTodayEntries] = useState<any[]>([]);
+  const [chatboxVisible, setChatboxVisible] = useState(true);
   
   // Récupération des données
   useEffect(() => {
@@ -238,412 +243,436 @@ const NutritionDashboard: React.FC = () => {
         <meta name="description" content="Tableau de bord nutritionnel complet pour cyclistes, avec suivi des repas, plans personnalisés et recommandations d'entraînement." />
       </Head>
       
-      <Container maxWidth="lg">
-        <Box sx={{ my: 4 }}>
-          {/* Fil d'Ariane */}
-          <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 3 }}>
-            <Link href="/" passHref>
-              <MuiLink
-                underline="hover"
+      <Box sx={{ position: 'relative', minHeight: '100vh' }}>
+        <Container maxWidth="lg">
+          <Box sx={{ my: 4 }}>
+            {/* Fil d'Ariane */}
+            <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 3 }}>
+              <Link href="/" passHref>
+                <MuiLink
+                  underline="hover"
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                  color="inherit"
+                >
+                  <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                  Accueil
+                </MuiLink>
+              </Link>
+              <Link href="/nutrition" passHref>
+                <MuiLink
+                  underline="hover"
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                  color="inherit"
+                >
+                  <RestaurantIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                  Nutrition
+                </MuiLink>
+              </Link>
+              <Typography
                 sx={{ display: 'flex', alignItems: 'center' }}
-                color="inherit"
+                color="text.primary"
               >
-                <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                Accueil
-              </MuiLink>
-            </Link>
-            <Link href="/nutrition" passHref>
-              <MuiLink
-                underline="hover"
-                sx={{ display: 'flex', alignItems: 'center' }}
-                color="inherit"
-              >
-                <RestaurantIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                Nutrition
-              </MuiLink>
-            </Link>
-            <Typography
-              sx={{ display: 'flex', alignItems: 'center' }}
-              color="text.primary"
-            >
-              <BarChartIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                <BarChartIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                Dashboard Nutritionnel
+              </Typography>
+            </Breadcrumbs>
+            
+            <Typography variant="h4" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
               Dashboard Nutritionnel
             </Typography>
-          </Breadcrumbs>
-          
-          <Typography variant="h4" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
-            Dashboard Nutritionnel
-          </Typography>
-          
-          {error ? (
-            <Alert severity="error" sx={{ mb: 3 }}>
-              {error}
-            </Alert>
-          ) : loading ? (
-            <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
-              <CircularProgress />
-            </Box>
-          ) : (
-            <>
-              {/* Section: Résumé quotidien */}
-              <Paper sx={{ p: 3, mb: 4, borderRadius: 2 }}>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-                  <Typography variant="h6" component="h2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <TodayIcon color="primary" />
-                    Résumé nutritionnel du {formattedDate}
-                  </Typography>
+            
+            {error ? (
+              <Alert severity="error" sx={{ mb: 3 }}>
+                {error}
+              </Alert>
+            ) : loading ? (
+              <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
+                <CircularProgress />
+              </Box>
+            ) : (
+              <>
+                {/* Section: Résumé quotidien */}
+                <Paper sx={{ p: 3, mb: 4, borderRadius: 2 }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+                    <Typography variant="h6" component="h2" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <TodayIcon color="primary" />
+                      Résumé nutritionnel du {formattedDate}
+                    </Typography>
+                    
+                    <Button 
+                      variant="outlined" 
+                      component={Link}
+                      href="/nutrition/journal"
+                    >
+                      Voir le journal
+                    </Button>
+                  </Box>
                   
-                  <Button 
-                    variant="outlined" 
-                    component={Link}
-                    href="/nutrition/journal"
-                  >
-                    Voir le journal
-                  </Button>
-                </Box>
-                
-                <Grid container spacing={3}>
-                  <Grid item xs={12} md={6}>
-                    <Box sx={{ mb: 2 }}>
-                      <Typography variant="body2" gutterBottom>
-                        Progression calorique quotidienne
-                      </Typography>
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                        <Box sx={{ position: 'relative', width: 60, height: 60 }}>
-                          <CircularProgress
-                            variant="determinate"
-                            value={calorieProgress}
-                            size={60}
-                            sx={{
-                              color: calorieProgress > 100 
-                                ? theme.palette.error.main 
-                                : theme.palette.primary.main
-                            }}
-                          />
-                          <Box
-                            sx={{
-                              position: 'absolute',
-                              top: 0,
-                              left: 0,
-                              bottom: 0,
-                              right: 0,
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                            }}
-                          >
-                            <Typography variant="caption" component="div" color="text.secondary">
-                              {calorieProgress}%
+                  <Grid container spacing={3}>
+                    <Grid item xs={12} md={6}>
+                      <Box sx={{ mb: 2 }}>
+                        <Typography variant="body2" gutterBottom>
+                          Progression calorique quotidienne
+                        </Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                          <Box sx={{ position: 'relative', width: 60, height: 60 }}>
+                            <CircularProgress
+                              variant="determinate"
+                              value={calorieProgress}
+                              size={60}
+                              sx={{
+                                color: calorieProgress > 100 
+                                  ? theme.palette.error.main 
+                                  : theme.palette.primary.main
+                              }}
+                            />
+                            <Box
+                              sx={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                bottom: 0,
+                                right: 0,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                              }}
+                            >
+                              <Typography variant="caption" component="div" color="text.secondary">
+                                {calorieProgress}%
+                              </Typography>
+                            </Box>
+                          </Box>
+                          
+                          <Box>
+                            <Typography variant="body2">
+                              <strong>{totals.calories}</strong> / {dailyTarget} kcal
+                            </Typography>
+                            <Typography variant="caption" color="text.secondary">
+                              {dailyTarget - totals.calories > 0 
+                                ? `Reste ${dailyTarget - totals.calories} kcal`
+                                : `Dépassement de ${totals.calories - dailyTarget} kcal`}
                             </Typography>
                           </Box>
                         </Box>
+                      </Box>
+                      
+                      <Box sx={{ display: 'flex', gap: 3, mt: 3 }}>
+                        <Box>
+                          <Typography variant="body2" color="primary.main">
+                            Protéines
+                          </Typography>
+                          <Typography variant="h6">
+                            {totals.protein}g
+                          </Typography>
+                        </Box>
                         
                         <Box>
-                          <Typography variant="body2">
-                            <strong>{totals.calories}</strong> / {dailyTarget} kcal
+                          <Typography variant="body2" color="info.main">
+                            Glucides
                           </Typography>
-                          <Typography variant="caption" color="text.secondary">
-                            {dailyTarget - totals.calories > 0 
-                              ? `Reste ${dailyTarget - totals.calories} kcal`
-                              : `Dépassement de ${totals.calories - dailyTarget} kcal`}
+                          <Typography variant="h6">
+                            {totals.carbs}g
+                          </Typography>
+                        </Box>
+                        
+                        <Box>
+                          <Typography variant="body2" color="warning.main">
+                            Lipides
+                          </Typography>
+                          <Typography variant="h6">
+                            {totals.fat}g
                           </Typography>
                         </Box>
                       </Box>
-                    </Box>
+                    </Grid>
                     
-                    <Box sx={{ display: 'flex', gap: 3, mt: 3 }}>
-                      <Box>
-                        <Typography variant="body2" color="primary.main">
-                          Protéines
-                        </Typography>
-                        <Typography variant="h6">
-                          {totals.protein}g
-                        </Typography>
-                      </Box>
-                      
-                      <Box>
-                        <Typography variant="body2" color="info.main">
-                          Glucides
-                        </Typography>
-                        <Typography variant="h6">
-                          {totals.carbs}g
-                        </Typography>
-                      </Box>
-                      
-                      <Box>
-                        <Typography variant="body2" color="warning.main">
-                          Lipides
-                        </Typography>
-                        <Typography variant="h6">
-                          {totals.fat}g
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Grid>
-                  
-                  <Grid item xs={12} md={6}>
-                    {todayEntries.length === 0 ? (
-                      <Paper 
-                        variant="outlined" 
-                        sx={{ 
-                          p: 3, 
-                          textAlign: 'center',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          height: '100%',
-                          minHeight: 200
-                        }}
-                      >
-                        <RestaurantIcon color="action" sx={{ fontSize: 40, mb: 2, opacity: 0.5 }} />
-                        <Typography variant="body1" paragraph>
-                          Aucun repas enregistré aujourd'hui
-                        </Typography>
-                        <Button 
-                          variant="contained" 
-                          component={Link}
-                          href="/nutrition/journal"
+                    <Grid item xs={12} md={6}>
+                      {todayEntries.length === 0 ? (
+                        <Paper 
+                          variant="outlined" 
+                          sx={{ 
+                            p: 3, 
+                            textAlign: 'center',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            height: '100%',
+                            minHeight: 200
+                          }}
                         >
-                          Ajouter un repas
-                        </Button>
-                      </Paper>
-                    ) : (
-                      <List sx={{ width: '100%' }}>
-                        {todayEntries.slice(0, 3).map((entry) => (
-                          <ListItem
-                            key={entry.id}
-                            alignItems="flex-start"
-                            sx={{ 
-                              p: 1.5, 
-                              mb: 1, 
-                              borderRadius: 1,
-                              bgcolor: `${theme.palette.background.default}50`
-                            }}
-                          >
-                            <ListItemAvatar>
-                              <Avatar sx={{ bgcolor: theme.palette.primary.main }}>
-                                <RestaurantIcon />
-                              </Avatar>
-                            </ListItemAvatar>
-                            <ListItemText
-                              primary={entry.foodName}
-                              secondary={
-                                <>
-                                  <Typography component="span" variant="body2" color="text.primary">
-                                    {entry.mealType}
-                                  </Typography>
-                                  {` — ${entry.calories} kcal`}
-                                </>
-                              }
-                            />
-                            <Chip 
-                              label={`${entry.protein}g P`} 
-                              size="small" 
-                              sx={{ mr: 0.5 }} 
-                              color="primary"
-                              variant="outlined"
-                            />
-                          </ListItem>
-                        ))}
-                        
-                        {todayEntries.length > 3 && (
+                          <RestaurantIcon color="action" sx={{ fontSize: 40, mb: 2, opacity: 0.5 }} />
+                          <Typography variant="body1" paragraph>
+                            Aucun repas enregistré aujourd'hui
+                          </Typography>
                           <Button 
-                            fullWidth
-                            sx={{ mt: 1 }}
+                            variant="contained" 
                             component={Link}
                             href="/nutrition/journal"
                           >
-                            Voir tous les repas ({todayEntries.length})
+                            Ajouter un repas
                           </Button>
-                        )}
-                      </List>
-                    )}
+                        </Paper>
+                      ) : (
+                        <List sx={{ width: '100%' }}>
+                          {todayEntries.slice(0, 3).map((entry) => (
+                            <ListItem
+                              key={entry.id}
+                              alignItems="flex-start"
+                              sx={{ 
+                                p: 1.5, 
+                                mb: 1, 
+                                borderRadius: 1,
+                                bgcolor: `${theme.palette.background.default}50`
+                              }}
+                            >
+                              <ListItemAvatar>
+                                <Avatar sx={{ bgcolor: theme.palette.primary.main }}>
+                                  <RestaurantIcon />
+                                </Avatar>
+                              </ListItemAvatar>
+                              <ListItemText
+                                primary={entry.foodName}
+                                secondary={
+                                  <>
+                                    <Typography component="span" variant="body2" color="text.primary">
+                                      {entry.mealType}
+                                    </Typography>
+                                    {` — ${entry.calories} kcal`}
+                                  </>
+                                }
+                              />
+                              <Chip 
+                                label={`${entry.protein}g P`} 
+                                size="small" 
+                                sx={{ mr: 0.5 }} 
+                                color="primary"
+                                variant="outlined"
+                              />
+                            </ListItem>
+                          ))}
+                          
+                          {todayEntries.length > 3 && (
+                            <Button 
+                              fullWidth
+                              sx={{ mt: 1 }}
+                              component={Link}
+                              href="/nutrition/journal"
+                            >
+                              Voir tous les repas ({todayEntries.length})
+                            </Button>
+                          )}
+                        </List>
+                      )}
+                    </Grid>
                   </Grid>
-                </Grid>
-              </Paper>
-              
-              {/* Section: Modules de Nutrition */}
-              <Typography variant="h5" component="h2" gutterBottom>
-                Modules de Nutrition
-              </Typography>
-              
-              <Grid container spacing={3} sx={{ mb: 4 }}>
-                <Grid item xs={12} md={6} lg={4}>
-                  <DashboardCard
-                    title="Journal Nutritionnel"
-                    description="Suivez votre alimentation quotidienne, analysez vos tendances et synchronisez avec vos entraînements."
-                    icon={<MenuBookIcon />}
-                    color={theme.palette.primary.main}
-                    linkText="Accéder au journal"
-                    linkUrl="/nutrition/journal"
-                    stats={[
-                      { label: 'Repas aujourd\'hui', value: `${todayEntries.length}` },
-                      { label: 'Calories', value: `${totals.calories} / ${dailyTarget} kcal` }
-                    ]}
-                  />
-                </Grid>
+                </Paper>
                 
-                <Grid item xs={12} md={6} lg={4}>
-                  <DashboardCard
-                    title="Plans Nutritionnels"
-                    description="Créez et suivez des plans nutritionnels personnalisés adaptés à vos objectifs cyclistes."
-                    icon={<LocalFireDepartmentIcon />}
-                    color={theme.palette.error.main}
-                    linkText="Voir mes plans"
-                    linkUrl="/nutrition/plans"
-                    stats={[
-                      { label: 'Plan actif', value: dashboardData?.activePlan ? 'Oui' : 'Non' },
-                      { label: 'Objectif calorique', value: `${dailyTarget} kcal` }
-                    ]}
-                  />
-                </Grid>
-                
-                <Grid item xs={12} md={6} lg={4}>
-                  <DashboardCard
-                    title="Recettes pour Cyclistes"
-                    description="Découvrez plus de 200 recettes spécialement conçues pour les cyclistes et adaptées à vos besoins."
-                    icon={<RestaurantIcon />}
-                    color={theme.palette.success.main}
-                    linkText="Explorer les recettes"
-                    linkUrl="/nutrition/recettes"
-                    stats={[
-                      { label: 'Recettes disponibles', value: '200+' },
-                      { label: 'Catégories', value: '4' }
-                    ]}
-                  />
-                </Grid>
-                
-                <Grid item xs={12} md={6} lg={4}>
-                  <DashboardCard
-                    title="Calculateur de Macros"
-                    description="Calculez vos besoins caloriques et en macronutriments en fonction de votre profil cycliste."
-                    icon={<BarChartIcon />}
-                    color={theme.palette.info.main}
-                    linkText="Calculer mes besoins"
-                    linkUrl="/nutrition/MacroCalculator"
-                    stats={[
-                      { label: 'Dernière mise à jour', value: '7 jours' },
-                      { label: 'Précision', value: 'Élevée' }
-                    ]}
-                  />
-                </Grid>
-                
-                <Grid item xs={12} md={6} lg={4}>
-                  <DashboardCard
-                    title="Synchronisation Entraînement"
-                    description="Adaptez votre nutrition en fonction de vos séances d'entraînement pour maximiser vos performances."
-                    icon={<DirectionsBikeIcon />}
-                    color={theme.palette.warning.main}
-                    linkText="Synchroniser"
-                    linkUrl="/nutrition/journal?tab=sync"
-                    stats={[
-                      { label: 'Séances à venir', value: `${dashboardData?.trainingSessions?.length || 0}` },
-                      { label: 'Recommandations', value: 'Personnalisées' }
-                    ]}
-                  />
-                </Grid>
-                
-                <Grid item xs={12} md={6} lg={4}>
-                  <DashboardCard
-                    title="Tendances & Analyses"
-                    description="Visualisez vos tendances nutritionnelles sur la durée et recevez des recommandations personnalisées."
-                    icon={<ShowChartIcon />}
-                    color={theme.palette.secondary.main}
-                    linkText="Voir les tendances"
-                    linkUrl="/nutrition/journal?tab=trends"
-                    stats={[
-                      { label: 'Période d\'analyse', value: '7-90 jours' },
-                      { label: 'Comparaisons', value: 'Automatiques' }
-                    ]}
-                  />
-                </Grid>
-              </Grid>
-              
-              {/* Section: Recommandations personnalisées */}
-              <Typography variant="h5" component="h2" gutterBottom>
-                Recommandations personnalisées
-              </Typography>
-              
-              <Paper sx={{ p: 3, mb: 4, borderRadius: 2 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, gap: 1 }}>
-                  <Avatar sx={{ bgcolor: `${theme.palette.warning.main}20`, color: theme.palette.warning.main }}>
-                    <EmojiEventsIcon />
-                  </Avatar>
-                  <Typography variant="h6">
-                    Pour vos objectifs cyclistes
-                  </Typography>
-                </Box>
-                
-                {!dashboardData?.recommendations?.goalSpecificAdvice ? (
-                  <Alert severity="info" sx={{ mb: 2 }}>
-                    Définissez vos objectifs cyclistes dans votre profil pour recevoir des recommandations personnalisées.
-                  </Alert>
-                ) : (
-                  <List>
-                    {dashboardData.recommendations.goalSpecificAdvice.map((advice: string, index: number) => (
-                      <ListItem key={index} sx={{ pl: 0 }}>
-                        <ListItemAvatar>
-                          <Avatar sx={{ bgcolor: `${theme.palette.warning.main}20`, color: theme.palette.warning.main }}>
-                            {index + 1}
-                          </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText primary={advice} />
-                      </ListItem>
-                    ))}
-                  </List>
-                )}
-                
-                <Divider sx={{ my: 3 }} />
-                
-                <Typography variant="subtitle1" gutterBottom>
-                  Actions recommandées
+                {/* Section: Modules de Nutrition */}
+                <Typography variant="h5" component="h2" gutterBottom>
+                  Modules de Nutrition
                 </Typography>
                 
-                <Grid container spacing={2} sx={{ mt: 1 }}>
-                  <Grid item xs={12} md={4}>
-                    <Button
-                      variant="outlined"
-                      fullWidth
-                      component={Link}
-                      href="/nutrition/journal"
-                      startIcon={<MenuBookIcon />}
-                    >
-                      Mettre à jour mon journal
-                    </Button>
+                <Grid container spacing={3} sx={{ mb: 4 }}>
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DashboardCard
+                      title="Journal Nutritionnel"
+                      description="Suivez votre alimentation quotidienne, analysez vos tendances et synchronisez avec vos entraînements."
+                      icon={<MenuBookIcon />}
+                      color={theme.palette.primary.main}
+                      linkText="Accéder au journal"
+                      linkUrl="/nutrition/journal"
+                      stats={[
+                        { label: 'Repas aujourd\'hui', value: `${todayEntries.length}` },
+                        { label: 'Calories', value: `${totals.calories} / ${dailyTarget} kcal` }
+                      ]}
+                    />
                   </Grid>
                   
-                  <Grid item xs={12} md={4}>
-                    <Button
-                      variant="outlined"
-                      fullWidth
-                      component={Link}
-                      href="/nutrition/plans"
-                      startIcon={<LocalFireDepartmentIcon />}
-                      color="error"
-                    >
-                      Ajuster mon plan
-                    </Button>
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DashboardCard
+                      title="Plans Nutritionnels"
+                      description="Créez et suivez des plans nutritionnels personnalisés adaptés à vos objectifs cyclistes."
+                      icon={<LocalFireDepartmentIcon />}
+                      color={theme.palette.error.main}
+                      linkText="Voir mes plans"
+                      linkUrl="/nutrition/plans"
+                      stats={[
+                        { label: 'Plan actif', value: dashboardData?.activePlan ? 'Oui' : 'Non' },
+                        { label: 'Objectif calorique', value: `${dailyTarget} kcal` }
+                      ]}
+                    />
                   </Grid>
                   
-                  <Grid item xs={12} md={4}>
-                    <Button
-                      variant="outlined"
-                      fullWidth
-                      component={Link}
-                      href="/nutrition/recettes"
-                      startIcon={<RestaurantIcon />}
-                      color="success"
-                    >
-                      Découvrir des recettes
-                    </Button>
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DashboardCard
+                      title="Recettes pour Cyclistes"
+                      description="Découvrez plus de 200 recettes spécialement conçues pour les cyclistes et adaptées à vos besoins."
+                      icon={<RestaurantIcon />}
+                      color={theme.palette.success.main}
+                      linkText="Explorer les recettes"
+                      linkUrl="/nutrition/recettes"
+                      stats={[
+                        { label: 'Recettes disponibles', value: '200+' },
+                        { label: 'Catégories', value: '4' }
+                      ]}
+                    />
+                  </Grid>
+                  
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DashboardCard
+                      title="Calculateur de Macros"
+                      description="Calculez vos besoins caloriques et en macronutriments en fonction de votre profil cycliste."
+                      icon={<BarChartIcon />}
+                      color={theme.palette.info.main}
+                      linkText="Calculer mes besoins"
+                      linkUrl="/nutrition/MacroCalculator"
+                      stats={[
+                        { label: 'Dernière mise à jour', value: '7 jours' },
+                        { label: 'Précision', value: 'Élevée' }
+                      ]}
+                    />
+                  </Grid>
+                  
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DashboardCard
+                      title="Synchronisation Entraînement"
+                      description="Adaptez votre nutrition en fonction de vos séances d'entraînement pour maximiser vos performances."
+                      icon={<DirectionsBikeIcon />}
+                      color={theme.palette.warning.main}
+                      linkText="Synchroniser"
+                      linkUrl="/nutrition/journal?tab=sync"
+                      stats={[
+                        { label: 'Séances à venir', value: `${dashboardData?.trainingSessions?.length || 0}` },
+                        { label: 'Recommandations', value: 'Personnalisées' }
+                      ]}
+                    />
+                  </Grid>
+                  
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DashboardCard
+                      title="Tendances & Analyses"
+                      description="Visualisez vos tendances nutritionnelles sur la durée et recevez des recommandations personnalisées."
+                      icon={<ShowChartIcon />}
+                      color={theme.palette.secondary.main}
+                      linkText="Voir les tendances"
+                      linkUrl="/nutrition/journal?tab=trends"
+                      stats={[
+                        { label: 'Période d\'analyse', value: '7-90 jours' },
+                        { label: 'Comparaisons', value: 'Automatiques' }
+                      ]}
+                    />
                   </Grid>
                 </Grid>
-              </Paper>
-            </>
-          )}
-        </Box>
-      </Container>
+                
+                {/* Section: Recommandations personnalisées */}
+                <Typography variant="h5" component="h2" gutterBottom>
+                  Recommandations personnalisées
+                </Typography>
+                
+                <Paper sx={{ p: 3, mb: 4, borderRadius: 2 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 3, gap: 1 }}>
+                    <Avatar sx={{ bgcolor: `${theme.palette.warning.main}20`, color: theme.palette.warning.main }}>
+                      <EmojiEventsIcon />
+                    </Avatar>
+                    <Typography variant="h6">
+                      Pour vos objectifs cyclistes
+                    </Typography>
+                  </Box>
+                  
+                  {!dashboardData?.recommendations?.goalSpecificAdvice ? (
+                    <Alert severity="info" sx={{ mb: 2 }}>
+                      Définissez vos objectifs cyclistes dans votre profil pour recevoir des recommandations personnalisées.
+                    </Alert>
+                  ) : (
+                    <List>
+                      {dashboardData.recommendations.goalSpecificAdvice.map((advice: string, index: number) => (
+                        <ListItem key={index} sx={{ pl: 0 }}>
+                          <ListItemAvatar>
+                            <Avatar sx={{ bgcolor: `${theme.palette.warning.main}20`, color: theme.palette.warning.main }}>
+                              {index + 1}
+                            </Avatar>
+                          </ListItemAvatar>
+                          <ListItemText primary={advice} />
+                        </ListItem>
+                      ))}
+                    </List>
+                  )}
+                  
+                  <Divider sx={{ my: 3 }} />
+                  
+                  <Typography variant="subtitle1" gutterBottom>
+                    Actions recommandées
+                  </Typography>
+                  
+                  <Grid container spacing={2} sx={{ mt: 1 }}>
+                    <Grid item xs={12} md={4}>
+                      <Button
+                        variant="outlined"
+                        fullWidth
+                        component={Link}
+                        href="/nutrition/journal"
+                        startIcon={<MenuBookIcon />}
+                      >
+                        Mettre à jour mon journal
+                      </Button>
+                    </Grid>
+                    
+                    <Grid item xs={12} md={4}>
+                      <Button
+                        variant="outlined"
+                        fullWidth
+                        component={Link}
+                        href="/nutrition/plans"
+                        startIcon={<LocalFireDepartmentIcon />}
+                        color="error"
+                      >
+                        Ajuster mon plan
+                      </Button>
+                    </Grid>
+                    
+                    <Grid item xs={12} md={4}>
+                      <Button
+                        variant="outlined"
+                        fullWidth
+                        component={Link}
+                        href="/nutrition/recettes"
+                        startIcon={<RestaurantIcon />}
+                        color="success"
+                      >
+                        Découvrir des recettes
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </>
+            )}
+          </Box>
+        </Container>
+        
+        {/* AI Chatbox integration */}
+        {chatboxVisible && (
+          <AIChatbox
+            position="fixed"
+            bottom={isMobile ? 0 : 20}
+            right={isMobile ? 0 : 20}
+            width={isMobile ? '100%' : '350px'}
+            height={isMobile ? '70vh' : '500px'}
+          />
+        )}
+        
+        {/* Chat toggle button for mobile */}
+        {isMobile && !chatboxVisible && (
+          <button 
+            className="chat-toggle-button"
+            onClick={() => setChatboxVisible(true)}
+            aria-label="Ouvrir l'assistant IA"
+          >
+            <span className="chat-icon">💬</span>
+          </button>
+        )}
+      </Box>
     </>
   );
 };

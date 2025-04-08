@@ -54,14 +54,6 @@ class TextureOptimizer {
       magFilter: THREE.LinearFilter,
       anisotropy: this._getOptimalAnisotropy()
     };
-    
-    console.log('TextureOptimizer initialized:', {
-      isMobile: this.isMobile,
-      isHighEndDevice: this.isHighEndDevice,
-      defaultQuality: this.defaultQuality,
-      supportedFormats: this.supportedFormats,
-      anisotropy: this.defaultTextureParams.anisotropy
-    });
   }
 
   /**

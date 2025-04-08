@@ -2,7 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// Ajout du plugin BundleAnalyzerPlugin pour l'analyse des bundles
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
+/**
+ * Configuration webpack optimisée pour Velo-Altitude
+ * 
+ * Cette configuration a été spécifiquement ajustée pour résoudre plusieurs problèmes :
+ * 1. Gestion correcte des images Leaflet (via css-loader avec url:false et copie directe)
+ * 2. Exclusion des fichiers problématiques de la transpilation (weather-map, etc.)
+ * 3. Configuration optimisée pour la production
+ */
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -36,7 +46,10 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              url: false // Désactiver la résolution d'URL pour éviter les erreurs avec les images Leaflet
+              // Désactiver la résolution d'URL pour éviter les erreurs avec les images Leaflet
+              // Solution nécessaire car Leaflet utilise des chemins relatifs pour ses images
+              // qui ne sont pas correctement résolus durant le build webpack
+              url: false 
             },
           }
         ]
@@ -96,13 +109,16 @@ module.exports = {
           to: 'assets',
           noErrorOnMissing: true
         },
-        // Copier les images Leaflet directement
+        // Copier les images Leaflet directement pour assurer leur disponibilité
+        // Cette étape est nécessaire car nous avons désactivé la résolution d'URL dans css-loader
         {
           from: 'node_modules/leaflet/dist/images',
           to: 'images',
           noErrorOnMissing: true
         },
-        // Si ces fichiers spécifiques existent, les copier
+        // Copie personnalisée du fichier weather-map-fixed.js
+        // Ce fichier est une version modifiée de weather-map.js qui évite les problèmes de minification
+        // lors du build de production. Il utilise un IIFE pour éviter les conflits de scope.
         {
           from: 'public/js/weather-map-fixed.js',
           to: 'js/weather-map.js',
@@ -114,8 +130,14 @@ module.exports = {
           noErrorOnMissing: true
         }
       ]
+    }),
+    // Analyse des bundles (commenter cette ligne pour les builds de production)
+    process.env.ANALYZE === 'true' && new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename: '../webpack-bundle-report.html',
+      openAnalyzer: false,
     })
-  ],
+  ].filter(Boolean), // Filtre les plugins undefined (quand ANALYZE n'est pas 'true')
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
@@ -126,7 +148,7 @@ module.exports = {
       'assets': path.resolve(__dirname, 'src/assets'),
       'services': path.resolve(__dirname, 'src/services'),
       'images': path.resolve(__dirname, 'public/images'),
-      // Ajouter un alias pour les images Leaflet
+      // Ajouter un alias pour les images Leaflet pour faciliter leur importation
       'leaflet/dist/images': path.resolve(__dirname, 'node_modules/leaflet/dist/images')
     }
   },
