@@ -1,7 +1,0 @@
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-    <rect width="200" height="200" fill="#eff6ff"/>
-    <rect x="50" y="70" width="100" height="20" rx="5" fill="#93c5fd"/>
-    <rect x="50" y="100" width="80" height="20" rx="5" fill="#93c5fd"/>
-    <rect x="50" y="130" width="120" height="20" rx="5" fill="#93c5fd"/>
-    <text x="50%" y="90%" font-family="Arial" font-size="16" fill="#1e40af" text-anchor="middle">Entraînement</text>
-  </svg>

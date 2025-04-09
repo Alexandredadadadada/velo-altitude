@@ -99,6 +99,69 @@ Velo-Altitude promeut:
 - Partenariats avec organisateurs d'événements cyclistes
 - Développement de fonctionnalités premium
 
+## Déploiement sur Netlify
+
+Pour déployer correctement l'application sur Netlify avec toutes ses fonctionnalités, suivez ces étapes :
+
+1. **Configuration des variables d'environnement**
+
+   Configurez les variables suivantes dans le dashboard Netlify (Settings > Build & Deploy > Environment) :
+
+   - `MONGODB_URI` : URI de connexion à votre base MongoDB Atlas
+   - `MONGODB_DBNAME` : Nom de la base de données (par défaut: velo-altitude)
+   - `REACT_APP_AUTH0_DOMAIN` : Domaine Auth0
+   - `REACT_APP_AUTH0_CLIENT_ID` : Client ID Auth0
+   - `REACT_APP_AUTH0_AUDIENCE` : Audience API Auth0
+   - `REACT_APP_MAPBOX_TOKEN` : Token Mapbox pour les cartes
+   - `REACT_APP_OPENWEATHER_API_KEY` : Clé API OpenWeather
+
+2. **Déploiement initial**
+
+   Connectez votre dépôt GitHub à Netlify et configurez le site avec les paramètres suivants :
+   
+   - Build command: `npm ci && NODE_ENV=production CI=false npm run build:prod`
+   - Publish directory: `build`
+
+3. **Fonctions Netlify**
+
+   Les fonctions Netlify dans le dossier `netlify/functions` gèrent les API pour :
+   - Cols alpins (50 cols déjà importés dans MongoDB Atlas)
+   - Météo (utilisant les différentes implémentations du service météo)
+   - Nutrition (service refactorisé utilisant RealApiOrchestrator)
+   - Authentification et autres services
+
+4. **Architecture des services**
+
+   L'application utilise une architecture hybride :
+   - Services dans `client/src/services` et `src/services`
+   - Visualisations 3D des cols dans les composants Three.js
+   - Services refactorisés utilisant RealApiOrchestrator pour les opérations de données
+
+5. **URLs de l'application**
+
+   - Production: https://velo-altitude.netlify.app
+   - Développement local: http://localhost:3000
+
+6. **Mise à jour de l'application**
+
+   Pour mettre à jour l'application après modifications :
+   ```bash
+   git add .
+   git commit -m "Description des modifications"
+   git push
+   ```
+   Netlify détectera automatiquement les changements et déploiera la nouvelle version.
+
+## Structure des API
+
+Les API sont organisées comme suit :
+
+- `/api/cols/*` : Service des cols alpins (recherche, filtrage, données 3D)
+- `/api/weather/*` : Service météo (conditions actuelles, prévisions, alertes)
+- `/api/nutrition/*` : Service de nutrition (recommandations, produits)
+- `/api/challenges/*` : Service des défis (Les 7 Majeurs)
+- `/api/auth/*` : Service d'authentification
+
 ## Contact et contributions
 
 Pour participer au projet ou obtenir plus d'informations:
@@ -112,6 +175,13 @@ Pour participer au projet ou obtenir plus d'informations:
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
 
 ## Nouveautés (Avril 2025)
+
+### Améliorations techniques et stabilité
+
+- **Mise à jour des dépendances** : Retour à React 18.2.0 pour une stabilité et performance optimales
+- **Compatibilité renforcée** : Résolution des conflits de dépendances pour une expérience fluide
+- **Optimisation des performances** : Configuration ajustée pour une meilleure exécution sur tous les appareils
+- **Support multiplateforme** : Compatibilité étendue avec les navigateurs modernes
 
 ### Système météorologique avancé
 

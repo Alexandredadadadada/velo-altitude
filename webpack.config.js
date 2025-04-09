@@ -57,17 +57,19 @@ module.exports = (env, argv) => {
             test: /[\\/]node_modules[\\/]/,
             priority: -10,
             name(module) {
-              // Créer des chunks par nom de package npm
-              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-              
-              // Pour les bibliothèques lourdes, créer des chunks dédiés
-              if (packageName.includes('three')) return 'vendor.three';
-              if (packageName.includes('chart')) return 'vendor.chart';
-              if (packageName.includes('react') || packageName.includes('redux')) return 'vendor.react';
-              if (packageName.includes('material') || packageName.includes('mui')) return 'vendor.material';
-              
-              // Autres bibliothèques
-              return `vendor.${packageName.replace('@', '')}`;
+              try {
+                const packagePath = module.context || '';
+                // Bibliothèques spécifiques regroupées
+                if (packagePath.includes('three')) return 'vendor.three';
+                if (packagePath.includes('chart')) return 'vendor.chart';
+                if (packagePath.includes('react') || packagePath.includes('redux')) return 'vendor.react';
+                if (packagePath.includes('material') || packagePath.includes('mui')) return 'vendor.material';
+                
+                // Autres bibliothèques (avec fallback sécurisé)
+                return 'vendor.misc';
+              } catch (err) {
+                return 'vendor.misc';
+              }
             },
           },
           // Regrouper les modules communs

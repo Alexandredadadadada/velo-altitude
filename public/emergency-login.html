@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion d'urgence - Velo-Altitude</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f8fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #2d3748;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            color: #2c5282;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #2c5282;
+        }
+        .alert {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+        .alert-info {
+            background-color: #ebf8ff;
+            border: 1px solid #bee3f8;
+            color: #2c5282;
+        }
+        .alert-warning {
+            background-color: #fffaf0;
+            border: 1px solid #feebc8;
+            color: #c05621;
+        }
+        .alert-success {
+            background-color: #f0fff4;
+            border: 1px solid #c6f6d5;
+            color: #276749;
+        }
+        .alert-error {
+            background-color: #fff5f5;
+            border: 1px solid #fed7d7;
+            color: #c53030;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/logo.png" alt="Velo-Altitude Logo" class="logo" onerror="this.src='/favicon.ico'; this.onerror=null;">
+            <h1>Connexion d'urgence</h1>
+        </div>
+        
+        <div class="alert alert-warning" id="emergency-notice">
+            Ce système de connexion d'urgence est réservé aux administrateurs et ne doit être utilisé qu'en cas de problème avec le système d'authentification principal.
+        </div>
+        
+        <div class="alert alert-error hidden" id="error-message"></div>
+        <div class="alert alert-success hidden" id="success-message"></div>
+        
+        <form id="emergency-login-form">
+            <div class="form-group">
+                <label for="email">Email administrateur</label>
+                <input type="email" id="email" name="email" required placeholder="admin@velo-altitude.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Code d'accès d'urgence</label>
+                <input type="password" id="password" name="password" required placeholder="********">
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" id="login-button">Se connecter en mode urgence</button>
+            </div>
+        </form>
+        
+        <p style="text-align: center; margin-top: 1rem;">
+            <a href="/" id="back-link">Retour à l'accueil</a>
+        </p>
+    </div>
+
+    <script src="/auth-override.js"></script>
+    <script src="/auth-diagnostic.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('emergency-login-form');
+            const errorMessage = document.getElementById('error-message');
+            const successMessage = document.getElementById('success-message');
+            
+            // Vérifier si le système d'authentification d'urgence est disponible
+            if (!window.EmergencyAuthSystem) {
+                errorMessage.textContent = "Le système d'authentification d'urgence n'est pas disponible. Contactez l'administrateur système.";
+                errorMessage.classList.remove('hidden');
+                form.style.display = 'none';
+                return;
+            }
+            
+            // Vérifier si déjà connecté
+            if (localStorage.getItem('emergency_auth_enabled') === 'true') {
+                successMessage.textContent = "Vous êtes déjà connecté en mode urgence.";
+                successMessage.classList.remove('hidden');
+                
+                // Ajouter un bouton pour aller au dashboard
+                const dashboardButton = document.createElement('button');
+                dashboardButton.textContent = "Accéder au tableau de bord";
+                dashboardButton.onclick = function() {
+                    window.location.href = '/emergency-dashboard.html';
+                };
+                form.innerHTML = '';
+                form.appendChild(dashboardButton);
+            }
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value.trim();
+                
+                // Logique simplifiée pour l'authentification d'urgence
+                // Note: En production, utilisez une liste d'accès sécurisée ou une vérification par serveur
+                const emergencyCredentials = {
+                    email: 'admin@velo-altitude.com',
+                    password: 'EmergencyAccess2025!'
+                };
+                
+                if (email === emergencyCredentials.email && password === emergencyCredentials.password) {
+                    // Activer le mode d'authentification d'urgence
+                    window.EmergencyAuthSystem.enable();
+                    
+                    // Stocker un token d'urgence
+                    const token = window.EmergencyAuthSystem.getEmergencyToken();
+                    localStorage.setItem('auth_token', token);
+                    
+                    // Afficher un message de succès
+                    errorMessage.classList.add('hidden');
+                    successMessage.textContent = "Connexion d'urgence réussie. Redirection vers le tableau de bord...";
+                    successMessage.classList.remove('hidden');
+                    
+                    // Rediriger vers le dashboard après une courte pause
+                    setTimeout(function() {
+                        window.location.href = '/emergency-dashboard.html';
+                    }, 2000);
+                } else {
+                    // Afficher un message d'erreur
+                    errorMessage.textContent = "Identifiants d'urgence invalides. Contactez l'administrateur système si vous avez besoin d'assistance.";
+                    errorMessage.classList.remove('hidden');
+                    successMessage.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

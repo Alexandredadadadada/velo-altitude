@@ -1,0 +1,88 @@
+
+> velo-altitude@1.0.0 verify-deploy
+> node scripts/verify-deployment.js
+
+
+≡ƒöì V├ëRIFICATION DE LA PR├ëPARATION AU D├ëPLOIEMENT
+
+≡ƒôü V├⌐rification des fichiers de configuration...
+Γ£à netlify.toml trouv├⌐
+Γ£à webpack.config.js trouv├⌐
+Γ£à .env trouv├⌐
+
+≡ƒô£ V├⌐rification des scripts...
+Γ£à Script build trouv├⌐
+Γ£à Script build:prod trouv├⌐
+Γ£à Script postbuild trouv├⌐
+Γ£à Script clean trouv├⌐
+
+≡ƒôª V├⌐rification des d├⌐pendances...
+Γ£à webpack install├⌐
+Γ£à react install├⌐
+Γ£à mongoose install├⌐
+Γ£à express install├⌐
+Γ£à @auth0/auth0-react install├⌐
+
+≡ƒöÉ V├⌐rification des variables d'environnement...
+Γä╣∩╕Å Ces variables sont configur├⌐es dans Netlify et ne sont pas requises localement
+
+≡ƒùä∩╕Å V├⌐rification de la connexion MongoDB...
+Γä╣∩╕Å Ex├⌐cution du script de v├⌐rification MongoDB...
+ΓÜá∩╕Å Variables d'environnement manquantes localement: MONGODB_DB_NAME, AUTH0_CLIENT_ID, AUTH0_ISSUER_BASE_URL, MAPBOX_TOKEN
+=== V├ëRIFICATION SIMPLIFI├ëE DE LA BASE DE DONN├ëES ===
+≡ƒôí Connexion ├á MongoDB...
+Γ£à Connexion ├⌐tablie
+
+≡ƒôª BASES DE DONN├ëES:
+   - admin (40 KB)
+   - config (60 KB)
+   - grandestcyclisme (72 KB)
+   - local (72 KB)
+   - velo-altitude (3580 KB)
+
+≡ƒôÜ COLLECTIONS:
+   - cols: 37 documents
+   - cols_backup_normalize_1744137690856: 5 documents
+   - cols_backup_1744137070440: 5 documents
+
+≡ƒæë Collection cols: 37 documents
+
+≡ƒôï STRUCTURE D'UN COL (champs principaux):
+   - Nom: Col du Galibier
+   - R├⌐gion: Savoie
+   - Altitude: 2642 m
+   - Difficult├⌐: hard
+   - Coordonn├⌐es: [45.0612, 6.4085]
+   - Donn├⌐es 3D: Γ£à Pr├⌐sentes
+     Γå│ Profil d'├⌐l├⌐vation: Γ£à 177 points
+     Γå│ Donn├⌐es de terrain: Γ£à Pr├⌐sentes
+     Γå│ Donn├⌐es m├⌐t├⌐o: Γ£à Pr├⌐sentes
+
+≡ƒôè STATISTIQUES GLOBALES:
+   - Cols avec profil d'├⌐l├⌐vation: 37/37
+   - Cols avec donn├⌐es de terrain: 37/37
+   - Cols avec donn├⌐es m├⌐t├⌐o: 37/37
+   - R├⌐partition par difficult├⌐:
+     ΓÇó extreme: 3 cols
+     ΓÇó hard: 23 cols
+     ΓÇó medium: 11 cols
+
+Γ£à V├ëRIFICATION TERMIN├ëE
+≡ƒôí Connexion MongoDB ferm├⌐e
+Γ£à Connexion MongoDB r├⌐ussie
+
+≡ƒÅù∩╕Å V├⌐rification de la configuration webpack...
+Γ£à webpack est accessible
+Γ£à Configuration webpack valide
+
+≡ƒÜÇ V├⌐rification des scripts de d├⌐ploiement...
+Γ£à clean.js trouv├⌐
+Γ£à post-build.js trouv├⌐
+Γ£à deploy-complete.js trouv├⌐
+
+≡ƒôè R├ëSUM├ë DE LA V├ëRIFICATION:
+
+Γ£à V├ëRIFICATION TERMIN├ëE AVEC AVERTISSEMENTS: Le d├⌐ploiement peut continuer mais v├⌐rifiez les avertissements.
+
+ΓÜá∩╕Å Avertissements (non bloquants):
+  - ΓÜá∩╕Å Variables d'environnement manquantes localement: MONGODB_DB_NAME, AUTH0_CLIENT_ID, AUTH0_ISSUER_BASE_URL, MAPBOX_TOKEN

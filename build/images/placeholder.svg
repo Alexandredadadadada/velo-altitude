@@ -1,7 +1,0 @@
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-    <rect width="200" height="200" fill="#f0f0f0"/>
-    <rect x="60" y="60" width="80" height="80" rx="10" fill="#d4d4d4"/>
-    <line x1="60" y1="60" x2="140" y2="140" stroke="#a3a3a3" stroke-width="5"/>
-    <line x1="140" y1="60" x2="60" y2="140" stroke="#a3a3a3" stroke-width="5"/>
-    <text x="50%" y="90%" font-family="Arial" font-size="16" fill="#525252" text-anchor="middle">Image</text>
-  </svg>

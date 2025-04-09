@@ -1,0 +1,72 @@
+/**
+ * BrowserCompatibility.css
+ * 
+ * Ce fichier contient des polyfills CSS et des styles de compatibilité
+ * pour assurer une expérience cohérente sur tous les navigateurs.
+ */
+
+/* Styles de scrollbar compatibles multi-navigateurs */
+* {
+  /* Styles standards - pris en charge par Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+/* Fallback pour navigateurs non compatibles avec scrollbar-width/color (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 4px;
+}
+
+/* Classe utilitaire pour appliquer spécifiquement les styles */
+.custom-scrollbar {
+  /* Styles standards */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+  
+  /* Fallback */
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 4px;
+  }
+}
+
+/* Style pour les éléments avec scrollbar sombre */
+.dark-scrollbar {
+  /* Styles standards */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(55, 55, 55, 0.7) rgba(25, 25, 25, 0.2);
+  
+  /* Fallback */
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(25, 25, 25, 0.2);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(55, 55, 55, 0.7);
+    border-radius: 4px;
+  }
+}

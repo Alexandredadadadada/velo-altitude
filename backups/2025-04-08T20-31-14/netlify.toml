@@ -1,0 +1,136 @@
+# Configuration Netlify pour Velo-Altitude
+# Mise à jour : Avril 2025 - Configuration optimisée pour l'authentification, les performances et le code splitting
+
+[build]
+  base = "/"
+  publish = "build"
+  command = "npm run build:prod"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22.14.0"
+  NPM_VERSION = "10.9.2"
+  CI = "true"
+  ENABLE_BROTLI_COMPRESSION = "true"
+  NETLIFY_USE_YARN = "false"
+  # Configuration optimisée pour les performances de build
+  NETLIFY_CACHE_BUST = "true"
+  # Optimisations webpack
+  GENERATE_SOURCEMAP = "false"
+  INLINE_RUNTIME_CHUNK = "false"
+  REACT_APP_BUNDLE_VISUALIZE = "false"
+
+# Configuration de traitement des assets
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+  
+[build.processing.images]
+  compress = true
+
+# Configuration des en-têtes HTTP
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# Configuration des en-têtes pour les chunks JavaScript et CSS
+[[headers]]
+  for = "/static/js/*chunk*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/css/*chunk*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuration des en-têtes pour les ressources statiques
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuration des en-têtes pour les images
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Configuration des en-têtes pour les fonts
+[[headers]]
+  for = "/static/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuration des redirections
+[[redirects]]
+  from = "/col/*"
+  to = "/cols/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/itineraire/*"
+  to = "/itineraires/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/entrainements/*"
+  to = "/entrainement/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/profile/*"
+  to = "/profil/:splat"
+  status = 301
+
+# Redirection pour SPA - toutes les routes non correspondantes sont gérées par React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Configuration des plugins
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  
+  [plugins.inputs]
+    output_path = "reports/lighthouse.html"
+    
+    [plugins.inputs.thresholds]
+      performance = 90
+      accessibility = 90
+      best-practices = 90
+      seo = 90
+
+[[plugins]]
+  package = "netlify-plugin-cache"
+  
+  [plugins.inputs]
+    paths = [
+      "node_modules/.cache",
+      "build/_next/cache",
+      ".eslintcache"
+    ]
+
+# Déploiement automatique des branches
+[context.production]
+  environment = { NODE_ENV = "production", API_ENV = "production" }
+
+[context.deploy-preview]
+  environment = { NODE_ENV = "production", API_ENV = "staging" }

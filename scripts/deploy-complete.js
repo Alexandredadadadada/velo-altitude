@@ -14,8 +14,8 @@ function copyEmergencyAuth() {
   const env = getDeploymentEnvironment();
   console.log(`Copie des fichiers d'authentification d'urgence pour l'environnement ${env}`);
   
-  const srcDir = path.join(__dirname, '..', 'client', 'public');
-  const destDir = path.join(__dirname, '..', 'client', 'build');
+  const srcDir = path.join(__dirname, '..', 'public');
+  const destDir = path.join(__dirname, '..', 'build');
   
   // Crée le répertoire de destination s'il n'existe pas
   if (!fs.existsSync(destDir)) {
@@ -69,7 +69,7 @@ function createEnvFile() {
   console.log('Fichier .env créé avec succès');
   
   // Crée également une copie dans le répertoire client pour le build
-  fs.writeFileSync(path.join(__dirname, '..', 'client', '.env'), envContent);
+  fs.writeFileSync(path.join(__dirname, '..', '.env'), envContent);
   console.log('Fichier .env copié dans le répertoire client');
 }
 
@@ -103,7 +103,7 @@ function createRuntimeConfig() {
   };
   `;
   
-  const configPath = path.join(__dirname, '..', 'client', 'build', 'runtime-config.js');
+  const configPath = path.join(__dirname, '..', 'build', 'runtime-config.js');
   fs.writeFileSync(configPath, configContent);
   console.log('Fichier de configuration runtime créé avec succès');
 }
@@ -130,7 +130,7 @@ function validateEnvironment() {
 
 // Modifie le fichier index.html pour inclure la config runtime
 function patchIndexHtml() {
-  const indexPath = path.join(__dirname, '..', 'client', 'build', 'index.html');
+  const indexPath = path.join(__dirname, '..', 'build', 'index.html');
   
   if (!fs.existsSync(indexPath)) {
     console.warn('Fichier index.html introuvable, impossible d\'appliquer le patch');
