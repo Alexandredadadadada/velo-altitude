@@ -1,15 +1,15 @@
 # Configuration Netlify pour Velo-Altitude
-# Mise à jour : Avril 2025 - Configuration optimisée pour l'authentification, les performances et le code splitting
+# Mise à jour : Avril 2025 - Configuration finale pour déploiement de production
 
 [build]
-  command = "CI='' npm ci && npm run build"
+  command = "npm ci && npm run build:prod"
   publish = "build"
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18.2.0"
   NPM_VERSION = "8.0.0"
-  CI = ""
+  CI = "false"
   GENERATE_SOURCEMAP = "false"
   DISABLE_ESLINT_PLUGIN = "true"
 
