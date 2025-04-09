@@ -164,6 +164,59 @@ module.exports = {
         },
       ],
     }),
+    // Alias pour les modules manquants
+    new webpack.NormalModuleReplacementPlugin(
+      /^rxjs$/,
+      path.resolve(__dirname, 'src/utils/polyfills.js')
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^@material-ui\/lab$/,
+      function(resource) {
+        if (resource.request === '@material-ui/lab') {
+          resource.request = path.resolve(__dirname, 'src/utils/polyfills.js');
+        }
+      }
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^react-markdown$/,
+      function(resource) {
+        if (resource.request === 'react-markdown') {
+          resource.request = path.resolve(__dirname, 'src/utils/polyfills.js');
+        }
+      }
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^rehype-highlight$/,
+      function(resource) {
+        if (resource.request === 'rehype-highlight') {
+          resource.request = path.resolve(__dirname, 'src/utils/polyfills.js');
+        }
+      }
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^remark-gfm$/,
+      function(resource) {
+        if (resource.request === 'remark-gfm') {
+          resource.request = path.resolve(__dirname, 'src/utils/polyfills.js');
+        }
+      }
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^react-redux$/,
+      function(resource) {
+        if (resource.request === 'react-redux') {
+          resource.request = path.resolve(__dirname, 'src/utils/polyfills.js');
+        }
+      }
+    ),
+    new webpack.NormalModuleReplacementPlugin(
+      /^highlight\.js\/styles\/github\.css$/,
+      function(resource) {
+        if (resource.request === 'highlight.js/styles/github.css') {
+          resource.request = '';
+        }
+      }
+    ),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -177,6 +230,14 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components'),
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@config': path.resolve(__dirname, 'src/config'),
+      // Alias pour les modules manquants
+      'rxjs': path.resolve(__dirname, 'src/utils/polyfills.js'),
+      'react-markdown': path.resolve(__dirname, 'src/utils/polyfills.js'),
+      'rehype-highlight': path.resolve(__dirname, 'src/utils/polyfills.js'),
+      'remark-gfm': path.resolve(__dirname, 'src/utils/polyfills.js'),
+      'react-redux': path.resolve(__dirname, 'src/utils/polyfills.js'),
+      'highlight.js/styles/github.css': path.resolve(__dirname, 'src/utils/polyfills.js'),
+      '@material-ui/lab': path.resolve(__dirname, 'src/utils/polyfills.js'),
     },
   },
 };

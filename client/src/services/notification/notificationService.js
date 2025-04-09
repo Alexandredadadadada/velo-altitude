@@ -2,7 +2,25 @@
  * Service de notification centralisé
  * Permet d'afficher des notifications à l'utilisateur de manière cohérente
  */
-import { Subject } from 'rxjs';
+// Implémentation d'un événement personnalisé pour remplacer rxjs
+class EventEmitter {
+  constructor() {
+    this.subscribers = [];
+  }
+
+  next(data) {
+    this.subscribers.forEach(callback => callback(data));
+  }
+
+  subscribe(callback) {
+    this.subscribers.push(callback);
+    return {
+      unsubscribe: () => {
+        this.subscribers = this.subscribers.filter(cb => cb !== callback);
+      }
+    };
+  }
+}
 
 // Types de notifications
 export const NotificationLevel = {
@@ -24,8 +42,8 @@ export const NotificationPosition = {
 
 class NotificationService {
   constructor() {
-    // Canal d'émission des notifications
-    this.notifications$ = new Subject();
+    // Canal d'émission des notifications (remplace Subject de rxjs)
+    this.notifications$ = new EventEmitter();
     
     // Configuration par défaut
     this.defaultConfig = {
