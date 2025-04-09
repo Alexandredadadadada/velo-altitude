@@ -2,7 +2,7 @@
 # Mise à jour : Avril 2025 - Configuration optimisée pour l'authentification, les performances et le code splitting
 
 [build]
-  command = "CI='' npm ci && npm run build"
+  command = "npm install -D webpack-cli && CI='' npm ci && npm run build"
   publish = "build"
   functions = "netlify/functions"
 
