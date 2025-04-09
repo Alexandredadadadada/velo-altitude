@@ -2,13 +2,13 @@
 # Mise à jour : Avril 2025 - Configuration pour gentle-donut-7fa5d8
 
 [build]
-  command = "npm ci --include=dev && node scripts/build-netlify-fix.js"
+  command = "npm run build:netlify"
   publish = "build"
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "16.14.0"
-  NPM_VERSION = "8.5.0"
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
   CI = "false"
   GENERATE_SOURCEMAP = "false"
   DISABLE_ESLINT_PLUGIN = "true"

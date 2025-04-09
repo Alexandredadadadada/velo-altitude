@@ -86,12 +86,12 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(js|jsx|ts|tsx)$/,
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
               cacheDirectory: true,
             },
           },
@@ -104,17 +104,16 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(png|jpg|jpeg|gif)$/i,
-          type: 'asset',
-          parser: {
-            dataUrlCondition: {
-              maxSize: 10 * 1024, // 10kb
-            },
-          },
-        },
-        {
-          test: /\.svg$/,
-          use: ['@svgr/webpack', 'url-loader'],
+          test: /\.(png|jpg|jpeg|gif|svg)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'images/'
+              }
+            }
+          ]
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -172,9 +171,14 @@ module.exports = (env, argv) => {
       }),
     ].filter(Boolean),
     resolve: {
-      extensions: ['.js', '.jsx', '.json'],
+      extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
       alias: {
         '@': path.resolve(__dirname, 'src'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@services': path.resolve(__dirname, 'src/services'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
+        '@contexts': path.resolve(__dirname, 'src/contexts'),
+        '@assets': path.resolve(__dirname, 'public/assets'),
       },
     },
     performance: {
