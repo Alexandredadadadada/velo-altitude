@@ -2,7 +2,7 @@
 # Mise à jour : Avril 2025 - Configuration pour gentle-donut-7fa5d8
 
 [build]
-  command = "npm run build:netlify"
+  command = "npm install -g webpack-cli && npm run build:netlify"
   publish = "build"
   functions = "netlify/functions"
 

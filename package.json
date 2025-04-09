@@ -17,7 +17,7 @@
     "test": "jest",
     "check-deps": "node ./scripts/check-dependencies.js",
     "build:prod": "node scripts/build-prod.js",
-    "build:netlify": "cross-env CI=false GENERATE_SOURCEMAP=false npm run build",
+    "build:netlify": "cross-env CI=false GENERATE_SOURCEMAP=false NODE_ENV=production npx webpack-cli --config webpack.config.js --mode production",
     "build:netlify-fix": "node scripts/build-netlify-fix.js",
     "build:netlify-specific": "node scripts/build-netlify-specific.js",
     "test:netlify-build": "node scripts/test-netlify-build.js",
