@@ -16,8 +16,8 @@
 # Variables d'environnement spécifiques à Velo-Altitude
 [context.production.environment]
   REACT_APP_ENV = "production"
-  REACT_APP_API_URL = "https://velo-altitude.netlify.app/api"
-  REACT_APP_BASE_URL = "https://velo-altitude.netlify.app"
+  REACT_APP_API_URL = "https://velo-altitude.com/api"
+  REACT_APP_BASE_URL = "https://velo-altitude.com"
 
 # Configuration des en-têtes pour la sécurité
 [[headers]]
