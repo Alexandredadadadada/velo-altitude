@@ -2,7 +2,7 @@
 # Mise à jour : Avril 2025 - Configuration pour gentle-donut-7fa5d8
 
 [build]
-  command = "npm ci --include=dev && CI=false npm run build"
+  command = "npm ci --include=dev && node scripts/build-netlify-fix.js"
   publish = "build"
   functions = "netlify/functions"
 
