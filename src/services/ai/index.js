@@ -7,15 +7,16 @@ import { monitoring } from '../monitoring';
 import { apiOrchestrator } from '../../api';
 import { AI_CONFIG } from './config';
 import { i18n } from '../../i18n';
+import { ENV } from '../../config/environment';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
+const API_BASE_URL = ENV.app.apiUrl || '';
 const MODEL = 'claude-3.7-sonnet'; // Default model
 
 /**
  * AI configuration for cycling-specific assistant
  */
 export const aiConfig = {
-  model: process.env.REACT_APP_AI_MODEL || MODEL,
+  model: ENV.apiKeys.claude ? 'claude-3.7-sonnet' : ENV.apiKeys.openai ? 'gpt-3.5-turbo' : MODEL,
   temperature: 0.7,
   maxTokens: 2000,
   contextWindow: 10000,

@@ -6,9 +6,10 @@
  */
 
 import axios from 'axios';
+import { ENV } from '../config/environment';
 
 // URL de base de l'API
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://api.velo-altitude.com';
+const API_BASE_URL = ENV.app.apiUrl || 'https://api.velo-altitude.com';
 
 /**
  * Récupère les données d'une catégorie

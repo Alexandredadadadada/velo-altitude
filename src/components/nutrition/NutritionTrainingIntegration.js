@@ -31,11 +31,17 @@ import {
   Info,
   Check,
   Warning,
-  Error as ErrorIcon
+  Error as ErrorIcon,
+  WaterDrop,
+  Notifications
 } from '@mui/icons-material';
 import { useAuth } from '../../contexts/AuthContext';
 import nutritionService from '../../services/nutritionService';
 import trainingService from '../../services/trainingService';
+import trainingNutritionSync from '../../services/orchestration/TrainingNutritionSync';
+import dataValidator from '../../services/orchestration/DataValidator';
+import stateManager from '../../services/orchestration/StateManager';
+import { useNutritionTraining } from '../../hooks/useNutritionTraining';
 import NutritionCalculator from './NutritionCalculator';
 import MealPlanner from './MealPlanner';
 
@@ -55,6 +61,11 @@ const NutritionTrainingIntegration = () => {
     trainingReady: false
   });
   const [recommendations, setRecommendations] = useState([]);
+  const [validationResults, setValidationResults] = useState(null);
+  const [syncDetails, setSyncDetails] = useState(null);
+  
+  // Utiliser notre hook personnalisé pour la gestion de l'intégration
+  const nutritionTraining = useNutritionTraining(user?.id, { autoLoad: true });
 
   // Récupérer les données nutritionnelles et d'entraînement
   useEffect(() => {
@@ -73,6 +84,10 @@ const NutritionTrainingIntegration = () => {
         setNutritionData(nutritionResult);
         setTrainingData(trainingResult);
         
+        // Mettre à jour le gestionnaire d'état
+        stateManager.updateNutritionState(nutritionResult);
+        stateManager.updateTrainingState(trainingResult);
+        
         // Vérifier si les deux ensembles de données sont prêts
         setIntegrationStatus(prev => ({
           ...prev,
@@ -84,6 +99,14 @@ const NutritionTrainingIntegration = () => {
         // Générer des recommandations basées sur les deux ensembles de données
         if (nutritionResult && trainingResult) {
           generateRecommendations(nutritionResult, trainingResult);
+          
+          // Valider la compatibilité des données
+          const compatibilityCheck = dataValidator.validateCompatibility(
+            nutritionResult,
+            trainingResult
+          );
+          
+          setValidationResults(compatibilityCheck);
         }
       } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);
@@ -92,11 +115,38 @@ const NutritionTrainingIntegration = () => {
           loading: false,
           error: 'Une erreur est survenue lors de la récupération des données. Veuillez réessayer.'
         }));
+        
+        // Mettre à jour le gestionnaire d'état
+        stateManager.syncError(error);
       }
     };
 
     fetchData();
   }, [user]);
+
+  // Synchroniser avec les états du hook personnalisé
+  useEffect(() => {
+    if (nutritionTraining.nutritionData) {
+      setNutritionData(nutritionTraining.nutritionData);
+    }
+    
+    if (nutritionTraining.trainingData) {
+      setTrainingData(nutritionTraining.trainingData);
+    }
+    
+    if (nutritionTraining.recommendations.length > 0) {
+      setRecommendations(nutritionTraining.recommendations);
+    }
+    
+    // Mettre à jour l'état d'intégration
+    setIntegrationStatus(prev => ({
+      ...prev,
+      loading: nutritionTraining.isLoading,
+      error: nutritionTraining.error,
+      nutritionReady: !!nutritionTraining.nutritionData,
+      trainingReady: !!nutritionTraining.trainingData
+    }));
+  }, [nutritionTraining]);
 
   // Générer des recommandations personnalisées basées sur les données nutritionnelles et d'entraînement
   const generateRecommendations = (nutrition, training) => {
@@ -118,49 +168,50 @@ const NutritionTrainingIntegration = () => {
         recommendations.push({
           type: 'info',
           title: 'Surplus calorique',
-          description: 'Votre apport calorique dépasse vos besoins pour atteindre votre objectif de perte de poids. Envisagez de réduire votre apport de 200-300 kcal.',
+          description: 'Votre apport calorique est supérieur à vos dépenses, ce qui peut ralentir votre perte de poids. Considérez une réduction modérée ou une augmentation de l\'intensité d\'entraînement.',
           icon: <Info color="info" />
         });
-      } else {
-        recommendations.push({
-          type: 'success',
-          title: 'Équilibre calorique optimal',
-          description: 'Votre apport calorique est bien adapté à votre charge d\'entraînement et vos objectifs.',
-          icon: <Check color="success" />
-        });
       }
     }
     
-    // Vérifier la récupération et le risque de surentraînement
-    if (training.recoveryScore && training.fatigueLevel) {
-      if (training.recoveryScore < 30 && training.fatigueLevel > 7) {
-        recommendations.push({
-          type: 'error',
-          title: 'Risque de surentraînement',
-          description: 'Votre niveau de fatigue est élevé et votre récupération est faible. Augmentez votre apport en protéines (1.6-2g/kg) et en glucides les jours suivants, et envisagez une semaine de récupération.',
-          icon: <ErrorIcon color="error" />
-        });
-      } else if (training.recoveryScore < 50) {
-        recommendations.push({
-          type: 'warning',
-          title: 'Récupération compromise',
-          description: 'Votre récupération est sous-optimale. Assurez-vous de consommer suffisamment de protéines après l\'effort (20-30g) et de glucides pour restaurer le glycogène musculaire.',
-          icon: <Warning color="warning" />
-        });
-      }
-    }
-    
-    // Recommandations spécifiques avant les événements importants
-    if (training.upcomingEvents && training.upcomingEvents.length > 0) {
-      const nextEvent = training.upcomingEvents[0];
-      const daysUntilEvent = Math.ceil((new Date(nextEvent.date) - new Date()) / (1000 * 60 * 60 * 24));
+    // Recommandations sur les protéines
+    if (nutrition.metrics && nutrition.metrics.weight && nutrition.macroDistribution) {
+      const weight = nutrition.metrics.weight;
+      const proteinIntake = (nutrition.dailyCalories * (nutrition.macroDistribution.protein / 100)) / 4; // g de protéines
+      const proteinPerKg = proteinIntake / weight;
       
-      if (daysUntilEvent <= 7) {
+      if (training.goal === 'strength' && proteinPerKg < 1.6) {
         recommendations.push({
           type: 'info',
-          title: `Préparation pour ${nextEvent.name} (dans ${daysUntilEvent} jours)`,
-          description: `Commencez votre charge en glucides 3 jours avant l'événement. Visez 8-10g/kg de poids corporel par jour pendant les 48h précédant l'effort.`,
-          icon: <DirectionsBike color="primary" />
+          title: 'Apport en protéines',
+          description: `Pour un objectif de force/puissance, un apport de 1.6-2.0g de protéines par kg de poids corporel est recommandé. Votre apport actuel est d'environ ${proteinPerKg.toFixed(1)}g/kg.`,
+          icon: <Info color="info" />
+        });
+      }
+    }
+    
+    // Recommandations d'hydratation
+    if (training.weeklyVolume && training.weeklyVolume > 10) { // Plus de 10 heures d'entraînement par semaine
+      recommendations.push({
+        type: 'info',
+        title: 'Hydratation',
+        description: 'Avec votre volume d\'entraînement élevé, assurez-vous de consommer 3-4L d\'eau par jour, avec un supplément d\'électrolytes lors des entraînements de plus de 90 minutes.',
+        icon: <WaterDrop color="info" />
+      });
+    }
+    
+    // Recommandations sur le timing nutritionnel
+    if (training.upcomingWorkouts && training.upcomingWorkouts.length > 0) {
+      const nextWorkout = training.upcomingWorkouts[0];
+      const intensityTypes = ['threshold', 'interval', 'vo2max'];
+      const isHighIntensity = intensityTypes.includes(nextWorkout.type);
+      
+      if (isHighIntensity) {
+        recommendations.push({
+          type: 'info',
+          title: 'Préparation séance intense',
+          description: `Pour votre prochaine séance ${nextWorkout.name} (${nextWorkout.scheduledDate}), prévoyez un repas riche en glucides 2-3h avant, et une collation de récupération avec protéines et glucides dans les 30min après l'effort.`,
+          icon: <FitnessCenter color="primary" />
         });
       }
     }
@@ -170,38 +221,44 @@ const NutritionTrainingIntegration = () => {
 
   // Synchroniser les données nutritionnelles avec le plan d'entraînement
   const handleSyncNutritionWithTraining = async () => {
-    if (!user || !user.id || !nutritionData || !trainingData) return;
-    
+    if (!trainingData || !nutritionData) {
+      return;
+    }
+
     try {
-      setIntegrationStatus(prev => ({ ...prev, loading: true }));
+      // Indiquer le début de la synchronisation
+      setIntegrationStatus(prev => ({ ...prev, loading: true, error: null }));
+      stateManager.beginSync();
       
-      // Appel au service pour synchroniser les données
-      const result = await nutritionService.syncWithTrainingPlan(
-        user.id,
-        nutritionData.id,
-        trainingData.id
-      );
+      // Appeler le service de synchronisation
+      const syncResult = await trainingNutritionSync.updateNutritionPlan(trainingData);
       
-      // Mettre à jour les données avec le résultat synchronisé
-      setNutritionData(result.nutritionData);
-      setTrainingData(result.trainingData);
+      // Mettre à jour les données nutritionnelles et l'état de synchronisation
+      setNutritionData(syncResult.nutritionPlan);
+      setSyncDetails(syncResult.syncDetails);
+      stateManager.syncSuccess(syncResult);
       
       // Générer de nouvelles recommandations
-      generateRecommendations(result.nutritionData, result.trainingData);
+      generateRecommendations(syncResult.nutritionPlan, trainingData);
       
+      // Mettre à jour l'état d'intégration
       setIntegrationStatus(prev => ({
         ...prev,
         loading: false,
         nutritionReady: true,
-        trainingReady: true
+        error: null
       }));
+      
     } catch (error) {
       console.error('Erreur lors de la synchronisation:', error);
+      
       setIntegrationStatus(prev => ({
         ...prev,
         loading: false,
-        error: 'Échec de la synchronisation des données nutritionnelles avec le plan d\'entraînement.'
+        error: 'Échec de la synchronisation: ' + error.message
       }));
+      
+      stateManager.syncError(error);
     }
   };
 
@@ -212,87 +269,120 @@ const NutritionTrainingIntegration = () => {
 
   // Rendu des recommandations intégrées
   const renderRecommendations = () => {
+    if (recommendations.length === 0) {
+      return (
+        <Alert severity="info" sx={{ mb: 3 }}>
+          Aucune recommandation disponible. Synchronisez vos données pour obtenir des conseils personnalisés.
+        </Alert>
+      );
+    }
+
     return (
-      <Card sx={{ mb: 3 }}>
-        <CardContent>
-          <Typography variant="h6" gutterBottom>
-            Recommandations personnalisées
-          </Typography>
-          <Divider sx={{ mb: 2 }} />
-          
-          {recommendations.length === 0 ? (
-            <Typography variant="body2" color="text.secondary">
-              Aucune recommandation disponible. Complétez votre profil nutritionnel et votre plan d'entraînement pour recevoir des conseils personnalisés.
-            </Typography>
-          ) : (
-            <List>
-              {recommendations.map((recommendation, index) => (
-                <ListItem key={index} sx={{ bgcolor: recommendation.type === 'error' ? 'error.50' : recommendation.type === 'warning' ? 'warning.50' : recommendation.type === 'success' ? 'success.50' : 'info.50', mb: 1, borderRadius: 1 }}>
-                  <ListItemIcon>
-                    {recommendation.icon}
-                  </ListItemIcon>
-                  <ListItemText 
-                    primary={recommendation.title} 
-                    secondary={recommendation.description} 
-                  />
-                </ListItem>
-              ))}
-            </List>
-          )}
-        </CardContent>
-      </Card>
+      <Box sx={{ mb: 3 }}>
+        <Typography variant="h6" sx={{ mb: 2 }}>Recommandations Personnalisées</Typography>
+        <Grid container spacing={2}>
+          {recommendations.map((rec, index) => (
+            <Grid item xs={12} md={6} key={index}>
+              <Alert 
+                severity={rec.type === 'warning' ? 'warning' : 'info'} 
+                icon={rec.icon || undefined}
+                sx={{ height: '100%' }}
+              >
+                <AlertTitle>{rec.title}</AlertTitle>
+                {rec.description}
+              </Alert>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     );
   };
 
   // Rendu du résumé nutritionnel
   const renderNutritionSummary = () => {
-    if (!nutritionData) return null;
-    
+    if (!nutritionData) {
+      return (
+        <Card variant="outlined" sx={{ height: '100%' }}>
+          <CardContent>
+            <Typography variant="h6">Profil Nutritionnel</Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '150px' }}>
+              <Typography variant="body2" color="text.secondary">
+                Aucune donnée nutritionnelle disponible
+              </Typography>
+            </Box>
+          </CardContent>
+        </Card>
+      );
+    }
+
     return (
-      <Card sx={{ mb: 3 }}>
+      <Card variant="outlined" sx={{ height: '100%' }}>
         <CardContent>
-          <Typography variant="h6" gutterBottom>
-            Résumé nutritionnel
-          </Typography>
-          <Divider sx={{ mb: 2 }} />
+          <Typography variant="h6">Profil Nutritionnel</Typography>
+          <Divider sx={{ my: 1.5 }} />
           
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6} md={3}>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <LocalFireDepartment color="primary" sx={{ mr: 1 }} />
-                <Box>
-                  <Typography variant="body2" color="text.secondary">Calories quotidiennes</Typography>
-                  <Typography variant="h6">{nutritionData.dailyCalories} kcal</Typography>
-                </Box>
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Restaurant color="primary" sx={{ mr: 1 }} />
                 <Box>
-                  <Typography variant="body2" color="text.secondary">Glucides</Typography>
-                  <Typography variant="h6">{nutritionData.macronutrients?.carbs?.grams}g ({nutritionData.macronutrients?.carbs?.percentage}%)</Typography>
+                  <Typography variant="body2" color="text.secondary">Calories quotidiennes</Typography>
+                  <Typography variant="h6">{nutritionData.dailyCalories || 'N/A'} kcal</Typography>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            
+            <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <FitnessCenter color="primary" sx={{ mr: 1 }} />
+                <Restaurant color="primary" sx={{ mr: 1 }} />
                 <Box>
-                  <Typography variant="body2" color="text.secondary">Protéines</Typography>
-                  <Typography variant="h6">{nutritionData.macronutrients?.protein?.grams}g ({nutritionData.macronutrients?.protein?.percentage}%)</Typography>
+                  <Typography variant="body2" color="text.secondary">Objectif</Typography>
+                  <Typography variant="h6">{nutritionData.goals?.type || 'Non défini'}</Typography>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Opacity color="primary" sx={{ mr: 1 }} />
-                <Box>
-                  <Typography variant="body2" color="text.secondary">Lipides</Typography>
-                  <Typography variant="h6">{nutritionData.macronutrients?.fat?.grams}g ({nutritionData.macronutrients?.fat?.percentage}%)</Typography>
-                </Box>
-              </Box>
-            </Grid>
+            
+            {nutritionData.macroDistribution && (
+              <>
+                <Grid item xs={12} sm={4}>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box>
+                      <Typography variant="body2" color="text.secondary">Glucides</Typography>
+                      <Typography variant="h6">{nutritionData.macroDistribution.carbs || 0}%</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+                
+                <Grid item xs={12} sm={4}>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box>
+                      <Typography variant="body2" color="text.secondary">Protéines</Typography>
+                      <Typography variant="h6">{nutritionData.macroDistribution.protein || 0}%</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+                
+                <Grid item xs={12} sm={4}>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box>
+                      <Typography variant="body2" color="text.secondary">Lipides</Typography>
+                      <Typography variant="h6">{nutritionData.macroDistribution.fat || 0}%</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              </>
+            )}
+            
+            {syncDetails && (
+              <Grid item xs={12}>
+                <Alert severity="success" sx={{ mt: 1 }}>
+                  <AlertTitle>Synchronisation réussie</AlertTitle>
+                  <Typography variant="body2">
+                    {syncDetails.message || 'Plan nutritionnel adapté à votre entraînement'}
+                  </Typography>
+                </Alert>
+              </Grid>
+            )}
           </Grid>
         </CardContent>
       </Card>
@@ -301,36 +391,59 @@ const NutritionTrainingIntegration = () => {
 
   // Rendu du résumé d'entraînement
   const renderTrainingSummary = () => {
-    if (!trainingData) return null;
-    
+    if (!trainingData) {
+      return (
+        <Card variant="outlined" sx={{ height: '100%' }}>
+          <CardContent>
+            <Typography variant="h6">Plan d'Entraînement</Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '150px' }}>
+              <Typography variant="body2" color="text.secondary">
+                Aucun plan d'entraînement disponible
+              </Typography>
+            </Box>
+          </CardContent>
+        </Card>
+      );
+    }
+
     return (
-      <Card sx={{ mb: 3 }}>
+      <Card variant="outlined" sx={{ height: '100%' }}>
         <CardContent>
-          <Typography variant="h6" gutterBottom>
-            Résumé d'entraînement
-          </Typography>
-          <Divider sx={{ mb: 2 }} />
+          <Typography variant="h6">Plan d'Entraînement</Typography>
+          <Divider sx={{ my: 1.5 }} />
           
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <DirectionsBike color="primary" sx={{ mr: 1 }} />
                 <Box>
                   <Typography variant="body2" color="text.secondary">Charge hebdomadaire</Typography>
-                  <Typography variant="h6">{trainingData.weeklyLoad} TSS</Typography>
+                  <Typography variant="h6">{trainingData.weeklyLoad || 'N/A'} TSS</Typography>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            
+            <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Speed color="primary" sx={{ mr: 1 }} />
+                <DirectionsBike color="primary" sx={{ mr: 1 }} />
                 <Box>
-                  <Typography variant="body2" color="text.secondary">Phase actuelle</Typography>
-                  <Typography variant="h6">{trainingData.currentPhase}</Typography>
+                  <Typography variant="body2" color="text.secondary">Objectif</Typography>
+                  <Typography variant="h6">{trainingData.goal || 'Non défini'}</Typography>
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            
+            <Grid item xs={12} sm={6}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <DirectionsBike color="primary" sx={{ mr: 1 }} />
+                <Box>
+                  <Typography variant="body2" color="text.secondary">Volume hebdomadaire</Typography>
+                  <Typography variant="h6">{trainingData.weeklyVolume || 0} heures</Typography>
+                </Box>
+              </Box>
+            </Grid>
+            
+            <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <DirectionsBike color="primary" sx={{ mr: 1 }} />
                 <Box>
@@ -339,22 +452,76 @@ const NutritionTrainingIntegration = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <DirectionsBike color="primary" sx={{ mr: 1 }} />
-                <Box>
-                  <Typography variant="body2" color="text.secondary">Prochain événement</Typography>
-                  <Typography variant="h6">
-                    {trainingData.upcomingEvents && trainingData.upcomingEvents.length > 0 
-                      ? trainingData.upcomingEvents[0].name 
-                      : 'Aucun'}
+            <Grid item xs={12}>
+              <Typography variant="subtitle2" sx={{ mt: 1 }}>Prochain entraînement</Typography>
+              {trainingData.upcomingWorkouts && trainingData.upcomingWorkouts.length > 0 ? (
+                <Box sx={{ mt: 1, border: 1, borderColor: 'divider', borderRadius: 1, p: 1 }}>
+                  <Typography variant="body2" fontWeight="bold">
+                    {trainingData.upcomingWorkouts[0].name}
                   </Typography>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 0.5 }}>
+                    <Typography variant="body2" color="text.secondary">
+                      {trainingData.upcomingWorkouts[0].scheduledDate}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {trainingData.upcomingWorkouts[0].duration} min
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
+              ) : (
+                <Typography variant="body2" color="text.secondary">
+                  Aucun entraînement planifié
+                </Typography>
+              )}
             </Grid>
           </Grid>
         </CardContent>
       </Card>
+    );
+  };
+
+  // Rendu des résultats de validation
+  const renderValidationResults = () => {
+    if (!validationResults) return null;
+    
+    const { isCompatible, issues, suggestions } = validationResults;
+    
+    if (isCompatible && suggestions.length === 0) return null;
+    
+    return (
+      <Box sx={{ mb: 3 }}>
+        <Alert severity={isCompatible ? "info" : "warning"}>
+          <AlertTitle>
+            {isCompatible ? "Suggestions d'optimisation" : "Points d'attention"}
+          </AlertTitle>
+          
+          {issues && issues.length > 0 && (
+            <List dense disablePadding>
+              {issues.map((issue, idx) => (
+                <ListItem key={`issue-${idx}`} sx={{ py: 0 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <Warning fontSize="small" color="warning" />
+                  </ListItemIcon>
+                  <ListItemText primary={issue} />
+                </ListItem>
+              ))}
+            </List>
+          )}
+          
+          {suggestions && suggestions.length > 0 && (
+            <List dense disablePadding sx={{ mt: issues && issues.length ? 1 : 0 }}>
+              {suggestions.map((suggestion, idx) => (
+                <ListItem key={`suggestion-${idx}`} sx={{ py: 0 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <Info fontSize="small" color="info" />
+                  </ListItemIcon>
+                  <ListItemText primary={suggestion} />
+                </ListItem>
+              ))}
+            </List>
+          )}
+        </Alert>
+      </Box>
     );
   };
 
@@ -369,7 +536,7 @@ const NutritionTrainingIntegration = () => {
             onClick={handleSyncNutritionWithTraining}
             disabled={integrationStatus.loading || !nutritionData || !trainingData}
           >
-            Synchroniser
+            {integrationStatus.loading ? <CircularProgress size={24} color="inherit" /> : 'Synchroniser'}
           </Button>
         </Box>
         
@@ -377,7 +544,7 @@ const NutritionTrainingIntegration = () => {
           Optimisez votre nutrition en fonction de votre planification d'entraînement et recevez des recommandations personnalisées.
         </Typography>
         
-        {integrationStatus.loading ? (
+        {integrationStatus.loading && !nutritionData && !trainingData ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
             <CircularProgress />
           </Box>
@@ -410,6 +577,7 @@ const NutritionTrainingIntegration = () => {
               />
             </Box>
             
+            {renderValidationResults()}
             {renderRecommendations()}
             
             <Grid container spacing={3}>
@@ -420,6 +588,19 @@ const NutritionTrainingIntegration = () => {
                 {renderTrainingSummary()}
               </Grid>
             </Grid>
+            
+            {trainingData && trainingData.upcomingWorkouts && trainingData.upcomingWorkouts.length > 0 && (
+              <Box sx={{ mt: 3 }}>
+                <Button
+                  variant="outlined"
+                  startIcon={<Notifications />}
+                  onClick={() => nutritionTraining.getRecommendationsForWorkout(trainingData.upcomingWorkouts[0].id)}
+                  disabled={nutritionTraining.isLoading}
+                >
+                  Obtenir des recommandations détaillées pour le prochain entraînement
+                </Button>
+              </Box>
+            )}
           </>
         )}
       </Paper>

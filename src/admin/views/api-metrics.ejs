@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velo-Altitude API Metrics Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .health-badge {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.6rem;
+    }
+    .health-healthy {
+      background-color: #198754;
+    }
+    .health-degraded {
+      background-color: #fd7e14;
+    }
+    .health-unhealthy {
+      background-color: #dc3545;
+    }
+    .metric-card {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .metric-card:hover {
+      transform: translateY(-5px);
+    }
+    .metric-value {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .alert-item {
+      border-left: 4px solid #fd7e14;
+      padding-left: 1rem;
+    }
+    canvas {
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Velo-Altitude Admin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/admin/api-metrics">API Metrics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/settings">Settings</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h1 class="mb-4">API Metrics Dashboard</h1>
+    
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">Service Health Overview</h5>
+            <button class="btn btn-sm btn-primary" id="refreshBtn">Refresh Data</button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Status</th>
+                    <th>Calls (last hour)</th>
+                    <th>Avg Response Time</th>
+                    <th>Error Rate</th>
+                    <th>Fallback Rate</th>
+                  </tr>
+                </thead>
+                <tbody id="servicesTable">
+                  <!-- Will be populated by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="card metric-card h-100">
+          <div class="card-header">
+            <h5>Response Times (ms)</h5>
+          </div>
+          <div class="card-body">
+            <canvas id="responseTimeChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card metric-card h-100">
+          <div class="card-header">
+            <h5>API Calls Distribution</h5>
+          </div>
+          <div class="card-body">
+            <canvas id="apiCallsChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="card metric-card h-100">
+          <div class="card-header">
+            <h5>Fallback Events</h5>
+          </div>
+          <div class="card-body" id="fallbackEvents">
+            <div class="text-center py-3 text-muted">
+              <p>No fallback events recorded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card metric-card h-100">
+          <div class="card-header">
+            <h5>Rate Limit Status</h5>
+          </div>
+          <div class="card-body">
+            <canvas id="rateLimitChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Recent Alerts</h5>
+          </div>
+          <div class="card-body" id="alertsContainer">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Details Modal -->
+  <div class="modal fade" id="serviceDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="serviceModalLabel">Service Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="serviceModalBody">
+          <!-- Will be populated by JavaScript -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Charts instances
+    let responseTimeChart;
+    let apiCallsChart;
+    let rateLimitChart;
+    
+    // Fetch dashboard data
+    async function fetchDashboardData() {
+      try {
+        const response = await fetch('/admin/api/metrics');
+        if (!response.ok) throw new Error('Failed to fetch metrics');
+        return await response.json();
+      } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+        alert('Failed to load dashboard data. Please try again later.');
+        return null;
+      }
+    }
+    
+    // Fetch alerts
+    async function fetchAlerts() {
+      try {
+        const response = await fetch('/admin/api/alerts');
+        if (!response.ok) throw new Error('Failed to fetch alerts');
+        return await response.json();
+      } catch (error) {
+        console.error('Error fetching alerts:', error);
+        return null;
+      }
+    }
+    
+    // Fetch rate limits
+    async function fetchRateLimits() {
+      try {
+        const response = await fetch('/admin/api/rate-limits');
+        if (!response.ok) throw new Error('Failed to fetch rate limits');
+        return await response.json();
+      } catch (error) {
+        console.error('Error fetching rate limits:', error);
+        return null;
+      }
+    }
+    
+    // Fetch service details
+    async function fetchServiceDetails(service) {
+      try {
+        const response = await fetch(`/admin/api/metrics/${service}`);
+        if (!response.ok) throw new Error(`Failed to fetch metrics for ${service}`);
+        return await response.json();
+      } catch (error) {
+        console.error(`Error fetching details for ${service}:`, error);
+        return null;
+      }
+    }
+    
+    // Initialize dashboard
+    async function initDashboard() {
+      const data = await fetchDashboardData();
+      if (!data) return;
+      
+      renderServicesTable(data.metrics);
+      initCharts(data);
+      
+      // Fetch and render other components
+      const alerts = await fetchAlerts();
+      if (alerts) renderAlerts(alerts);
+      
+      const rateLimits = await fetchRateLimits();
+      if (rateLimits) renderRateLimits(rateLimits);
+    }
+    
+    // Render services table
+    function renderServicesTable(metrics) {
+      const tableBody = document.getElementById('servicesTable');
+      tableBody.innerHTML = '';
+      
+      Object.entries(metrics).forEach(([service, data]) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>
+            <a href="#" class="service-link" data-service="${service}">
+              ${service}
+            </a>
+          </td>
+          <td>
+            <span class="badge health-badge ${getHealthClass(data.errorRate)}">
+              ${getHealthStatus(data.errorRate)}
+            </span>
+          </td>
+          <td>${data.totalCalls}</td>
+          <td>${data.averageResponseTime.toFixed(1)} ms</td>
+          <td>${data.errorRate.toFixed(1)}%</td>
+          <td>${data.fallbackRate.toFixed(1)}%</td>
+        `;
+        tableBody.appendChild(row);
+      });
+      
+      // Add event listeners to service links
+      document.querySelectorAll('.service-link').forEach(link => {
+        link.addEventListener('click', async (event) => {
+          event.preventDefault();
+          const service = event.target.getAttribute('data-service');
+          const serviceData = await fetchServiceDetails(service);
+          if (serviceData) {
+            showServiceDetails(service, serviceData);
+          }
+        });
+      });
+    }
+    
+    // Initialize charts
+    function initCharts(data) {
+      // Response time chart
+      const responseTimeCtx = document.getElementById('responseTimeChart').getContext('2d');
+      if (responseTimeChart) {
+        responseTimeChart.destroy();
+      }
+      
+      const responseTimeData = {
+        labels: Object.keys(data.metrics),
+        datasets: [{
+          label: 'Average Response Time (ms)',
+          data: Object.values(data.metrics).map(m => m.averageResponseTime),
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 2
+        }]
+      };
+      
+      responseTimeChart = new Chart(responseTimeCtx, {
+        type: 'bar',
+        data: responseTimeData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          },
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+      
+      // API calls distribution chart
+      const apiCallsCtx = document.getElementById('apiCallsChart').getContext('2d');
+      if (apiCallsChart) {
+        apiCallsChart.destroy();
+      }
+      
+      const apiCallsData = {
+        labels: Object.keys(data.metrics),
+        datasets: [{
+          label: 'API Calls',
+          data: Object.values(data.metrics).map(m => m.totalCalls),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+      
+      apiCallsChart = new Chart(apiCallsCtx, {
+        type: 'pie',
+        data: apiCallsData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+    }
+    
+    // Render rate limits chart
+    function renderRateLimits(data) {
+      const rateLimitCtx = document.getElementById('rateLimitChart').getContext('2d');
+      if (rateLimitChart) {
+        rateLimitChart.destroy();
+      }
+      
+      // Process data for chart
+      const services = data.rateLimits.map(r => r.service);
+      const remainingValues = data.rateLimits.map(r => {
+        const latest = r.history.slice(-1)[0];
+        return latest ? latest.remaining : 0;
+      });
+      const limitValues = data.rateLimits.map(r => {
+        const latest = r.history.slice(-1)[0];
+        return latest ? latest.limit : 0;
+      });
+      
+      const rateLimitData = {
+        labels: services,
+        datasets: [
+          {
+            label: 'Remaining',
+            data: remainingValues,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 2
+          },
+          {
+            label: 'Limit',
+            data: limitValues,
+            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+            borderColor: 'rgba(153, 102, 255, 1)',
+            borderWidth: 2
+          }
+        ]
+      };
+      
+      rateLimitChart = new Chart(rateLimitCtx, {
+        type: 'bar',
+        data: rateLimitData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          },
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+    }
+    
+    // Render fallback events
+    function renderFallbackEvents(events) {
+      const container = document.getElementById('fallbackEvents');
+      
+      if (!events || events.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-3 text-muted">
+            <p>No fallback events recorded</p>
+          </div>
+        `;
+        return;
+      }
+      
+      const eventsList = events.slice(0, 5); // Show only the latest 5 events
+      
+      container.innerHTML = `
+        <div class="list-group">
+          ${eventsList.map(event => `
+            <div class="list-group-item">
+              <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">
+                  ${event.primaryService} → ${event.fallbackService}
+                </h6>
+                <small class="text-muted">
+                  ${new Date(event.timestamp).toLocaleTimeString()}
+                </small>
+              </div>
+              <p class="mb-1">Reason: ${event.reason}</p>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+    
+    // Render alerts
+    function renderAlerts(alerts) {
+      const container = document.getElementById('alertsContainer');
+      
+      // Combine all alerts
+      const allAlerts = [
+        ...alerts.rateWarnings.map(a => ({ ...a, type: 'Rate Limit' })),
+        ...alerts.fallbackWarnings.map(a => ({ ...a, type: 'Fallback Rate' })),
+        ...alerts.responseTimeWarnings.map(a => ({ ...a, type: 'Response Time' })),
+        ...alerts.errorRateWarnings.map(a => ({ ...a, type: 'Error Rate' }))
+      ];
+      
+      // Sort by timestamp (newest first)
+      allAlerts.sort((a, b) => b.timestamp - a.timestamp);
+      
+      if (allAlerts.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-3 text-muted">
+            <p>No alerts recorded</p>
+          </div>
+        `;
+        return;
+      }
+      
+      container.innerHTML = `
+        <div class="list-group">
+          ${allAlerts.slice(0, 10).map(alert => `
+            <div class="list-group-item alert-item">
+              <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">
+                  ${alert.type} Warning: ${alert.tags?.service || 'Unknown Service'}
+                </h6>
+                <small class="text-muted">
+                  ${new Date(alert.timestamp).toLocaleString()}
+                </small>
+              </div>
+              <p class="mb-1">
+                ${getAlertMessage(alert)}
+              </p>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+    
+    // Format alert message based on type
+    function getAlertMessage(alert) {
+      const tags = alert.tags || {};
+      
+      switch(alert.type) {
+        case 'Rate Limit':
+          return `Rate limit at ${tags.remaining}/${tags.limit} (${tags.remainingPercentage}% remaining)`;
+          
+        case 'Fallback Rate':
+          return `Fallback rate at ${tags.fallbackRate}% (threshold: ${tags.threshold}%)`;
+          
+        case 'Response Time':
+          return `Average response time at ${tags.averageResponseTime}ms (threshold: ${tags.threshold}ms)`;
+          
+        case 'Error Rate':
+          return `Error rate at ${tags.errorRate}% (threshold: ${tags.threshold}%)`;
+          
+        default:
+          return JSON.stringify(tags);
+      }
+    }
+    
+    // Show service details in modal
+    function showServiceDetails(service, data) {
+      const modal = new bootstrap.Modal(document.getElementById('serviceDetailsModal'));
+      const modalTitle = document.getElementById('serviceModalLabel');
+      const modalBody = document.getElementById('serviceModalBody');
+      
+      modalTitle.textContent = `${service} Service Details`;
+      
+      modalBody.innerHTML = `
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h6 class="mb-0">Overview</h6>
+              </div>
+              <div class="card-body">
+                <p><strong>Total Calls:</strong> ${data.overview.totalCalls}</p>
+                <p><strong>Avg Response Time:</strong> ${data.overview.averageResponseTime.toFixed(1)} ms</p>
+                <p><strong>Success Rate:</strong> ${data.overview.successRate.toFixed(1)}%</p>
+                <p><strong>Error Rate:</strong> ${data.overview.errorRate.toFixed(1)}%</p>
+                <p><strong>Fallback Rate:</strong> ${data.overview.fallbackRate.toFixed(1)}%</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h6 class="mb-0">Recent Errors</h6>
+              </div>
+              <div class="card-body">
+                ${data.errorEvents.length > 0 
+                  ? `<ul class="list-group">
+                      ${data.errorEvents.slice(0, 5).map(err => `
+                        <li class="list-group-item">
+                          <small class="text-muted">${new Date(err.timestamp).toLocaleString()}</small>
+                          <p class="mb-0">${err.message}</p>
+                        </li>
+                      `).join('')}
+                    </ul>`
+                  : '<p class="text-muted">No recent errors</p>'
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h6 class="mb-0">Response Time History</h6>
+              </div>
+              <div class="card-body">
+                <canvas id="detailsResponseTimeChart" height="200"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      modal.show();
+      
+      // Initialize response time history chart
+      setTimeout(() => {
+        const ctx = document.getElementById('detailsResponseTimeChart').getContext('2d');
+        
+        // Prepare data
+        const timestamps = data.responseTimeHistory.map(r => new Date(r.timestamp).toLocaleTimeString());
+        const values = data.responseTimeHistory.map(r => r.value);
+        
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: timestamps,
+            datasets: [{
+              label: 'Response Time (ms)',
+              data: values,
+              fill: false,
+              borderColor: 'rgba(75, 192, 192, 1)',
+              tension: 0.1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      }, 100);
+    }
+    
+    // Helper functions
+    function getHealthClass(errorRate) {
+      if (errorRate < 5) return 'health-healthy';
+      if (errorRate < 15) return 'health-degraded';
+      return 'health-unhealthy';
+    }
+    
+    function getHealthStatus(errorRate) {
+      if (errorRate < 5) return 'Healthy';
+      if (errorRate < 15) return 'Degraded';
+      return 'Unhealthy';
+    }
+    
+    // Event Listeners
+    document.getElementById('refreshBtn').addEventListener('click', initDashboard);
+    
+    // Initialize dashboard on page load
+    document.addEventListener('DOMContentLoaded', initDashboard);
+  </script>
+</body>
+</html>

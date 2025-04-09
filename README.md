@@ -1,105 +1,137 @@
-# Velo-Altitude.com - La plus grande plateforme de cyclisme en Europe pour les passionnés de cols
+# Velo-Altitude
 
-![Version](https://img.shields.io/badge/version-2.5.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Coverage](https://img.shields.io/badge/coverage-92%25-green.svg)
-![Languages](https://img.shields.io/badge/languages-5-orange.svg)
+ ![Logo Velo-Altitude](./public/images/header.jpg)
 
-## Vue d'ensemble
+## Vision
 
-Velo-Altitude.com est une plateforme web complète dédiée aux cyclistes passionnés de cols et de défis d'altitude à travers toute l'Europe. Ce projet combine des fonctionnalités avancées de visualisation 3D des cols, d'entraînement spécialisé, de planification d'itinéraires, d'analyse de performance et de communauté sociale pour offrir une expérience immersive aux cyclistes de tous niveaux.
+Velo-Altitude se positionne comme la communauté de référence pour les cyclistes passionnés par les ascensions alpines.
 
-### Objectifs du projet
+## Objectifs
 
-- Devenir la référence européenne en matière de dashboard pour les cyclistes passionnés de cols
-- Fournir une base de données enrichie des 50 cols majeurs d'Europe avec visualisation 3D interactive
-- Proposer des outils d'entraînement personnalisés spécifiquement adaptés aux défis d'altitude
-- Faciliter la découverte et le partage d'itinéraires cyclistes à travers les massifs européens
-- Créer une communauté dynamique de cyclistes partageant conseils et expériences de montagne
-- Offrir des analyses détaillées des performances en altitude et des progrès
-- Intégrer des données météo et topographiques précises pour optimiser les sorties en montagne
+- Cartographier et documenter tous les cols européens
+- Fournir des données météorologiques précises et personnalisées pour le cyclisme
+- Créer une communauté engagée de passionnés de cyclisme alpin
+- Offrir une expérience immersive via la visualisation 3D des cols
 
-### Architecture technique
+## Fonctionnalités
 
-Le projet est construit avec une architecture moderne séparant clairement le frontend et le backend :
+### Cartographie des cols
 
-- **Frontend** : Application React single-page avec une interface responsive
-- **Backend** : API RESTful Node.js/Express avec une base de données MongoDB
-- **Services tiers** : Intégrations avec Strava, OpenWeatherMap, OpenRoute, et Mapbox
-- **Architecture modulaire** : Services indépendants coordonnés par un gestionnaire d'API central
-- **Infrastructure multilingue** : Prise en charge complète de 5 langues européennes
-- **Scaling automatisé** : Déploiement sur infrastructure cloud avec scaling automatique
+Nous développons une base de données complète des cols européens, avec:
 
-## Caractéristiques principales
+- Profils d'élévation précis
+- Données historiques et culturelles
+- Images panoramiques
+- Témoignages et conseils de cyclistes
 
-- **Base de données des cols européens** : 50 cols majeurs enrichis avec données détaillées et visualisation 3D, incluant les Alpes, Pyrénées, Vosges, Jura, Massif Central, Dolomites et Alpes Suisses 
-- **Planificateur d'itinéraires** : Création et partage d'itinéraires avec analyse de terrain avancée
-- **Programmes d'entraînement** : 15 programmes personnalisés pour différents objectifs cyclistes, incluant des séances HIIT spécialisées
-- **Nutrition** : Conseils nutritionnels et base de données de 100+ recettes adaptées au cyclisme de montagne
-- **Communauté** : Forums thématiques, groupes régionaux et planification de sorties en groupe
-- **Analyses de performance** : Suivi détaillé des progrès et comparaison avec d'autres cyclistes
+### Données météorologiques
+
+Notre plateforme intègre:
+
+- Prévisions météorologiques spécifiques pour chaque col
+- Alertes personnalisées
+- Historique des conditions
+- Recommandations adaptées
+
+### Visualisation immersive
+
+L'expérience Velo-Altitude est enrichie par:
+
+- Visualisation 3D des cols et des itinéraires
+- Intégration de données d'élévation réelles
+- Simulation des conditions météorologiques
+- Vue à 360° des points d'intérêt
+
+### Communauté et défis
+
+La dimension sociale est au cœur du projet:
+
+- Profils cyclistes personnalisés
+- Partage d'expériences et de photos
+- Défis et compétitions amicales
+- Rencontres et événements
+
+## Fonctionnalités avancées
+
+- **Analyse de performance** : Suivi détaillé des progrès et comparaison avec d'autres cyclistes
 - **Météo avancée** : Prévisions spécifiques pour les cols et itinéraires cyclistes
 - **Le Défi des 7 Majeurs** : Système de suivi pour les défis d'ascension personnalisés
+- **Effets météorologiques avancés** : Système complet de visualisation météo avec pluie, neige, brouillard et orages
 
 ## Dimension européenne
 
-Velo-Altitude.com est conçu pour répondre aux besoins des cyclistes passionnés de montagne à travers toute l'Europe :
+Le projet couvre initialement:
 
-### Couverture géographique
-- **Alpes** : France, Italie, Suisse, Autriche, Slovénie
-- **Pyrénées** : France, Espagne, Andorre
-- **Massifs d'Europe centrale** : Allemagne, République Tchèque, Slovaquie
-- **Balkans** : Roumanie, Bulgarie, Slovénie, Croatie
-- **Îles et péninsules** : Espagne (Sierra Nevada), Sicile, Sardaigne, Grèce
+- Les Alpes françaises, italiennes et suisses
+- Les Pyrénées françaises et espagnoles
+- Les massifs montagneux d'Allemagne et d'Autriche
+- Les cols du Benelux et des pays scandinaves
 
-### Support multilingue
-- Français
-- Anglais
-- Allemand
-- Italien
-- Espagnol
+## Volet environnemental
 
-## Installation et développement
+Velo-Altitude promeut:
 
-### Prérequis
-- Node.js (v18.17.0)
-- npm (v9.6.7)
-- MongoDB (v4.4+)
-- API keys pour : Mapbox, Strava, OpenWeatherMap
+- Le cyclisme comme moyen de transport écologique
+- Le respect des espaces naturels
+- La sensibilisation aux impacts du changement climatique sur les écosystèmes alpins
+- Le tourisme durable en région montagneuse
 
-### Installation
-```bash
-# Cloner le dépôt
-git clone https://github.com/velo-altitude/velo-altitude-platform.git
+## Plan de développement
 
-# Installer les dépendances
-cd velo-altitude-platform
-npm install
+### Phase 1 (Terminée)
 
-# Configuration
-cp .env.example .env
-# Éditer le fichier .env avec vos clés API
+- Conception de l'architecture technique
+- Développement du système d'authentification
+- Mise en place de la base de données initiale
+- Intégration des APIs météorologiques
 
-# Démarrer le serveur de développement
-npm run dev
-```
+### Phase 2 (En cours)
 
-## Déploiement
+- Enrichissement de la base de données des cols
+- Développement des fonctionnalités de visualisation 3D
+- Création des profils utilisateurs et du système de communauté
+- Mise en place du système de défis
 
-Le projet est configuré pour un déploiement facile sur Netlify (frontend) et Heroku/MongoDB Atlas (backend).
+### Phase 3 (Planifiée)
 
-### Variables d'environnement pour le déploiement
-- `REACT_APP_API_URL` - URL de l'API backend
-- `MONGODB_URI` - URI de connexion MongoDB
-- `JWT_SECRET` - Clé secrète pour l'authentification
-- `MAPBOX_API_KEY` - Clé API Mapbox
-- `STRAVA_CLIENT_ID` - ID client Strava
-- `STRAVA_CLIENT_SECRET` - Secret client Strava
+- Lancement de l'application mobile
+- Extension de la couverture géographique
+- Partenariats avec organisateurs d'événements cyclistes
+- Développement de fonctionnalités premium
 
-## Équipe et partenaires
+## Contact et contributions
 
-Velo-Altitude est développé en partenariat avec Grand Est Cyclisme.
+Pour participer au projet ou obtenir plus d'informations:
+
+- Email: contact@velo-altitude.com
+- Twitter: @VeloAltitude
+- GitHub: github.com/velo-altitude
 
 ## Licence
 
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+
+## Nouveautés (Avril 2025)
+
+### Système météorologique avancé
+
+Notre tout nouveau système météorologique offre une expérience visuelle immersive :
+
+- **Effets de précipitation réalistes** : pluie et neige simulées par particules avec comportement physique
+- **Dynamique atmosphérique** : variations de brouillard, nuages et visibilité
+- **Effets d'éclairage** : éclair, variation de luminosité selon les conditions
+- **Calcul GPU optimisé** : performance maximale sur les appareils compatibles
+
+### Adaptation automatique des performances
+
+- Détection intelligente des capacités de votre appareil
+- Ajustement dynamique de la qualité visuelle en fonction du FPS
+- Bascule automatique entre calculs GPU et CPU
+- Interface fluide sur tous les types d'appareils
+
+### Contrôles météorologiques
+
+- Préréglages météorologiques pour différentes conditions (ensoleillé, pluvieux, neigeux...)
+- Transitions fluides entre conditions météorologiques
+- Manipulation des paramètres individuels (intensité de pluie, densité du brouillard...)
+- Mode de démonstration pour explorer les capacités visuelles

@@ -3,16 +3,17 @@
  * Handles Strava API integration for athlete activities and segments
  */
 
+import { ENV } from '../../config/environment';
+import { monitoring } from '../monitoring';
+
 const stravaConfig = {
-  clientId: process.env.REACT_APP_STRAVA_CLIENT_ID,
-  clientSecret: process.env.REACT_APP_STRAVA_CLIENT_SECRET,
-  accessToken: process.env.REACT_APP_STRAVA_ACCESS_TOKEN,
-  refreshToken: process.env.REACT_APP_STRAVA_REFRESH_TOKEN
+  clientId: ENV.strava.clientId,
+  clientSecret: ENV.strava.clientSecret,
+  accessToken: ENV.strava.accessToken,
+  refreshToken: ENV.strava.refreshToken
 };
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
-
-import { monitoring } from '../monitoring';
+const API_BASE_URL = ENV.app.apiUrl || '';
 
 export const stravaService = {
   /**

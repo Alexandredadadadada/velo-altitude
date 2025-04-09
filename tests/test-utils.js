@@ -6,44 +6,33 @@ const { spawn } = require('child_process');
 const axios = require('axios');
 const path = require('path');
 const getPort = require('get-port');
-const fs = require('fs').promises;
 
 /**
- * Démarre un serveur de test
+ * Démarre un serveur de test avec des variables d'environnement prédéfinies
  * @returns {Promise<Object>} Informations sur le serveur
  */
 async function setupTestServer() {
   // Trouver un port disponible
   const port = await getPort();
   
-  // Créer un fichier .env temporaire pour les tests
-  const testEnvPath = path.resolve(__dirname, '../.env.test');
-  const originalEnvPath = path.resolve(__dirname, '../.env');
-  
-  // Copier le fichier .env existant
-  try {
-    await fs.copyFile(originalEnvPath, testEnvPath);
-    
-    // Modifier le port pour les tests
-    let envContent = await fs.readFile(testEnvPath, 'utf8');
-    envContent = envContent.replace(/PORT=\d+/, `PORT=${port}`);
-    envContent = envContent.replace(/NODE_ENV=\w+/, 'NODE_ENV=test');
-    
-    await fs.writeFile(testEnvPath, envContent);
-  } catch (error) {
-    console.error('Error preparing test environment:', error);
-    throw error;
-  }
+  // Configuration des variables d'environnement pour les tests
+  const testEnv = {
+    ...process.env,
+    PORT: port.toString(),
+    NODE_ENV: 'test',
+    // Définir ici les autres variables d'environnement nécessaires aux tests
+    MONGODB_URI: process.env.MONGODB_URI || 'mongodb://localhost:27017/velo_altitude_test',
+    REDIS_URL: process.env.REDIS_URL || 'redis://localhost:6379/1',
+    // Variables spécifiques pour les tests
+    AUTH0_AUDIENCE: process.env.AUTH0_AUDIENCE || 'https://api.test.velo-altitude.fr',
+    AUTH0_ISSUER_BASE_URL: process.env.AUTH0_ISSUER_BASE_URL || 'https://test.velo-altitude.eu.auth0.com',
+    SKIP_API_VALIDATION: 'true'
+  };
   
   // Démarrer le serveur avec l'environnement de test
   const serverProcess = spawn('node', ['server.js'], {
     cwd: path.resolve(__dirname, '..'),
-    env: {
-      ...process.env,
-      PORT: port.toString(),
-      NODE_ENV: 'test',
-      ENV_FILE: '.env.test'
-    },
+    env: testEnv,
     detached: true
   });
   
@@ -58,7 +47,8 @@ async function setupTestServer() {
   return {
     process: serverProcess,
     port,
-    url: `http://localhost:${port}`
+    url: `http://localhost:${port}`,
+    env: testEnv
   };
 }
 
@@ -94,15 +84,6 @@ async function teardownTestServer(server) {
   if (server && server.process) {
     // Arrêter le processus serveur
     process.kill(-server.process.pid);
-    
-    // Supprimer le fichier .env temporaire
-    const testEnvPath = path.resolve(__dirname, '../.env.test');
-    try {
-      await fs.unlink(testEnvPath);
-    } catch (error) {
-      console.error('Error cleaning up test environment:', error);
-    }
-    
     console.log('Test server stopped');
   }
 }

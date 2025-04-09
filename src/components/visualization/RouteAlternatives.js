@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Map, Source, Layer } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { ENV } from '../../config/environment';
 import './RouteAlternatives.css';
 
 // Constantes pour les styles de carte
@@ -362,7 +363,7 @@ const RouteAlternatives = ({ routeId }) => {
                   onMove={evt => setViewState(evt.viewState)}
                   style={{ width: '100%', height: '100%' }}
                   mapStyle={mapStyle}
-                  mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN || process.env.MAPBOX_TOKEN}
+                  mapboxAccessToken={ENV.maps.mapboxToken}
                 >
                   {/* Dans une implémentation réelle, nous ajouterions des couches
                       pour visualiser les itinéraires sur la carte */}

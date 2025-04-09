@@ -1,16 +1,17 @@
 /**
- * Service de génération de sitemap pour Velo-Altitude
- * 
- * Ce service gère la génération des sitemaps XML pour les moteurs de recherche
- * et fournit des utilitaires pour améliorer l'indexation du site.
+ * Service de Gestion du Sitemap
+ * Fournit des fonctionnalités pour générer et gérer le sitemap du site
  */
 
 import axios from 'axios';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
+import { ENV } from '../config/environment';
 
-// URL de base du site
-const BASE_URL = process.env.REACT_APP_SITE_URL || 'https://velo-altitude.com';
-// URL de base de l'API
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://api.velo-altitude.com';
+// Constantes
+const BASE_URL = ENV.app.siteUrl || 'https://velo-altitude.com';
+const CURRENT_DATE = format(new Date(), 'yyyy-MM-dd');
+const API_BASE_URL = ENV.app.apiUrl || 'https://api.velo-altitude.com';
 
 /**
  * Génère le contenu XML du sitemap principal
@@ -41,7 +42,7 @@ export const generateMainSitemap = async () => {
       xml += `    <loc>${BASE_URL}${section.url}</loc>\n`;
       xml += `    <changefreq>${section.changefreq}</changefreq>\n`;
       xml += `    <priority>${section.priority}</priority>\n`;
-      xml += `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
       xml += '  </url>\n';
     });
     
@@ -73,7 +74,7 @@ export const generateColsSitemap = async () => {
     xml += `    <loc>${BASE_URL}/cols</loc>\n`;
     xml += '    <changefreq>weekly</changefreq>\n';
     xml += '    <priority>0.8</priority>\n';
-    xml += `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n`;
+    xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
     xml += '  </url>\n';
     
     // Ajouter les sous-catégories
@@ -83,7 +84,7 @@ export const generateColsSitemap = async () => {
       xml += `    <loc>${BASE_URL}/cols/${subcat}</loc>\n`;
       xml += '    <changefreq>weekly</changefreq>\n';
       xml += '    <priority>0.7</priority>\n';
-      xml += `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
       xml += '  </url>\n';
     });
     
@@ -93,10 +94,10 @@ export const generateColsSitemap = async () => {
       xml += `    <loc>${BASE_URL}/cols/${col.slug}</loc>\n`;
       xml += '    <changefreq>monthly</changefreq>\n';
       xml += '    <priority>0.6</priority>\n';
-      xml += `    <lastmod>${col.last_updated || new Date().toISOString().split('T')[0]}</lastmod>\n`;
+      xml += `    <lastmod>${col.last_updated || CURRENT_DATE}</lastmod>\n`;
       
       // Ajouter les hreflang si le contenu existe en plusieurs langues
-      if (col.name.en) {
+      if (col.name && col.name.en) {
         xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${BASE_URL}/cols/${col.slug}" />\n`;
         xml += `    <xhtml:link rel="alternate" hreflang="en" href="${BASE_URL}/en/cols/${col.slug}" />\n`;
       }
@@ -140,7 +141,7 @@ const generateFallbackColsSitemap = () => {
   xml += `    <loc>${BASE_URL}/cols</loc>\n`;
   xml += '    <changefreq>weekly</changefreq>\n';
   xml += '    <priority>0.8</priority>\n';
-  xml += `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n`;
+  xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
   xml += '  </url>\n';
   
   // Ajouter les sous-catégories
@@ -150,7 +151,7 @@ const generateFallbackColsSitemap = () => {
     xml += `    <loc>${BASE_URL}/cols/${subcat}</loc>\n`;
     xml += '    <changefreq>weekly</changefreq>\n';
     xml += '    <priority>0.7</priority>\n';
-    xml += `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n`;
+    xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
     xml += '  </url>\n';
   });
   
@@ -159,7 +160,7 @@ const generateFallbackColsSitemap = () => {
     xml += '  <url>\n';
     xml += `    <loc>${BASE_URL}/cols/${col.slug}</loc>\n`;
     xml += '    <changefreq>monthly</changefreq>\n';
-    xml += '    <priority>0.6</priority>\n`;
+    xml += '    <priority>0.6</priority>\n';
     xml += `    <lastmod>${col.last_updated}</lastmod>\n`;
     xml += '  </url>\n';
   });
@@ -176,11 +177,11 @@ const generateFallbackColsSitemap = () => {
 export const generateSitemapIndex = async () => {
   // Liste des sitemaps
   const sitemaps = [
-    { name: 'sitemap-main.xml', lastmod: new Date().toISOString().split('T')[0] },
-    { name: 'sitemap-cols.xml', lastmod: new Date().toISOString().split('T')[0] },
-    { name: 'sitemap-programs.xml', lastmod: new Date().toISOString().split('T')[0] },
-    { name: 'sitemap-nutrition.xml', lastmod: new Date().toISOString().split('T')[0] },
-    { name: 'sitemap-challenges.xml', lastmod: new Date().toISOString().split('T')[0] }
+    { name: 'sitemap-main.xml', lastmod: CURRENT_DATE },
+    { name: 'sitemap-cols.xml', lastmod: CURRENT_DATE },
+    { name: 'sitemap-programs.xml', lastmod: CURRENT_DATE },
+    { name: 'sitemap-nutrition.xml', lastmod: CURRENT_DATE },
+    { name: 'sitemap-challenges.xml', lastmod: CURRENT_DATE }
   ];
   
   // Générer le XML

@@ -3,11 +3,12 @@
  * Handles weather data retrieval for cycling routes and cols
  */
 
-const weatherKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
-const windyKey = process.env.REACT_APP_WINDY_PLUGINS_API;
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
-
+import { ENV } from '../../config/environment';
 import { monitoring } from '../monitoring';
+
+const weatherKey = ENV.weather.openWeatherKey;
+const windyKey = ENV.apiKeys.windy;
+const API_BASE_URL = ENV.app.apiUrl || '';
 
 export const weatherService = {
   /**

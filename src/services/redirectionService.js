@@ -5,6 +5,8 @@
  * Il permet aussi de gérer les URL canoniques pour l'optimisation SEO
  */
 
+import { ENV } from '../config/environment';
+
 // Table de correspondance pour les anciennes URL vers les nouvelles
 const redirectionMap = {
   // Redirections des cols
@@ -74,7 +76,7 @@ export const getRedirection = (currentPath) => {
  */
 export const getCanonicalUrl = (currentPath, params = {}, includeParams = []) => {
   // URL de base du site
-  const baseUrl = process.env.REACT_APP_SITE_URL || 'https://velo-altitude.com';
+  const baseUrl = ENV.app.siteUrl || 'https://velo-altitude.com';
   
   // Vérifie si une redirection est nécessaire
   const redirectPath = getRedirection(currentPath);
@@ -137,7 +139,7 @@ export const getContentTypeRedirection = (contentType, id, contentData) => {
  * @returns {Array} - Tableau d'objets {lang, url} pour chaque langue disponible
  */
 export const getAlternateLanguageUrls = (currentPath, availableLanguages = ['fr', 'en']) => {
-  const baseUrl = process.env.REACT_APP_SITE_URL || 'https://velo-altitude.com';
+  const baseUrl = ENV.app.siteUrl || 'https://velo-altitude.com';
   
   return availableLanguages.map(lang => {
     // Construire l'URL pour cette langue

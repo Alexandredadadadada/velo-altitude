@@ -2,8 +2,8 @@
  * Auth0 Configuration
  * 
  * This file contains the configuration needed for Auth0 integration.
- * Environment variables should be set in Netlify or in a .env file for local development
- * (see docs/ENVIRONMENT_VARIABLES.md for more information).
+ * Environment variables sont configurées dans Netlify pour le déploiement
+ * (voir la documentation technique pour plus d'informations).
  */
 
 // Auth0 configuration object

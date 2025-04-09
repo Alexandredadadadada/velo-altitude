@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prévisualisation - Col du Galibier</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f7fa;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #2a5198;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 10px;
+    }
+    .preview-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-top: 20px;
+    }
+    /* Styles du composant ColVisualization3D */
+    .col-visualization {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    
+    .col-visualization h3 {
+      color: #2a5198;
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #eaeaea;
+      padding-bottom: 8px;
+    }
+    
+    .visualization-container {
+      margin: 20px 0;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .elevation-canvas {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      display: block;
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+    }
+    
+    .elevation-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    
+    .stat-box {
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      padding: 8px 12px;
+      flex: 1;
+      min-width: 100px;
+      text-align: center;
+      border-left: 3px solid #2a5198;
+    }
+    
+    .stat-label {
+      display: block;
+      font-size: 0.8rem;
+      color: #6c757d;
+      margin-bottom: 4px;
+    }
+    
+    .stat-value {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2a5198;
+    }
+    
+    .climbs-info {
+      margin-top: 20px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      padding: 12px 16px;
+    }
+    
+    .climbs-info h4 {
+      margin-top: 0;
+      color: #495057;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    
+    .climbs-info ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    .climbs-info li {
+      padding: 8px 0;
+      border-bottom: 1px solid #e9ecef;
+      color: #495057;
+    }
+    
+    .climbs-info li:last-child {
+      border-bottom: none;
+    }
+    
+    /* États de chargement et d'erreur */
+    .col-visualization.loading,
+    .col-visualization.error {
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #6c757d;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 16px;
+      border: 4px solid rgba(42, 81, 152, 0.2);
+      border-radius: 50%;
+      border-top-color: #2a5198;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .elevation-stats {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .stat-box {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Prévisualisation - Col du Galibier</h1>
+    
+    <div class="preview-container">
+      <div id="root"></div>
+    </div>
+  </div>
+
+  <script type="text/babel">
+    // Définition de la classe SimpleColVisualization
+    class SimpleColVisualization {
+      constructor() {}
+      
+      transformColTo3D(col) {
+        // Calcul de l'élévation de départ basé sur les données existantes
+        const startElevation = Math.max(0, col.elevation - (col.length * col.avgGradient * 10));
+        
+        // Générer points intermédiaires avec les données existantes
+        const points = this.generatePoints(
+          startElevation,
+          col.elevation,
+          col.length,
+          col.avgGradient,
+          col.maxGradient
+        );
+
+        return {
+          elevationProfile: {
+            start: startElevation,
+            summit: col.elevation,
+            distance: col.length,
+            gradient: col.avgGradient
+          },
+          points: points
+        };
+      }
+
+      generatePoints(start, end, distance, avgGradient, maxGradient = avgGradient * 1.5) {
+        const points = [];
+        const steps = 20; // Nombre de points pour le rendu
+        
+        // Variation simple pour rendre le profil plus réaliste
+        // La section la plus raide est située aux 2/3 de la montée
+        const steepSectionStart = Math.floor(steps * 0.4);
+        const steepSectionEnd = Math.floor(steps * 0.7);
+
+        for (let i = 0; i <= steps; i++) {
+          const fraction = i / steps;
+          const distancePoint = distance * fraction;
+          
+          // Appliquer une variation du gradient pour un profil plus réaliste
+          let currentGradient;
+          if (i >= steepSectionStart && i <= steepSectionEnd) {
+            // Section plus raide
+            currentGradient = Math.min(maxGradient, avgGradient * 1.3);
+          } else {
+            // Sections moins raides
+            currentGradient = Math.max(avgGradient * 0.7, avgGradient);
+          }
+
+          // Calcul simplifié de l'élévation
+          const currentElevation = start + (end - start) * this.easingFunction(fraction);
+
+          points.push({
+            distance: distancePoint,
+            elevation: currentElevation,
+            gradient: currentGradient
+          });
+        }
+
+        return points;
+      }
+
+      easingFunction(x) {
+        // Fonction d'assouplissement simple (courbe en S)
+        // Donne un aspect plus naturel au profil d'élévation
+        return x < 0.5
+          ? 4 * x * x * x
+          : 1 - Math.pow(-2 * x + 2, 3) / 2;
+      }
+    }
+
+    // Composant React pour visualiser le col
+    const ColVisualization3D = ({ col }) => {
+      const [visualData, setVisualData] = React.useState(null);
+      const canvasRef = React.useRef(null);
+      const visualizationService = new SimpleColVisualization();
+
+      // Génère les données de visualisation à partir des données du col
+      React.useEffect(() => {
+        if (col) {
+          try {
+            const data = visualizationService.transformColTo3D(col);
+            setVisualData(data);
+          } catch (error) {
+            console.error("Erreur lors de la transformation des données:", error);
+          }
+        }
+      }, [col]);
+
+      // Dessine le profil d'élévation sur le canvas
+      React.useEffect(() => {
+        if (visualData && canvasRef.current) {
+          const canvas = canvasRef.current;
+          const ctx = canvas.getContext('2d');
+          const { width, height } = canvas;
+
+          // Effacer le canvas
+          ctx.clearRect(0, 0, width, height);
+
+          // Définir les marges et dimensions
+          const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+          const graphWidth = width - margin.left - margin.right;
+          const graphHeight = height - margin.top - margin.bottom;
+
+          // Tracer le fond
+          ctx.fillStyle = '#f5f5f5';
+          ctx.fillRect(0, 0, width, height);
+
+          if (visualData.points.length === 0) return;
+
+          // Calculer les échelles
+          const maxDistance = visualData.elevationProfile.distance;
+          const minElevation = visualData.elevationProfile.start;
+          const maxElevation = visualData.elevationProfile.summit;
+          const elevationRange = maxElevation - minElevation;
+
+          // Fonction pour convertir les coordonnées en pixels
+          const scaleX = (distance) => margin.left + (distance / maxDistance) * graphWidth;
+          const scaleY = (elevation) => height - margin.bottom - ((elevation - minElevation) / elevationRange) * graphHeight;
+
+          // Tracer le profil
+          ctx.beginPath();
+          ctx.moveTo(scaleX(0), scaleY(visualData.points[0].elevation));
+          
+          visualData.points.forEach((point) => {
+            ctx.lineTo(scaleX(point.distance), scaleY(point.elevation));
+          });
+          
+          // Compléter le chemin et colorer
+          ctx.lineTo(scaleX(maxDistance), scaleY(minElevation));
+          ctx.lineTo(scaleX(0), scaleY(minElevation));
+          ctx.closePath();
+          
+          // Remplir avec un dégradé
+          const gradient = ctx.createLinearGradient(0, 0, 0, height);
+          gradient.addColorStop(0, 'rgba(65, 105, 225, 0.7)');
+          gradient.addColorStop(1, 'rgba(65, 105, 225, 0.1)');
+          ctx.fillStyle = gradient;
+          ctx.fill();
+          
+          // Tracer la ligne du profil
+          ctx.beginPath();
+          ctx.moveTo(scaleX(0), scaleY(visualData.points[0].elevation));
+          
+          visualData.points.forEach((point) => {
+            ctx.lineTo(scaleX(point.distance), scaleY(point.elevation));
+          });
+          
+          ctx.strokeStyle = '#2a5198';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          
+          // Ajouter des axes
+          ctx.beginPath();
+          ctx.moveTo(margin.left, height - margin.bottom);
+          ctx.lineTo(width - margin.right, height - margin.bottom);
+          ctx.strokeStyle = '#333';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+          
+          ctx.beginPath();
+          ctx.moveTo(margin.left, margin.top);
+          ctx.lineTo(margin.left, height - margin.bottom);
+          ctx.stroke();
+          
+          // Ajouter des labels d'axe
+          ctx.fillStyle = '#333';
+          ctx.font = '12px Arial';
+          ctx.fillText('Distance (km)', width / 2, height - 5);
+          
+          ctx.save();
+          ctx.translate(10, height / 2);
+          ctx.rotate(-Math.PI / 2);
+          ctx.fillText('Élévation (m)', 0, 0);
+          ctx.restore();
+          
+          // Ajouter quelques repères
+          ctx.font = '10px Arial';
+          
+          // Repères d'élévation
+          for (let i = 0; i <= 4; i++) {
+            const elevation = minElevation + (i / 4) * elevationRange;
+            const y = scaleY(elevation);
+            
+            ctx.beginPath();
+            ctx.moveTo(margin.left - 5, y);
+            ctx.lineTo(margin.left, y);
+            ctx.stroke();
+            
+            ctx.fillText(Math.round(elevation) + 'm', margin.left - 35, y + 4);
+          }
+          
+          // Repères de distance
+          for (let i = 0; i <= 5; i++) {
+            const distance = (i / 5) * maxDistance;
+            const x = scaleX(distance);
+            
+            ctx.beginPath();
+            ctx.moveTo(x, height - margin.bottom);
+            ctx.lineTo(x, height - margin.bottom + 5);
+            ctx.stroke();
+            
+            ctx.fillText(distance.toFixed(1) + 'km', x - 10, height - margin.bottom + 20);
+          }
+          
+          // Ajouter les points d'intérêt
+          const sections = [
+            { distance: 0, label: 'Départ' },
+            { distance: maxDistance, label: 'Sommet' }
+          ];
+          
+          sections.forEach(section => {
+            const x = scaleX(section.distance);
+            
+            // Cercle pour le point d'intérêt
+            ctx.beginPath();
+            ctx.arc(x, section.distance === 0 
+              ? scaleY(visualData.elevationProfile.start) 
+              : scaleY(visualData.elevationProfile.summit), 
+              5, 0, 2 * Math.PI);
+            ctx.fillStyle = section.distance === 0 ? '#4CAF50' : '#F44336';
+            ctx.fill();
+            
+            // Label pour le point d'intérêt
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 12px Arial';
+            ctx.fillText(
+              section.label, 
+              x - 15, 
+              section.distance === 0 
+                ? scaleY(visualData.elevationProfile.start) - 10 
+                : scaleY(visualData.elevationProfile.summit) - 10
+            );
+          });
+        }
+      }, [visualData]);
+
+      if (!col || !visualData) {
+        return (
+          <div className="col-visualization error">
+            <p>Impossible de charger les données du col</p>
+          </div>
+        );
+      }
+
+      return (
+        <div className="col-visualization">
+          <h3>Profil du {col.name}</h3>
+          
+          <div className="visualization-container">
+            <canvas 
+              ref={canvasRef} 
+              width={600} 
+              height={300} 
+              className="elevation-canvas"
+            />
+          </div>
+          
+          <div className="elevation-stats">
+            <div className="stat-box">
+              <span className="stat-label">Départ</span>
+              <span className="stat-value">{Math.round(visualData.elevationProfile.start)}m</span>
+            </div>
+            <div className="stat-box">
+              <span className="stat-label">Sommet</span>
+              <span className="stat-value">{visualData.elevationProfile.summit}m</span>
+            </div>
+            <div className="stat-box">
+              <span className="stat-label">Distance</span>
+              <span className="stat-value">{visualData.elevationProfile.distance}km</span>
+            </div>
+            <div className="stat-box">
+              <span className="stat-label">Pente moyenne</span>
+              <span className="stat-value">{visualData.elevationProfile.gradient}%</span>
+            </div>
+            <div className="stat-box">
+              <span className="stat-label">Dénivelé</span>
+              <span className="stat-value">
+                {Math.round(visualData.elevationProfile.summit - visualData.elevationProfile.start)}m
+              </span>
+            </div>
+          </div>
+          
+          {col.climbs && col.climbs.length > 0 && (
+            <div className="climbs-info">
+              <h4>Points d'intérêt</h4>
+              <ul>
+                {col.climbs.map((climb, index) => (
+                  <li key={index}>
+                    {climb.name || `Section ${index + 1}`}: 
+                    {climb.gradient && ` ${climb.gradient}%`}
+                    {climb.length && ` sur ${climb.length}km`}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    // Données de test pour le Col du Galibier
+    const testCol = {
+      name: "Col du Galibier",
+      elevation: 2642,
+      length: 17.7,
+      avgGradient: 7.1,
+      maxGradient: 12.1,
+      coordinates: [6.4077, 45.0604],
+      climbs: [
+        { name: "Virage en épingle du Lautaret", gradient: 9.5, length: 2.1 },
+        { name: "Section du Plan Lachat", gradient: 10.2, length: 3.4 },
+        { name: "Dernière rampe", gradient: 12.1, length: 1.2 }
+      ]
+    };
+
+    // Rendu du composant
+    ReactDOM.render(
+      <div>
+        <ColVisualization3D col={testCol} />
+        
+        <div style={{ marginTop: '30px', padding: '15px', backgroundColor: '#f0f5ff', borderRadius: '5px' }}>
+          <h3 style={{ margin: '0 0 10px 0', color: '#2a5198' }}>Calculs et données techniques</h3>
+          <ul style={{ margin: 0, paddingLeft: '20px' }}>
+            <li>Élévation au sommet: {testCol.elevation}m</li>
+            <li>Élévation de départ calculée: {Math.round(testCol.elevation - (testCol.length * testCol.avgGradient * 10))}m</li>
+            <li>Dénivelé total: {Math.round(testCol.length * testCol.avgGradient * 10)}m</li>
+            <li>Pente moyenne: {testCol.avgGradient}%</li>
+            <li>Pente maximale: {testCol.maxGradient}%</li>
+            <li>Distance totale: {testCol.length}km</li>
+          </ul>
+        </div>
+      </div>,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>

@@ -5,13 +5,15 @@
  * d'intégrer plusieurs outils d'analyse dans une interface unifiée.
  */
 
+import { ENV } from '../config/environment';
+
 // Configuration des outils d'analyse
 const ANALYTICS_CONFIG = {
-  googleAnalyticsId: process.env.REACT_APP_GA_ID || 'UA-XXXXXXXXX-X',
-  googleSearchConsole: process.env.REACT_APP_GSC_ID || '',
-  matomoUrl: process.env.REACT_APP_MATOMO_URL || '',
-  matomoSiteId: process.env.REACT_APP_MATOMO_SITE_ID || '',
-  dataLayerName: 'dataLayer'
+  googleAnalyticsId: ENV.analytics.googleAnalyticsId,
+  googleSearchConsole: ENV.analytics.googleSearchConsole,
+  matomoUrl: ENV.analytics.matomoUrl,
+  matomoSiteId: ENV.analytics.matomoSiteId,
+  dataLayerName: ENV.analytics.dataLayerName
 };
 
 /**

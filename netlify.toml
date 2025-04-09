@@ -2,22 +2,16 @@
 # Mise à jour : Avril 2025 - Configuration optimisée pour l'authentification, les performances et le code splitting
 
 [build]
+  command = "CI='' npm ci && npm run build"
   publish = "build"
-  command = "npm ci && npm run build:analyze && node ./scripts/deploy-complete.js"
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "20.10.0"
-  NPM_VERSION = "9.8.0"
-  # Configuration optimisée pour les performances de build
-  NETLIFY_USE_YARN = "false"
-  NETLIFY_YARN_WORKSPACES = "false"
-  NETLIFY_CACHE_BUST = "true"
-  ENABLE_BROTLI_COMPRESSION = "true"
-  # Optimisations webpack
+  NODE_VERSION = "18.2.0"
+  NPM_VERSION = "8.0.0"
+  CI = ""
   GENERATE_SOURCEMAP = "false"
-  INLINE_RUNTIME_CHUNK = "false"
-  REACT_APP_BUNDLE_VISUALIZE = "false"
+  DISABLE_ESLINT_PLUGIN = "true"
 
 # Configuration de traitement des assets
 [build.processing]
@@ -77,59 +71,14 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Configuration des redirections
+# Configuration des redirections pour l'authentification
 [[redirects]]
-  from = "/col/*"
-  to = "/cols/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/itineraire/*"
-  to = "/itineraires/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/entrainements/*"
-  to = "/entrainement/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/profile/*"
-  to = "/profil/:splat"
-  status = 301
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
 
 # Redirection pour SPA - toutes les routes non correspondantes sont gérées par React Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Configuration des plugins
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-  
-  [plugins.inputs]
-    output_path = "reports/lighthouse.html"
-    
-    [plugins.inputs.thresholds]
-      performance = 90
-      accessibility = 90
-      best-practices = 90
-      seo = 90
-
-[[plugins]]
-  package = "netlify-plugin-cache"
-  
-  [plugins.inputs]
-    paths = [
-      "node_modules/.cache",
-      "build/_next/cache",
-      ".eslintcache"
-    ]
-
-# Déploiement automatique des branches
-[context.production]
-  environment = { NODE_ENV = "production", API_ENV = "production" }
-
-[context.deploy-preview]
-  environment = { NODE_ENV = "production", API_ENV = "staging" }

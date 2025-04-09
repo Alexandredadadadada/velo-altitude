@@ -31,7 +31,7 @@ Le système gère les clés API pour les services suivants :
 node server/scripts/generateEncryptionKey.js
 ```
 
-2. Ajoutez la clé générée à votre fichier `.env` :
+2. Ajoutez la clé générée à votre configuration Netlify :
 
 ```
 API_KEYS_ENCRYPTION_KEY=votre_clé_générée
@@ -49,7 +49,7 @@ KEYS_DIRECTORY=./.keys
 
 Le système de gestion des clés API fonctionne comme suit :
 
-1. **Initialisation** : Lors du démarrage de l'application, le système charge les clés existantes depuis le répertoire `.keys` ou utilise les clés des variables d'environnement si aucun fichier n'existe.
+1. **Initialisation** : Lors du démarrage de l'application, le système charge les clés existantes depuis le répertoire `.keys` ou utilise les clés des variables d'environnement configurées dans Netlify si aucun fichier n'existe.
 
 2. **Rotation automatique** : Les clés sont automatiquement rotées selon le calendrier configuré pour chaque service.
 
@@ -96,7 +96,7 @@ Le système enregistre toutes les opérations liées aux clés API dans les jour
 - Utilisez toujours le gestionnaire de clés pour accéder aux clés API
 - Surveillez les journaux pour détecter toute activité suspecte
 - Effectuez régulièrement des audits de sécurité
-- Limitez l'accès aux fichiers `.env` et au répertoire `.keys`
+- Limitez l'accès aux fichiers de configuration de Netlify
 
 ### Récupération en cas de compromission
 
@@ -120,14 +120,14 @@ Le stockage des clés est sécurisé par chiffrement AES-256 avec une clé uniqu
 
 Si vous rencontrez des problèmes avec le système de gestion des clés API :
 
-1. Vérifiez que la clé de chiffrement est correctement configurée dans le fichier `.env`
+1. Vérifiez que la clé de chiffrement est correctement configurée dans Netlify
 2. Assurez-vous que le répertoire `.keys` existe et est accessible en lecture/écriture
 3. Consultez les journaux de l'application pour identifier les erreurs spécifiques
-4. En cas de problème persistant, vous pouvez réinitialiser le système en supprimant les fichiers du répertoire `.keys` (les clés seront recréées à partir des variables d'environnement)
+4. En cas de problème persistant, vous pouvez réinitialiser le système en supprimant les fichiers du répertoire `.keys` (les clés seront recréées à partir des variables d'environnement configurées dans Netlify)
 
 ### Limitations connues
 
-- Le système nécessite que les clés API initiales soient disponibles dans les variables d'environnement
+- Le système nécessite que les clés API initiales soient disponibles dans les variables d'environnement de Netlify
 - La rotation des clés est effectuée en mémoire et nécessite un redémarrage de l'application pour être prise en compte par tous les processus
 - Les clés sont stockées localement et ne sont pas synchronisées entre plusieurs instances de l'application
 

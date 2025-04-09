@@ -5,6 +5,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import axios from 'axios';
 import Pass3DViewer from './Pass3DViewer';
+import { ENV } from '../../config/environment';
 import './PassVisualizer.css';
 
 // Constantes pour les styles de carte
@@ -183,7 +184,7 @@ const PassVisualizer = ({ passId }) => {
                   onMove={evt => setViewState(evt.viewState)}
                   style={{ width: '100%', height: '100%' }}
                   mapStyle={mapStyle}
-                  mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN || process.env.MAPBOX_TOKEN}
+                  mapboxAccessToken={ENV.maps.mapboxToken}
                 >
                   {/* Dans une implémentation réelle, nous ajouterions des couches
                       pour visualiser le col sur la carte */}

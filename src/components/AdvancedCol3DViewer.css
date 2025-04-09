@@ -1,0 +1,289 @@
+/* Styles pour le composant de visualisation 3D avancée */
+
+.advanced-col-3d-viewer {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+.viewer-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5;
+}
+
+/* Styles pour les contrôles */
+.viewer-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  max-width: 300px;
+  transition: opacity 0.3s ease;
+}
+
+.viewer-controls:hover {
+  opacity: 1;
+}
+
+.control-group {
+  margin-bottom: 12px;
+}
+
+.control-group:last-child {
+  margin-bottom: 0;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.control-group input[type="range"] {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.control-group input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Styles pour les onglets de contrôle */
+.control-tabs {
+  display: flex;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.control-tab {
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+}
+
+.control-tab.active {
+  color: #3f51b5;
+}
+
+.control-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3f51b5;
+}
+
+/* Styles pour les boutons */
+.control-button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.control-button:hover {
+  background-color: #303f9f;
+}
+
+.control-button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+/* Styles pour le toggle de contrôles */
+.controls-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles pour le panneau de contrôle */
+.control-panel {
+  position: absolute;
+  top: 50px;
+  right: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 101;
+  width: 280px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.control-panel h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.control-panel h4 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.control-section {
+  margin-bottom: 16px;
+}
+
+/* Styles pour les contrôles de qualité */
+.quality-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.quality-controls button {
+  flex: 1;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.quality-controls button.active {
+  background-color: #3f51b5;
+  color: white;
+  border-color: #3f51b5;
+}
+
+/* Styles pour les bascules d'effet */
+.toggle-control {
+  margin-bottom: 8px;
+}
+
+.toggle-control label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.toggle-control input {
+  margin-right: 8px;
+}
+
+/* Styles pour le contrôle d'intensité */
+.intensity-control {
+  margin: 12px 0;
+}
+
+.intensity-control label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+.intensity-control input {
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* Styles pour les informations de contrôle */
+.control-info {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.control-info p {
+  font-size: 12px;
+  color: #777;
+  margin-top: 0;
+}
+
+/* Styles pour les messages d'erreur */
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* Styles pour le chargement */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(63, 81, 181, 0.2);
+  border-top-color: #3f51b5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Styles pour les effets actifs */
+.effect-toggles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .control-panel {
+    width: calc(100% - 40px);
+    max-width: none;
+    left: 20px;
+    right: 20px;
+  }
+  
+  .effect-toggles {
+    grid-template-columns: 1fr;
+  }
+}

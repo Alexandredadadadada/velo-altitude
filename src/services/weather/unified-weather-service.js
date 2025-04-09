@@ -17,6 +17,7 @@ import WeatherCache from './internal/WeatherCache';
 import WeatherAlerts from './internal/WeatherAlerts';
 import WeatherPredictions from './internal/WeatherPredictions';
 import WeatherNotifications from './internal/WeatherNotifications';
+import { ENV } from '../../config/environment';
 
 // Constantes pour les unités et fournisseurs
 const UNITS = {
@@ -89,7 +90,7 @@ class UnifiedWeatherService {
    */
   _registerWeatherAPIs() {
     this.apiService.registerAPI(PROVIDERS.OPEN_WEATHER, {
-      keys: [process.env.OPEN_WEATHER_API_KEY],
+      keys: [ENV.weather.openWeatherKey],
       quota: {
         daily: 1000,
         hourly: 60
@@ -97,7 +98,7 @@ class UnifiedWeatherService {
     });
     
     this.apiService.registerAPI(PROVIDERS.METEO_FRANCE, {
-      keys: [process.env.METEO_FRANCE_API_KEY],
+      keys: [ENV.weather.meteoFranceKey],
       quota: {
         daily: 5000,
         hourly: 500
@@ -105,7 +106,7 @@ class UnifiedWeatherService {
     });
     
     this.apiService.registerAPI(PROVIDERS.WEATHER_API, {
-      keys: [process.env.WEATHER_API_KEY],
+      keys: [ENV.weather.weatherApiKey],
       quota: {
         daily: 1000,
         hourly: 200
@@ -113,7 +114,7 @@ class UnifiedWeatherService {
     });
     
     this.apiService.registerAPI(PROVIDERS.CLIMACELL, {
-      keys: [process.env.CLIMACELL_API_KEY],
+      keys: [ENV.weather.climacellKey],
       quota: {
         daily: 1000,
         hourly: 100

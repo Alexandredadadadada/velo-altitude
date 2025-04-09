@@ -1,0 +1,235 @@
+/**
+ * Styles pour le composant de visualisation unifié des cols
+ * Prend en charge les modes 2D et 3D, ainsi que différents états
+ */
+
+.col-visualization {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.visualization-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+}
+
+.visualization-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.viz-control-btn {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.viz-control-btn:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.viz-control-btn:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.viz-control-btn.active {
+  background-color: #2a5198;
+  color: white;
+  border-color: #2a5198;
+}
+
+.viz-control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+  color: #999;
+}
+
+.visualization-container {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.elevation-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.terrain-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* États de visualisation */
+
+.col-visualization.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(65, 105, 225, 0.3);
+  border-radius: 50%;
+  border-top-color: #2a5198;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.progress-bar {
+  width: 80%;
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px auto;
+  position: relative;
+}
+
+.progress-value {
+  height: 100%;
+  background-color: #2a5198;
+  transition: width 0.3s ease;
+}
+
+.progress-bar span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem;
+  color: #333;
+}
+
+.col-visualization.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff9f9;
+  color: #d32f2f;
+}
+
+/* Statistiques d'élévation */
+
+.elevation-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 80px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2a5198;
+}
+
+/* Points d'intérêt */
+
+.climbs-info {
+  margin-top: 15px;
+}
+
+.climbs-info h4 {
+  font-size: 1rem;
+  margin: 0 0 10px 0;
+}
+
+.climbs-info ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.climbs-info li {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Styles pour mobile */
+
+@media (max-width: 576px) {
+  .col-visualization {
+    padding: 10px;
+  }
+  
+  .visualization-title {
+    font-size: 1.1rem;
+  }
+  
+  .visualization-container {
+    height: 200px;
+  }
+  
+  .elevation-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .stat-box {
+    min-width: 70px;
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 10px;
+  }
+}
+
+/* Animation de transition */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.col-visualization {
+  animation: fadeIn 0.5s ease;
+}

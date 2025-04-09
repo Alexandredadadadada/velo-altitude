@@ -14,12 +14,13 @@
  */
 
 import { UnifiedAPIService } from '../api/unified-api-service';
+import { ENV } from '../../config/environment';
 
 class UnifiedStravaService {
   constructor(config = {}) {
     this.config = {
-      clientId: process.env.REACT_APP_STRAVA_CLIENT_ID,
-      redirectUri: process.env.REACT_APP_STRAVA_REDIRECT_URI || window.location.origin + '/.netlify/functions/strava-callback',
+      clientId: ENV.strava.clientId,
+      redirectUri: ENV.strava.redirectUri || window.location.origin + '/.netlify/functions/strava-callback',
       scopes: ['read', 'activity:read', 'profile:read_all'],
       tokenStorageKey: 'velo_altitude_strava_token',
       cacheEnabled: true,
@@ -253,18 +254,24 @@ class UnifiedStravaService {
    * @returns {Promise<Object>} Refreshed token
    */
   async _refreshToken() {
-    if (!this.authState.token || !this.authState.token.refresh_token) {
-      throw new Error('No refresh token available');
-    }
-    
     try {
-      const response = await fetch('/.netlify/functions/strava-token-refresh', {
+      if (!this.authState.token || !this.authState.token.refresh_token) {
+        throw new Error('No refresh token available');
+      }
+      
+      this.metrics.apiCalls++;
+      
+      // We bypass the API service for token refresh to avoid authentication loops
+      const response = await fetch('https://www.strava.com/oauth/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ 
-          refresh_token: this.authState.token.refresh_token 
+        body: JSON.stringify({
+          client_id: ENV.strava.clientId,
+          client_secret: ENV.strava.clientSecret,
+          refresh_token: this.authState.token.refresh_token,
+          grant_type: 'refresh_token'
         })
       });
       

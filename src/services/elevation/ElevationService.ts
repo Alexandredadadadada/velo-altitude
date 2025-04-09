@@ -13,10 +13,11 @@ import { Redis } from 'ioredis';
 import { redisConfig } from '../../config/redis';
 import monitoringService from '../../monitoring';
 import { RateLimitExceededError, RateLimitResult } from '../weather/rate-limiting';
+import { ENV } from '../../config/environment';
 
 // OpenRoute API configuration
-const OPENROUTE_KEY = process.env.OPENROUTE_API_KEY;
-const OPENROUTE_API_URL = 'https://api.openrouteservice.org/v2/elevation';
+const OPENROUTE_KEY = ENV.elevation.openRoute.apiKey;
+const OPENROUTE_API_URL = ENV.elevation.openRoute.baseUrl;
 const DEMO_KEY = 'YOUR_OPENROUTE_API_KEY'; // Only for development testing
 
 // Fallback elevation providers (if needed)
@@ -441,13 +442,13 @@ export class ElevationService {
 
       // Attempt to get elevation data from Mapbox
       // This is a simplified implementation
-      const mapboxToken = process.env.MAPBOX_TOKEN;
+      const mapboxToken = ENV.elevation.mapbox.token;
       const encodedCoordinates = coordinates
         .map(coord => `${coord[0]},${coord[1]}`)
         .join(';');
 
       const response = await axios.get(
-        `https://api.mapbox.com/v4/mapbox.terrain-rgb/tilequery/${encodedCoordinates}.json`,
+        `${ENV.elevation.mapbox.baseUrl}/tilequery/${encodedCoordinates}.json`,
         {
           params: {
             access_token: mapboxToken,

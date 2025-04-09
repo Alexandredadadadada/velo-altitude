@@ -1,4 +1,6 @@
 import axios from 'axios';
+import apiMetricsService from '../../../../src/monitoring/api-metrics';
+import monitoringService from '../../../../src/monitoring';
 
 export interface AthleteData {
   id: string;
@@ -44,91 +46,513 @@ export class AIService {
   
   // Generate training recommendations based on athlete data
   async generateTrainingRecommendations(athleteData: AthleteData) {
-    // Try Claude first
+    const startTime = Date.now();
+    let success = false;
+    let usedFallback = false;
+    let provider = 'claude';
+    
     try {
-      if (this.claudeApiKey) {
-        return await this.claudeRecommendation(athleteData);
+      // Try Claude first
+      try {
+        if (this.claudeApiKey) {
+          const startApiCall = Date.now();
+          const result = await this.claudeRecommendation(athleteData);
+          const duration = Date.now() - startApiCall;
+          
+          // Track successful API call
+          apiMetricsService.trackAPICall(
+            'claude',
+            'training_recommendations',
+            duration,
+            true,
+            { athleteId: athleteData.id }
+          );
+          
+          success = true;
+          return result;
+        }
+      } catch (error) {
+        console.warn('Claude API failed, falling back to OpenAI', error);
+        
+        // Track API error
+        apiMetricsService.trackAPIError(
+          'claude',
+          'training_recommendations',
+          error as Error,
+          { athleteId: athleteData.id }
+        );
+        
+        // Use fallback
+        usedFallback = true;
+        provider = 'openai';
       }
+      
+      // Fallback to OpenAI
+      if (this.openaiApiKey) {
+        const startApiCall = Date.now();
+        const result = await this.openaiRecommendation(athleteData);
+        const duration = Date.now() - startApiCall;
+        
+        // Track successful fallback API call
+        apiMetricsService.trackAPICall(
+          'openai',
+          'training_recommendations',
+          duration,
+          true,
+          { athleteId: athleteData.id, fallback: true }
+        );
+        
+        // Track fallback usage
+        if (usedFallback) {
+          apiMetricsService.trackFallbackUsage(
+            'claude',
+            'openai',
+            'api_error',
+            { athleteId: athleteData.id }
+          );
+        }
+        
+        success = true;
+        return result;
+      }
+      
+      throw new Error('No AI service available');
     } catch (error) {
-      console.warn('Claude API failed, falling back to OpenAI', error);
+      // Track overall failure
+      monitoringService.trackError(
+        'All AI services failed for training recommendations',
+        error as Error,
+        { athleteId: athleteData.id, providers: usedFallback ? ['claude', 'openai'] : [provider] }
+      );
+      
+      throw error;
+    } finally {
+      // Track overall duration
+      const totalTime = Date.now() - startTime;
+      monitoringService.trackMetric('ai_request_time', totalTime, {
+        operation: 'generateTrainingRecommendations',
+        usedFallback,
+        success
+      });
     }
-    
-    // Fallback to OpenAI
-    if (this.openaiApiKey) {
-      return await this.openaiRecommendation(athleteData);
-    }
-    
-    throw new Error('No AI service available');
   }
-  
+
   // Get nutritional recommendations for cycling
   async getNutritionRecommendations(athleteData: AthleteData, routeDetails: any) {
+    const startTime = Date.now();
+    let success = false;
+    let usedFallback = false;
+    
     try {
-      if (this.claudeApiKey) {
-        return await this.claudeNutritionRecommendation(athleteData, routeDetails);
+      try {
+        if (this.claudeApiKey) {
+          const startApiCall = Date.now();
+          const result = await this.claudeNutritionRecommendation(athleteData, routeDetails);
+          const duration = Date.now() - startApiCall;
+          
+          // Track successful API call
+          apiMetricsService.trackAPICall(
+            'claude',
+            'nutrition_recommendations',
+            duration,
+            true,
+            { 
+              athleteId: athleteData.id,
+              routeId: routeDetails.id || 'unknown'
+            }
+          );
+          
+          success = true;
+          return result;
+        }
+      } catch (error) {
+        console.warn('Claude API failed for nutrition recommendations, falling back to OpenAI', error);
+        
+        // Track API error
+        apiMetricsService.trackAPIError(
+          'claude',
+          'nutrition_recommendations',
+          error as Error,
+          { 
+            athleteId: athleteData.id,
+            routeId: routeDetails.id || 'unknown'
+          }
+        );
+        
+        usedFallback = true;
       }
+      
+      if (this.openaiApiKey) {
+        const startApiCall = Date.now();
+        const result = await this.openAINutritionRecommendation(athleteData, routeDetails);
+        const duration = Date.now() - startApiCall;
+        
+        // Track successful fallback API call
+        apiMetricsService.trackAPICall(
+          'openai',
+          'nutrition_recommendations',
+          duration,
+          true,
+          { 
+            athleteId: athleteData.id,
+            routeId: routeDetails.id || 'unknown',
+            fallback: true
+          }
+        );
+        
+        // Track fallback usage
+        if (usedFallback) {
+          apiMetricsService.trackFallbackUsage(
+            'claude',
+            'openai',
+            'api_error',
+            { 
+              athleteId: athleteData.id,
+              routeId: routeDetails.id || 'unknown'
+            }
+          );
+        }
+        
+        success = true;
+        return result;
+      }
+      
+      throw new Error('No AI service available for nutrition recommendations');
     } catch (error) {
-      console.warn('Claude API failed for nutrition recommendations, falling back to OpenAI', error);
+      // Track overall failure
+      monitoringService.trackError(
+        'All AI services failed for nutrition recommendations',
+        error as Error,
+        { 
+          athleteId: athleteData.id,
+          routeId: routeDetails.id || 'unknown'
+        }
+      );
+      
+      throw error;
+    } finally {
+      // Track overall duration
+      const totalTime = Date.now() - startTime;
+      monitoringService.trackMetric('ai_request_time', totalTime, {
+        operation: 'getNutritionRecommendations',
+        usedFallback,
+        success
+      });
     }
-    
-    if (this.openaiApiKey) {
-      return await this.openAINutritionRecommendation(athleteData, routeDetails);
-    }
-    
-    throw new Error('No AI service available for nutrition recommendations');
   }
-  
+
   // Get equipment recommendations based on route and weather
   async getEquipmentRecommendations(routeDetails: any, weatherData: any) {
+    const startTime = Date.now();
+    let success = false;
+    let usedFallback = false;
+    
     try {
-      if (this.claudeApiKey) {
-        return await this.claudeEquipmentRecommendation(routeDetails, weatherData);
+      try {
+        if (this.claudeApiKey) {
+          const startApiCall = Date.now();
+          const result = await this.claudeEquipmentRecommendation(routeDetails, weatherData);
+          const duration = Date.now() - startApiCall;
+          
+          // Track successful API call
+          apiMetricsService.trackAPICall(
+            'claude',
+            'equipment_recommendations',
+            duration,
+            true,
+            { 
+              routeId: routeDetails.id || 'unknown',
+              weatherCondition: weatherData.condition || 'unknown'
+            }
+          );
+          
+          success = true;
+          return result;
+        }
+      } catch (error) {
+        console.warn('Claude API failed for equipment recommendations, falling back to OpenAI', error);
+        
+        // Track API error
+        apiMetricsService.trackAPIError(
+          'claude',
+          'equipment_recommendations',
+          error as Error,
+          { 
+            routeId: routeDetails.id || 'unknown',
+            weatherCondition: weatherData.condition || 'unknown'
+          }
+        );
+        
+        usedFallback = true;
       }
+      
+      if (this.openaiApiKey) {
+        const startApiCall = Date.now();
+        const result = await this.openAIEquipmentRecommendation(routeDetails, weatherData);
+        const duration = Date.now() - startApiCall;
+        
+        // Track successful fallback API call
+        apiMetricsService.trackAPICall(
+          'openai',
+          'equipment_recommendations',
+          duration,
+          true,
+          { 
+            routeId: routeDetails.id || 'unknown',
+            weatherCondition: weatherData.condition || 'unknown',
+            fallback: true
+          }
+        );
+        
+        // Track fallback usage
+        if (usedFallback) {
+          apiMetricsService.trackFallbackUsage(
+            'claude',
+            'openai',
+            'api_error',
+            { 
+              routeId: routeDetails.id || 'unknown',
+              weatherCondition: weatherData.condition || 'unknown'
+            }
+          );
+        }
+        
+        success = true;
+        return result;
+      }
+      
+      throw new Error('No AI service available for equipment recommendations');
     } catch (error) {
-      console.warn('Claude API failed for equipment recommendations, falling back to OpenAI', error);
+      // Track overall failure
+      monitoringService.trackError(
+        'All AI services failed for equipment recommendations',
+        error as Error,
+        { 
+          routeId: routeDetails.id || 'unknown',
+          weatherCondition: weatherData.condition || 'unknown'
+        }
+      );
+      
+      throw error;
+    } finally {
+      // Track overall duration
+      const totalTime = Date.now() - startTime;
+      monitoringService.trackMetric('ai_request_time', totalTime, {
+        operation: 'getEquipmentRecommendations',
+        usedFallback,
+        success
+      });
     }
-    
-    if (this.openaiApiKey) {
-      return await this.openAIEquipmentRecommendation(routeDetails, weatherData);
-    }
-    
-    throw new Error('No AI service available for equipment recommendations');
   }
-  
+
   // Chat with the AI assistant
   async sendChatMessage(messages: ChatMessage[], context?: ChatContext) {
+    const startTime = Date.now();
+    let success = false;
+    let usedFallback = false;
+    
     try {
-      if (this.claudeApiKey) {
-        return await this.claudeChatMessage(messages, context);
+      try {
+        if (this.claudeApiKey) {
+          const startApiCall = Date.now();
+          const result = await this.claudeChatMessage(messages, context);
+          const duration = Date.now() - startApiCall;
+          
+          // Track successful API call
+          apiMetricsService.trackAPICall(
+            'claude',
+            'chat_message',
+            duration,
+            true,
+            { 
+              messageCount: messages.length,
+              hasContext: !!context
+            }
+          );
+          
+          success = true;
+          return result;
+        }
+      } catch (error) {
+        console.warn('Claude API failed for chat message, falling back to OpenAI', error);
+        
+        // Track API error
+        apiMetricsService.trackAPIError(
+          'claude',
+          'chat_message',
+          error as Error,
+          { 
+            messageCount: messages.length,
+            hasContext: !!context
+          }
+        );
+        
+        usedFallback = true;
       }
+      
+      if (this.openaiApiKey) {
+        const startApiCall = Date.now();
+        const result = await this.openAIChatMessage(messages, context);
+        const duration = Date.now() - startApiCall;
+        
+        // Track successful fallback API call
+        apiMetricsService.trackAPICall(
+          'openai',
+          'chat_message',
+          duration,
+          true,
+          { 
+            messageCount: messages.length,
+            hasContext: !!context,
+            fallback: true
+          }
+        );
+        
+        // Track fallback usage
+        if (usedFallback) {
+          apiMetricsService.trackFallbackUsage(
+            'claude',
+            'openai',
+            'api_error',
+            { 
+              messageCount: messages.length,
+              hasContext: !!context
+            }
+          );
+        }
+        
+        success = true;
+        return result;
+      }
+      
+      throw new Error('No AI service available for chat');
     } catch (error) {
-      console.warn('Claude API failed for chat message, falling back to OpenAI', error);
+      // Track overall failure
+      monitoringService.trackError(
+        'All AI services failed for chat message',
+        error as Error,
+        { 
+          messageCount: messages.length,
+          hasContext: !!context
+        }
+      );
+      
+      throw error;
+    } finally {
+      // Track overall duration
+      const totalTime = Date.now() - startTime;
+      monitoringService.trackMetric('ai_request_time', totalTime, {
+        operation: 'sendChatMessage',
+        usedFallback,
+        success
+      });
     }
-    
-    if (this.openaiApiKey) {
-      return await this.openAIChatMessage(messages, context);
-    }
-    
-    throw new Error('No AI service available for chat');
   }
-  
+
   // Generate suggested queries based on conversation history
   async getSuggestedQueries(messages: ChatMessage[], context?: ChatContext) {
+    const startTime = Date.now();
+    let success = false;
+    let usedFallback = false;
+    
     try {
-      if (this.claudeApiKey) {
-        return await this.claudeSuggestedQueries(messages, context);
+      try {
+        if (this.claudeApiKey) {
+          const startApiCall = Date.now();
+          const result = await this.claudeSuggestedQueries(messages, context);
+          const duration = Date.now() - startApiCall;
+          
+          // Track successful API call
+          apiMetricsService.trackAPICall(
+            'claude',
+            'suggested_queries',
+            duration,
+            true,
+            { 
+              messageCount: messages.length,
+              hasContext: !!context
+            }
+          );
+          
+          success = true;
+          return result;
+        }
+      } catch (error) {
+        console.warn('Claude API failed for suggested queries, falling back to OpenAI', error);
+        
+        // Track API error
+        apiMetricsService.trackAPIError(
+          'claude',
+          'suggested_queries',
+          error as Error,
+          { 
+            messageCount: messages.length,
+            hasContext: !!context
+          }
+        );
+        
+        usedFallback = true;
       }
+      
+      if (this.openaiApiKey) {
+        const startApiCall = Date.now();
+        const result = await this.openAISuggestedQueries(messages, context);
+        const duration = Date.now() - startApiCall;
+        
+        // Track successful fallback API call
+        apiMetricsService.trackAPICall(
+          'openai',
+          'suggested_queries',
+          duration,
+          true,
+          { 
+            messageCount: messages.length,
+            hasContext: !!context,
+            fallback: true
+          }
+        );
+        
+        // Track fallback usage
+        if (usedFallback) {
+          apiMetricsService.trackFallbackUsage(
+            'claude',
+            'openai',
+            'api_error',
+            { 
+              messageCount: messages.length,
+              hasContext: !!context
+            }
+          );
+        }
+        
+        success = true;
+        return result;
+      }
+      
+      throw new Error('No AI service available for suggested queries');
     } catch (error) {
-      console.warn('Claude API failed for suggested queries, falling back to OpenAI', error);
+      // Track overall failure
+      monitoringService.trackError(
+        'All AI services failed for suggested queries',
+        error as Error,
+        { 
+          messageCount: messages.length,
+          hasContext: !!context
+        }
+      );
+      
+      throw error;
+    } finally {
+      // Track overall duration
+      const totalTime = Date.now() - startTime;
+      monitoringService.trackMetric('ai_request_time', totalTime, {
+        operation: 'getSuggestedQueries',
+        usedFallback,
+        success
+      });
     }
-    
-    if (this.openaiApiKey) {
-      return await this.openAISuggestedQueries(messages, context);
-    }
-    
-    throw new Error('No AI service available for suggested queries');
   }
-  
+
   private async claudeRecommendation(athleteData: AthleteData) {
     const response = await axios.post('https://api.anthropic.com/v1/messages', {
       model: 'claude-3-haiku-20240307',

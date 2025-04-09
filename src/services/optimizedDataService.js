@@ -4,9 +4,10 @@
  * la gestion des requêtes concurrentes et le filtrage des données
  */
 import axios from 'axios';
+import { ENV } from '../config/environment';
 
 class OptimizedDataService {
-  constructor(baseApiUrl = process.env.REACT_APP_API_URL) {
+  constructor(baseApiUrl = ENV.app.apiUrl) {
     this.apiClient = axios.create({
       baseURL: baseApiUrl || 'https://api.dashboard-velo.com',
       headers: {
@@ -36,7 +37,7 @@ class OptimizedDataService {
     this.useCompression = true;
     
     // Remplacer la vérification des données mockées par l'importation du RealApiOrchestrator
-    this.useMockData = process.env.REACT_APP_USE_MOCK_DATA === 'true';
+    this.useMockData = ENV.app.useMockData;
     
     // Initialiser RealApiOrchestrator (sera importé au besoin)
     this.realApiOrchestrator = null;

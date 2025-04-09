@@ -3,11 +3,12 @@
  * Handles col details and route optimization using Mapbox and OpenRoute APIs
  */
 
-const mapboxToken = process.env.REACT_APP_MAPBOX_TOKEN;
-const openRouteKey = process.env.REACT_APP_OPENROUTE_API_KEY;
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
-
+import { ENV } from '../../config/environment';
 import { monitoring } from '../monitoring';
+
+const mapboxToken = ENV.maps.mapboxToken;
+const openRouteKey = ENV.apiKeys.openroute;
+const API_BASE_URL = ENV.app.apiUrl || '';
 
 export const colsService = {
   /**

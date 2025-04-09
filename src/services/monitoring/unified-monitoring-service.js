@@ -12,19 +12,21 @@
  * - Journalisation unifiée
  */
 
+import { ENV } from '../../config/environment';
+
 class UnifiedMonitoringService {
   constructor(config = {}) {
     this.config = {
       appName: 'Velo-Altitude',
-      environment: process.env.NODE_ENV || 'development',
-      logLevel: process.env.LOG_LEVEL || 'info',
+      environment: ENV.app.nodeEnv || 'development',
+      logLevel: ENV.monitoring.logLevel || 'info',
       errorReportingEnabled: true,
       performanceMonitoringEnabled: true,
       userMetricsEnabled: true,
       networkDiagnosticsEnabled: true,
       samplingRate: 0.1, // 10% d'échantillonnage par défaut
       sendToBackend: true,
-      backendUrl: process.env.REACT_APP_MONITORING_API_URL || '/api/monitoring',
+      backendUrl: ENV.monitoring.apiUrl || '/api/monitoring',
       ...config
     };
     

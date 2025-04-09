@@ -7,6 +7,7 @@
 import api from './api';
 import mockRecipes from '../data/mockRecipes';
 import { capitalize } from '../utils/stringUtils';
+import { ENV } from '../config/environment';
 
 // Importation du RealApiOrchestrator pour remplacer les données mockées
 let realApiOrchestratorPart2 = null;
@@ -28,7 +29,7 @@ const nutritionService = {
   getUserNutritionData: async (userId) => {
     try {
       // En mode développement ou test, utiliser les données mockées
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         // Remplacer par RealApiOrchestrator au lieu des données mockées
         try {
           const { part2 } = await getRealApiOrchestrator();
@@ -57,7 +58,7 @@ const nutritionService = {
   calculateNutrition: async (params) => {
     try {
       // En mode développement ou test, calculer localement
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         // Pour le calcul nutritionnel, nous conservons le calcul local car c'est une opération
         // qui peut être effectuée côté client et qui n'implique pas de données persistantes
         return calculateNutritionLocally(params);
@@ -80,7 +81,7 @@ const nutritionService = {
   getRecipes: async (filters = {}) => {
     try {
       // En mode développement ou test, utiliser les recettes mockées
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           
@@ -128,7 +129,7 @@ const nutritionService = {
   getUserFavoriteRecipes: async (userId) => {
     try {
       // En mode développement ou test, utiliser les favoris mockés
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Note: Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator
@@ -158,7 +159,7 @@ const nutritionService = {
   addToFavorites: async (userId, recipeId) => {
     try {
       // En mode développement ou test, simuler l'ajout
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Note: Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator
@@ -191,7 +192,7 @@ const nutritionService = {
   removeFromFavorites: async (userId, recipeId) => {
     try {
       // En mode développement ou test, simuler la suppression
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Note: Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator
@@ -222,7 +223,7 @@ const nutritionService = {
   getUserFavorites: async () => {
     try {
       // En mode développement ou test, utiliser les favoris mockés
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Note: Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator
@@ -254,7 +255,7 @@ const nutritionService = {
   addToSaved: async (recipeId) => {
     try {
       // En mode développement ou test, simuler l'ajout
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Note: Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator
@@ -313,7 +314,7 @@ const nutritionService = {
   removeFromSaved: async (recipeId) => {
     try {
       // En mode développement ou test, simuler la suppression
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Note: Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator
@@ -365,7 +366,7 @@ const nutritionService = {
   getUserSaved: async () => {
     try {
       // En mode développement ou test, utiliser les recettes sauvegardées mockées
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Note: Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator
@@ -403,7 +404,7 @@ const nutritionService = {
   getRecipeById: async (recipeId) => {
     try {
       // En mode développement ou test, utiliser les recettes mockées
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           return await part2.getNutritionRecipe(recipeId);
@@ -433,7 +434,7 @@ const nutritionService = {
   generateMealPlan: async (params) => {
     try {
       // En mode développement ou test, générer localement
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator
@@ -462,7 +463,7 @@ const nutritionService = {
   syncWithTrainingPlan: async (params) => {
     try {
       // En mode développement ou test, simuler la synchronisation
-      if (process.env.REACT_APP_USE_MOCK_DATA === 'true') {
+      if (ENV.app.useMockData) {
         try {
           const { part2 } = await getRealApiOrchestrator();
           // Cette fonctionnalité spécifique n'existe pas encore dans RealApiOrchestrator

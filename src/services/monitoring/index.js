@@ -3,8 +3,10 @@
  * Handles API call logging, performance tracking and error logging
  */
 
-const ENABLE_ANALYTICS = process.env.REACT_APP_ENABLE_ANALYTICS === 'true';
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
+import { ENV } from '../../config/environment';
+
+const ENABLE_ANALYTICS = ENV.analytics.enableAnalytics;
+const API_BASE_URL = ENV.app.apiUrl || '';
 
 export const monitoring = {
   /**
