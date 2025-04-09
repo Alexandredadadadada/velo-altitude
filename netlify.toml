@@ -1,8 +1,8 @@
 # Configuration Netlify pour Velo-Altitude
-# Mise à jour : Avril 2025 - Configuration simplifiée pour déploiement de production
+# Mise à jour : Avril 2025 - Configuration pour gentle-donut-7fa5d8
 
 [build]
-  command = "CI=false npm ci && CI=false npm run build"
+  command = "npm ci --include=dev && CI=false npm run build"
   publish = "build"
   functions = "netlify/functions"
 
