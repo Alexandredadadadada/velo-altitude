@@ -37,7 +37,7 @@ process.env.DISABLE_ESLINT_PLUGIN = 'true';
 // Chemins importants
 const rootDir = process.cwd();
 const buildDir = path.join(rootDir, 'build');
-const webpackConfig = path.join(rootDir, 'webpack.config.js');
+const webpackConfig = path.join(rootDir, 'webpack.netlify.js'); // Utiliser la config Netlify spécifique
 
 // Vérifier si le répertoire de build existe, sinon le créer
 if (!fs.existsSync(buildDir)) {
@@ -45,52 +45,41 @@ if (!fs.existsSync(buildDir)) {
   console.log('✅ Répertoire de build créé');
 }
 
+// Vérifier que Babel est configuré correctement
+const babelConfigPath = path.join(rootDir, '.babelrc');
+if (!fs.existsSync(babelConfigPath)) {
+  console.log('⚠️ Aucun fichier .babelrc trouvé, création d\'une configuration minimale...');
+  const babelConfig = {
+    "presets": ["@babel/preset-env", "@babel/preset-react"],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-transform-class-properties"
+    ]
+  };
+  fs.writeFileSync(babelConfigPath, JSON.stringify(babelConfig, null, 2));
+  console.log('✅ Fichier .babelrc créé');
+}
+
 // Exécuter webpack directement avec Node.js pour éviter l'interaction
 try {
-  console.log('🔨 Exécution du build webpack...');
+  console.log('🔨 Exécution du build webpack avec la configuration Netlify...');
   const webpack = require('webpack');
   const webpackConfigFile = require(webpackConfig);
   
-  // Appliquer les optimisations pour la production
-  const config = {
-    ...webpackConfigFile,
-    mode: 'production',
-    optimization: {
-      ...webpackConfigFile.optimization,
-      minimize: true,
-      splitChunks: {
-        chunks: 'all',
-        maxInitialRequests: Infinity,
-        minSize: 20000,
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name(module) {
-              try {
-                const packagePath = module.context || '';
-                // Regrouper les dépendances principales
-                if (packagePath.includes('three')) return 'vendor.three';
-                if (packagePath.includes('react') || packagePath.includes('redux')) return 'vendor.react';
-                if (packagePath.includes('material') || packagePath.includes('mui')) return 'vendor.material';
-                
-                const matches = packagePath.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/);
-                const packageName = matches && matches[1] ? matches[1] : 'misc';
-                return `vendor.${packageName.replace('@', '')}`;
-              } catch (err) {
-                return 'vendor.misc';
-              }
-            },
-          },
-        },
-      },
-      runtimeChunk: 'single',
-    }
-  };
+  console.log('✅ Configuration webpack chargée avec succès');
   
   // Exécuter webpack
-  webpack(config, (err, stats) => {
+  webpack(webpackConfigFile, (err, stats) => {
     if (err || stats.hasErrors()) {
-      console.error('❌ Erreur webpack:', err || stats.toString());
+      console.error('❌ Erreur webpack:', err || stats.toString({
+        colors: true,
+        modules: false,
+        children: false,
+        chunks: false,
+        chunkModules: false,
+        errors: true,
+        errorDetails: true,
+      }));
       process.exit(1);
     }
     
