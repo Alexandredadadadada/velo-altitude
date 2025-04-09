@@ -1,0 +1,13 @@
+{
+  "name": "velo-altitude-functions",
+  "version": "1.0.0",
+  "description": "Fonctions Netlify pour Velo-Altitude",
+  "main": "api.js",
+  "dependencies": {
+    "mongodb": "^4.13.0",
+    "@netlify/functions": "^1.3.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
