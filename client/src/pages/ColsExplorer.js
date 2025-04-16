@@ -1,8 +1,7 @@
 import React, { useMemo, lazy, Suspense, useCallback, useState } from 'react';
 import { 
   Container, Grid, Typography, Box,
-  CircularProgress, Pagination, Card, 
-  CardContent, Tabs, Tab, Paper, 
+  CircularProgress, Pagination, CardContent, Tabs, Tab, Paper, 
   useMediaQuery, useTheme, Drawer, 
   IconButton, Fab, Tooltip, Skeleton, Alert, Divider,
   Button
@@ -15,10 +14,9 @@ import {
   KeyboardArrowUp as ArrowUpIcon,
   Search as SearchIcon
 } from '@mui/icons-material';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { FixedSizeList as VirtualList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import InfiniteLoader from 'react-window-infinite-loader';
 
 // Composants réguliers
 import ColDetail from '../components/cols/ColDetail';
@@ -81,8 +79,6 @@ const ColsExplorer = () => {
   // Media queries pour le responsive
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
-  const location = useLocation();
   
   // État pour le bouton de retour en haut et le tiroir de filtres sur mobile
   const [showScrollTop, setShowScrollTop] = useState(false);

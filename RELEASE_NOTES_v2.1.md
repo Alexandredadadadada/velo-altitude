@@ -87,3 +87,17 @@
 - [x] README.md mis à jour
 - [x] PROJECT_STATUS.md mis à jour
 - [x] Notes de version complétées
+
+## Correctifs Lint & Nettoyage Code (15/04/2025)
+
+- Suppression massive des imports et variables inutilisés dans tous les composants principaux et secondaires.
+- Correction de code unreachable et de fonctions utilisées avant leur définition.
+- Refactoring des hooks React pour respecter les dépendances et éviter les warnings (useEffect, useCallback).
+- Clarification des opérateurs logiques mixtes avec des parenthèses.
+- Nettoyage des composants Challenges (ChallengeDetail.js, ChallengeMap.js, ChallengesDashboard.js, ColsGallery.jsx).
+- Quelques warnings non bloquants subsistent (voir PROJECT_STATUS.md pour le détail et les prochaines étapes).
+
+**À surveiller pour la suite :**
+- Finaliser la suppression des derniers warnings (dépendances hooks, JSX non défini)
+- Revue manuelle des composants critiques avant toute évolution majeure
+- Relancer un lint complet et des tests unitaires après chaque grosse modification

@@ -89,7 +89,6 @@ const HeroParallax = ({ backgroundImage, title, subtitle, ctaText, ctaLink }) =>
   
   // Parallax effect
   const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
   
   // Fade in animation on mount
   useEffect(() => {

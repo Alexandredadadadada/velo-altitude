@@ -9,7 +9,6 @@ import {
   Tab,
   Tabs,
   Button,
-  Divider,
   Card,
   CardContent,
   List,
@@ -51,24 +50,6 @@ const StyledTabs = styled(Tabs)(({ theme }) => ({
     },
   },
 }));
-
-const TabPanel = ({ children, value, index, ...other }) => {
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`community-tabpanel-${index}`}
-      aria-labelledby={`community-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          {children}
-        </Box>
-      )}
-    </div>
-  );
-};
 
 const SidebarCard = styled(Card)(({ theme }) => ({
   marginBottom: theme.spacing(3),

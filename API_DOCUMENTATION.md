@@ -27,6 +27,7 @@ Le système de cache implémente plusieurs mécanismes avancés :
 - **TTL (Time To Live)** : Chaque type de données a une durée de vie configurée indépendamment
 - **Éviction LRU** : Les données les moins récemment utilisées sont évincées en priorité
 - **Invalidation sélective** : Possibilité d'invalider tout le cache ou un segment spécifique
+- **Priorisation intelligente** : Stratégies configurables (fréquence, récence, hybride) par segment
 
 ```js
 // Exemple d'utilisation du cache pour les APIs
@@ -53,6 +54,8 @@ this.clearCache('nutrition');
 - Suivi en temps réel des performances API
 - Journalisation des erreurs
 - Collecte de métriques système
+- Intégration avec le système de monitoring frontend avancé
+- Tableaux de bord unifiés pour les métriques frontend et backend
 
 ## Points d'API du Backend
 
@@ -95,6 +98,16 @@ POST /api/training/workouts - Créer un entrainement
 GET /api/cache/stats - Obtenir les statistiques du cache (taille, hit ratio, etc.)
 POST /api/cache/clear - Vider le cache (peut accepter un paramètre 'type')
 GET /api/cache/health - Vérifier l'état de santé du cache
+POST /api/cache/configure - Configurer les stratégies de cache par segment
+```
+
+### API de Monitoring de Performance
+
+```
+POST /api/monitoring - Envoyer des métriques de performance frontend
+GET /api/monitoring/stats - Obtenir les statistiques agrégées de performance
+GET /api/monitoring/report - Générer un rapport de performance complet
+POST /api/monitoring/threshold - Configurer les seuils d'alerte
 ```
 
 ### API Météo
@@ -149,6 +162,69 @@ async getNutritionLogEntries(date: string): Promise<NutritionLog[]> {
 }
 ```
 
+## Système de Monitoring de Performance Avancé
+
+L'application implémente un système de monitoring avancé pour optimiser l'expérience utilisateur :
+
+### 1. Composants du Système de Monitoring
+
+- **EnhancedPerformanceMonitoring** : Suivi détaillé des Web Vitals, interactions utilisateur, et performances des ressources
+- **RouteOptimizer** : Analyse des modèles de navigation et préchargement intelligent
+- **PerformanceContext** : Accès global aux outils de monitoring via React Context
+- **Performance Dashboard** : Visualisation en temps réel des métriques de performance
+
+### 2. Métriques Collectées
+
+- **Web Vitals** : LCP, FID, CLS, TTFB, etc.
+- **Interactions utilisateur** : Temps de réponse, délais de rendu
+- **Chargement des ressources** : Durées de chargement, tailles
+- **Performance du cache** : Taux de succès, économies de temps
+- **Métriques spécifiques à Velo-Altitude** : 
+  - Temps de rendu de la visualisation 3D des cols
+  - Temps de calcul des itinéraires
+  - Performance des synchronisations Strava
+
+```typescript
+// Exemple d'utilisation du système de monitoring
+import { usePerformance } from '../contexts/PerformanceContext';
+
+const MyComponent = () => {
+  const performance = usePerformance();
+  
+  useEffect(() => {
+    // Mesurer le temps de chargement de la page
+    performance.trackPageLoad('my_component');
+    
+    // Mesurer les interactions utilisateur
+    performance.trackInteraction('click', 'submit_button');
+    
+    return () => {
+      performance.trackPageUnload('my_component');
+    };
+  }, []);
+  
+  // ...
+};
+```
+
+### 3. Optimisation du Routing
+
+Le système d'optimisation de routing utilise les modèles de navigation pour améliorer les performances :
+
+- **Préchargement adaptatif** : Précharge les routes en fonction des habitudes de navigation
+- **Analyse de connexion** : Identifie les "chemins" communs entre les pages
+- **Préchargement des ressources critiques** : Charge à l'avance les ressources nécessaires aux pages fréquemment visitées
+
+## Correctifs Lint & Nettoyage Code (15/04/2025)
+
+- Suppression des imports/variables inutiles dans les endpoints d'API.
+- Refactoring des middlewares pour éviter tout code unreachable.
+- Clarification des opérateurs logiques dans les contrôleurs.
+
+**À surveiller** :
+- Vérifier la cohérence des routes API après chaque refactor.
+- Relancer les tests d'intégration API après chaque modification majeure.
+
 ## Sécurité des API
 
 Toutes les requêtes API authentifiées doivent inclure un token JWT dans l'en-tête:
@@ -165,6 +241,7 @@ Les tokens sont obtenus via le flux d'authentification Auth0 ou le système de s
 2. **Gestion des erreurs** : Toujours implémenter une gestion des erreurs robuste pour chaque appel API
 3. **Invalidation du cache** : Après une mutation de données (POST/PUT/DELETE), invalider le segment de cache correspondant
 4. **Limitation des appels parallèles** : Éviter les appels multiples simultanés à la même ressource
+5. **Monitoring intégré** : Utiliser le système de monitoring pour tracer les performances des appels API
 
 ## Surveillance et Résolution des Problèmes
 
@@ -175,9 +252,20 @@ L'application intègre plusieurs outils de surveillance :
 - **PerformanceMonitor** : Trace des métriques de performance frontend
 - **APIMonitor** : Surveille les appels API et leurs performances
 - **ErrorTracker** : Capture et agrège les erreurs
+- **Performance Dashboard** : Tableau de bord visuel pour l'analyse des performances
+- **Collecteur de métriques de référence** : Établit une base de performance pour comparaison
 
 ### Résolution des Problèmes Courants
 
 - **Erreurs 401/403** : Vérifier l'authentification et les droits d'accès
 - **Problèmes de cache** : Utiliser l'endpoint `/api/cache/stats` pour diagnostiquer
 - **Lenteurs API** : Consulter les logs de monitoring pour identifier les goulots d'étranglement
+- **Problèmes de performance frontend** : Utiliser le Performance Dashboard dans `/admin/performance`
+
+### Mécanisme de Rollback
+
+L'application implémente un système de rollback automatique en cas de dégradation des performances :
+
+- Sauvegarde de l'état avant chaque déploiement de fonctionnalité
+- Surveillance des métriques de performance après déploiement
+- Rollback automatique si les performances se dégradent au-delà des seuils configurés

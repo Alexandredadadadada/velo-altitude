@@ -29,11 +29,9 @@ import {
   QueryStats,
   PeopleAlt,
   ViewInAr,
-  Map,
   ArrowUpward,
   ArrowDownward,
   Refresh,
-  Warning,
   RestaurantMenu
 } from '@mui/icons-material';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
@@ -52,7 +50,6 @@ const PerformanceDashboard = () => {
   const [metrics, setMetrics] = useState(null);
   const [errorAlert, setErrorAlert] = useState(null);
   const [nutritionMetrics, setNutritionMetrics] = useState(null);
-  const [alertsCount, setAlertsCount] = useState(0);
 
   useEffect(() => {
     if (user && user.role === 'admin') {
@@ -61,7 +58,7 @@ const PerformanceDashboard = () => {
       const refreshInterval = setInterval(fetchPerformanceData, 5 * 60 * 1000);
       return () => clearInterval(refreshInterval);
     }
-  }, [user, timeRange]);
+  }, [user, timeRange, fetchPerformanceData]);
 
   const fetchPerformanceData = async () => {
     try {
@@ -72,10 +69,6 @@ const PerformanceDashboard = () => {
       // Récupérer les métriques spécifiques à la nutrition
       const nutritionData = await adminService.getNutritionMetrics(timeRange);
       setNutritionMetrics(nutritionData);
-      
-      // Récupérer le compte des alertes actives
-      const alerts = await adminService.getActiveAlerts();
-      setAlertsCount(alerts.length);
       
       setErrorAlert(null);
     } catch (error) {
@@ -108,11 +101,6 @@ const PerformanceDashboard = () => {
     if (value > thresholds.critical) return 'error';
     if (value > thresholds.warning) return 'warning';
     return 'success';
-  };
-
-  const getPercentageChange = (current, previous) => {
-    if (!previous) return null;
-    return ((current - previous) / previous * 100).toFixed(1);
   };
 
   if (!user || user.role !== 'admin') {

@@ -1,3 +1,5 @@
+console.log('Loading AI Service module...');
+
 /**
  * Service d'intelligence artificielle avec intégration Claude
  * Fournit des analyses avancées, recommandations personnalisées et descriptions narratives
@@ -7,8 +9,11 @@ const axios = require('axios');
 const logger = require('../utils/logger');
 const cacheService = require('./cache.service');
 
+console.log('Loading AI Service...');
+
 class AIService {
   constructor() {
+    console.log('Initializing AI Service...');
     this.apiKey = process.env.CLAUDE_API_KEY || '';
     this.baseUrl = 'https://api.anthropic.com/v1';
     this.model = 'claude-3-opus-20240229'; // Modèle le plus avancé pour les analyses complexes
@@ -119,6 +124,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {Object} Headers pour les requêtes API
    */
   _getHeaders() {
+    console.log('Getting headers for Claude API...');
     return {
       'Content-Type': 'application/json',
       'x-api-key': this.apiKey,
@@ -133,6 +139,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {Promise<string>} Réponse de l'API
    */
   async _callClaudeAPI(prompt, options = {}) {
+    console.log('Calling Claude API...');
     try {
       if (!this.apiKey) {
         return {
@@ -209,6 +216,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {string} Prompt avec variables remplacées
    */
   _formatPrompt(template, data = {}) {
+    console.log('Formatting prompt...');
     let formattedPrompt = template;
     
     // Remplacer toutes les variables dans le template
@@ -227,6 +235,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {Promise<Object>} Recommandations d'entraînement
    */
   async generateTrainingRecommendations(userData, options = {}) {
+    console.log('Generating training recommendations...');
     try {
       const {
         userName,
@@ -295,6 +304,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {Promise<Object>} Analyse de performance
    */
   async analyzePerformance(activityData, options = {}) {
+    console.log('Analyzing performance...');
     try {
       const {
         duration,
@@ -371,6 +381,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {Promise<Object>} Description narrative
    */
   async generateRouteDescription(routeData, options = {}) {
+    console.log('Generating route description...');
     try {
       const {
         routeName,
@@ -442,6 +453,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {string} Recommandations de secours
    */
   _getFallbackTrainingRecommendations(userData) {
+    console.log('Getting fallback training recommendations...');
     const { level, goal } = userData;
     
     // Recommandations de base selon le niveau et l'objectif
@@ -460,6 +472,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {string} Analyse de secours
    */
   _getFallbackPerformanceAnalysis(activityData) {
+    console.log('Getting fallback performance analysis...');
     const { avgPower, np, intensity } = activityData;
     
     // Analyse basique basée sur les métriques simples
@@ -478,6 +491,7 @@ La description doit être engageante, visuellement évocatrice et donner envie a
    * @returns {string} Description de secours
    */
   _getFallbackRouteDescription(routeData) {
+    console.log('Getting fallback route description...');
     const { routeName, region, distance, elevation, climbs } = routeData;
     
     // Description basique basée sur les métriques simples
@@ -485,4 +499,5 @@ La description doit être engageante, visuellement évocatrice et donner envie a
   }
 }
 
-module.exports = new AIService();
+const aiService = new AIService();
+module.exports = aiService;

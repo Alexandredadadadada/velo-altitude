@@ -5,20 +5,14 @@ import {
   Grid, 
   Paper, 
   Typography, 
-  Button, 
-  Tabs, 
-  Tab, 
   Container, 
   useTheme, 
   alpha, 
-  Divider,
   IconButton,
-  Stack,
   Tooltip,
   Card,
   CardContent
 } from '@mui/material';
-import { motion } from 'framer-motion';
 
 // Composants essentiels
 import ColVisualization3D from './visualization/ColVisualization3D';
@@ -29,7 +23,6 @@ import TrainingModule from './training/TrainingModule';
 import SocialHub from './social/SocialHub';
 import FTPCalculator from './training/FTPCalculator';
 import NutritionCalculator from './nutrition/NutritionCalculator';
-import TrainingZoneChart from './training/TrainingZoneChart';
 
 // Widgets pour le dashboard
 import RecentColsWidget from './dashboard/RecentColsWidget';
@@ -42,40 +35,9 @@ import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import PersonIcon from '@mui/icons-material/Person';
-import SportsScoreIcon from '@mui/icons-material/SportsScore';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 
 import './Dashboard.css';
-
-const fetchColsList = async () => {
-  try {
-    // Simulate API call - replace with actual API call
-    return [
-      { id: '1', name: 'Col du Galibier', elevation: 2642 },
-      { id: '2', name: 'Col de la Planche des Belles Filles', elevation: 1148 },
-      { id: '3', name: 'Mont Ventoux', elevation: 1909 },
-      { id: '4', name: 'Ballon d\'Alsace', elevation: 1247 }
-    ];
-  } catch (error) {
-    console.error('Error fetching cols list:', error);
-    return [];
-  }
-};
-
-// Mock API service for fetching routes data
-const fetchRoutesList = async () => {
-  try {
-    // Simulate API call - replace with actual API call
-    return [
-      { id: '1', name: 'Route des Crêtes', mainPass: '1' },
-      { id: '2', name: 'Circuit des Ballons', mainPass: '4' },
-      { id: '3', name: 'Ascension du Ventoux', mainPass: '3' }
-    ];
-  } catch (error) {
-    console.error('Error fetching routes list:', error);
-    return [];
-  }
-};
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -87,9 +49,7 @@ const Dashboard = () => {
   const [selectedCol, setSelectedCol] = useState(null);
   const [selectedCols, setSelectedCols] = useState({ col1: null, col2: null });
   const [selectedRoute, setSelectedRoute] = useState(null);
-  const [weatherRouteData, setWeatherRouteData] = useState(null);
   const [socialView, setSocialView] = useState('feed');
-  const [userData, setUserData] = useState(null);
   const [recentlyViewedCols, setRecentlyViewedCols] = useState([]);
   const [activeChallenges, setActiveChallenges] = useState([]);
   const [favoriteCols, setFavoriteCols] = useState([]);
@@ -99,10 +59,18 @@ const Dashboard = () => {
     const loadData = async () => {
       setLoading(true);
       try {
-        const [colsData, routesData] = await Promise.all([
-          fetchColsList(),
-          fetchRoutesList()
-        ]);
+        const colsData = [
+          { id: '1', name: 'Col du Galibier', elevation: 2642 },
+          { id: '2', name: 'Col de la Planche des Belles Filles', elevation: 1148 },
+          { id: '3', name: 'Mont Ventoux', elevation: 1909 },
+          { id: '4', name: 'Ballon d\'Alsace', elevation: 1247 }
+        ];
+
+        const routesData = [
+          { id: '1', name: 'Route des Crêtes', mainPass: '1' },
+          { id: '2', name: 'Circuit des Ballons', mainPass: '4' },
+          { id: '3', name: 'Ascension du Ventoux', mainPass: '3' }
+        ];
 
         setCols(colsData);
         setRoutes(routesData);
@@ -242,16 +210,6 @@ const Dashboard = () => {
     { x: 1, z: 2, elevation: 120, name: 'Viewpoint', type: 'panorama' },
     { x: 5, z: 5, elevation: 140, name: 'Water Source', type: 'water' },
     { x: 8, z: 3, elevation: 110, name: 'Danger Zone', type: 'danger' }
-  ];
-
-  // Prepare navigation tabs
-  const navigationTabs = [
-    { id: 'visualization3D', label: t('3dVisualization') },
-    { id: 'comparison', label: t('colsComparison') },
-    { id: 'alternativeRoutes', label: t('alternativeRoutes') },
-    { id: 'weatherDashboard', label: t('weatherDashboard') },
-    { id: 'trainingModule', label: t('training') },
-    { id: 'socialHub', label: t('socialHub') }
   ];
 
   // Handle social sub-navigation
@@ -809,7 +767,7 @@ const Dashboard = () => {
               </div>
             )}
 
-            {activeTab === 'weatherDashboard' && weatherRouteData && (
+            {activeTab === 'weatherDashboard' && (
               <div className="weather-dashboard-tab">
                 <Typography variant="h5" component="h1" gutterBottom sx={{ mb: 3 }}>
                   Météo des Itinéraires
@@ -817,7 +775,6 @@ const Dashboard = () => {
                 
                 <WeatherDashboard 
                   routeId="route-1"
-                  routeData={weatherRouteData}
                 />
               </div>
             )}

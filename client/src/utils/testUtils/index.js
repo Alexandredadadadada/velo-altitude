@@ -506,8 +506,8 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Export par défaut
-export default {
+// Assign object to a variable before exporting as module default
+const testUtils = {
   runAllTests,
   runFeatureFlagsTests,
   runApiCacheTests,
@@ -516,3 +516,5 @@ export default {
   runSevenMajorsChallengeTests,
   exportAllTestResults
 };
+
+export default testUtils;

@@ -422,8 +422,8 @@ export function runAllFeatureFlagsTests() {
   return report;
 }
 
-// Export de l'API de test
-export default {
+// Assign object to a variable before exporting as module default
+const featureFlagsTestRunner = {
   runBasicFlagsTests,
   runSegmentationTests,
   runVariantTests,
@@ -433,3 +433,5 @@ export default {
   exportTestResults,
   runAllFeatureFlagsTests
 };
+
+export default featureFlagsTestRunner;

@@ -1,3 +1,5 @@
+console.log('Loading pagination.service.js...');
+
 /**
  * Service de pagination côté serveur
  * Ce service fournit des fonctionnalités pour gérer la pagination des résultats de requêtes

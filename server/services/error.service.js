@@ -1,12 +1,16 @@
+console.log('Loading error.service.js...');
+
 /**
  * Service de gestion des erreurs
  * Ce service fournit des méthodes pour créer, gérer et standardiser les erreurs dans l'application
  */
 
 const logger = require('../config/logger');
+console.log('Logger imported in error.service.js');
 
 class ErrorService {
   constructor() {
+    console.log('ErrorService constructor start');
     // Types d'erreurs standardisés
     this.ERROR_TYPES = {
       VALIDATION: 'VALIDATION_ERROR',
@@ -145,8 +149,6 @@ class ErrorService {
     Object.values(this.SEVERITY_LEVELS).forEach(severity => {
       this.errorStats.bySeverity[severity] = 0;
     });
-    
-    logger.info('Service de gestion des erreurs initialisé');
   }
 
   /**
@@ -769,4 +771,5 @@ class ErrorService {
 
 // Exporter une instance singleton
 const errorService = new ErrorService();
+logger.info('Service de gestion des erreurs initialisé');
 module.exports = errorService;

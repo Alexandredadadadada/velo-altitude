@@ -19,7 +19,6 @@ import {
   Button,
   Alert,
   CircularProgress,
-  Divider,
   Tooltip,
   Dialog,
   DialogTitle,
@@ -28,8 +27,6 @@ import {
 } from '@mui/material';
 import {
   Refresh as RefreshIcon,
-  Warning as WarningIcon,
-  Error as ErrorIcon,
   Info as InfoIcon,
   CheckCircle as CheckCircleIcon,
   AcUnit as SnowIcon,

@@ -44,8 +44,8 @@ export {
   ProtectedRoute
 };
 
-// Export par défaut pour compatibilité avec les imports existants
-export default {
+// Assign object to variable before exporting as default
+const authModule = {
   AuthProvider,
   useAuth,
   useSafeAuth,
@@ -55,3 +55,5 @@ export default {
   AuthenticationWrapper,
   ProtectedRoute
 };
+
+export default authModule;

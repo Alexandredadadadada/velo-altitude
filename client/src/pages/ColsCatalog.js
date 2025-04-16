@@ -15,8 +15,6 @@ import {
   FormControl,
   InputLabel,
   Slider,
-  FormControlLabel,
-  Checkbox,
   InputAdornment,
   Divider,
   Chip,
@@ -34,16 +32,14 @@ import {
   Terrain as TerrainIcon,
   DirectionsBike as BikeIcon,
   Straighten as LengthIcon,
-  Favorite as FavoriteIcon,
   FavoriteBorder as FavoriteBorderIcon,
-  ExpandMore as ExpandMoreIcon,
   Star as StarIcon,
   Image as ImageIcon,
   Comment as CommentIcon
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { getColsByFilters, getMostPopularCols } from '../services/colsService';
+import { getMostPopularCols } from '../services/colsService';
 
 /**
  * Page du catalogue des cols cyclistes
@@ -52,7 +48,6 @@ const ColsCatalog = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
   
   // États pour la gestion des cols
   const [cols, setCols] = useState([]);

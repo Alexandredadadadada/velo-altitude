@@ -8,7 +8,6 @@ import { AnimatePresence } from 'framer-motion';
 import ErrorBoundary from './components/error/ErrorBoundary';
 import NotificationSystem from './components/notification/NotificationSystem';
 import monitoringService from './services/monitoring/MonitoringService';
-import apiErrorHandler from './services/errorHandling/apiErrorHandler';
 
 // Définition du thème
 const getTheme = (mode) => createTheme({

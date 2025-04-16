@@ -227,7 +227,9 @@ export const isRetryableError = (error) => {
          error.originalError?.code === 'ETIMEDOUT';
 };
 
-export default {
+// Assign object to a variable before exporting as module default
+// Refactor: Assign to variable before export default
+const apiErrorUtils = {
   normalizeApiError,
   handleApiError,
   getDefaultErrorMessage,
@@ -236,3 +238,5 @@ export default {
   isNetworkError,
   isRetryableError
 };
+
+export default apiErrorUtils;

@@ -1,9 +1,11 @@
+console.log('Loading token-blacklist.service.js...');
+
 /**
  * Service de liste noire de tokens
  * Gère la révocation des tokens JWT pour les déconnexions et les compromissions
  */
 
-const { logger } = require('../utils/logger');
+const logger = require('../config/logger');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const config = require('../config/api.config');

@@ -3,7 +3,7 @@
  * Optimise le chargement des routes et composants lourds
  */
 
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+import React, { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { Box, CircularProgress, Typography } from '@mui/material';
 import { keyframes } from '@emotion/react';
 
@@ -241,8 +241,12 @@ export function withViewportLoading(importFn, options = {}) {
   };
 }
 
-export default {
+// Assign object to a variable before exporting as module default
+// Refactor: Assign to variable before export default
+const exports = {
   withLazyLoading,
   preloadComponent,
   withViewportLoading
 };
+
+export default exports;

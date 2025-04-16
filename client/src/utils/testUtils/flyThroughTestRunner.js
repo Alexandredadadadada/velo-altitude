@@ -331,8 +331,10 @@ if (process.argv[1].endsWith('flyThroughTestRunner.js')) {
     });
 }
 
-export default {
+const flyThroughTestRunner = {
   testFlyThroughForCol,
   runFlyThroughTests,
   TEST_COLS
 };
+
+export default flyThroughTestRunner;

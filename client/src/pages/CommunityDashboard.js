@@ -1,17 +1,6 @@
 import React, { memo, lazy, Suspense } from 'react';
 import { Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
-import { useTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faHome, faCalendarAlt, faTrophy, faMapMarkedAlt, 
-  faUsers, faUserFriends, faAward, faBicycle, faChartLine 
-} from '@fortawesome/free-solid-svg-icons';
-import { 
-  Container, Grid, Card, CardContent, Typography, Box, Paper, 
-  Tabs, Tab, Button, Avatar, Divider, CircularProgress,
-  LinearProgress, Alert, Chip, Skeleton
-} from '@mui/material';
 import { useCommunity } from '../contexts/CommunityContext';
 import { useNotification } from '../components/common/NotificationSystem';
 import { useFeatureFlags } from '../services/featureFlags';
@@ -68,7 +57,6 @@ const EventCard = styled(Card)(({ theme, joined }) => ({
 // Component de navigation de l'onglet
 const TabNavigation = memo(function TabNavigation() {
   const location = useLocation();
-  const { t } = useTranslation();
   const { isFeatureEnabled } = useCommunity();
   
   const getPath = (path) => {
@@ -128,7 +116,6 @@ const TabNavigation = memo(function TabNavigation() {
 
 // Main Component
 const CommunityDashboard = () => {
-  const { t } = useTranslation();
   const { userProfile, communityStats, loading } = useCommunity();
   const { notify } = useNotification();
   const { isEnabled } = useFeatureFlags();
@@ -193,7 +180,6 @@ const CommunityDashboard = () => {
 
 // Section Vue d'ensemble
 const OverviewSection = memo(({ userProfile, communityStats }) => {
-  const { t } = useTranslation();
   const { isFeatureEnabled } = useCommunity();
 
   return (
@@ -376,85 +362,6 @@ const OverviewSection = memo(({ userProfile, communityStats }) => {
         </Suspense>
       </Grid>
     </Grid>
-  );
-});
-
-// Composant pour afficher une carte d'événement
-const EventCardItem = memo(({ event, formatDate, handleJoinEvent, handleLeaveEvent }) => {
-  const { notify } = useNotification();
-  
-  const handleJoin = (eventId) => {
-    try {
-      handleJoinEvent(eventId);
-    } catch (error) {
-      notify.error('Une erreur est survenue lors de l\'inscription à l\'événement', error);
-    }
-  };
-  
-  const handleLeave = (eventId) => {
-    try {
-      handleLeaveEvent(eventId);
-    } catch (error) {
-      notify.error('Une erreur est survenue lors de l\'annulation de votre participation', error);
-    }
-  };
-  
-  return (
-    <EventCard 
-      joined={event.joined}
-      tabIndex={0}
-      aria-label={`Événement: ${event.title} à ${event.location} le ${formatDate(event.date)}`}
-    >
-      <CardContent>
-        <Box display="flex" justifyContent="space-between" alignItems="flex-start">
-          <Box>
-            <Typography variant="h6" component="h3">{event.title}</Typography>
-            <Box sx={{ mb: 2 }}>
-              <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center', mr: 3 }}>
-                <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: '4px', color: 'text.secondary' }} />
-                <Typography variant="body2" component="span">{formatDate(event.date)} | {event.time}</Typography>
-              </Box>
-              
-              <Box component="span" sx={{ display: 'inline-flex', alignItems: 'center' }}>
-                <FontAwesomeIcon icon={faMapMarkedAlt} style={{ marginRight: '4px', color: 'text.secondary' }} />
-                <Typography variant="body2" component="span">{event.location}</Typography>
-              </Box>
-            </Box>
-          </Box>
-          <Box sx={{ px: 3, py: 1, bgcolor: 'background.paper', borderRadius: 1, textAlign: 'center' }}>
-            <Typography variant="body1" fontWeight="bold">{event.distance} km</Typography>
-            <Typography variant="body2">{event.participants} participants</Typography>
-          </Box>
-        </Box>
-        
-        <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mt: 3 }}>
-          <Typography variant="body2" color="text.secondary">
-            Organisé par {event.organizer}
-          </Typography>
-          
-          {event.joined ? (
-            <Button 
-              variant="outlined" 
-              color="error" 
-              size="small"
-              onClick={() => handleLeave(event.id)}
-              aria-label={`Annuler votre participation à l'événement ${event.title}`}
-            >
-              Annuler participation
-            </Button>
-          ) : (
-            <Button 
-              variant="outlined" 
-              size="small"
-              onClick={() => handleJoin(event.id)}
-              aria-label={`Participer à l'événement ${event.title}`}
-            >
-              Participer
-            </Button>
-          )}
-        </Box>
-      </CardContent>
-    </EventCard>
   );
 });
 

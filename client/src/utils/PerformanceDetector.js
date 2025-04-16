@@ -138,7 +138,7 @@ class PerformanceDetector {
    * @param {Function} callback - Fonction appelée une fois la détection terminée
    * @returns {Promise} Résultat de la détection avec niveau de performance
    */
-  async detectPerformance(callback = null) {
+  detectPerformance(callback = null) {
     if (this.isDetecting) {
       console.log('Détection de performance déjà en cours');
       return;
@@ -148,9 +148,9 @@ class PerformanceDetector {
     this.isDetecting = true;
     this.onDetectionComplete = callback;
     
-    const detectionPromise = new Promise(async (resolve) => {
-      console.log('Démarrage de la détection de performance...');
-      
+    // Promise executor functions should not be async
+    // Refactor to avoid async executor if present
+    const detectionPromise = new Promise((resolve) => {
       // Essayer de charger les préférences utilisateur
       const savedSettings = this._loadUserSettings();
       if (savedSettings && savedSettings.userSelectedLevel !== undefined) {
@@ -172,7 +172,7 @@ class PerformanceDetector {
         const initialLevel = this._detectInitialLevel();
         
         // 2. Test de FPS pour validation
-        const fpsResult = await this._runFPSTest();
+        const fpsResult = this._runFPSTest();
         
         // 3. Déterminer le niveau final basé sur une combinaison de facteurs
         this.perfLevel = this._determineLevelFromFPS(fpsResult, initialLevel);
@@ -413,7 +413,7 @@ class PerformanceDetector {
    * @returns {Promise<Object>} Résultats du test avec FPS moyen
    * @private
    */
-  async _runFPSTest() {
+  _runFPSTest() {
     return new Promise((resolve) => {
       // Créer un élément canvas temporaire pour le test
       const canvas = document.createElement('canvas');

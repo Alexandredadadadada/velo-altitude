@@ -137,10 +137,14 @@ export const getAllFeatureFlags = () => {
   return { ...featureFlags };
 };
 
-export default {
+// Assign object to a variable before exporting as module default
+// Refactor: Assign to variable before export default
+const featureFlagsService = {
   getFeatureFlag,
   setFeatureFlag,
   resetFeatureFlags,
   getAllFeatureFlags,
   getCurrentEnvironment
 };
+
+export default featureFlagsService;

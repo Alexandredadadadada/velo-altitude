@@ -131,6 +131,16 @@ Après chaque déploiement, vérifier les éléments suivants:
 6. Le système d'entraînement et de nutrition fonctionne
 7. Les mécanismes de cache API fonctionnent correctement
 
+## Correctifs Lint & Nettoyage Code (15/04/2025)
+
+- Suppression des imports/variables inutiles dans les scripts de déploiement.
+- Clarification des étapes de build et vérification des hooks dans les scripts automatisés.
+- Refactoring de la configuration pour éviter tout code unreachable ou non utilisé.
+
+**À surveiller** :
+- Toujours exécuter `npm run lint` avant tout déploiement.
+- Vérifier que tous les scripts sont à jour et cohérents avec le code source nettoyé.
+
 ## Gestion des Erreurs Courantes
 
 ### Problèmes d'Authentification Auth0

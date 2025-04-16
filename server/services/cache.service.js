@@ -1,3 +1,5 @@
+console.log('Loading cache.service.js...');
+
 /**
  * Service de cache distribué
  * Gère le stockage et la récupération des données fréquemment consultées pour optimiser les performances

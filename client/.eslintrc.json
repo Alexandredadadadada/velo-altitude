@@ -1,0 +1,21 @@
+{
+  "extends": ["react-app", "eslint:recommended"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "@mui/system",
+            "message": "Only import from the top level or direct component imports are allowed."
+          },
+          {
+            "name": "@mui/utils",
+            "message": "Internal module, do not import directly."
+          }
+        ],
+        "patterns": ["@mui/*/*/*"]
+      }
+    ]
+  }
+}

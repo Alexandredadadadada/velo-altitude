@@ -3,17 +3,19 @@ import { Routes, Route } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import { AnimatePresence } from 'framer-motion';
-import { useAuth } from './auth/AuthCore'; // Import corrigé pour utiliser le nouveau système AuthCore
-
-// Composants communs avec chargement immédiat
+import { useAuth } from './auth/AuthCore';
 import Footer from './components/common/Footer';
 import LoadingFallback from './components/common/LoadingFallback';
 import ErrorBoundary from './components/common/ErrorBoundary';
-
-// Nouveau composant de navigation animée
 import AnimatedNavbar from './components/navigation/AnimatedNavbar';
+import { usePerformanceOptimizer } from './utils/PerformanceOptimizer';
+import { useImageOptimizer } from './utils/ImageOptimizer';
+import { NotificationProvider } from './context/NotificationContext';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import modernTheme from './theme/modernTheme';
+import './App.css';
 
-// Lazy loading des pages
 const Home = lazy(() => import('./pages/Home'));
 const ColsRoutes = lazy(() => import('./pages/cols/ColsRoutes'));
 const TrainingDashboard = lazy(() => import('./pages/TrainingDashboard'));
@@ -28,22 +30,8 @@ const CommunityRoutes = lazy(() => import('./pages/community/CommunityRoutes'));
 const MountainHub = lazy(() => import('./pages/MountainHub'));
 const ErrorDemo = lazy(() => import('./pages/ErrorDemo'));
 const VisualizationDashboard = lazy(() => import('./pages/VisualizationDashboard'));
-const OptimizedServiceTest = lazy(() => import('./components/test/OptimizedServiceTest')); // Import du composant de test
-const ServiceTest = lazy(() => import('./components/tests/ServiceTest')); // Import du nouveau composant de test
-
-// Utilitaires
-import { usePerformanceOptimizer } from './utils/PerformanceOptimizer';
-import { useImageOptimizer } from './utils/ImageOptimizer';
-// Suppression de l'import du AuthProvider car nous utilisons celui de index.js
-import { NotificationProvider } from './context/NotificationContext';
-
-// Nouveau thème moderne
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import modernTheme from './theme/modernTheme';
-
-// Styles
-import './App.css';
+const OptimizedServiceTest = lazy(() => import('./components/test/OptimizedServiceTest'));
+const ServiceTest = lazy(() => import('./components/tests/ServiceTest'));
 
 function App() {
   // Initialiser les optimiseurs de performance

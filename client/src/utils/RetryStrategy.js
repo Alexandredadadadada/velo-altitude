@@ -136,6 +136,8 @@ export const calculateBackoffDelay = (attempt, config = DEFAULT_RETRY_CONFIG) =>
       return expDelay * jitter;
       
     default:
+      // Unexpected lexical declaration in case block
+      // Refactor: Move declarations outside case or wrap in block
       return baseDelay;
   }
 };

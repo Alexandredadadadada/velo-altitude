@@ -25,5 +25,8 @@ export type { AuthUser, AuthContextType };
 // Export nommé pour les destructurations
 export { AuthProvider, useAuth, useSafeAuth, AuthContext };
 
+// Assign object to variable before exporting as default
+const AuthUnified = { AuthProvider, useAuth, useSafeAuth, AuthContext };
+
 // Export par défaut pour les imports traditionnels
-export default { AuthProvider, useAuth, useSafeAuth, AuthContext };
+export default AuthUnified;

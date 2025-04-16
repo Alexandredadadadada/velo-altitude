@@ -139,6 +139,32 @@ const ApiMonitoringDashboard = () => {
     }
   };
 
+  // Rafraîchir le token Strava
+  const refreshStravaToken = async () => {
+    try {
+      setRefreshing({ ...refreshing, token: true });
+      await axios.post('/api/monitoring/refresh-strava-token');
+      await loadDashboardData();
+    } catch (err) {
+      setError(err.response?.data?.message || err.message);
+    } finally {
+      setRefreshing({ ...refreshing, token: false });
+    }
+  };
+
+  // Rafraîchir les données Strava
+  const refreshStravaData = async (dataType) => {
+    try {
+      setRefreshing({ ...refreshing, [dataType]: true });
+      await axios.post(`/api/monitoring/refresh-strava-data/${dataType}`);
+      await loadDashboardData();
+    } catch (err) {
+      setError(err.response?.data?.message || err.message);
+    } finally {
+      setRefreshing({ ...refreshing, [dataType]: false });
+    }
+  };
+
   // Formater une date ISO en format local
   const formatDate = (isoDate) => {
     if (!isoDate) return 'Jamais';

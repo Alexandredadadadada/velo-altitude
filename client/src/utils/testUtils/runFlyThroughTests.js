@@ -215,15 +215,7 @@ function testAdaptiveInterpolation(colData) {
 function testRenderPerformance(colData) {
   console.log(`Test des performances de rendu pour ${colData.name}...`);
   
-  const colId = Object.keys(simulatedTestData).find(key => 
-    simulatedTestData[key].name === colData.name);
-  
-  if (!colId || !mockPerformanceResults[colId]) {
-    console.warn(`  Données de performance non trouvées pour ${colData.name}`);
-    return null;
-  }
-  
-  const perf = mockPerformanceResults[colId];
+  const perf = mockPerformanceResults[colData.name];
   
   console.log(`  FPS moyen (Desktop): ${perf.fps.desktop}`);
   console.log(`  FPS moyen (Mobile haut de gamme): ${perf.fps.high_end_mobile}`);

@@ -220,7 +220,9 @@ class PerformanceTest {
     // Tester les performances pour chaque niveau de détail
     for (const level of Object.values(DETAIL_LEVELS)) {
       progressive3DLoader.currentDetailLevel = level;
-      const renderParams = progressive3DLoader.getRenderParams();
+      // Remove unused variable 'renderParams'
+      // Refactor: Remove or use this variable to resolve no-unused-vars error
+      // const renderParams = progressive3DLoader.getRenderParams();
       
       this.metrics.visualizationMetrics.frameTimesByDetailLevel[level] = [];
       this.metrics.visualizationMetrics.memoryByDetailLevel[level] = [];

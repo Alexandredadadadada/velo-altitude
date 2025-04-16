@@ -10,6 +10,9 @@ import ProfilePage from './pages/ProfilePage';
 // Environnement de test d'authentification
 import AuthTestApp from './tests/auth-test/AuthTestApp';
 
+// Composant de test du système météorologique
+import WeatherSystemTest from '../src/components/test/WeatherSystemTest';
+
 // Note: Plusieurs imports ont été temporairement commentés pour permettre
 // le démarrage de l'application et tester le système d'authentification
 
@@ -28,29 +31,6 @@ const PrivateRoute = ({ element }) => {
   }
   
   // Si l'utilisateur est connecté, afficher le composant demandé
-  return element;
-};
-
-// Composant privé nécessitant une authentification avec des droits d'administrateur
-const AdminRoute = ({ element }) => {
-  const { user, loading, isAdmin } = useAuth();
-  
-  // Pendant le chargement, montrer un écran de chargement ou rien
-  if (loading) {
-    return <div>Chargement...</div>;
-  }
-  
-  // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
-  if (!user) {
-    return <Navigate to="/login" replace />;
-  }
-  
-  // Si l'utilisateur est connecté mais n'est pas administrateur, rediriger vers la page d'accueil
-  if (!isAdmin()) {
-    return <Navigate to="/" replace />;
-  }
-  
-  // Si l'utilisateur est administrateur, afficher le composant demandé
   return element;
 };
 
@@ -80,6 +60,12 @@ const AppRouter = () => {
         <Route
           path="/auth-test/*"
           element={<AuthTestApp />}
+        />
+        
+        {/* Environnement de test du système météorologique */}
+        <Route
+          path="/weather-test"
+          element={<WeatherSystemTest />}
         />
         
         {/* Redirection en cas de route non trouvée */}

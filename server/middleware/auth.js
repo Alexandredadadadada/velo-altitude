@@ -1,3 +1,5 @@
+console.log('Loading Auth Middleware...');
+
 /**
  * Middleware d'authentification et d'autorisation
  * Fournit des fonctions pour vérifier l'authentification et les rôles utilisateur
