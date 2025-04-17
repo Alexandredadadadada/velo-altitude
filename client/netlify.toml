@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm install -g webpack-cli && chmod +x node_modules/.bin/react-scripts && npm run build:netlify"
   publish = "build"
 
 [build.environment]
