@@ -87,3 +87,22 @@
 - [x] README.md mis à jour
 - [x] PROJECT_STATUS.md mis à jour
 - [x] Notes de version complétées
+
+---
+
+# Déploiement & Passation (v2.1)
+
+## Documentation de déploiement
+- Voir le fichier [DEPLOYMENT_HANDBOOK.md](./DEPLOYMENT_HANDBOOK.md) pour toutes les instructions détaillées, onboarding, troubleshooting, et historique des problèmes.
+- Toutes les variables d’environnement sont déjà configurées sur Render (backend) et Netlify (frontend).
+- Le pipeline GitHub → Render/Netlify fonctionne automatiquement sur chaque push.
+
+## Points d’attention
+- Les principaux problèmes rencontrés concernent Webpack (Netlify) et le port binding (Render).
+- Les solutions et bonnes pratiques sont détaillées dans le handbook.
+
+## Pour toute reprise ou maintenance
+- Suivre le guide [DEPLOYMENT_HANDBOOK.md](./DEPLOYMENT_HANDBOOK.md)
+- En cas de souci, lire attentivement les logs Render/Netlify, vérifier les dépendances et les variables d’environnement.
+
+---

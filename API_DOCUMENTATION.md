@@ -181,3 +181,19 @@ L'application intègre plusieurs outils de surveillance :
 - **Erreurs 401/403** : Vérifier l'authentification et les droits d'accès
 - **Problèmes de cache** : Utiliser l'endpoint `/api/cache/stats` pour diagnostiquer
 - **Lenteurs API** : Consulter les logs de monitoring pour identifier les goulots d'étranglement
+
+---
+
+# Deployment & Handover
+
+See `DEPLOYMENT_HANDBOOK.md` for full deployment, onboarding, and troubleshooting instructions.
+
+## Quick Summary
+- Backend (Render) and Frontend (Netlify) auto-deploy on GitHub push to `main`.
+- All environment variables are set in Render and Netlify dashboards (see handbook for details).
+- Common issues (Webpack, port binding, env vars) are documented in the handbook.
+
+## Useful links
+- [DEPLOYMENT_HANDBOOK.md](./DEPLOYMENT_HANDBOOK.md)
+
+---
