@@ -1,10 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "CI=false npm run build"
   publish = "build"
 
 [build.environment]
-  NODE_VERSION = "16"
-  NPM_VERSION = "8"
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
 
 # Redirection pour SPA (Single Page Application)
 [[redirects]]

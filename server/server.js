@@ -32,7 +32,7 @@ const YAML = require('yamljs');
 
 // Initialisation de l'application Express
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // Options de démarrage du serveur
 const serverOptions = {
@@ -462,7 +462,7 @@ function startServer() {
     
     // Configurer et démarrer le serveur HTTP
     const server = app.listen(PORT, () => {
-      logger.info(`✅ Serveur démarré sur le port ${PORT}`);
+      console.log(`Server running on port ${PORT}`);
       
       if (global.serverState.degradedMode) {
         logger.warn(`⚠️ Le serveur fonctionne en mode dégradé: ${global.serverState.degradedReason}`);
