@@ -222,6 +222,16 @@ class StravaService {
   }
   
   /**
+   * Récupère les activités Strava pour plusieurs plages de dates (batching)
+   * @param {Array} requests [{ accessToken, params }]
+   * @returns {Promise<Array>} Liste des résultats par requête
+   */
+  async getBatchActivities(requests) {
+    const apiManager = require('./api-manager.service');
+    return apiManager.execute('strava', 'fetchBatchActivities', { requests }, { batch: true });
+  }
+  
+  /**
    * Récupère les détails d'une activité spécifique
    * @param {string} accessToken Token d'accès
    * @param {string|number} activityId ID de l'activité
@@ -462,5 +472,11 @@ class StravaService {
     };
   }
 }
+
+// Handler batch côté service
+StravaService.prototype.fetchBatchActivities = async function({ requests }) {
+  // Par défaut, exécute en parallèle limité (optimisation possible)
+  return Promise.all(requests.map(req => this.getActivities(req.accessToken, req.params)));
+};
 
 module.exports = new StravaService();

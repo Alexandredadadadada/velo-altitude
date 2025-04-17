@@ -22,8 +22,7 @@ import {
   useMediaQuery,
   CircularProgress,
   Paper,
-  IconButton,
-  Tooltip
+  IconButton
 } from '@mui/material';
 import {
   Favorite,
@@ -517,7 +516,6 @@ const ColDetail = ({ col }) => {
 const ColsCataloguePage = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('lg'));
   
   const [loading, setLoading] = useState(true);
   const [tabValue, setTabValue] = useState(0);

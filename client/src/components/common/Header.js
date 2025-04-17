@@ -90,7 +90,7 @@ const Header = memo(({ onMenuClick }) => {
   return (
     <AppBar position="static" elevation={2} sx={{ bgcolor: 'background.paper', color: 'text.primary', zIndex: 1201 }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ px: isMobile ? 1 : 3, minHeight: isMobile ? 56 : 64 }}>
           {/* Bouton du menu (mobile) */}
           {isMobile && (
             <IconButton
@@ -120,6 +120,7 @@ const Header = memo(({ onMenuClick }) => {
                 fontSize: isMobile ? '1.1rem' : '1.25rem',
                 color: 'inherit',
                 textDecoration: 'none',
+                lineHeight: 1.1
               }}
             >
               {isMobile ? 'VA' : getBrandName()}

@@ -7,6 +7,7 @@
  */
 
 import React, { ReactNode, useEffect } from 'react';
+import * as JSX from 'react/jsx-runtime';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthCore';
 import LoadingSpinner from '../components/common/LoadingSpinner';

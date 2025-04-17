@@ -89,7 +89,6 @@ const HeroParallax = ({ backgroundImage, title, subtitle, ctaText, ctaLink }) =>
   
   // Parallax effect
   const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
   
   // Fade in animation on mount
   useEffect(() => {
@@ -108,82 +107,84 @@ const HeroParallax = ({ backgroundImage, title, subtitle, ctaText, ctaLink }) =>
   };
   
   return (
-    <HeroContainer ref={containerRef}>
-      <BackgroundImage 
-        style={{ y, backgroundImage: `url(${backgroundImage})` }}
-      />
-      
-      <ContentContainer maxWidth="lg">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={controls}
-        >
-          <Typography 
-            variant="h1" 
-            component="h1" 
-            sx={{ 
-              fontWeight: 700, 
-              mb: 2,
-              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
-              textShadow: '0 2px 10px rgba(0,0,0,0.5)'
-            }}
-          >
-            {title}
-          </Typography>
-          
-          <Typography 
-            variant="h4" 
-            component="p" 
-            sx={{ 
-              mb: 4,
-              maxWidth: '800px',
-              mx: 'auto',
-              fontSize: { xs: '1.2rem', sm: '1.5rem', md: '1.8rem' },
-              textShadow: '0 2px 8px rgba(0,0,0,0.5)'
-            }}
-          >
-            {subtitle}
-          </Typography>
-          
+    <section role="region" aria-label="Hero animation">
+      <HeroContainer ref={containerRef}>
+        <BackgroundImage 
+          style={{ y, backgroundImage: `url(${backgroundImage})` }}
+        />
+        
+        <ContentContainer maxWidth="lg">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={controls}
           >
-            <Button 
-              component={RouterLink} 
-              to={ctaLink}
-              variant="contained" 
-              size="large"
-              endIcon={<ExploreIcon />}
+            <Typography 
+              variant="h1" 
+              component="h1" 
               sx={{ 
-                py: 1.5, 
-                px: 4,
-                fontSize: '1.1rem',
-                background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-                boxShadow: '0 6px 20px rgba(33,150,243,0.3)',
-                '&:hover': {
-                  background: 'linear-gradient(45deg, #1976D2 30%, #00B8D4 90%)',
-                  boxShadow: '0 8px 20px rgba(33,150,243,0.4)',
-                }
+                fontWeight: 700, 
+                mb: 2,
+                fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem' },
+                textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}
             >
-              {ctaText}
-            </Button>
+              {title}
+            </Typography>
+            
+            <Typography 
+              variant="h4" 
+              component="p" 
+              sx={{ 
+                mb: 4,
+                maxWidth: '800px',
+                mx: 'auto',
+                fontSize: { xs: '1.2rem', sm: '1.5rem', md: '1.8rem' },
+                textShadow: '0 2px 8px rgba(0,0,0,0.5)'
+              }}
+            >
+              {subtitle}
+            </Typography>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button 
+                component={RouterLink} 
+                to={ctaLink}
+                variant="contained" 
+                size="large"
+                endIcon={<ExploreIcon />}
+                sx={{ 
+                  py: 1.5, 
+                  px: 4,
+                  fontSize: '1.1rem',
+                  background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+                  boxShadow: '0 6px 20px rgba(33,150,243,0.3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #1976D2 30%, #00B8D4 90%)',
+                    boxShadow: '0 8px 20px rgba(33,150,243,0.4)',
+                  }
+                }}
+              >
+                {ctaText}
+              </Button>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </ContentContainer>
-      
-      <ScrollIndicator
-        onClick={handleScrollDown}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-      >
-        <ScrollIcon />
-        <Typography variant="caption" sx={{ fontWeight: 'medium' }}>
-          Découvrir
-        </Typography>
-      </ScrollIndicator>
-    </HeroContainer>
+        </ContentContainer>
+        
+        <ScrollIndicator
+          onClick={handleScrollDown}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          <ScrollIcon />
+          <Typography variant="caption" sx={{ fontWeight: 'medium' }}>
+            Découvrir
+          </Typography>
+        </ScrollIndicator>
+      </HeroContainer>
+    </section>
   );
 };
 

@@ -4,7 +4,6 @@
  * selon les capacités de l'appareil et la distance à la caméra
  */
 
-import * as THREE from 'three';
 import deviceCapabilityDetector from './deviceCapabilityDetector';
 import threeDConfigManager from './threeDConfigManager';
 
@@ -166,11 +165,8 @@ class AdaptiveLODManager {
     // Mettre à jour le moniteur FPS
     this.fpsMonitor.update();
     
-    // Récupérer la configuration 3D actuelle
-    const config = this.configManager.getConfig();
-    
     // Ajuster les modèles visibles en fonction de la distance et des FPS
-    for (const [modelId, modelInfo] of this.models.entries()) {
+    for (const [, modelInfo] of this.models.entries()) {
       if (modelInfo.visible) {
         // Obtenir le modèle du niveau actuel
         const model = modelInfo.levels[modelInfo.currentLevel];
@@ -184,7 +180,7 @@ class AdaptiveLODManager {
         const newLevel = this._determineLODLevel(distance);
         if (newLevel !== modelInfo.currentLevel && modelInfo.loaded[newLevel]) {
           if (this.debug) {
-            console.log(`Update: Model ${modelId} LOD changed: ${modelInfo.currentLevel} -> ${newLevel} (distance: ${Math.round(distance)}, FPS: ${this.currentFps})`);
+            console.log(`Update: Model LOD changed: ${modelInfo.currentLevel} -> ${newLevel} (distance: ${Math.round(distance)}, FPS: ${this.currentFps})`);
           }
           modelInfo.currentLevel = newLevel;
         }
@@ -212,7 +208,7 @@ class AdaptiveLODManager {
     // Si désactivé, revenir au niveau initial pour tous les modèles
     if (!enabled) {
       const initialLevel = this._getInitialLODLevel();
-      for (const [modelId, modelInfo] of this.models.entries()) {
+      for (const [, modelInfo] of this.models.entries()) {
         modelInfo.currentLevel = initialLevel;
       }
     }
@@ -228,7 +224,7 @@ class AdaptiveLODManager {
       return;
     }
     
-    for (const [modelId, modelInfo] of this.models.entries()) {
+    for (const [, modelInfo] of this.models.entries()) {
       if (modelInfo.loaded[level]) {
         modelInfo.currentLevel = level;
       }
@@ -265,8 +261,7 @@ class AdaptiveLODManager {
    */
   _getInitialLODLevel() {
     // Utiliser la configuration du gestionnaire 3D si disponible
-    const config = this.configManager.getConfig();
-    const quality = config.cyclistDetail || 'medium';
+    const quality = this.configManager.getConfig().cyclistDetail || 'medium';
     
     // Mapper la qualité du cycliste au niveau LOD
     const qualityToLOD = {
@@ -380,10 +375,10 @@ class AdaptiveLODManager {
   _updatePreloading() {
     // Si les performances sont bonnes, précharger d'autres niveaux
     if (this.currentFps > this.thresholds.high.fps) {
-      for (const [modelId, modelInfo] of this.models.entries()) {
+      for (const [, modelInfo] of this.models.entries()) {
         // Précharger le niveau élevé pour les modèles les plus proches
         if (modelInfo.distance < this.thresholds.high.distance * 2 && !modelInfo.loaded.high) {
-          this._loadModelLevel(modelId, 'high');
+          this._loadModelLevel(modelInfo.levels.high, 'high');
         }
       }
     }

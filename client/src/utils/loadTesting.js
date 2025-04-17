@@ -33,12 +33,10 @@ function generateK6Script(scenario = TEST_SCENARIOS.MEDIUM, customConfig = {}) {
   const config = { ...DEFAULT_CONFIG, ...customConfig };
   
   // Paramètres spécifiques au scénario
-  let users, duration, stages;
+  let stages;
   
   switch(scenario) {
     case TEST_SCENARIOS.LIGHT:
-      users = 100;
-      duration = 300;
       stages = [
         { duration: '1m', target: 50 },
         { duration: '2m', target: 100 },
@@ -46,8 +44,6 @@ function generateK6Script(scenario = TEST_SCENARIOS.MEDIUM, customConfig = {}) {
       ];
       break;
     case TEST_SCENARIOS.MEDIUM:
-      users = 500;
-      duration = 600;
       stages = [
         { duration: '2m', target: 200 },
         { duration: '3m', target: 500 },
@@ -55,8 +51,6 @@ function generateK6Script(scenario = TEST_SCENARIOS.MEDIUM, customConfig = {}) {
       ];
       break;
     case TEST_SCENARIOS.HEAVY:
-      users = 1000;
-      duration = 900;
       stages = [
         { duration: '3m', target: 400 },
         { duration: '5m', target: 1000 },
@@ -64,8 +58,6 @@ function generateK6Script(scenario = TEST_SCENARIOS.MEDIUM, customConfig = {}) {
       ];
       break;
     case TEST_SCENARIOS.SPIKE:
-      users = 2000;
-      duration = 600;
       stages = [
         { duration: '1m', target: 500 },
         { duration: '1m', target: 2000 },
@@ -74,8 +66,6 @@ function generateK6Script(scenario = TEST_SCENARIOS.MEDIUM, customConfig = {}) {
       ];
       break;
     case TEST_SCENARIOS.ENDURANCE:
-      users = 300;
-      duration = 14400; // 4 heures
       stages = [
         { duration: '10m', target: 300 },
         { duration: '230m', target: 300 },
@@ -299,7 +289,9 @@ function generateCapacityPlan({ peakUsers = 1000,
   // Calculer les besoins en instances de serveur (exemple)
   const frontendInstances = Math.ceil(peakUsers / 300);
   const backendInstances = Math.ceil(peakRPS / 100);
-  const dbConnections = backendInstances * 20;
+  
+  // Remove unused variables 'users', 'duration', 'dbConnections'
+  // Refactor: Remove or use these variables to resolve no-unused-vars errors
   
   return {
     current: {

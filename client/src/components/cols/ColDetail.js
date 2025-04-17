@@ -23,6 +23,7 @@ import ColService from '../../services/colService';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import ColWeatherForecast from './ColWeatherForecast';
+import GPXExport from './GPXExport';
 
 // Composant d'information et visualisation de cols cyclistes
 const ColDetail = ({ colId }) => {
@@ -469,6 +470,10 @@ const ColDetail = ({ colId }) => {
           >
             Ajouter à mon itinéraire
           </Button>
+        </Box>
+        {/* Export GPX button */}
+        <Box mt={2}>
+          <GPXExport col={col} />
         </Box>
       </CardContent>
     </Card>

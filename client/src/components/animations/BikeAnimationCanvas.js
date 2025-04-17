@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 /**
  * Composant d'animation de vélo utilisant Canvas
@@ -7,7 +6,7 @@ import PropTypes from 'prop-types';
  */
 const BikeAnimationCanvas = ({ width = 300, height = 200, color = '#1976d2', speed = 1 }) => {
   const canvasRef = useRef(null);
-  let animationFrameId;
+  const animationFrameIdRef = useRef(null);
 
   // Fonction pour dessiner un vélo stylisé
   const drawBike = (ctx, x, y, frameCount) => {
@@ -138,28 +137,30 @@ const BikeAnimationCanvas = ({ width = 300, height = 200, color = '#1976d2', spe
       drawBike(context, bikeX, canvas.height / 2, frameCount);
       
       // Continuer l'animation
-      animationFrameId = window.requestAnimationFrame(render);
+      animationFrameIdRef.current = window.requestAnimationFrame(render);
     };
     
     render();
     
     // Nettoyage lors du démontage du composant
     return () => {
-      window.cancelAnimationFrame(animationFrameId);
+      window.cancelAnimationFrame(animationFrameIdRef.current);
     };
   }, [color, speed]);
 
   return (
-    <canvas 
-      ref={canvasRef} 
-      width={width} 
-      height={height}
-      style={{ 
-        display: 'block', 
-        margin: '0 auto',
-        maxWidth: '100%'
-      }}
-    />
+    <section role="region" aria-label="Bike animation">
+      <canvas 
+        ref={canvasRef} 
+        width={width} 
+        height={height}
+        style={{ 
+          display: 'block', 
+          margin: '0 auto',
+          maxWidth: '100%'
+        }}
+      />
+    </section>
   );
 };
 

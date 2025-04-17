@@ -145,8 +145,6 @@ class ErrorService {
     Object.values(this.SEVERITY_LEVELS).forEach(severity => {
       this.errorStats.bySeverity[severity] = 0;
     });
-    
-    logger.info('Service de gestion des erreurs initialisé');
   }
 
   /**
@@ -767,6 +765,5 @@ class ErrorService {
   }
 }
 
-// Exporter une instance singleton
-const errorService = new ErrorService();
-module.exports = errorService;
+// Exporter une instance unique
+module.exports = new ErrorService();

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-04-14T07:06:29.326Z",
+  "bundleStats": null,
+  "dependencyStats": {
+    "totalDependencies": 111,
+    "devDependencies": 35,
+    "dependencies": 84,
+    "issues": []
+  },
+  "performanceStats": {
+    "FCP": 2500,
+    "TTI": 5000,
+    "TBT": 800,
+    "loadTime": 4000,
+    "score": 70,
+    "meetsFcpTarget": false,
+    "meetsTtiTarget": false,
+    "meetsLoadTimeTarget": false
+  },
+  "overallStatus": "warning",
+  "issues": [
+    {
+      "severity": "warning",
+      "category": "performance",
+      "message": "Les métriques suivantes ne respectent pas les objectifs: FCP, TTI, LoadTime"
+    }
+  ]
+}

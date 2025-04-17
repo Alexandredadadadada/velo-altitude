@@ -1,0 +1,27 @@
+[
+  {
+    "id": "event-001",
+    "slug": "montee-collective-col-loze-2025",
+    "name": "Montée Collective du Col de la Loze 2025",
+    "date": "2025-07-19",
+    "location": "Col de la Loze, Méribel/Courchevel (Savoie, France)",
+    "description": "Participez à la montée collective annuelle du Col de la Loze ! Ouvert à tous niveaux, ambiance conviviale, ravitaillement au sommet. Chronométrage optionnel.",
+    "program": [
+      {"heure": "08:00", "etape": "Accueil et retrait des dossards à Méribel"},
+      {"heure": "09:00", "etape": "Départ groupé"},
+      {"heure": "11:00", "etape": "Ravitaillement et animations au sommet"},
+      {"heure": "12:00", "etape": "Redescente libre vers Méribel ou Courchevel"}
+    ],
+    "registration": {
+      "required": true,
+      "url": "https://velo-altitude.com/events/montee-collective-loze-2025"
+    },
+    "images": [
+      "/images/events/loze-2025/affiche.jpg",
+      "/images/events/loze-2025/ambiance.jpg"
+    ],
+    "contact": "events@velo-altitude.com",
+    "status": "active",
+    "last_updated": "2025-04-16T15:28:52.000Z"
+  }
+]

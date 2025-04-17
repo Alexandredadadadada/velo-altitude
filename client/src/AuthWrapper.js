@@ -30,7 +30,7 @@ createMockAuth();
 const originalCreateElement = React.createElement;
 React.createElement = function(type, props, ...children) {
   // Si un composant tente d'utiliser useAuth et échoue, fournir le contexte mock
-  if (props && props.hasOwnProperty('useAuth')) {
+  if (props && Object.prototype.hasOwnProperty.call(props, 'useAuth')) {
     try {
       return originalCreateElement(type, {
         ...props,

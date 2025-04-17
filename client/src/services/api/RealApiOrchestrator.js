@@ -111,12 +111,8 @@ class RealApiOrchestrator {
    * @returns {Promise<Object>} Profil utilisateur
    */
   async getUserProfile(userId) {
-    try {
-      const data = await api.get(`/users/${userId}/profile`);
-      return data;
-    } catch (error) {
-      return handleError(error, 'getUserProfile');
-    }
+    // Suppression du try/catch inutile (no-useless-catch)
+    return api.get(`/users/${userId}/profile`).catch(error => handleError(error, 'getUserProfile'));
   }
 
   /**
@@ -126,12 +122,8 @@ class RealApiOrchestrator {
    * @returns {Promise<Object>} Profil mis à jour
    */
   async updateUserProfile(userId, data) {
-    try {
-      const result = await api.patch(`/users/${userId}/profile`, data);
-      return result;
-    } catch (error) {
-      return handleError(error, 'updateUserProfile');
-    }
+    return api.patch(`/users/${userId}/profile`, data)
+      .catch(error => handleError(error, 'updateUserProfile'));
   }
 
   /**

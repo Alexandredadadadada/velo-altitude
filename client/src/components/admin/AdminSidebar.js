@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Box,
   List,
@@ -28,7 +28,6 @@ import {
  */
 const AdminSidebar = ({ activeItem }) => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   // Liste des éléments de navigation admin
   const adminNavItems = [

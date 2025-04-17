@@ -393,7 +393,7 @@ class TerrainLoader {
       const toRemove = Math.max(1, Math.floor(this.options.maxCacheSize * 0.1));
       for (let i = 0; i < toRemove; i++) {
         if (sorted[i]) {
-          const [key, value] = sorted[i];
+          const [, value] = sorted[i];
           // Nettoyer les ressources WebGL
           if (value.data && value.data.geometry) {
             value.data.geometry.dispose();
@@ -401,7 +401,7 @@ class TerrainLoader {
           if (value.data && value.data.material) {
             value.data.material.dispose();
           }
-          this.tileCache.delete(key);
+          this.tileCache.delete(sorted[i][0]);
         }
       }
     }
@@ -443,10 +443,10 @@ class TerrainLoader {
     });
     
     // Annuler les chargements pour les tuiles non visibles
-    this.abortControllers.forEach((controller, tileId) => {
-      if (!visibleTileIds.has(tileId)) {
+    this.abortControllers.forEach((controller, id) => {
+      if (!visibleTileIds.has(id)) {
         controller.abort();
-        this.abortControllers.delete(tileId);
+        this.abortControllers.delete(id);
       }
     });
     

@@ -3,8 +3,9 @@
  * et données dans l'application Dashboard-Velo
  */
 
-import React, { lazy, Suspense } from 'react';
-import { LinearProgress, Skeleton, Box, Typography, Paper } from '@mui/material';
+import React from 'react';
+import { lazy, Suspense } from 'react';
+import { LinearProgress, Skeleton, Box, Typography, Paper, Grid, Button } from '@mui/material';
 import { DirectionsBike } from '@mui/icons-material';
 
 /**
@@ -194,7 +195,7 @@ export const withLazyData = (Component, dataFetcher) => {
       return () => {
         isMounted = false;
       };
-    }, [props.id]); // Rechargement quand l'ID change
+    }, [props, dataFetcher]); // Rechargement quand l'ID change
     
     if (loading) {
       return (
@@ -263,14 +264,16 @@ export const useLazyData = (fetchFunction, dependencies = []) => {
     return () => {
       isMounted = false;
     };
-  }, dependencies);
+  }, [fetchFunction, ...dependencies]);
   
   return { data, loading, error, refresh: () => setLoading(true) };
 };
 
-export default {
+const helper = {
   lazyLoad,
   LoadingFallback,
   withLazyData,
   useLazyData
 };
+
+export default helper;

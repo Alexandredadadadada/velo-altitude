@@ -1,0 +1,32 @@
+{
+  "audit": [
+    {
+      "package": "bin-build",
+      "severity": "critical",
+      "description": "Inherits vulnerabilities from decompress, download, url-regex. No direct fix available, indirect dependency.",
+      "status": "unresolved",
+      "justification": "Used only in dev pipeline, not exposed in production. Monitoring for upstream fix.",
+      "owner": "dev-team",
+      "reviewedOn": "2025-04-17"
+    },
+    {
+      "package": "vinyl-fs",
+      "severity": "moderate",
+      "description": "Vulnerable via glob-stream and braces, indirect dev dependency.",
+      "status": "unresolved",
+      "justification": "Dev-only tool, not exposed to users. Scheduled for removal in next major refactor.",
+      "owner": "dev-team",
+      "reviewedOn": "2025-04-17"
+    },
+    {
+      "package": "tunnel-agent",
+      "severity": "critical",
+      "description": "Memory Exposure vulnerability, indirect dependency.",
+      "status": "unresolved",
+      "justification": "No fix available, not used in production runtime.",
+      "owner": "dev-team",
+      "reviewedOn": "2025-04-17"
+    }
+  ],
+  "notes": "All direct dependencies are updated. Remaining issues are in indirect dependencies or dev-only tools. See npm audit logs for full details."
+}

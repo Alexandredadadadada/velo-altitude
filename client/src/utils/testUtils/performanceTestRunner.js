@@ -272,11 +272,13 @@ export async function runAllPerformanceTests() {
   return report;
 }
 
-// Export de l'API de test
-export default {
+// Assign object to a variable before exporting as module default
+const performanceTestRunner = {
   runApiPerformanceTests,
   run3DRenderTests,
   generatePerformanceReport,
   exportTestResults,
   runAllPerformanceTests
 };
+
+export default performanceTestRunner;

@@ -929,8 +929,8 @@ export async function runAllVisual3DTests() {
   return report;
 }
 
-// Export de l'API de test
-export default {
+// Assign object to a variable before exporting as module default
+const visual3DTestRunner = {
   runQualityAdaptationTests,
   runPerformanceByQualityTests,
   runAdaptiveLoadingTests,
@@ -940,3 +940,5 @@ export default {
   exportTestResults,
   runAllVisual3DTests
 };
+
+export default visual3DTestRunner;

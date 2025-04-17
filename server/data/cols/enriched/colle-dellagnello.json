@@ -49,5 +49,19 @@
   "related_cols": [],
   "status": "active",
   "completeness": 50,
-  "last_updated": "2025-04-05T20:42:26.893Z"
+  "last_updated": "2025-04-05T20:42:26.893Z",
+  "length_km": 0,
+  "avg_gradient": 0,
+  "max_elevation": 2744,
+  "weather_patterns": "Variable, risque d'orage en été, neige possible hors saison.",
+  "records": {
+    "pro": {
+      "name": "N/A",
+      "time": "--:--"
+    },
+    "amateur": {
+      "name": "N/A",
+      "time": "--:--"
+    }
+  }
 }

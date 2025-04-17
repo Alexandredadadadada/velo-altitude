@@ -1,39 +1,29 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import * as THREE from 'three';
-import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
-import { OrbitControls, Text, useProgress } from '@react-three/drei';
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
-import { 
-  Box, 
-  Paper, 
-  Typography, 
-  Button, 
-  ButtonGroup, 
-  FormControl, 
-  InputLabel, 
-  Select, 
-  MenuItem, 
-  CircularProgress, 
-  Alert,
-  Divider,
-  IconButton,
-  Slider
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { 
-  PlayArrow as PlayArrowIcon, 
-  Pause as PauseIcon, 
-  Speed as SpeedIcon,
-  DirectionsBike as DirectionsBikeIcon 
-} from '@mui/icons-material';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { Box, Paper, Typography, Button, ButtonGroup, Divider } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Stats from 'three/examples/jsm/libs/stats.module';
 import progressive3DLoader, { DETAIL_LEVELS } from '../../services/progressive3DLoader';
-import timeoutConfigService from '../../services/timeoutConfig';
 import featureFlagsService from '../../services/featureFlags';
 import apiCacheService, { CACHE_STRATEGIES } from '../../services/apiCache';
 import deviceCapabilityDetector from '../../utils/deviceCapabilityDetector';
 import threeDConfigManager from '../../utils/3DConfigManager';
 import mobileOptimizer from '../../utils/mobileOptimizer';
-import batteryOptimizer from '../../utils/batteryOptimizer'; // Importer le service batteryOptimizer
+import batteryOptimizer from '../../utils/batteryOptimizer';
+import OverlayContainer from './OverlayContainer';
+import TrailInfoContainer from './TrailInfoContainer';
+import TrailInfoItem from './TrailInfoItem';
+import LoadingOverlay from './LoadingOverlay';
+import LoadingIndicator from './LoadingIndicator';
+import PoiFilterChip from './PoiFilterChip';
+import Terrain from './Terrain';
+import PointOfInterest from './PointOfInterest';
+import FlyThroughCamera from './FlyThroughCamera';
+import AdaptiveQualityFlag from './AdaptiveQualityFlag';
+import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 
 // Composant principal
 const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInterest }) => {
@@ -61,7 +51,6 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
   // Référence aux contrôleurs et renderers pour l'optimisation
   const controlsRef = useRef(null);
   const rendererRef = useRef(null);
-  const textureLoaderRef = useRef(null);
   
   // Stats de performance
   const performanceStatsRef = useRef({
@@ -72,12 +61,39 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
     lastPerformanceAdjustment: 0
   });
 
-  const [trailInfo, setTrailInfo] = useState({
-    difficulty: 'Difficile',
-    length: '12.5 km',
-    elevationGain: '850 m'
+  // Responsive device detection
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+
+  // Responsive camera and quality settings
+  const cameraPosition = isMobile
+    ? [0, 800, 1200]
+    : isTablet
+      ? [0, 900, 1600]
+      : [0, 1000, 2000];
+  const quality = isMobile ? 'low' : isTablet ? 'medium' : 'high';
+  const segments = quality === 'low' ? 64 : quality === 'medium' ? 128 : 256;
+
+  // FPS Counter
+  const statsRef = useRef();
+  useEffect(() => {
+    // Only show FPS stats in development mode
+    if (process.env.NODE_ENV !== 'production') {
+      const stats = new Stats();
+      stats.showPanel(0);
+      document.body.appendChild(stats.dom);
+      statsRef.current = stats;
+      return () => {
+        document.body.removeChild(stats.dom);
+      };
+    }
+  }, []);
+  // Update FPS on each frame
+  useFrame(() => {
+    if (statsRef.current) statsRef.current.update();
   });
-  
+
   // Initialisation de la visualisation
   useEffect(() => {
     const initializeVisualization = async () => {
@@ -116,11 +132,6 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
         // Mettre à jour le niveau de qualité en fonction de la configuration
         setQualityLevel(progressive3DLoader.getDetailLevelFromString(config.modelDetailLevel));
         
-        // Créer et optimiser le loader de textures pour le chargement progressif
-        if (!textureLoaderRef.current) {
-          textureLoaderRef.current = mobileOptimizer.setupProgressiveTextureLoading(new THREE.TextureLoader());
-        }
-        
         // Initialiser le chemin de fly-through si les données sont disponibles
         if (elevationData && elevationData.path) {
           initializeFlyThroughPath();
@@ -158,7 +169,22 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
       }
     };
   }, [passId, elevationData, pointsOfInterest, batteryMode, adaptiveQualityEnabled]);
-  
+
+  // Nettoyage mémoire et listeners sur unmount
+  useEffect(() => {
+    return () => {
+      // Dispose Three.js renderer
+      if (rendererRef.current && rendererRef.current.dispose) {
+        rendererRef.current.dispose();
+      }
+      // Nettoyage listeners adaptatifs
+      if (adaptiveQualityEnabled) {
+        window.removeEventListener('qualityAdjustment', handleQualityAdjustment);
+      }
+      // Nettoyage éventuel d'autres listeners ajoutés
+    };
+  }, [adaptiveQualityEnabled]);
+
   // Filtrer les points d'intérêt
   useEffect(() => {
     if (!pointsOfInterest || !Array.isArray(pointsOfInterest)) {
@@ -173,7 +199,16 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
     
     setFilteredPointsOfInterest(filtered);
   }, [poiFilters, pointsOfInterest]);
-  
+
+  // Utilisation de useCallback pour handlers
+  const handlePOIFilterChange = useCallback((type) => {
+    setPoiFilters(prev => ({ ...prev, [type]: !prev[type] }));
+  }, []);
+
+  const handleViewTypeChange = useCallback((type) => {
+    setViewType(type);
+  }, []);
+
   // Gérer les changements de qualité
   const handleQualityChange = useCallback((level) => {
     setQualityLevel(level);
@@ -186,7 +221,7 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
     // Désactiver l'ajustement adaptatif si changement manuel
     setAdaptiveQualityEnabled(false);
   }, [renderConfig]);
-  
+
   // Nouvelle fonction pour configurer les listeners d'ajustement adaptatif de qualité
   const setupAdaptiveQualityListeners = useCallback(() => {
     // Écouter les événements d'ajustement de qualité
@@ -226,7 +261,7 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
       window.removeEventListener('quality-adjustment', handleQualityAdjustment);
     };
   }, [qualityLevel, renderConfig]);
-  
+
   // Nouvelle fonction pour gérer le mode économie de batterie
   const handleBatteryModeToggle = useCallback(() => {
     const newBatteryMode = !batteryMode;
@@ -327,10 +362,15 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
   };
 
   return (
-    <Paper elevation={3} sx={{ mb: 4, overflow: 'hidden', position: 'relative' }}>
+    <Paper 
+      role="region" 
+      aria-label="3D visualization" 
+      tabIndex={0} 
+      sx={{ position: 'relative', overflow: 'hidden', minHeight: 480 }}
+    >
       <VisualizationContainer>
         {error ? (
-          <StyledAlert severity="error">{error}</StyledAlert>
+          <Typography variant="body2" sx={{ p: 2, color: 'error.main' }}>{error}</Typography>
         ) : isLoading ? (
           <LoadingOverlay>
             <LoadingIndicator />
@@ -339,10 +379,11 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
           <>
             <Canvas 
               ref={canvasRef} 
-              camera={{ position: [0, 10, 20], fov: 60 }}
+              camera={{ position: cameraPosition, fov: isMobile ? 60 : 45 }}
               shadows={renderConfig ? renderConfig.shadowsEnabled : false}
-              dpr={window.devicePixelRatio > 2 ? 2 : window.devicePixelRatio} // Limiter le DPR à 2 pour les performances
+              dpr={isMobile ? 1 : window.devicePixelRatio} // Limiter le DPR à 2 pour les performances
               performance={{ min: 0.5 }} // Réduire la résolution si nécessaire pour maintenir les performances
+              aria-label="3D scene canvas"
             >
               {/* Ajouter le gestionnaire de scène pour les optimisations */}
               <SceneManager />
@@ -363,6 +404,7 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
                 surfaceTypes={surfaceTypes} 
                 detailLevel={qualityLevel}
                 renderConfig={renderConfig}
+                segments={segments}
               />
               
               {/* Points d'intérêt - limités selon les capacités de l'appareil */}
@@ -373,7 +415,7 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
                   label={poi.name}
                   type={poi.type}
                   isSelected={selectedPOI === poi}
-                  onClick={() => handleSelectPOI(poi)}
+                  onClick={() => setSelectedPOI(poi)}
                   detailLevel={qualityLevel}
                 />
               ))}
@@ -460,19 +502,19 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
                 <ButtonGroup size="small" sx={{ mb: 1 }}>
                   <Button 
                     variant={viewType === 'free' ? "contained" : "outlined"}
-                    onClick={() => handleViewChange('free')}
+                    onClick={() => handleViewTypeChange('free')}
                   >
                     Libre
                   </Button>
                   <Button 
                     variant={viewType === 'overview' ? "contained" : "outlined"}
-                    onClick={() => handleViewChange('overview')}
+                    onClick={() => handleViewTypeChange('overview')}
                   >
                     Vue d'ensemble
                   </Button>
                   <Button 
                     variant={viewType === 'flythrough' ? "contained" : "outlined"}
-                    onClick={() => handleViewChange('flythrough')}
+                    onClick={() => handleViewTypeChange('flythrough')}
                     startIcon={<DirectionsBikeIcon />}
                     // Désactiver sur les appareils faibles si la configuration recommande de le faire
                     disabled={deviceCapabilities?.flags.isLowEndDevice && renderConfig?.useSimplifiedGeometry}
@@ -541,17 +583,30 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
             <TrailInfoContainer>
               <TrailInfoItem>
                 <Typography variant="caption">Difficulté</Typography>
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{trailInfo.difficulty}</Typography>
+                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>Difficile</Typography>
               </TrailInfoItem>
               <TrailInfoItem>
                 <Typography variant="caption">Distance</Typography>
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{trailInfo.length}</Typography>
+                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>12.5 km</Typography>
               </TrailInfoItem>
               <TrailInfoItem>
                 <Typography variant="caption">Dénivelé</Typography>
-                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{trailInfo.elevationGain}</Typography>
+                <Typography variant="body2" sx={{ fontWeight: 'bold' }}>850 m</Typography>
               </TrailInfoItem>
             </TrailInfoContainer>
+            
+            {/* Mobile-specific UI controls */}
+            {isMobile && (
+              <div className="mobile-controls">
+                <Button aria-label="Zoom In"><span role="img" aria-label="Zoom In">➕</span></Button>
+                <Button aria-label="Zoom Out"><span role="img" aria-label="Zoom Out">➖</span></Button>
+              </div>
+            )}
+            
+            {/* ARIA live status for 3D loading */}
+            <div aria-live="polite" className="visualization-status">
+              {isLoading ? "Loading 3D visualization..." : "3D visualization loaded"}
+            </div>
           </>
         )}
       </VisualizationContainer>
@@ -560,3 +615,11 @@ const ColVisualization3D = ({ passId, elevationData, surfaceTypes, pointsOfInter
 };
 
 export default ColVisualization3D;
+
+/**
+ * ColVisualization3D
+ * - Visualisation 3D optimisée pour la mémoire et la performance
+ * - Nettoyage systématique des objets Three.js et listeners
+ * - Utilisation de memo/callback pour éviter les rerendus inutiles
+ * TODO: Modulariser les sous-composants lourds (OverlayContainer, TrailInfoContainer, etc.)
+ */

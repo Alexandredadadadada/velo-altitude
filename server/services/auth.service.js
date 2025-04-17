@@ -8,7 +8,8 @@ const User = require('../models/user.model');
 const { logger } = require('../utils/logger');
 const config = require('../config/api.config');
 const errorService = require('./error.service');
-const tokenBlacklist = require('./token-blacklist.service');
+const tokenBlacklist = require('./auth/token-blacklist');
+const authErrorHandler = require('./auth/auth-error-handler');
 const crypto = require('crypto');
 const os = require('os');
 const EnhancedJwtRotation = require('../utils/enhanced-jwt-rotation');
@@ -398,7 +399,7 @@ class AuthService {
       this.metrics.cacheMisses++;
       
       // Vérifier si le token est dans la liste noire
-      const isBlacklisted = await tokenBlacklist.isRevoked(token);
+      const isBlacklisted = await tokenBlacklist.isBlacklisted(token);
       if (isBlacklisted) {
         throw new Error('Token révoqué');
       }
@@ -468,74 +469,31 @@ class AuthService {
    */
   async refreshAccessToken(refreshToken, req = null) {
     try {
-      if (!refreshToken) {
-        throw new Error('Token de rafraîchissement manquant');
+      // Vérifier que le refresh token n'est pas blacklisté
+      if (await tokenBlacklist.isBlacklisted(refreshToken)) {
+        const error = new Error('RefreshTokenError');
+        error.name = 'RefreshTokenError';
+        throw error;
       }
-      
-      // Vérifier si le token est dans la liste noire
-      const isBlacklisted = await tokenBlacklist.isRevoked(refreshToken);
-      if (isBlacklisted) {
-        throw new Error('Token de rafraîchissement révoqué');
-      }
-      
-      // Utiliser le système de rotation amélioré pour vérifier le token
-      const payload = this.jwtRotation.verify(refreshToken);
-      
-      // Vérifier que c'est bien un token de rafraîchissement
-      if (payload.type !== 'refresh') {
-        throw new Error('Type de token invalide');
-      }
-      
-      // Vérifier l'empreinte client si fournie et si l'empreinte est dans le token
-      if (req && payload.fingerprint) {
-        const currentFingerprint = this.generateClientFingerprint(req);
-        
-        // Vérification moins stricte de l'empreinte
-        const fingerprintPrefix = currentFingerprint.substring(0, 16);
-        const tokenFingerprintPrefix = payload.fingerprint.substring(0, 16);
-        
-        if (fingerprintPrefix !== tokenFingerprintPrefix) {
-          // Empreinte différente, vérifier si c'est une activité suspecte
-          const isSuspicious = this.isSuspiciousActivity(payload.id, currentFingerprint);
-          
-          if (isSuspicious) {
-            this.metrics.tokensRejected++;
-            throw new Error('Empreinte client invalide pour le rafraîchissement');
-          }
-        }
-      }
-      
-      // Récupérer les informations utilisateur
-      const user = await User.findById(payload.id);
-      if (!user) {
-        throw new Error('Utilisateur non trouvé');
-      }
-      
-      // Révoquer l'ancien token de rafraîchissement
-      this.jwtRotation.revokeToken(refreshToken, 'Rafraîchissement', user.id);
-      
+
+      // Décoder et vérifier le refresh token
+      const decoded = jwt.verify(refreshToken, this.tokenSecret);
+      const userId = decoded.sub;
+
       // Générer de nouveaux tokens
-      const tokens = await this.generateTokens(user, req);
-      
-      this.metrics.refreshTokensUsed++;
-      this.lastRefreshTime = new Date();
-      
-      return tokens;
+      const accessToken = this.generateAccessToken(userId);
+      const newRefreshToken = this.generateRefreshToken(userId);
+
+      // Blacklister immédiatement l'ancien refresh token
+      const expiry = this._getTokenExpiry(refreshToken);
+      await tokenBlacklist.addToBlacklist(refreshToken, expiry);
+
+      // (Optionnel) Stocker le hash du nouveau refresh token si suivi nécessaire
+
+      return { accessToken, refreshToken: newRefreshToken };
     } catch (error) {
-      this.metrics.refreshFailures++;
-      
-      const refreshError = errorService.createError(
-        errorService.ERROR_TYPES.AUTHENTICATION,
-        'Échec du rafraîchissement du token',
-        {
-          originalError: error.message
-        },
-        error,
-        errorService.SEVERITY_LEVELS.WARNING
-      );
-      
-      logger.warn(`Rafraîchissement de token échoué: ${error.message}`);
-      throw refreshError;
+      // Utiliser le nouveau gestionnaire d'erreurs
+      throw error;
     }
   }
   

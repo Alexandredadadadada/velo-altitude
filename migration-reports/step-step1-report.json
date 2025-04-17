@@ -1,0 +1,27 @@
+{
+  "step": "Mise à jour MUI",
+  "description": "Migration de Material-UI v4 vers MUI v5",
+  "completedAt": "2025-04-16T06:14:02.443Z",
+  "tasks": [
+    {
+      "name": "Analyse des dépendances",
+      "command": "npm run verify:deps"
+    },
+    {
+      "name": "Préparation de la migration MUI",
+      "command": "npm run migrate:mui"
+    },
+    {
+      "name": "Désinstallation de Material-UI v4",
+      "command": "npm uninstall @material-ui/core @material-ui/icons @material-ui/lab @material-ui/styles"
+    },
+    {
+      "name": "Installation de MUI v5",
+      "command": "npm install @mui/material @mui/icons-material @mui/lab @mui/styles @emotion/react @emotion/styled"
+    },
+    {
+      "name": "Vérification après migration",
+      "command": "npm run verify:deps"
+    }
+  ]
+}

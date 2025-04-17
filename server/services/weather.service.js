@@ -455,6 +455,21 @@ class WeatherService {
   }
 
   /**
+   * Récupère les données météo pour plusieurs points en une seule fois (optimisé avec batching)
+   * @param {Array} points Liste de points [{lat, lon, ...}]
+   * @param {string} dataType Type de données (current, forecast, etc.)
+   * @param {Object} options Options supplémentaires
+   * @returns {Promise<Array>} Données météo pour chaque point
+   */
+  async getBatchWeather(points, dataType = 'current', options = {}) {
+    // Regrouper les requêtes par dataType si besoin
+    const batchKey = `weather:${dataType}:${JSON.stringify(points)}`;
+    // Utilise le batcher pour éviter les appels multiples simultanés
+    const apiManager = require('./api-manager.service');
+    return apiManager.execute('weather', 'fetchBatchWeather', { points, dataType }, { batch: true, ...options });
+  }
+
+  /**
    * Précharge les données météo pour les zones populaires
    * @param {Object} options Options de préchargement
    * @returns {Promise<number>} Nombre de zones préchargées
@@ -649,6 +664,14 @@ class WeatherService {
     }
   }
 }
+
+WeatherService.prototype.fetchBatchWeather = async function({ points, dataType }) {
+  // Appel en parallèle limité pour chaque point (optimisation possible)
+  const results = await Promise.all(points.map(({ lat, lon }) =>
+    this[`fetch${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`]({ lat, lon })
+  ));
+  return results;
+};
 
 // Créer l'instance et l'exporter
 const weatherService = new WeatherService();

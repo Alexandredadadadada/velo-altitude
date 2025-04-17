@@ -1,3 +1,5 @@
+console.log('Loading pagination.service.js...');
+
 /**
  * Service de pagination côté serveur
  * Ce service fournit des fonctionnalités pour gérer la pagination des résultats de requêtes
@@ -248,14 +250,4 @@ class PaginationService {
   }
 }
 
-// Exporter une instance singleton
-let instance = null;
-
-module.exports = {
-  getInstance: () => {
-    if (!instance) {
-      instance = new PaginationService();
-    }
-    return instance;
-  }
-};
+module.exports = new PaginationService();

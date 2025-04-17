@@ -1,3 +1,5 @@
+console.log('Loading logger config...');
+
 /**
  * Configuration du système de logging pour Dashboard-Velo
  * Utilise Winston pour des logs structurés et formatés

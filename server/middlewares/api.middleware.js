@@ -3,9 +3,9 @@
  * Fournit des middlewares pour la gestion des requêtes API, la pagination, le cache et la sécurité
  */
 
-const errorService = require('../services/error.service').getInstance();
-const cacheService = require('../services/cache.service').getInstance();
-const paginationService = require('../services/pagination.service').getInstance();
+const errorService = require('../services/error.service');
+const cacheService = require('../services/cache.service');
+const paginationService = require('../services/pagination.service');
 const logger = require('../config/logger');
 
 /**

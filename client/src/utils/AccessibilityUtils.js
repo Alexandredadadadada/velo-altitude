@@ -349,7 +349,9 @@ export const createKeyboardHandler = (keyHandlers) => {
   };
 };
 
-export default {
+// Assign object to a variable before exporting as module default
+// Refactor: Assign to variable before export default
+const accessibilityUtils = {
   getAriaProps,
   checkColorContrast,
   generateAriaId,
@@ -359,3 +361,5 @@ export default {
   validateHeadingHierarchy,
   createKeyboardHandler
 };
+
+export default accessibilityUtils;

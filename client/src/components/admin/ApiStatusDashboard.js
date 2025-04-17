@@ -58,7 +58,7 @@ const ApiStatusDashboard = () => {
   // Chargement initial des données
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]); // Fix React hook dependency warnings
 
   // Actualisation périodique (toutes les 5 minutes)
   useEffect(() => {
@@ -67,14 +67,14 @@ const ApiStatusDashboard = () => {
     }, 5 * 60 * 1000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchData]); // Fix React hook dependency warnings
 
   // Mise à jour des données du graphique lorsque les données d'utilisation changent
   useEffect(() => {
     if (Object.keys(usageData).length > 0) {
       prepareChartData();
     }
-  }, [usageData, selectedTimeRange]);
+  }, [usageData, selectedTimeRange, prepareChartData]); // Fix React hook dependency warnings
 
   /**
    * Récupère les données de statut et d'utilisation des API

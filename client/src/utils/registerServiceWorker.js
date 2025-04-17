@@ -3,6 +3,8 @@
  * Dashboard-Velo
  */
 
+import React from 'react';
+
 export const registerServiceWorker = () => {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {

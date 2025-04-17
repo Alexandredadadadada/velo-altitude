@@ -4,12 +4,11 @@
  */
 
 import { monitoring } from '../monitoring';
-import { apiOrchestrator } from '../../api';
+import aiClient from '../../api/ai/index.client';
 import { AI_CONFIG } from './config';
 import { i18n } from '../../i18n';
 import { ENV } from '../../config/environment';
 
-const API_BASE_URL = ENV.app.apiUrl || '';
 const MODEL = 'claude-3.7-sonnet'; // Default model
 
 /**
@@ -40,8 +39,7 @@ class AIService {
     try {
       const { message, history = [], context = {}, language = 'fr' } = params;
       
-      // Prepare message payload
-      const payload = {
+      const response = await aiClient.sendChatMessage({
         message,
         history: history.map(msg => ({
           role: msg.role,
@@ -50,10 +48,7 @@ class AIService {
         })),
         context,
         language
-      };
-      
-      // Send to API
-      const response = await apiOrchestrator.sendAIChatMessage(payload);
+      });
       
       return {
         message: response.message,
@@ -72,7 +67,7 @@ class AIService {
    */
   async getSuggestedQueries(language = 'fr') {
     try {
-      return await apiOrchestrator.getAISuggestions(language);
+      return await aiClient.getSuggestions(language);
     } catch (error) {
       console.error('Error getting suggested queries:', error);
       
@@ -91,7 +86,7 @@ class AIService {
     if (!userId) return;
     
     try {
-      await apiOrchestrator.saveAIChatHistory(userId, messages);
+      await aiClient.saveChatHistory(userId, messages);
     } catch (error) {
       console.error('Error saving chat history:', error);
       // Fall back to local storage
@@ -132,7 +127,7 @@ class AIService {
     if (!userId) return;
     
     try {
-      await apiOrchestrator.clearAIChatHistory(userId);
+      await aiClient.clearChatHistory(userId);
     } catch (error) {
       console.error('Error clearing chat history:', error);
       // Fall back to clearing local storage
@@ -147,28 +142,8 @@ class AIService {
    */
   async generateTrainingRecommendations(athleteData) {
     try {
-      // Implementation using specialized AI module
-      // For now, return mock response
-      return `
-## Programme d'Entraînement Personnalisé
-
-### Semaine Type
-- Lundi: Récupération active (30-45 min, faible intensité)
-- Mardi: Intervalles courts (8x1min à FTP+20%, 2min récup)
-- Mercredi: Endurance (90-120 min, 65-75% FTP)
-- Jeudi: Récupération ou Off
-- Vendredi: Sweet Spot (2x20min à 88-94% FTP)
-- Samedi: Sortie longue avec dénivelé (3-4h)
-- Dimanche: Récupération ou Off
-
-### Progressions suggérées
-- Semaine 1-2: Adaptation
-- Semaine 3-4: Construction
-- Semaine 5: Récupération
-- Semaine 6-8: Spécificité (simulation montées)
-
-Continuez ce cycle en ajustant l'intensité et le volume selon vos progrès.
-      `;
+      const response = await aiClient.getTrainingAdvice(athleteData);
+      return response.advice;
     } catch (error) {
       console.error('Error generating training recommendations:', error);
       throw new Error(i18n.t('ai.errors.recommendationFailed'));
@@ -183,35 +158,11 @@ Continuez ce cycle en ajustant l'intensité et le volume selon vos progrès.
    */
   async generateNutritionalAdvice(athleteData, routeDetails) {
     try {
-      // Implementation using specialized AI module
-      // For now, return mock response
-      return `
-## Plan Nutritionnel
-
-### Avant la Sortie (${routeDetails.distance}km, ${routeDetails.elevation}m D+)
-
-- 2-3h avant: Repas riche en glucides complexes (100-150g)
-  - Exemple: Porridge d'avoine avec banane et miel
-  - Hydratation: 500ml eau avec électrolytes
-
-### Pendant l'Effort
-
-- Consommez 60-90g de glucides/heure
-- Hydratation: 500-750ml/heure selon température
-- Pour cette sortie spécifique:
-  - Première heure: 1 barre énergétique
-  - Heures suivantes: Alterner gel et boisson énergétique
-  - Pour les cols: Prévoir un gel 15min avant chaque montée
-
-### Après l'Effort
-
-- Dans les 30min: Collation 4:1 (glucides:protéines)
-  - Exemple: Smoothie avec banane, lait et protéine
-- Repas complet dans les 2h
-  - Privilégier glucides, protéines de qualité et légumes
-
-Adaptez selon vos sensations et la température extérieure.
-      `;
+      const response = await aiClient.getNutritionAdvice({
+        athleteData,
+        routeDetails
+      });
+      return response.advice;
     } catch (error) {
       console.error('Error generating nutritional advice:', error);
       throw new Error(i18n.t('ai.errors.nutritionAdviceFailed'));

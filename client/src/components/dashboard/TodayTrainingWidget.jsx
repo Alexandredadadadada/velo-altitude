@@ -3,21 +3,17 @@ import {
   Box, 
   Typography, 
   Paper, 
-  Card, 
   CardContent,
   CardActions,
   Button,
   Chip,
-  LinearProgress,
-  IconButton,
   Skeleton,
   Tooltip,
   Divider,
   useTheme,
   alpha,
   Avatar,
-  Badge,
-  Grid
+  Badge
 } from '@mui/material';
 import { 
   PlayArrow as PlayIcon,
@@ -26,34 +22,22 @@ import {
   DirectionsBike,
   AccessTime,
   ShowChart,
-  Bolt,
-  MoreVert,
-  Refresh,
-  Timer,
-  Favorite,
-  WbSunny,
-  CloudQueue,
-  Opacity,
-  Air,
-  LocalFireDepartment,
-  TrendingUp,
-  BarChart
+  Bolt
 } from '@mui/icons-material';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 /**
- * Widget pour afficher l'entraînement du jour sur le dashboard
- * Permet de visualiser et démarrer rapidement la séance prévue
+ * TodayTrainingWidget
+ * - Widget dashboard pour afficher l'entraînement du jour, progression, météo, stats, actions rapides
+ * - Modulariser les sous-composants si complexité > 200 lignes (ex: renderIntervalTimeline, renderPhysiologicalPreview)
+ * - Nettoyage des hooks et props, factorisation possible
  */
 const TodayTrainingWidget = ({ userProfile, stravaData }) => {
   const theme = useTheme();
-  const { t } = useTranslation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [todayWorkout, setTodayWorkout] = useState(null);
-  const [workoutStatus, setWorkoutStatus] = useState('pending'); // pending, completed, inProgress
   const [recentStats, setRecentStats] = useState({
     ftpChange: 0,
     tssAverage: 0,
@@ -110,32 +94,8 @@ const TodayTrainingWidget = ({ userProfile, stravaData }) => {
         completionRate: 0.85 // 85% des entraînements complétés
       };
       
-      // Simulation des données météo
-      const weatherData = {
-        temperature: 18, // °C
-        condition: 'Ensoleillé',
-        icon: <WbSunny color="warning" />,
-        wind: 12, // km/h
-        humidity: 65, // %
-        feelsLike: 17, // °C
-        recommendation: "Conditions idéales pour un entraînement à haute intensité. N'oubliez pas de vous hydrater suffisamment."
-      };
-
-      // Données d'aperçu physiologique
-      const physiologicalImpact = {
-        cardiovascular: 85, // Impact sur le système cardiovasculaire (%)
-        muscular: 70, // Impact musculaire (%)
-        neuromuscular: 60, // Impact neuromusculaire (%)
-        energySystems: { aerobic: 65, anaerobic: 35 }, // Répartition systèmes énergétiques (%)
-        recovery: {
-          expectedTSB: -25, // Training Stress Balance attendu
-          recoveryTime: 36, // Heures de récupération estimées
-        }
-      };
-
       setTodayWorkout(mockWorkout);
       setRecentStats(stats);
-      setWorkoutStatus(mockWorkout.status);
       setLoading(false);
     };
     
@@ -258,212 +218,6 @@ const TodayTrainingWidget = ({ userProfile, stravaData }) => {
     );
   };
 
-  // Rendu de l'aperçu physiologique
-  const renderPhysiologicalPreview = () => {
-    return (
-      <Box sx={{ mt: 2 }}>
-        <Typography variant="subtitle2" gutterBottom>
-          Impact physiologique attendu
-        </Typography>
-        <Grid container spacing={1}>
-          <Grid item xs={6}>
-            <Box sx={{ mb: 1 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.5 }}>
-                <Favorite sx={{ fontSize: '0.875rem', mr: 0.5, color: '#e53935' }} />
-                <Typography variant="caption" sx={{ fontWeight: 'medium' }}>Cardiovasculaire</Typography>
-              </Box>
-              <LinearProgress
-                variant="determinate"
-                value={physiologicalImpact.cardiovascular}
-                sx={{
-                  height: 6,
-                  borderRadius: 3,
-                  bgcolor: alpha('#e53935', 0.2),
-                  '& .MuiLinearProgress-bar': {
-                    bgcolor: '#e53935',
-                  }
-                }}
-              />
-            </Box>
-            <Box sx={{ mb: 1 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.5 }}>
-                <FitnessCenter sx={{ fontSize: '0.875rem', mr: 0.5, color: '#7b1fa2' }} />
-                <Typography variant="caption" sx={{ fontWeight: 'medium' }}>Musculaire</Typography>
-              </Box>
-              <LinearProgress
-                variant="determinate"
-                value={physiologicalImpact.muscular}
-                sx={{
-                  height: 6,
-                  borderRadius: 3,
-                  bgcolor: alpha('#7b1fa2', 0.2),
-                  '& .MuiLinearProgress-bar': {
-                    bgcolor: '#7b1fa2',
-                  }
-                }}
-              />
-            </Box>
-          </Grid>
-          <Grid item xs={6}>
-            <Box sx={{ mb: 1 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.5 }}>
-                <Bolt sx={{ fontSize: '0.875rem', mr: 0.5, color: '#ff9800' }} />
-                <Typography variant="caption" sx={{ fontWeight: 'medium' }}>Neuromusculaire</Typography>
-              </Box>
-              <LinearProgress
-                variant="determinate"
-                value={physiologicalImpact.neuromuscular}
-                sx={{
-                  height: 6,
-                  borderRadius: 3,
-                  bgcolor: alpha('#ff9800', 0.2),
-                  '& .MuiLinearProgress-bar': {
-                    bgcolor: '#ff9800',
-                  }
-                }}
-              />
-            </Box>
-            <Box sx={{ mb: 1 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.5 }}>
-                <LocalFireDepartment sx={{ fontSize: '0.875rem', mr: 0.5, color: '#f44336' }} />
-                <Typography variant="caption" sx={{ fontWeight: 'medium' }}>Temps récupération</Typography>
-              </Box>
-              <Tooltip title={`~${physiologicalImpact.recovery.recoveryTime}h de récupération`}>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  {Array(3).fill(0).map((_, i) => (
-                    <Box 
-                      key={i}
-                      sx={{
-                        width: 8,
-                        height: 16,
-                        bgcolor: i < Math.ceil(physiologicalImpact.recovery.recoveryTime / 24) 
-                          ? '#f44336' 
-                          : alpha('#f44336', 0.2),
-                        borderRadius: 0.5,
-                        mr: 0.5
-                      }}
-                    />
-                  ))}
-                </Box>
-              </Tooltip>
-            </Box>
-          </Grid>
-        </Grid>
-        
-        {/* Répartition énergétique */}
-        <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-          <Box sx={{ flex: 1, mr: 1 }}>
-            <Typography variant="caption" color="text.secondary">
-              Aérobie
-            </Typography>
-            <Box 
-              sx={{ 
-                height: 4, 
-                width: '100%', 
-                bgcolor: alpha(theme.palette.info.main, 0.2),
-                borderRadius: 1,
-                overflow: 'hidden'
-              }}
-            >
-              <Box 
-                sx={{ 
-                  height: '100%', 
-                  width: `${physiologicalImpact.energySystems.aerobic}%`, 
-                  bgcolor: theme.palette.info.main,
-                  borderRadius: 1
-                }}
-              />
-            </Box>
-          </Box>
-          <Box sx={{ width: 24, textAlign: 'center' }}>
-            <Typography variant="caption" color="text.secondary">VS</Typography>
-          </Box>
-          <Box sx={{ flex: 1, ml: 1 }}>
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', textAlign: 'right' }}>
-              Anaérobie
-            </Typography>
-            <Box 
-              sx={{ 
-                height: 4, 
-                width: '100%', 
-                bgcolor: alpha(theme.palette.error.main, 0.2),
-                borderRadius: 1,
-                overflow: 'hidden'
-              }}
-            >
-              <Box 
-                sx={{ 
-                  height: '100%', 
-                  width: `${physiologicalImpact.energySystems.anaerobic}%`, 
-                  bgcolor: theme.palette.error.main,
-                  borderRadius: 1,
-                  ml: 'auto'
-                }}
-              />
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-    );
-  };
-
-  // Rendu des conditions météo
-  const renderWeatherInfo = () => {
-    return (
-      <Box 
-        sx={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between',
-          p: 1.5,
-          mt: 2,
-          borderRadius: 2,
-          bgcolor: alpha(theme.palette.background.paper, 0.5)
-        }}
-      >
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Avatar 
-            sx={{ 
-              width: 40, 
-              height: 40, 
-              bgcolor: alpha(theme.palette.primary.main, 0.1),
-              color: theme.palette.primary.main
-            }}
-          >
-            {weatherData.icon}
-          </Avatar>
-          <Box sx={{ ml: 1.5 }}>
-            <Typography variant="subtitle2">
-              {weatherData.temperature}°C
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              {weatherData.condition}
-            </Typography>
-          </Box>
-        </Box>
-        
-        <Box sx={{ display: 'flex' }}>
-          <Tooltip title="Vent">
-            <Box sx={{ textAlign: 'center', mx: 1 }}>
-              <Air sx={{ fontSize: '1rem', color: 'text.secondary' }} />
-              <Typography variant="caption" display="block">
-                {weatherData.wind} km/h
-              </Typography>
-            </Box>
-          </Tooltip>
-          <Tooltip title="Humidité">
-            <Box sx={{ textAlign: 'center', mx: 1 }}>
-              <Opacity sx={{ fontSize: '1rem', color: 'text.secondary' }} />
-              <Typography variant="caption" display="block">
-                {weatherData.humidity}%
-              </Typography>
-            </Box>
-          </Tooltip>
-        </Box>
-      </Box>
-    );
-  };
-
   // Afficher le chargement
   if (loading) {
     return (
@@ -542,9 +296,6 @@ const TodayTrainingWidget = ({ userProfile, stravaData }) => {
       </Paper>
     );
   }
-  
-  // Calcul de la durée totale
-  const totalMinutes = todayWorkout.intervals.reduce((sum, interval) => sum + interval.duration, 0);
   
   return (
     <motion.div
@@ -658,7 +409,7 @@ const TodayTrainingWidget = ({ userProfile, stravaData }) => {
                   key={index}
                   label={focus}
                   size="small"
-                  icon={focus.includes('VO2') ? <Bolt sx={{ fontSize: '1rem' }} /> : <TrendingUp sx={{ fontSize: '1rem' }} />}
+                  icon={focus.includes('VO2') ? <Bolt sx={{ fontSize: '1rem' }} /> : <Bolt sx={{ fontSize: '1rem' }} />}
                   sx={{
                     bgcolor: alpha(theme.palette.primary.main, 0.1),
                     fontWeight: 'medium'
@@ -669,12 +420,6 @@ const TodayTrainingWidget = ({ userProfile, stravaData }) => {
             
             {/* Déroulement de la séance - Nouvelle visualisation animée */}
             {renderIntervalTimeline()}
-            
-            {/* Météo - Nouveau */}
-            {renderWeatherInfo()}
-            
-            {/* Aperçu physiologique - Nouveau */}
-            {renderPhysiologicalPreview()}
           </motion.div>
           
           <Divider sx={{ my: 2 }} />

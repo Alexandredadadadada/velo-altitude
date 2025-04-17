@@ -3,6 +3,16 @@
  * Ce fichier configure et démarre le serveur Express
  */
 
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+  console.trace(err);
+});
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection:', reason);
+  console.trace(reason);
+});
+console.log('Crash diagnostics enabled');
+
 // Chargement des variables d'environnement
 require('dotenv').config();
 
@@ -15,38 +25,66 @@ const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const rateLimit = require('express-rate-limit');
+console.log('Checkpoint 1: before logger');
 const logger = require('./config/logger');
-const errorService = require('./services/error.service').getInstance();
-const tokenBlacklist = require('./services/token-blacklist.service').getInstance();
-const cacheService = require('./services/cache.service').getInstance();
-const paginationService = require('./services/pagination.service').getInstance();
+console.log('Checkpoint 2: after logger');
+const errorService = require('./services/error.service');
+console.log('Checkpoint 3: after errorService');
+const tokenBlacklist = require('./services/token-blacklist.service');
+console.log('Checkpoint 4: after tokenBlacklist');
+const cacheService = require('./services/cache.service');
+console.log('Checkpoint 5: after cacheService');
+const paginationService = require('./services/pagination.service');
+console.log('Checkpoint 6: after paginationService');
 const apiMiddleware = require('./middlewares/api.middleware');
+console.log('Checkpoint 7: after apiMiddleware');
 const config = require('./config/api.config');
+console.log('Checkpoint 8: after config');
 const initServices = require('./services/initServices');
+console.log('Checkpoint 9: after initServices');
 const serverDiagnostics = require('./utils/server-diagnostics'); // Système de diagnostic
+console.log('Checkpoint 10: after serverDiagnostics');
 const apiQuotaManager = require('./utils/apiQuotaManager'); // Gestionnaire de quotas API
+console.log('Checkpoint 11: after apiQuotaManager');
 const performanceOptimization = require('./middleware/performance-optimization');
+console.log('Checkpoint 12: after performanceOptimization');
 const monitoring = require('./utils/monitoring');
+console.log('Checkpoint 13: after monitoring');
 const swaggerUi = require('swagger-ui-express');
+console.log('Checkpoint 14: after swaggerUi');
 const YAML = require('yamljs');
+console.log('Checkpoint 15: after YAML');
+const { environment } = require('./config/environment');
+console.log('Checkpoint 16: after environment');
+
+console.log('Starting server initialization...');
 
 // Initialisation de l'application Express
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = environment.server.port || 3001;
 
-// Options de démarrage du serveur
-const serverOptions = {
-  progressiveStartup: true,     // Démarrage progressif des services
-  degradedModeEnabled: true,    // Mode dégradé autorisé
-  autoDiagnostic: true,         // Diagnostic automatique
-  maxStartupRetries: 3,         // Nombre maximum de tentatives de démarrage
-  criticalServices: ['error.service', 'token-blacklist.service', 'cache.service'] // Services critiques
-};
+console.log('Setting up base middleware...');
+// Configuration de base
+app.use(helmet());
+app.use(cors({
+  origin: environment.server.env === 'production' 
+    ? 'https://velo-altitude.com' 
+    : 'http://localhost:3000',
+  credentials: true
+}));
+app.use(compression());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser(environment.server.sessionSecret));
 
-// Configuration des middlewares de base
-app.use(helmet()); // Sécurité
-app.use(compression()); // Compression des réponses
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limite chaque IP à 100 requêtes par fenêtre
+});
+app.use('/api/', limiter);
 
+console.log('Setting up CORS configuration...');
 // Configuration CORS avancée
 app.use(cors({
   origin: (origin, callback) => {
@@ -73,35 +111,7 @@ app.use(cors({
   exposedHeaders: ['X-New-Access-Token']
 }));
 
-// Limitation de débit pour prévenir les attaques par force brute
-const apiLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // 100 requêtes par IP
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: {
-    status: 'error',
-    error: {
-      type: 'rate_limit_exceeded',
-      message: 'Trop de requêtes, veuillez réessayer plus tard',
-      severity: 'warning'
-    }
-  },
-  skip: (req) => {
-    // Ne pas limiter les requêtes en développement
-    return process.env.NODE_ENV === 'development';
-  }
-});
-
-// Appliquer la limitation de débit aux routes d'API sensibles
-app.use('/api/auth', apiLimiter);
-app.use('/api/users', apiLimiter);
-
-// Middlewares de parsing
-app.use(express.json({ limit: '50mb' })); // Analyse du JSON avec limite de taille
-app.use(express.urlencoded({ extended: true, limit: '50mb' })); // Analyse des URL encodées
-app.use(cookieParser()); // Analyse des cookies
-
+console.log('Setting up request logging middleware...');
 // Middleware de journalisation des requêtes
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.url}`, {
@@ -111,6 +121,7 @@ app.use((req, res, next) => {
   next();
 });
 
+console.log('Setting up response time middleware...');
 // Middleware de gestion du temps de réponse
 app.use((req, res, next) => {
   const start = Date.now();
@@ -126,6 +137,7 @@ app.use((req, res, next) => {
   next();
 });
 
+console.log('Setting up server status middleware...');
 // Middleware pour ajouter des informations sur l'état du serveur
 app.use((req, res, next) => {
   // Si le serveur est en mode dégradé, ajouter un en-tête
@@ -135,9 +147,11 @@ app.use((req, res, next) => {
   next();
 });
 
+console.log('Applying performance optimization middleware...');
 // Appliquer les middlewares d'optimisation des performances
 performanceOptimization.applyAll(app);
 
+console.log('Setting up Swagger configuration...');
 // Configuration Swagger
 const swaggerCore = YAML.load(path.join(__dirname, 'docs/swagger-core.yaml'));
 const swaggerCols3D = YAML.load(path.join(__dirname, 'docs/swagger-cols-3d.yaml'));
@@ -163,13 +177,14 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
   customfavIcon: "/favicon.ico"
 }));
 
+console.log('Setting up health check route...');
 // Routes de santé et de diagnostic du serveur
 app.get('/api/health', async (req, res) => {
   const healthStatus = {
     status: 'ok',
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
-    environment: process.env.NODE_ENV || 'development',
+    environment: environment.server.env || 'development',
     degradedMode: global.serverState?.degradedMode || false
   };
   
@@ -222,6 +237,7 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
+console.log('Initializing routes...');
 // Initialiser les routes de l'API
 function initializeRoutes() {
   // Importer les routes
@@ -230,6 +246,7 @@ function initializeRoutes() {
   const eventRoutes = require('./routes/event.routes');
   const routeRoutes = require('./routes/route.routes');
   const clubRoutes = require('./routes/club.routes');
+  const communityRoutes = require('./routes/community.routes');
   
   // Appliquer les middlewares communs aux routes d'API
   const apiRouter = express.Router();
@@ -266,7 +283,8 @@ function initializeRoutes() {
   apiRouter.use('/events', apiMiddleware.paginate(), eventRoutes);
   apiRouter.use('/routes', apiMiddleware.paginate(), routeRoutes);
   apiRouter.use('/clubs', apiMiddleware.paginate(), clubRoutes);
-  
+  apiRouter.use('/community', communityRoutes);
+
   // Nouvelle route pour le tableau de bord des API
   apiRouter.use('/dashboard', require('./routes/api-dashboard'));
   
@@ -274,7 +292,7 @@ function initializeRoutes() {
   app.use('/api', apiRouter);
   
   // Servir les fichiers statiques du client en production
-  if (process.env.NODE_ENV === 'production') {
+  if (environment.server.env === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
     
     // Pour toutes les autres requêtes, servir l'application React
@@ -286,6 +304,7 @@ function initializeRoutes() {
   }
 }
 
+console.log('Setting up error handling middleware...');
 // Middleware pour intercepter les routes non trouvées
 app.use((req, res, next) => {
   // Vérifier si la route commence par /api pour savoir si c'est une API
@@ -300,7 +319,7 @@ app.use((req, res, next) => {
   }
   
   // Pour les routes non-API en production, servir l'application React
-  if (process.env.NODE_ENV === 'production') {
+  if (environment.server.env === 'production') {
     if (!req.url.startsWith('/api/')) {
       res.sendFile(path.join(__dirname, '../client/build/index.html'));
     }
@@ -313,297 +332,66 @@ app.use((req, res, next) => {
   }
 });
 
+console.log('Setting up global error handler...');
 // Middleware de gestion globale des erreurs (doit être défini après les routes)
 app.use(apiMiddleware.errorHandler());
 
-// Fonction de vérification des dépendances critiques
-async function checkDependencies() {
-  logger.info('🔍 Vérification des dépendances critiques...');
-  
-  try {
-    // Vérifier les variables d'environnement requises
-    const requiredEnvVars = [
-      'MONGODB_URI',
-      'JWT_SECRET',
-      'JWT_REFRESH_SECRET',
-      'JWT_EXPIRATION'
-    ];
-    
-    const missingEnvVars = requiredEnvVars.filter(envVar => !process.env[envVar]);
-    
-    if (missingEnvVars.length > 0) {
-      if (serverOptions.degradedModeEnabled) {
-        logger.warn(`⚠️ Variables d'environnement manquantes: ${missingEnvVars.join(', ')}. Mode dégradé activé.`);
-        global.serverState = {
-          degradedMode: true,
-          missingDependencies: missingEnvVars
-        };
-        return true;
-      } else {
-        throw new Error(`Variables d'environnement requises manquantes: ${missingEnvVars.join(', ')}`);
-      }
-    }
-    
-    // Vérifier la connexion à MongoDB
-    if (mongoose.connection.readyState !== 1) {
-      logger.warn('⚠️ MongoDB non connecté, tentative de connexion...');
-      await mongoose.connect(process.env.MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      });
-      logger.info('✅ Connexion MongoDB établie');
-    }
-    
-    // Vérifier les services critiques
-    const criticalServices = serverOptions.criticalServices || [];
-    for (const service of criticalServices) {
-      if (!global.services || !global.services[service]) {
-        throw new Error(`Service critique non disponible: ${service}`);
-      }
-    }
-    
-    // Vérifier le gestionnaire de quotas API
-    if (!apiQuotaManager) {
-      logger.warn('⚠️ Gestionnaire de quotas API non disponible');
-      global.serverState = global.serverState || {};
-      global.serverState.degradedMode = true;
-    } else {
-      logger.info('✅ Gestionnaire de quotas API disponible');
-    }
-    
-    logger.info('✅ Toutes les dépendances critiques sont disponibles');
-    return true;
-  } catch (error) {
-    logger.error(`❌ Erreur lors de la vérification des dépendances: ${error.message}`);
-    
-    // Activer le mode dégradé si autorisé
-    if (serverOptions.degradedModeEnabled) {
-      global.serverState = global.serverState || {};
-      global.serverState.degradedMode = true;
-      logger.warn('⚠️ Serveur démarré en mode dégradé');
-      return true;
-    }
-    
-    return false;
-  }
-}
-
-// Initialiser les services
-async function initializeServices() {
-  logger.info('🚀 Initialisation des services...');
-  
-  try {
-    // Initialiser les services de base
-    global.services = global.services || {};
-    
-    // Initialiser le service d'erreur s'il n'est pas déjà initialisé
-    if (!global.services['error.service']) {
-      global.services['error.service'] = errorService;
-    }
-    
-    // Initialiser le service de liste noire de tokens
-    if (!global.services['token-blacklist.service']) {
-      global.services['token-blacklist.service'] = tokenBlacklist;
-      tokenBlacklist.startCacheCleanup();
-    }
-    
-    // Initialiser le service de cache
-    if (!global.services['cache.service']) {
-      global.services['cache.service'] = cacheService;
-    }
-    
-    // Initialiser le service de pagination
-    if (!global.services['pagination.service']) {
-      global.services['pagination.service'] = paginationService;
-    }
-    
-    // Initialiser le gestionnaire de quotas API s'il n'est pas déjà initialisé
-    if (!global.services['api-quota.service']) {
-      global.services['api-quota.service'] = apiQuotaManager;
-      logger.info('✅ Service de gestion des quotas API initialisé');
-    }
-    
-    // Utiliser le service d'initialisation progressive si disponible
-    if (initServices && typeof initServices.initializeAll === 'function') {
-      await initServices.initializeAll();
-    }
-    
-    logger.info('✅ Services initialisés avec succès');
-    return true;
-  } catch (error) {
-    logger.error(`❌ Erreur lors de l'initialisation des services: ${error.message}`);
-    return false;
-  }
-}
-
-// Démarrage du serveur
-function startServer() {
-  // Initialiser l'état global du serveur
-  global.serverState = {
-    startTime: new Date(),
-    degradedMode: false,
-    version: process.env.npm_package_version || '1.0.0'
-  };
-  
-  logger.info('Démarrage du serveur Grand Est Cyclisme...');
-  
-  // Vérifier les dépendances avant de démarrer
-  checkDependencies().then(dependenciesOk => {
-    if (!dependenciesOk && !global.serverState.degradedMode) {
-      logger.error('❌ Vérification des dépendances échouée, arrêt du serveur');
-      process.exit(1);
-    }
-    
-    // Connecter à MongoDB
-    mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
-    
-    // Configurer et démarrer le serveur HTTP
-    const server = app.listen(PORT, () => {
-      logger.info(`✅ Serveur démarré sur le port ${PORT}`);
-      
-      if (global.serverState.degradedMode) {
-        logger.warn(`⚠️ Le serveur fonctionne en mode dégradé: ${global.serverState.degradedReason}`);
-      }
-      
-      // Initialiser les services après le démarrage du serveur
-      initializeServices().then(servicesInitialized => {
-        if (servicesInitialized) {
-          logger.info('✅ Services principaux initialisés avec succès');
-        } else if (!global.serverState.degradedMode) {
-          logger.warn('⚠️ Certains services n\'ont pas pu être initialisés correctement');
-        }
-        
-        // Vérifier l'état du système
-        const systemStatus = {
-          server: 'online',
-          degradedMode: global.serverState.degradedMode,
-          database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
-          environment: process.env.NODE_ENV || 'development',
-          startTime: new Date().toISOString()
-        };
-        
-        logger.info('📊 État du système:', systemStatus);
-        
-        // Vérifier les secrets JWT
-        if (process.env.JWT_SECRET === undefined) {
-          errorService.logError({
-            type: 'security_config',
-            message: 'JWT_SECRET non défini dans les variables d\'environnement',
-            severity: 'critical',
-            details: {
-              recommendation: 'Définir une clé secrète forte dans les variables d\'environnement'
-            }
-          });
-        }
-        
-        // Configurer le monitoring
-        monitoring.setupMonitoring(app);
-      }).catch(error => {
-        logger.error(`❌ Erreur lors de l'initialisation des services: ${error.message}`, {
-          stack: error.stack
-        });
-      });
-    });
-    
-    // Configurer un délai d'attente pour les connexions inactives
-    server.keepAliveTimeout = 65000; // 65 secondes
-    server.headersTimeout = 66000; // 66 secondes (doit être supérieur à keepAliveTimeout)
-    
-    return server;
-  }).catch(error => {
-    logger.error(`❌ Erreur fatale: ${error.message}`);
-    process.exit(1);
-  });
-}
-
-// Gestion des erreurs non capturées
-process.on('uncaughtException', (error) => {
-  // Afficher plus de détails sur l'erreur
-  console.error('ERREUR NON CAPTURÉE DÉTAILLÉE:', error);
-  console.error('Message:', error.message);
-  console.error('Stack:', error.stack);
-  
-  const criticalError = errorService.createError({
-    type: 'uncaught_exception',
-    message: `Exception non capturée: ${error.message}`,
-    severity: 'critical',
-    details: {
-      stack: error.stack
-    }
-  });
-  
-  logger.error(`❌ ${criticalError.message}`, {
-    stack: error.stack
-  });
-  
-  // En production, on peut choisir de redémarrer le serveur
-  if (process.env.NODE_ENV === 'production') {
-    logger.error('🔄 Redémarrage du serveur suite à une erreur critique...');
-    process.exit(1);
-  }
+console.log('Setting up error handling...');
+// Gestion des erreurs
+app.use((err, req, res, next) => {
+  logger.error('Error:', err);
+  console.trace(err);
+  res.status(500).json({ error: 'Internal Server Error' });
 });
 
-process.on('unhandledRejection', (reason, promise) => {
-  // Afficher plus de détails sur l'erreur
-  console.error('PROMESSE REJETÉE DÉTAILLÉE:', reason);
-  console.error('Stack:', reason.stack);
-  
-  const criticalError = errorService.createError({
-    type: 'unhandled_rejection',
-    message: `Promesse rejetée non gérée: ${reason}`,
-    severity: 'critical',
-    details: {
-      stack: reason.stack
-    }
-  });
-  
-  logger.error(`❌ ${criticalError.message}`, {
-    stack: reason.stack
-  });
-});
-
-/**
- * Gestion de l'arrêt propre du serveur
- */
-const gracefulShutdown = async () => {
-  logger.info('🛑 Arrêt du serveur en cours...');
-  
+console.log('Starting server...');
+// Fonction de démarrage du serveur
+const startServer = async () => {
   try {
-    // Arrêter le service de liste noire de tokens
-    if (tokenBlacklist && typeof tokenBlacklist.stopCacheCleanup === 'function') {
-      tokenBlacklist.stopCacheCleanup();
-      logger.info('✅ Service de liste noire de tokens arrêté');
+    console.log('Connecting to MongoDB...');
+    if (environment.mongodb.uri) {
+      await mongoose.connect(environment.mongodb.uri, {
+        dbName: environment.mongodb.dbName,
+        maxPoolSize: environment.mongodb.poolSize.max,
+        minPoolSize: environment.mongodb.poolSize.min,
+        retryWrites: true,
+        w: 'majority'
+      });
+      console.log('✅ Connected to MongoDB');
     }
-    
-    // Fermer la connexion à MongoDB
-    if (mongoose.connection.readyState !== 0) {
-      await mongoose.connection.close();
-      logger.info('✅ Connexion MongoDB fermée');
-    }
-    
-    logger.info('✅ Arrêt propre du serveur terminé');
-    process.exit(0);
+
+    // Démarrage du serveur
+    app.listen(PORT, () => {
+      console.log(`🚀 Server started on port ${PORT} in ${environment.server.env} mode`);
+    });
   } catch (error) {
-    logger.error(`❌ Erreur lors de l'arrêt du serveur: ${error.message}`);
+    console.error('❌ Server start error:', error);
+    console.trace(error);
     process.exit(1);
   }
-  
-  // Si tout échoue, forcer l'arrêt après 5 secondes
-  setTimeout(() => {
-    logger.error("⏱️ Délai d'attente dépassé pour l'arrêt propre, arrêt forcé");
-    process.exit(1);
-  }, 5000);
 };
 
-// Intercepter les signaux d'arrêt
+console.log('Setting up graceful shutdown...');
+// Gestion de l'arrêt gracieux
+const gracefulShutdown = async () => {
+  try {
+    if (mongoose.connection.readyState === 1) {
+      await mongoose.connection.close();
+    }
+    process.exit(0);
+  } catch (error) {
+    console.error('Error during shutdown:', error);
+    console.trace(error);
+    process.exit(1);
+  }
+};
+
 process.on('SIGTERM', gracefulShutdown);
 process.on('SIGINT', gracefulShutdown);
 
-// Démarrer le serveur
+// Démarrer le serveur si ce fichier est exécuté directement
 if (require.main === module) {
+  initializeRoutes();
   startServer();
 }
 

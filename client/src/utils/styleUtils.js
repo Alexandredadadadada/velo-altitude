@@ -97,9 +97,13 @@ export const getSpacing = (factor) => {
   return theme.spacing(factor);
 };
 
-export default {
+// Assign object to a variable before exporting as module default
+// Refactor: Assign to variable before export default
+const styleUtils = {
   convertCssVarToTheme,
   migrateStylesToDesignSystem,
   getColorFromPath,
   getSpacing
 };
+
+export default styleUtils;

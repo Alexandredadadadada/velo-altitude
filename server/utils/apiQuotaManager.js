@@ -599,6 +599,12 @@ class ApiQuotaManager extends EventEmitter {
     logger.info(`Gestionnaire de quotas pour l'API ${this.config.apiName} arrêté proprement`);
   }
   
+  _ensureDirectoryExists() {
+    if (!fs.existsSync(this.config.dataDirectory)) {
+      fs.mkdirSync(this.config.dataDirectory, { recursive: true });
+    }
+  }
+  
   // ... (autres méthodes restent inchangées)
 }
 

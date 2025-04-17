@@ -7,6 +7,7 @@
  */
 
 import React, { ReactNode } from 'react';
+import * as JSX from 'react/jsx-runtime';
 import { useAuth } from './AuthCore';
 
 // Composants pour les différents états
@@ -41,7 +42,7 @@ const AuthenticationWrapper = ({
   loadingComponent = null
 }: AuthenticationWrapperProps): JSX.Element => {
   // Récupération du contexte d'authentification
-  const { user, isAuthenticated, loading, error } = useAuth();
+  const { isAuthenticated, loading, error } = useAuth();
 
   // Gestion de l'état de chargement
   if (loading) {

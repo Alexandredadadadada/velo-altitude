@@ -29,6 +29,8 @@ import {
 import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 /**
  * Composant pour afficher et gérer la galerie photos d'un col
@@ -46,6 +48,9 @@ const ColGallery = ({ colId, initialPhotos = [] }) => {
   const [photoFile, setPhotoFile] = useState(null);
   const [photoCaption, setPhotoCaption] = useState('');
   const [previewUrl, setPreviewUrl] = useState(null);
+  
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   
   // Charger les photos si elles ne sont pas fournies
   useEffect(() => {
@@ -288,47 +293,34 @@ const ColGallery = ({ colId, initialPhotos = [] }) => {
           </Button>
         </Paper>
       ) : (
-        <ImageList
-          variant="quilted"
-          cols={4}
-          gap={8}
-          sx={{ 
-            mb: 0,
-            // Ajustements responsifs
-            '@media (max-width: 600px)': {
-              cols: 2
-            }
-          }}
-        >
-          {photos.map((photo, index) => (
-            <ImageListItem 
-              key={photo.id || index}
-              component={motion.div}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => openPhotoViewer(index)}
-              sx={{ 
-                cursor: 'pointer',
-                overflow: 'hidden',
-                borderRadius: 1
-              }}
-              // Différentes tailles pour certaines images
-              cols={index % 5 === 0 ? 2 : 1}
-              rows={index % 5 === 0 ? 2 : 1}
-            >
-              <img
-                src={photo.url}
-                alt={photo.caption || `Photo ${index + 1}`}
-                loading="lazy"
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'cover' 
+        <Grid container spacing={isMobile ? 1 : 2}>
+          {photos.map((photo, idx) => (
+            <Grid item xs={12} sm={6} md={4} key={photo.id || idx}>
+              <Card
+                sx={{
+                  minHeight: isMobile ? 180 : 240,
+                  minWidth: isMobile ? 120 : 180,
+                  maxWidth: '100%',
+                  borderRadius: 2,
+                  boxShadow: 1,
+                  mb: 2
                 }}
-              />
-            </ImageListItem>
+                onClick={() => openPhotoViewer(idx)}
+              >
+                <CardMedia
+                  component="img"
+                  image={photo.url}
+                  alt={photo.caption || `Photo ${idx + 1}`}
+                  sx={{
+                    objectFit: 'cover',
+                    width: '100%',
+                    height: isMobile ? 140 : 200
+                  }}
+                />
+              </Card>
+            </Grid>
           ))}
-        </ImageList>
+        </Grid>
       )}
       
       {/* Visualiseur de photos (boîte de dialogue plein écran) */}

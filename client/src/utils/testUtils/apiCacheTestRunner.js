@@ -591,8 +591,8 @@ export async function runAllApiCacheTests() {
   return report;
 }
 
-// Export de l'API de test
-export default {
+// Assign object to a variable before exporting as module default
+const apiCacheTestRunner = {
   runCacheStrategiesTests,
   runCacheInvalidationTests,
   runCachePersistenceTests,
@@ -601,3 +601,5 @@ export default {
   exportTestResults,
   runAllApiCacheTests
 };
+
+export default apiCacheTestRunner;

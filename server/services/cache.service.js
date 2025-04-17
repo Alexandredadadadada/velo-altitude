@@ -1,3 +1,5 @@
+console.log('Loading cache.service.js...');
+
 /**
  * Service de cache distribué
  * Gère le stockage et la récupération des données fréquemment consultées pour optimiser les performances
@@ -6,18 +8,19 @@
 
 const logger = require('../config/logger');
 const crypto = require('crypto');
+const redisCache = require('./cache/redis-cache-service');
 
 class CacheService {
   constructor() {
-    // Cache en mémoire simplifié
+    // Cache en mémoire simplifié (legacy)
     this.memoryCache = new Map();
     this.cacheTTL = new Map();
     
-    // Cache secondaire pour les données fréquemment accédées
+    // Cache secondaire pour les données fréquemment accédées (legacy)
     this.hotCache = new Map();
-    this.hotCacheMaxSize = 100; // Nombre maximum d'éléments dans le hot cache
-    this.hotCacheThreshold = 5; // Nombre d'accès pour considérer une clé comme "hot"
-    this.accessCount = new Map(); // Compteur d'accès pour chaque clé
+    this.hotCacheMaxSize = 100; // Nombre maximum d'éléments dans le hot cache (legacy)
+    this.hotCacheThreshold = 5; // Nombre d'accès pour considérer une clé comme "hot" (legacy)
+    this.accessCount = new Map(); // Compteur d'accès pour chaque clé (legacy)
     
     // Métriques de performance du cache
     this.metrics = {
@@ -25,6 +28,7 @@ class CacheService {
       misses: 0,
       sets: 0,
       errors: 0,
+      redis: redisCache.getMetrics(),
       hotHits: 0,
       evictions: 0
     };
@@ -38,7 +42,7 @@ class CacheService {
       maxValueSize: 5 * 1024 * 1024 // 5MB max par valeur
     };
     
-    // Nettoyage périodique des clés expirées
+    // Nettoyage périodique des clés expirées (legacy)
     this.cleanupInterval = setInterval(() => this._cleanup(), this.config.cleanupInterval * 1000);
     
     // Initialisation des namespaces
@@ -55,42 +59,8 @@ class CacheService {
    */
   async get(key, options = {}) {
     try {
-      // Normaliser la clé
-      const normalizedKey = this._normalizeKey(key);
-      
-      // Vérifier d'abord le hot cache pour les données fréquemment accédées
-      if (this.hotCache.has(normalizedKey)) {
-        this.metrics.hits++;
-        this.metrics.hotHits++;
-        return JSON.parse(this.hotCache.get(normalizedKey));
-      }
-      
-      // Vérifier si la clé existe et n'est pas expirée
-      if (this.memoryCache.has(normalizedKey)) {
-        // Vérifier l'expiration
-        const expireTime = this.cacheTTL.get(normalizedKey);
-        if (!expireTime || expireTime > Date.now()) {
-          // Incrémenter le compteur d'accès
-          this._incrementAccessCount(normalizedKey);
-          
-          this.metrics.hits++;
-          const value = JSON.parse(this.memoryCache.get(normalizedKey));
-          
-          // Mettre à jour le TTL si l'option de rafraîchissement est activée
-          if (options.refreshTTL && expireTime) {
-            const ttl = Math.floor((expireTime - Date.now()) / 1000);
-            this.cacheTTL.set(normalizedKey, Date.now() + (ttl * 1000));
-          }
-          
-          return value;
-        } else {
-          // Supprimer la clé expirée
-          this._removeKey(normalizedKey);
-        }
-      }
-      
-      this.metrics.misses++;
-      return null;
+      // Utiliser Redis comme backend principal
+      return redisCache.get(key, options.type || 'default');
     } catch (error) {
       this.metrics.errors++;
       logger.error(`[CacheService] Erreur lors de la récupération de ${key}: ${error.message}`);
@@ -106,44 +76,9 @@ class CacheService {
    * @param {Object} options - Options supplémentaires
    * @returns {Promise<boolean>} Succès de l'opération
    */
-  async set(key, value, ttl = this.config.defaultTTL, options = {}) {
+  async set(key, value, ttl = null, options = {}) {
     try {
-      // Normaliser la clé
-      const normalizedKey = this._normalizeKey(key);
-      
-      // Vérifier la taille de la clé
-      if (normalizedKey.length > this.config.maxKeySize) {
-        logger.warn(`[CacheService] Clé trop longue ignorée: ${normalizedKey.substring(0, 50)}...`);
-        return false;
-      }
-      
-      // Sérialiser la valeur
-      const serialized = JSON.stringify(value);
-      
-      // Vérifier la taille de la valeur
-      if (serialized.length > this.config.maxValueSize) {
-        logger.warn(`[CacheService] Valeur trop volumineuse ignorée pour la clé: ${normalizedKey}`);
-        return false;
-      }
-      
-      // Stocker la valeur sérialisée
-      this.memoryCache.set(normalizedKey, serialized);
-      
-      // Configurer l'expiration si ttl > 0
-      if (ttl > 0) {
-        this.cacheTTL.set(normalizedKey, Date.now() + (ttl * 1000));
-      } else {
-        this.cacheTTL.delete(normalizedKey); // Pas d'expiration
-      }
-      
-      // Si la valeur est marquée comme fréquemment accédée, l'ajouter au hot cache
-      if (options.hot === true || (this.accessCount.get(normalizedKey) || 0) >= this.hotCacheThreshold) {
-        this.hotCache.set(normalizedKey, serialized);
-        this._manageHotCacheSize();
-      }
-      
-      this.metrics.sets++;
-      return true;
+      return redisCache.set(key, value, ttl, options.type || 'default');
     } catch (error) {
       this.metrics.errors++;
       logger.error(`[CacheService] Erreur lors du stockage de ${key}: ${error.message}`);
@@ -158,8 +93,7 @@ class CacheService {
    */
   async del(key) {
     try {
-      const normalizedKey = this._normalizeKey(key);
-      return this._removeKey(normalizedKey);
+      return redisCache.del(key);
     } catch (error) {
       this.metrics.errors++;
       logger.error(`[CacheService] Erreur lors de la suppression de ${key}: ${error.message}`);
@@ -401,15 +335,9 @@ class CacheService {
    * Vide complètement le cache
    * @returns {Promise<number>} Nombre de clés supprimées
    */
-  async flushAll() {
+  async flush() {
     try {
-      const keyCount = this.memoryCache.size;
-      this.memoryCache.clear();
-      this.cacheTTL.clear();
-      this.hotCache.clear();
-      this.accessCount.clear();
-      logger.info(`[CacheService] Cache en mémoire vidé (${keyCount} clés supprimées)`);
-      return keyCount;
+      return redisCache.flush();
     } catch (error) {
       this.metrics.errors++;
       logger.error(`[CacheService] Erreur lors du vidage du cache: ${error.message}`);
@@ -535,14 +463,4 @@ class CacheService {
   }
 }
 
-// Exporter une instance singleton
-let instance = null;
-
-module.exports = {
-  getInstance: () => {
-    if (!instance) {
-      instance = new CacheService();
-    }
-    return instance;
-  }
-};
+module.exports = new CacheService();

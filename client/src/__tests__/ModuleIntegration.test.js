@@ -1,10 +1,8 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import TrainingPlanBuilder from '../components/training/TrainingPlanBuilder';
 import FTPCalculator from '../components/training/FTPCalculator';
-import CommunityFeed from '../components/social/CommunityFeed';
-import { SevenMajorsChallenge } from '../components/challenges/SevenMajorsChallenge';
 
 // Mocks des services
 jest.mock('../services/socialService');

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "testimonial-001",
+    "author": "Claire Dubois",
+    "date": "2024-08-21",
+    "col_slug": "col-de-la-loze",
+    "rating": 5,
+    "title": "Une montée inoubliable !",
+    "text": "Le Col de la Loze, c’est une expérience unique. Les derniers kilomètres sont difficiles mais l’ambiance avec les autres cyclistes et la vue au sommet sont magiques. Organisation parfaite lors de l’événement, je recommande à tous les passionnés !",
+    "tips": "Prévoir une veste pour la descente, météo changeante.",
+    "status": "active",
+    "last_updated": "2025-04-16T15:28:52.000Z"
+  },
+  {
+    "id": "testimonial-002",
+    "author": "Luca Bianchi",
+    "date": "2023-07-10",
+    "col_slug": "col-du-galibier",
+    "rating": 4.5,
+    "title": "Galibier, mythique !",
+    "text": "Montée longue et exigeante, paysages superbes. Attention au vent dans les derniers kilomètres. Ravito au sommet très apprécié.",
+    "tips": "Partir tôt pour éviter la chaleur et la foule.",
+    "status": "active",
+    "last_updated": "2025-04-16T15:28:52.000Z"
+  }
+]

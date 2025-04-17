@@ -5,6 +5,7 @@
  */
 
 import { getAnalyticsService } from './analyticsService';
+import React from 'react';
 
 class ABTestingService {
   constructor(options = {}) {

@@ -8,6 +8,7 @@
  * @version 7.0.0
  */
 
+import * as JSX from 'react/jsx-runtime';
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Auth0Provider, useAuth0, User } from '@auth0/auth0-react';
 import authUtils from './authUtils';

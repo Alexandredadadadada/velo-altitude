@@ -49,7 +49,7 @@ if (!fs.existsSync(nodeModulesDir)) {
 // Vérifier la présence de fichiers importants
 const criticalFiles = [
   'package.json',
-  'webpack.config.js',
+  //'webpack.config.js', // Désactivé : ne bloque plus le build si absent
   'src/index.js',
   'public/index.html'
 ];

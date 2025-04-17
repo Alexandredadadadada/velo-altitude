@@ -10,6 +10,8 @@ Ce document décrit les procédures de maintenance régulières pour l'applicati
 4. [Mises à jour des dépendances](#mises-à-jour-des-dépendances)
 5. [Sauvegarde et récupération](#sauvegarde-et-récupération)
 6. [Procédures de déploiement](#procédures-de-déploiement)
+7. [Correctifs Lint & Nettoyage Code (15/04/2025)](#correctifs-lint--nettoyage-code-15042025)
+8. [Guide de Maintenance – Sprint Excellence 2025](#guide-de-maintenance-–-sprint-excellence-2025)
 
 ## Tâches de maintenance régulières
 
@@ -119,5 +121,56 @@ En cas de problème après déploiement :
 1. Accéder au tableau de bord Netlify
 2. Trouver le dernier déploiement stable
 3. Cliquer sur "Publish deploy" pour ce déploiement
+
+## Correctifs Lint & Nettoyage Code (15/04/2025)
+
+### Actions réalisées
+- Suppression des imports/variables inutiles dans l'ensemble du codebase.
+- Correction des hooks React et clarification des dépendances.
+- Suppression du code unreachable et simplification des fonctions inutiles.
+- Refactoring des opérateurs logiques complexes pour plus de clarté.
+- Correction des fonctions utilisées avant définition.
+
+### Points de vigilance pour la maintenance
+- Vérifier à chaque mise à jour de dépendance l'impact sur les hooks et la structure des composants.
+- Relancer un lint complet (`npm run lint`) après chaque refonte majeure.
+- Surveiller les warnings liés aux hooks et à l'utilisation des opérateurs logiques dans les nouveaux composants.
+
+### Recommandations pour la reprise
+- Consulter PROJECT_STATUS.md pour la liste exhaustive des corrections et des points restants.
+- Poursuivre la suppression des warnings restants (voir section "Prochaines étapes" dans les autres fichiers MD).
+- Maintenir la documentation technique à jour après chaque refactor ou correction majeure.
+
+## Guide de Maintenance – Sprint Excellence 2025
+
+### Nouvelles procédures
+
+- Scripts d’import batch pour les données cols, trainings, recettes
+- Validation automatisée de la complétude data (images, météo, etc.)
+- Surveillance des erreurs API et alertes Slack intégrées
+- Maintenance des endpoints OpenAPI (versionnage, dépréciation)
+- Ajout de tests de non-régression sur les imports massifs
+
+### Outils
+
+- Dashboard admin pour monitoring temps réel
+- Scripts Node.js pour migration/validation
+- Documentation des scripts dans /scripts
+
+### Bonnes pratiques
+
+- Toujours tester l’import sur environnement staging
+- Documenter toute modification de schéma data
+- Utiliser les scripts de validation avant chaque déploiement
+
+---
+
+Contact lead dev pour toute anomalie critique ou suggestion d’amélioration continue.
+
+## Note du 16 avril 2025
+
+- Attention à ne jamais committer de fichiers volumineux (>100Mo) ou de caches (node_modules, .webpack-cache)
+- Procédure de nettoyage de l’historique git ajoutée pour supprimer les gros fichiers bloquants
+- Mise à jour du .gitignore pour éviter les problèmes futurs
 
 Ce guide est un document vivant qui doit être mis à jour régulièrement pour refléter les changements dans l'application et les meilleures pratiques.
