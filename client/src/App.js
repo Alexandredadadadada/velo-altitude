@@ -15,6 +15,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import modernTheme from './theme/modernTheme';
 import './App.css';
+import { reportWebVitals } from './reportWebVitals';
+import { initWebVitals } from './utils/webVitals';
+import { performanceTracker } from './utils/performanceTracker';
 
 const Home = lazy(() => import('./pages/Home'));
 const ColsRoutes = lazy(() => import('./pages/cols/ColsRoutes'));
@@ -91,11 +94,13 @@ function App() {
         <CssBaseline />
         <NotificationProvider>
           <div className="app" role="application">
+            {/* ACCESSIBILITÉ: Skip Link et landmarks */}
+            <a href="#main-content" className="skip-link">Skip to main content</a>
             {/* Nouvelle barre de navigation animée */}
-            <AnimatedNavbar />
-
+            <AnimatedNavbar role="banner" />
+            
             {/* Contenu principal avec animations de transition de page */}
-            <main className="main-content" id="main-content" role="main">
+            <main id="main-content" tabIndex="-1" role="main" aria-label="Main content">
               <ErrorBoundary>
                 <Suspense fallback={<LoadingFallback type="content" />}>
                   <AnimatePresence mode="wait">
@@ -123,12 +128,20 @@ function App() {
             </main>
 
             {/* Pied de page */}
-            <Footer />
+            <Footer role="contentinfo" />
           </div>
         </NotificationProvider>
       </ThemeProvider>
     </I18nextProvider>
   );
 }
+
+// --- INIT WEB VITALS (Day 14) ---
+initWebVitals();
+
+// Optionally expose tracker for debugging
+window.performanceTracker = performanceTracker;
+
+reportWebVitals();
 
 export default App;

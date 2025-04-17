@@ -49,22 +49,22 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     // Vérifier si la réponse contient un nouveau token d'accès
-    const newToken = response.headers['x-new-access-token'];
-    if (newToken) {
-      // Mettre à jour le token dans localStorage
-      localStorage.setItem('authToken', newToken);
-    }
+    // const newToken = response.headers['x-new-access-token'];
+    // if (newToken) {
+    //   // Mettre à jour le token dans localStorage
+    //   localStorage.setItem('authToken', newToken);
+    // }
     
     return response;
   },
   (error) => {
     // Gérer les erreurs d'authentification (401)
     if (error.response && error.response.status === 401) {
-      // Vérifier si l'erreur est due à un token expiré
-      const isTokenExpired = 
-        error.response.data?.error?.type === 'auth_token_expired' ||
-        error.response.data?.message?.includes('expired');
-      
+      // 
+      // const isTokenExpired = 
+      //   error.response.data?.error?.type === 'auth_token_expired' ||
+      //   error.response.data?.message?.includes('expired');
+      //
       // Si le token est expiré, tenter de le rafraîchir automatiquement
       // Cette logique sera gérée par le service d'authentification
       

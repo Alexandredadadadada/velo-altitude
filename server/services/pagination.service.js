@@ -250,14 +250,4 @@ class PaginationService {
   }
 }
 
-// Exporter une instance singleton
-let instance = null;
-
-module.exports = {
-  getInstance: () => {
-    if (!instance) {
-      instance = new PaginationService();
-    }
-    return instance;
-  }
-};
+module.exports = new PaginationService();

@@ -1,0 +1,792 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "bin-build": {
+      "name": "bin-build",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "decompress",
+        "download",
+        "url-regex"
+      ],
+      "effects": [
+        "mozjpeg"
+      ],
+      "range": ">=2.1.1",
+      "nodes": [
+        "node_modules/bin-build"
+      ],
+      "fixAvailable": true
+    },
+    "bin-version": {
+      "name": "bin-version",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "find-versions"
+      ],
+      "effects": [
+        "bin-version-check"
+      ],
+      "range": "<=4.0.0",
+      "nodes": [
+        "node_modules/bin-version"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "bin-version-check": {
+      "name": "bin-version-check",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "bin-version",
+        "semver"
+      ],
+      "effects": [
+        "bin-wrapper"
+      ],
+      "range": "<=4.0.0",
+      "nodes": [
+        "node_modules/bin-version-check"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "bin-wrapper": {
+      "name": "bin-wrapper",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "bin-version-check",
+        "download"
+      ],
+      "effects": [
+        "mozjpeg",
+        "pngquant-bin"
+      ],
+      "range": ">=0.4.0",
+      "nodes": [
+        "node_modules/bin-wrapper"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "braces": {
+      "name": "braces",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1085715,
+          "name": "braces",
+          "dependency": "braces",
+          "title": "Regular Expression Denial of Service in braces",
+          "url": "https://github.com/advisories/GHSA-g95f-p29q-9xw4",
+          "severity": "low",
+          "cwe": [
+            "CWE-185",
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": "<2.3.1"
+        },
+        {
+          "source": 1089939,
+          "name": "braces",
+          "dependency": "braces",
+          "title": "Regular Expression Denial of Service (ReDoS) in braces",
+          "url": "https://github.com/advisories/GHSA-cwfw-4gq5-mrqx",
+          "severity": "low",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<2.3.1"
+        },
+        {
+          "source": 1098094,
+          "name": "braces",
+          "dependency": "braces",
+          "title": "Uncontrolled resource consumption in braces",
+          "url": "https://github.com/advisories/GHSA-grv7-fg5c-xmjg",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-1050"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<3.0.3"
+        }
+      ],
+      "effects": [
+        "micromatch"
+      ],
+      "range": "<=3.0.2",
+      "nodes": [
+        "node_modules/glob-stream/node_modules/braces"
+      ],
+      "fixAvailable": true
+    },
+    "caw": {
+      "name": "caw",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "tunnel-agent"
+      ],
+      "effects": [
+        "download"
+      ],
+      "range": "<=2.0.0",
+      "nodes": [
+        "node_modules/caw"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "cross-spawn": {
+      "name": "cross-spawn",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1100562,
+          "name": "cross-spawn",
+          "dependency": "cross-spawn",
+          "title": "Regular Expression Denial of Service (ReDoS) in cross-spawn",
+          "url": "https://github.com/advisories/GHSA-3xgq-45jj-v275",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<6.0.6"
+        }
+      ],
+      "effects": [
+        "execa"
+      ],
+      "range": "<6.0.6",
+      "nodes": [
+        "node_modules/exec-buffer/node_modules/cross-spawn",
+        "node_modules/execa/node_modules/cross-spawn"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "decompress": {
+      "name": "decompress",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1091741,
+          "name": "decompress",
+          "dependency": "decompress",
+          "title": "Path Traversal in decompress",
+          "url": "https://github.com/advisories/GHSA-qgfr-5hqp-vrw9",
+          "severity": "critical",
+          "cwe": [
+            "CWE-22",
+            "CWE-59"
+          ],
+          "cvss": {
+            "score": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<4.2.1"
+        }
+      ],
+      "effects": [
+        "bin-build",
+        "gulp-decompress"
+      ],
+      "range": "<4.2.1",
+      "nodes": [
+        "node_modules/decompress"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "download": {
+      "name": "download",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "caw",
+        "got",
+        "gulp-decompress"
+      ],
+      "effects": [
+        "bin-build",
+        "bin-wrapper"
+      ],
+      "range": ">=4.0.0",
+      "nodes": [
+        "node_modules/download"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "exec-buffer": {
+      "name": "exec-buffer",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "execa"
+      ],
+      "effects": [],
+      "range": ">=3.1.0",
+      "nodes": [
+        "node_modules/exec-buffer"
+      ],
+      "fixAvailable": true
+    },
+    "execa": {
+      "name": "execa",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "cross-spawn"
+      ],
+      "effects": [
+        "exec-buffer",
+        "imagemin-mozjpeg"
+      ],
+      "range": "0.5.0 - 0.9.0",
+      "nodes": [
+        "node_modules/exec-buffer/node_modules/execa",
+        "node_modules/execa"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "find-versions": {
+      "name": "find-versions",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "meow",
+        "semver-regex"
+      ],
+      "effects": [
+        "bin-version"
+      ],
+      "range": "<=3.2.0",
+      "nodes": [
+        "node_modules/find-versions"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "glob-stream": {
+      "name": "glob-stream",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "micromatch"
+      ],
+      "effects": [
+        "vinyl-fs"
+      ],
+      "range": "5.3.0 - 5.3.5",
+      "nodes": [
+        "node_modules/glob-stream"
+      ],
+      "fixAvailable": true
+    },
+    "got": {
+      "name": "got",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1088948,
+          "name": "got",
+          "dependency": "got",
+          "title": "Got allows a redirect to a UNIX socket",
+          "url": "https://github.com/advisories/GHSA-pfrx-2q88-qq97",
+          "severity": "moderate",
+          "cwe": [],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<11.8.5"
+        }
+      ],
+      "effects": [
+        "download"
+      ],
+      "range": "<11.8.5",
+      "nodes": [
+        "node_modules/got"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gulp-decompress": {
+      "name": "gulp-decompress",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "decompress",
+        "gulp-util"
+      ],
+      "effects": [
+        "download"
+      ],
+      "range": "<=2.0.1",
+      "nodes": [
+        "node_modules/gulp-decompress"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gulp-util": {
+      "name": "gulp-util",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "lodash.template"
+      ],
+      "effects": [
+        "gulp-decompress"
+      ],
+      "range": ">=1.1.0",
+      "nodes": [
+        "node_modules/gulp-util"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "imagemin-mozjpeg": {
+      "name": "imagemin-mozjpeg",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        "execa",
+        "mozjpeg"
+      ],
+      "effects": [],
+      "range": "7.0.0",
+      "nodes": [
+        "node_modules/imagemin-mozjpeg"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "imagemin-pngquant": {
+      "name": "imagemin-pngquant",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "pngquant-bin"
+      ],
+      "effects": [],
+      "range": "1.0.2 - 5.1.0",
+      "nodes": [
+        "node_modules/imagemin-pngquant"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "lodash.template": {
+      "name": "lodash.template",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096993,
+          "name": "lodash.template",
+          "dependency": "lodash.template",
+          "title": "Command Injection in lodash",
+          "url": "https://github.com/advisories/GHSA-35jh-r3h4-6jhm",
+          "severity": "high",
+          "cwe": [
+            "CWE-77",
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 7.2,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<=4.5.0"
+        }
+      ],
+      "effects": [
+        "gulp-util"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/lodash.template"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "meow": {
+      "name": "meow",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "trim-newlines"
+      ],
+      "effects": [
+        "find-versions"
+      ],
+      "range": "3.4.0 - 5.0.0",
+      "nodes": [
+        "node_modules/meow"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "micromatch": {
+      "name": "micromatch",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098681,
+          "name": "micromatch",
+          "dependency": "micromatch",
+          "title": "Regular Expression Denial of Service (ReDoS) in micromatch",
+          "url": "https://github.com/advisories/GHSA-952p-6rrq-rcjv",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": "<4.0.8"
+        },
+        "braces"
+      ],
+      "effects": [
+        "glob-stream"
+      ],
+      "range": "<=4.0.7",
+      "nodes": [
+        "node_modules/glob-stream/node_modules/micromatch"
+      ],
+      "fixAvailable": true
+    },
+    "mozjpeg": {
+      "name": "mozjpeg",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        "bin-build",
+        "bin-wrapper"
+      ],
+      "effects": [],
+      "range": "0.1.10 - 6.0.0",
+      "nodes": [
+        "node_modules/mozjpeg"
+      ],
+      "fixAvailable": true
+    },
+    "pngquant-bin": {
+      "name": "pngquant-bin",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "bin-wrapper"
+      ],
+      "effects": [
+        "imagemin-pngquant"
+      ],
+      "range": "1.0.0 - 5.0.0",
+      "nodes": [
+        "node_modules/pngquant-bin"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "semver": {
+      "name": "semver",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1101089,
+          "name": "semver",
+          "dependency": "semver",
+          "title": "semver vulnerable to Regular Expression Denial of Service",
+          "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<5.7.2"
+        }
+      ],
+      "effects": [
+        "bin-version-check"
+      ],
+      "range": "<5.7.2",
+      "nodes": [
+        "node_modules/bin-version-check/node_modules/semver"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "semver-regex": {
+      "name": "semver-regex",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1092475,
+          "name": "semver-regex",
+          "dependency": "semver-regex",
+          "title": "semver-regex Regular Expression Denial of Service (ReDOS)",
+          "url": "https://github.com/advisories/GHSA-44c6-4v22-4mhx",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<3.1.3"
+        },
+        {
+          "source": 1092605,
+          "name": "semver-regex",
+          "dependency": "semver-regex",
+          "title": "Regular expression denial of service in semver-regex",
+          "url": "https://github.com/advisories/GHSA-4x5v-gmq8-25ch",
+          "severity": "low",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<3.1.4"
+        }
+      ],
+      "effects": [
+        "find-versions"
+      ],
+      "range": "<=3.1.3",
+      "nodes": [
+        "node_modules/semver-regex"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "trim-newlines": {
+      "name": "trim-newlines",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1095100,
+          "name": "trim-newlines",
+          "dependency": "trim-newlines",
+          "title": "Uncontrolled Resource Consumption in trim-newlines",
+          "url": "https://github.com/advisories/GHSA-7p7h-4mm5-852v",
+          "severity": "high",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<3.0.1"
+        }
+      ],
+      "effects": [
+        "meow"
+      ],
+      "range": "<3.0.1",
+      "nodes": [
+        "node_modules/trim-newlines"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "tunnel-agent": {
+      "name": "tunnel-agent",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1085744,
+          "name": "tunnel-agent",
+          "dependency": "tunnel-agent",
+          "title": "Memory Exposure in tunnel-agent",
+          "url": "https://github.com/advisories/GHSA-xc7v-wxcw-j472",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-200"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.6.0"
+        }
+      ],
+      "effects": [
+        "caw"
+      ],
+      "range": "<0.6.0",
+      "nodes": [
+        "node_modules/tunnel-agent"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "10.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "url-regex": {
+      "name": "url-regex",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1087482,
+          "name": "url-regex",
+          "dependency": "url-regex",
+          "title": "Regular expression denial of service in url-regex",
+          "url": "https://github.com/advisories/GHSA-v4rh-8p82-6h5w",
+          "severity": "high",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=5.0.0"
+        }
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/url-regex"
+      ],
+      "fixAvailable": true
+    },
+    "vinyl-fs": {
+      "name": "vinyl-fs",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "glob-stream"
+      ],
+      "effects": [],
+      "range": "2.4.2 - 2.4.4",
+      "nodes": [
+        "node_modules/vinyl-fs"
+      ],
+      "fixAvailable": true
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 6,
+      "high": 17,
+      "critical": 6,
+      "total": 29
+    },
+    "dependencies": {
+      "prod": 735,
+      "dev": 1432,
+      "optional": 44,
+      "peer": 3,
+      "peerOptional": 0,
+      "total": 2211
+    }
+  }
+}

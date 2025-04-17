@@ -131,6 +131,14 @@ Après chaque déploiement, vérifier les éléments suivants:
 6. Le système d'entraînement et de nutrition fonctionne
 7. Les mécanismes de cache API fonctionnent correctement
 
+## Journal d’avancement du 16 avril 2025
+
+- **Suppression des fichiers volumineux de l’historique git** pour permettre le push sur GitHub.
+- **Déploiement de l’API sur Render** : https://velo-altitude-api.onrender.com
+- **Mise à jour de la variable d’environnement Netlify** pour pointer vers l’API Render.
+- **Procédure de nettoyage de l’historique git** (filter-branch, force push) documentée.
+- **Conseils pour la gestion des erreurs git et l’utilisation du terminal**.
+
 ## Correctifs Lint & Nettoyage Code (15/04/2025)
 
 - Suppression des imports/variables inutiles dans les scripts de déploiement.

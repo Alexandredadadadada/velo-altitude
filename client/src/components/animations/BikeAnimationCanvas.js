@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 /**
  * Composant d'animation de vélo utilisant Canvas
@@ -150,16 +149,18 @@ const BikeAnimationCanvas = ({ width = 300, height = 200, color = '#1976d2', spe
   }, [color, speed]);
 
   return (
-    <canvas 
-      ref={canvasRef} 
-      width={width} 
-      height={height}
-      style={{ 
-        display: 'block', 
-        margin: '0 auto',
-        maxWidth: '100%'
-      }}
-    />
+    <section role="region" aria-label="Bike animation">
+      <canvas 
+        ref={canvasRef} 
+        width={width} 
+        height={height}
+        style={{ 
+          display: 'block', 
+          margin: '0 auto',
+          maxWidth: '100%'
+        }}
+      />
+    </section>
   );
 };
 

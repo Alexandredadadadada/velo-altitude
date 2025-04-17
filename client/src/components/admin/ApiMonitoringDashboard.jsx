@@ -162,305 +162,307 @@ const ApiMonitoringDashboard = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
-      
-      <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
-        <Typography variant="h4" component="h1">
-          <ApiIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-          Tableau de Bord de Monitoring des API
-        </Typography>
-        <Button 
-          variant="contained" 
-          startIcon={<RefreshIcon />}
-          onClick={checkQuotas}
-          disabled={refreshing}
-        >
-          {refreshing ? 'Rafraîchissement...' : 'Rafraîchir les données'}
-        </Button>
-      </Box>
-
-      <Grid container spacing={3}>
-        {/* Résumé de l'état du serveur */}
-        <Grid item xs={12} md={4}>
-          <Paper
-            sx={{
-              p: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              height: 140,
-            }}
+      <section role="region" aria-label="API Monitoring Dashboard">
+        {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+        
+        <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
+          <Typography variant="h4" component="h1">
+            <ApiIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
+            Tableau de Bord de Monitoring des API
+          </Typography>
+          <Button 
+            variant="contained" 
+            startIcon={<RefreshIcon />}
+            onClick={checkQuotas}
+            disabled={refreshing}
           >
-            <Typography component="h2" variant="h6" color="primary" gutterBottom>
-              <TimeIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-              État du Serveur
-            </Typography>
-            {dashboardData && (
-              <>
-                <Typography component="p" variant="h4">
-                  {formatUptime(dashboardData.serverStatus.uptime)}
-                </Typography>
-                <Typography color="text.secondary" sx={{ flex: 1 }}>
-                  Mémoire: {formatMemory(dashboardData.serverStatus.memoryUsage.rss)}
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  {new Date(dashboardData.serverStatus.timestamp).toLocaleString()}
-                </Typography>
-              </>
-            )}
-          </Paper>
-        </Grid>
+            {refreshing ? 'Rafraîchissement...' : 'Rafraîchir les données'}
+          </Button>
+        </Box>
 
-        {/* Résumé des alertes */}
-        <Grid item xs={12} md={4}>
-          <Paper
-            sx={{
-              p: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              height: 140,
-            }}
-          >
-            <Typography component="h2" variant="h6" color="error" gutterBottom>
-              <WarningIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-              Alertes
-            </Typography>
-            {dashboardData && (
-              <>
-                <Typography component="p" variant="h4">
-                  {dashboardData.alerts.length} alertes
-                </Typography>
-                {dashboardData.alerts.length > 0 ? (
-                  <Typography color="text.secondary" sx={{ flex: 1 }}>
-                    Dernière alerte: {new Date(dashboardData.alerts[0].timestamp).toLocaleString()}
+        <Grid container spacing={3}>
+          {/* Résumé de l'état du serveur */}
+          <Grid item xs={12} md={4}>
+            <Paper
+              sx={{
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                height: 140,
+              }}
+            >
+              <Typography component="h2" variant="h6" color="primary" gutterBottom>
+                <TimeIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
+                État du Serveur
+              </Typography>
+              {dashboardData && (
+                <>
+                  <Typography component="p" variant="h4">
+                    {formatUptime(dashboardData.serverStatus.uptime)}
                   </Typography>
-                ) : (
                   <Typography color="text.secondary" sx={{ flex: 1 }}>
-                    Aucune alerte récente.
+                    Mémoire: {formatMemory(dashboardData.serverStatus.memoryUsage.rss)}
                   </Typography>
-                )}
-                <Typography variant="caption" color="text.secondary">
-                  Les 10 dernières alertes sont affichées ci-dessous
-                </Typography>
-              </>
-            )}
-          </Paper>
-        </Grid>
+                  <Typography variant="caption" color="text.secondary">
+                    {new Date(dashboardData.serverStatus.timestamp).toLocaleString()}
+                  </Typography>
+                </>
+              )}
+            </Paper>
+          </Grid>
 
-        {/* Résumé des statistiques */}
-        <Grid item xs={12} md={4}>
-          <Paper
-            sx={{
-              p: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              height: 140,
-            }}
-          >
-            <Typography component="h2" variant="h6" color="primary" gutterBottom>
-              <StatsIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-              Statistiques d'Utilisation
-            </Typography>
-            {dashboardData && (
-              <>
-                <Typography component="p" variant="h4">
-                  {Object.values(dashboardData.usageStats.daily).reduce((acc, curr) => acc + curr.totalCalls, 0)} appels
-                </Typography>
-                <Typography color="text.secondary" sx={{ flex: 1 }}>
-                  Sur les dernières 24 heures
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  {Object.values(dashboardData.usageStats.weekly).reduce((acc, curr) => acc + curr.totalCalls, 0)} appels cette semaine
-                </Typography>
-              </>
-            )}
-          </Paper>
-        </Grid>
+          {/* Résumé des alertes */}
+          <Grid item xs={12} md={4}>
+            <Paper
+              sx={{
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                height: 140,
+              }}
+            >
+              <Typography component="h2" variant="h6" color="error" gutterBottom>
+                <WarningIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
+                Alertes
+              </Typography>
+              {dashboardData && (
+                <>
+                  <Typography component="p" variant="h4">
+                    {dashboardData.alerts.length} alertes
+                  </Typography>
+                  {dashboardData.alerts.length > 0 ? (
+                    <Typography color="text.secondary" sx={{ flex: 1 }}>
+                      Dernière alerte: {new Date(dashboardData.alerts[0].timestamp).toLocaleString()}
+                    </Typography>
+                  ) : (
+                    <Typography color="text.secondary" sx={{ flex: 1 }}>
+                      Aucune alerte récente.
+                    </Typography>
+                  )}
+                  <Typography variant="caption" color="text.secondary">
+                    Les 10 dernières alertes sont affichées ci-dessous
+                  </Typography>
+                </>
+              )}
+            </Paper>
+          </Grid>
 
-        {/* Quotas des API */}
-        <Grid item xs={12}>
-          <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-            <Typography component="h2" variant="h6" color="primary" gutterBottom>
-              Quotas des API
-            </Typography>
-            {dashboardData && (
-              <TableContainer>
-                <Table size="small">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>API</TableCell>
-                      <TableCell>Utilisation</TableCell>
-                      <TableCell>Appels restants</TableCell>
-                      <TableCell>Réinitialisation</TableCell>
-                      <TableCell>Dernière vérification</TableCell>
-                      <TableCell>État</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {Object.entries(dashboardData.apiStatus.apis).map(([apiKey, api]) => (
-                      <TableRow key={apiKey}>
-                        <TableCell>{api.name}</TableCell>
-                        <TableCell>
-                          <Box display="flex" alignItems="center">
-                            <Box width="100%" mr={1}>
-                              <LinearProgress 
-                                variant="determinate" 
-                                value={api.percentageUsed} 
-                                color={api.percentageUsed > 80 ? "error" : api.percentageUsed > 60 ? "warning" : "primary"}
-                              />
-                            </Box>
-                            <Box minWidth={35}>
-                              <Typography variant="body2" color="text.secondary">{`${api.percentageUsed}%`}</Typography>
-                            </Box>
-                          </Box>
-                        </TableCell>
-                        <TableCell>{api.remainingCalls}</TableCell>
-                        <TableCell>{api.resetIn}</TableCell>
-                        <TableCell>{new Date(api.lastChecked).toLocaleString()}</TableCell>
-                        <TableCell>
-                          {api.percentageUsed > 80 ? (
-                            <Tooltip title="Quota critique">
-                              <ErrorIcon color="error" />
-                            </Tooltip>
-                          ) : api.percentageUsed > 60 ? (
-                            <Tooltip title="Quota élevé">
-                              <WarningIcon color="warning" />
-                            </Tooltip>
-                          ) : (
-                            <Tooltip title="Quota normal">
-                              <CheckCircleIcon color="success" />
-                            </Tooltip>
-                          )}
-                        </TableCell>
+          {/* Résumé des statistiques */}
+          <Grid item xs={12} md={4}>
+            <Paper
+              sx={{
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                height: 140,
+              }}
+            >
+              <Typography component="h2" variant="h6" color="primary" gutterBottom>
+                <StatsIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
+                Statistiques d'Utilisation
+              </Typography>
+              {dashboardData && (
+                <>
+                  <Typography component="p" variant="h4">
+                    {Object.values(dashboardData.usageStats.daily).reduce((acc, curr) => acc + curr.totalCalls, 0)} appels
+                  </Typography>
+                  <Typography color="text.secondary" sx={{ flex: 1 }}>
+                    Sur les dernières 24 heures
+                  </Typography>
+                  <Typography variant="caption" color="text.secondary">
+                    {Object.values(dashboardData.usageStats.weekly).reduce((acc, curr) => acc + curr.totalCalls, 0)} appels cette semaine
+                  </Typography>
+                </>
+              )}
+            </Paper>
+          </Grid>
+
+          {/* Quotas des API */}
+          <Grid item xs={12}>
+            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+              <Typography component="h2" variant="h6" color="primary" gutterBottom>
+                Quotas des API
+              </Typography>
+              {dashboardData && (
+                <TableContainer>
+                  <Table size="small">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>API</TableCell>
+                        <TableCell>Utilisation</TableCell>
+                        <TableCell>Appels restants</TableCell>
+                        <TableCell>Réinitialisation</TableCell>
+                        <TableCell>Dernière vérification</TableCell>
+                        <TableCell>État</TableCell>
                       </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            )}
-          </Paper>
-        </Grid>
+                    </TableHead>
+                    <TableBody>
+                      {Object.entries(dashboardData.apiStatus.apis).map(([apiKey, api]) => (
+                        <TableRow key={apiKey}>
+                          <TableCell>{api.name}</TableCell>
+                          <TableCell>
+                            <Box display="flex" alignItems="center">
+                              <Box width="100%" mr={1}>
+                                <LinearProgress 
+                                  variant="determinate" 
+                                  value={api.percentageUsed} 
+                                  color={api.percentageUsed > 80 ? "error" : api.percentageUsed > 60 ? "warning" : "primary"}
+                                />
+                              </Box>
+                              <Box minWidth={35}>
+                                <Typography variant="body2" color="text.secondary">{`${api.percentageUsed}%`}</Typography>
+                              </Box>
+                            </Box>
+                          </TableCell>
+                          <TableCell>{api.remainingCalls}</TableCell>
+                          <TableCell>{api.resetIn}</TableCell>
+                          <TableCell>{new Date(api.lastChecked).toLocaleString()}</TableCell>
+                          <TableCell>
+                            {api.percentageUsed > 80 ? (
+                              <Tooltip title="Quota critique">
+                                <ErrorIcon color="error" />
+                              </Tooltip>
+                            ) : api.percentageUsed > 60 ? (
+                              <Tooltip title="Quota élevé">
+                                <WarningIcon color="warning" />
+                              </Tooltip>
+                            ) : (
+                              <Tooltip title="Quota normal">
+                                <CheckCircleIcon color="success" />
+                              </Tooltip>
+                            )}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              )}
+            </Paper>
+          </Grid>
 
-        {/* Graphique des quotas */}
-        <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
-            <Typography component="h2" variant="h6" color="primary" gutterBottom>
-              Utilisation des Quotas
-            </Typography>
-            {dashboardData && (
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  data={prepareChartData()}
-                  margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                  }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <ChartTooltip />
-                  <Legend />
-                  <Bar dataKey="usage" name="Utilisation (%)" fill="#8884d8" />
-                </BarChart>
-              </ResponsiveContainer>
-            )}
-          </Paper>
-        </Grid>
+          {/* Graphique des quotas */}
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
+              <Typography component="h2" variant="h6" color="primary" gutterBottom>
+                Utilisation des Quotas
+              </Typography>
+              {dashboardData && (
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={prepareChartData()}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <ChartTooltip />
+                    <Legend />
+                    <Bar dataKey="usage" name="Utilisation (%)" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              )}
+            </Paper>
+          </Grid>
 
-        {/* Graphique d'utilisation */}
-        <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
-            <Typography component="h2" variant="h6" color="primary" gutterBottom>
-              Appels API
-            </Typography>
-            {dashboardData && (
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  data={prepareUsageChartData()}
-                  margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                  }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <ChartTooltip />
-                  <Legend />
-                  <Bar dataKey="dailyCalls" name="Appels (24h)" fill="#82ca9d" />
-                  <Bar dataKey="weeklyCalls" name="Appels (7j)" fill="#8884d8" />
-                </BarChart>
-              </ResponsiveContainer>
-            )}
-          </Paper>
-        </Grid>
+          {/* Graphique d'utilisation */}
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
+              <Typography component="h2" variant="h6" color="primary" gutterBottom>
+                Appels API
+              </Typography>
+              {dashboardData && (
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={prepareUsageChartData()}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <ChartTooltip />
+                    <Legend />
+                    <Bar dataKey="dailyCalls" name="Appels (24h)" fill="#82ca9d" />
+                    <Bar dataKey="weeklyCalls" name="Appels (7j)" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              )}
+            </Paper>
+          </Grid>
 
-        {/* Graphique de latence */}
-        <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
-            <Typography component="h2" variant="h6" color="primary" gutterBottom>
-              Latence des API (ms)
-            </Typography>
-            {dashboardData && (
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart
-                  data={prepareUsageChartData()}
-                  margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                  }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <ChartTooltip />
-                  <Legend />
-                  <Line type="monotone" dataKey="dailyLatency" name="Latence (24h)" stroke="#82ca9d" />
-                  <Line type="monotone" dataKey="weeklyLatency" name="Latence (7j)" stroke="#8884d8" />
-                </LineChart>
-              </ResponsiveContainer>
-            )}
-          </Paper>
-        </Grid>
+          {/* Graphique de latence */}
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
+              <Typography component="h2" variant="h6" color="primary" gutterBottom>
+                Latence des API (ms)
+              </Typography>
+              {dashboardData && (
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={prepareUsageChartData()}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <ChartTooltip />
+                    <Legend />
+                    <Line type="monotone" dataKey="dailyLatency" name="Latence (24h)" stroke="#82ca9d" />
+                    <Line type="monotone" dataKey="weeklyLatency" name="Latence (7j)" stroke="#8884d8" />
+                  </LineChart>
+                </ResponsiveContainer>
+              )}
+            </Paper>
+          </Grid>
 
-        {/* Alertes récentes */}
-        <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
-            <Typography component="h2" variant="h6" color="error" gutterBottom>
-              Alertes Récentes
-            </Typography>
-            {dashboardData && (
-              <Box sx={{ overflow: 'auto', maxHeight: 240 }}>
-                {dashboardData.alerts.length > 0 ? (
-                  dashboardData.alerts.map((alert, index) => (
-                    <Alert 
-                      key={index} 
-                      severity="warning" 
-                      sx={{ mb: 1 }}
-                      icon={<WarningIcon />}
-                    >
-                      <Typography variant="caption" display="block">
-                        {new Date(alert.timestamp).toLocaleString()}
-                      </Typography>
-                      {alert.message}
+          {/* Alertes récentes */}
+          <Grid item xs={12} md={6}>
+            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 300 }}>
+              <Typography component="h2" variant="h6" color="error" gutterBottom>
+                Alertes Récentes
+              </Typography>
+              {dashboardData && (
+                <Box sx={{ overflow: 'auto', maxHeight: 240 }}>
+                  {dashboardData.alerts.length > 0 ? (
+                    dashboardData.alerts.map((alert, index) => (
+                      <Alert 
+                        key={index} 
+                        severity="warning" 
+                        sx={{ mb: 1 }}
+                        icon={<WarningIcon />}
+                      >
+                        <Typography variant="caption" display="block">
+                          {new Date(alert.timestamp).toLocaleString()}
+                        </Typography>
+                        {alert.message}
+                      </Alert>
+                    ))
+                  ) : (
+                    <Alert severity="success" sx={{ mb: 1 }}>
+                      Aucune alerte récente.
                     </Alert>
-                  ))
-                ) : (
-                  <Alert severity="success" sx={{ mb: 1 }}>
-                    Aucune alerte récente.
-                  </Alert>
-                )}
-              </Box>
-            )}
-          </Paper>
+                  )}
+                </Box>
+              )}
+            </Paper>
+          </Grid>
         </Grid>
-      </Grid>
+      </section>
     </Container>
   );
 };

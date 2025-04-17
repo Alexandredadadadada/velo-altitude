@@ -225,6 +225,12 @@ Le système d'optimisation de routing utilise les modèles de navigation pour am
 - Vérifier la cohérence des routes API après chaque refactor.
 - Relancer les tests d'intégration API après chaque modification majeure.
 
+## Mise à jour du 16 avril 2025
+
+- L’API est déployée sur Render : https://velo-altitude-api.onrender.com
+- Toutes les variables d’environnement sensibles sont gérées côté Render et Netlify
+- Les procédures de déploiement et de connexion front/back sont documentées dans DEPLOYMENT.md
+
 ## Sécurité des API
 
 Toutes les requêtes API authentifiées doivent inclure un token JWT dans l'en-tête:
@@ -269,3 +275,32 @@ L'application implémente un système de rollback automatique en cas de dégrada
 - Sauvegarde de l'état avant chaque déploiement de fonctionnalité
 - Surveillance des métriques de performance après déploiement
 - Rollback automatique si les performances se dégradent au-delà des seuils configurés
+
+## Nouveautés API – Sprint Excellence 2025
+
+## Nouvelles routes et améliorations
+
+- Ajout d’API batch pour l’import massif de cols, trainings, recettes
+- Documentation OpenAPI enrichie pour chaque nouvelle route
+- Ajout de la gestion avancée des erreurs (retours structurés, messages utilisateur)
+- Endpoints pour la météo dynamique et la nutrition intelligente
+- Ajout de la pagination, du filtrage et de la recherche avancée sur toutes les entités
+
+## Standards de Qualité
+
+- 100% TypeScript pour tous les nouveaux endpoints
+- Tests automatisés requis pour chaque route
+- Versionnage d’API et dépréciation documentée
+
+## Exemples d’utilisation
+
+```http
+POST /api/cols/batch-import
+POST /api/training/batch-import
+POST /api/recipes/batch-import
+GET /api/cols?region=Alpes&difficulty=4
+```
+
+---
+
+Pour toute contribution, se référer à la documentation OpenAPI jointe et respecter les conventions d’excellence technique.

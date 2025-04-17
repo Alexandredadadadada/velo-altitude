@@ -11,7 +11,7 @@ import ProfilePage from './pages/ProfilePage';
 import AuthTestApp from './tests/auth-test/AuthTestApp';
 
 // Composant de test du système météorologique
-import WeatherSystemTest from '../src/components/test/WeatherSystemTest';
+// import WeatherSystemTest from '../src/components/test/WeatherSystemTest';
 
 // Note: Plusieurs imports ont été temporairement commentés pour permettre
 // le démarrage de l'application et tester le système d'authentification
@@ -63,10 +63,10 @@ const AppRouter = () => {
         />
         
         {/* Environnement de test du système météorologique */}
-        <Route
+        {/* <Route
           path="/weather-test"
           element={<WeatherSystemTest />}
-        />
+        /> */}
         
         {/* Redirection en cas de route non trouvée */}
         <Route path="*" element={<Navigate to="/" replace />} />

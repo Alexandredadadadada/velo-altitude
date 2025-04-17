@@ -399,3 +399,184 @@ self.addEventListener('message', event => {
     );
   }
 });
+
+const CACHE_NAME = 'velo-altitude-cache-v1';
+
+const PRECACHE_ASSETS = [
+  '/',
+  '/index.html',
+  '/static/js/main.js',
+  '/static/css/main.css',
+  '/static/media/logo.png',
+  '/static/media/favicon.ico',
+  '/offline.html'
+];
+
+self.addEventListener('install', event => {
+  console.log('Service Worker installing...');
+  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('Service Worker: Caching assets');
+        return cache.addAll(PRECACHE_ASSETS);
+      })
+  );
+});
+
+self.addEventListener('activate', event => {
+  console.log('Service Worker activating...');
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.filter(cacheName => {
+          return cacheName.startsWith('velo-altitude-cache-') && cacheName !== CACHE_NAME;
+        }).map(cacheName => {
+          console.log('Service Worker: Deleting old cache', cacheName);
+          return caches.delete(cacheName);
+        })
+      );
+    }).then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', event => {
+  if (!event.request.url.startsWith(self.location.origin)) {
+    return;
+  }
+  if (event.request.url.includes('/api/')) {
+    event.respondWith(networkFirstStrategy(event.request));
+    return;
+  }
+  if (
+    event.request.url.match(/\.(js|css|png|jpg|jpeg|svg|gif|woff|woff2|ttf|eot)$/) ||
+    event.request.mode === 'navigate'
+  ) {
+    event.respondWith(cacheFirstStrategy(event.request));
+    return;
+  }
+  event.respondWith(networkWithCacheFallback(event.request));
+});
+
+async function networkFirstStrategy(request) {
+  try {
+    const networkResponse = await fetch(request);
+    const cachableResponse = networkResponse.clone();
+    caches.open(CACHE_NAME).then(cache => {
+      if (cachableResponse.status === 200) {
+        cache.put(request, cachableResponse);
+      }
+    });
+    return networkResponse;
+  } catch (error) {
+    console.log('Network request failed, trying cache', error);
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    if (request.mode === 'navigate') {
+      return caches.match('/offline.html');
+    }
+    return new Response(
+      JSON.stringify({
+        error: 'Network error',
+        offline: true,
+        message: 'You are currently offline'
+      }),
+      {
+        status: 503,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
+  }
+}
+
+async function cacheFirstStrategy(request) {
+  const cachedResponse = await caches.match(request);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+  try {
+    const networkResponse = await fetch(request);
+    const clonedResponse = networkResponse.clone();
+    caches.open(CACHE_NAME).then(cache => {
+      cache.put(request, clonedResponse);
+    });
+    return networkResponse;
+  } catch (error) {
+    console.log('Network request failed, no cache available', error);
+    if (request.mode === 'navigate') {
+      return caches.match('/offline.html');
+    }
+    throw error;
+  }
+}
+
+async function networkWithCacheFallback(request) {
+  try {
+    const networkResponse = await fetch(request);
+    const clonedResponse = networkResponse.clone();
+    caches.open(CACHE_NAME).then(cache => {
+      cache.put(request, clonedResponse);
+    });
+    return networkResponse;
+  } catch (error) {
+    console.log('Network request failed, trying cache', error);
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    if (request.mode === 'navigate') {
+      return caches.match('/offline.html');
+    }
+    throw error;
+  }
+}
+
+self.addEventListener('sync', event => {
+  if (event.tag === 'sync-challenges') {
+    event.waitUntil(syncChallenges());
+  } else if (event.tag === 'sync-activities') {
+    event.waitUntil(syncActivities());
+  }
+});
+
+async function syncChallenges() {
+  try {
+    const db = await openDatabase();
+    const pendingChallenges = await db.getAll('pendingChallenges');
+    for (const challenge of pendingChallenges) {
+      try {
+        const response = await fetch('/api/challenges', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(challenge.data)
+        });
+        if (response.ok) {
+          await db.delete('pendingChallenges', challenge.id);
+        }
+      } catch (error) {
+        console.error('Failed to sync challenge:', error);
+      }
+    }
+  } catch (error) {
+    console.error('Failed to sync challenges:', error);
+  }
+}
+
+function openDatabase() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('velo-altitude-offline', 1);
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result);
+    request.onupgradeneeded = () => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains('pendingChallenges')) {
+        db.createObjectStore('pendingChallenges', { keyPath: 'id', autoIncrement: true });
+      }
+      if (!db.objectStoreNames.contains('pendingActivities')) {
+        db.createObjectStore('pendingActivities', { keyPath: 'id', autoIncrement: true });
+      }
+    };
+  });
+}

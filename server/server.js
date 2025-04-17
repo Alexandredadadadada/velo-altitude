@@ -246,6 +246,7 @@ function initializeRoutes() {
   const eventRoutes = require('./routes/event.routes');
   const routeRoutes = require('./routes/route.routes');
   const clubRoutes = require('./routes/club.routes');
+  const communityRoutes = require('./routes/community.routes');
   
   // Appliquer les middlewares communs aux routes d'API
   const apiRouter = express.Router();
@@ -282,7 +283,8 @@ function initializeRoutes() {
   apiRouter.use('/events', apiMiddleware.paginate(), eventRoutes);
   apiRouter.use('/routes', apiMiddleware.paginate(), routeRoutes);
   apiRouter.use('/clubs', apiMiddleware.paginate(), clubRoutes);
-  
+  apiRouter.use('/community', communityRoutes);
+
   // Nouvelle route pour le tableau de bord des API
   apiRouter.use('/dashboard', require('./routes/api-dashboard'));
   
@@ -373,10 +375,8 @@ console.log('Setting up graceful shutdown...');
 // Gestion de l'arrêt gracieux
 const gracefulShutdown = async () => {
   try {
-    console.log('Shutting down server...');
     if (mongoose.connection.readyState === 1) {
       await mongoose.connection.close();
-      console.log('MongoDB connection closed');
     }
     process.exit(0);
   } catch (error) {

@@ -4,6 +4,9 @@
  * En mode développement, MSW intercepte les requêtes pour fournir des données mock.
  */
 import api from './apiWrapper';
+import { apiCircuitBreaker } from './api/circuitBreaker';
+import { fetchWithRetry } from './api/retry';
+import { fallbackWeather } from './api/fallbacks';
 
 const ColService = {
   /**
@@ -30,10 +33,21 @@ const ColService = {
           params.append('season', season.toLowerCase());
         });
       }
-      
-      // Appel API
-      const response = await api.get(`/cols${params.toString() ? `?${params.toString()}` : ''}`);
-      return response.data;
+      // Utilisation du circuit breaker et du retry
+      const url = `/cols${params.toString() ? `?${params.toString()}` : ''}`;
+      try {
+        const response = await apiCircuitBreaker.fetch('cols', `${url}`);
+        return response;
+      } catch (breakerError) {
+        // Fallback: retry classique
+        try {
+          const retryResponse = await fetchWithRetry(`${url}`);
+          return retryResponse;
+        } catch (retryError) {
+          // Dernier fallback: erreur
+          throw retryError;
+        }
+      }
     } catch (error) {
       console.error('Error fetching cols:', error);
       throw error;
@@ -47,9 +61,18 @@ const ColService = {
    */
   getColById: async (colId) => {
     try {
-      // Appel API
-      const response = await api.get(`/cols/${colId}`);
-      return response.data;
+      const url = `/cols/${colId}`;
+      try {
+        const response = await apiCircuitBreaker.fetch('cols', url);
+        return response;
+      } catch (breakerError) {
+        try {
+          const retryResponse = await fetchWithRetry(url);
+          return retryResponse;
+        } catch (retryError) {
+          throw retryError;
+        }
+      }
     } catch (error) {
       console.error(`Error fetching col ${colId}:`, error);
       throw error;

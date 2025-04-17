@@ -81,5 +81,35 @@ if (process.env.NODE_ENV === 'development') {
   window.perfMonitor = performanceMonitor;
 }
 
+// --- SERVICE WORKER REGISTRATION (Day 13) ---
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(error => {
+        console.error('Service Worker registration failed:', error);
+      });
+  });
+}
+
+navigator.serviceWorker && navigator.serviceWorker.addEventListener('controllerchange', () => {
+  showUpdateNotification();
+});
+
+function showUpdateNotification() {
+  const notification = document.createElement('div');
+  notification.className = 'update-notification';
+  notification.innerHTML = `\n    <p>New content is available!</p>\n    <button id="update-refresh">Refresh</button>\n    <button id="update-dismiss">Dismiss</button>\n  `;
+  document.body.appendChild(notification);
+  document.getElementById('update-refresh').addEventListener('click', () => {
+    window.location.reload();
+  });
+  document.getElementById('update-dismiss').addEventListener('click', () => {
+    document.body.removeChild(notification);
+  });
+}
+
 // Enregistrer le service worker pour les fonctionnalités PWA
 serviceWorkerRegistration.register();

@@ -94,6 +94,8 @@ const routeReviewRoutes = require('./routes/route-review.routes');
 const routeRecommendationRoutes = require('./routes/route-recommendation.routes');
 const reviewModerationRoutes = require('./routes/review-moderation.routes');
 const monitoringRoutes = require('./routes/monitoring.routes');
+const colsImportRoutes = require('./routes/cols-import.routes');
+const communityRoutes = require('./routes/community.routes');
 
 // Configuration Swagger
 const { setupSwagger } = require('./docs/api-documentation');
@@ -105,6 +107,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/environmental', environmentalRoutes);
 app.use('/api/routes', routesRoutes);
 app.use('/api/cols', colsRoutes);
+app.use('/api/cols/import', colsImportRoutes);
 app.use('/api/training', trainingRoutes);
 app.use('/api/training/ai', trainingAiRoutes);
 app.use('/api/nutrition', nutritionRoutes);
@@ -123,6 +126,7 @@ app.use('/api/reviews', routeReviewRoutes);
 app.use('/api/recommendations', routeRecommendationRoutes);
 app.use('/api/moderation', reviewModerationRoutes);
 app.use('/api/monitoring', monitoringRoutes);
+app.use('/api/community', communityRoutes);
 app.use('/', europeanColsRoutes);
 
 // Servir les fichiers statiques du client React en production
@@ -136,8 +140,6 @@ if (process.env.NODE_ENV === 'production') {
 
 // Middleware de gestion des erreurs
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  
   // Journaliser l'erreur
   fs.appendFileSync(
     path.join(logsDir, 'errors.log'),
@@ -163,16 +165,10 @@ const startServer = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
-    
-    console.log('Connecté à la base de données MongoDB');
-    
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
-      console.log(`Serveur démarré sur le port ${PORT}`);
-      console.log(`Environnement: ${process.env.NODE_ENV}`);
     });
   } catch (error) {
-    console.error('Erreur de connexion à la base de données:', error);
     process.exit(1);
   }
 };

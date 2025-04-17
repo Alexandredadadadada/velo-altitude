@@ -456,302 +456,343 @@ const GlobalNavigation = memo(() => {
       : color.replace('rgb', 'rgba').replace(')', `, ${value})`);
   }
   
+  // ACCESSIBILITY: Skip link for keyboard users
+  const SkipLink = () => (
+    <a
+      href="#main-content"
+      className="skip-link"
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        background: '#fff',
+        color: '#1976d2',
+        padding: '8px 16px',
+        zIndex: 2000,
+        transform: 'translateY(-200%)',
+        transition: 'transform 0.2s',
+        ':focus': { transform: 'translateY(0)' }
+      }}
+      tabIndex={0}
+    >
+      Skip to main content
+    </a>
+  );
+
+  // --- Accessibility: ARIA landmarks and live region ---
+  // Announce navigation events for screen readers
+  useEffect(() => {
+    if (announceNavigation) {
+      const timer = setTimeout(() => setAnnounceNavigation(''), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [announceNavigation]);
+
   return (
     <>
-      {/* Skip to content link - accessible uniquement au clavier */}
-      <Link 
-        href="#main-content" 
-        className="skip-to-content"
-        aria-label={t('a11y.skipToContent')}
-      >
-        {t('a11y.skipToContent')}
-      </Link>
-      
-      {/* Annonces pour lecteurs d'écran */}
-      <div 
-        className="visually-hidden" 
+      <SkipLink />
+      <nav
+        role="navigation"
+        aria-label="Main navigation"
+        className="global-navigation"
+        tabIndex="0"
         aria-live="polite"
-        role="status"
       >
-        {announceNavigation}
-      </div>
-      
-      {/* Header avec chargement paresseux */}
-      <Suspense fallback={HeaderFallback}>
-        <Header 
-          onMenuToggle={toggleDrawer} 
-          isScrolled={isScrolled}
-        />
-      </Suspense>
-      
-      {/* Drawer pour mobile */}
-      <Drawer
-        anchor="left"
-        open={isDrawerOpen && isMobile}
-        onClose={() => setIsDrawerOpen(false)}
-        sx={{
-          zIndex: theme.zIndex.drawer + 2,
-          '& .MuiDrawer-paper': { 
-            width: { xs: '85%', sm: 300 },
-            boxSizing: 'border-box'
-          }
-        }}
-      >
-        <Box
-          sx={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            p: 1
+        {/* Skip to content link - accessible uniquement au clavier */}
+        <Link 
+          href="#main-content" 
+          className="skip-to-content"
+          aria-label={t('a11y.skipToContent')}
+        >
+          {t('a11y.skipToContent')}
+        </Link>
+        
+        {/* Annonces pour lecteurs d'écran */}
+        <div 
+          className="visually-hidden" 
+          aria-live="polite"
+          role="status"
+        >
+          {announceNavigation}
+        </div>
+        
+        {/* Header avec chargement paresseux */}
+        <Suspense fallback={HeaderFallback}>
+          <Header 
+            onMenuToggle={toggleDrawer} 
+            isScrolled={isScrolled}
+          />
+        </Suspense>
+        
+        {/* Drawer pour mobile */}
+        <Drawer
+          anchor="left"
+          open={isDrawerOpen && isMobile}
+          onClose={() => setIsDrawerOpen(false)}
+          sx={{
+            zIndex: theme.zIndex.drawer + 2,
+            '& .MuiDrawer-paper': { 
+              width: { xs: '85%', sm: 300 },
+              boxSizing: 'border-box'
+            }
           }}
         >
-          <Box 
-            component="img" 
-            src="/logo.png" 
-            alt="Logo" 
-            sx={{ height: 40 }}
-          />
-          <IconButton 
-            onClick={() => setIsDrawerOpen(false)}
-            aria-label={t('a11y.closeMenu')}
-          >
-            <ChevronLeftIcon />
-          </IconButton>
-        </Box>
-        
-        <Divider />
-        
-        <List component="nav" aria-label={t('a11y.mainNavigation')}>
-          {mainNavItems.map(item => renderMenuItem(item))}
-        </List>
-      </Drawer>
-      
-      {/* Navigation principale pour desktop */}
-      {!isMobile && (
-        <Fade in={true}>
-          <Box 
-            component={motion.nav}
-            initial="hidden"
-            animate="visible"
-            sx={{
-              position: 'sticky',
-              top: 64, // Hauteur du header
-              zIndex: 20,
-              width: '100%',
-              bgcolor: 'background.paper',
-              boxShadow: isScrolled ? 2 : 0,
-              transition: 'box-shadow 0.3s ease-in-out',
-              borderBottom: `1px solid ${alpha(theme.palette.divider, isScrolled ? 0.8 : 0.5)}`
+          <Box
+            sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'space-between',
+              p: 1
             }}
           >
             <Box 
-              sx={{ 
-                display: 'flex', 
-                justifyContent: 'center',
-                px: 2,
-                py: 0.5
+              component="img" 
+              src="/logo.png" 
+              alt="Logo" 
+              sx={{ height: 40 }}
+            />
+            <IconButton 
+              onClick={() => setIsDrawerOpen(false)}
+              aria-label={t('a11y.closeMenu')}
+            >
+              <ChevronLeftIcon />
+            </IconButton>
+          </Box>
+          
+          <Divider />
+          
+          <List component="nav" aria-label={t('a11y.mainNavigation')}>
+            {mainNavItems.map(item => renderMenuItem(item))}
+          </List>
+        </Drawer>
+        
+        {/* Navigation principale pour desktop */}
+        {!isMobile && (
+          <Fade in={true}>
+            <Box 
+              component={motion.nav}
+              initial="hidden"
+              animate="visible"
+              sx={{
+                position: 'sticky',
+                top: 64, // Hauteur du header
+                zIndex: 20,
+                width: '100%',
+                bgcolor: 'background.paper',
+                boxShadow: isScrolled ? 2 : 0,
+                transition: 'box-shadow 0.3s ease-in-out',
+                borderBottom: `1px solid ${alpha(theme.palette.divider, isScrolled ? 0.8 : 0.5)}`
               }}
             >
               <Box 
                 sx={{ 
-                  display: 'flex',
-                  maxWidth: 'lg',
-                  width: '100%',
-                  justifyContent: 'space-between'
+                  display: 'flex', 
+                  justifyContent: 'center',
+                  px: 2,
+                  py: 0.5
                 }}
-                role="menubar"
-                component={motion.div}
-                variants={submenuVariants}
               >
-                {mainNavItems.map((item, index) => (
-                  <Tooltip 
-                    key={item.id} 
-                    title={item.subItems.length > 0 ? `${item.label} (${item.subItems.length})` : item.label}
-                    arrow
-                    placement="bottom"
-                    TransitionComponent={Fade}
-                    TransitionProps={{ timeout: 300 }}
-                  >
-                    <Box
-                      component={motion.div}
-                      custom={index}
-                      variants={navItemVariants}
-                      whileHover="hover"
-                      role="menuitem"
-                      aria-haspopup={item.subItems.length > 0 ? 'true' : 'false'}
-                      onClick={() => {
-                        navigateTo(item.path);
-                        if (item.subItems.length > 0) {
-                          toggleMenuExpand(item.id);
-                        }
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                          e.preventDefault();
+                <Box 
+                  sx={{ 
+                    display: 'flex',
+                    maxWidth: 'lg',
+                    width: '100%',
+                    justifyContent: 'space-between'
+                  }}
+                  role="menubar"
+                  component={motion.div}
+                  variants={submenuVariants}
+                >
+                  {mainNavItems.map((item, index) => (
+                    <Tooltip 
+                      key={item.id} 
+                      title={item.subItems.length > 0 ? `${item.label} (${item.subItems.length})` : item.label}
+                      arrow
+                      placement="bottom"
+                      TransitionComponent={Fade}
+                      TransitionProps={{ timeout: 300 }}
+                    >
+                      <Box
+                        component={motion.div}
+                        custom={index}
+                        variants={navItemVariants}
+                        whileHover="hover"
+                        role="menuitem"
+                        aria-haspopup={item.subItems.length > 0 ? 'true' : 'false'}
+                        onClick={() => {
                           navigateTo(item.path);
                           if (item.subItems.length > 0) {
                             toggleMenuExpand(item.id);
                           }
-                        }
-                      }}
-                      tabIndex={0}
-                      sx={{ 
-                        p: 1.5,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        cursor: 'pointer',
-                        position: 'relative',
-                        '&::after': {
-                          content: '""',
-                          position: 'absolute',
-                          bottom: 0,
-                          left: '50%',
-                          width: isPathActive(item.path) ? '70%' : '0%',
-                          height: '3px',
-                          bgcolor: 'primary.main',
-                          transition: 'width 0.3s ease-in-out, left 0.3s ease-in-out',
-                          transform: 'translateX(-50%)',
-                          borderRadius: '3px 3px 0 0'
-                        },
-                        '&:hover::after': {
-                          width: '70%'
-                        },
-                        color: isPathActive(item.path) ? 'primary.main' : 'text.primary'
-                      }}
-                      aria-expanded={item.subItems.length > 0 ? expandedItems[item.id] : undefined}
-                      aria-current={isPathActive(item.path) ? 'page' : undefined}
-                      className="nav-focus-visible"
-                    >
-                      {item.icon}
-                      <Box sx={{ 
-                        fontSize: '0.875rem', 
-                        mt: 0.5,
-                        fontWeight: isPathActive(item.path) ? 600 : 400,
-                        display: 'flex',
-                        alignItems: 'center'
-                      }}>
-                        {item.label}
-                        {item.badge && (
-                          <Box component="span" sx={{ ml: 0.5, transform: 'scale(0.8)', display: 'inline-flex' }}>
-                            {item.badge}
-                          </Box>
-                        )}
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            navigateTo(item.path);
+                            if (item.subItems.length > 0) {
+                              toggleMenuExpand(item.id);
+                            }
+                          }
+                        }}
+                        tabIndex={0}
+                        sx={{ 
+                          p: 1.5,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          cursor: 'pointer',
+                          position: 'relative',
+                          '&::after': {
+                            content: '""',
+                            position: 'absolute',
+                            bottom: 0,
+                            left: '50%',
+                            width: isPathActive(item.path) ? '70%' : '0%',
+                            height: '3px',
+                            bgcolor: 'primary.main',
+                            transition: 'width 0.3s ease-in-out, left 0.3s ease-in-out',
+                            transform: 'translateX(-50%)',
+                            borderRadius: '3px 3px 0 0'
+                          },
+                          '&:hover::after': {
+                            width: '70%'
+                          },
+                          color: isPathActive(item.path) ? 'primary.main' : 'text.primary'
+                        }}
+                        aria-expanded={item.subItems.length > 0 ? expandedItems[item.id] : undefined}
+                        aria-current={isPathActive(item.path) ? 'page' : undefined}
+                        className="nav-focus-visible"
+                      >
+                        {item.icon}
+                        <Box sx={{ 
+                          fontSize: '0.875rem', 
+                          mt: 0.5,
+                          fontWeight: isPathActive(item.path) ? 600 : 400,
+                          display: 'flex',
+                          alignItems: 'center'
+                        }}>
+                          {item.label}
+                          {item.badge && (
+                            <Box component="span" sx={{ ml: 0.5, transform: 'scale(0.8)', display: 'inline-flex' }}>
+                              {item.badge}
+                            </Box>
+                          )}
+                        </Box>
                       </Box>
-                    </Box>
-                  </Tooltip>
-                ))}
+                    </Tooltip>
+                  ))}
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </Fade>
-      )}
-      
-      {/* Sous-menus pour desktop avec animation améliorée */}
-      {!isMobile && (
-        <Box>
-          {mainNavItems.map((item) => (
-            item.subItems.length > 0 && (
-              <motion.div
-                key={`submenu-${item.id}`}
-                initial="hidden"
-                animate={expandedItems[item.id] ? "visible" : "hidden"}
-                variants={submenuVariants}
-                style={{ overflow: 'hidden' }}
-              >
-                <Box
-                  sx={{
-                    bgcolor: 'background.paper',
-                    boxShadow: 2,
-                    borderTop: `1px solid ${theme.palette.divider}`,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    py: 1,
-                    zIndex: 19,
-                    position: 'relative'
-                  }}
+          </Fade>
+        )}
+        
+        {/* Sous-menus pour desktop avec animation améliorée */}
+        {!isMobile && (
+          <Box>
+            {mainNavItems.map((item) => (
+              item.subItems.length > 0 && (
+                <motion.div
+                  key={`submenu-${item.id}`}
+                  initial="hidden"
+                  animate={expandedItems[item.id] ? "visible" : "hidden"}
+                  variants={submenuVariants}
+                  style={{ overflow: 'hidden' }}
                 >
-                  <Box 
-                    sx={{ 
+                  <Box
+                    sx={{
+                      bgcolor: 'background.paper',
+                      boxShadow: 2,
+                      borderTop: `1px solid ${theme.palette.divider}`,
                       display: 'flex',
-                      maxWidth: 'lg',
-                      width: '100%',
-                      px: 2,
                       justifyContent: 'center',
-                      flexWrap: 'wrap'
+                      py: 1,
+                      zIndex: 19,
+                      position: 'relative'
                     }}
-                    component="ul"
-                    role="menu"
                   >
-                    {item.subItems.map((subItem, idx) => (
-                      <motion.div
-                        key={subItem.id}
-                        variants={submenuItemVariants}
-                        custom={idx}
-                        whileHover={{ scale: 1.03 }}
-                        style={{ margin: '0 8px' }}
-                      >
-                        <Box
-                          component="div"
-                          onClick={() => navigateTo(subItem.path)}
-                          sx={{
-                            p: 1.5,
-                            pl: 2,
-                            display: 'flex',
-                            alignItems: 'center',
-                            backgroundColor: isPathActive(subItem.path) ? alpha(theme.palette.primary.main, 0.1) : 'transparent',
-                            color: isPathActive(subItem.path) ? 'primary.main' : 'text.secondary',
-                            cursor: 'pointer',
-                            position: 'relative',
-                            borderLeft: isPathActive(subItem.path) ? `3px solid ${theme.palette.primary.main}` : '3px solid transparent',
-                            borderRadius: '4px',
-                            '&:hover': {
-                              bgcolor: alpha(theme.palette.primary.main, 0.05),
-                              color: 'text.primary'
-                            },
-                            fontWeight: isPathActive(subItem.path) ? 600 : 400
-                          }}
-                          tabIndex={0}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              e.preventDefault();
-                              navigateTo(subItem.path);
-                            }
-                          }}
-                          role="menuitem"
-                          aria-current={isPathActive(subItem.path) ? 'page' : undefined}
-                          className="nav-focus-visible"
+                    <Box 
+                      sx={{ 
+                        display: 'flex',
+                        maxWidth: 'lg',
+                        width: '100%',
+                        px: 2,
+                        justifyContent: 'center',
+                        flexWrap: 'wrap'
+                      }}
+                      component="ul"
+                      role="menu"
+                    >
+                      {item.subItems.map((subItem, idx) => (
+                        <motion.div
+                          key={subItem.id}
+                          variants={submenuItemVariants}
+                          custom={idx}
+                          whileHover={{ scale: 1.03 }}
+                          style={{ margin: '0 8px' }}
                         >
-                          {subItem.label}
-                        </Box>
-                      </motion.div>
-                    ))}
+                          <Box
+                            component="div"
+                            onClick={() => navigateTo(subItem.path)}
+                            sx={{
+                              p: 1.5,
+                              pl: 2,
+                              display: 'flex',
+                              alignItems: 'center',
+                              backgroundColor: isPathActive(subItem.path) ? alpha(theme.palette.primary.main, 0.1) : 'transparent',
+                              color: isPathActive(subItem.path) ? 'primary.main' : 'text.secondary',
+                              cursor: 'pointer',
+                              position: 'relative',
+                              borderLeft: isPathActive(subItem.path) ? `3px solid ${theme.palette.primary.main}` : '3px solid transparent',
+                              borderRadius: '4px',
+                              '&:hover': {
+                                bgcolor: alpha(theme.palette.primary.main, 0.05),
+                                color: 'text.primary'
+                              },
+                              fontWeight: isPathActive(subItem.path) ? 600 : 400
+                            }}
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                navigateTo(subItem.path);
+                              }
+                            }}
+                            role="menuitem"
+                            aria-current={isPathActive(subItem.path) ? 'page' : undefined}
+                            className="nav-focus-visible"
+                          >
+                            {subItem.label}
+                          </Box>
+                        </motion.div>
+                      ))}
+                    </Box>
                   </Box>
-                </Box>
-              </motion.div>
-            )
-          ))}
-        </Box>
-      )}
-      
-      {/* Fil d'Ariane */}
-      <Suspense fallback={null}>
-        <Box 
-          sx={{ 
-            py: 1, 
-            px: 2, 
-            display: 'flex', 
-            justifyContent: 'center',
-            borderBottom: `1px solid ${theme.palette.divider}`,
-            bgcolor: alpha(theme.palette.background.paper, 0.6),
-            backdropFilter: 'blur(8px)'
-          }}
-        >
-          <Box sx={{ maxWidth: 'lg', width: '100%' }}>
-            <Breadcrumbs crumbs={generateBreadcrumbs()} />
+                </motion.div>
+              )
+            ))}
           </Box>
-        </Box>
-      </Suspense>
+        )}
+        
+        {/* Fil d'Ariane */}
+        <Suspense fallback={null}>
+          <Box 
+            sx={{ 
+              py: 1, 
+              px: 2, 
+              display: 'flex', 
+              justifyContent: 'center',
+              borderBottom: `1px solid ${theme.palette.divider}`,
+              bgcolor: alpha(theme.palette.background.paper, 0.6),
+              backdropFilter: 'blur(8px)'
+            }}
+          >
+            <Box sx={{ maxWidth: 'lg', width: '100%' }}>
+              <Breadcrumbs crumbs={generateBreadcrumbs()} />
+            </Box>
+          </Box>
+        </Suspense>
+      </nav>
     </>
   );
 });

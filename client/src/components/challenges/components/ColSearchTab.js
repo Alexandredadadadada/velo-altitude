@@ -117,16 +117,16 @@ const ColSearchTab = ({
     const isSelected = selectedColsIds.includes(col.id);
     
     return (
-      <Card elevation={3} key={col.id} sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <Card elevation={3} key={col.id} sx={{ height: '100%', display: 'flex', flexDirection: 'column' }} role="article" aria-labelledby={`col-title-${col.id}`}> 
         <CardMedia
           component="img"
           height="140"
           image={col.imageUrl || '/images/cols/default-col.jpg'}
-          alt={col.name}
+          alt={`Photo du col ${col.name}`}
           sx={{ objectFit: 'cover' }}
         />
         <CardContent sx={{ flexGrow: 1 }}>
-          <Typography variant="h6" gutterBottom component="div" noWrap>
+          <Typography id={`col-title-${col.id}`} variant="h6" gutterBottom component="div" noWrap>
             {col.name}
           </Typography>
           
@@ -344,18 +344,25 @@ const ColSearchTab = ({
       {/* Résultats de recherche */}
       {loading ? (
         <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
-          <CircularProgress />
+          <CircularProgress aria-label="Loading cols" />
         </Box>
       ) : filteredResults.length > 0 ? (
-        <Grid container spacing={3}>
-          {filteredResults.map(col => (
-            <Grid item key={col.id} xs={12} sm={6} md={4} lg={3}>
-              {renderColCard(col)}
-            </Grid>
-          ))}
-        </Grid>
+        <>
+          <Box sx={{ mb: 2 }}>
+            <Typography variant="subtitle2" aria-live="polite">
+              {filteredResults.length} cols trouvés
+            </Typography>
+          </Box>
+          <Grid container spacing={3} role="list">
+            {filteredResults.map(col => (
+              <Grid item key={col.id} xs={12} sm={6} md={4} lg={3} role="listitem">
+                {renderColCard(col)}
+              </Grid>
+            ))}
+          </Grid>
+        </>
       ) : (
-        <Alert severity="info" sx={{ mt: 2 }}>
+        <Alert severity="info" sx={{ mt: 2 }} role="status" aria-live="polite">
           {t('challenges.seven_majors.no_results', 'Aucun résultat trouvé')}
         </Alert>
       )}

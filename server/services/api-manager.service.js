@@ -9,6 +9,8 @@ const NodeCache = require('node-cache');
 const { logger } = require('../utils/logger');
 const config = require('../config/api.config');
 const { promiseWithTimeout, retryAsync, parallelLimit } = require('../utils/promise-helpers');
+const requestBatcher = require('../utils/request-batcher');
+const requestCoalescer = require('../utils/request-coalescer');
 
 // Référence singleton pour éviter les multiples instances
 let instance = null;
@@ -444,7 +446,7 @@ class ApiManagerService {
   }
 
   /**
-   * Exécute une requête API avec gestion des retries et fallbacks
+   * Exécute une requête API avec gestion des retries, fallbacks, batching et coalescing
    * @param {string} serviceName - Nom du service API ('weather', 'openroute', 'strava', etc.)
    * @param {string} endpoint - Point d'entrée/méthode à appeler sur le service
    * @param {Object} params - Paramètres à passer à la requête
@@ -452,6 +454,23 @@ class ApiManagerService {
    * @returns {Promise} - La réponse de l'API ou du fallback
    */
   async execute(serviceName, endpoint, params = {}, options = {}) {
+    // Générer une clé unique pour coalescing (service:endpoint:params)
+    const key = `${serviceName}:${endpoint}:${JSON.stringify(params)}`;
+
+    // Option 1: Batching (ex: météo pour plusieurs points)
+    if (options.batch) {
+      return requestBatcher.batch(key, async () => {
+        return this._executeWithRetryInternal(serviceName, endpoint, params, options);
+      });
+    }
+    // Option 2: Coalescing (éviter doublons en vol)
+    return requestCoalescer.coalesce(key, async () => {
+      return this._executeWithRetryInternal(serviceName, endpoint, params, options);
+    });
+  }
+
+  // Extraction de la logique d'exécution originale
+  async _executeWithRetryInternal(serviceName, endpoint, params = {}, options = {}) {
     // Vérifier si le service est initialisé
     if (!this.initialized && !this.initializing) {
       await this.initialize();

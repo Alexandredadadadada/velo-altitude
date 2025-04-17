@@ -29,3 +29,37 @@ Actuellement, il existe une duplication des composants d'entraînement entre:
 - Assure que seuls les composants standardisés sont utilisés
 - Améliore la cohérence de l'architecture de l'application
 - Facilite l'ajout des tests unitaires et de la documentation
+
+# MIGRATION – Sprint Excellence 2025
+
+<!-- Lint/Markdown Excellence: Blank lines, single H1, lists fixed (Sprint Excellence 2025) -->
+
+## Nouvelles migrations de données
+
+- Import massif de nouveaux profils de cols (JSON enrichi)
+- Migration des programmes d’entraînement legacy vers structure hiérarchique
+- Ajout de recettes cyclistes et plans nutritionnels (nouveau schéma)
+- Migration des images vers /public/images/cols et /public/images/summits
+- Intégration des historiques météo et temps de référence courses pro
+
+## Procédures automatisées
+
+- Scripts Node.js pour migration batch (voir /scripts)
+- Tests de validation automatique post-migration
+- Reporting détaillé dans PROGRESS_REPORT_S1.md
+
+## Bonnes pratiques
+
+- Effectuer toute migration sur environnement staging
+- Sauvegarder les données avant toute opération
+- Documenter chaque migration dans ce fichier avec date, auteur, impact
+
+## Automatisation 2025
+
+- Import batch automatisé pour trainings et recettes (Node.js)
+- Scripts de validation pour garantir la cohérence
+- Prochaines migrations : enrichissement massif des cols, automatisation API
+
+---
+
+Pour toute migration majeure, informer l’équipe lead et mettre à jour la documentation associée.

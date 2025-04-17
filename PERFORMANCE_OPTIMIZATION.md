@@ -12,6 +12,7 @@ Ce document fournit une vue d'ensemble complète du système d'optimisation des 
 6. [Utilisation des outils de performance](#utilisation-des-outils-de-performance)
 7. [Dépannage](#dépannage)
 8. [Correctifs Lint & Nettoyage Code (15/04/2025)](#correctifs-lint--nettoyage-code-15042025)
+9. [Sprint Excellence 2025 – Optimisations de Performance](#sprint-excellence-2025-–-optimisations-de-performance)
 
 ## Vue d'ensemble
 
@@ -290,6 +291,32 @@ Le système est compatible avec tous les navigateurs modernes. Pour les navigate
 - Relancer un lint complet après chaque modification des scripts de performance.
 - Vérifier la cohérence des métriques collectées après refactor.
 
+## Sprint Excellence 2025 – Optimisations de Performance
+
+### Nouveaux Objectifs
+
+- Temps de chargement cible < 1,5s sur toutes les pages clés
+- 60fps sur la visualisation 3D (desktop et mobiles milieu de gamme)
+- Progressive loading sur toutes les pages data-heavy
+- Bundle réduit de 40% (code splitting, tree shaking)
+- Optimisation batterie et data pour le mobile
+
+### Prochaines actions
+
+- Audit Lighthouse hebdomadaire (tracking dans PROGRESS_REPORT_S1.md)
+- Monitoring automatisé via dashboard admin
+- Refactoring des composants critiques pour lazy loading
+- Compression systématique des assets images/3D
+- Ajout de tests de performance automatisés CI/CD
+
+### Innovations
+
+- Préchargement prédictif basé sur l’IA (pages et assets)
+- Mode ultra-basse consommation pour les longues sessions
+- Visualisation 3D adaptative selon device
+
 ---
+
+Pour chaque PR, joindre les mesures avant/après et l’impact sur l’expérience utilisateur.
 
 *Documentation technique créée pour l'équipe Velo-Altitude, Avril 2025*

@@ -1,1 +1,103 @@
-[]
+[
+  {
+    "id": "recette-001",
+    "slug": "barres-energie-avoine-miel",
+    "name": "Barres énergie avoine & miel",
+    "type": "pré-ride",
+    "calories": 180,
+    "carbs": 32,
+    "protein": 4,
+    "fat": 3,
+    "completeness": 100,
+    "status": "active"
+  },
+  {
+    "id": "recette-002",
+    "slug": "boisson-isotonique-maison",
+    "name": "Boisson isotonique maison",
+    "type": "pendant effort",
+    "calories": 50,
+    "carbs": 12,
+    "protein": 0,
+    "fat": 0,
+    "completeness": 100,
+    "status": "active"
+  },
+  {
+    "id": "recette-003",
+    "slug": "riz-cake-recup",
+    "name": "Riz cake récupération",
+    "type": "récupération",
+    "calories": 230,
+    "carbs": 45,
+    "protein": 5,
+    "fat": 4,
+    "completeness": 100,
+    "status": "active"
+  },
+  {
+    "id": "recette-004",
+    "slug": "gaufres-energie-banane",
+    "name": "Gaufres énergie banane",
+    "type": "pré-ride",
+    "calories": 210,
+    "carbs": 38,
+    "protein": 5,
+    "fat": 4,
+    "completeness": 100,
+    "status": "active"
+  },
+  {
+    "id": "recette-005",
+    "slug": "gel-energie-fruits-rouges",
+    "name": "Gel énergie fruits rouges",
+    "type": "pendant effort",
+    "calories": 60,
+    "carbs": 15,
+    "protein": 0,
+    "fat": 0,
+    "completeness": 100,
+    "status": "active"
+  },
+  {
+    "id": "recette-006",
+    "slug": "omelette-recup-proteinee",
+    "name": "Omelette récup protéinée",
+    "type": "récupération",
+    "calories": 250,
+    "carbs": 5,
+    "protein": 20,
+    "fat": 16,
+    "completeness": 100,
+    "status": "active"
+  },
+  {
+    "id": "recette-007",
+    "slug": "barres-energie-choco-cacahuete",
+    "name": "Barres énergie choco-cacahuète maison",
+    "type": "pré-ride",
+    "calories": 210,
+    "carbs": 28,
+    "protein": 6,
+    "fat": 8,
+    "macros": {"glucides": 28, "protéines": 6, "lipides": 8},
+    "ingredients": [
+      "80g flocons d'avoine",
+      "40g beurre de cacahuète",
+      "40g miel",
+      "20g chocolat noir 70%",
+      "20g graines de chia",
+      "1 pincée de sel"
+    ],
+    "steps": [
+      "Faire fondre le miel et le beurre de cacahuète.",
+      "Mélanger tous les ingrédients secs.",
+      "Ajouter le mélange fondu, bien mélanger.",
+      "Tasser dans un moule, ajouter le chocolat fondu en filet.",
+      "Laisser reposer au frais 2h, découper en barres."
+    ],
+    "tips": "Parfait avant une sortie longue. Peut se conserver 5 jours au frais.",
+    "completeness": 100,
+    "status": "active"
+  }
+]
