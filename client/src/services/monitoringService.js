@@ -6,6 +6,7 @@
 
 import axios from 'axios';
 import config from '../config';
+import monitoringService from './monitoring/MonitoringService';
 
 // Configuration de base
 const API_URL = config.api.baseUrl;
