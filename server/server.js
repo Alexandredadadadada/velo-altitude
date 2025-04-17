@@ -461,6 +461,7 @@ function startServer() {
     });
     
     // Configurer et démarrer le serveur HTTP
+    console.log('PORT value:', PORT);
     const server = app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
       
