@@ -181,8 +181,8 @@
     "webpack-dev-server": "^4.6.0"
   },
   "engines": {
-    "node": ">=16.14.0",
-    "npm": ">=8.0.0"
+    "node": ">=18.0.0",
+    "npm": ">=8.5.0"
   },
   "jest": {
     "testEnvironment": "jsdom",
