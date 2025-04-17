@@ -2,7 +2,7 @@
 # Mise à jour : Avril 2025 - Configuration pour gentle-donut-7fa5d8
 
 [build]
-  command = "npm ci && npm run build:netlify"
+  command = "npm ci && ls -la node_modules/.bin && ./node_modules/.bin/webpack --config webpack.config.js --mode production"
   publish = "build"
   functions = "netlify/functions"
 
