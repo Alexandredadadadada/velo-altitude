@@ -66,6 +66,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.17",
     "three": "^0.161.0",
+    "typescript": "^5.8.3",
     "ua-parser-js": "^2.0.3"
   },
   "devDependencies": {
