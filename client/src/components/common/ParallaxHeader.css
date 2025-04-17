@@ -19,7 +19,7 @@
   height: 120%; /* Plus grand que le conteneur pour permettre le défilement */
   background-size: cover;
   background-position: center;
-  background-image: url('/images/mountain-range.jpg');
+  background-image: url('../../public/images/mountain-range.jpg');
   will-change: transform;
   z-index: 1;
 }
