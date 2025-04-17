@@ -2,7 +2,7 @@
 # Mise à jour : Avril 2025 - Configuration pour gentle-donut-7fa5d8
 
 [build]
-  command = "npm install --legacy-peer-deps && CI=false npm run build"
+  command = "npm install --legacy-peer-deps && npm run build:netlify"
   publish = "build"
   functions = "netlify/functions"
 
