@@ -76,6 +76,7 @@
     "@types/react-icons": "^2.2.7",
     "axios-mock-adapter": "^2.1.0",
     "babel-jest": "^29.7.0",
+    "cross-env": "^7.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
@@ -93,7 +94,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "cross-env CI=false GENERATE_SOURCEMAP=false react-scripts build",
     "build:webpack": "CI=false webpack --mode production",
     "test": "jest --config jest.config.js",
     "eject": "react-scripts eject",
