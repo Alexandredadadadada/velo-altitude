@@ -2,12 +2,12 @@
 # Mise à jour : Avril 2025 - Configuration pour gentle-donut-7fa5d8
 
 [build]
-  command = "npm ci && ls -la node_modules/.bin && ./node_modules/.bin/webpack --config webpack.config.js --mode production"
+  command = "npm ci && npm run prebuild && npm run build:netlify"
   publish = "build"
   functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "16.14.0"
+  NODE_VERSION = "18.16.0"
   NPM_VERSION = "8.5.0"
   CI = "false"
   GENERATE_SOURCEMAP = "false"

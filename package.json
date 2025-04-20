@@ -17,7 +17,7 @@
     "test": "jest",
     "check-deps": "node ./scripts/check-dependencies.js",
     "build:prod": "node scripts/build-prod.js",
-    "build:netlify": "./node_modules/.bin/webpack --config webpack.config.js --mode production",
+    "build:netlify": "npx webpack --config webpack.netlify.config.js --mode production",
     "build:netlify-fix": "node scripts/build-netlify-fix.js",
     "build:netlify-specific": "node scripts/build-netlify-specific.js",
     "test:netlify-build": "node scripts/test-netlify-build.js",
@@ -96,7 +96,6 @@
     "express-jwt": "^8.5.1",
     "express-rate-limit": "^7.1.5",
     "express-session": "^1.18.0",
-    "file-loader": "^6.2.0",
     "helmet": "^7.1.0",
     "html-webpack-plugin": "^5.6.3",
     "html2canvas": "^1.4.1",
@@ -127,7 +126,9 @@
     "react-leaflet": "^4.2.1",
     "react-map-gl": "^6.1.19",
     "react-markdown": "^8.0.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.30.0",
+    "react-scripts": "^5.0.1",
     "react-share": "^5.2.2",
     "recharts": "^2.12.1",
     "redis": "^4.7.0",
@@ -160,17 +161,17 @@
     "compression-webpack-plugin": "^11.1.0",
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.5.1",
+    "css-loader": "^6.11.0",
     "eslint": "^8.4.0",
     "file-loader": "^6.2.0",
     "glslify-loader": "^2.0.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.3",
     "json-loader": "^0.5.7",
-    "mini-css-extract-plugin": "^2.4.5",
+    "mini-css-extract-plugin": "^2.9.2",
     "nodemon": "^2.0.15",
     "raw-loader": "^4.0.2",
-    "style-loader": "^3.3.1",
+    "style-loader": "^3.3.4",
     "terser-webpack-plugin": "^5.2.5",
     "ts-loader": "^9.5.1",
     "typescript": "^4.5.2",
@@ -192,6 +193,18 @@
     },
     "setupFilesAfterEnv": [
       "<rootDir>/client/src/setupTests.js"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
