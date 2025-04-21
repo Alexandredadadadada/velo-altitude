@@ -4,6 +4,7 @@
  */
 
 // Chargement des variables d'environnement
+console.log('[DEBUG] Import dotenv OK');
 require('dotenv').config();
 
 // LOGS DE DEBUG POUR RENDER
@@ -15,31 +16,55 @@ console.log('NODE_ENV:', process.env.NODE_ENV);
 console.log('------------------');
 
 // Importations des dépendances
+console.log('[DEBUG] Import express OK');
 const express = require('express');
+console.log('[DEBUG] Import mongoose OK');
 const mongoose = require('mongoose');
+console.log('[DEBUG] Import cors OK');
 const cors = require('cors');
+console.log('[DEBUG] Import helmet OK');
 const helmet = require('helmet');
+console.log('[DEBUG] Import compression OK');
 const compression = require('compression');
+console.log('[DEBUG] Import cookie-parser OK');
 const cookieParser = require('cookie-parser');
+console.log('[DEBUG] Import path OK');
 const path = require('path');
+console.log('[DEBUG] Import rate-limit OK');
 const rateLimit = require('express-rate-limit');
+console.log('[DEBUG] Import logger OK');
 const logger = require('./config/logger');
+console.log('[DEBUG] Import errorService OK');
 const errorService = require('./services/error.service').getInstance();
+console.log('[DEBUG] Import tokenBlacklist OK');
 const tokenBlacklist = require('./services/token-blacklist.service').getInstance();
+console.log('[DEBUG] Import cacheService OK');
 const cacheService = require('./services/cache.service').getInstance();
+console.log('[DEBUG] Import paginationService OK');
 const paginationService = require('./services/pagination.service').getInstance();
+console.log('[DEBUG] Import apiMiddleware OK');
 const apiMiddleware = require('./middlewares/api.middleware');
+console.log('[DEBUG] Import config OK');
 const config = require('./config/api.config');
+console.log('[DEBUG] Import initServices OK');
 const initServices = require('./services/initServices');
+console.log('[DEBUG] Import serverDiagnostics OK');
 const serverDiagnostics = require('./utils/server-diagnostics'); // Système de diagnostic
+console.log('[DEBUG] Import apiQuotaManager OK');
 const apiQuotaManager = require('./utils/apiQuotaManager'); // Gestionnaire de quotas API
+console.log('[DEBUG] Import performanceOptimization OK');
 const performanceOptimization = require('./middleware/performance-optimization');
+console.log('[DEBUG] Import monitoring OK');
 const monitoring = require('./utils/monitoring');
+console.log('[DEBUG] Import swaggerUi OK');
 const swaggerUi = require('swagger-ui-express');
+console.log('[DEBUG] Import YAML OK');
 const YAML = require('yamljs');
 
 // Initialisation de l'application Express
+console.log('[DEBUG] Avant express()');
 const app = express();
+console.log('[DEBUG] Après express()');
 const PORT = process.env.PORT || 3000;
 
 // Options de démarrage du serveur
