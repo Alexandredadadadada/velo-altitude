@@ -8,7 +8,7 @@ import AnimatedTransition from './components/common/AnimatedTransition';
 import VisualEffectsProvider from './components/common/VisualEffectsProvider';
 import { PerformanceOptimizer } from './utils/PerformanceOptimizer';
 import { Auth0Provider } from '@auth0/auth0-react';
-import { Auth0ProviderWithHistory } from './features/auth/Auth0Provider';
+import Auth0ProviderWithHistory from './features/auth/Auth0ProviderWithHistory';
 import { AuthProvider } from './features/auth/authContext';
 import ProtectedRoute from './features/auth/ProtectedRoute';
 import UnauthorizedPage from './features/auth/UnauthorizedPage';
