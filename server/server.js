@@ -485,7 +485,7 @@ function startServer() {
         console.log('[DEBUG] Routes initialisées');
         
         // Démarrer le serveur HTTP
-        const server = app.listen(PORT, () => {
+        const server = app.listen(PORT, '0.0.0.0', () => {
           console.log(`[DEBUG] Serveur démarré sur le port ${PORT}`);
           logger.info(`🚀 Serveur démarré sur le port ${PORT}`);
         });
