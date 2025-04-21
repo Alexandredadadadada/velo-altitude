@@ -183,15 +183,15 @@
 }
 
 .like-icon {
-  background-image: url('/images/like-icon.svg');
+  background-image: url('../../../../public/images/like-icon.svg');
 }
 
 .comment-icon {
-  background-image: url('/images/comment-icon.svg');
+  background-image: url('../../../../public/images/comment-icon.svg');
 }
 
 .share-icon {
-  background-image: url('/images/share-icon.svg');
+  background-image: url('../../../../public/images/share-icon.svg');
 }
 
 .social-sidebar {
