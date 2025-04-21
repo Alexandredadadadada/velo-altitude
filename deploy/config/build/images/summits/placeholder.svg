@@ -1,6 +1,0 @@
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-    <rect width="200" height="200" fill="#ecfdf5"/>
-    <polygon points="40,160 100,40 160,160" fill="#34d399"/>
-    <polygon points="70,160 130,80 190,160" fill="#10b981"/>
-    <text x="50%" y="90%" font-family="Arial" font-size="16" fill="#065f46" text-anchor="middle">Sommet</text>
-  </svg>
