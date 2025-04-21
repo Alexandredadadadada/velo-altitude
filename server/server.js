@@ -446,6 +446,7 @@ async function initializeServices() {
 
 // Démarrage du serveur
 function startServer() {
+  console.log('[DEBUG] Début startServer');
   // Initialiser l'état global du serveur
   global.serverState = {
     startTime: new Date(),
@@ -457,72 +458,56 @@ function startServer() {
   
   // Vérifier les dépendances avant de démarrer
   checkDependencies().then(dependenciesOk => {
+    console.log('[DEBUG] Dépendances vérifiées:', dependenciesOk);
     if (!dependenciesOk && !global.serverState.degradedMode) {
       logger.error('❌ Vérification des dépendances échouée, arrêt du serveur');
       process.exit(1);
     }
     
     // Connecter à MongoDB
+    console.log('[DEBUG] Connexion MongoDB...');
     mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true
-    });
-    
-    // Configurer et démarrer le serveur HTTP
-    console.log('PORT value:', PORT);
-    const server = app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+    }).then(() => {
+      console.log('[DEBUG] MongoDB connecté');
+      logger.info('✅ Connexion à MongoDB établie');
       
-      if (global.serverState.degradedMode) {
-        logger.warn(`⚠️ Le serveur fonctionne en mode dégradé: ${global.serverState.degradedReason}`);
-      }
-      
-      // Initialiser les services après le démarrage du serveur
-      initializeServices().then(servicesInitialized => {
-        if (servicesInitialized) {
-          logger.info('✅ Services principaux initialisés avec succès');
-        } else if (!global.serverState.degradedMode) {
-          logger.warn('⚠️ Certains services n\'ont pas pu être initialisés correctement');
-        }
+      // Initialiser les services
+      console.log('[DEBUG] Initialisation des services...');
+      initializeServices().then(() => {
+        console.log('[DEBUG] Services initialisés');
+        logger.info('✅ Services initialisés');
         
-        // Vérifier l'état du système
-        const systemStatus = {
-          server: 'online',
-          degradedMode: global.serverState.degradedMode,
-          database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
-          environment: process.env.NODE_ENV || 'development',
-          startTime: new Date().toISOString()
-        };
+        // Initialiser les routes
+        console.log('[DEBUG] Initialisation des routes...');
+        initializeRoutes();
+        console.log('[DEBUG] Routes initialisées');
         
-        logger.info('📊 État du système:', systemStatus);
-        
-        // Vérifier les secrets JWT
-        if (process.env.JWT_SECRET === undefined) {
-          errorService.logError({
-            type: 'security_config',
-            message: 'JWT_SECRET non défini dans les variables d\'environnement',
-            severity: 'critical',
-            details: {
-              recommendation: 'Définir une clé secrète forte dans les variables d\'environnement'
-            }
-          });
-        }
+        // Démarrer le serveur HTTP
+        const server = app.listen(PORT, () => {
+          console.log(`[DEBUG] Serveur démarré sur le port ${PORT}`);
+          logger.info(`🚀 Serveur démarré sur le port ${PORT}`);
+        });
         
         // Configurer le monitoring
         monitoring.setupMonitoring(app);
       }).catch(error => {
+        console.error('[DEBUG] Erreur initialisation services:', error);
         logger.error(`❌ Erreur lors de l'initialisation des services: ${error.message}`, {
           stack: error.stack
         });
+        process.exit(1);
       });
+    }).catch(error => {
+      console.error('[DEBUG] Erreur connexion MongoDB:', error);
+      logger.error(`❌ Erreur lors de la connexion à MongoDB: ${error.message}`, {
+        stack: error.stack
+      });
+      process.exit(1);
     });
-    
-    // Configurer un délai d'attente pour les connexions inactives
-    server.keepAliveTimeout = 65000; // 65 secondes
-    server.headersTimeout = 66000; // 66 secondes (doit être supérieur à keepAliveTimeout)
-    
-    return server;
   }).catch(error => {
+    console.error('[DEBUG] Erreur fatale checkDependencies:', error);
     logger.error(`❌ Erreur fatale: ${error.message}`);
     process.exit(1);
   });
