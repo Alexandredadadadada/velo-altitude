@@ -5,8 +5,8 @@
  */
 
 import api from './api';
-import mockRecipes from '../data/mockRecipes';
-import { capitalizeFirstLetter } from '../utils/stringUtils';
+import mockRecipes from './data/mockRecipes.js';
+import { capitalizeFirstLetter } from './utils/stringUtils.js';
 import RealApiOrchestratorPart2 from '../services/api/RealApiOrchestratorPart2';
 import { ENV } from '../config/environment';
 

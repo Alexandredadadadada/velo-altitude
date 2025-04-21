@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { UnifiedColVisualization } from '../../services/visualization/UnifiedColVisualization';
+import { UnifiedColVisualization } from '../../services/visualization/UnifiedColVisualization.ts';
 import { 
   VISUALIZATION_TYPES, 
   QUALITY_LEVELS,
