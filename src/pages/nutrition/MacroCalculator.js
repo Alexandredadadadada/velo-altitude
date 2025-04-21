@@ -15,7 +15,7 @@ import {
 } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 import NutritionCalculator from '../../components/nutrition/NutritionCalculator';
-import SEOHelmet from '../../components/common/SEOHelmet';
+import SEOHelmet from '../../components/common/SEOHelmet'; // Import correct
 
 // Styles personnalisés
 const PageContainer = styled(Container)(({ theme }) => ({

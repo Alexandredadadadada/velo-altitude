@@ -9,7 +9,7 @@ import VisualEffectsProvider from './components/common/VisualEffectsProvider';
 import { PerformanceOptimizer } from './utils/PerformanceOptimizer';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Auth0ProviderWithHistory from './features/auth/Auth0ProviderWithHistory';
-import { AuthProvider } from './features/auth/authContext';
+import { AuthContextProvider } from './features/auth/authContext';
 import ProtectedRoute from './features/auth/ProtectedRoute';
 import UnauthorizedPage from './features/auth/UnauthorizedPage';
 import './App.css';
@@ -60,7 +60,7 @@ function App() {
 
   return (
     <Auth0ProviderWithHistory>
-      <AuthProvider>
+      <AuthContextProvider>
         <I18nextProvider i18n={i18n}>
           <VisualEffectsProvider>
             <Router>
@@ -152,7 +152,7 @@ function App() {
             </Router>
           </VisualEffectsProvider>
         </I18nextProvider>
-      </AuthProvider>
+      </AuthContextProvider>
     </Auth0ProviderWithHistory>
   );
 }

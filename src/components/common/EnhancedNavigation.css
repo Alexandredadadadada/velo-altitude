@@ -155,7 +155,7 @@
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url('../../../../public/images/user-icon.svg');
+  background-image: url('/images/user-icon.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }

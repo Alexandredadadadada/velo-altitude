@@ -34,6 +34,7 @@ import {
 } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 import SEOHelmet from '../../components/common/SEOHelmet';
+import { AuthContext } from '../../contexts/AuthContext';
 import { useAuth } from '../../contexts/AuthContext';
 import nutritionService from '../../services/nutritionService';
 

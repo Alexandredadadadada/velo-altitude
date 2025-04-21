@@ -25,7 +25,7 @@ import SEOPagination from './SEOPagination';
 import CategoryHeader from './CategoryHeader';
 import CategoryFooter from './CategoryFooter';
 import RelatedContent from '../common/RelatedContent';
-import LoadingIndicator from '../common/LoadingIndicator';
+import LoadingIndicator from '../common/LoadingIndicator'; // Déjà importé
 
 // Utilitaires et services
 import { fetchCategoryData } from '../../services/dataService';

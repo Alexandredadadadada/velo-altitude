@@ -27,7 +27,7 @@
 }
 
 .mountains {
-  background-image: url('/images/mountain-range.jpg');
+  background-image: url('/public/images/mountain-range.jpg');
   background-size: cover;
   background-position: center;
   height: 100%;

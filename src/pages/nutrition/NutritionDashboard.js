@@ -49,6 +49,7 @@ import {
 
 // Import des services
 import nutritionService from '../../services/nutritionService';
+import AuthContext from '../../contexts/AuthContext';
 import { useAuth } from '../../contexts/AuthContext';
 // Import du composant AIChatbox
 import AIChatbox from '../../components/dashboard/AIChatbox';

@@ -39,6 +39,7 @@ import RecipeStepByStep from '../../components/nutrition/recipes/RecipeStepBySte
 import nutritionService from '../../services/nutritionService';
 import { useAuth } from '../../contexts/AuthContext';
 import SEO from '../../components/common/SEO';
+import AuthContext from '../../contexts/AuthContext';
 
 // Styles personnalisés
 const RecipeHero = styled(Box)(({ theme }) => ({

@@ -6,7 +6,8 @@
 
 import api from './api';
 import mockRecipes from '../data/mockRecipes';
-import { capitalize } from '../utils/stringUtils';
+import { capitalizeFirstLetter } from '../utils/stringUtils';
+import RealApiOrchestratorPart2 from '../services/api/RealApiOrchestratorPart2';
 import { ENV } from '../config/environment';
 
 // Importation du RealApiOrchestrator pour remplacer les données mockées
@@ -15,7 +16,7 @@ let realApiOrchestratorPart2 = null;
 // Fonction pour obtenir l'instance de RealApiOrchestrator de façon asynchrone
 const getRealApiOrchestrator = async () => {
   if (!realApiOrchestratorPart2) {
-    realApiOrchestratorPart2 = (await import('../client/src/services/api/RealApiOrchestratorPart2')).default;
+    realApiOrchestratorPart2 = await RealApiOrchestratorPart2;
   }
   return { part2: realApiOrchestratorPart2 };
 };

@@ -8,7 +8,7 @@
 import axios from 'axios';
 import config from '../config';
 import { handleApiError } from '../utils/apiErrorUtils';
-import { getAccessToken } from '../auth';
+import auth from '../auth';
 
 /**
  * Wrapper pour les appels API
@@ -133,7 +133,7 @@ class ApiWrapper {
 
     try {
       // Ajouter le token d'authentification s'il est disponible
-      const authToken = await getAccessToken();
+      const authToken = await auth.getAccessToken();
       if (authToken) {
         headers['Authorization'] = `Bearer ${authToken}`;
       }
