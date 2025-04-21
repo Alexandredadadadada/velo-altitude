@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Default Avatar</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle fill="#E0E0E0" cx="100" cy="100" r="100"></circle>
+        <circle fill="#AFAFAF" cx="100" cy="85" r="40"></circle>
+        <path d="M100,140 C133.137085,140 160,166.862915 160,200 L40,200 C40,166.862915 66.862915,140 100,140 Z" fill="#AFAFAF"></path>
+    </g>
+</svg>

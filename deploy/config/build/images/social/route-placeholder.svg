@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="200px" viewBox="0 0 400 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Route Placeholder</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F0F0F0" x="0" y="0" width="400" height="200"></rect>
+        <path d="M50,150 C80,80 120,120 150,70 C180,20 220,100 250,50 C280,0 320,80 350,30" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" stroke-dasharray="1, 0"></path>
+        <circle fill="#F44336" cx="50" cy="150" r="8"></circle>
+        <circle fill="#2196F3" cx="350" cy="30" r="8"></circle>
+        <text font-family="Arial" font-size="16" fill="#606060" x="140" y="180">
+            Parcours cycliste
+        </text>
+    </g>
+</svg>
