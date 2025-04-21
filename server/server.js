@@ -6,6 +6,14 @@
 // Chargement des variables d'environnement
 require('dotenv').config();
 
+// LOGS DE DEBUG POUR RENDER
+console.log('--- ENV DEBUG ---');
+console.log('PORT:', process.env.PORT);
+console.log('MONGODB_URI:', process.env.MONGODB_URI ? 'SET' : 'NOT SET');
+console.log('JWT_SECRET:', process.env.JWT_SECRET ? 'SET' : 'NOT SET');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('------------------');
+
 // Importations des dépendances
 const express = require('express');
 const mongoose = require('mongoose');
@@ -521,54 +529,15 @@ function startServer() {
 }
 
 // Gestion des erreurs non capturées
-process.on('uncaughtException', (error) => {
-  // Afficher plus de détails sur l'erreur
-  console.error('ERREUR NON CAPTURÉE DÉTAILLÉE:', error);
-  console.error('Message:', error.message);
-  console.error('Stack:', error.stack);
-  
-  const criticalError = errorService.createError({
-    type: 'uncaught_exception',
-    message: `Exception non capturée: ${error.message}`,
-    severity: 'critical',
-    details: {
-      stack: error.stack
-    }
-  });
-  
-  logger.error(`❌ ${criticalError.message}`, {
-    stack: error.stack
-  });
-  
-  // En production, on peut choisir de redémarrer le serveur
-  if (process.env.NODE_ENV === 'production') {
-    logger.error('🔄 Redémarrage du serveur suite à une erreur critique...');
-    process.exit(1);
-  }
+process.on('uncaughtException', (err) => {
+  console.error('UNCAUGHT EXCEPTION:', err);
 });
 
-process.on('unhandledRejection', (reason, promise) => {
-  // Afficher plus de détails sur l'erreur
-  console.error('PROMESSE REJETÉE DÉTAILLÉE:', reason);
-  console.error('Stack:', reason.stack);
-  
-  const criticalError = errorService.createError({
-    type: 'unhandled_rejection',
-    message: `Promesse rejetée non gérée: ${reason}`,
-    severity: 'critical',
-    details: {
-      stack: reason.stack
-    }
-  });
-  
-  logger.error(`❌ ${criticalError.message}`, {
-    stack: reason.stack
-  });
+process.on('unhandledRejection', (reason, p) => {
+  console.error('UNHANDLED REJECTION:', reason);
 });
 
-/**
- * Gestion de l'arrêt propre du serveur
- */
+// Gestion de l'arrêt propre du serveur
 const gracefulShutdown = async () => {
   logger.info('🛑 Arrêt du serveur en cours...');
   
