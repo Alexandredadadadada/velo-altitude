@@ -36,7 +36,7 @@
 }
 
 .post-action-icon.like {
-  background-image: url('../../assets/images/like-icon.svg');
+  background-image: url('/images/like-icon.svg');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 20px;
@@ -44,7 +44,7 @@
 }
 
 .post-action-icon.comment {
-  background-image: url('../../assets/images/comment-icon.svg');
+  background-image: url('/images/comment-icon.svg');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 20px;
@@ -52,7 +52,7 @@
 }
 
 .post-action-icon.share {
-  background-image: url('../../assets/images/share-icon.svg');
+  background-image: url('/images/share-icon.svg');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 20px;
