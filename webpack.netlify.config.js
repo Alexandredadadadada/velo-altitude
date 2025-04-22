@@ -14,7 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'static/js/[name].js',
     publicPath: '/',
-    clean: true,
+    clean: false, // disable automatic cleaning (build dir is already cleaned in prebuild script)
   },
   optimization: {
     splitChunks: {
