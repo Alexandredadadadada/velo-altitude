@@ -8,7 +8,7 @@
 import axios from 'axios';
 import config from '../config';
 import { handleApiError } from '../utils/apiErrorUtils';
-import auth from '../../auth';
+import auth from '../auth';
 
 /**
  * Wrapper pour les appels API
