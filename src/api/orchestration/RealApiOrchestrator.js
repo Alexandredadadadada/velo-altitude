@@ -18,8 +18,8 @@
 /* eslint-disable global-require */
 
 // Resolve path to the definitive orchestrator implementation
-// Path from this file (src/api/orchestration) -> ../../client/src/services/api/RealApiOrchestrator.js
-const orchestratorModule = require('../../client/src/services/api/RealApiOrchestrator');
+// Path from this file (src/api/orchestration) -> ../../../client/src/services/api/RealApiOrchestrator.js
+const orchestratorModule = require('../../../client/src/services/api/RealApiOrchestrator');
 
 // Retrieve the class (not the singleton instance) so that Netlify Functions can
 // instantiate it with options (e.g. a MongoDB connection).
