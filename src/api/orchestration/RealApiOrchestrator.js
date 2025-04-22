@@ -25,6 +25,5 @@ const orchestratorModule = require('../../../client/src/services/api/RealApiOrch
 // instantiate it with options (e.g. a MongoDB connection).
 const RealApiOrchestrator = orchestratorModule.RealApiOrchestrator || orchestratorModule.default || orchestratorModule;
 
-module.exports = {
-  RealApiOrchestrator,
-};
+module.exports = orchestratorModule;
+module.exports.RealApiOrchestrator = RealApiOrchestrator;
