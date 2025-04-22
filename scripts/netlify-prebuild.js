@@ -63,6 +63,18 @@ if (missingFiles.length > 0) {
 
 console.log('✅ Tous les fichiers critiques sont présents');
 
+// Remove nested client/node_modules to avoid dependency conflicts during Netlify build
+const clientNodeModulesDir = path.join(rootDir, 'client', 'node_modules');
+if (fs.existsSync(clientNodeModulesDir)) {
+  console.log('🧹 Suppression du répertoire client/node_modules pour éviter les conflits de dépendances...');
+  try {
+    fs.rmSync(clientNodeModulesDir, { recursive: true, force: true });
+    console.log('✅ Répertoire client/node_modules supprimé');
+  } catch (error) {
+    console.warn(`⚠️ Impossible de supprimer client/node_modules: ${error.message}`);
+  }
+}
+
 // Nettoyer le répertoire de build s'il existe
 if (fs.existsSync(buildDir)) {
   console.log('🧹 Nettoyage du répertoire de build...');
