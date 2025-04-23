@@ -4,8 +4,9 @@
  */
 
 // Chargement des variables d'environnement
-console.log('[DEBUG] Import dotenv OK');
-require('dotenv').config();
+console.log('[DEBUG] === START SERVER.JS ===');
+try { console.log('[DEBUG] Import dotenv OK'); require('dotenv').config(); } catch(e) { console.error('[IMPORT ERROR] dotenv:', e); process.exit(1); }
+console.log('[CHECKPOINT 1] dotenv loaded');
 
 // LOGS DE DEBUG POUR RENDER
 console.log('--- ENV DEBUG ---');
@@ -16,50 +17,50 @@ console.log('NODE_ENV:', process.env.NODE_ENV);
 console.log('------------------');
 
 // Importations des dépendances
-console.log('[DEBUG] Import express OK');
-const express = require('express');
-console.log('[DEBUG] Import mongoose OK');
-const mongoose = require('mongoose');
-console.log('[DEBUG] Import cors OK');
-const cors = require('cors');
-console.log('[DEBUG] Import helmet OK');
-const helmet = require('helmet');
-console.log('[DEBUG] Import compression OK');
-const compression = require('compression');
-console.log('[DEBUG] Import cookie-parser OK');
-const cookieParser = require('cookie-parser');
-console.log('[DEBUG] Import path OK');
-const path = require('path');
-console.log('[DEBUG] Import rate-limit OK');
-const rateLimit = require('express-rate-limit');
-console.log('[DEBUG] Import logger OK');
-const logger = require('./config/logger');
-console.log('[DEBUG] Import errorService OK');
-const errorService = require('./services/error.service').getInstance();
-console.log('[DEBUG] Import tokenBlacklist OK');
-const tokenBlacklist = require('./services/token-blacklist.service').getInstance();
-console.log('[DEBUG] Import cacheService OK');
-const cacheService = require('./services/cache.service').getInstance();
-console.log('[DEBUG] Import paginationService OK');
-const paginationService = require('./services/pagination.service').getInstance();
-console.log('[DEBUG] Import apiMiddleware OK');
-const apiMiddleware = require('./middlewares/api.middleware');
-console.log('[DEBUG] Import config OK');
-const config = require('./config/api.config');
-console.log('[DEBUG] Import initServices OK');
-const initServices = require('./services/initServices');
-console.log('[DEBUG] Import serverDiagnostics OK');
-const serverDiagnostics = require('./utils/server-diagnostics'); // Système de diagnostic
-console.log('[DEBUG] Import apiQuotaManager OK');
-const apiQuotaManager = require('./utils/apiQuotaManager'); // Gestionnaire de quotas API
-console.log('[DEBUG] Import performanceOptimization OK');
-const performanceOptimization = require('./middleware/performance-optimization');
-console.log('[DEBUG] Import monitoring OK');
-const monitoring = require('./utils/monitoring');
-console.log('[DEBUG] Import swaggerUi OK');
-const swaggerUi = require('swagger-ui-express');
-console.log('[DEBUG] Import YAML OK');
-const YAML = require('yamljs');
+try { console.log('[DEBUG] Import express OK'); const express = require('express'); } catch(e) { console.error('[IMPORT ERROR] express:', e); process.exit(1); }
+console.log('[CHECKPOINT 2] express loaded');
+try { console.log('[DEBUG] Import mongoose OK'); const mongoose = require('mongoose'); } catch(e) { console.error('[IMPORT ERROR] mongoose:', e); process.exit(1); }
+console.log('[CHECKPOINT 3] mongoose loaded');
+try { console.log('[DEBUG] Import cors OK'); const cors = require('cors'); } catch(e) { console.error('[IMPORT ERROR] cors:', e); process.exit(1); }
+console.log('[CHECKPOINT 4] cors loaded');
+try { console.log('[DEBUG] Import helmet OK'); const helmet = require('helmet'); } catch(e) { console.error('[IMPORT ERROR] helmet:', e); process.exit(1); }
+console.log('[CHECKPOINT 5] helmet loaded');
+try { console.log('[DEBUG] Import compression OK'); const compression = require('compression'); } catch(e) { console.error('[IMPORT ERROR] compression:', e); process.exit(1); }
+console.log('[CHECKPOINT 6] compression loaded');
+try { console.log('[DEBUG] Import cookie-parser OK'); const cookieParser = require('cookie-parser'); } catch(e) { console.error('[IMPORT ERROR] cookie-parser:', e); process.exit(1); }
+console.log('[CHECKPOINT 7] cookie-parser loaded');
+try { console.log('[DEBUG] Import path OK'); const path = require('path'); } catch(e) { console.error('[IMPORT ERROR] path:', e); process.exit(1); }
+console.log('[CHECKPOINT 8] path loaded');
+try { console.log('[DEBUG] Import rate-limit OK'); const rateLimit = require('express-rate-limit'); } catch(e) { console.error('[IMPORT ERROR] express-rate-limit:', e); process.exit(1); }
+console.log('[CHECKPOINT 9] rate-limit loaded');
+try { console.log('[DEBUG] Import logger OK'); const logger = require('./config/logger'); } catch(e) { console.error('[IMPORT ERROR] logger:', e); process.exit(1); }
+console.log('[CHECKPOINT 10] logger loaded');
+try { console.log('[DEBUG] Import errorService OK'); const errorService = require('./services/error.service').getInstance(); } catch(e) { console.error('[IMPORT ERROR] errorService:', e); process.exit(1); }
+console.log('[CHECKPOINT 11] errorService loaded');
+try { console.log('[DEBUG] Import tokenBlacklist OK'); const tokenBlacklist = require('./services/token-blacklist.service').getInstance(); } catch(e) { console.error('[IMPORT ERROR] tokenBlacklist:', e); process.exit(1); }
+console.log('[CHECKPOINT 12] tokenBlacklist loaded');
+try { console.log('[DEBUG] Import cacheService OK'); const cacheService = require('./services/cache.service').getInstance(); } catch(e) { console.error('[IMPORT ERROR] cacheService:', e); process.exit(1); }
+console.log('[CHECKPOINT 13] cacheService loaded');
+try { console.log('[DEBUG] Import paginationService OK'); const paginationService = require('./services/pagination.service').getInstance(); } catch(e) { console.error('[IMPORT ERROR] paginationService:', e); process.exit(1); }
+console.log('[CHECKPOINT 14] paginationService loaded');
+try { console.log('[DEBUG] Import apiMiddleware OK'); const apiMiddleware = require('./middlewares/api.middleware'); } catch(e) { console.error('[IMPORT ERROR] apiMiddleware:', e); process.exit(1); }
+console.log('[CHECKPOINT 15] apiMiddleware loaded');
+try { console.log('[DEBUG] Import config OK'); const config = require('./config/api.config'); } catch(e) { console.error('[IMPORT ERROR] config:', e); process.exit(1); }
+console.log('[CHECKPOINT 16] config loaded');
+try { console.log('[DEBUG] Import initServices OK'); const initServices = require('./services/initServices'); } catch(e) { console.error('[IMPORT ERROR] initServices:', e); process.exit(1); }
+console.log('[CHECKPOINT 17] initServices loaded');
+try { console.log('[DEBUG] Import serverDiagnostics OK'); const serverDiagnostics = require('./utils/server-diagnostics'); } catch(e) { console.error('[IMPORT ERROR] serverDiagnostics:', e); process.exit(1); }
+console.log('[CHECKPOINT 18] serverDiagnostics loaded');
+try { console.log('[DEBUG] Import apiQuotaManager OK'); const apiQuotaManager = require('./utils/apiQuotaManager'); } catch(e) { console.error('[IMPORT ERROR] apiQuotaManager:', e); process.exit(1); }
+console.log('[CHECKPOINT 19] apiQuotaManager loaded');
+try { console.log('[DEBUG] Import performanceOptimization OK'); const performanceOptimization = require('./middleware/performance-optimization'); } catch(e) { console.error('[IMPORT ERROR] performanceOptimization:', e); process.exit(1); }
+console.log('[CHECKPOINT 20] performanceOptimization loaded');
+try { console.log('[DEBUG] Import monitoring OK'); const monitoring = require('./utils/monitoring'); } catch(e) { console.error('[IMPORT ERROR] monitoring:', e); process.exit(1); }
+console.log('[CHECKPOINT 21] monitoring loaded');
+try { console.log('[DEBUG] Import swaggerUi OK'); const swaggerUi = require('swagger-ui-express'); } catch(e) { console.error('[IMPORT ERROR] swaggerUi:', e); process.exit(1); }
+console.log('[CHECKPOINT 22] swaggerUi loaded');
+try { console.log('[DEBUG] Import YAML OK'); const YAML = require('yamljs'); } catch(e) { console.error('[IMPORT ERROR] YAML:', e); process.exit(1); }
+console.log('[CHECKPOINT 23] YAML loaded');
 
 // Initialisation de l'application Express
 console.log('[DEBUG] Avant express()');
