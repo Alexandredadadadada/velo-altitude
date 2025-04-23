@@ -510,13 +510,20 @@ function startServer() {
         console.log('[DEBUG] Routes initialisées');
         
         // Démarrer le serveur HTTP
-        const server = app.listen(PORT, '0.0.0.0', () => {
-          console.log(`[DEBUG] Serveur démarré sur le port ${PORT}`);
-          logger.info(`🚀 Serveur démarré sur le port ${PORT}`);
-        });
-        
-        // Configurer le monitoring
-        monitoring.setupMonitoring(app);
+        try {
+          console.log('[DEBUG] Avant app.listen');
+          const server = app.listen(PORT, '0.0.0.0', () => {
+            console.log(`[DEBUG] Serveur démarré sur le port ${PORT}`);
+            logger.info(`🚀 Serveur démarré sur le port ${PORT}`);
+          });
+          console.log('[DEBUG] Après app.listen');
+          // Configurer le monitoring
+          monitoring.setupMonitoring(app);
+        } catch (listenErr) {
+          console.error('[DEBUG] Erreur app.listen:', listenErr);
+          logger.error(`❌ Erreur lors du démarrage du serveur HTTP: ${listenErr.message}`);
+          process.exit(1);
+        }
       }).catch(error => {
         console.error('[DEBUG] Erreur initialisation services:', error);
         logger.error(`❌ Erreur lors de l'initialisation des services: ${error.message}`, {
