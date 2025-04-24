@@ -37,7 +37,7 @@ try { console.log('[DEBUG] Import logger OK'); const logger = require('./config/
 console.log('[CHECKPOINT 10] logger loaded');
 try { console.log('[DEBUG] Import errorService OK'); const errorService = require('./services/error.service'); } catch(e) { console.error('[IMPORT ERROR] errorService:', e); process.exit(1); }
 console.log('[CHECKPOINT 11] errorService loaded');
-try { console.log('[DEBUG] Import tokenBlacklist OK'); const tokenBlacklist = require('./services/token-blacklist.service').getInstance(); } catch(e) { console.error('[IMPORT ERROR] tokenBlacklist:', e); process.exit(1); }
+try { console.log('[DEBUG] Import tokenBlacklist OK'); const tokenBlacklist = require('./services/token-blacklist.service'); } catch(e) { console.error('[IMPORT ERROR] tokenBlacklist:', e); process.exit(1); }
 console.log('[CHECKPOINT 12] tokenBlacklist loaded');
 try { console.log('[DEBUG] Import cacheService OK'); const cacheService = require('./services/cache.service').getInstance(); } catch(e) { console.error('[IMPORT ERROR] cacheService:', e); process.exit(1); }
 console.log('[CHECKPOINT 13] cacheService loaded');
